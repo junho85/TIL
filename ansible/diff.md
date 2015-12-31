@@ -8,5 +8,29 @@ ansible 의 주요 기능은 배포이지만 기존 배포된 내용과 diff 를
 ansible-playbook foo.yml --check --diff
 ```
 
+ex)
+```
+~/ansible  ansible-playbook -i hosts labs.yml --ask-pass --check --diff
+SSH password:
+
+PLAY [labs] *******************************************************************
+
+GATHERING FACTS ***************************************************************
+
+ok: [127.0.0.1]
+
+TASK: [copy test file] ********************************************************
+--- before: /Users/junho85/test/test.txt
++++ after: /Users/junho85/ansible/test.txt
+@@ -1 +1,2 @@
+ hello
++world
+
+changed: [127.0.0.1]
+
+PLAY RECAP ********************************************************************
+127.0.0.1                  : ok=2    changed=1    unreachable=0    failed=0
+```
+
 ## 참고
 http://docs.ansible.com/ansible/playbooks_checkmode.html
