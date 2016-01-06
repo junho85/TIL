@@ -17,6 +17,8 @@
 
 
 ## reference
+* Testing on the Toilet: Know Your Test Doubles
+http://googletesting.blogspot.kr/2013/07/testing-on-toilet-know-your-test-doubles.html
 
 * 테스트 더블(Test Double)의 종류와 차이점?
 http://www.jpstory.net/2013/07/know-your-test-doubles/
