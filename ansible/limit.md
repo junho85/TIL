@@ -14,3 +14,4 @@ ansible-playbook -i hosts install.yml --limit=hostname1
 ansible-playbook -i hosts install.yml --limit real[1-30] --list-hosts --list-tasks
 ```
 
+## read the list of hosts from a file

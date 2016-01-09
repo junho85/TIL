@@ -1,16 +1,28 @@
 # ansible
 * ansible 에 대해
   * 기본 설명
+  * 멱등성
 * ansible 기본 사용법
   * installation
   * command
   * hosts (inventory)
 * ansible_playbook 활용법
   * yml 파일을 이용한 설정
+  * variables
+  * tags
 * ansible 을 이용하여 배포해 보기
   * git clone
   * 배포
   * 재시작
+* 심화
+  * playbooks best practices
+  * staging, production 등 구분
+  * groups of groups
+  * handlers
+  * patterns
+* tips
+  * file 에 내용 추가
+  * diff
 
 
 ## 발음

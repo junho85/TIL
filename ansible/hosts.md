@@ -4,7 +4,7 @@ hosts 파일
 inventory 파일이라고도 함
 
 
-## hosts 패턴
+## patterns
 hostname1~10 까지 있을 경우
 ```
 hostname[1:10]
