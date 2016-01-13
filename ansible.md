@@ -6,7 +6,7 @@
   * installation
   * command
   * hosts (inventory)
-* ansible_playbook 활용법
+* ansible playbook 활용법
   * yml 파일을 이용한 설정
   * variables
   * tags
