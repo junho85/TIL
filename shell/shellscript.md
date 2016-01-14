@@ -20,3 +20,8 @@ if [ $? == 1 ]
     then exit -1;
 fi
 ```
+
+## loop
+```
+for id in `cat list` ; do ; echo $id ; done
+```
