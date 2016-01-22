@@ -33,4 +33,5 @@ PLAY RECAP ********************************************************************
 ```
 
 ## 참고
-http://docs.ansible.com/ansible/playbooks_checkmode.html
+* http://docs.ansible.com/ansible/playbooks_checkmode.html
+* http://www.randomhacks.co.uk/ansible-diff-function/
