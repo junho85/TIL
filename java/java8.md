@@ -9,4 +9,5 @@
 * 다만 default 함수는 필드 변수를 사용 할 수 없다고 함. (확인 필요)
 
 ## references
+* https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html
 * http://blog.powerumc.kr/473
