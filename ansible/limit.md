@@ -14,4 +14,9 @@ ansible-playbook -i hosts install.yml --limit=hostname1
 ansible-playbook -i hosts install.yml --limit real[1-30] --list-hosts --list-tasks
 ```
 
+## 특정 호스트를 제외 하고 싶은 경우
+```
+--limit '!hostname1'
+```
+
 ## read the list of hosts from a file
