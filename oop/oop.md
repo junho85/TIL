@@ -1,17 +1,21 @@
 # oop
 
 ## SOLID
-단일 책임 원칙(Single responsibility principle)
 
-개방 폐쇄 원칙(Open-closed principle)
+### 단일 책임 원칙(Single responsibility principle)
 
-리스코프 치환 원칙(Liskov substitution principle)
+### 개방 폐쇄 원칙(Open-closed principle)
 
-인터페이스 분리 원칙(Interface segregation principle)
+### 리스코프 치환 원칙(Liskov substitution principle)
 
-의존 역전 원칙(Dependency inversion principle)
+### 인터페이스 분리 원칙(Interface segregation principle)
 
-## 개발자가 반드시 정복해야 할 객체 지향과 디자인 패턴
+### 의존 역전 원칙(Dependency inversion principle)
+
+
+## references
+
+### 개발자가 반드시 정복해야 할 객체 지향과 디자인 패턴
 
 Part 01, 객체 지향
 
