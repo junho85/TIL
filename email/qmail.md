@@ -7,3 +7,4 @@
 * https://en.wikipedia.org/wiki/Qmail
 * http://cr.yp.to/qmail.html
 * http://qmail.org/
+* https://people.kldp.org/~eunjea/qmail/patch/
