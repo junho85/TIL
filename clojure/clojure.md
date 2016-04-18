@@ -195,3 +195,16 @@ https://github.com/yogthos/Selmer
 ## 단점
 * 느림
 * 스크립트로 쓰기도 좀
+
+
+java -cp clojure-1.8.0.jar clojure.main
+
+## 조건문
+```
+user=> (if (= 1 1) "true" "false")
+"true"
+```
+
+## references
+
+https://eunmin.gitbooks.io/clojure-for-beginners/content/1_hello_world.html
