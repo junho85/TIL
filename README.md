@@ -8,8 +8,10 @@
   * clean code
   * TDDBE
   * vuejs
+  * 이메일
 * 기타
   * final cut pro
+  * 영어공부
   * 요리
 
 
