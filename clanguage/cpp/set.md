@@ -4,6 +4,11 @@
   * 같은 값을 저장할 경우 결과의 second 값이 false 이다.
 * nullptr 은 저장할 수 없다.
 
+## 응용
+* 중복된 값이 입력 되었는지 여부 확인 용도
+
+## 예제
+
 ```cpp
 #include <iostream>
 #include <string>
