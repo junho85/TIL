@@ -121,3 +121,59 @@ assert(solution.twoSum([2, 7, 11, 15], 9) == [0, 1])
 * 두번째 성공 했는데 6712ms
 * 성능 개선 필요함
 
+## Java 8
+
+### 풀이
+* ArrayList 로 바꾼다음 하나하나 찾는다.
+* 77 ms, 6.67%
+* 별로 효과적인 방법이 아니다.
+```java
+package leetcode;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int[] result = new int[2];
+
+        List<Integer> listNums = new ArrayList<>();
+
+        for (int num : nums) {
+            listNums.add(num);
+        }
+
+        int length = listNums.size();
+        for (int i=0; i<listNums.size(); i++) {
+            Integer num = listNums.get(i);
+            List<Integer> subList = listNums.subList(i + 1, length);
+
+            int index = subList.indexOf(target - num);
+            if (index != -1) {
+                result[0] = i;
+                result[1] = index + i + 1;
+            }
+        }
+
+        return result;
+    }
+}
+
+public class PS1TwoSum {
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+
+        int[] nums = new int[]{2,7,11,15};
+        int[] result = solution.twoSum(nums, 9);
+        System.out.println(result[0]);
+        System.out.println(result[1]);
+        System.out.println();
+
+        nums = new int[]{3,2,4};
+        result = solution.twoSum(nums, 6);
+        System.out.println(result[0]);
+        System.out.println(result[1]);
+        System.out.println();
+    }
+}
+```
