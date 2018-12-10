@@ -139,7 +139,31 @@
 * Excuse me, could you please keep it down?
 * Excuse me, could you please keep it down?
 
+## 46. 몸 생각해서 적당히 드세요.
+* Too bad it's not good for you too.
+* Too bad it's not good for you too.
+* Too bad it's not good for you too.
 
+## 47. 거기 문 닫았어요.
+* It's closed.
+* It's closed.
+* It's closed.
+
+## 48. 필요한 거 있으면 뭐든 말해요,.
+* Let me know if you ever need any help.
+* Let me know if you ever need any help.
+* Let me know if you ever need any help.
+
+## 49. 완전 최고였어요.
+* Thank you so much, that was awesome.
+* Thank you so much, that was awesome.
+* Thank you so much, that was awesome.
+
+## 50. 엘리베이터가 고장 났으니, 걸어가세요.
+* The elevator is broken. You have to use the stairs.
+* The elevator is broken. You have to use the stairs.
+* The elevator is broken. You have to use the stairs.
+ 
 
 ## 다른사람들 정리
 * https://blog.naver.com/hj913/220992922338
