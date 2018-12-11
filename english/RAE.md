@@ -164,6 +164,138 @@
 * The elevator is broken. You have to use the stairs.
 * The elevator is broken. You have to use the stairs.
  
+## 51. 손이 커서 어쩔 수 없었어요.
+* I just can't help myself.
+* I just can't help myself.
+* I just can't help myself.
+
+## 52. 저희 영수증은 따로 주세요.
+* Could we have separate bills please.
+* Could we have separate bills please.
+* Could we have separate bills please.
+
+## 53. 도대체 지금 시간이 몇 시예요?
+* Do you have any idea what time it is?
+* Do you have any idea what time it is?
+* Do you have any idea what time it is?
+
+## 54. 다 재밌으니까, 꾸준히 보세요.
+* They're all good. I guess you just have to watch them all.
+* They're all good. I guess you just have to watch them all.
+* They're all good. I guess you just have to watch them all.
+
+## 55. 산책도 할 겸 걸어갈까요?
+* It's really close. Want to walk?
+* It's really close. Want to walk?
+* It's really close. Want to walk?
+
+## 56. 곤란하니까 묻지 말아주세요.
+
+## 57. 못 먹는 음식이 있나요?
+
+## 58. 그냥 솔직히 말해줘요.
+
+## 59. 그런 뜻으로 말한 게 아니었는데, 미안해요.
+
+## 60. 한 귀로 듣고, 한 귀로 흘려요.
+
+## 61. 모두 다 비벼서 드세요.
+
+## 62. 한국어 배우는 건 어때요?
+
+## 63. 당신은 눈이 너무 높아요.
+
+## 64. 열심히 하겠습니다. 뽑아주세요.
+
+## 65. 입안에서 살살 녹아요.
+
+## 66. 당신 눈에 콩깍지가 씌었네요.
+
+## 67. 해가 길어졌어요.
+
+## 68. 넉넉하게 담아주세요.
+
+## 69. 괜찮으니까, 들어와요.
+
+## 70. 물은 저쪽에 준비되어 있어요.
+
+## 71. 성이 같지만, 가족은 아니에요.
+
+## 72. (다양한 맞장구 표현)
+
+## 73. 고맙지만, 좀 부담스럽네요.
+
+## 74. 위험하니까, 돌아가세요.
+
+## 75. 이 그릇 좀 치워주세요.
+
+## 76. 시간 가는 게 아쉬워요.
+
+## 77. 나도 신입이라, 잘 몰라요.
+
+## 78. 엮지 좀 마(귀엽게 투덜거릴 때).
+
+## 79. 삐쳤어요?
+
+## 80. 당신이 필요할 떄만 찾네요.
+
+## 81. 그 얘기는 나중에 해요.
+
+## 82. 여긴 쓰레기 버리는 곳이 아니에요.
+
+## 83. 이거 어디 제품이에요?
+
+## 84. 어차피 할 거, 지금 하세요.
+
+## 85. (그 가게) 예전 같지 않아요.
+
+## 86. 그렇게 열심히 안 해도 돼요.
+
+## 87. 내 문자 씹혔어요.
+
+## 88. 환기 좀 시키세요.
+
+## 89. 헐~(기가 막힘)
+
+## 90. 갚은 걸로 해요(쌤쌤으로 해요).
+
+## 91. 돈 굳어서 좋겠어요.
+
+## 92. 제가 저녁 대접할게요.
+
+## 93. 야식 먹을래요?
+
+## 94. 에이, 비행기 좀 그만 태워요.
+
+## 95. 참 눈치 없네요.
+
+## 96. 우리 딸 정말 못 말려요.
+
+## 97. 해도 해도 너무하네요.
+
+## 98. 그런 말 안 해도 돼요.
+
+## 99. 와, 딸기 좋네요.
+
+## 100. 고소한 맛이 나요.
+
+## 101. 맞아요, 저 거기에서 왔어요.
+
+## 102. 그게 무슨 의미가 있나요?
+
+## 103. (교통 카드를) 다시 찍어주세요.
+
+## 104. 첫눈에 반했어요.
+
+## 105. 실물이 훨씬 나아요.
+
+## 106. 언제 한번 뭉쳐요.
+
+## 107. 먼저 올라가세요.
+
+## 108. 먹기 편하게 잘라드릴까요?
+
+
 
 ## 다른사람들 정리
 * https://blog.naver.com/hj913/220992922338
