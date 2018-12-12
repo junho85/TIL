@@ -190,14 +190,29 @@
 * It's really close. Want to walk?
 
 ## 56. 곤란하니까 묻지 말아주세요.
+* I don't know how I feel about that.
+* I don't know how I feel about that.
+* I don't know how I feel about that.
 
 ## 57. 못 먹는 음식이 있나요?
+* Are there any foods you don't eat?
+* Are there any foods you don't eat?
+* Are there any foods you don't eat?
 
 ## 58. 그냥 솔직히 말해줘요.
+* Just be straight with me.
+* Just be straight with me.
+* Just be straight with me.
 
 ## 59. 그런 뜻으로 말한 게 아니었는데, 미안해요.
+* I'm sorry. I didn't mean it that way.
+* I'm sorry. I didn't mean it that way.
+* I'm sorry. I didn't mean it that way.
 
 ## 60. 한 귀로 듣고, 한 귀로 흘려요.
+* Let it in one ear and out the other.
+* Let it in one ear and out the other.
+* Let it in one ear and out the other.
 
 ## 61. 모두 다 비벼서 드세요.
 
