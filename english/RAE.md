@@ -215,14 +215,29 @@
 * Let it in one ear and out the other.
 
 ## 61. 모두 다 비벼서 드세요.
+* Just mix it all together.
+* Just mix it all together.
+* Just mix it all together.
 
 ## 62. 한국어 배우는 건 어때요?
+* How's learning Korean?
+* How's learning Korean?
+* How's learning Korean?
 
 ## 63. 당신은 눈이 너무 높아요.
+* You set the bar too high.
+* You set the bar too high.
+* You set the bar too high.
 
 ## 64. 열심히 하겠습니다. 뽑아주세요.
+* I'll do my best. Pick me.
+* I'll do my best. Pick me.
+* I'll do my best. Pick me.
 
 ## 65. 입안에서 살살 녹아요.
+* It melts in your mouth.
+* It melts in your mouth.
+* It melts in your mouth.
 
 ## 66. 당신 눈에 콩깍지가 씌었네요.
 
