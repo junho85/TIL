@@ -1,5 +1,6 @@
 # 3. Longest Substring Without Repeating Characters
 
+## 문제
 * 문자가 겹치지 않은 substring 중에서 가장 긴 것의 길이를 구하는 것.
 
 ## 가장 긴 substring 에서 문자가 겹치지 않은것을 찾기
