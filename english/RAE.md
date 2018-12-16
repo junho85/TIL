@@ -240,74 +240,179 @@
 * It melts in your mouth.
 
 ## 66. 당신 눈에 콩깍지가 씌었네요.
+* Beauty is in the eye of the beholder.
+* Beauty is in the eye of the beholder.
+* Beauty is in the eye of the beholder.
 
 ## 67. 해가 길어졌어요.
+* The days are getting longer.
+* The days are getting longer.
+* The days are getting longer.
 
 ## 68. 넉넉하게 담아주세요.
+* I love OO. Please give me extra if you can.
+* I love OO. Please give me extra if you can.
+* I love OO. Please give me extra if you can.
 
 ## 69. 괜찮으니까, 들어와요.
+* Come on in, the water's fine.
+* Come on in, the water's fine.
+* Come on in, the water's fine.
 
 ## 70. 물은 저쪽에 준비되어 있어요.
+* You can help yourself to some water over there.
+* You can help yourself to some water over there.
+* You can help yourself to some water over there.
 
 ## 71. 성이 같지만, 가족은 아니에요.
+* Same name, no relation.
+* Same name, no relation.
+* Same name, no relation.
 
 ## 72. (다양한 맞장구 표현)
+* Ah / Oh / Aw
+* Ah / Oh / Aw
+* Ah / Oh / Aw
 
 ## 73. 고맙지만, 좀 부담스럽네요.
+* Thanks, but you don't have to do that.
+* Thanks, but you don't have to do that.
+* Thanks, but you don't have to do that.
 
 ## 74. 위험하니까, 돌아가세요.
+* It's dangerous. You have to go another way.
+* It's dangerous, You have to go another way.
+* It's dangerous, You have to go another way.
 
 ## 75. 이 그릇 좀 치워주세요.
+* Could you take this away, please?
+* Could you take this away, please?
+* Could you take this away, please?
 
 ## 76. 시간 가는 게 아쉬워요.
+* Aw man, time flies.
+* Aw man, time flies.
+* Aw man, time flies.
 
 ## 77. 나도 신입이라, 잘 몰라요.
+* I don't know. I'm new here too.
+* I don't know. I'm new here too.
+* I don't know. I'm new here too.
 
 ## 78. 엮지 좀 마(귀엽게 투덜거릴 때).
+* Haha, funny funny.
+* Haha, funny funny.
+* Haha, funny funny.
 
 ## 79. 삐쳤어요?
+* What's wrong.
+* What's wrong.
+* What's wrong.
 
 ## 80. 당신이 필요할 떄만 찾네요.
+* Well, I haven't heard from you in a while.
+* Well, I haven't heard from you in a while.
+* Well, I haven't heard from you in a while.
 
 ## 81. 그 얘기는 나중에 해요.
+* Let's save this(that) for later.
+* Let's save this(that) for later.
+* Let's save this(that) for later.
 
 ## 82. 여긴 쓰레기 버리는 곳이 아니에요.
+* Excuse me, you can't leave your garbage there.
+* Excuse me, you can't leave your garbage there.
+* Excuse me, you can't leave your garbage there. 
 
 ## 83. 이거 어디 제품이에요?
+* Who makes this(that)?
+* Who makes this(that)?
+* Who makes this(that)?
 
 ## 84. 어차피 할 거, 지금 하세요.
+* Might as well just get it done now.
+* Might as well just get it done now.
+* Might as well just get it done now.
 
 ## 85. (그 가게) 예전 같지 않아요.
+* That place isn't as good as it used to be.
+* That place isn't as good as it used to be.
+* That place isn't as good as it used to be.
 
 ## 86. 그렇게 열심히 안 해도 돼요.
+* Don't push yourself too hard. Take it easy.
+* Don't push yourself too hard. Take it easy.
+* Don't push yourself too hard. Take it easy.
 
 ## 87. 내 문자 씹혔어요.
+* He ghosted on me.
+* He ghosted on me.
+* He ghosted on me.
 
 ## 88. 환기 좀 시키세요.
+* Air out the house.
+* Air out the house.
+* Air out the house.
 
 ## 89. 헐~(기가 막힘)
+* Hah! Hah, yeah.
+* Hah! Hah, yeah.
+* Hah! Hah, yeah.
 
 ## 90. 갚은 걸로 해요(쌤쌤으로 해요).
+* Let's call it even.
+* Let's call it even.
+* Let's call it even.
 
 ## 91. 돈 굳어서 좋겠어요.
+* It's great you can save money.
+* It's great you can save money.
+* It's great you can save money.
 
 ## 92. 제가 저녁 대접할게요.
+* Let's go out for dinner, it's on me.
+* Let's go out for dinner, it's on me.
+* Let's go out for dinner, it's on me.
 
 ## 93. 야식 먹을래요?
+* Wanna get something to eat?
+* Wanna get something to eat?
+* Wanna get something to eat?
 
 ## 94. 에이, 비행기 좀 그만 태워요.
+* Oh, stop. Nah, you're being too nice.
+* Oh, stop. Nah, you're being too nice.
+* Oh, stop. Nah, you're being too nice.
 
 ## 95. 참 눈치 없네요.
+* You're so dense.
+* You're so dense.
+* You're so dense.
 
 ## 96. 우리 딸 정말 못 말려요.
+* There's no stopping her.
+* There's no stopping her.
+* There's no stopping her.
 
 ## 97. 해도 해도 너무하네요.
+* You just can't get enough, can you?
+* You just can't get enough, can you?
+* You just can't get enough, can you?
 
 ## 98. 그런 말 안 해도 돼요.
+* You don't have to say that.
+* You don't have to say that.
+* You don't have to say that.
 
 ## 99. 와, 딸기 좋네요.
+* Oh!(Wow!) Nice strawberries.
+* Oh!(Wow!) Nice strawberries.
+* Oh!(Wow!) Nice strawberries.
 
 ## 100. 고소한 맛이 나요.
+* This tastes a bit nutty.
+* This tastes a bit nutty.
+* This tastes a bit nutty.
 
 ## 101. 맞아요, 저 거기에서 왔어요.
 
