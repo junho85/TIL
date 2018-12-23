@@ -32,4 +32,24 @@ try {
 } catch (MessagingException e) {
     e.printStackTrace();
 }
-``` 
+```
+
+## mail from 과 header from 을 서로 다르게 세팅하기
+* 기본 예제로 이메일을 보내면 mail from 의 값이 message 의 from 주소로 들어간다.
+* 만약 mail from 커맨드의 from 주소를 바꾸고 싶다면 property 의 mail.from 을 다르게 세팅한다.
+  * 그런데 문서상으로는 "mail.smtp.from" 이라고 나와 있음.
+  * mail.from, mail.smtp.from 둘다 될거 같은데 관련 히스토리는 좀 찾아 봐야 겠음.
+```java
+properties.setProperty("mail.from", from);
+```
+
+```java
+properties.setProperty("mail.smtp.from", from);
+```
+
+## 블로그 포스팅
+* [java - javamail 로 이메일 발송하기 기본 예제](http://junho85.pe.kr/954)
+* [java - javamail 로 이메일 발송하기. mail from 과 header from 을 서로 다르게 세팅하기](http://junho85.pe.kr/955)
+
+## References
+* https://javaee.github.io/javamail/docs/api/com/sun/mail/smtp/package-summary.html
