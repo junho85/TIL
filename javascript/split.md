@@ -23,5 +23,13 @@ assert.deepStrictEqual("nice-to-meet-you".split("-", 1)[1], undefined);
 assert.deepStrictEqual("hello-world".split("-")[2], undefined);
 ```
 
+## split string and get two variables in one line
+```javascript
+const [left, right] = "hello-world".split("-");
+console.log(left, right); // hello world
+```
+
+
 ## References
 * https://www.w3schools.com/jsref/jsref_split.asp
+* https://stackoverflow.com/questions/3522406/javascript-split-string-straight-to-variables
