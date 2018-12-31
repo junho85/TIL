@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Canvas Example</title>
 
     <style>
         #my_canvas {
@@ -42,3 +42,6 @@
 
 </html>
 ```
+
+## References
+* https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext
