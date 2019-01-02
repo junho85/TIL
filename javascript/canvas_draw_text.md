@@ -43,7 +43,7 @@
 </html>
 ```
 
-## outline
+## outline. strokeText
 ```javascript
 context.lineWidth = 10;
 context.strokeText(text, x, y);
@@ -54,12 +54,27 @@ context.strokeText(text, x, y);
 context.strokeStyle = 'black';
 ```
 
-![image](https://user-images.githubusercontent.com/1219373/50573667-e0353500-0e1b-11e9-8202-767d0f97af53.png)
+> ![image](https://user-images.githubusercontent.com/1219373/50573667-e0353500-0e1b-11e9-8202-767d0f97af53.png)
+
+## strokeText 하고 나서 뾰족하게 튀어나가는거 해결하기
+> ![image](https://user-images.githubusercontent.com/1219373/50592611-38317180-0ed8-11e9-8a40-e897e5fc6bf4.png)
+
+이상하게 뾰족하게 튀어 나가는 부분들이 생긴다. 어떻게 해결해야 할까?
+
+```javascript
+context.lineJoin = 'round';
+```
+
+lineJoin 의 기본값은 miter 인 것 같다. round 로 바꿔주면 매끄럽게 처리 된다.
+
+> ![image](https://user-images.githubusercontent.com/1219373/50593466-c5c29080-0edb-11e9-83a3-2c37cbca465a.png)
+
 
 
 ## 블로그 포스팅
 * [javascript - canvas 에 텍스트 그리기](http://junho85.pe.kr/1174)
 * [javascript - canvas 에 텍스트 그리기 응용. outline 만들기.](http://junho85.pe.kr/1175)
+* [javascript - canvas 에 strokeText 하니까 삐죽삐죽 가시가 튀어 나올때는?](http://junho85.pe.kr/1176)
 
 ## References
 * https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext
