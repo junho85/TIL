@@ -69,6 +69,32 @@ lineJoin 의 기본값은 miter 인 것 같다. round 로 바꿔주면 매끄럽
 
 > ![image](https://user-images.githubusercontent.com/1219373/50593466-c5c29080-0edb-11e9-83a3-2c37cbca465a.png)
 
+## shadow. 그림자 효과
+* 그래픽 프로그램에서는 drop shadow 라는 용어를 많이 쓴다.
+* shadowColor 를 지정해 주고, shadowBlur 값을 지정해 주면 그림자가 생긴다.
+```javascript
+context.shadowColor = "black";
+context.shadowBlur = 5;
+````
+> ![image](https://user-images.githubusercontent.com/1219373/50641195-8a42c780-0faa-11e9-8ae4-bb9f4c1d60a5.png)
+
+* 그림자의 위치를 조정해 보자.
+```javascript
+context.shadowColor = "black";
+context.shadowBlur = 5;
+context.shadowOffsetX = 5;
+context.shadowOffsetY = 5;
+```
+![image](https://user-images.githubusercontent.com/1219373/50641238-ad6d7700-0faa-11e9-8019-478e061dacba.png)
+
+* 그림자를 반투명하게 만들고 싶다면 shadowColor 설정할 때, rgba 를 이용한다.
+```javascript
+context.shadowColor = "rgba(0,0,0,0.5)";
+context.shadowBlur = 5;
+context.shadowOffsetX = 5;
+context.shadowOffsetY = 5;
+```
+> ![image](https://user-images.githubusercontent.com/1219373/50641133-5798cf00-0faa-11e9-984e-81ec524400e1.png)
 
 
 ## 블로그 포스팅
