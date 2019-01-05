@@ -15,4 +15,9 @@
 * 카카오페이지
 
 ## 다른사람들 정리
-* https://blog.naver.com/hj913/220992922338
+* https://blog.naver.com/hj913/220990126259 1~20
+* https://blog.naver.com/hj913/220992922338 21~40
+* https://blog.naver.com/leedajinn/221434085735 475
+
+## 기타
+* https://quizlet.com/273786789/%ED%8C%9F-%EA%B9%80%EC%98%81%EC%B2%A0-%ED%83%80%EC%9D%BC%EB%9F%AC-%EC%A7%84%EC%A7%9C-%EB%AF%B8%EA%B5%AD%EC%8B%9D-%EC%98%81%EC%96%B4-flash-cards/
