@@ -149,6 +149,19 @@ Example:
 $ sslscan --timeout=10000 --starttls-smtp mailfirewalls.pcci.edu:25
 ```
 
+## TLS Fallback SCSV
+* TODO
+
+## TLS renegotiation
+* TODO
+* ```Secure session renegotiation supported``` ?
+* [Transport Layer Security (TLS) Renegotiation Indication Extension](https://tools.ietf.org/html/rfc5746)
+
+
+## TLS Compression
+* TODO
+* ```Compression disabled```
+
 ## 블로그 포스팅
 * [sslscan - Collect TLS (previously SSL) information easily. Installation, starttls SMTP test](http://junho85.pe.kr/808)
 
