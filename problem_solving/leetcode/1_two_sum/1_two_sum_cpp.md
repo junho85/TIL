@@ -4,9 +4,7 @@
 * leetcode 첫번째 문제
 * 배열의 두 값의 합이 target 과 같은 것의 index 두개 리턴
 
-## cpp
-
-### 테스트 코드
+## 테스트 코드
 ```
 int main() {
     vector<int> nums({2,7,11,15});
@@ -26,7 +24,7 @@ int main() {
 }
 ```
 
-### 단순 풀이
+## 단순 풀이
 
 ```cpp
 #include <vector>
@@ -101,7 +99,7 @@ public:
 };
 ```
 
-### map 으로 개선
+## map 으로 개선
 * map 에 넣은 다음 찾는다.
 * 찾은 index 가 기준 index 와 달라야 한다.
 * 12 ms, 47.98% (2018.12.01 기준)
