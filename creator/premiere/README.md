@@ -14,3 +14,20 @@
 * 단축키: 
   * 윈도우: Alt + Backspace, 맥: Opt + Delete
 
+## 음악 볼륨 줄이기
+* g - gain 에서 직접 입력 해서 세팅하기
+* 어디 화면에서 마우스로 하는거 없나?
+* 다른 단축키?
+
+## 인디케이터 이동
+* 마우스로 타임라인 상단 부분 클릭해서 이동
+* 화살표 좌우. 1frame 씩 이동
+* shift 화살표 좌우. 좀 더 많이 이동
+* 화살표 상하. 컷단위 이동
+* NumPad 에서 1000 엔터 치면 10초 뒤로 이동함
+* 파컷에서는 마우스 스크롤 하면 바로 인디케이터가 이동 되도록 할 수 있는데 프리미어에는 없음. (~프리미어 2019 까지 없는 상태)
+  * 프리미어에도 이런 기능 생겼으면 좋겠다.
+  
+## References
+* Premiere Pro Tip | How To Resize An Image To Fit The Frame https://www.youtube.com/watch?v=IHmzGRKIuLM
+* https://helpx.adobe.com/premiere-pro/using/default-keyboard-shortcuts.html
