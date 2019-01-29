@@ -5,7 +5,6 @@
 * 꽉 채우려면?
   * Set to Frame Size, Scale to Frame Size. 그런데 둘 차이는 뭐지
 
-
 ## Ripple Delete
 * 프리미어에서는 컷 삭제 하면 중간에 구멍이 생긴다.
   * 파이널컷에서는 특정 컷을 삭제 하면 뒤의 내용들이 앞으로 당겨 진다.
@@ -27,6 +26,15 @@
 * NumPad 에서 1000 엔터 치면 10초 뒤로 이동함
 * 파컷에서는 마우스 스크롤 하면 바로 인디케이터가 이동 되도록 할 수 있는데 프리미어에는 없음. (~프리미어 2019 까지 없는 상태)
   * 프리미어에도 이런 기능 생겼으면 좋겠다.
+
+## 클립 속도 조절하기
+* 클립에서 마우스 우클릭. Speed/Duration
+
+## Export
+* 내보내기
+* Cmd + M
+* Export 했는데 일부분만 되었다면? Source Range 가 Custom 으로 되어 있을 수 있음. Entire Sequence 로 바꿔준다.
+
   
 ## References
 * Premiere Pro Tip | How To Resize An Image To Fit The Frame https://www.youtube.com/watch?v=IHmzGRKIuLM
