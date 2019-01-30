@@ -12,7 +12,11 @@
   * https://www.wisdomhouse.kr/bbs/board.php?bo_table=menu0403&wr_id=209
 
 * 블로그 포스팅: http://junho85.pe.kr/1182
-  
+
+## 오늘의 표현
+* 그날 그날 표현 올라오는 게시판인데 업데이트가 잘 안되는
+http://wizard2.sbs.co.kr/w3/template/tpl_iframetype.jsp?vVodId=V2000010062&vProgId=1001032&vMenuId=1021603
+
 ## 전자책
 * 리디북스 https://ridibooks.com/v2/Detail?id=734001469
 * 카카오페이지
