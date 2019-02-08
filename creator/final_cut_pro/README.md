@@ -16,6 +16,13 @@
   * Ctrl -/Ctrl =. up/down 1dB
   * Ctrl Opt l -10 enter. set -10dB
 
+## MTS 등 편집하기 느린 영상은 Transcode Media -> Create optimized media
+* MTS 는 스트리밍용 영상이라 그런지 긴 영상 편집 하면 엄청 느려서 못해먹을 지경
+> ![image](https://user-images.githubusercontent.com/1219373/52417590-8ff27680-2b2f-11e9-8d6a-ac337a9a40dc.png)
+> ![image](https://user-images.githubusercontent.com/1219373/52417635-a8fb2780-2b2f-11e9-8fd2-1a30942f1f43.png)
+> ![image](https://user-images.githubusercontent.com/1219373/52414243-1fdff280-2b27-11e9-88db-bbd59c2f2390.png)
+* 다른 방법으로 그냥 미리 QuickTime 에서 mov 로 바꾸면 H.264 로 저장되는데 이거로 하면 빠름.
+
 
 ## 참고
 * [Final Cut Pro X: Final Cut Pro keyboard shortcuts](https://support.apple.com/kb/PH12724)
