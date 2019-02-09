@@ -15,6 +15,10 @@
 * Volume
   * Ctrl -/Ctrl =. up/down 1dB
   * Ctrl Opt l -10 enter. set -10dB
+* ctrl + opt + r : 재생속도 수정
+* opt + n : 새로운 이벤트 만들기
+* cmd + n : 새 프로젝트
+
 
 ## MTS 등 편집하기 느린 영상은 Transcode Media -> Create optimized media
 * MTS 는 스트리밍용 영상이라 그런지 긴 영상 편집 하면 엄청 느려서 못해먹을 지경
