@@ -24,6 +24,16 @@
 * 단축키: 
   * 윈도우: Alt + Backspace, 맥: Opt + Delete
 
+## 모자이크
+* [프리미어프로 CC 모자이크 효과 두 가지 스타일 핵쉽게 만들기! Premiere Pro CC Mosaic effect](https://www.youtube.com/watch?v=SeWDhWDTw0w)
+  * 깍두기 모자이크
+  * 뿌얘지는 모자이크
+  * Effects - Gaussian Blur
+  * Effect Controls 효과 컨트롤
+  * Blurriness 값 키우면 뿌얘짐
+  * Repeat Edge Pixels 체크 - 화면 끝 부분까지 뭉게지는 것 방지
+  * Mask 로 모자이크 처리할 영역 지정
+
 ## 음악 볼륨 줄이기
 * g - gain 에서 직접 입력 해서 세팅하기
 * 어디 화면에서 마우스로 하는거 없나?
@@ -46,7 +56,10 @@
 * Cmd + M
 * Export 했는데 일부분만 되었다면? Source Range 가 Custom 으로 되어 있을 수 있음. Entire Sequence 로 바꿔준다.
 
-  
+## 유용한 채널
+* 비됴클래스: https://www.youtube.com/user/wkwkwk1205
+* 조블리: https://www.youtube.com/channel/UCM1CbBpxRg_-FOutzAXjuLg
+
 ## References
 * Premiere Pro Tip | How To Resize An Image To Fit The Frame https://www.youtube.com/watch?v=IHmzGRKIuLM
 * https://helpx.adobe.com/premiere-pro/using/default-keyboard-shortcuts.html
