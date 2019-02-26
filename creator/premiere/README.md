@@ -56,6 +56,11 @@
 * Cmd + M
 * Export 했는데 일부분만 되었다면? Source Range 가 Custom 으로 되어 있을 수 있음. Entire Sequence 로 바꿔준다.
 
+## 삐~ 소리나는 화면조정 화면 만들기
+* 프로젝트 > New Item -> Bars and Tone
+* 삐 소리나는 화면조정 화면이 만들어 진다.
+* https://www.youtube.com/watch?v=JAfQERAL7Rg
+
 ## 유용한 채널
 * 비됴클래스: https://www.youtube.com/user/wkwkwk1205
 * 조블리: https://www.youtube.com/channel/UCM1CbBpxRg_-FOutzAXjuLg
