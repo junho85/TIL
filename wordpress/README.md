@@ -1,5 +1,9 @@
 # wordpress
 
+## 회원가입 가능한 사이트로 만들기
+* 설정 -> 멤버쉽 -> 누구나 가입할 수 있습니다. 체크 후 저장
+* https://junho85.pe.kr/1258
+
 ## local 에 설치한 wordpress 의 관리자 비밀번호 초기화 하기
 * 로컬에 설치한 wordpress 의 비밀번호를 잊었을 때 비밀번호를 바꾸는 방법.
 * DB에 접속한다. 보통 phpmyadmin 을 많이 사용할 것이다. http://localhost/phpmyadmin/
