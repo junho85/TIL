@@ -19,3 +19,11 @@ ENVIRONMENT=prod
 ```
 
 * 블로그 포스팅: [cron, crontab 평일 지정 예제](http://junho85.pe.kr/899)
+
+## 초 단위로 cronjob 수행 하는 방법
+* 기본적으로 초 단위로 수행이 안된다. 그래서 sleep 을 이용한 꼼수를 사용하는 편이다. 똑같은 내용을 3개 만들고, 
+```
+* * * * * cd /hanmail/2019-ingyeo && git pull
+* * * * * sleep 20 && cd /hanmail/2019-ingyeo && git pull
+* * * * * sleep 40 && cd /hanmail/2019-ingyeo && git pull
+```
