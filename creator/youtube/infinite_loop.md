@@ -40,6 +40,7 @@ function onPlayerError(event) {
 ```
 * https://junho85.pe.kr/1280 에서 아이유 너의의미 노래를 무한 감상해 보도록 하자.
 * https://junho85.pe.kr/437 에서 벚꽃엔딩을 무한 감상해 보도록 하자.
+* 블로그 정리: https://junho85.pe.kr/1281
 
 ## References
 * https://developers.google.com/youtube/iframe_api_reference
