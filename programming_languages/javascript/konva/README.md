@@ -26,6 +26,59 @@ stage, layers, groups, shapes 는 가상의 노드들이고 HTML 의 DOM 노드�
 
 참고: https://konvajs.org/docs/overview.html
 
+## 빨간 동그라미에 까만 테두리 예제
+```javascript
+// first we need to create a stage
+var stage = new Konva.Stage({
+  container: 'container',   // id of container <div>
+  width: 500,
+  height: 500
+});
+
+// then create layer
+var layer = new Konva.Layer();
+
+// create our shape
+var circle = new Konva.Circle({
+  x: stage.width() / 2,
+  y: stage.height() / 2,
+  radius: 70,
+  fill: 'red',
+  stroke: 'black',
+  strokeWidth: 4
+});
+
+// add the shape to the layer
+layer.add(circle);
+
+// add the layer to the stage
+stage.add(layer);
+
+// draw the image
+layer.draw();
+```
+
+## 기본 모양들 - Basic shapes
+* Rect, Circle, Ellipse, Line, Polygon, Spline, Blob, Image, Text, TextPath, Star, Label, SVG Path, RegularPolygon 지원.
+* custom shape 도 가능
+```javascript
+var triangle = new Konva.Shape({
+      sceneFunc: function(context) {
+        context.beginPath();
+        context.moveTo(20, 50);
+        context.lineTo(220, 80);
+        context.quadraticCurveTo(150, 100, 260, 170);
+        context.closePath();
+
+        // special Konva.js method
+        context.fillStrokeShape(this);
+      },
+      fill: '#00D2FF',
+      stroke: 'black',
+      strokeWidth: 4
+});
+```
+
 ## animation
 * [HTML5 Canvas Animate Position Tutorial](https://konvajs.org/docs/animations/Moving.html)
 
