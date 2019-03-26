@@ -79,6 +79,49 @@ var triangle = new Konva.Shape({
 });
 ```
 
+## Styles
+* Fill - 체우기. gradients 나 images 도 가능
+* Stroke - 테두리 선
+* Shadow - 그림자
+* Opacity - 투명도
+
+```javascript
+var pentagon = new Konva.RegularPolygon({
+    x: stage.width() / 2,
+    y: stage.height() / 2,
+    sides: 5,
+    radius: 70,
+    fill: 'red',
+    stroke: 'black',
+    strokeWidth: 4,
+    shadowOffsetX : 20,
+    shadowOffsetY : 25,
+    shadowBlur : 40,
+    opacity : 0.5
+});
+```
+
+## Events
+* click, dblclick, mouseover, tap, dbltap, touchstart 등의 이벤트를 처리 할 수 있다.
+* 속성 변경 이벤트 (scaleXChange, fillChange)
+* drag&drop 이벤트 (dragstart, dragmove, dragend)
+
+```javascript
+circle.on('mouseout touchend', function() {
+    console.log('user input');
+});
+
+circle.on('xChange', function() {
+    console.log('position change');
+});
+
+circle.on('dragend', function() {
+    console.log('drag stopped');
+});
+```
+example: https://konvajs.org/docs/events/Binding_Events.html
+
+
 ## animation
 * [HTML5 Canvas Animate Position Tutorial](https://konvajs.org/docs/animations/Moving.html)
 
