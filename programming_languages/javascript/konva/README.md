@@ -122,6 +122,38 @@ circle.on('dragend', function() {
 example: https://konvajs.org/docs/events/Binding_Events.html
 
 
+## drag and drop
+* 내장된 drag 를 지원한다.
+* drop 이벤트 (drop, dragenter, dragleave, dragover) 는 없지만 쉽게 구현할 수 있다.
+  * 참고: https://konvajs.org/docs/drag_and_drop/Drop_Events.html
+* drag&drop 을 활성화 하려면 draggable 속성을 true 로 바꿔주면 된다.
+```javascript
+shape.draggable('true');
+```
+* [HTML5 Canvas Complex Drag and Drop Bounds](https://konvajs.org/docs/drag_and_drop/Complex_Drag_and_Drop.html)
+
+## Filters
+* 여러 필터가 있다. blur, invert, noise 등
+* https://konvajs.org/api/Konva.Filters.html 에서 모든 필터를 확인 할 수 있다.
+* blurRadius
+* brightness
+* contrast
+* emboss
+* enhance
+* grayscale
+* HSL - Hue, Saturation, Luminance (or lighness)
+  * luminance
+* HSV - Hue, Saturation, Value
+* invert
+* mask
+* noise
+* posterize
+* rgb
+* rgba
+* sepia
+* solarize
+* threshold
+
 ## animation
 * [HTML5 Canvas Animate Position Tutorial](https://konvajs.org/docs/animations/Moving.html)
 
