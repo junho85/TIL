@@ -154,8 +154,42 @@ shape.draggable('true');
 * solarize
 * threshold
 
-## animation
+## Animation
+* 두 가지 방식으로 애니메이션을 만들 수 있다.
+
+### 1. Konva.Animation
+```javascript
+var anim = new Konva.Animation(function(frame) {
+    var time = frame.time,
+        timeDiff = frame.timeDiff,
+        frameRate = frame.frameRate;
+    // update stuff
+}, layer);
+anim.start();
+```
 * [HTML5 Canvas Animate Position Tutorial](https://konvajs.org/docs/animations/Moving.html)
+
+### 2. Konva.Tween
+```javascript
+var tween = new Konva.Tween({
+        node: rect,
+        duration: 1,
+        x: 140,
+        rotation: Math.PI * 2,
+        opacity: 1,
+        strokeWidth: 6
+});
+tween.play();
+
+// or new shorter method:
+circle.to({
+    duration : 1,
+    fill : 'green'
+});
+```
+https://konvajs.org/docs/tweens/Linear_Easing.html
+
+## animation
 
 ## download
 * [HTML5 Canvas Stage Data URL Tutorial](https://konvajs.org/docs/data_and_serialization/Stage_Data_URL.html)
