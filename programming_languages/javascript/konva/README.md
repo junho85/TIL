@@ -189,7 +189,33 @@ circle.to({
 ```
 https://konvajs.org/docs/tweens/Linear_Easing.html
 
-## animation
+## Selectors
+* 큰 애플리케이션을 구성할 때 요소들에서 검색을 이용하면 유용하다. Konva 는 셀렉터로 요소를 찾는데 도움을 준다. find() 나 findOne() 메서드를 사용할 수 있다.
+* 뭔가 번역투라 이상하다.
+* javascript 에서 dom 내부를 검색 할 때 getElement 어쩌구나 jquery 에서 find 를 이용해서 dom 내부를 검색 할 수 있는데, 그런것과 비슷한 걸 제공하고 있다고 보면 된다.
+
+```javascript
+var circle = new Konva.Circle({
+        radius: 10,
+        fill: 'red',
+        id : 'face',
+        name : 'red circle'
+});
+layer.add(circle);
+
+// then try to search
+
+// find by type
+layer.find('Circle'); // all circles
+
+// find by id
+layer.findOne('#face');
+
+// find by name (like css class)
+layer.find('.red')
+```
+layer 에 Circle 을 추가 하고 layer.find 로 모든 Circle 을 검색한다. # 은 id, . 은 name 이다. jquery 에서 그냥 find 는 html tag, # 은 아이디, . 은 class 를 검색하는 것과 비슷한다.
+
 
 ## download
 * [HTML5 Canvas Stage Data URL Tutorial](https://konvajs.org/docs/data_and_serialization/Stage_Data_URL.html)
