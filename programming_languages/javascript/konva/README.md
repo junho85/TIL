@@ -216,6 +216,19 @@ layer.find('.red')
 ```
 layer 에 Circle 을 추가 하고 layer.find 로 모든 Circle 을 검색한다. # 은 id, . 은 name 이다. jquery 에서 그냥 find 는 html tag, # 은 아이디, . 은 class 를 검색하는 것과 비슷한다.
 
+## Serialisation and Deserialization
+* 생성된 모든 객체들은 json 으로 저장 할 수 있다. 서버나 로컬 스토리지에 저장 해 두면 유용할 것 같다.
+```javascript
+var json = stage.toJSON();
+```
+
+그리고 다시 불러 올 수도 있다.
+```javascript
+var json = '{"attrs":{"width":578,"height":200},"className":"Stage","children":[{"attrs":{},"className":"Layer","children":[{"attrs":{"x":100,"y":100,"sides":6,"radius":70,"fill":"red","stroke":"black","strokeWidth":4},"className":"RegularPolygon"}]}]}';
+
+var stage = Konva.Node.create(json, 'container');
+```
+
 
 ## download
 * [HTML5 Canvas Stage Data URL Tutorial](https://konvajs.org/docs/data_and_serialization/Stage_Data_URL.html)
