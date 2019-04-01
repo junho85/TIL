@@ -229,6 +229,16 @@ var json = '{"attrs":{"width":578,"height":200},"className":"Stage","children":[
 var stage = Konva.Node.create(json, 'container');
 ```
 
+## Performance
+* Konva 는 스피드를 개선할 많은 도구들을 가지고 있다. 가장 중요한 메서드들로
+* 1. 캐싱은 하나의 엘리먼트를 버퍼 캔버스에 넣어둔다. 그리고 그 캔버스로 부터 엘리먼트를 그린다. 그림자가 선을 가지는 텍스트나 도형들 같은 복잡한 노드들에 성능향상을 줄 수 있다.
+  * Demo [HTML5 Canvas Shape Caching Performance Tip](https://konvajs.org/docs/performance/Shape_Caching.html)
+* 2. Layering. 프레임워크는 여러 <canvas> 엘리먼트들을 지원하므로 개체를 자유롭게 지정할 수 있다.
+  * 예를 들어 애플리케이션은 복잡한 배경과 여러 움직이는 모양으로 구성된다. 하나의 레이어는 배경에 사용하고 다른 레이어는 도형에 사용할 수 있다. 도형을 업데이트하는 동안 배경 캔버스는 업데이트 할 필요 없다.
+  * Demo [HTML5 Canvas Layer Management Performance Tip](https://konvajs.org/docs/performance/Layer_Management.html)
+* 모든 성능 향상 팁은 다음 링크를 참고 하도록 한다.
+  * [HTML5 Canvas All Konva performance tips list](https://konvajs.org/docs/performance/All_Performance_Tips.html)
+  
 
 ## download
 * [HTML5 Canvas Stage Data URL Tutorial](https://konvajs.org/docs/data_and_serialization/Stage_Data_URL.html)
