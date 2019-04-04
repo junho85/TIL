@@ -43,7 +43,7 @@ $ cpan MIME::Lite
   MIME::Lite is up to date (3.030).
 ```
 
-### /usr/bin/perl 로 cpan 실행해서 설치 - 실패
+### (실패) /usr/bin/perl 로 cpan 실행해서 설치
 * 이미 설치 되어 있다고 나옴
 ```
 $ /usr/bin/perl /usr/bin/cpan
@@ -66,6 +66,47 @@ MIME::Lite is up to date (3.030).
 $ sudo /usr/bin/perl -MCPAN -e 'install MIME::Lite'
 ```
 
+### 2019.04.04 sudo /usr/bin/cpan 으로 성공
+```bash
+$ sudo /usr/bin/cpan Array::Contains
+Password:
+Reading '/Users/junho85/.cpan/Metadata'
+  Database was generated on Thu, 04 Apr 2019 00:17:03 GMT
+Running install for module 'Array::Contains'
+Running make for C/CA/CAVAC/Array-Contains-2.8.tar.gz
+Checksum for /Users/junho85/.cpan/sources/authors/id/C/CA/CAVAC/Array-Contains-2.8.tar.gz ok
+
+  CPAN.pm: Building C/CA/CAVAC/Array-Contains-2.8.tar.gz
+
+Checking if your kit is complete...
+Looks good
+Generating a Unix-style Makefile
+Writing Makefile for Array::Contains
+Writing MYMETA.yml and MYMETA.json
+cp lib/Array/Contains.pm blib/lib/Array/Contains.pm
+Manifying 1 pod document
+  CAVAC/Array-Contains-2.8.tar.gz
+  /usr/bin/make -- OK
+'YAML' not installed, will not store persistent state
+Running make test
+PERL_DL_NONLAZY=1 "/usr/bin/perl" "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+t/01-use.t ................ ok
+t/02-lookup.t ............. ok
+t/03-invalid_arguments.t .. ok
+All tests successful.
+Files=3, Tests=13,  0 wallclock secs ( 0.03 usr  0.02 sys +  0.27 cusr  0.04 csys =  0.36 CPU)
+Result: PASS
+  CAVAC/Array-Contains-2.8.tar.gz
+  /usr/bin/make test -- OK
+Running make install
+Manifying 1 pod document
+Installing /Library/Perl/5.18/Array/Contains.pm
+Installing /usr/local/share/man/man3/Array::Contains.3pm
+Appending installation info to /Library/Perl/Updates/5.18.2/darwin-thread-multi-2level/perllocal.pod
+  CAVAC/Array-Contains-2.8.tar.gz
+  /usr/bin/make install  -- OK
+```
+
 ### 결론 - 모르겠다
 /usr/bin/perl -MCPAN -e shell 에서 install MIME::Lite 한거랑
 
@@ -75,4 +116,20 @@ $ sudo /usr/bin/perl -MCPAN -e 'install MIME::Lite'
 
 이렇게 한 거랑 어떤 차이가 있었는지 모르겠다. 아무튼 system perl 에 MIME::Lite 모듈은 잘 설치 되었고 잘 동작하고 있다.
 
+apache 환경변수 설정을 바꿔서 내가 사용하고 싶은 perl 을 사용하도록 바꾸는 방법이 좋겠다.
+
 * 블로그: http://junho85.pe.kr/1196
+
+## apache - 시스템 perl 말고 내가 설치한 perl 사용하기
+아직 해 보지는 않았음. 메모만.
+
+참고
+
+https://junho85.pe.kr/1196#comment-4288616084
+
+https://serverfault.com/questions/151328/setting-apache2-path-environment-variable/316047#316047
+
+/etc/apache2/envvars 를 수정해서 PATH 설정을 고쳐준다.
+
+/System/Library/LaunchDaemons/org.apache.httpd.plist
+
