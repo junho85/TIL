@@ -25,7 +25,7 @@ $ openssl s_client -connect gmail-smtp-in.l.google.com:25 -starttls smtp < /dev/
 ```
 
 ```bash
-openssl s_client -connect mx1.naver.com:25 -starttls smtp < /dev/null 2>/dev/null | openssl x509 -text -in /dev/stdin | grep -E "Issuer:|Signature Algorithm|GMT|DNS:"
+$ openssl s_client -connect mx1.naver.com:25 -starttls smtp < /dev/null 2>/dev/null | openssl x509 -text -in /dev/stdin | grep -E "Issuer:|Signature Algorithm|GMT|DNS:"
     Signature Algorithm: sha256WithRSAEncryption
         Issuer: C=GB, ST=Greater Manchester, L=Salford, O=COMODO CA Limited, CN=COMODO RSA Organization Validation Secure Server CA
             Not Before: Apr  6 00:00:00 2018 GMT
@@ -47,6 +47,28 @@ Issuer:   Thawte TLS RSA CA G1
 
 Not valid before: Feb  7 00:00:00 2019 GMT
 Not valid after:  Feb  6 12:00:00 2021 GMT
+```
+
+```bash
+$ sslscan --starttls-smtp gmail-smtp-in.l.google.com.:25
+...
+Subject:  mx.google.com
+Altnames: DNS:mx.google.com, DNS:alt1.aspmx.l.google.com, DNS:alt1.gmail-smtp-in.l.google.com, DNS:alt1.gmr-smtp-in.l.google.com, DNS:alt2.aspmx.l.google.com, DNS:alt2.gmail-smtp-in.l.google.com, DNS:alt2.gmr-smtp-in.l.google.com, DNS:alt3.aspmx.l.google.com, DNS:alt3.gmail-smtp-in.l.google.com, DNS:alt3.gmr-smtp-in.l.google.com, DNS:alt4.aspmx.l.google.com, DNS:alt4.gmail-smtp-in.l.google.com, DNS:alt4.gmr-smtp-in.l.google.com, DNS:aspmx.l.google.com, DNS:aspmx2.googlemail.com, DNS:aspmx3.googlemail.com, DNS:aspmx4.googlemail.com, DNS:aspmx5.googlemail.com, DNS:gmail-smtp-in.l.google.com, DNS:gmr-mx.google.com, DNS:gmr-smtp-in.l.google.com, DNS:mx1.smtp.goog, DNS:mx2.smtp.goog, DNS:mx3.smtp.goog, DNS:mx4.smtp.goog
+Issuer:   Google Internet Authority G3
+
+Not valid before: Mar 26 13:32:24 2019 GMT
+Not valid after:  Jun 18 13:24:00 2019 GMT
+```
+
+```bash
+$ sslscan --starttls-smtp mx1.naver.com:25
+...
+Subject:  mail.naver.com
+Altnames: DNS:mail.naver.com, DNS:*.mail.naver.com, DNS:imap.naver.com, DNS:mail.naver.net, DNS:mx1.naver.com, DNS:mx2.naver.com, DNS:mx3.naver.com, DNS:mx4.naver.com, DNS:pop.naver.com, DNS:smtp.naver.com
+Issuer:   COMODO RSA Organization Validation Secure Server CA
+
+Not valid before: Apr  6 00:00:00 2018 GMT
+Not valid after:  Apr 30 23:59:59 2020 GMT
 ```
 
 ## build
