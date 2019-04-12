@@ -24,5 +24,63 @@
 
 * 2017.09.18 20th birthday - https://www.ecma-international.org/news/ECMA-262%2020th%20birthday.htm
 
+
+## Template literals (Template strings). backtick
+
+일반 텍스트
+```javascript
+`string text`
+
+```
+
+멀티 라인 텍스트
+```javascript
+`string text line 1
+ string text line 2`
+```
+
+템플릿
+```javascript
+string text ${expression} string text`
+```
+expression 이라는 변수의 값이 ${expression} 에 들어간다고 보면 된다.
+
+tag
+```javascript
+tag `string text ${expression} string text`
+```
+
+```javascript
+var person = 'Mike';
+var age = 28;
+
+function myTag(strings, personExp, ageExp) {
+  var str0 = strings[0]; // "That "
+  var str1 = strings[1]; // " is a "
+
+  // There is technically a string after
+  // the final expression (in our example),
+  // but it is empty (""), so disregard.
+  // var str2 = strings[2];
+
+  var ageStr;
+  if (ageExp > 99){
+    ageStr = 'centenarian';
+  } else {
+    ageStr = 'youngster';
+  }
+
+  // We can even return a string built using a template literal
+  return `${str0}${personExp}${str1}${ageStr}`;
+}
+
+var output = myTag`That ${ person } is a ${ age }`;
+
+console.log(output);
+// That Mike is a youngster
+```
+
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+
 ## References
 * [미래의 자바스크립트, ESNext 2018.07.26](http://it.chosun.com/site/data/html_dir/2018/07/25/2018072501553.html)
