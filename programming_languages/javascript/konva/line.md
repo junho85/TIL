@@ -1,4 +1,5 @@
-# Line - Simple Line
+# Line
+## Line - Simple Line
 * Konva.Line() 객체로 선을 그릴 수 있음.
 * points 설정으로 path 를 설정함.
 * 배열로 되어 있고 [x1, y1, x2, y2, x3, y3] 처럼 x,y x,y 들을 연속으로 적어 준다.
@@ -73,4 +74,18 @@ var line = new Konva.Line({
 ```
 
 * [HTML5 canvas Line Tutorial](https://konvajs.org/docs/shapes/Line_-_Simple_Line.html)
-* [](https://konvajs.org/api/Konva.Line.html)
+* [Konva.Line](https://konvajs.org/api/Konva.Line.html)
+
+## Line - Polygon
+* closed 를 true 로 해서 닫힌 (closed) 객체를 만든다.
+
+```javascript
+var poly = new Konva.Line({
+    points: [23, 20, 23, 160, 70, 93, 150, 109, 290, 139, 270, 93],
+    fill: '#00D2FF',
+    stroke: 'black',
+    strokeWidth: 5,
+    closed: true
+});
+```
+* [HTML5 canvas Polygon Tutorial](https://konvajs.org/docs/shapes/Line_-_Polygon.html)
