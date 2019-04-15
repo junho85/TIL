@@ -29,6 +29,21 @@ const [left, right] = "hello-world".split("-");
 console.log(left, right); // hello world
 ```
 
+## split large string in n-size chunks
+* 긴 문자열을 일정 길이로 나누기
+```javascript
+"1234567890".match(/.{1,2}/g);
+// Results in:
+["12", "34", "56", "78", "90"]
+```
+
+```javascript
+"123456789".match(/.{1,2}/g);
+// Results in:
+["12", "34", "56", "78", "9"]
+```
+
+* https://stackoverflow.com/questions/7033639/split-large-string-in-n-size-chunks-in-javascript
 
 ## References
 * https://www.w3schools.com/jsref/jsref_split.asp
