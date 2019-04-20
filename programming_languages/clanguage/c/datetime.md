@@ -64,6 +64,27 @@ int main ()
 }
 ```
 
+## ctime
+* ctime 을 이용해서 시간을 문자열로 만들 수 있다.
+```c
+void test_format() {
+    printf("# test_format\n");
+    time_t current_time = time(NULL);
+    char* c_time_string = ctime(&current_time);
+
+    printf("%s", c_time_string); // e.g. Fri Apr 19 11:07:46 2019
+}
+```
+* 스레드세이프 하지 않다. ctime_r() 을 사용하면 된다.
+
+* 출력결과
+```bash
+# test_format
+Sat Apr 20 21:34:38 2019
+```
+
+* [ctime() — 시간을 문자 스트링으로 변환](https://www.ibm.com/support/knowledgecenter/ko/ssw_ibm_i_73/rtref/ctime.htm)
+
 ## References
 * http://www.cplusplus.com/reference/ctime/time/
 * http://www.cplusplus.com/reference/ctime/localtime/
