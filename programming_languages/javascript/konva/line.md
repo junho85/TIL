@@ -157,4 +157,22 @@ layer.add(redLine);
 layer.add(greenLine);
 layer.add(blueLine);
 ```
+
 * [HTML5 canvas Spline Tutorial](https://konvajs.org/docs/shapes/Line_-_Spline.html)
+
+## Line - Blob
+* blob 는 덩어리, 뭉치, 방울 등의 의미를 가짐
+* 닫혀 있는 도형을 만들어야 되기 때문에 closed 는 true 로 한다.
+
+```javascript
+var blob = new Konva.Line({
+  points: [23, 20, 23, 160, 70, 93, 150, 109, 290, 139, 270, 93],
+  fill: '#00D2FF',
+  stroke: 'black',
+  strokeWidth: 5,
+  closed: true,
+  tension: 0.3
+});
+```
+
+* [HTML5 canvas Blob Tutorial](https://konvajs.org/docs/shapes/Line_-_Blob.html)
