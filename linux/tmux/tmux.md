@@ -6,12 +6,6 @@
 * window - 윈도우를 여러개 띄워두고 서로 바꿔 가며 사용 할 수 있다. 요즘은 탭이라고 부르는게 더 적절해 보인다.
 * pane - 윈도우 안에서 화면을 분할 할 수 있는데 각각의 화면을 pane 이라고 한다.
 
-## installation
-### mac os x
-```bash
-$ brew install tmux
-```
-
 ## tmux config 위치
 ```
 ~/.tmux.conf
