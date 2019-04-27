@@ -78,6 +78,12 @@ ctrl + b, :
 :move-window -t 99
 ```
 
+## 설정 파일 직접 지정하기
+tmux_june.conf 파일을 만들고 -f 옵션을 이용하면 다른 설정파일을 선택할 수 있다. (기본 설정 파일은 ~/.tmux.conf)
+```bash
+$ tmux -f tmux_june.conf
+```
+
 ## 블로깅
 * [tmux 설정, 사용법](http://junho85.pe.kr/320)
 
