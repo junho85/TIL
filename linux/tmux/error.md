@@ -1,0 +1,54 @@
+# tmux error
+
+## 오류: dyld: Library not loaded: /usr/local/opt/icu4c/lib/libicui18n.62.dylib
+* tmux 랑 무슨 관련이 있는지는 모르겠지만, osx 에서 tmux 실행시키면 다음과 같은 오류들이 나타나고 있음.
+
+```bash
+dyld: Library not loaded: /usr/local/opt/icu4c/lib/libicui18n.62.dylib
+  Referenced from: /usr/local/bin/node
+  Reason: image not found
+nvm is not compatible with the npm config "prefix" option: currently set to ""
+Run `npm config delete prefix` or `nvm use --delete-prefix v8.0.0 --silent` to unset it.
+```
+
+참고
+https://github.com/facebook/react-native/issues/18760
+
+### libicui 는 icu4c 를 재 설치 해 봄. 차도 없음.
+```bash
+$ brew uninstall --ignore-dependencies icu4c
+Uninstalling /usr/local/Cellar/icu4c/63.1... (254 files, 68.4MB)
+$ brew install icu4c
+```
+
+해결 안됨.
+
+### node 재설치
+```bash
+$ brew uninstall force node
+$ brew install node
+```
+
+해결됨. 그런데 나머지 에러는 남아 있음.
+```bash
+nvm is not compatible with the npm config "prefix" option: currently set to "/usr/local"
+Run `npm config delete prefix` or `nvm use --delete-prefix v8.0.0 --silent` to unset it.
+```
+
+## 오류: nvm is not compatible with the npm config "prefix" option: currently set to "/usr/local"
+
+https://github.com/nvm-sh/nvm/issues/1652
+
+### 해결안됨. yarn 재설치
+```bash
+brew remove yarn
+brew install yarn
+```
+
+### node 제거
+```bash
+$ brew uninstall --ignore-dependencies node
+(X) $ brew prune
+$ sudo rm -rf /usr/local/{lib/node{,/.npm,_modules},bin,share/man}/{npm*,node*,man1/node*}
+```
+node 지워 버리니 안뜨기는 한데 이게 최선일까.
