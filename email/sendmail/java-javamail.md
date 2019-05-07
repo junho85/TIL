@@ -47,6 +47,27 @@ properties.setProperty("mail.from", from);
 properties.setProperty("mail.smtp.from", from);
 ```
 
+## SMTPAddressFailedException
+* RCPT TO 에서 실패한 내역 확인
+```java
+} else if (ex instanceof SMTPAddressFailedException) {
+    SMTPAddressFailedException smtpAddressFailedException = (SMTPAddressFailedException) ex;
+
+    final int returnCode = smtpAddressFailedException.getReturnCode();
+    String message = smtpAddressFailedException.getMessage();
+
+    System.out.println(smtpAddressFailedException.getAddress().toString());
+    System.out.println(returnCode);
+    System.out.println(message);
+}
+```
+
+```
+junho85_not_exists@daum.net
+550
+550 5.1.1 RUSR 14.47.185.136: No such user: <junho85_not_exists@daum.net>
+```
+
 ## 블로그 포스팅
 * [java - javamail 로 이메일 발송하기 기본 예제](http://junho85.pe.kr/954)
 * [java - javamail 로 이메일 발송하기. mail from 과 header from 을 서로 다르게 세팅하기](http://junho85.pe.kr/955)
