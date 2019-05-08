@@ -14,3 +14,27 @@ const today = new Date('2019-01-22');
 
 console.log(diffDays(startDay, today));
 ```
+
+## yyyymmdd 포멧
+* javascript Date 객체에 날짜를 yyyymmdd 포멧으로 리턴하는 함수 추가 하는 예제
+
+```javascript
+Date.prototype.yyyymmdd = function() {
+  var mm = this.getMonth() + 1;
+  var dd = this.getDate();
+
+  return [this.getFullYear(),
+          (mm>9 ? '' : '0') + mm,
+          (dd>9 ? '' : '0') + dd
+         ].join('');
+};
+
+var date = new Date();
+date.yyyymmdd();
+
+```
+
+output
+```javascript
+"20180703"
+```
