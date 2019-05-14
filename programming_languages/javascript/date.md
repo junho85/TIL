@@ -38,3 +38,30 @@ output
 ```javascript
 "20180703"
 ```
+
+## hhmmss 포멧
+* javascript Date 객체에 날짜를 hhmmss 포멧으로 리턴하는 함수 추가 하는 예제
+
+```javascript
+Date.prototype.hhmmss = function() {
+  var hh = this.getHours();
+  var mm = this.getMinutes();
+  var ss = this.getSeconds();
+
+  return [(hh>9 ? '' : '0') + hh,
+          (mm>9 ? '' : '0') + mm,
+          (ss>9 ? '' : '0') + ss,
+         ].join('');
+};
+
+var date = new Date();
+date.hhmmss();
+```
+
+output
+```javascript
+"165731"
+```
+
+## 정리
+* [javascript - date yyyymmdd, hhmmss, yyyymmddhhmmss, yyyymmddhhmm 2018.07.11](https://junho85.pe.kr/999)
