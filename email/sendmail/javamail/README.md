@@ -1,4 +1,9 @@
-# java - javamail 로 이메일 보내기. SMTP
+# java - javamail
+
+* https://github.com/javaee/javamail/releases
+* https://javaee.github.io/javamail/
+
+## 메일 보내기 기본
 * property 를 만들고 각종 값을 세팅한다. smtp host 등을 지정할 수 있다.
 * 이 property 설정으로 session 을 만든다.
 * session 을 이용해서 MimeMessage 를 생성한다.
@@ -46,6 +51,29 @@ properties.setProperty("mail.from", from);
 ```java
 properties.setProperty("mail.smtp.from", from);
 ```
+
+## 메일발송 성공 상태값과 메시지
+메일 발송시
+```java
+Transport.send(message);
+```
+대신 아래 처럼 smtpTransport 를 꺼내서 이걸 이용해서 발송 하면
+```java
+SMTPTransport smtpTransport = (SMTPTransport) session.getTransport("smtp");
+
+smtpTransport.connect(host, "", "");
+smtpTransport.sendMessage(message, message.getAllRecipients());
+
+System.out.println("getLastReturnCode=" + smtpTransport.getLastReturnCode());
+System.out.println("getLastServerResponse=" + smtpTransport.getLastServerResponse());
+```
+
+아래 처럼 결과 코드와 메시지를 구할 수 있다.
+```
+getLastReturnCode=250
+getLastServerResponse=250 2.0.0 n4GBK7Sr11395940305 Message accepted for delivery
+```
+
 
 ## 메일발송 실패시 Exception 정리
 * MessagingException 아래에 SendFailedException 을 부모로 하는 자식 exception 들로 구성된다.
