@@ -54,11 +54,46 @@ String[] array = {"2", "3", "4"};
 Collections.addAll(strings, array);
 ```
 
-## stream
+### stream
 * java 8 의 stream 이용방법
 ```java
 String[] array = {"1", "2", "3", "4"};
 List<String> strings = Arrays.stream(array).collect(Collectors.toList());
+```
+
+## collection to array
+```java
+    private Collection<String> getTestCollection() {
+        Collection<String> stringCollection = new ArrayList();
+        stringCollection.add("1");
+        stringCollection.add("2");
+        stringCollection.add("3");
+
+        return stringCollection;
+    }
+```
+
+기본적인 방법
+```java
+String[] stringArray = stringCollection.toArray(new String[stringCollection.size()]);
+```
+
+이렇게 하면 약간은 비효율적이라고 하나 간편함
+```java
+String[] stringArray = stringCollection.toArray(new String[0]);
+```
+
+stream 이용 방법
+```java
+String[] stringArray = stringCollection.stream()
+                .map(x -> new String(x))
+                .toArray(size -> new String[size]);
+```
+
+stream 간소화 버전
+```java
+String[] stringArray = stringCollection.stream()
+        .toArray(String[]::new);
 ```
 
 ## References
