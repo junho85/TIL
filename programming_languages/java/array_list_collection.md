@@ -96,5 +96,21 @@ String[] stringArray = stringCollection.stream()
         .toArray(String[]::new);
 ```
 
+## collection to list
+* collectoin 을 List 로 바꾸려고 한다면 `new ArrayList<>(collection);` 과 같이 해 주면 된다.
+
+```java
+        Collection<String> collection = new ArrayList<>();
+        collection.add("1");
+        collection.add("2");
+        collection.add("3");
+
+        List<String> list = new ArrayList<>(collection);
+
+        for (String string : list) {
+            System.out.println(string);
+        }
+```
+
 ## References
 * [HOW TO CONVERT ARRAY TO LIST IN JAVA 2017.02.27](https://www.codingeek.com/java/how-to-convert-array-to-list-in-java/)
