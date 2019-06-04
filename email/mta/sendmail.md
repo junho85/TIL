@@ -1,6 +1,20 @@
 # sendmail mta
 
 ## configurations
+
+### Timeouts
+https://sendmail.org/~ca/email/doc8.12/op-sh-4.html 를 참고 해서 정리중이다.
+
+10m 은 10분. 2h30m 는 2시간 30분.
+```
+s	seconds
+m	minutes
+h	hours
+d	days
+w	weeks
+```
+
+
 ### MaxHeadersLength
 * Maximum length of the sum of all headers.
 * default: 32768 (bytes)
