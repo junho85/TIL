@@ -23,4 +23,6 @@ ProxyPassReverse /myapp http://localhost:8080
 </Location>
 ```
 
-* 참고: https://stackoverflow.com/questions/25486364/apache-webserver-and-apache-tomcat-on-port-80-configuration
+### References
+* https://stackoverflow.com/questions/25486364/apache-webserver-and-apache-tomcat-on-port-80-configuration
+* https://wiki.apache.org/httpd/TomcatReverseProxy
