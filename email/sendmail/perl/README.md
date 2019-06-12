@@ -29,5 +29,46 @@ $smtp->dataend();
 $smtp->quit;
 ```
 
+## MIME::Lite
+MIME::Lite 를 이용해서 MIME 메시지 만들기
+
+```perl
+use strict;
+use warnings;
+
+use MIME::Lite;
+
+my $from = '"테스트" <wwl1401test@daum.net>';
+my $to = 'wwl1800test@daum.net';
+my $subject = "테스트 메일 입니다.";
+my $contents = "테스트 메일 내용 입니다.<br>어쩌고 저쩌고";
+
+my $msg = mime_msg($from, $to, $subject, $contents);
+
+my $raw_msg = $msg->as_string;
+
+print $raw_msg;
+
+sub mime_msg {
+    my $from = shift;
+    my $to = shift;
+    my $subject = shift;
+    my $contents = shift;
+
+    my $msg = MIME::Lite->new(
+        From    => $from,
+        To      => $to,
+        Subject => $subject,
+        Type    => 'multipart/mixed'
+    );
+
+    $msg->attach(
+        Type     => 'text/html',
+        Data     => $contents
+    );
+    return $msg;
+}
+```
+
 ## 블로그
 * [perl - send email](http://junho85.pe.kr/879)
