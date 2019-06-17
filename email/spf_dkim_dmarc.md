@@ -81,6 +81,22 @@ dreamwiz 적용 안됨. (2019.06.10 기준)
 $ dig txt _dmarc.dreamwiz.com +short
 ```
 
+## SPF 만 되어 있고 DKIM 은 아직 적용 안했는데 DMARC 설정 해도 괜찮을까?
+https://dmarc.org/overview/ 의 5-Easy Steps 1번에 DKIM 과 SPF 를 적용하라고 나와 있어서 DKIM 을 꼭 적용 해야 되는 것 처럼 보임.
+```
+1. Deploy DKIM & SPF. You have to cover the basics, first.
+2. Ensure that your mailers are correctly aligning the appropriate identifiers.
+3. Publish a DMARC record with the “none” flag set for the policies, which requests data reports.
+4. Analyze the data and modify your mail streams as appropriate.
+5. Modify your DMARC policy flags from “none” to “quarantine” to “reject” as you gain experience.
+```
+
+https://dmarc.org/2017/03/can-i-use-dmarc-if-i-have-only-deployed-spf/
+를 보면 리포팅 기능만 사용할거라면 DKIM 없이 SPF 만 있는 상태에서 해도 된다고 하고 있다.
+```
+A question people asked repeatedly in 2016 was whether or not their organization could deploy DMARC if they only used SPF at present. They knew the recommendation is to use both DKIM and SPF, and were concerned that their organizations couldn’t benefit from DMARC without DKIM. The short answer is that you can use DMARC with only SPF – and absolutely should, at least as far as enabling reporting – but there are some very important questions you have to answer before moving past that to a DMARC policy that would block unauthenticated messages. This article will try to explain those questions and how you can get some answers.
+```
+
 ## References
 * https://dmarc.org/overview/
 
