@@ -8,6 +8,18 @@
 * Metaspace 로 저장하도록 바꼈다.
 * Metaspace 는 native 메모리 영역을 사용한다.
 
+### PermGen?
+* Permanent Generation
+* 힙 메모리 영역중 하나로 자바 애플리케이션을 실행할 때 클래스의 메타데이터를 저장하는 영역
+* Permanent Generation 영역이 꽉 차면 `OutOfMemoryError: PermGen Space error` 가 발생한다.
+* Java 7 부터 PermGen 을 제거 하려고 준비해왔음
+
+### PermGen 의 삭제
+* Java8 에서는 PermGen 이 Metaspace 로 대체 되었음.
+* PermGen 설정인 -XX:PermSize=, -XX:MaxPermSize= 이 제거 되었다.
+* 클래스 메타데이터가 Metaspace 에 저장되고 native 메모리를 이용하게 된다.
+* `OutOfMemoryError: PermGen Space error`는 발생하지 않게 되었다.
+
 
 ### 참고
 * [Java8 메모리 설정과 GeoServer 2016.07.15](https://tonyne.jeju.onl/2016/07/15/java8-memory-setting-geoserver/)
