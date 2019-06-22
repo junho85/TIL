@@ -20,6 +20,18 @@
 * 클래스 메타데이터가 Metaspace 에 저장되고 native 메모리를 이용하게 된다.
 * `OutOfMemoryError: PermGen Space error`는 발생하지 않게 되었다.
 
+### Metaspace 로 대체
+* -XX:MetaspaceSize=, -XX:MaxMetaspaceSize= 를 사용해야 한다.
+* Metaspace 기본 값을 변경하고 최대값을 제한한다.
+* native 메모리가 다 찼다면 `java.lang.OutOfMemoryError: Metadata space` 가 발생하게 된다.
+
+### 장점
+* PermGen 영역이 없어져서 heap 영역에서 사용할 수 있는 메모리가 늘어남
+* PermGen 영역을 스캔하기 위해 소모되었던 시간이 감소되어 GC 성능이 향상됨
+
+### 단점
+* Native Memory 영역의 누수는 분석이 불가능. dump 를 생성해도 native 영역 정보는 생성 되지 않음 (core 파일 생성해서 gdb 로 분석해야 되나?)
+* MaxMetaspaceSize 로 제한을 안하면 무제한이 기본값인데 이렇게 되면 OS 나 다른 어플에서 사용하는 메모리 영역까지 부족해져서 다 같이 죽는 사태 발생?
 
 ### 참고
 * [Java8 메모리 설정과 GeoServer 2016.07.15](https://tonyne.jeju.onl/2016/07/15/java8-memory-setting-geoserver/)
