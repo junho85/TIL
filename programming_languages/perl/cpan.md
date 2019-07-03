@@ -1,5 +1,8 @@
 # cpan
 * cpan 은 perl modules 을 설치 할 때 사용하는 유틸이다.
+* cpanminus?
+
+
 
 ## OSX - apache 웹서버에서 perl cgi 호출시 특정 모듈을 못찾는 경우
 * 2018.01.15 삽질 했던 것 정리. 문제가 해결은 된 상태라 해결 된 것 까지 정리. 정확한 이유 확인은 못함.
@@ -133,3 +136,21 @@ https://serverfault.com/questions/151328/setting-apache2-path-environment-variab
 
 /System/Library/LaunchDaemons/org.apache.httpd.plist
 
+## lazy symbol binding failed: Symbol not found: _Perl_xs_apiversion_bootcheck
+* cpan 으로 HBase 설치 하려 하는데 아래와 같은 오류가 발생.
+* flat namespace?
+```bash
+/Users/junho85/perl5/perlbrew/perls/perl-5.26.1/bin/cpan HBase
+dyld: lazy symbol binding failed: Symbol not found: _Perl_xs_apiversion_bootcheck
+  Referenced from: /Users/junho85/perl5/lib/perl5/darwin-2level/auto/List/Util/Util.bundle
+  Expected in: flat namespace
+
+dyld: Symbol not found: _Perl_xs_apiversion_bootcheck
+  Referenced from: /Users/junho85/perl5/lib/perl5/darwin-2level/auto/List/Util/Util.bundle
+  Expected in: flat namespace
+```
+
+이런들 저런들 sudo /usr/bin/cpan 으로 하면 됨. 이유가 뭘까?
+```bash
+$ sudo /usr/bin/cpan HBase::JSONRest
+```
