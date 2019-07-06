@@ -6,9 +6,11 @@
 
 ## 2. Robot Junkyard Stage - Morph Moth
 * 바디파츠: 톱날이 있어야 됨. 톱날로 팔 수 있는 위치가 일반 땅 모양이라 찾기 어려움. 방어력 향상 및 기가크래쉬를 쓸 수 있음.
-* 하트: 
-Silk Shot
+* 하트: 크리스탈로 얼리고 밟고 올라가면 됨
+* 보스:  
+* 얻는무기: Silk Shot
 
+https://blog.naver.com/pianndi/10024717031
 
 ## 3 Volcanic Zone Stage - Flame Stag
 
@@ -17,7 +19,7 @@ Silk Shot
 
 Ser 뭐시기 위쪽으로 가면 만나는데 어려움.
 
-보스
+* 보스
 
 구석에서 기 모으다가 잘 쏘면 크게 어렵지는 않음
 약점: ?
