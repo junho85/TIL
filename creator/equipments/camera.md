@@ -19,3 +19,13 @@ https://en.wikipedia.org/wiki/Sony_Cyber-shot_DSC-RX100
 
 ## RX0 M2
 https://www.sony.co.kr/electronics/cyber-shot-compact-cameras/dsc-rx0m2
+
+
+* [늦깎이 브이로거의 카메라, RX0 M2 2019.03.26](http://the-edit.co.kr/20450)
+
+## X3000
+
+리보트뷰, 라이브뷰 RM-LVR3
+
+슈팅그립 VCT-STG1
+
