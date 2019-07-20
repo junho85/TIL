@@ -1,6 +1,7 @@
 # Apache Commons Configuration
 
-## Maven
+## commons configuration2
+### Maven
 https://mvnrepository.com/artifact/org.apache.commons/commons-configuration2/2.5
 
 2.5
@@ -11,14 +12,56 @@ https://mvnrepository.com/artifact/org.apache.commons/commons-configuration2/2.5
     <version>2.5</version>
 </dependency>
 ```
+https://mvnrepository.com/artifact/org.apache.commons/commons-configuration2
+### Quick start guide
+* [Quick start guide](https://commons.apache.org/proper/commons-configuration/userguide/quick_start.html)
 
-## Reloading
+
+
+### Reloading
 * [Automatic Reloading of Configuration Sources](https://commons.apache.org/proper/commons-configuration/userguide/howto_reloading.html)
 
+Automatic Reloading of Configuration Sources
 
+Components for Reloading
+
+ReloadingDetector 인터페이
 
 https://commons.apache.org/proper/commons-configuration/apidocs/org/apache/commons/configuration2/reloading/package-summary.html
 
+
+### Events
+
+#### configuration request event
+builder.getConfiguration() 이 호출 될 대 발생하는 이벤트
+```java
+// configuration request event
+builder.addEventListener(ConfigurationBuilderEvent.CONFIGURATION_REQUEST, new EventListener<Event>() {
+    @Override
+    public void onEvent(Event event) {
+        builder.getReloadingController().checkForReloading(null));
+    }
+});
+```
+
+checkForReloading 에서 실제 리로드 할 경우 true 를 리턴한다.
+```java
+if (builder.getReloadingController().checkForReloading(null)) {
+    // 실제 리로드가 되었을 때 실행한 구문
+}
+
+```
+
+checkForReloading 에서 실제로 리로드가 필요 할 때 ReloadingEvent 를 호출하게 된다.
+```java
+// reloading event
+builder.getReloadingController().addEventListener(ReloadingEvent.ANY, new EventListener<ReloadingEvent>() {
+    @Override
+    public void onEvent(ReloadingEvent reloadingEvent) {
+        System.out.println("====== reload...");
+    }
+});
+```
 
 
 ## References
