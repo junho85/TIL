@@ -1,6 +1,12 @@
 # Camcorder
 
+
+## Sony HDR-PJ200
+* https://www.cnet.com/products/sony-handycam-hdr-pj200/
+* 출시: 2012?
+
 ## Sony HDR-PJ340
+* 출시: 2014?
 * 2010.01 처음으로 캠코더를 구입하였다.
   * http://junho85.pe.kr/1191
   * 중고로 8만원.
