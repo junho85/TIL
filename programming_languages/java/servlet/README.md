@@ -1,12 +1,5 @@
 # Servlet
 
-## ServletContextListener
-
-### @WebListener
-servlet api 3 에서는 @WebListener 어노테이션을 사용할 수 있다. web.xml 에 등록 하지 않고 사용할 수 있다.
-https://nine01223.tistory.com/309
-
-
 ## Servlet Context, Config
 * [web.xml에 등록하지 않고 listener 구현하기(WebListener 어노테이션 사용) 2016.02.16](https://stackoverflow.com/questions/4223564/servletconfig-vs-servletcontext)
 
