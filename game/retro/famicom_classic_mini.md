@@ -35,4 +35,4 @@
 
 ## References
 * [ニンテンドークラシックミニ ファミリーコンピュータ 紹介映像](https://www.youtube.com/watch?v=3GQ02nXQQiM)
-* [](http://blog.naver.com/deadlyrave/220825489375)
+* [[콘솔] 미니 패미컴 VS NES 클래식 비교 2016.10.01](http://blog.naver.com/deadlyrave/220825489375)
