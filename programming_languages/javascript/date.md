@@ -65,3 +65,7 @@ output
 
 ## 정리
 * [javascript - date yyyymmdd, hhmmss, yyyymmddhhmmss, yyyymmddhhmm 2018.07.11](https://junho85.pe.kr/999)
+
+## References
+* [자바스크립트에서 타임존 다루기 (2) 2017.10.20](https://meetup.toast.com/posts/130)
+* https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/parse
