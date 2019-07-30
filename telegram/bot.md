@@ -48,6 +48,11 @@ For a description of the Bot API, see this page: https://core.telegram.org/bots/
 
 To be continued...
 
+## python
+```bash
+$ pip install python-telegram-bot
+```
+
 ## References
 
 * [나만의 웹 크롤러 만들기(5): 웹페이지 업데이트를 알려주는 Telegram 봇](https://beomi.github.io/2017/04/20/HowToMakeWebCrawler-Notice-with-Telegram/)
