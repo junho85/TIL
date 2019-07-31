@@ -17,7 +17,7 @@ Optional<String> hello = Optional.empty();
 ```java
 Optional<String> hello = Optional.of(value);
 ```
-null 이 넘어올 경우 NPE 발생하기 때문에 주의.
+null 이 넘어올 경우 NPE (NullPointerException) 발생하기 때문에 주의.
 
 ```java
 Optional<String> hello = Optional.ofNullable(value);
@@ -42,9 +42,58 @@ null 이 넘어 오면 NPE 대신 Optional.empty()
 
 ...
 
+## null 이 나올수도 있는 변수의 유효성 검사하기
+예를 들어 다음과 같은 코드가 있다.
+```java
+String isAdmin = System.getProperty("program.mode.admin");
+```
+환경변수 program.mode.admin 이 선언되어 있으면 해당 값을 가져 오는 코드이다.
+
+program.mode.admin 에는 true/false 두 가지 값이 입력 될 수 있다고 가정한다.
+
+그렇다면 아래처럼 관리자 모드와 아닌 모드로 나눌 수 있다.
+```java
+String isAdmin = System.getProperty("program.mode.admin");
+if (isAdmin.equals("true")) {
+  // 관리자
+} else {
+  // 관리자 아님
+}
+```
+
+그런데 환경변수의 값을 선언하지 않은 환경에서라면 어떻게 될까?
+
+isAdmin.equals 하는 순가 NullPointerException 이 발생하게 된다.
+
+선언하지 않은 경우 false 가 되길 원한다. 그렇다면 다음과 같이 코드를 짜게 될 것이다.
+
+```java
+String isAdmin = System.getProperty("program.mode.admin");
+if (isAdmin != null && isAdmin.equals("true")) {
+  // 관리자
+} else {
+  // 관리자 아님
+}
+```
+
+null 검사를 해야 된다는게 좀 내키지 않는다. 이럴때는 Optional 을 사용해 볼 수 있다.
+
+```java
+String isAdmin = System.getProperty("program.mode.admin");
+if (Optional.ofNullable(isAdmin).filter(s -> s.equals("true")).isPresent()) {
+  // 관리자
+} else {
+  // 관리자 아님
+}
+```
+
+코드가 좀 길어 지긴 했지만 null 에 대한 검사를 코드로 직접 작성하지 않고 한줄에 해결 할 수 있다.
+
 
 ## References
 * 잘 정리된 3부작 포스팅
   * [자바8 Optional 1부: 빠져나올 수 없는 null 처리의 늪 2017.01.01](http://www.daleseo.com/java8-optional-before/)
   * [자바8 Optional 2부: null을 대하는 새로운 방법 2017.01.08](http://www.daleseo.com/java8-optional-after)
   * [자바8 Optional 3부: Optional을 Optional답게 2017.01.15](http://www.daleseo.com/java8-optional-effective/)
+* [자바8 Optional이란 2018.10.14](https://advenoh.tistory.com/15)
+* [3. Optional Class 2017.03.10](https://asfirstalways.tistory.com/354)
