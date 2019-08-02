@@ -2,7 +2,7 @@
 * https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 
 ## 문제
-* 중복된거 제거 하고 갯수 리턴
+* 중복된거 제거 하고 개수 리턴
 
 ## 풀이
 * unique 이용하면 중복 제외 하고 앞으로 모아주고 나머지는 뒤에 배치 시켜 준다.
