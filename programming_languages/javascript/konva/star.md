@@ -1,6 +1,6 @@
 # Star
 * 별을 만들려면 Konva.Star() 로 만든다.
-* numPoints 숫자에 따라 별의 뾰족한 갯수가 달라진다.
+* numPoints 숫자에 따라 별의 뾰족한 개수가 달라진다.
 ```javascript
 var star = new Konva.Star({
   x: stage.width() / 2,
