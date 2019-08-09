@@ -2,7 +2,39 @@
 * cpan 은 perl modules 을 설치 할 때 사용하는 유틸이다.
 * cpanminus?
 
+## 모듈 설치
+* Mojolicious 라는 모듈을 설치 하려면 다음과 같이 하면 된다.
+```bash
+$ cpan Mojolicious
+```
 
+## force install
+```
+cpan -fi Unicode::Normalize
+```
+
+## 잘 설치 되지 않는 모듈들
+### DBD::mysql
+https://metacpan.org/pod/DBD::mysql::INSTALL
+
+```
+...
+Can't exec "mysql_config": No such file or directory at Makefile.PL line 89.
+
+Cannot find the file 'mysql_config'! Your execution PATH doesn't seem
+not contain the path to mysql_config. Resorting to guessed values!
+...
+```
+
+osx 에서는 mysql 를 설치해 주어야 된다. (mysql-connector-c 를 설치한 경우 linking 에서 오류 남. mysql 설치 하려면 충돌나서 mysql-connector-c 먼저 지워줘야되니 번거롭다.)
+```bash
+brew install mysql
+```
+
+### 테스트 스
+```
+perl -MCPAN -e "CPAN::Shell->notest('install', 'DBD::mysql')"
+```
 
 ## OSX - apache 웹서버에서 perl cgi 호출시 특정 모듈을 못찾는 경우
 * 2018.01.15 삽질 했던 것 정리. 문제가 해결은 된 상태라 해결 된 것 까지 정리. 정확한 이유 확인은 못함.
@@ -123,18 +155,6 @@ apache 환경변수 설정을 바꿔서 내가 사용하고 싶은 perl 을 사�
 
 * 블로그: http://junho85.pe.kr/1196
 
-## apache - 시스템 perl 말고 내가 설치한 perl 사용하기
-아직 해 보지는 않았음. 메모만.
-
-참고
-
-https://junho85.pe.kr/1196#comment-4288616084
-
-https://serverfault.com/questions/151328/setting-apache2-path-environment-variable/316047#316047
-
-/etc/apache2/envvars 를 수정해서 PATH 설정을 고쳐준다.
-
-/System/Library/LaunchDaemons/org.apache.httpd.plist
 
 ## lazy symbol binding failed: Symbol not found: _Perl_xs_apiversion_bootcheck
 * cpan 으로 HBase 설치 하려 하는데 아래와 같은 오류가 발생.
@@ -154,3 +174,8 @@ dyld: Symbol not found: _Perl_xs_apiversion_bootcheck
 ```bash
 $ sudo /usr/bin/cpan HBase::JSONRest
 ```
+
+### 2019.08.07
+use DBI 에서 자꾸 발생
+
+5.26.1 에서 자꾸 발생해서 5.18.2 로 바꾸고 DBI 다시 설치 해서 잘 됨. 5.26.1 에 문제가 있나?
