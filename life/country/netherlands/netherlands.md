@@ -1,4 +1,13 @@
 # 네덜란드 Netherlands
+## 국가
+* 수도: 암스테르담 Amsterdam
+* Dialing code: +31
+* 언어: Dutch
+* wiki: https://en.wikipedia.org/wiki/Netherlands
+* 면적: (대한민국 100,210 km²)
+
+## 날씨
+* 독일보다는 낫다고 함 (지인)
 
 ## 생활
 * [독일, 네덜란드 이민 5년차가 말하는 현실 그리고 장점, 단점 2019.07.09](https://youtu.be/YVPdxJFDk44)
@@ -17,7 +26,7 @@
     * 독일 - 독일어를 할 줄 알아야 됨. 벨를린, 퀠른, 뮌휀은 영어가 좀 통하는 편. 그외에는 독일어
     * 네덜란드 - 거의 모든 사람이 영어를 잘함. 영어만으로 생활이 가능.
   * 이방인으로서의 삶
-    * 일(의료, 법)이 생길까봐 걱정 
+    * 일(의료, 법)이 생길까봐 걱정
     * 시선. 손가락질.
   * 의료시스템
     * General P (GP). GP 찾는거도 난관. 종합병원은 GP 통해서 소견서 받아서 가야 됨. 차를 마시세요. 드럭스토어. 자연치유, 과잉치료 막고, 최소한의 의료. 한국보다 느리고 불편.
@@ -39,6 +48,12 @@
 
 
 * [면적이 작은 네덜란드에 인구가 밀집되어 사는 이유는 2015.04.03](https://www.youtube.com/watch?v=0eouIfn0oDk)
+
+
+## 의료
+* [네덜란드 건강보험 이야기 - 병원비가 1억 나와도 1년에 50만원만 내면 된다고?! / 자연치유 / 복지 / 의료시스템 / 눈물 2019.08.03](https://youtu.be/-9do5M11cVA)
+* 보험
+* 하우스닥터 (GP)
 
 ## 학비
 
@@ -64,3 +79,5 @@ Takeaway.com Central Core B.V. 64473716
 Takeaway.com European Operations B.V. 69769753
 Takeaway.com Group B.V. 64441725
 ```
+
+* [글로벌 기업들, 브렉시트 피난처로 네덜란드 급부상...왜? 2019.03.23](http://www.choicenews.co.kr/news/articleView.html?idxno=49115)
