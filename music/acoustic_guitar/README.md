@@ -20,7 +20,7 @@ Am7 D7 G
 ```
 
 ## 케이시 (Kassy) - 그때가 좋았어 (The day was beautiful) | 가사
-* https://www.youtube.com/watch?v=l3arzUTr848
+* [케이시 (Kassy) - 그때가 좋았어 (The day was beautiful) | 가사](https://www.youtube.com/watch?v=l3arzUTr848)
 * [[AsomeGuitar] The day was beautiful by Kassy Guitar Tutorial ★ ★ ☆ ☆ ☆](https://www.youtube.com/watch?v=N4QG7q8yD_8)
 
 * [케이시(kassy) - 그때가 좋았어 기타 타브 악보](http://blog.naver.com/laythefunk/221485747618)
