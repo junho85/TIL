@@ -37,3 +37,30 @@ plugins {
     id 'idea'
 }
 ```
+
+## sonarqube
+https://plugins.gradle.org/plugin/org.sonarqube
+
+```
+plugins {
+  id "org.sonarqube" version "2.7.1"
+}
+```
+
+
+## jacoco
+https://docs.gradle.org/current/userguide/jacoco_plugin.html
+
+```
+plugins {
+    id 'jacoco'
+}
+```
+
+## eclipse
+https://docs.gradle.org/current/userguide/eclipse_plugin.html
+```
+plugins {
+    id 'eclipse'
+}
+```
