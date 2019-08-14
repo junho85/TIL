@@ -1,6 +1,6 @@
 # 라이브러리 library
 
-## 정적라이브러리
+## 정적라이브러리 Static Library
 * 목적파일(object file)의 모음
 * .a 확장자
 * ar(archiver) 프로그램으로 만든다
@@ -12,8 +12,14 @@ $ ar rcs my_library.a file1.o file2.o
 ```
 my_library.a 에 file1.o, file2.o 를 추가한다. my_library.a 가 없으면 만든다.
 
-## 동적라이브러리
+## 동적라이브러리 Shared Library (공유라이브러리 라고도 함)
+* 프로그램이 시작할 때 적재되는 라이브러리
+* 접두사 lib (저 수준의 C라이브러리는 lib 로 시작하지 않음.)
+* 확장자 .so
+* RedHat 계절은 라이브러리 탐색시에 /usr/local/lib 를 기본으로 포함하지 않는다
+
 
 
 ## References
 * [2. 정적 라이브러리](https://wiki.kldp.org/HOWTO/html/Program-Library-HOWTO/static-libraries.html)
+* [2. Static Libraries](http://tldp.org/HOWTO/Program-Library-HOWTO/static-libraries.html)
