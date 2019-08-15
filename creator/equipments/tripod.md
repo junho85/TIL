@@ -13,9 +13,6 @@
 ## QZSD-Q999H
 QZSD-999H 후속
 
-
-
-
 리뷰
 
 * [QZSD Q999H 카메라 삼각대 2019.05.30](https://sallykim.tistory.com/2879)
