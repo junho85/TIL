@@ -1,6 +1,5 @@
-# string
-## trim
-### 직접 구현
+# trim
+## 직접 구현
 ```
 sub trim {
   my $s = shift;
@@ -21,12 +20,12 @@ sub rtrim {
 };
 ```
 
-### String::Util
+## String::Util
 ```
 use String::Util qw(trim);
 ```
 
-### Text::Trim
+## Text::Trim
 ```
 use Text::Trim qw(trim);
 ```
