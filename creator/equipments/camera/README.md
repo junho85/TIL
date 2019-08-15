@@ -25,13 +25,6 @@ http://shopping.daum.net/siso/p/product/A2976808490/&q:A6500&cateid:100108105101
 https://en.wikipedia.org/wiki/Sony_%CE%B16500
 
 
-## A6400
-
-### A6400M
-소니 알파 A6400M 미러리스카메라 블랙 SEL18135 망원 줌 렌즈킷 + ACC-TRW 배터리 충전기 킷
-https://www.coupang.com/vp/products/192070641
-1,923,000원 2019.07.09 기준
-
 ## RX100
 https://en.wikipedia.org/wiki/Sony_Cyber-shot_DSC-RX100
 
