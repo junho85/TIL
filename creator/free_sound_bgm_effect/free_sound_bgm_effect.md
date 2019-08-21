@@ -1,6 +1,8 @@
 # 무료 음악
 * [YouTube Creator Studio Audio Library](https://www.youtube.com/audiolibrary/music)
-* 효과음도 있음
+  * 효과음도 있음
+* [freesound](https://freesound.org/)
+  * 원작자 표시가 필요한 경우가 많음
 
 ## Kids
 * The Green Orbs 음악들이 좋음
