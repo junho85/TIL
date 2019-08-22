@@ -1,17 +1,21 @@
 # jQuery
+* https://jquery.com/
 
-## $(document).ready()
-* [$(document).ready()](https://learn.jquery.com/using-jquery-core/document-ready/)
-```javascript
-// A $( document ).ready() block.
-$( document ).ready(function() {
-    console.log( "ready!" );
+## CDN
+* google - https://developers.google.com/speed/libraries/
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+```
+
+## datepicker
+
+## click event
+
+```
+$(document).on("click", "#some_button", function () {
+    // ...
 });
 ```
 
-```javascript
-// Shorthand for $( document ).ready()
-$(function() {
-    console.log( "ready!" );
-});
-```
+## enter key event
+
