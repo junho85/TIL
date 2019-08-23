@@ -1,4 +1,5 @@
-# shell 프롬프트에 git branch 표시하기
+# git - shell prompt
+## shell 프롬프트에 git branch 표시하기
 
 * https://github.com/git/git/tree/master/contrib/completion 에서 관련 파일을 받을 수 있다.
 
@@ -24,3 +25,8 @@ junho85@junho85:~/git_branch_test$ (my-branch) git checkout master
 Switched to branch 'master'
 junho85@junho85:~/git_branch_test$ (master)
 ```
+
+## completion 자동완성
+* https://github.com/git/git/tree/master/contrib/completion 에서 자신이 사용하는 shell 에 맞는 파일을 받는다.
+* bash 면 git-completion.bash
+* zsh 면 git-completion.zsh
