@@ -42,4 +42,5 @@ function solution(n, arr1, arr2) {
 
 
 ## 참고
-* http://junho85.pe.kr/1080
+* [PS - 비밀지도 - 2018 KAKAO BLIND RECRUITMENT 1차 1번 2018,09.13](http://junho85.pe.kr/1080)
+* [PS - 비밀지도 javascript 2018.10.17](https://junho85.pe.kr/1122)
