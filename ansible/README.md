@@ -1,4 +1,9 @@
 # ansible
+
+* https://www.ansible.com/
+* https://github.com/ansible/ansible
+
+
 * ansible 에 대해
   * 기본 설명
   * 멱등성
