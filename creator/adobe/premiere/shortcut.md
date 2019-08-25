@@ -48,3 +48,7 @@ bgmstore.net
 자주쓰는건 프로젝트 만들어 두고
 e.g. basic_frame
 폴더를 만들고. e.g. sound effect 여기 자주 쓰는 음악들 넣어 둠
+
+
+## References
+* [프리미어 프로의 컷 편집 속도를 높이는 9가지 단축키 모음 2018.09.07](https://icon.town/icon/29702)
