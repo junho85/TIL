@@ -65,6 +65,9 @@
 * 비됴클래스: https://www.youtube.com/user/wkwkwk1205
 * 조블리: https://www.youtube.com/channel/UCM1CbBpxRg_-FOutzAXjuLg
 
+
+* [떵컴도 4K 쾌적하게 편집할 수 있는 Proxy 편집 - 프리미어 프로 프록시 2018.05.26](https://www.youtube.com/watch?v=ZmdFM5tB-XA)
+
 ## References
 * Premiere Pro Tip | How To Resize An Image To Fit The Frame https://www.youtube.com/watch?v=IHmzGRKIuLM
 * https://helpx.adobe.com/premiere-pro/using/default-keyboard-shortcuts.html
