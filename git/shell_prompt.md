@@ -30,3 +30,6 @@ junho85@junho85:~/git_branch_test$ (master)
 * https://github.com/git/git/tree/master/contrib/completion 에서 자신이 사용하는 shell 에 맞는 파일을 받는다.
 * bash 면 git-completion.bash
 * zsh 면 git-completion.zsh
+
+## 정리
+* [shell 프롬프트에 git branch 표시하기. git 커맨드 자동완성](https://junho85.pe.kr/669)
