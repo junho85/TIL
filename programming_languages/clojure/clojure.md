@@ -207,4 +207,9 @@ user=> (if (= 1 1) "true" "false")
 
 ## references
 
-https://eunmin.gitbooks.io/clojure-for-beginners/content/1_hello_world.html
+* https://eunmin.gitbooks.io/clojure-for-beginners/content/1_hello_world.html
+* [Why Clojure? 2019.08.22](https://blog.cleancoder.com/uncle-bob/2019/08/22/WhyClojure.html)
+* [Why Clojure? 2010.08.18](http://thecleancoder.blogspot.com/2010/08/why-clojure.html)
+* [The Last Programming Language 2011.04](https://cleancoders.com/video-details/clean-code-episode-0)
+* [왜 클로져인가?
+](http://clojure.or.kr/wiki/doku.php?id=lecture:clojure:why_clojure)
