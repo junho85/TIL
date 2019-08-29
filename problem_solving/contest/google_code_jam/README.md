@@ -1,6 +1,7 @@
 # Google Code Jam
 * https://codingcompetitions.withgoogle.com/codejam
 * https://groups.google.com/forum/#!forum/google-code
+* [Problem Preparation Guide](https://code.google.com/codejam/resources/problem-preparation)
 
 * 백준 사이트에 올라온 문제들 https://www.acmicpc.net/category/369
 
