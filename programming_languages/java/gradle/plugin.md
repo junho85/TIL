@@ -64,3 +64,51 @@ plugins {
     id 'eclipse'
 }
 ```
+
+## groovy
+https://docs.gradle.org/current/userguide/groovy_plugin.html
+```
+plugins {
+    id 'groovy'
+}
+```
+
+## spring boot
+https://plugins.gradle.org/plugin/org.springframework.boot
+```
+plugins {
+  id "org.springframework.boot" version "2.1.7.RELEASE"
+}
+```
+
+https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/
+```
+plugins {
+	id 'org.springframework.boot' version '2.1.7.RELEASE'
+}
+```
+
+## net.researchgate.release
+https://plugins.gradle.org/plugin/net.researchgate.release
+Using the plugins DSL:
+```
+plugins {
+  id "net.researchgate.release" version "2.8.1"
+}
+```
+
+Using legacy plugin application
+```
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "net.researchgate:gradle-release:2.8.1"
+  }
+}
+
+apply plugin: "net.researchgate.release"
+```
