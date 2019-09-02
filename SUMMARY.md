@@ -1,8 +1,8 @@
 # Summary
 
 * [Introduction](README.md)
-* [ansible](etc/ansible/ansible.md)
-* [linux](linux.md)
+* [ansible](ansible/README.md)
+* [linux](linux/README.md)
 * [ingress](ingress.md)
-* [spring](spring.md)
+* [spring](spring/README.md)
 
