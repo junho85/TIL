@@ -11,6 +11,7 @@
 * [spring framework](spring/README.md)
 * [Problem Solving](problem_solving/README.md)
   * [leetcode](problem_solving/leetcode/README.md)
+    * [1. Two Sum](problem_solving/leetcode/1_two_sum/1_two_sum.md)
   * [contest](problem_solving/contest/README.md)
     * [google code jam](problem_solving/contest/google_code_jam/README.md)
 * [database](database/README.md)
