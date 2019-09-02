@@ -1,6 +1,6 @@
 # TIL
 * Today I learned
-* https://github.com/junho85
+* GitHub: https://github.com/junho85
 * GitBook: https://junho85.gitbooks.io/til/
 
 ## 2019.09
