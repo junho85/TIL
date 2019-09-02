@@ -1,5 +1,26 @@
 # sendmail mta
 
+## version 확인 방법
+```
+$ echo \$Z | /somewhere/sendmail -bt -d0
+Version 8.13.8
+ Compiled with: DNSMAP LOG MAP_REGEX MATCHGECOS MILTER MIME7TO8 MIME8TO7
+                NAMED_BIND NETINET NETUNIX NEWDB PIPELINING SCANF STARTTLS
+...
+
+============ SYSTEM IDENTITY (after readcf) ============
+      (short domain name) $w = junho85
+  (canonical domain name) $j = $w.$m
+         (subdomain name) $m = junho85.pe.kr
+              (node name) $k = junho85
+========================================================
+
+ADDRESS TEST MODE (ruleset 3 NOT automatically invoked)
+Enter <ruleset> <address>
+> 8.9.1
+>
+```
+
 ## configurations
 
 ### Timeouts
