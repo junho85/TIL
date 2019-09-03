@@ -3,6 +3,7 @@
 * [Introduction](README.md)
 * [ansible](ansible/README.md)
 * [linux](linux/README.md)
+  * [cut](linux/command_util/cut.md)
 * [game](game/README.md)
   * [ingress](game/ingress.md)
   * [Rockman X 1](game/rockmanx/rockmanx1.md)
