@@ -16,7 +16,9 @@ will turn off STARTTLS when sending to broken.server (or any host in that domain
 
 기본적으로 STARTTLS 는 가능할때 언제든 사용된다. 그러나 STARTTLS 가 제대로 구현안된 망가진 MTA 들이 있다. 그러한 MTA 들에게 메일을 보낼 수 있도록 하려면 try_tls (srv_features) 룰셋을 access map 과 함께 사용할 수 있다.
 
-일단 try_tls 라는 룰셋
+일단 try_tls 라는 룰셋이 있어야 하는듯.
+
+
 
 ## Try_TLS
 /etc/mail/access 에 추가
