@@ -1,12 +1,11 @@
 # gradle
 
+## plugin
+* [plugin](plugin.md)
+
 ## configuration build.gradle
 
-### plugin
-java 프로젝트라면 java 플러그인
-```
-apply plugin: 'java'
-```
+
 
 ## spring boot
 * https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/
@@ -16,6 +15,16 @@ plugins {
 }
 ```
 
+## SonarQubePlugin
+
+```
+Build file '/Users/junho85/IdeaProjects/someproject/build.gradle' line: 19
+A problem occurred evaluating root project 'someproject'.
+> Failed to apply plugin [id 'org.sonarqube']
+   > Could not create plugin of type 'SonarQubePlugin'.
+      > Could not generate a decorated class for class org.sonarqube.gradle.SonarQubePlugin.
+         > org/gradle/listener/ActionBroadcast
+```
 
 
 ## java.lang.UnsupportedOperationException
@@ -80,12 +89,7 @@ dependencies {
 
     compile("com.fasterxml.jackson.core:jackson-databind")
     compile("org.projectlombok:lombok:1.14.8")
-    compile("com.google.guava:guava:24.0-jre")
-    compile("redis.clients:jedis")
-    compile("commons-cli:commons-cli:1.3.1")
     compile("org.apache.httpcomponents:httpclient:4.5.1")
-
-//    compile("commons-lang:commons-lang:2.6")
 
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
@@ -93,13 +97,8 @@ dependencies {
 
     compile group: 'dnsjava', name: 'dnsjava', version: '2.1.7'
 
-    // javamail
-    compile("com.sun.mail:javax.mail:1.5.5")
-
     // test
     testCompile("org.springframework.boot:spring-boot-starter-test")
-
-    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.10.0'
 }
 ```
 
@@ -109,3 +108,5 @@ task wrapper(type: Wrapper) {
 }
 
 ```
+
+* [How to fix Gradle 4.4/4.7 + JDK 10 issue on IntelliJ IDEA 2018.1.x 2018.06.05](https://iwillteachyoukotlin.com/2018/06/05/fix-gradle-4-4-4-7-jdk-10-intellij-idea-2018-1/)

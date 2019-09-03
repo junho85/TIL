@@ -9,6 +9,8 @@ plugins {
 }
 ```
 
+java 프로젝트이면 java plugin 을 설정해 두는 것이 좋다.
+
 jar 등의 tasks 를 쓸 수 있게 된다.
 
 project layout 을 잡아 준다.
