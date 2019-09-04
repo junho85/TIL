@@ -1,0 +1,38 @@
+# Experience
+## Kakao / Seongnam-si, Gyeonggi-do, Korea / Software Engineer / Jan 2012 ~ Present
+* SMTP server
+  * Java, SMTP
+* Event Publish-subscribe Platform. Collect email log. Tools
+  * Java, Logstash, Kafka, NodeJS, HBase
+* Paid User Email Service
+  * Java, Oracle
+* Register, withdraw, login message handling
+  * Spring Boot, RabbitMQ
+* Bulk mail sending service
+  * Spring, MySQL, Redis, jQuery, Bootstrap, DKIM
+* User domain email service
+  * Java, DNS
+* Legacy Service / lmtp, imap, confirm mail, etc…
+  * C, CGI, CMake, Apache, MySQL
+* Office Library System
+  * Spring / MySQL / Barcode
+
+## Qualcomm CDMA Technologies Korea / Seoul, Korea / Assistant / July 2011 ~ Dec 2011
+* Support multimedia team
+* C, JTAG, Android
+
+## Graphics Lab / Daegu, Korea / Assistant / Aug 2010 ~ June 2011
+* Develop 3D modeling tool
+* OpenGL, python
+
+## Trek Technology / Singapore / Assistant Software Engineer / Mar 2010 ~ Aug 2010
+* Develop Wifi SD Card, Wifi Camera
+* Linux, JTAG, CGI, C, lighttpd
+
+## Winitech Co., Ltd. / Daegu, Korea / System Engineer / May 2006 ~ May 2009
+* Develop Industry-Academic Research System, Project Management System
+* Oracle, Java, JBoss, Javascript, MiPlatform
+
+## YeongCheon National Cemetery / YeongCheon, Korea / System Engineer / Mar 2005 ~ Aug 2005
+* Develop webpage
+* PHP, MySQL, Flash
