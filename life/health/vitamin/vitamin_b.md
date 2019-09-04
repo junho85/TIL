@@ -1,5 +1,8 @@
 # vitamin B
 
+## 메가비텐정
+* [동국제약, 고함량 비타민 ‘메가비텐정’ 출시 2018.05.10](http://www.bosa.co.kr/news/articleView.html?idxno=2083057)
+  * 
 
 ## 2019 아로나민골드 논란
 * ['약사 유튜버'가 불지핀 아로나민 논란 2019.05.24](https://www.hankyung.com/it/article/2019052421211)
