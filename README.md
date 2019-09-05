@@ -2,6 +2,7 @@
 * Today I learned
 * GitHub: https://github.com/junho85
 * GitBook: https://junho85.gitbooks.io/til/
+* GitBook: https://junho85.gitbook.io/til/
 
 ## 2019.09
 * PS with Python

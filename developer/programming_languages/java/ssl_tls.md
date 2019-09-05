@@ -30,3 +30,41 @@ https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuid
 
 3. Certificate (optional)
 서버가 인증서나 인증서 체인을 클라이언트로 보낸다.
+
+4. Certificate request (optional)
+
+5. Certificate key exchange (optional)
+
+6. Server hello done
+서버가 클라이언트에게 초기 협상 메시지와 함께 끝났다고 알려줌.
+
+7. Certificate (optional)
+
+8. Client key exchange
+
+9. Certificate verify verify (optional)
+
+10. Change cipher spec
+
+11. Finished
+
+12. Change cipher spec
+
+13. Finished
+
+14. Encrypted data
+
+15. Close Messages
+
+## Debug
+* https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html#Debug
+* https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/ReadDebug.html
+```
+java -Djavax.net.debug=all MyApp
+```
+
+
+```
+java -Djavax.net.debug=ssl:handshake:data MyApp
+```
+

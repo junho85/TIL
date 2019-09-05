@@ -20,3 +20,16 @@
   * 부하 도구
     * 벤치마크 도구
     * 부하 테스트 도구
+
+
+##
+
+```
+[2019-07-05 17:57:42] INFO  org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325) - Root WebApplicationContext: initialization completed in 2414 ms
+7월 05, 2019 6:00:04 오후 org.apache.catalina.util.SessionIdGeneratorBase createSecureRandom
+WARNING: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [141,343] milliseconds.
+```
+
+tomcat 구동이 느려져서 catalina.out 로그를 들여다 보니 Creation of SecureRandom instance 하는데 141초나 걸리고 있다.
+
+* [tomcat 구동 시 /dev/random 블로킹 이슈 2016.08.25](https://lng1982.tistory.com/261)
