@@ -20,7 +20,7 @@ plugins {
 * 다음 릴리즈 버전 물어 보면 엔터 치면 됨. (e.g. 1.3.16-SNAPSHOT)
 * 자동으로 작업이 끝나면 태그가 위에서 입력된 버전 (e.g. 1.3.15) 로 되어 있고 커밋도 되어 있음
 * gradle.properties 의 버전도 변경되어서 커밋 되어 있음 (e.g. 1.3.16-SNAPSHOT)
-* 해당 마스터 브랜치를 upstream 에 push 한다. 단, push 해도 태그는 같이 되지 않기 떄문에 git tag 1.3.15 명령을 입력해서 tag 를 github 에 push 해준다.
+* 해당 마스터 브랜치를 upstream 에 push 한다. 단, push 해도 태그는 같이 되지 않기 때문에 git tag 1.3.15 명령을 입력해서 tag 를 github 에 push 해준다.
 * push 가 되고 나면 github 에서 release 정보를 기입하고 해당 태그로 release 를 딴다.
 
 
