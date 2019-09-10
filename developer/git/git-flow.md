@@ -1,0 +1,6 @@
+# git flow
+
+
+## References
+* [우린 Git-flow를 사용하고 있어요 2017.10.30](http://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html)
+* [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
