@@ -17,7 +17,7 @@ var cookieSession = require('cookie-session')
 example
 ```javascript
 var cookieSession = require('cookie-session')
-var express = require('developer/nodejs/express')
+var express = require('developer/programming_languages/javascript/nodejs/express')
  
 var app = express()
  
