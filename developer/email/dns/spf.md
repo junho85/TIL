@@ -24,3 +24,5 @@ $ dig txt naver.com +short
 ## References
 * [Sender Policy Framework](https://en.wikipedia.org/wiki/Sender_Policy_Framework)
 * [Email authentication](https://en.wikipedia.org/wiki/Email_authentication)
+* [Is the 10-DNS-lookup limit in the SPF spec typically enforced? 2014](https://serverfault.com/questions/584708/is-the-10-dns-lookup-limit-in-the-spf-spec-typically-enforced)
+* [Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1](https://tools.ietf.org/html/rfc7208)

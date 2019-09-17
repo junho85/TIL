@@ -1,4 +1,4 @@
-
+# RFC821 Simple Mail Transfer Protocol
 https://tools.ietf.org/html/rfc821#page-36
 
 4.2.2. NUMERIC ORDER LIST OF REPLY CODES
