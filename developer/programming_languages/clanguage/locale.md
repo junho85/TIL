@@ -34,3 +34,4 @@ with_other_locale (char *new_locale,
 }
 ```
 * [C library function - setlocale()](https://www.tutorialspoint.com/c_standard_library/c_function_setlocale.htm)
+* [setlocale 사용법](https://darkpgmr.tistory.com/6)
