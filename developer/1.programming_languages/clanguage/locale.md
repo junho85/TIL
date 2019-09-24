@@ -35,3 +35,9 @@ with_other_locale (char *new_locale,
 ```
 * [C library function - setlocale()](https://www.tutorialspoint.com/c_standard_library/c_function_setlocale.htm)
 * [setlocale 사용법](https://darkpgmr.tistory.com/6)
+* [[C/C++] Locale 에 의존적인 함수들 2014.01.15](https://blog.naver.com/isentator/10183690935)
+  * 윈도우 프로그래밍
+  * printf_s 는 상관 없지만 _tprintf_s 는 locale 설정 해줘야 됨.
+  * 독립 실행형 C 라이브러리 함수?
+  * http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0349bk/Chdfdcai.html
+* [setlocale](http://www.cplusplus.com/reference/clocale/setlocale/)
