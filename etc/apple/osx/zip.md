@@ -37,7 +37,22 @@ $ zip --encrypt archive.zip 1.txt 2.txt 3.txt
 ## 분할압축
 3500MB 단위로 자르기
 ```
-$ zip -s 3500m 20190927.zip *
+$ zip -s 3500m archive.zip *
+```
+
+C0044.MP4 파일을 3500MB 단위로 잘라서 압축. 파일명의 기준은 archive.zip. 분할된 파일명은 archive.z01, archive.zip 입니다.
+```
+$ zip -s 3500m archive.zip C0044.MP4
+```
+
+분할압축된 파일을 해제 하는 방법은 좀 복잡합니다. 우선 압축 파일을 하나로 다시 합쳐 줍니다.
+```
+$ zip -s 0 archive.zip --out unsplit-archive.zip
+```
+
+그러고 나서 unzip 커맨드로 압축을 해제합니다.
+```
+$ unzip unsplit-archive.zip
 ```
 
 * 정리: [OSX - zip 커맨드로 파일 분할압축하기 2019.09.28](https://junho85.pe.kr/1442)
@@ -45,3 +60,4 @@ $ zip -s 3500m 20190927.zip *
 ## References
 * [HowTo: Create a Password Protected ZIP File in Linux 2016.12.27](https://www.shellhacks.com/create-password-protected-zip-file-linux/)
 * [맥에서 ZIP으로 압축 혹은 분할 압축하는 방법 2018.09.21](https://macinjune.com/all-posts/mac/tip/맥에서-zip으로-압축-혹은-분할-압축하는-방법/)
+* [How to unzip split files on OS X 2011.12.07](https://superuser.com/questions/365643/how-to-unzip-split-files-on-os-x)
