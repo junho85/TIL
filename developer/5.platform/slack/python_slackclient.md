@@ -1,8 +1,7 @@
 # python slack client
 
 
-## python slackclient
-### installation
+## installation
 ```
 $ pip3 install slackclient
 ```
@@ -14,11 +13,12 @@ source env/bin/activate
 pip install slackclient
 ```
 
-### get token
+## get token
+* token 이 있어야 api 를 사용할 수 있습니다.
 * [Create and regenerate API tokens](https://the-gardeners-season4.slack.com/help/articles/215770388)
   * https://api.slack.com/custom-integrations/legacy-tokens
 
-### example
+## 채널에 메시지 보내기
 * [python-slackclient](https://github.com/slackapi/python-slackclient)
 
 ```python
@@ -33,3 +33,10 @@ response = client.chat_postMessage(
 assert response["ok"]
 assert response["message"]["text"] == "Hello world!"
 ```
+
+## 채널의 메시지 가져오기
+* [channels.history](https://api.slack.com/methods/channels.history)
+
+
+## 메시지의 댓글 가져오기
+* [channels.replies](https://api.slack.com/methods/channels.replies)
