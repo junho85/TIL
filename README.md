@@ -4,7 +4,7 @@
 * GitBook: https://junho85.gitbooks.io/til/
 * GitBook: https://junho85.gitbook.io/til/
 
-## 2019.09
+## 2019.10
 * PS with Python
   * leetcode
   * google code jam 기출문제
