@@ -1,5 +1,13 @@
 # JavaScript Date
 
+## moment
+* https://momentjs.com/
+* cdn - https://cdnjs.com/libraries/moment.js/
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+```
+
 ## diff days
 * date 끼리 빼주면 된다.
 * 기념일이나 꾸준히 몇일째 인지 구하려면 +1 해주면 된다.
