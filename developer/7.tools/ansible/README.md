@@ -40,28 +40,6 @@ SF 용어 중 ansible 이라는 단어가 사용됨 초시공간통신이라는 
 실제로 그 ansible 과의 관련성이 있는지는 모르겠음
 
 
-## installation
-osx brew
-```
-brew install ansible
-```
-
-리모트 서버에는 ssh 로 접근이 가능 해야 하며 python 2.4 이상이 설치 되어 있어야 한다. 가급적 2.5 이상이 좋다. 2.4 를 사용한다면 python-simplejson 을 먼저 설치 해 주어야 한다.
-
-## command
-```
-ansible dev -i hosts -m command -a "uptime" -u root
-^dev^prod
-ansible prod -i hosts -m command -a "uptime" -u root
-^prod^all
-ansible all -i hosts -m command -a "uptime" -u root
-```
-
-foo.sh 작성
-```
-ansible all -i hosts -m script -a foo.sh -u root
-```
-
 ## group variables
 * group_vars 디렉토리를 만들고 group_name 으로 된 파일을 만드는 방법
 * hosts 에 [group_name:vars] 를 만드는 방법이 있음 (TODO 같은건지 확인 필요)
@@ -73,7 +51,7 @@ hosts 에 digital_ocean 추가
 ...
 ```
 
-group_vars/digital_ocen 에 설정을 추가 해 두면 기본 설정으로 인식함
+group_vars/digital_ocean 에 설정을 추가 해 두면 기본 설정으로 인식함
 ```
 mkdir group_vars
 vi group_vars/digital_ocean
