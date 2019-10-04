@@ -28,6 +28,11 @@ docker 로 postgresql 설치
 $ docker run --name garden-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
 ```
 
+## image 확인
+```
+docker images
+```
+
 ## References
 * [Docker로 개발용 DB 만들기 2018.05.18](https://gongzza.github.io/docker/db-sample/)
   * oracle

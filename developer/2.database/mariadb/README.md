@@ -44,9 +44,13 @@ e.g.
 create table slack_github (
     id            int auto_increment primary key,
     github_userid varchar(100) not null,
-    slack_ts      float(16, 6) not null,
+    slack_ts      decimal(16, 6) not null,
     slack_message text         not null
-) comment 'github bot message';
+) CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci comment 'github bot message';
+
+create unique index slack_github_github_userid_slack_ts_uindex
+	on slack_github (github_userid, slack_ts);
+
 ```
 
 ### data types
@@ -58,10 +62,17 @@ create table slack_github (
   * M 은 숫자인데 최대 길이를 의미함. 0~65532 까지 가능.
 * varchar(200) 200자의 글자.
   
-#### float
+#### float?
 * [FLOAT](https://mariadb.com/kb/en/library/float/)
 * float(16,6) - 총 16자리. 소수점 6자리. (정수 10자리)
   * slack 메시지의 ts 예 1570039829.028700
+  * 2019.10.03 그런데 insert 하고 select 해 보니 소수점 안나오던데? 확인 필요. 일단 decmial 로 바꿔서 해결.
+
+#### decimal
+* [DECIMAL](https://mariadb.com/kb/en/library/decimal/)
+* decimal(16,6) - 총 16자리. 소수점 6자리. (정수 10자리)
+  * slack 메시지의 ts 예 1570039829.028700
+
 
 #### text
 * [TEXT](https://mariadb.com/kb/en/library/text/)
