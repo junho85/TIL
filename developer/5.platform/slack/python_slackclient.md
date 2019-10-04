@@ -40,3 +40,9 @@ assert response["message"]["text"] == "Hello world!"
 
 ## 메시지의 댓글 가져오기
 * [channels.replies](https://api.slack.com/methods/channels.replies)
+
+## 채널 정보 가져오기
+* [channels.info](https://api.slack.com/methods/channels.info)
+
+## 채널 리스트
+* [channels.list](https://api.slack.com/methods/channels.list)
