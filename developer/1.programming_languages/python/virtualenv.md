@@ -16,5 +16,12 @@ $ python3 -m virtualenv env
 source env/bin/activate
 ```
 
+## 뭔가 깨진거 같으면 재생성
+* python 이 버전업 되거나 알수 없는 이유로 venv 에 있는 모듈을 불러 오지 못하는 경우가 생긴다.
+* 이럴때는 그냥 재생성 해 주면 된다.
+```
+virtualenv venv
+```
+
 ## 참고
 * https://virtualenv.pypa.io
