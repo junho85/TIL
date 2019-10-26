@@ -6,8 +6,13 @@ o conf init
 
 /Users/junho85/.cpan/CPAN/MyConfig.pm
 
+## 5.8.8 MyConfig.pm
+/usr/lib/perl5/5.8.8/CPAN/Config.pm
+
 ## mirror
 * http://mirror.kakao.com/CPAN/
+* http://ftp.daumkakao.com/CPAN
+* (X)ftp://ftp.daum.net/CPAN
 
 ## References
 * [How to change the perl cpan repository location 2013.08.22](https://stackoverflow.com/questions/18389824/how-to-change-the-perl-cpan-repository-location)

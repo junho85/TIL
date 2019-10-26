@@ -58,7 +58,6 @@ vi group_vars/digital_ocean
 ```
 
 ```
----
 ansible_ssh_user: root
 ```
 
@@ -94,9 +93,11 @@ ansible_ssh_user: root
 ## git clone 및 build
 
 ## 참고자료
-http://deview.kr/2014/session?seq=15
+* [Ansible의 이해와 활용 - 김용환 카카오 2014.09.29](http://deview.kr/2014/session?seq=15)
 
 http://www.ansible.com/
 
 * Super-basic introduction to Ansible
 https://www.youtube.com/watch?v=xew7CMkL7jY
+
+* [Ansible 강대명님 2019.10.23](https://www.slideshare.net/charsyam2/ansible-185655090?fbclid=IwAR2kVN_miqWQutZC0o9ioGhEyRX0siM65Y3WgTkavUQ00i0eNEGhYnLDM88)
