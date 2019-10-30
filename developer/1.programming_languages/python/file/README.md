@@ -17,7 +17,18 @@ f.close()
 * t - 텍스트 모드
 * b - 바이너리 모드
 
+## read
 
+## readline
+
+## readlines
+
+## write
+```
+f = open('file.txt', 'w')
+f.write("something")
+f.close()
+```
 
 ## References
 * [파이썬 파일 열기(open), 파일 닫기(close)](https://withcoding.com/86)
