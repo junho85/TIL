@@ -5,8 +5,9 @@
 docker run --name some-mongo -d mongo:tag
 ```
 
+127.0.0.1: 을 넣어 주면 서버 내부에서만 접근 가능합니다.
 ```
-$ docker run --name mymongo -p 27017:27017 -d mongo
+$ docker run --name mymongo -p 127.0.0.1:27017:27017 -d mongo
 ```
 
 ```
