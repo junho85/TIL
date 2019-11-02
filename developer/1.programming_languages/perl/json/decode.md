@@ -33,3 +33,7 @@ $VAR1 = {
         };
 =cut
 ```
+
+
+from_json 은 JSON->new->decode 와 같음.
+

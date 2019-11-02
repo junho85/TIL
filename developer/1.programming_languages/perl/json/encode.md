@@ -60,3 +60,5 @@ $json_text = encode_json $perl_scalar
 ```perl
 $json_text = JSON->new->utf8->encode($perl_scalar)
 ```
+
+to_json 은 JSON->new->encode 와 같음
