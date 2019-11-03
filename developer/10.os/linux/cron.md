@@ -11,6 +11,12 @@ ENVIRONMENT=prod
 
 * 블로그 포스팅: [cron - How to set environment variables](http://junho85.pe.kr/1148)
 
+## 매일 5시 0분
+분을 0 으로 하고 시간을 5로 하고 나머지는 모두 *
+```
+0 5 * * * somescript.sh
+```
+
 ## 평일 지정 방법. set
 * 평일 (월~금) 9시 0분 예제
 ```
