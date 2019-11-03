@@ -1,11 +1,12 @@
 # JavaScript Date
+## today
+```javascript
+var today = new Date();
+```
 
-## moment
-* [Moment.js](https://momentjs.com/)
-* cdn - https://cdnjs.com/libraries/moment.js/
-
-```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+## yesterday
+```
+var yesterday = new Date(new Date().setDate(new Date().getDate()-1));
 ```
 
 ## diff days
