@@ -6,7 +6,7 @@
   * [python](developer/1.programming_languages/python/README.md)
     * [line_by_line](developer/1.programming_languages/python/file/line_by_line.md)
   * [javascript](developer/1.programming_languages/javascript/README.md)
-    * [date](developer/1.programming_languages/javascript/date.md)
+    * [date](developer/1.programming_languages/javascript/date/date.md)
 * [linux](developer/10.os/linux/README.md)
   * [cut](developer/10.os/linux/command_util/cut.md)
 * [game](game/README.md)
