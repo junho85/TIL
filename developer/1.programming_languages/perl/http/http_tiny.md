@@ -31,6 +31,15 @@ my $response = $ua->post($url, {
 print $response->{content};
 ```
 
+## header 추가
+```
+my %headers = (
+    "Content-Type" => "application/json",
+);
+
+my $response = $http->post_form($url, { headers => \%headers });
+```
+
 ## 정리
 * [perl - HTTP::Tiny 로 http POST request 날리기 2017.09.27](https://junho85.pe.kr/665)
 
