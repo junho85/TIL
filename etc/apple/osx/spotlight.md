@@ -7,3 +7,4 @@
 killall SystemUIServer
 ```
 
+참고로 spotlight 가 죽은게 아니고 UI 상 보이지 않는 것이더군요. spotlight 가 떳다고 생각하고 커맨드 입력하고 엔터 치면 실행이 되긴 합니다.
