@@ -34,8 +34,21 @@ assert response["ok"]
 assert response["message"]["text"] == "Hello world!"
 ```
 
+유저이름에 링크를 걸려면 link_names=1 을 해 주면 된다.
+```
+client.chat_postMessage(
+    channel='#junekim', # temp
+    text='@junho85 test',
+    link_names=1
+)
+```
+
 ## 채널의 메시지 가져오기
 * [channels.history](https://api.slack.com/methods/channels.history)
+
+```
+channels_history
+```
 
 
 ## 메시지의 댓글 가져오기
@@ -46,3 +59,7 @@ assert response["message"]["text"] == "Hello world!"
 
 ## 채널 리스트
 * [channels.list](https://api.slack.com/methods/channels.list)
+
+## References
+* [python-slackclient](https://github.com/slackapi/python-slackclient)
+* [Slack Developer Kit for Python](https://slack.dev/python-slackclient/)
