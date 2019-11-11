@@ -33,3 +33,27 @@ ENVIRONMENT=prod
 * * * * * sleep 20 && cd /hanmail/2019-ingyeo && git pull
 * * * * * sleep 40 && cd /hanmail/2019-ingyeo && git pull
 ```
+
+## 기본 cron editor
+select-editor 로 설정하는 방법
+```
+$ select-editor
+
+Select an editor.  To change later, run 'select-editor'.
+  1. /bin/nano        <---- easiest
+  2. /usr/bin/vim.tiny
+  3. /bin/ed
+
+Choose 1-3 [1]:
+```
+
+~/.zshrc 에 EDITOR 환경변수 설정
+```
+export EDITOR='vim'
+```
+
+### 정리
+* [crontab 기본 editor 설정하기 2019.11.11](https://junho85.pe.kr/1453)
+
+## References
+* [How to change the default text editor in bash, zsh and ksh 2012.05.26](http://linuxg.net/how-to-change-the-default-editor-in-linux/)
