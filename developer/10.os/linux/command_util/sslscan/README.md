@@ -2,13 +2,6 @@
 
 Command line util for Gathering TLS (previously SSL) information from specific host using openssl. Protocol and ciphers, vulnerability and so on.
 
-## Installation
-
-### OSX
-```
-brew install sslscan
-```
-
 ## starttls SMTP Test
 
 ```
