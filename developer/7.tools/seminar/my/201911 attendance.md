@@ -1,7 +1,7 @@
 # 정원사들 (일일커밋, TIL 모임) 출석체크 만들기
 * 행사: [DevFest Pangyo 2019 : Fun Thing is Good!](https://festa.io/events/606)
 * google sheet: [정원사들 시즌4 출석부](https://docs.google.com/spreadsheets/d/1kBxDS7BE0O_NvgfVRFeIUSHCXIdxjaqESAp_-Dg_yZY/edit#gid=0)
-* 웹사이트: garden4.junho85.pe.kr ?
+* [웹사이트](http://garden4.junho85.pe.kr)
 * [100일간 잔디 심기 아리아 2018.08.12](https://brunch.co.kr/@aria-grande/27)
 * [발표자료](https://docs.google.com/presentation/d/1jrGFmWeBJz8GLlidANQidkG8QKNQMss4mZ1pTIIfVAY/edit)
 
@@ -32,7 +32,7 @@
   * 내 기준에 최종 버전이 필요하다.
 * 좋은 일이 생길거야
   * 발표 기회
-    * 잔디콘 2019 https://jandi-gardening.github.io/
+    * [잔디콘 2019](https://jandi-gardening.github.io/)
     * DevFest
   * 해커톤
   * PS 책 쓰기 제의. github 보고 연락 드립니다.
