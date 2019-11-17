@@ -2,8 +2,7 @@
 * 행사: [DevFest Pangyo 2019 : Fun Thing is Good!](https://festa.io/events/606)
 * google sheet: [정원사들 시즌4 출석부](https://docs.google.com/spreadsheets/d/1kBxDS7BE0O_NvgfVRFeIUSHCXIdxjaqESAp_-Dg_yZY/edit#gid=0)
 * [웹사이트](http://garden4.junho85.pe.kr)
-* [100일간 잔디 심기 아리아 2018.08.12](https://brunch.co.kr/@aria-grande/27)
-* [발표자료](https://docs.google.com/presentation/d/1jrGFmWeBJz8GLlidANQidkG8QKNQMss4mZ1pTIIfVAY/edit)
+* [2019 DevFest Pangyo 발표자료](https://docs.google.com/presentation/d/1jrGFmWeBJz8GLlidANQidkG8QKNQMss4mZ1pTIIfVAY)
 
 ## 중점적으로 다룰부분?
 * 일일커밋의 좋은점?
@@ -117,4 +116,6 @@ python manage.py createsuperuser
 * 매일 자동 통계 뽑아서 공유하기
 
 ## References
-* [2019 정원사들 시즌4 출석체크 만들기](https://docs.google.com/document/d/1GYlGBW4OxuQDlEeCjg5EEu-SlgEvlALA79lzAIfUM8o/edit)
+* [2019 정원사들 시즌4 출석체크 만들기](https://docs.google.com/document/d/1GYlGBW4OxuQDlEeCjg5EEu-SlgEvlALA79lzAIfUM8o)
+* [자동화 이미지](https://pixabay.com/ko/illustrations/%EC%9E%90%EB%8F%99%ED%99%94-%EC%9E%AC%EB%B0%B0-%EB%A1%9C%EB%B4%87-%EC%8B%AC%EA%B8%B0-%EC%9B%90%EC%98%88-3615114/)
+* [100일간 잔디 심기 아리아 2018.08.12](https://brunch.co.kr/@aria-grande/27)
