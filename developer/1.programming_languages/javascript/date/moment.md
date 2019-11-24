@@ -2,6 +2,7 @@
 * [Moment.js](https://momentjs.com/)
 * [cdn](https://cdnjs.com/libraries/moment.js/)
 
+## cdn 사용
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 ```
