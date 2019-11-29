@@ -71,6 +71,3 @@ Not valid before: Apr  6 00:00:00 2018 GMT
 Not valid after:  Apr 30 23:59:59 2020 GMT
 ```
 
-## build
-* [OpenSSL 컴파일(compile) & 빌드(build)](https://www.lesstif.com/pages/viewpage.action?pageId=6291508)
-
