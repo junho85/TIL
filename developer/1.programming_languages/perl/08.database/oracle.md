@@ -5,6 +5,20 @@
 cpan DBD::Oracle
 ```
 
+그런데 설치 도중 ORACLE_HOME 을 못찾겠다는 둥 오류가 날 수 있다. 그럴 때는 oracle client basic, devel, sqlplus 들을 설치 해 준다. RPM 으로 설치 하는게 편하다. yum 으로 설치 하면 yum list 에도 등록 되니 yum 으로 설치 하는게 무난하다.
+
+centos
+```
+sudo yum install oracle-instantclient11.2-basic-11.2.0.4.0-1.x86_64.rpm
+sudo yum install oracle-instantclient11.2-sqlplus-11.2.0.4.0-1.x86_64.rpm
+sudo yum install oracle-instantclient11.2-devel-11.2.0.4.0-1.x86_64.rpm
+```
+
+
+```
+sudo cpanm --mirror-only --mirror http://ftp.daumkakao.com/CPAN/ DBD::Oracle --notest --verbose --force
+```
+
 ## module
 ```
 use DBI;
