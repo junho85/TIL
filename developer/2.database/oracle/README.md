@@ -1,5 +1,7 @@
 # oracle
 
+## installation
+
 ## Primary Key (PK) 확인 방법
 
 ```sql
