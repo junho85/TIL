@@ -77,7 +77,7 @@ PC 에서는 메가맨X 였음
 
 약점: 부메랑
 
-https://www.youtube.com/watch?v=D0aF07mjBto
+* [록맨X1 한글판 엔딩까지 올클리어](https://www.youtube.com/watch?v=D0aF07mjBto)
 
 
 ## 빠른 클리어 공략
@@ -150,4 +150,4 @@ https://www.youtube.com/watch?v=D0aF07mjBto
   * 멍멍이 손 끝부분에 올라타면 맞을일이 잘 없음. (반대쪽 손이 다가 올때 떨어질 수 있음)
 
 ## 참고
-* http://bbs.ruliweb.com/game/261/board/read/2100447
+* [[공략/팁] 록맨 X1 공략 (완료)](http://bbs.ruliweb.com/game/261/board/read/2100447)
