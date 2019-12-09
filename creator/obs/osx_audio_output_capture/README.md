@@ -28,6 +28,9 @@ Settings -> Audio 에서 iShowU Audio Capture 를 선택해 줍니다.
 Audio Mixer 에 Mic/Aux 가 추가 되었고 어플리케이션에서 나오는 소리가 OBS 에서 capture 되는 것을 볼 수 있습니다.
 ![](obs_audio_output_capture7.png)
 
+## 정리
+* [OBS - OSX 에서 나오는 소리 송출하기. Audio Output Capture 2019.12.09](https://junho85.pe.kr/1455)
+
 ## References
 * [Install iShowU Audio Capture - Mojave/Catalina](https://support.shinywhitebox.com/hc/en-us/articles/360030800592)
 * [[OS X]Capture audio with iShowU Audio Capture 2017.03.21](https://obsproject.com/forum/resources/os-x-capture-audio-with-ishowu-audio-capture.505/)
