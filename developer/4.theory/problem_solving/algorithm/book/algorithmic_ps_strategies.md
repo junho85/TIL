@@ -1,7 +1,5 @@
 # 알고리즘 문제해결 전략
-프로그래밍 대회에서 배우는 알고리즘 문제 해결 전략
-
-http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788966260546&orderClick=LAG&Kc=
+* [프로그래밍 대회에서 배우는 알고리즘 문제 해결 전략](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788966260546&orderClick=LAG&Kc=)
 
 * 저자: 구종만
   * 연세대학교 컴퓨터과학과

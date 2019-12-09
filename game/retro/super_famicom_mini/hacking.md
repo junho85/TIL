@@ -13,7 +13,7 @@
 * 커널 -> 커스텀커널 설치
 
 ## retroarch-clover 설치
-* https://github.com/ClusterM/retroarch-clover/releases
+* [retroarch-clover](https://github.com/ClusterM/retroarch-clover/releases)
 * retroarch_with_cores.zip 받아서 hachi2 에 끌어 놓기
 * 게임 실행 옵션에 -retroarch 를 추가해 준다.
 * 기본 에뮬레이터로는 실행이 안되는 게임이 많은데 이걸 추가 하면 되는게 많아짐
