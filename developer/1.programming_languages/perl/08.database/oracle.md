@@ -38,6 +38,24 @@ my $dsn = "DBI:Oracle:$sid";
 $self->{dbh} = DBI->connect($dsn, $username, $password) || die "Could not connect to database: $DBI::errstr";
 ```
 
+## 환경변수
+
+### TNS_ADMIN
+* TNS_ADMIN
+  * tnsnames.ora 파일의 위치는 TNS_ADMIN 환경변수로 결정된다.
+* 참고
+  * [Oracle 환경 변수](https://www.ibm.com/support/knowledgecenter/ko/SSEPGG_11.1.0/com.ibm.data.fluidquery.doc/topics/iiylsorcenvvars.html)
+  * [환경 변수들이 모두 올바른 데도 character set 에 문제가 있는 경우](http://dbtech.co.kr/bbs/?bo_c=1040&bo_v=121)
+  
+### ORA_NLS
+* ORA_NLS
+  * 7.2 ORA_NLS
+  * 7.3 ORA_NLS32
+  * 8.x, 9.x ORA_NLS33
+  * 10.x, 11.x ORA_NLS10
+* 참고
+  * [ORA_NLS33, ORA_NLS10 그리고 Characterset](https://talkativelee.tistory.com/24)
+
 ## References
 * [osx - DBD::Oracle 설치 2018.10.05](https://junho85.pe.kr/1102)
-* [](https://en.wikibooks.org/wiki/Perl_Programming/DBI_-_Perl_database_interface)
+* [Perl Programming/DBI - Perl database interface](https://en.wikibooks.org/wiki/Perl_Programming/DBI_-_Perl_database_interface)
