@@ -23,5 +23,10 @@ source env/bin/activate
 virtualenv venv
 ```
 
+다음과 같이 할 수도 있음.
+```
+/usr/local/bin/python3 -m virtualenv venv
+```
+
 ## 참고
 * [Virtualenv](https://virtualenv.pypa.io)
