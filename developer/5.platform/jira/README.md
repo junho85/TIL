@@ -9,3 +9,13 @@ timeSpent
 ## 최근 보름 정도 worklog 있는 내역을 가지고 오고 싶을때?
 worklog 는 issue 기준으로 불러올 수 있음.
 그렇다면 최근 변동 사항이 있는 issue 들을 먼저 가지고 오고, 그들의 worklog 들을 모두 불러 온 다음, worklog 기준으로 요일별 이슈 리스트를 다시 만들면 되겠음.
+
+## API
+* [REST APIs](https://developer.atlassian.com/server/jira/platform/rest-apis/)
+
+URI structure
+```
+http://host:port/context/rest/api-name/api-version/resource-name
+```
+
+https://jira.atlassian.com/rest/api/latest/issue/JRA-9
