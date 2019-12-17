@@ -101,3 +101,7 @@ http://www.ansible.com/
 https://www.youtube.com/watch?v=xew7CMkL7jY
 
 * [Ansible 강대명님 2019.10.23](https://www.slideshare.net/charsyam2/ansible-185655090?fbclid=IwAR2kVN_miqWQutZC0o9ioGhEyRX0siM65Y3WgTkavUQ00i0eNEGhYnLDM88)
+
+* [레드햇, 앤시블 인수… 데브옵스 관련 툴 확보 2015.10.19](http://www.ciokorea.com/t/27240/%EB%8D%B0%EB%B8%8C%EC%98%B5%EC%8A%A4/26995)
+
+* [[Ansible/엔시블/엔서블] Ansible 교육 자료 - 01. Introduction 2018.08.23](https://mcpaint.tistory.com/277)
