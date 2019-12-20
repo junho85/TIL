@@ -6,8 +6,27 @@
 ## 스토리
 * Sigma 를 쓰러뜨린지 6개월
 
+* 인트로 스테이지 클리어 후
+SERGES: This is their leader. His name is Mega Man X.
+VIOLEN: Those who underestimated him are now nothing but scrap.
+AGILE: We won't make the same mistake.
+He is powerful, but he is blind to what is happening around him.
+SERGES: Out Mavericks will keep him busy until we are ready.
+AGILE: Yes. How is the plan proceeding?
+SERGES: Collection is proceeding as scheduled.
+However, we are having problems with the control chip.
+AGILE: We have little time.
+We must finish construction on schedule. We must hurry...
+
+
 * 대장 두마리 잡고
   * 카운터 헌터 잡담
+  
+AGILE: I see now why Sigma fell at the hands of Mega Man X.
+He is quite formidable.
+SERGES: I am not sure our Mavericks can hold him long enough.
+We may have to intervene.
+  
   * X와 박사 잡담
 
 MEGA MAN: Dr. Cain! what happened?!
@@ -19,7 +38,7 @@ DR. CAIN: X, Zero's control chip is still stored here. I doubt it is possible to
 MEGA MAN: Dr. Cain, I've got to get Zero's parts back at any cost!
 
 
-## 카운터 헌터
+## X-Hunter. 카운터 헌터
 
 ### SERGES
 SERGES: I am Serges and I cannot allow you to stop the unification!
@@ -71,12 +90,12 @@ Slow them down Mega Man X!
   * 🤖암파츠: 집게 잘 쏘다 보면 벽에 붙을 수 있음. 붙자마자 삼각차기로 잘 올라가야됨. 어려우면 일단 악어 잡아서 톱날 무기 얻어서 타조 스테이지로 가서 다리파츠 얻어서 허공대쉬 이용하면 벽에 붙기 쉬움.
   * ❤️하트(다음에): 패스. 암파츠와 화염무기 획득후 다시 와야됨. 대쉬후 화염풀차지로 날아가야됨.
   * 보스 처리 후 톱니바퀴 무기 획득 (게 보스 약점)
-* 중간스토리: 카운터헌터들 잡담. 우리를 이기면 제로파츠를 주겠다고 함.
+* 중간스토리: X-Hunter 카운터헌터들 잡담. 우리를 이기면 제로파츠를 주겠다고 함.
 * 6. 게
   * ❤️하트: 물속에 들어가서 오른쪽
   * 🔋서브탱크 얻으려면 버블 풀차지 필요함. 발밑에 에너지 보이는 곳에서 버블 둘러싸고 높이 점프 해서 먹어야 됨. 톱날 무기로 처리.
   * 다시 와서 서브탱크 획득후 Exit
-* 3. 산양. 화염
+* 3. 사슴. 화염
   * 🔋서브탱크: 초반에 풍뎅이 타고 올라가서 얻음
   * ❤️하트: 벽몹 잡고 빨리 먹어야됨
   * 보스:
