@@ -1,6 +1,13 @@
 # Cake
 * https://project100.kakao.com/project/56
 * ![](project100.png)
+* ~2019.12.28
+
+## 2020.01.02 105 Look what I got.
+![](20200102.png)
+* Look what I got.
+* Look what I got.
+* Look what I got.
 
 ## 2020.01.01 104 I like getting older.
 ![](20200101.png)
