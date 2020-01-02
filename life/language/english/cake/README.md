@@ -3,6 +3,12 @@
 * ![](project100.png)
 * ~2019.12.28
 
+## 2020.01.03 106 You got everything?
+![](20200103.png)
+* You got everything?
+* You got everything?
+* You got everything?
+
 ## 2020.01.02 105 Look what I got.
 ![](20200102.png)
 * Look what I got.
