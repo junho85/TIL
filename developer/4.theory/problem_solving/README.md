@@ -1,9 +1,26 @@
 # Problem Solving - PS
+Problem Solving 은 직역 하자면 문제 해결입니다. 문제를 해결하는거면 다 Problem Solving 이 아닌가 생각이 들 수 있습니다. 맞습니다. 집이 지저분 하다는 문제가 있으면 그것을 해결하는 것도 Problem Solving 이라고 할 수 있습니다. 다만 여기서 다루려고 하는 Problem Solving 은 Computer Science 에서의 Problem Solving 입니다. 그리고 Computer Science 전체에서도 아니고 알고리즘 대회, 코딩 테스트, 문제 풀이 사이트에서 볼 수 있는 문제에서 볼 수 있는 Problem Solving 입니다.
 
-## 현업과 PS
+## References
+* [Problem solving](https://en.wikipedia.org/wiki/Problem_solving)
+```
+Computer science
+
+In computer science and in the part of artificial intelligence that deals with algorithms ("algorithmics"), problem solving includes techniques of algorithms, heuristics and root cause analysis. In these disciplines, problem solving is part of a larger process that encompasses problem determination, de-duplication, analysis, diagnosis, repair, and other steps.
+
+Other problem solving tools are linear and nonlinear programming, queuing systems, and simulation.
+
+Much of computer science involves designing completely automatic systems that will later solve some specific problem systems to accept input data and, in a reasonable amount of time, calculate the correct response or a correct-enough approximation.
+In addition, people in computer science spend a surprisingly large amount of human time finding and fixing problems in their programs -- debugging.
+```
+* [문제 해결](https://ko.wikipedia.org/wiki/%EB%AC%B8%EC%A0%9C_%ED%95%B4%EA%B2%B0)
+
+* [PS를 공부하는 방법 (How to study Problem Solving?)](https://subinium.github.io/how-to-study-problem-solving/)
+  * PS(Problem Solving)는 주어진 문제를 정해진 언어를 통해 시간 제한과 메모리 제한에서 해결하면 됩니다.
+
+### 현업과 PS
 * [이런 질문도 괜찮나요? 현업과 PS의 관계](https://algospot.com/forum/read/1499/)
 
-## 기타
 * [저는 Competitive programming이 싫습니다.](https://www.acmicpc.net/blog/view/49)
 
 * [알고리즘 공부, 어떻게 해야하나요?](https://baactree.tistory.com/52)
@@ -91,3 +108,4 @@
 * [영어 실력과 코딩 테스트 실력을 모두 길러주는 문제풀이 사이트들! (외국계 회사 코딩 테스트, 어렵지 않쥬?)](https://www.youtube.com/watch?v=_m3CnSKjros)
   * [Code Signal](https://codesignal.com/)
   * [Code Force](https://codeforces.com/)
+  
