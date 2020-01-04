@@ -3,6 +3,12 @@
 * ![](project100.png)
 * ~2019.12.28
 
+## 2020.01.04 107 I'm still walking on thin ice.
+![](20200104.png)
+* I'm still walking on thin ice.
+* I'm still walking on thin ice.
+* I'm still walking on thin ice.
+
 ## 2020.01.03 106 You got everything?
 ![](20200103.png)
 * You got everything?
