@@ -3,6 +3,12 @@
 * ![](project100.png)
 * ~2019.12.28
 
+## 2020.01.06 109 I'm wearing my thermals right now.
+![](20200106.png)
+* I'm wearing my thermals right now.
+* I'm wearing my thermals right now.
+* I'm wearing my thermals right now.
+
 ## 2020.01.05 108 I wonder if it's real.
 ![](20200105.png)
 * I wonder if it's real.
