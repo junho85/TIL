@@ -3,6 +3,12 @@
 * ![](project100.png)
 * ~2019.12.28
 
+## 2020.01.07 110 Stop bothering me.
+![](20200107.png)
+* Stop bothering me.
+* Stop bothering me.
+* Stop bothering me.
+
 ## 2020.01.06 109 I'm wearing my thermals right now.
 ![](20200106.png)
 * I'm wearing my thermals right now.
