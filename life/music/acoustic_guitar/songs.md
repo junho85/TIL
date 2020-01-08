@@ -1,4 +1,6 @@
 # 통기타곡들
+## 금요일에 만나요
+* [](https://www.youtube.com/watch?v=Rn9td8dauY0)
 
 ## Marry Me
 * [[어썸기타] Marry Me - 마크툽, 구윤회 기타강좌 난이도 ★ ★ ☆ ☆ ☆ 2017.03.31](https://www.youtube.com/watch?v=agQmYMLwmi8)

@@ -11,7 +11,6 @@ mp4 로 받기
 youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' url
 ```
 
-
 ```
 youtube-dl -f137+250 https://www.youtube.com/watch?v=... 
 ```
