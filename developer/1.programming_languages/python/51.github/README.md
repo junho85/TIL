@@ -1,6 +1,10 @@
 # python  - github api
 * [PyGithub](https://pygithub.readthedocs.io/en/latest/index.html)
 
+## access token 얻기
+
+
+## 기본 코드
 ```
 from github import Github
 
