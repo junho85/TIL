@@ -1,6 +1,12 @@
 # 맥북 초기 세팅
 
+
+* homebrew
+  * https://brew.sh/
+  * `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
 ## app store
+
 * kakao talk
     * keyboard alert 설정 - 이미 되어 있음  
 * chrome, 크롬
@@ -14,7 +20,6 @@
 * android studio
 * xcode
 * telegram
-* homebrew
 * kerberos https://krb.daumkakao.io/ https://krb.daumkakao.io/guide
 * capslock as esc
 * AutoMute
@@ -42,3 +47,5 @@ Preferences -> Profiles -> Session 에서 Always prompt before closing 을 해 �
 tab 이 command + w 로 그냥 닫히면 암울...
 
 
+## References
+* [Mac OS 초기 세팅 (개발용 세팅)](https://snowdeer.github.io/mac-os/2018/11/02/mac-init-setting/)
