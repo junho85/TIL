@@ -22,3 +22,13 @@ my @array4 = (@array1, @array2);
 
 print "@array4\n"; # 1 2 3 4
 ```
+
+## find array
+```
+my @matches = grep { /$stream_s/ } @astreams;
+```
+
+### References
+* [How can I check if a Perl array contains a particular value?](https://stackoverflow.com/questions/2860226/how-can-i-check-if-a-perl-array-contains-a-particular-value)
+* [How do I search a Perl array for a matching string?](https://stackoverflow.com/questions/2925604/how-do-i-search-a-perl-array-for-a-matching-string/2925834)
+* [Perl Array search a string in](https://stackoverflow.com/questions/41501707/perl-array-search-a-string-in)
