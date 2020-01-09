@@ -3,6 +3,18 @@
 * ![](project100.png)
 * ~2019.12.28
 
+## 2020.01.09 112 It is no joke. 
+![](20200109.png)
+* It is no joke.
+* It is no joke.
+* It is no joke.
+
+## 2020.01.08 111 I like her vocals.
+![](20200108.png)
+* I like her vocals.
+* I like her vocals.
+* I like her vocals.
+
 ## 2020.01.07 110 Stop bothering me.
 ![](20200107.png)
 * Stop bothering me.
