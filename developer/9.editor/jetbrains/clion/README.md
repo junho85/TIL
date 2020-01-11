@@ -14,3 +14,4 @@ OSX 업데이트 되다가 Terminal 에서 man 페이지 보는 단축키로 지
 
 ### References
 * [[IntelliJ] Mac에서 IntelliJ CMD+SHIFT+A 눌렀을때 터미널이 켜지는 문제 해결 2019.06.03](https://jojoldu.tistory.com/420)
+* [Cmd+Shift+A hotkey opens Terminal with "apropos" search instead of the Find Action dialog](https://intellij-support.jetbrains.com/hc/en-us/articles/360005137400-Cmd-Shift-A-hotkey-opens-Terminal-with-apropos-search-instead-of-the-Find-Action-dialog)
