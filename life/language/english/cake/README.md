@@ -3,6 +3,18 @@
 * ![](project100.png)
 * ~2019.12.28
 
+## 2020.01.11 114 My bathroom break during the test took a little longer than anticipated.
+![](20200111.png)
+* My bathroom break during the test took a little longer than anticipated.
+* My bathroom break during the test took a little longer than anticipated.
+* My bathroom break during the test took a little longer than anticipated.
+
+## 2020.01.10 113 Way easier than you think.
+![](20200110.png)
+* Way easier than you think.
+* Way easier than you think.
+* Way easier than you think.
+
 ## 2020.01.09 112 It is no joke. 
 ![](20200109.png)
 * It is no joke.
