@@ -1,3 +1,26 @@
+# Music
 ## 코드
 코드
-http://eunjong.net/bbs/zboard.php?id=note&page=2&sn1=&divpage=1&category=11&sn=off&ss=on&sc=on&select_arrange=name&desc=asc&no=2198
+[](http://eunjong.net/bbs/zboard.php?id=note&page=2&sn1=&divpage=1&category=11&sn=off&ss=on&sc=on&select_arrange=name&desc=asc&no=2198)
+
+
+### 코드 따기
+* [🎹음알못들도 '오?!'하고 볼수 있는 '코드 따는 원리' 대공개!! I 송사비 2019.09.03](https://www.youtube.com/watch?v=_dMLc796LY4)
+  * 화성학
+  * 코드를 따고 싶다. 멜로디만 보고도 반주를 하고 싶다.
+  * 내꼬해송 예
+    * 일단 악보로 땀
+    * 묶어서 수직화 해서 옆으로 미는거
+    * 규칙을 통하여 한 팀으롬 만드는 것
+    * 아무거나 묶으면 이상함
+    * 많이 나오는 음들을 찾아라
+    * 첫마디 미도도 솔솔미. 도미솔. C 코드.
+    * 둘째. 레레 시시 솔솔 레. 솔시레. G 코드.
+  * 비행기
+    * 미레도레. 레가 많으니 레가 들어간. 레파라. 시레파. 솔시레.
+      * 도미솔.
+      * 이것 저것 가능한데 베스트를 찾으려면 화성학
+    * 미미미. 미솔시, 도미솔, 라도미
+  * 잘 하면 이것저것 다 가능
+  
+  
