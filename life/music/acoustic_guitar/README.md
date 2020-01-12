@@ -27,10 +27,14 @@
     
     
 ### Boss TU-01 클립 튜너
+### KORG Rimpitch
+* [The KORG Rimpitch is a new style of tuner for the acoustic guitar 2014.03.12](https://youtu.be/04HOF_K0qWY)
 
-### KORG Sledgehammer Custom 100: Ultra-high-precision clip-type tuner
+### KORG Sledgehammer Custom 100: Ultra-high-precision clip-type tuner. KORG SH-CS100
 * [KORG Sledgehammer Custom 100: Ultra-high-precision clip-type tuner](https://www.youtube.com/watch?v=Ec3FCB6Ysqo)
-  * 
+* 3가지 모드. 레귤러, 스트로브, 하프 스트로브
+* [KORG Sledgehammer Custom 100 SH-CS100 클립 온 튜너 리뷰! 2017.07.29](https://blog.naver.com/ehfrhfo8643/221062664404)
+* [코르그 SH-CS100 / KORG SH-CS100 튜너... 2017.11.06](http://blog.daum.net/jhlove4950/15768594)
   
 ### Korg sledge hammer pro
 * [[켄지의 리뷰] 코르그 튜닝기 슬레지해머 프로 (Korg sledge hammer pro) 2016.01.26](https://www.youtube.com/watch?v=kSr9GKOD-SU)
