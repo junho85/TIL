@@ -2,6 +2,12 @@
 * https://project100.kakao.com/project/56
 * ![](project100.png)
 * ~2019.12.28
+ 
+## 2020.01.12 I think I'm coming down with the flu.
+![](20200112.png)
+* I think I'm coming down with the flu.
+* I think I'm coming down with the flu.
+* I think I'm coming down with the flu.
 
 ## 2020.01.11 114 My bathroom break during the test took a little longer than anticipated.
 ![](20200111.png)
