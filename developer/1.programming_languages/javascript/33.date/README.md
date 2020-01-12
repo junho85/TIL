@@ -9,6 +9,20 @@ var today = new Date();
 var yesterday = new Date(new Date().setDate(new Date().getDate()-1));
 ```
 
+## add days
+```
+Date.prototype.addDays = function(days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+}
+
+var date = new Date();
+
+alert(date.addDays(5));
+```
+* [Add days to JavaScript Date](https://stackoverflow.com/questions/563406/add-days-to-javascript-date)
+
 ## diff days
 * date 끼리 빼주면 된다.
 * 기념일이나 꾸준히 몇일째 인지 구하려면 +1 해주면 된다.
