@@ -3,6 +3,12 @@
 * ![](project100.png)
 * ~2019.12.28
 
+## 2020.01.14 Don't give up.
+![](20200114.png)
+* Don't give up.
+* Don't give up.
+* Don't give up. 
+
 ## 2020.01.13 You're burning up.
 ![](20200113.png)
 * You're burning up.
