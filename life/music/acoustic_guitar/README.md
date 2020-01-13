@@ -35,7 +35,9 @@
 * 3가지 모드. 레귤러, 스트로브, 하프 스트로브
 * [KORG Sledgehammer Custom 100 SH-CS100 클립 온 튜너 리뷰! 2017.07.29](https://blog.naver.com/ehfrhfo8643/221062664404)
 * [코르그 SH-CS100 / KORG SH-CS100 튜너... 2017.11.06](http://blog.daum.net/jhlove4950/15768594)
-  
+* 2020.01.12 주문 https://www.schoolmusic.co.kr/Shop/index.php3?var=Good&Good_no=32857
+  * 54690원
+
 ### Korg sledge hammer pro
 * [[켄지의 리뷰] 코르그 튜닝기 슬레지해머 프로 (Korg sledge hammer pro) 2016.01.26](https://www.youtube.com/watch?v=kSr9GKOD-SU)
 * [Korg SH-pro / Sledgehammer-pro Clip-on Tunner 코르그 슬레지해머 프로 클립온튜너 사용기](https://www.youtube.com/watch?v=agTKd-0AXRI)
