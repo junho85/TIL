@@ -17,6 +17,12 @@ $("#date").val(moment(new Date()).format("YYYYMMDD"));
 moment().subtract(1, 'day')
 ```
 
+## add days
+```
+var new_date = moment(startdate, "DD-MM-YYYY").add(5, 'days');
+```
+* [momentJS date string add 5 days](https://stackoverflow.com/questions/22547129/momentjs-date-string-add-5-days)
+
 ## a week ago
 ```
 moment().subtract(7, 'day')
