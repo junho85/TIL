@@ -153,15 +153,18 @@ brew cask install sublime-text
 ## App Store
 ### kakao talk
 * keyboard alert 설정 - 이미 되어 있음
+
 ### automute
 * 헤드셋을 뽑았을 뿐인데 사무실의 적막을 깨는 경험을 여러번 했다면 필수
 * Mac App Store 에서 다운받아야됨. 언젠가 부터 $2.99 로 유료화 된듯?
 
-아래 automute 는 다른 앱인듯?
+### automute
 * [](https://formulae.brew.sh/cask/automute)
 ```
 brew cask install automute
 ```
+* [](https://github.com/Lorenzo45/AutoMute)
+  * Mute or unmute your MacBook based on your current Wi-Fi network
 
 ## 기타
 * oh-my-zsh
@@ -169,6 +172,11 @@ brew cask install automute
 ### docker
 * [](https://docs.docker.com/docker-for-mac/install/)
 
+### httpd
+```
+brew install httpd
+```
+https://formulae.brew.sh/formula/httpd
 
 * VPN
 * wunderlist
