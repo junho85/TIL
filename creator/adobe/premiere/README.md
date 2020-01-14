@@ -1,5 +1,15 @@
 # Adobe Premiere
 
+## 기초
+### learning
+![](premiere_learning.png)
+
+기본 내장 튜토리얼 좋음
+
+### tutorial
+* [Adobe Premiere Pro Learn & Support](https://helpx.adobe.com/support/premiere-pro.html)
+  * 웹으로도 튜토리얼 제공하고 있음
+
 ## resize image
 * 더블클릭 하고 사이즈 조정 하면 됨. 처음 해 보면 더블클릭 해야 되는지 몰라서 해멤.
 * 꽉 채우려면?
