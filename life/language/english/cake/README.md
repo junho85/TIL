@@ -3,6 +3,18 @@
 * ![](project100.png)
 * ~2019.12.28
 
+## 2020.01.16 Now that you mention it, that might just be possible.
+![](20200116.png)
+* Now that you mention it, that might just be possible.
+* Not that you mention it, that might just be possible.
+* Not that you mention it, that might just be possible.
+
+## 2020.01.15 Speaking of which, where is my wand?
+![](20200115.png)
+* Speaking of which, where is my wand?
+* Speaking of which, where is my wand?
+* Speaking of which, where is my wand?
+
 ## 2020.01.14 Don't give up.
 ![](20200114.png)
 * Don't give up.
