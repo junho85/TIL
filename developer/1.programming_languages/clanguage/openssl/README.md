@@ -38,7 +38,7 @@ int main() {
 
 
 ### References
-* http://100.daum.net/encyclopedia/view/55XXXXX22058
-* https://en.wikipedia.org/wiki/HMAC
+* [해시 기반 메시지 인증 코드](http://100.daum.net/encyclopedia/view/55XXXXX22058)
+* [HMAC](https://en.wikipedia.org/wiki/HMAC)
 * [해시 기반 메시지 인증 코드](http://100.daum.net/encyclopedia/view/55XXXXX22058)
 * [RFC2104 HMAC: Keyed-Hashing for Message Authentication](https://tools.ietf.org/html/rfc2104)
