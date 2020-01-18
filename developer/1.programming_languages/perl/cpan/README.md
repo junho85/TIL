@@ -13,8 +13,7 @@ cpan -fi Unicode::Normalize
 ```
 
 ## cpanminus
-* cpanm
-* 그냥 cpan 과 무슨 차이?
+* [cpanminus](cpanm.md)
 
 ## cpan mini
 * https://metacpan.org/pod/CPAN::Mini
