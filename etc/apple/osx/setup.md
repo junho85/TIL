@@ -178,6 +178,20 @@ brew install httpd
 ```
 https://formulae.brew.sh/formula/httpd
 
+## perlbrew
+* [perlbrew](https://perlbrew.pl/)
+
+* 정리
+  * [perl - perlbrew 로 여러 버전의 perl 사용하기 2017.11.27](https://junho85.pe.kr/737)
+
+## zoom
+![](macos_zoom.png)
+* Use scroll gesture with modifier keys to zoom
+
+## touch drag lock
+![](touch_drag_lock.png)
+Accessibility -> Pointer Control -> Mouse & Trackpad -> Trackpad Options... -> Enable dragging -> with drag lock
+
 * VPN
 * wunderlist
 * arduino ide
