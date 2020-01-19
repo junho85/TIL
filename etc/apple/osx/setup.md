@@ -186,7 +186,7 @@ https://formulae.brew.sh/formula/httpd
 
 ## zoom
 ![](macos_zoom.png)
-* Use scroll gesture with modifier keys to zoom
+Accessibility -> Zoom -> Use scroll gesture with modifier keys to zoom
 
 ## touch drag lock
 ![](touch_drag_lock.png)
