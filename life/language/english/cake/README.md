@@ -3,6 +3,24 @@
 * ![](project100.png)
 * ~2019.12.28
 
+## 2020.01.19 I have to be in good shape.
+![](20200119.png)
+* I have to be in good shape.
+* I have to be in good shape.
+* I have to be in good shape.
+ 
+## 2020.01.18 I'm thinking about it.
+![](20200118.png)
+* I'm thinking about it.
+* I'm thinking about it.
+* I'm thinking about it.
+
+## 2020.01.17 Let's not overdo it.
+![](20200117.png)
+* Let's not overdo it.
+* Let's not overdo it.
+* Let's not overdo it.
+
 ## 2020.01.16 Now that you mention it, that might just be possible.
 ![](20200116.png)
 * Now that you mention it, that might just be possible.
@@ -99,20 +117,3 @@
 * I like getting older.
 * I like getting older.
 
-## 2019.12.31 103 Cheers to you.
-![](20191231_103.png)
-* Cheers to you.
-* Cheers to you.
-* Cheers to you.
-
-## 2019.12.30 102 I'm going to an end of the year party.
-![](20191230.png)
-* I'm going to an end of the year party.
-* I'm going to an end of the year party.
-* I'm going to an end of the year party.
-
-## 2019.12.29 101 I'd like to make a toast.
-![](20191229.png)
-* I'd like to make a toast
-* I'd like to make a toast.
-* I'd like to make a toast.
