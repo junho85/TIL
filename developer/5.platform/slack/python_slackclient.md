@@ -16,7 +16,7 @@ pip install slackclient
 ## get token
 * token 이 있어야 api 를 사용할 수 있습니다.
 * [Create and regenerate API tokens](https://the-gardeners-season4.slack.com/help/articles/215770388)
-  * https://api.slack.com/custom-integrations/legacy-tokens
+  * [Legacy tokens](https://api.slack.com/custom-integrations/legacy-tokens)
 
 ## 채널에 메시지 보내기
 * [python-slackclient](https://github.com/slackapi/python-slackclient)
