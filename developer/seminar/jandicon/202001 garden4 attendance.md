@@ -29,6 +29,7 @@
 * 그런데 그것이 실제로 일어났습니다.
 
 * [](http://hufs-garden.ga/)
+* [](http://hufs.ga/)
 * [](https://www.notion.so/Hufs-328ee78975d5454a9f564db9a81ec2ef)
 
 
