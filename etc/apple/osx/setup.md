@@ -192,6 +192,11 @@ Accessibility -> Zoom -> Use scroll gesture with modifier keys to zoom
 ![](touch_drag_lock.png)
 Accessibility -> Pointer Control -> Mouse & Trackpad -> Trackpad Options... -> Enable dragging -> with drag lock
 
+## telnet
+```
+brew install telnet
+```
+
 * VPN
 * wunderlist
 * arduino ide
