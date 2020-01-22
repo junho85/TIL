@@ -39,18 +39,6 @@ brew cask install atom
 brew cask install jetbrains-toolsbox
 ```
 
-### karabiner - 키 맵핑
-* [](https://formulae.brew.sh/cask/karabiner-elements)
-```
-brew cask install karabiner-elements
-```
-* all
-  * capslock as esc
-* 외장 키보드 각각
-  * 
-* 정리
-  * [macOS Sierra 한영키로 한영전환하기. 106키 키보드에서 2017.04.30](https://junho85.pe.kr/578)
-  * [macOS Sierra 에서 ₩ 입력을 ` 로 바꾸기. KeyBindings. Home, End, PageUp, PageDown 등 2017.04.30](https://junho85.pe.kr/580)
 
 ### 터미널 커맨드, 개발환경 관련
 ```
@@ -185,11 +173,11 @@ https://formulae.brew.sh/formula/httpd
   * [perl - perlbrew 로 여러 버전의 perl 사용하기 2017.11.27](https://junho85.pe.kr/737)
 
 ## zoom
-![](macos_zoom.png)
+![](../macos_zoom.png)
 Accessibility -> Zoom -> Use scroll gesture with modifier keys to zoom
 
 ## touch drag lock
-![](touch_drag_lock.png)
+![](../touch_drag_lock.png)
 Accessibility -> Pointer Control -> Mouse & Trackpad -> Trackpad Options... -> Enable dragging -> with drag lock
 
 ## telnet
