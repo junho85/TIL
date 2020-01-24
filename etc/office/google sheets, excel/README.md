@@ -1,0 +1,8 @@
+# google sheets, excel
+
+## DATEDIF
+날짜간의 차이를 구할 때 사용하는 함수입니다.
+
+
+### References
+* [DATEDIF and TODAY Functions Combined](https://www.computerizedbusiness.com/item.asp?iid=272&pid=62)
