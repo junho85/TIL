@@ -185,6 +185,19 @@ Accessibility -> Pointer Control -> Mouse & Trackpad -> Trackpad Options... -> E
 brew install telnet
 ```
 
+## handbrake
+```
+brew install handbrake
+```
+이건 HandBrakeCLI 설치 되는거 같음.
+
+
+```
+brew cask install handbrake
+```
+* [](https://formulae.brew.sh/formula/handbrake)
+
+
 * VPN
 * wunderlist
 * arduino ide
@@ -192,11 +205,8 @@ brew install telnet
 * android studio
 * xcode
 * telegram
-* kerberos
-  * [](https://krb.daumkakao.io/)
-  * [](https://krb.daumkakao.io/guide)
 
-* keyboard 자동변환 중단시키기
+
 * telegram
 * onenote
 * office
@@ -205,7 +215,7 @@ brew install telnet
 * TistoryEditor
 * screen saver - hot corner
 
-* 한영키 세팅
+
 
 데이터 가져오기
 

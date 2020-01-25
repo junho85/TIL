@@ -13,6 +13,12 @@ brew cask install karabiner-elements
   * [macOS Sierra 한영키로 한영전환하기. 106키 키보드에서 2017.04.30](https://junho85.pe.kr/578)
   * [macOS Sierra 에서 ₩ 입력을 ` 로 바꾸기. KeyBindings. Home, End, PageUp, PageDown 등 2017.04.30](https://junho85.pe.kr/580)
 
+## 한영키 세팅
+* [macOS Sierra 한영키로 한영전환하기. 106키 키보드에서](https://junho85.pe.kr/578)
+
+## keyboard 자동변환 중단시키기
+### 정리
+* [맥북 세팅 - Keyboard - Text 자동 전환 해제 2020.01.09](https://junho85.pe.kr/1457)
 
 ## opt arrow
 
