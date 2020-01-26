@@ -27,3 +27,9 @@ var new_date = moment(startdate, "DD-MM-YYYY").add(5, 'days');
 ```
 moment().subtract(7, 'day')
 ```
+
+## specific date
+* 1985.05.20
+```
+moment().year(1985).month(5-1).date(20)
+```
