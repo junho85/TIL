@@ -3,6 +3,66 @@
 * ![](project100.png)
 * ~2019.12.28
 
+## 2020.01.29 Laughter became a memory.
+![](20200129.png)
+* Laughter became a memory.
+* Laughter became a memory.
+* Laughter became a memory.
+
+## 2020.01.28 Free time became scarce.
+![](20200128.png)
+* Free time became scarce.
+* Free time became scarce.
+* Free time became scarce.
+
+## 2020.01.27 Life became busy.
+![](20200127.png)
+* Life became busy.
+* Life became busy.
+* Life became busy.
+
+## 2020.01.26 At time passed, we slowly drifted apart.
+![](20200126.png)
+* At time passed, we slowly drifted apart.
+* At time passed, we slowly drifted apart.
+* At time passed, we slowly drifted apart.
+
+## 2020.01.25 We had what some people call a 'bromance'.
+![](20200125.png)
+* We had what some people call a 'bromance'.
+* We had what some people call a 'bromance'.
+* We had what some people call a 'bromance'.
+
+## 2020.01.24 We would grab dinner, see movies, and watch hockey games together.
+![](20200124.png)
+* We would grab dinner, see movies, and watch hockey games together.
+* We would grab dinner, see movies, and watch hockey games together.
+* We would grab dinner, see movies, and watch hockey games together.
+
+## 2020.01.23 Ben and I used to hang out at least three times a week.
+![](20200123.png)
+* Ben and I used to hang out at least three times a week.
+* Ben and I used to hang out at least three times a week.
+* Ben and I used to hang out at least three times a week.
+
+## 2020.01.22 So, we're closer than those two ever were.
+![](20200122.png)
+* So, we're closer than those two ever were.
+* So, we're closer than those two ever were.
+* So, we're closer that those two ever were.
+
+## 2020.01.21 To put that in perspective, Romeo and Juliet only knew each other for less than four days.
+![](20200121.png)
+* To put that in perspective, Romeo and Juliet only knew each other for less than four days.
+* To put that in perspective, Romeo and Juliet only knew each other for less than four days.
+* To put that in perspective, Romeo and Juliet only knew each other for less than four days.
+
+## 2020.01.20 My best friend Ben and I have known each other for two and a half years.
+![](20200120.png)
+* My best friend Ben and I have known each other for two and a half years.
+* My best friend Ben and I have known each other for two and a half years.
+* My best friend Ben and I have known each other for two and a half years.
+
 ## 2020.01.19 I have to be in good shape.
 ![](20200119.png)
 * I have to be in good shape.
