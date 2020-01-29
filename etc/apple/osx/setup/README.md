@@ -198,7 +198,33 @@ brew cask install handbrake
 * [](https://formulae.brew.sh/formula/handbrake)
 
 
-* VPN
+## adobe acrobat reader
+* pdf reader
+```
+brew cask install adobe-acrobat-reader
+```
+
+## bitbar
+* [bitbar](https://formulae.brew.sh/cask/bitbar)
+```
+brew cask install bitbar
+```
+
+## coreutils, findutils, gnu
+```
+brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep
+```
+
+## cpan
+```
+sudo cpan -f Template
+```
+
+## The Unarchiver
+```
+brew cask install the-unarchiver
+```
+
 * wunderlist
 * arduino ide
 
