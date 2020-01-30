@@ -14,7 +14,7 @@ SEL2870 55mm F3.5 최단30cm
 
 
 ## A6500
-http://shopping.daum.net/siso/p/product/A2976808490/&q:A6500&cateid:100108105101&srchhow:Bexpo
+* [](http://shopping.daum.net/siso/p/product/A2976808490/&q:A6500&cateid:100108105101&srchhow:Bexpo)
 
 등록일: 2016.10.27
 
@@ -22,23 +22,27 @@ http://shopping.daum.net/siso/p/product/A2976808490/&q:A6500&cateid:100108105101
 
 최고감도 ISO25600
 
-https://en.wikipedia.org/wiki/Sony_%CE%B16500
+* [](https://en.wikipedia.org/wiki/Sony_%CE%B16500)
 
 
 ## RX100
-https://en.wikipedia.org/wiki/Sony_Cyber-shot_DSC-RX100
+* [](https://en.wikipedia.org/wiki/Sony_Cyber-shot_DSC-RX100)
 
 ### 그냥 RX100
 * 2019.07.12
-  * 17만원 https://cafe.naver.com/joonggonara/614540818
-  * 20만원 https://www.daangn.com/articles/34275398 2013년
+  * 17만원 [](https://cafe.naver.com/joonggonara/614540818)
+  * 20만원 [](https://www.daangn.com/articles/34275398) 2013년
 * 2019.07.10
-  * 17만 9천 https://cafe.naver.com/joonggonara/613837484
+  * 17만 9천 [](https://cafe.naver.com/joonggonara/613837484)
 
 ### RX100 MK6 (VI)
 
+### RX100 MK7
+* 드디어 마이크 단자가 추가 되었다.
+* [ACC-TRDCX 배터리, 충전기]()
+
 ## RX0 M2
-https://www.sony.co.kr/electronics/cyber-shot-compact-cameras/dsc-rx0m2
+* [](https://www.sony.co.kr/electronics/cyber-shot-compact-cameras/dsc-rx0m2)
 
 
 * [늦깎이 브이로거의 카메라, RX0 M2 2019.03.26](http://the-edit.co.kr/20450)
