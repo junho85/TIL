@@ -225,6 +225,17 @@ sudo cpan -f Template
 brew cask install the-unarchiver
 ```
 
+## postman
+```
+brew cask install postman
+```
+* [Get Postman for Mac](https://www.getpostman.com/downloads/)
+
+## cmake
+```
+brew install cmake
+```
+
 * wunderlist
 * arduino ide
 
