@@ -1,4 +1,14 @@
 # key
+## repeating 안먹을때
+키를 꾹 눌렀을 때 반복 입력이 안되고
+![](macos-not-work-key-repeating.png)
+이런식으로 나온다면 터미널을 열고 다음 명령얼르 실행시켜 준다.
+```
+defaults write -g ApplePressAndHoldEnabled -bool false
+```
+
+### References
+* [How to Enable Key Repeating in macOS 2016.08.19](https://www.howtogeek.com/267463/how-to-enable-key-repeating-in-macos/)
 
 ## karabiner - 키 맵핑
 * [](https://formulae.brew.sh/cask/karabiner-elements)
