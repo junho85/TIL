@@ -50,3 +50,54 @@ sudo yum install openssl openssl-devel
 ```
 
 ```
+
+## OSX 에서 SSL 오류.
+
+```
+$ pip install pymongo
+pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.
+Collecting pymongo
+  Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError("Can't connect to HTTPS URL because the SSL module is not available.")': /simple/pymongo/
+  Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError("Can't connect to HTTPS URL because the SSL module is not available.")': /simple/pymongo/
+  Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError("Can't connect to HTTPS URL because the SSL module is not available.")': /simple/pymongo/
+  Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError("Can't connect to HTTPS URL because the SSL module is not available.")': /simple/pymongo/
+  Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError("Can't connect to HTTPS URL because the SSL module is not available.")': /simple/pymongo/
+  Could not fetch URL https://pypi.org/simple/pymongo/: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host='pypi.org', port=443): Max retries exceeded with url: /simple/pymongo/ (Caused by SSLError("Can't connect to HTTPS URL because the SSL module is not available.")) - skipping
+  Could not find a version that satisfies the requirement pymongo (from versions: )
+No matching distribution found for pymongo
+pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.
+Could not fetch URL https://pypi.org/simple/pip/: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host='pypi.org', port=443): Max retries exceeded with url: /simple/pip/ (C
+```
+
+python 에서 import ssl 해 보면 원인을 파악하는데 도움이 된다.
+```
+$ python   
+Python 3.7.6 (default, Dec 30 2019, 19:38:26) 
+[Clang 11.0.0 (clang-1100.0.33.16)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import ssl
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/local/Cellar/python/3.7.6_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py", line 98, in <module>
+    import _ssl             # if we can't import it, let the error propagate
+ImportError: dlopen(/usr/local/Cellar/python/3.7.6_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/lib-dynload/_ssl.cpython-37m-darwin.so, 2): Library not loaded: /usr/local/opt/openssl@1.1/lib/libssl.1.1.dylib
+  Referenced from: /usr/local/Cellar/python/3.7.6_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/lib-dynload/_ssl.cpython-37m-darwin.so
+  Reason: image not found
+```
+openssl 1.0 설치 하느라 openssl 1.1 은 지웠는데 왜 @1.1 경로를 찾고 있는 걸까
+
+아무튼 설치
+```
+brew install openssl
+```
+해결됨
+
+## trusted-host
+* [팁 – 파이썬 패키지 설치할 때 SSL 인증 오류 해제 방법](https://surpreem.com/%ED%8C%81-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%ED%8C%A8%ED%82%A4%EC%A7%80-%EC%84%A4%EC%B9%98%ED%95%A0-%EB%95%8C-ssl-%EC%9D%B8%EC%A6%9D-%EC%98%A4%EB%A5%98-%ED%95%B4%EC%A0%9C-%EB%B0%A9%EB%B2%95/)
+  * ~/.pip/pip.conf 설정 수정
+```
+[global]
+trusted-host = pypi.org
+               files.pythonhosted.org
+```
+
