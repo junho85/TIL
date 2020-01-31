@@ -8,10 +8,15 @@ brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/8b9d6d688f
 
 설치경로는
 ```
+/usr/local/Cellar/openssl/1.0.2t
+```
+
+/usr/local/opt/openssl 에 심볼릭 링크 걸리는데 이건 다른 openssl 설치 하면 덮어 써 버린다.
+```
 /usr/local/opt/openssl -> ../Cellar/openssl/1.0.2t
 ```
 
-lib 심볼릭 링크
+lib 심볼릭 링크. /usr/local/lib/ 에 심볼릭 링크를 걸어서 
 ```
 ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
 ln -s /usr/local/opt/openssl/lib/libcrypto.dylib /usr/local/lib/
