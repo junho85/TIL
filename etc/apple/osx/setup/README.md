@@ -236,6 +236,16 @@ brew cask install postman
 brew install cmake
 ```
 
+## IINA
+```
+brew cask install iina
+```
+
+## ansible
+```
+brew install ansible
+```
+
 * wunderlist
 * arduino ide
 
