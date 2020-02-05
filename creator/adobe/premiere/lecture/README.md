@@ -1,5 +1,45 @@
 # 프리미어 기초 강좌
 
+## 프로젝트 만들기
+
+## 시퀀스 만들기
+영상 기준으로 하려면 영상에서 마우스 우클릭 해서 
+
+New Sequence
+
+XDCAM HD422 -> 1080p -> XDCAM HD422 1080p30
+
+무난한 설정으로 보임.
+```
+General
+ Editing mode: Sony XDCAM HD422 1080 NTSC
+ Timebase: 29.97 fps
+
+Video Settings
+ Frame size: 1920h 1080v (1.0000)
+ Frame rate: 29.97  frames/second
+ Pixel Aspect Ratio: Square Pixels (1.0)
+ Fields: No Fields (Progressive Scan)
+
+Audio Settings
+ Sample rate: 48000 samples/second
+
+Default Sequence
+ Total video tracks: 3
+ Master track type: Stereo
+ Audio Tracks:
+ Audio 1: Standard
+ Audio 2: Standard
+ Audio 3: Standard
+ Audio 4: Standard
+ Audio 5: Standard
+ Audio 6: Standard
+ Audio 7: Standard
+ Audio 8: Standard
+```
+
+![](new_sequence.png)
+
 ## 사운드 편집 1
 * M - Mute Track
 * 소리만 지우기
@@ -52,7 +92,7 @@
 ## 인트로 영상 만드는 방법
 
 ## 애니메이션
-* https://mixkit.co/videos/coffee-and-cafe/ 에서 커피마시는 영상 다운로드
+* [](https://mixkit.co/videos/coffee-and-cafe/) 에서 커피마시는 영상 다운로드
 * 프로젝트 04강
 * 
 
