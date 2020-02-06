@@ -10,6 +10,7 @@ $ cpan Mojolicious
 ## force install
 ```
 cpan -fi Unicode::Normalize
+cpan -fi Data::Printer
 ```
 
 ## cpanminus
