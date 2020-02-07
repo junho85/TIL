@@ -16,6 +16,16 @@ brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/8b9d6d688f
 /usr/local/opt/openssl -> ../Cellar/openssl/1.0.2t
 ```
 
+덮어 써 져서 문제가 되는 경우 switch 로 바꿔가며 쓸 수 있다.
+```
+brew switch openssl 1.0.2t
+```
+
+2020.02.07
+clion 에서 CMake 설정에 OPENSSL_ROOT_DIR 설정 해 주면 되는거 같더니 어느순간 안되어서 switch 해서 쓰고 있음.
+그런데 이렇게 하면 또 python 개발 할 때 openssl 문제 생길거 같은데...
+
+
 lib 심볼릭 링크. /usr/local/lib/ 에 심볼릭 링크를 걸어서 
 ```
 ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
