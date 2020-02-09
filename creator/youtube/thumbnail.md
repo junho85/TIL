@@ -32,4 +32,5 @@ POST https://www.googleapis.com/youtube/v3/thumbnails/set
 
 ### References
 * [How do I get a YouTube video thumbnail from the YouTube API?](https://stackoverflow.com/questions/2068344/how-do-i-get-a-youtube-video-thumbnail-from-the-youtube-api)
-
+* [YouTube Thumbnail Grabber](https://boingboing.net/features/getthumbs)
+* [](http://www.get-youtube-thumbnail.com/)
