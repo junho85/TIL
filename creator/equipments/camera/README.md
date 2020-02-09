@@ -1,29 +1,21 @@
 # camera
 
 ## A7M3
-소니 ILCE-7M3 A7ⅢK 미러리스 카메라 + 렌즈킷 SEL2870
-https://www.coupang.com/vp/products/83836049
-
-2,260,000원 (2019.07.09 기준)
-
-듀얼메모리슬롯
-
-
-SEL2870 55mm F3.5 최단30cm
-295g
+* [소니 ILCE-7M3 A7ⅢK 미러리스 카메라 + 렌즈킷 SEL2870](https://www.coupang.com/vp/products/83836049)
+  * 2,260,000원 (2019.07.09 기준)
+* 스팩
+  * 듀얼메모리슬롯
+  * SEL2870 55mm F3.5 최단30cm
+  * 295g
 
 
 ## A6500
 * [](http://shopping.daum.net/siso/p/product/A2976808490/&q:A6500&cateid:100108105101&srchhow:Bexpo)
-
-등록일: 2016.10.27
-
-미러리스
-
-최고감도 ISO25600
-
+* 스팩
+  * 등록일: 2016.10.27
+  * 미러리스
+  * 최고감도 ISO25600
 * [](https://en.wikipedia.org/wiki/Sony_%CE%B16500)
-
 
 ## RX100
 * [](https://en.wikipedia.org/wiki/Sony_Cyber-shot_DSC-RX100)
@@ -39,21 +31,19 @@ SEL2870 55mm F3.5 최단30cm
 
 ### RX100 MK7
 * 드디어 마이크 단자가 추가 되었다.
-* [ACC-TRDCX 배터리, 충전기]()
+* ACC-TRDCX 배터리, 충전기
+* [소니 여행용 DC 충전기 배터리 키트 BC-DCX2 + NP-BX1](https://coupa.ng/boHygL)
+  * 2020.02.09 기준 59,010원
 
 ## RX0 M2
 * [](https://www.sony.co.kr/electronics/cyber-shot-compact-cameras/dsc-rx0m2)
-
-
 * [늦깎이 브이로거의 카메라, RX0 M2 2019.03.26](http://the-edit.co.kr/20450)
 
 ## RX10
 
 
 ## X3000
-
-리보트뷰, 라이브뷰 RM-LVR3
-
-슈팅그립 VCT-STG1
+* 리모트뷰, 라이브뷰 RM-LVR3
+* 슈팅그립 VCT-STG1
 
 * [[동영상강좌]FDR-X3000, RM-LVR3 액션캠과 라이브뷰 리모트 컨트롤러 연결하기](https://www.sony.co.kr/electronics/support/action-cam-fdr-x-series/fdr-x3000/articles/00202528)
