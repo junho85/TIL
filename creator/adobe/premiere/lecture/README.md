@@ -59,7 +59,7 @@ Default Sequence
   * https://www.youtube.com/audiolibrary/music
   * 음악은 보통 크기 때문에 Volume Level 을 적당히 조정해서 줄여줌
 * Auto-Match 로 볼륨 조정 - 사운드 평준화
-* Ducking - 내가 말할 떄 음악 줄이기
+* Ducking - 내가 말할 때 음악 줄이기
 
 
 

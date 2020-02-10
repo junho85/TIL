@@ -28,7 +28,7 @@ String a = "aaa";
 String b = "aaa";
 System.out.println(a == b); // true
 ```
-이거도 true 라니... 자바 상수풀을 이용하기 떄문
+이거도 true 라니... 자바 상수풀을 이용하기 때문
 
 ```
 public static void main(String[] args) {

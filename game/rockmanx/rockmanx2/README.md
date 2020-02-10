@@ -45,8 +45,8 @@ SERGES: I am Serges and I cannot allow you to stop the unification!
 It is for the good of all!
 
 약점은 뭘까.
-화염이 방어벽 뚫고 잘 떄리는 편. 지뢰 제거도 무난함.
-톱니바퀴로 떄리다 보면 맞기도 함.
+화염이 방어벽 뚫고 잘 때리는 편. 지뢰 제거도 무난함.
+톱니바퀴로 때리다 보면 맞기도 함.
 
 SERGES: You have merely delayed, the inevitable. We will meet again...
 
@@ -113,7 +113,7 @@ Slow them down Mega Man X!
   * 🔋서브탱크: 오른쪽 대쉬 뛰면서 화염풀차지로 날아서 벽타고 올라가서 먹음.
   * 칼 괴물은 기가 크래시 쓰면 한방에 잡음.
   * 보스:
-    * 돌 무기로 꼬리 떼기. 이후에도 돌 쓰면 위에 붙어도 떄리기 편함.
+    * 돌 무기로 꼬리 떼기. 이후에도 돌 쓰면 위에 붙어도 때리기 편함.
     * Magnet Mine 얻음
 * 8. 달팽이. 크리스탈
   * ❤️하트: 초반 아래쪽 구멍으로 내려가서 왼쪽 끝에 하트가 있음. 로봇 대쉬 점프 후 점프 눌러서 최대한 높이 멀리 간 상태에서 로봇 탈출 점프 해서 나가야 되는데 아슬아슬함. 쉽지 않음.

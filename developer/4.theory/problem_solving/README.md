@@ -79,7 +79,7 @@ In addition, people in computer science spend a surprisingly large amount of hum
   * ...
   * Topcoder와 Codeforces의 경우 레이팅에 따른 아이디 색깔 변화를 백준에 연동할 수 있음.
   * AtCoder: 일본 사이트. 참가하기 편한 시간대. 보통 토요일 혹은 일요일 밤 9시~11시쯤까지 대회가 진행됨
-  * Codeforces: 다양한 시간대. 대부분 밤11시반~12시반쯤부터 시작해서 새벽 1~2시까지 진행됨. 평일에 열릴 떄도 있고, 주말에 열릴 때도 있음.
+  * Codeforces: 다양한 시간대. 대부분 밤11시반~12시반쯤부터 시작해서 새벽 1~2시까지 진행됨. 평일에 열릴 때도 있고, 주말에 열릴 때도 있음.
   * 각종 대회 일정 확인 https://www.acmicpc.net/calendar
 * AtCoder
   * 세종류

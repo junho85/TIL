@@ -57,7 +57,7 @@ response = client.users_list()
 print(response)
 ```
 
-결과 예제. 참고로 메시지 보낼때 link_names 걸어 줄 때 'name' 의 값을 이용해야 한다. slack 채팅창에 직접 적을 떄는 표시되는 이름 (display_name) 을 이용하면 되지만 API 로 메시지 보낼 때는 name 을 이용해야 한다.
+결과 예제. 참고로 메시지 보낼때 link_names 걸어 줄 때 'name' 의 값을 이용해야 한다. slack 채팅창에 직접 적을 때는 표시되는 이름 (display_name) 을 이용하면 되지만 API 로 메시지 보낼 때는 name 을 이용해야 한다.
 ```
 {
 	'ok': True,

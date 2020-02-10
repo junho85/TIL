@@ -44,7 +44,7 @@ X 버튼 표시. 그런데 지워지지는 않는듯?
 showClearDate={true}
 ```
 
-clear 했을 떄 달력 띄우기
+clear 했을 때 달력 띄우기
 ```
 reopenPickerOnClearDate={true}
 ```
