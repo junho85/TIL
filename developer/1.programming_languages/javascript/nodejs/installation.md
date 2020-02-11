@@ -8,6 +8,14 @@
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 ```
 
+osx 에서는 brew 를 이용해서 설치 할 수도 있다.
+```
+brew install nvm
+```
+* [](https://formulae.brew.sh/formula/nvm)
+
+nvm 설치 하고 나면 ~/.zshrc 등 파일을 수정해 주라고 나오는데 따라 수정해준다.
+
 ## nodejs 설치
 ```
 nvm install node # 최신 버전
