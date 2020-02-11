@@ -24,7 +24,7 @@
   * [javascript](developer/1.programming_languages/javascript/README.md)
     * [array](developer/1.programming_languages/javascript/array/README.md)
     * [base64](developer/1.programming_languages/javascript/base64/README.md)
-    * [canvas](developer/1.programming_languages/javascript/canvas/README.md)
+    * [canvas](developer/1.programming_languages/javascript/35.canvas/README.md)
     * [date](developer/1.programming_languages/javascript/33.date/README.md)
       * [moment.js](developer/1.programming_languages/javascript/33.date/moment.md)
     * [jquery](developer/1.programming_languages/javascript/jquery/README.md)
