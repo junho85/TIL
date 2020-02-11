@@ -28,7 +28,7 @@ zip [-options] [-b path] [-t mmddyyyy] [-n suffixes] [zipfile list] [-xi list]
 이상한점은 분할압축 할 때 사용하는 -s 옵션이 설명에는 나오지 않습니다.
 
 ## password
-```javascript
+```bash
 $ zip --encrypt archive.zip 1.txt 2.txt 3.txt
 ```
 
