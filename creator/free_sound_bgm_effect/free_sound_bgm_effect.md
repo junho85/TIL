@@ -35,7 +35,7 @@
   * 인트로
 
 ## 효과음
-
+* [미션실패](https://youtu.be/FYD9Xg7WU54)
 
 
 
