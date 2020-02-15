@@ -1,5 +1,47 @@
 # 2020.02
 
+## 2020.02.16 Ya, Gerald! Try something on me.
+![](20200216.png)
+* Ya, Gerald! Try something on me.
+* Ya, Gerald! Try something on me.
+* Ya, Gerald! Try something on me.
+
+## 2020.02.15 Hey, what you talking?
+![](20200215.png)
+* Hey, what you talking?
+* Hey, what you talking?
+* Hey, what you talking?
+
+## 2020.02.14 I'm getting older and weaker, just like your father here.
+![](20200214.png)
+* I'm getting older and weaker, just like your father here.
+* I'm getting older and weaker, just like your father here.
+* I'm getting older and weaker, just like your father here.
+
+## 2020.02.13 You have to be careful, Janet.
+![](20200213.png)
+* You have to be careful, Janet.
+* You have to be careful, Janet.
+* You have to be careful, Janet.
+
+## 2020.02.12 I didn't mean to hurt you.
+![](20200212.png)
+* I didn't mean to hurt you.
+* I didn't mean to hurt you.
+* I didn't mean to hurt you.
+
+## 2020.02.11 Girl, that is so painful!
+![](20200211.png)
+* Girl, that is so painful!
+* Girl, that is so painful!
+* Girl, that is so painful!
+
+## 2020.02.10 Ahhhh!
+![](20200210.png)
+* Ahhhh!
+* Ahhhh!
+* Ahhhh!
+
 ## 2020.02.09 Grab me here, and then I just do...
 ![](20200209.png)
 * Grab me here, and then I just do...
