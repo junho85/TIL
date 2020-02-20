@@ -1,5 +1,9 @@
 # TV
 
+## UN65NU7100
+* 삼성 UN65NU7100 4K UHD LED TV 65인치형
+* 2020.02.20 리퍼비시 150만원 정도 하는듯
+
 ## 아남 CST-550IM
 * [CST-550IM](https://www.coupang.com/vp/products/37844175?vendorItemId=3084209866&isAddedCart=)
   * 2019.12.26 469,000원 + 배송비 60,000원
@@ -45,4 +49,3 @@
   * 제조 중국
   * 제조사 Jiangsu Shinco Technology Co.,LTD.
   * 삼성 프리미엄 패널
-  
