@@ -27,7 +27,7 @@
     * [canvas](developer/1.programming_languages/javascript/35.canvas/README.md)
     * [date](developer/1.programming_languages/javascript/33.date/README.md)
       * [moment.js](developer/1.programming_languages/javascript/33.date/moment.md)
-    * [jquery](developer/1.programming_languages/javascript/jquery/README.md)
+    * [jquery](developer/1.programming_languages/javascript/51.jquery/README.md)
     * [json](developer/1.programming_languages/javascript/json/README.md)
     * [jsplumb](developer/1.programming_languages/javascript/jsplumb/README.md)
     * [konva](developer/1.programming_languages/javascript/konva/README.md)
