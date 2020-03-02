@@ -1,5 +1,5 @@
 # 20. Valid Parentheses
-* https://leetcode.com/problems/valid-parentheses/
+* [](https://leetcode.com/problems/valid-parentheses/)
 
 * 괄호 짝이 맞는지 확인한다.
 * 괄호는 세가지 타입이 사용 된다. (){}[]
