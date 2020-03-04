@@ -1,5 +1,4 @@
 # 2. Add Two Numbers
-* https://leetcode.com/problems/add-two-numbers/
 
 ## 풀이
 * c++ 로 풀었던거 java 로 단순 포팅한 수준.
