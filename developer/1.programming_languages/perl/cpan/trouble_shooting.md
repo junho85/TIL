@@ -1,26 +1,7 @@
 # cpan trouble shooting
 ## 잘 설치 되지 않는 모듈들
-### DBD::mysql
-https://metacpan.org/pod/DBD::mysql::INSTALL
 
-```
-...
-Can't exec "mysql_config": No such file or directory at Makefile.PL line 89.
 
-Cannot find the file 'mysql_config'! Your execution PATH doesn't seem
-not contain the path to mysql_config. Resorting to guessed values!
-...
-```
-
-osx 에서는 mysql 를 설치해 주어야 된다. (mysql-connector-c 를 설치한 경우 linking 에서 오류 남. mysql 설치 하려면 충돌나서 mysql-connector-c 먼저 지워줘야되니 번거롭다.)
-```bash
-brew install mysql
-```
-
-### 테스트 스
-```
-perl -MCPAN -e "CPAN::Shell->notest('install', 'DBD::mysql')"
-```
 
 ## OSX - apache 웹서버에서 perl cgi 호출시 특정 모듈을 못찾는 경우
 * 2018.01.15 삽질 했던 것 정리. 문제가 해결은 된 상태라 해결 된 것 까지 정리. 정확한 이유 확인은 못함.
