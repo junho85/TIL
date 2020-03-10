@@ -28,3 +28,8 @@ class Solution:
         if root.right is not None:
             self.traverse(root.right, result, level + 1)
 ```
+
+```
+Runtime: 28 ms, faster than 91.95% of Python3 online submissions for Binary Tree Level Order Traversal II.
+Memory Usage: 13.4 MB, less than 37.04% of Python3 online submissions for Binary Tree Level Order Traversal II.
+```
