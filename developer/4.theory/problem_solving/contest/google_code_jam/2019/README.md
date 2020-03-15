@@ -1,6 +1,8 @@
 # 2019 Google Code Jam
 * [](https://codingcompetitions.withgoogle.com/codejam/archive/2019)
 
+## Qualification Round
+
 ## Round 1A
 * [](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051635)
 
