@@ -19,3 +19,5 @@ lines.forEach(function (str, idx) {
     console.log("line[" + idx + "]: " + str);
 });
 ```
+
+## generate email list
