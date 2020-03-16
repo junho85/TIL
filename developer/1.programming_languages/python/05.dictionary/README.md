@@ -1,0 +1,37 @@
+# python - dictionary
+
+## dictionary loop
+다음과 같은 dictionary가 있을 때 
+```
+some_dict = {'june': 12, 'hello': 22, 'world': 33}
+```
+아래와 같이 key : value로 출력하는 방법니다.
+```
+june : 12
+hello : 22
+world : 33
+```
+
+### keys 이용하기
+```python
+for key in some_dict.keys():
+    print(key, ":", some_dict[key])
+```
+평범한 방식 입니다. keys() 메서드를 이용하면 dictionary에서 key만 뽑아서 리스트로 리턴합니다. 그 리스트를 대상으로 for loop를 돌면서 key를 하나씩 뽑아 옵니다. 값은 dictionary[key]를 이용해서 뽑아오면 됩니다.
+
+참고로 keys()는 생략이 가능하지만 사용하지 않는 것이 좋습니다.
+```python
+for key in some_dict:
+    print(key, ":", some_dict[key])
+```
+.keys() 를 적지 않는 것과 같은 결과가 나오는 것을 확인할 수 있습니다. 하지만 코드만 봤을 때는 key 만 나오는지 다른 거도 나오는지 알 수 없습니다.
+
+### items 이용하기
+```
+for key, value in some_dict.items():
+    print(key, ":", value)
+```
+(key, value)로 구성된 리스트를 리턴해서 key, value를 바로 뽑아 사용 하는 방식입니다. key 와 value 를 한 번에 뽑아와야 할 때 가장 좋은 방법으로 보입니다.
+
+## 정리
+* [python - dictionary 의 key, value 를 출력 하는 방법. dictionary loop 2017.10.01](https://junho85.pe.kr/671)
