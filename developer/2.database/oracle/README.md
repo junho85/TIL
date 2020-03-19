@@ -1,7 +1,5 @@
 # oracle
 
-## installation
-
 ## Primary Key (PK) 확인 방법
 
 ```sql
@@ -29,4 +27,5 @@ MY_TABLE	MY_TABLE_PK	ID	1
 * USER_CONSTRAINTS 현재 사용자의 스키마에 있는 테이블에 대한 제약 조건 정의
 * DBA_CONSTRAINTS 데이터베이스의 모든 제약 조건 정의
 
-참고: [[오라클] PK 조회 방법 (Primary Key) 2019.01.04](https://gent.tistory.com/202)
+### References
+* [[오라클] PK 조회 방법 (Primary Key) 2019.01.04](https://gent.tistory.com/202)
