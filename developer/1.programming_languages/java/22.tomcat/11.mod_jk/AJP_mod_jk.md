@@ -1,7 +1,6 @@
 # AJP, mod_jk
 * AJP 는 Apache JServ Protocol 의 약자이다.
 
-
 ## References
 * [AJP 프로토콜](https://iam-song.tistory.com/74)
   * Apache Jserv 프로토콜은 바이너리 형태의 데이터를 네트워크로 전송하도록 개발된 프로토콜이다.
