@@ -1,5 +1,7 @@
 # Installation
 ## OSX
+
+### build
 [Tomcat Connectors (mod_jk) Downloads](http://tomcat.apache.org/download-connectors.cgi) 에서 mod_jk소스를 받습니다.
 
 ```
@@ -9,6 +11,15 @@ $ cd tomcat-connectors-1.2.48-src/native
 ```
 
 configure 할 때는 apxs 경로를 지정해 주어야 합니다. apxs는 httpd가 설치된 경로에 있습니다. 경로가 생각나지 않으면 brew info httpd 로 확인해 봅니다.
+```
+$ brew info httpd
+httpd: stable 2.4.41 (bottled)
+Apache HTTP server
+https://httpd.apache.org/
+/usr/local/Cellar/httpd/2.4.41_1 (1,653 files, 28MB) *
+...
+```
+
 ```
 $ ./configure --with-apxs=/usr/local/Cellar/httpd/2.4.41_1/bin/apxs
 $ make
@@ -38,6 +49,9 @@ Please be sure to arrange /usr/local/opt/httpd/conf/httpd.conf...
 make[2]: Nothing to be done for `install-exec-am'.
 make[2]: Nothing to be done for `install-data-am'.
 ```
+
+#### 정리
+* [OSX - tomcat과 httpd를 같은 포트로. mod_jk 설정하기 1. mod_jk 빌드하기 2020.03.26](https://junho85.pe.kr/1485)
 
 ### 설정
 httpd.conf 에 바로 설정을 넣어도 되지만 설정 파일을 분리해서 설정하겠습니다.
