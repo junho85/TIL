@@ -54,9 +54,9 @@ make[2]: Nothing to be done for `install-data-am'.
 * [OSX - tomcat과 httpd를 같은 포트로. mod_jk 설정하기 1. mod_jk 빌드하기 2020.03.26](https://junho85.pe.kr/1485)
 
 ### 설정
-httpd.conf 에 바로 설정을 넣어도 되지만 설정 파일을 분리해서 설정하겠습니다.
+httpd.conf 에 바로 설정을 넣어도 되지만 설정 파일을 분리해서 설정하겠습니다. 제가 설치한 httpd의 설정파일은 /usr/local/etc/httpd/httpd.conf에 있습니다. mod_jk 디렉토리를 만들고 mod_jk.conf 파일을 생성합니다.
 
-mod_jk.conf
+/usr/local/etc/httpd/mod_jk/mod_jk.conf 에 다음 내용을 입력합니다.
 ```
 LoadModule jk_module /usr/local/lib/httpd/modules/mod_jk.so
 
@@ -82,3 +82,6 @@ port는 8009로 했는데 tomcat 의 conf/server.xml 설정에서 AJP 프로토�
 ```
 <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
 ```
+
+#### 정리
+* [OSX - tomcat과 httpd를 같은 포트로. mod_jk 설정하기 2. mod_jk httpd에 설정하기 2020.03.27](https://junho85.pe.kr/1486)
