@@ -43,7 +43,7 @@
   * [Rockman](game/rockmanx/README.md)
     * [Rockman X 1](game/rockmanx/rockmanx1.md)
     * [Rockman X 2](game/rockmanx/rockmanx2/README.md)
-    * [Rockman X 3](game/rockmanx/rockmanx3.md)
+    * [Rockman X 3](game/rockmanx/rockmanx3/rockmanx3.md)
 * [database](developer/2.database/README.md)
   * [mysql](developer/2.database/mysql/README.md)
 * [me](me/README.md)
