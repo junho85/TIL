@@ -7,7 +7,8 @@
 
 
 ## 1. BLAST HORNET
-* 스페셜파츠: 오른쪽 위 가시 때문에 못감. 다리 파츠로 갈수는 있지만 좀 위험한편.
+* 스페셜파츠: 에너지칩. 
+  * 오른쪽 위 가시 때문에 못감. 다리 파츠로 갈수는 있지만 좀 위험한편.
 ```
 DR.LIGHT: Enter this capsule, X. Install this Energy Chip. This chip will allow you to recover energy.
 Stand still and your energy level will slowly increase.
@@ -32,14 +33,14 @@ Please return after you find it.
 * 🔋서브탱크: 건물 밖으로 나오면 좌측 상단에 있는데 다리 파츠 업그레이드 하고 와서 먹는다.
 * 파츠: 다리파츠. 대쉬점프 잘 하면 되는데 어려우면 제로로 대쉬점프 하면 좀 더 쉽다. 제로가 덩치가 크기 때문.
 ```
-Enter this capsule, X.
+DR.LIGHT: Enter this capsule, X.
 Take this Leg upgrade.
 The upgrade will enhance your mobility in the air.
 You will be able to dash left, right or even straight up into the air.
 ```
 * ❤️하트: 어디 있지
 * 보스: 버팔로
-  * 약점: ?
+  * 약점: PARASTIC BOMB
   * 꼼수: 앞에서 점프 하면 자꾸 뒤로 갔다 박음
   * 무기: FROST SHIELD
 
@@ -48,7 +49,16 @@ You will be able to dash left, right or even straight up into the air.
 * ❤️하트: 벽으로 막혀 있음
   * 벌 보스 클리어 하고 나면 뚫려 있음.
 * 라이드아머F: 다리 파츠 업그레이드 필요
-* 벽 뚫으면 뭐 있지?
+* 스페셜파츠:
+  * 라이드아머 타고 가다가 벽 뚫고 들어 가면 있음
+```
+DR.LIGHT: Enter this capsule, X.
+Install this Arm Chip. this chip will increase your attacking abilities.
+The chip allows damage to your system to be transformed and charged as weapon energy.
+You will be able to use it to rapidly shoot charged shots.
+Remember X, you system can handle only 1 of the 4 enhancement chips.
+Enter this capsule only if you are sure you want to use this chip.
+```
 * 보스:
   * 약점: 레이
   * 무기: GRAVITY WELL. 벌의 약점
@@ -91,7 +101,7 @@ As you receive damage, a defense field will be generated to protect you.
 ![](6_ride_armor_h.png)
 ![](6_ride_armor_h2.png)
 * ❤️하트: 라이드아머 타고 가다가 내려가는 길에서 오른쪽 벽 깨고 들어가면 있음
-* 스페셜파츠: 
+* 스페셜파츠: 바디칩
 ```
 DR.LIGHT: Enter this capsule, X.
 Install this Body Chip.
@@ -108,6 +118,7 @@ Please return after you find it.
 
 
 ## 7. TUNNEL RHINO
+* 코뿔소
 * ❤️하트: 암파츠랑 메기무기인 TRIAD THUNDER 전기 무기 차지샷 쏘면 돌이 떨어짐
 * 🔋서브탱크: 오른쪽 위에 쉽게 먹을 수 있음
 * 파츠: 
@@ -140,6 +151,95 @@ The upgrade will also allow you to charge any special weapon.
   * 약점: SPINNING BLADE
   * 무기: RAY SPLASHER
 
+## 도플러 연구소1
+중간보스: ACID
+
+내려가는곳 왼쪽 벽 타고 가다 보면 구멍 있음.
+```
+DR.LIGHT: Enter this capsule, X.
+Install this chip to enhance all your parts.
+The situation should now be improved.
+Good luck X.
+
+Take this X-Buster upgrade.
+The upgrade will increase the strength of your charged shots.
+You will be able to shoot 2 charged shots at once.
+If timed correctly, you can overlap the shots to create a single cross-charged shot.
+The upgrade will also allow you to charge any special weapon.
+```
+![](last_1_all_special_chips.png)
+
+* 보스: BIT BYTE 처치 했으면 거대 로봇.
+  * 약점: 토네이도팽
+* 보스: BIT BYTE 살아 있으면 합체 함.
+  * 약점: 레이 스플레셔
+
+## 도플러 연구소2
+VILE(바바)를 약점으로 처치 했을떄와 도망갔을 떄 달라짐
+
+* 처치 했을때
+  * 맵에 물이 차 있음
+  * 중간보스
+    * 제로가 고장 안났으면 제로로 들어가서 처리 하면 제로와 자폭함. 제트세이버 줌.
+  * 보스: 거대 오징어 볼트 쿠라게일
+    * 제트세이버로 금방 죽음
+* 살아 있을 때
+  * 맵에 물이 차 있지 않음
+  * 중간보스, 보스 안나옴
+  * 보스룸 다음으로 진행하면 VILE(바바)가 나옴
+  * 약점: 패러스틱밤
+  
+```
+VILE: My waiting has finally come to an end!
+Prepare to die at the hands of the world's most advanced riding armor - the new "Goliath"!
+```
+  * 라이드아머 부숴지면 레이스플레셔가 약점
+```
+Don't think that this is the end, X!
+I will haunt you to the dya you die......
+```
+
+## 도플러 연구소3 - 보스재생실와 도플러박사
+* 중간에 있는거 부수면 아이템 나오는데 별로...
+* 8보스 클리어 하고 나면 도플러
+  * 약점: ACID BURST?
+```
+DOPPLER: I've been waiting for you X. I'm Dr.Doppler.
+I've been watching your battles closely.
+Your victories over my men have been most impressive.
+I need superior reploids like yourself, X!
+I offer you the chance to join us.
+Together we shall build a Utopia where the Reploids rule under the watchful eyes of Sigma,
+out lord and master.
+MEGA MAN: No way, Doc! Your schemes end here and now!!
+DOPPLER: Perhaps you are not as smart as I once thought!
+Prepare to be ripped apart and to be born again as part of the new body of Sigma!
+```
+
+```
+DOPPLER: You are strong X...
+Strong enough to defeat Sigma...
+MEGA MAN: Doppler, can you talk?!
+DOPPLER: Sigma's true form is that of a computer virus...
+I was corrupted by him and...
+...I created a horrific new body for him...
+MEGA MAN: Where's the body now?
+DOPPLER: It's in the underground hangar of this lab...
+I don't think Sigma has occupied it yet...
+Don't worry about me...
+Destroy the body before it is too late.
+Time is running out...
+MEGA MAN: Thanks, Doc...
+```
+
+## 도플러 연구소4 - 시그마
+* 시그마1
+  * 약점: 프로스트, 스피닝
+  * 제트세이버 두방
+* 시그마2
+  * 약점 없음
+* 시그마3
+  * 
 
 ## 스토리
 DOPPLER: He is the Maverick Hunter I failed to catch last time.
@@ -236,3 +336,5 @@ MEGA MAN: On my way......
 ## References
 * [megamanx3 Walkthrough 2018.05.04](https://www.youtube.com/watch?v=OI45NU4kqwo)
 * [[SNES] 록맨 X3 - Rockman X3, ロックマンエックス3, 메가맨 X3 - Mega Man X3 2010.09.22](https://oldgamebox.tistory.com/8025)
+* [록맨 X3](https://namu.wiki/w/%EB%A1%9D%EB%A7%A8%20X3)
+  * [볼트 쿠라게일](https://namu.wiki/w/%EB%B3%BC%ED%8A%B8%20%EC%BF%A0%EB%9D%BC%EA%B2%8C%EC%9D%BC)
