@@ -236,10 +236,110 @@ MEGA MAN: Thanks, Doc...
 * 시그마1
   * 약점: 프로스트, 스피닝
   * 제트세이버 두방
+```
+SIGNA: We meet agian X...
+It was easy to corrupt that fool, Doppler.
+And I would have succeeded if you hadn't interfered.
+But we are always destined to meet, aren't we X?
+Let the eternal struggle begin!!
+```
 * 시그마2
-  * 약점 없음
+  * 약점 없음. 세이버로 하면 두방
+```
+SIGMA: Well done X...
+But I'm far stronger than my previous forms.
+Behold the power of the ultimate battle body!!
+```
+
+```
+SIGMA: N... No it can't be!
+I can't even defeat you with this magnificent body..?!
+There seems to be only one choice now...
+I'll possess you!
+
+```
 * 시그마3
-  * 
+  * 그냥 용암 피해서 올라가면 됨
+```
+MEGA MAN: Damn!
+It's a dead end...
+SIGMA: Ha ha ha. Give up X.
+I'll possess your body and rule the whole world!!
+SIGMA: Aaarrrgggg...
+You're Doppler...
+How did you obtain this...
+DOPPLER: How do you feel now, Sigma?
+Did you like my special vaccine for the Sigma virus?
+X, I'm sorry to have given you so much trouble.
+I know I can never really atone for what I have done...
+But I will try to set things right by taking Sigma with me!!!
+SIGMA: My program... is... fading...
+DOPPLER: X... it's... time to say...
+goodbye...
+```
+
+```
+X has crushed Sigma's plan once again.
+But many questions still occupy his mind......
+
+"Why mush humans fight against Replids...?"
+"And, why must Reploids fight against each other..."
+
+As X stares at the burning remnants of Doppler's lab, his body trembles from an unknown sorrow.
+
+"What does fate have in store for me?" he wonders.
+He can only hope that someday Dr.Light's plan for him will finally be revealed.
+
+Unknown to X, his destiny has already been decided.
+To save mankind, he must destroy Zero.
+
+But only time will tell, when and why.....
+```
+
+SPYCOPTER
+NOTOR BANGER
+CATERKILLER
+HANGERTER
+EARTH COMMANDER
+HEAD GUNNER customer
+HELIT
+CARRY ARM
+HEAD GUNNER masspro
+ICE DE VOUX
+SNOW SLIDER
+SNOW RIDER
+WALL CANCER
+BLADY
+VICTOROID
+MINE TORTOISE
+CRABLASTER
+META CAPSULE
+HAMMA HAMMA
+WALK BLASTER
+GANSEKI CARRIER
+DRILL WAYING
+IWAN DE VOUX
+DRIBOLE-W
+TOMBORT
+WILD TANK
+ATAREETER
+VICTOROID customer
+ESCANAIL
+GIGANTIC MECHANIROID
+<MAOH THE GIANT>
+MAC
+GENJIBO and SHURIKEIN
+HOTAREECA
+HELL CRUSHER
+WORM SEEKER-R
+REX-2000
+MOSQUITUS
+
+VOLT KURAGEIL
+GOLIATH
+
+PRESS DISPOSER
+...
 
 ## 스토리
 DOPPLER: He is the Maverick Hunter I failed to catch last time.
@@ -263,7 +363,7 @@ MYSTERIOUSMAVERICK: Thanks for the upgrade Doctor, but I have a score to settle.
 DOPPLER: Find. Just make sure you do it.
 I still can't believe that Maverick Hunter defeated my master twice in the past...
 
-### BIT
+### BIT. 바주리러
 * 바주리러라고도 함
 Welcome, X. I'm Bit.
 I have my orders. You are to be destroyed.
@@ -338,3 +438,4 @@ MEGA MAN: On my way......
 * [[SNES] 록맨 X3 - Rockman X3, ロックマンエックス3, 메가맨 X3 - Mega Man X3 2010.09.22](https://oldgamebox.tistory.com/8025)
 * [록맨 X3](https://namu.wiki/w/%EB%A1%9D%EB%A7%A8%20X3)
   * [볼트 쿠라게일](https://namu.wiki/w/%EB%B3%BC%ED%8A%B8%20%EC%BF%A0%EB%9D%BC%EA%B2%8C%EC%9D%BC)
+* [【메가맨X3】색다른 공략이 보고싶은 당신을 위한 『지.존.공.략』 2019.06.13](https://www.youtube.com/watch?v=H7KQ8QJVqpM)
