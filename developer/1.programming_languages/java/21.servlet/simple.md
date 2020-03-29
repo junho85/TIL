@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 <project>/lib/ 디렉토리에 필요한 라이브러리들이 설치된다.
 
 
-## IntelliJ - maven
+
 
 ## IntelliJ - gradle
 
