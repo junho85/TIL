@@ -1,13 +1,38 @@
 # rockman x 3
 
-## 순서
-* 2. 버팔로 가서 다리 파츠 얻고 돌아가서 서브탱크 먹고 버팔로 잡고 프로스트 실드 얻는다.
-* 7. 코뿔소 가서 서브탱크 먹는다. 벽만드는 건 프로스트 실드 한방에 해결 가능. 드릴무기 토네이도팽을 얻는다. 2버팔로 가서 토네이도팽으로 얼음깨서 하트 먹는다.
-* 
+## 인트로
+```
+ZERO: X, I'll clear out the enemies out here.
+You go ahead and deal with the ones inside.
+```
 
+```
+MEGA MAN: Mac where have you been?
+MAC: You're far too trusting, X.
+I'm now a member of Doppler's Army!
+You will make a fine addition to our forces once
+you have been shown the true destiny of the Reploid race.
+```
+
+```
+ZERO: Are you ok, X?
+MEGA MAN: Thanks Zero.
+I'm ok.
+ZERO: I'll check around headquarters again.
+Be on your guard, X.
+```
+
+거대 로봇 클리어 후
+```
+ZERO: Looks like we've swept most of the enemies out of here.
+I'll go back and check on headquarters.
+Call me if you need me.
+See you later, X.
+```
 
 ## 1. BLAST HORNET
-* 스페셜파츠: 에너지칩. 
+* 벌
+* 스페셜파츠: 에너지칩.
   * 오른쪽 위 가시 때문에 못감. 다리 파츠로 갈수는 있지만 좀 위험한편.
 ```
 DR.LIGHT: Enter this capsule, X. Install this Energy Chip. This chip will allow you to recover energy.
@@ -38,7 +63,6 @@ Take this Leg upgrade.
 The upgrade will enhance your mobility in the air.
 You will be able to dash left, right or even straight up into the air.
 ```
-* ❤️하트: 어디 있지
 * 보스: 버팔로
   * 약점: PARASTIC BOMB
   * 꼼수: 앞에서 점프 하면 자꾸 뒤로 갔다 박음
@@ -63,9 +87,9 @@ Enter this capsule only if you are sure you want to use this chip.
   * 약점: 레이
   * 무기: GRAVITY WELL. 벌의 약점
 
-## 4. TOXIC SEAHORSE
+## 4. TOXIC SEAHORSE마
 ![](4_map.png)
-
+* 해마
 * ❤️하트: 왼쪽 벽 타고 올라가면 쉽게 먹을 수 있음
 * 라이드아머K: 프로스트실드 풀차지하면 물속에서 얼음 만들어서 타고 올라갈 수 있음. 라이드아머F 타고오른쪽 끝까지 가서 물 위 점프 하면서 갈 수 있으나 좀 번거로움  
 * 중간보스: 오징어
@@ -121,7 +145,7 @@ Please return after you find it.
 * 코뿔소
 * ❤️하트: 암파츠랑 메기무기인 TRIAD THUNDER 전기 무기 차지샷 쏘면 돌이 떨어짐
 * 🔋서브탱크: 오른쪽 위에 쉽게 먹을 수 있음
-* 파츠: 
+* 파츠: 헬멧파츠
   * 암파츠랑 메기무기인 TRIAD THUNDER 전기 무기 차지샷 쏘면 돌이 떨어짐
 ```
 DR.LIGHT: Enter this capsule, X.
@@ -175,7 +199,7 @@ The upgrade will also allow you to charge any special weapon.
   * 약점: 레이 스플레셔
 
 ## 도플러 연구소2
-VILE(바바)를 약점으로 처치 했을떄와 도망갔을 떄 달라짐
+VILE(바바)를 약점으로 처치 했을때와 도망갔을 때 달라짐
 
 * 처치 했을때
   * 맵에 물이 차 있음
@@ -265,6 +289,8 @@ MEGA MAN: Damn!
 It's a dead end...
 SIGMA: Ha ha ha. Give up X.
 I'll possess your body and rule the whole world!!
+```
+```
 SIGMA: Aaarrrgggg...
 You're Doppler...
 How did you obtain this...
