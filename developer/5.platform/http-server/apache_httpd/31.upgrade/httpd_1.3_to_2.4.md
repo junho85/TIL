@@ -87,11 +87,24 @@ DirectoryIndex index.html
 ```
 
 ## TypesConfig - IfModule mime_module
+```
 TypesConfig conf/mime.types
+```
 ->
+```
+LoadModule mime_module modules/mod_mime.so
+
 <IfModule mime_module>
     TypesConfig conf/mime.types
 </IfModule>
+```
+버전 차이인지 기존 1.3 빌드와 빌드설정이 달라서 그런지 2.4에서는 LoadModule을 안해주니 동작하지 않았습니다. 이 모듈이 동작하지 않는 경우 확장자에 따른 Content-Type 전송이 제대로 안될 수 있습니다. 보통은 큰 문제는 없지만 IE에서 css를 불러오지 못하는 문제가 생길 수 있습니다.
+
+apache httpd에서 응답에
+```
+Content-Type: text/css
+```
+가 없으니 IE11에서 "SEC7133: MIME 형식이 일치하지 않아 CSS가 무시되었습니다."라는 메시지가 뜨면서 CSS가 로드되지 않더라구요. 특이한건 문서모드를 8로 바꾸면 잘 나옵니다. 그리고 Edge브라우저에서도 특별히 문제는 안생기더군요.
 
 
 ## DefaultType text/plain 삭제
