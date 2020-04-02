@@ -46,6 +46,18 @@ _ssl _ssl.c \
 ```
 
 ```
+# Socket module helper for socket(2)
+_socket socketmodule.c
+
+# Socket module helper for SSL support; you must comment out the other
+# socket line above, and possibly edit the SSL variable:
+SSL=/usr/local/ssl
+_ssl _ssl.c \
+    -DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl -I/usr/local/include/openssl/ \
+    -L$(SSL)/lib -L/usr/local/lib64/openssl -lssl -lcrypto
+```
+
+```
 ./configure
 make
 sudo make install
