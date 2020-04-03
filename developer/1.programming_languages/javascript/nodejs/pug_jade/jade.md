@@ -1,10 +1,4 @@
-# jade
-
-## pug
-
-https://www.npmjs.com/package/pug
-
-https://pugjs.org
+# (deprecated) jade
 
 
 ## References
