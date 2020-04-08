@@ -43,7 +43,7 @@ Case #4: (1)
 ```
 
 
-풀이
+## 풀이
 ```
 tc = int(input())
 
@@ -87,4 +87,38 @@ Each character in S is a decimal digit between 0 and 9, inclusive.
 
 아하... 더 큰 숫자가 나올 수 있음.
 
-풀이 방법은 종료 후 공개.
+```
+def solve(s):
+    result = ""
+
+    for i in range(len(s)):
+        c = int(s[i])
+
+        left = c
+        right = c
+
+        if i != 0:
+            prev_c = int(s[i-1])
+            left -= prev_c
+        if i != len(s)-1:
+            next_c = int(s[i+1])
+            right -= next_c
+
+        result += "(" * left
+
+        result += str(c)
+
+        result += ")" * right
+
+    return result
+
+
+tc = int(input())
+
+for t in range(1, tc+1):
+    s = input()
+    ans = solve(s)
+    print("Case #" + str(t) + ": " + ans)
+```
+
+숫자와 숫자 사이의 괄호를 제거해 주는 로직입니다.

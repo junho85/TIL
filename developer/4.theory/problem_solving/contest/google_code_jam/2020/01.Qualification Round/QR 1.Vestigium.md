@@ -16,7 +16,7 @@ Vistigium은 라틴어로 "추적하다(trace)"를 의미합니다.
 
 N-by-N 매트릭스 이면서 행(row)과 열(column)의 숫자가 N개의 서로 다른 숫자이면서 반복되지 않는다면 Latin square입니다.
 
-주어지는 매트릭스는 1와 N사이의 숫자로 이루어져 있습니다. 우리는 trace를 구하고 싶고 이 매트릭스가 natural Latin square인지 를 확인하려고 합니다. 좀 더 설명을 하자면 단순히 이것이 natural Latin square인지 아닌지를 알려달라는 것이 아니고 반복되는 숫자를 가진 행(row)의 갯수롸 열(column)의 갯수를 계산해 주세요.
+주어지는 매트릭스는 1 N사이의 숫자로 이루어져 있습니다. 우리는 trace를 구하고 싶고 이 매트릭스가 natural Latin square인지 를 확인하려고 합니다. 좀 더 설명을 하자면 단순히 이것이 natural Latin square인지 아닌지를 알려달라는 것이 아니고 반복되는 숫자를 가진 행(row)의 갯수와 열(column)의 갯수를 계산해 주세요.
 
 ## 입력
 입력값 예제
@@ -110,3 +110,6 @@ for t in range(int(input())):
 
     print("Case #" + str(t+1) + ": ", trace, rbad, cbad)
 ```
+
+## 정리
+* [Google Code Jam 2020 QR 1 Vestigium 풀이 2020.04.08](https://junho85.pe.kr/1500)
