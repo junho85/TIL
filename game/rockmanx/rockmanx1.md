@@ -151,3 +151,4 @@ PC 에서는 메가맨X 였음
 
 ## 참고
 * [[공략/팁] 록맨 X1 공략 (완료)](http://bbs.ruliweb.com/game/261/board/read/2100447)
+* [【메가맨X】 제 동년배 사이에 인기게임 공략해보았읍니다... 『지.존.공.략』](https://www.youtube.com/watch?v=-qwBiVS7a8I)
