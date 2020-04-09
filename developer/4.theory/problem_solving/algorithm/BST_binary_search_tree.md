@@ -7,12 +7,32 @@
 * 서브트리들도 모두 이진 탐색 트리입니다.
 
 트리노드를 python코드로 단순하게 표현해 보면 다음과 같습니다.
-```
+```python
 class TreeNode:
     def __init__(self, key):
         self.key = key
         self.left = None
         self.right = None
+```
+
+
+아래 트리는 이진 검색 트리를 만족하는 트리입니다.
+![](BST_sample.png)
+
+일단 이 트리를 만들고 시작해 보겠습니다.
+```python
+tree = TreeNode(5)
+tree.left = TreeNode(3)
+tree.right = TreeNode(12)
+
+tree.left.left = TreeNode(1)
+tree.left.right = TreeNode(4)
+
+tree.right.left = TreeNode(10)
+tree.right.right = TreeNode(17)
+
+tree.right.left.right = TreeNode(11)
+tree.right.right.left = TreeNode(15)
 ```
 
 ## 검색
