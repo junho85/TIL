@@ -8,13 +8,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"/>
+    <style>
+        .center {
+            width: 500px;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
 
 <div>
     <section>
         <div id="data-container"></div>
-        <div id="pagination"></div>
+        <div id="pagination" class="center"></div>
     </section>
 </div>
 
@@ -23,23 +29,23 @@
         let container = $('#pagination');
         container.pagination({
             dataSource: [
-                {name: "hello1"},
-                {name: "hello2"},
-                {name: "hello3"},
-                {name: "hello4"},
-                {name: "hello5"},
-                {name: "hello6"},
-                {name: "hello7"},
-                {name: "hello8"},
-                {name: "hello9"},
-                {name: "hello10"},
-                {name: "hello11"},
-                {name: "hello12"},
-                {name: "hello13"},
-                {name: "hello14"},
-                {name: "hello15"},
-                {name: "hello16"},
-                {name: "hello17"},
+                {name: "hello world hello world 1"},
+                {name: "hello world hello world 2"},
+                {name: "hello world hello world 3"},
+                {name: "hello world hello world 4"},
+                {name: "hello world hello world 5"},
+                {name: "hello world hello world 6"},
+                {name: "hello world hello world 7"},
+                {name: "hello world hello world 8"},
+                {name: "hello world hello world 9"},
+                {name: "hello world hello world 10"},
+                {name: "hello world hello world 11"},
+                {name: "hello world hello world 12"},
+                {name: "hello world hello world 13"},
+                {name: "hello world hello world 14"},
+                {name: "hello world hello world 15"},
+                {name: "hello world hello world 16"},
+                {name: "hello world hello world 17"},
             ],
             callback: function (data, pagination) {
                 var dataHtml = '<ul>';
