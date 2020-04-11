@@ -114,6 +114,9 @@ GParted 를 이용하면 된다는 거 같은데 아직 잘 모르겠습니다. 
 * apt-get autoremove?
 * /boot 에서 막 지워도 되는 파일?
 
+## 정리
+* [또 /boot 파티션 정리 2019.10.06](https://junho85.pe.kr/1444)
+* [ubuntu OS 업그레이드. 18.04.1 LTS. 커널패닉시 /boot 영역 공간이 충분한지 확인. 2018.08.29](https://junho85.pe.kr/1057)
 
 ## 참고
 * [RemoveOldKernels](https://help.ubuntu.com/community/RemoveOldKernels)
