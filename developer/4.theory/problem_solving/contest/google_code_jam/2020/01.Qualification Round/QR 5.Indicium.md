@@ -31,3 +31,7 @@ Case #1: POSSIBLE
 1 3 2
 Case #2: IMPOSSIBLE
 ```
+
+
+## References
+* [Latin square](https://en.wikipedia.org/wiki/Latin_square)
