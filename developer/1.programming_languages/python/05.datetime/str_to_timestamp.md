@@ -21,3 +21,32 @@ print(strptime.timetz()) # 11:18:39+09:00
 print(strptime.tzname()) # UTC+09:00
 print(strptime.timestamp()) # 1586312319.0
 ```
+
+## strptime python 3.6, python 3.7 차이
+3.7 에서는 YYYY-MM-DDTHH:MM:SSZ (e.g. 2020-04-12T23:04:51Z)를 파싱 할 수 있는데
+```
+$ python             
+Python 3.7.6 (default, Dec 30 2019, 19:38:26) 
+[Clang 11.0.0 (clang-1100.0.33.16)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from datetime import datetime
+>>> datetime.strptime("2020-04-12T23:04:51Z", "%Y-%m-%dT%H:%M:%S%z")
+datetime.datetime(2020, 4, 12, 23, 4, 51, tzinfo=datetime.timezone.utc)
+```
+
+3.6 에서는 되지 않음.
+```
+$ python3
+Python 3.6.8 (default, Oct  7 2019, 12:59:55)
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from datetime import datetime
+>>> datetime.strptime("2020-04-12T23:04:51Z", "%Y-%m-%dT%H:%M:%S%z")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/lib/python3.6/_strptime.py", line 565, in _strptime_datetime
+    tt, fraction = _strptime(data_string, format)
+  File "/usr/lib/python3.6/_strptime.py", line 362, in _strptime
+    (data_string, format))
+ValueError: time data '2020-04-12T23:04:51Z' does not match format '%Y-%m-%dT%H:%M:%S%z'
+```
