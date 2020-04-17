@@ -26,5 +26,22 @@
 - service: name=network state=restarted args=eth0
 ```
 
+## example
+```
+- hosts: prod
+  user: junho85
+  tasks:
+  - name: restart apache2
+    service:
+      name: apache2
+      state: restarted
+```
+
+```
+$ ansible-playbook labs.yml -i hosts
+```
+
+
+
 ## references
 http://docs.ansible.com/ansible/service_module.html
