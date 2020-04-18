@@ -35,10 +35,12 @@
     service:
       name: apache2
       state: restarted
+    become: yes
 ```
 
 ```
 $ ansible-playbook labs.yml -i hosts
+$ ansible-playbook labs.yml --ask-become-pass -i hosts
 ```
 
 
