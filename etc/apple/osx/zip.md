@@ -1,4 +1,4 @@
-# zip
+# osx - zip
 
 ## usage
 ```
@@ -26,6 +26,12 @@ zip [-options] [-b path] [-t mmddyyyy] [-n suffixes] [zipfile list] [-xi list]
   -h2  show more help
 ```
 이상한점은 분할압축 할 때 사용하는 -s 옵션이 설명에는 나오지 않습니다.
+
+## 그냥 압축 예제
+확장자가 JPG 인 파일들을 A6400_사진.zip 파일로 압축하는 방법입니다.
+```
+$ zip A6400_사진.zip *.JPG
+```
 
 ## password
 ```bash
