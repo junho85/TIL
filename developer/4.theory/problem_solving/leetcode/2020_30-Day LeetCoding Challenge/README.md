@@ -2,6 +2,7 @@
 * [30-Day LeetCoding Challenge](https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/)
 
 ## Week 1
+### 1. Single Number
 * [Single Number](https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/528/week-1/3283/)
 ```
 Given a non-empty array of integers, every element appears twice except for one. Find that single one.
@@ -54,5 +55,50 @@ Dictionary(hash table)을 이용하면 O(n)이 됩니다.
 
 4번째 풀이 방법은 XOR bit 연산을 이용합니다. a XOR 0 = a이고 a XOR a = 0 임을 이용합니다. 그럼 결국 하나만 있는 녀석이 남게 되겠네요. 메모리를 거의 사용하지 않고 해결할 수 있는 기막힌 방법입니다. 다만 논리 연산에 대해서 배우지 않은 사람들에게는 다소 이해하기 어려울 수 있겠습니다.
 
-## 정리
+#### 정리
 * [leetcode - 30-Day LeetCoding Challenge - 1. Single Number 2020.04.20](https://junho85.pe.kr/1512)
+
+### 2. Happy Number
+* [Happy Number](https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/528/week-1/3284/)
+
+숫자 n이 "happy"인지 확인하는 알고리즘을 작성하십시오.
+
+happy number는 다음 프로세스에 의해 정의된 숫자입니다. 양의 정수로 시작하여 숫자를 제곱의 제곱의 합계로 바꾸고 숫자가 1 (있을 때) 또는 반복될 때까지 프로세스를 반복하십시오. 이 과정이 1로 끝나는 숫자가 happy number입니다.
+
+n이 happy number이면 True, 아니면 False를 반환합니다.
+
+Example:
+```
+Input: 19
+Output: true
+Explanation: 
+1^2 + 9^2 = 82
+8^2 + 2^2 = 68
+6^2 + 8^2 = 100
+1^2 + 0^2 + 0^2 = 1
+```
+숫자의 각 자릿수를 제곱하여 더한 결과가 1인지 검사하면서 계속 반복합니다.
+
+무한 반복을 방지 하기 위해 th라는 dictionary를 만들어서 같은 값이 나오면 종료하도록 처리하였습니다.
+```python
+class Solution:
+    def isHappy(self, n: int):
+        th = {}
+
+        while True:
+            temp = 0
+            for c in str(n):
+                temp += int(c) * int(c)
+            if temp == 1:
+                return True
+
+            n = temp
+
+            if temp in th:
+                return False
+            else:
+                th[temp] = 1
+```
+
+#### 정리
+* [leetcode - 30-Day LeetCoding Challenge - 2. Happy Number](https://junho85.pe.kr/1513)
