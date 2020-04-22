@@ -26,3 +26,4 @@ Kadane's algorithm 라는 것이 있는데 이것을 이용하면 for loop 하�
 ## References
 * [Maximum subarray problem](https://en.wikipedia.org/wiki/Maximum_subarray_problem)
 * [Kadane Algorithm 2016.09.24](https://previc.tistory.com/38)
+* [Maximum Subarray Problem](https://www.baeldung.com/java-maximum-subarray)

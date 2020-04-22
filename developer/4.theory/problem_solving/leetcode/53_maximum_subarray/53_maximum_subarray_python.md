@@ -1,5 +1,20 @@
 # 53. Maximum Subarray
 
+## Brute force
+```python
+class Solution:
+    def maxSubArray(self, nums):
+        result = nums[0]
+        len_num = len(nums)
+        for i in range(len_num):
+            tmp = nums[i]
+            result = max(tmp, result)
+            for j in range(i+1, len_num):
+                tmp += nums[j]
+                result = max(tmp, result)
+        return result
+```
+
 ## Kadane's algorithm 적용 했지만 코드가 좀 길다
 ```
 class Solution:
