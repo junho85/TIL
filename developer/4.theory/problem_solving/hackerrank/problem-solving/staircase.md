@@ -1,0 +1,48 @@
+# staircase
+[Staircase](https://www.hackerrank.com/challenges/staircase/problem)
+
+HackerRank Problem Solving 첫번째 문제인 Staircase 입니다.
+
+입력값이 4일 때 아래처럼 나오는 것입니다.
+```
+   #
+  ##
+ ###
+####
+```
+프로그래밍 처음배울때 과제로 나오던 문제같이 생겼네요.
+
+일단 n줄 만큼 출력해야 되니 n만큼 loop를 돌립니다.
+
+그리고 내부에서도 n칸 만큼 채워넣어야 합니다. 다만 첫번째 줄에는 마지막 하나만 #이고 앞에는 스페이스입니다. 두번째 줄에는 마지막 두개만 #이고 앞에는 스페이스이죠. 마지막 줄에는 n개 만큼 #으로 모두 채워줍니다.
+
+loop안의 loop에서 n-i-1만큼은 공백을 출력하고 나머지는 #을 출력해 주면 됩니다.
+```
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+# Complete the staircase function below.
+def staircase(n):
+    for i in range(n):
+        for j in range(n):
+            if j < n-i-1:
+                print(" ", end='')
+            else:
+                print("#", end='')
+        print()
+
+
+if __name__ == '__main__':
+    n = int(input())
+
+    staircase(n)
+```
+ 
+## 정리
+* [hackerrank - Staircase](https://junho85.pe.kr/1516)
