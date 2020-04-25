@@ -17,7 +17,7 @@ HackerRank Problem Solving 첫번째 문제인 Staircase 입니다.
 그리고 내부에서도 n칸 만큼 채워넣어야 합니다. 다만 첫번째 줄에는 마지막 하나만 #이고 앞에는 스페이스입니다. 두번째 줄에는 마지막 두개만 #이고 앞에는 스페이스이죠. 마지막 줄에는 n개 만큼 #으로 모두 채워줍니다.
 
 loop안의 loop에서 n-i-1만큼은 공백을 출력하고 나머지는 #을 출력해 주면 됩니다.
-```
+```python
 #!/bin/python3
 
 import math
