@@ -23,7 +23,8 @@ Much of computer science involves designing completely automatic systems that wi
 In addition, people in computer science spend a surprisingly large amount of human time finding and fixing problems in their programs -- debugging.
 ```
 * [문제 해결](https://ko.wikipedia.org/wiki/%EB%AC%B8%EC%A0%9C_%ED%95%B4%EA%B2%B0)
-
+* [BOJ 101](https://www.acmicpc.net/blog/view/55)
+* [한동대학교의 PS 입문자를 위한 안내서](https://github.com/baeharam/PS)
 * [PS를 공부하는 방법 (How to study Problem Solving?)](https://subinium.github.io/how-to-study-problem-solving/)
   * PS(Problem Solving)는 주어진 문제를 정해진 언어를 통해 시간 제한과 메모리 제한에서 해결하면 됩니다.
 
