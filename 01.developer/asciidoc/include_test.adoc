@@ -1,1 +1,3 @@
-hello asciidoc
+hello asciidoc include document
+
+이 내용은 include로 불러온 내용입니다.
