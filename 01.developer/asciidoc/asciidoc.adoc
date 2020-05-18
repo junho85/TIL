@@ -1,0 +1,24 @@
+ifndef::snippets[]
+:snippets: ../../../build/generated-snippets
+endif::[]
+
+= AsciiDoc
+
+안녕하세요.
+
+반갑습니다.
+
+include::include_test.adoc[]
+
+
+NOTE: 노트
+
+TIP: 팁
+
+IMPORTANT: 중요
+
+CAUTION: 주의
+
+WARNING: 경고
+
+
