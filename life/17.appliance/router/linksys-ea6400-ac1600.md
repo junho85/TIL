@@ -42,7 +42,7 @@ Max. Link Rate:
 Platform Compatibility:
 * Windows XP
 * Windows Vista 32/64
-* WIndows 7 32/64
+* Windows 7 32/64
 * Windows 8 32/64
 * Mac OS X 10.5.8 Leopard
 * Mac OS X 10.6.1 Snow Leopard
