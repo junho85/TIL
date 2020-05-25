@@ -463,13 +463,49 @@ Mono<String> webclient() {
 ```java
 @GetMapping("/webclient")
 Mono<String> webclient() {
-  WebClient wc = WebClient.create("http://localhost:8080");
-  UriSpec<RequestHeadersSpec<?>> uriSpec = wc.get();
-  RequestHeadersSpec<?> headerSpec = uriSpec.uri("/hello/{name}", "Spring");
-  RequestHeadersSpec<?> headerSpec2 = headerSpec.accept(MediaType.TEXT_PLAIN);
-  Mono<ClientResponse> res = headerSpec2.exchange();
-  Mono<String> data = res.flatMap(r -> r.bodyToMono(String.class));
-  Mono<String> upperData = data.map(d -> d.toUpperCase());
-  return upperData.flatMap(d -> helloRepository.save(d));
+  WebClient wc = WebClient.create("http://localhost:8080"); // 기준 URL을 넣어 WebClient 생성
+  UriSpec<RequestHeadersSpec<?>> uriSpec = wc.get(); // 다음 단계로 Uri설정 준비. HTTP 메소드 결정
+  RequestHeadersSpec<?> headerSpec = uriSpec.uri("/hello/{name}", "Spring"); // URI 패턴과 파라미터로 URI 설정
+  RequestHeadersSpec<?> headerSpec2 = headerSpec.accept(MediaType.TEXT_PLAIN); // 헤더 설정
+  Mono<ClientResponse> res = headerSpec2.exchange(); // ServerResponse와 유사한 구조의 응답 정보. 요청을 응답으로 교환!
+  Mono<String> data = res.flatMap(r -> r.bodyToMono(String.class)); // Mono 데이터에 적용한 함수의 결과가 Mono타입이기 때문에 flatMap을 적용해야 한다. 아니면 Mono<Mono<String>>이 됨. 요청 바디를 String 타입으로 변환해서 Mono에 담아 리턴하는 함수
+  Mono<String> upperData = data.map(d -> d.toUpperCase()); // 데이터에 함수를 적용해서 변환
+  return upperData.flatMap(d -> helloRepository.save(d)); // 데이터를 리포지토리에 저장하고 결과를 리턴
 }
 ```
+
+리액터나 rxjava써보신분들은 왜 이렇게 작성 되는지 잘 아시겠죠
+
+## 비동기-논블록킹 리액티브 웹 애플리케이션의 효과를 얻으려면
+* WebFlux + 리액티브 리포지토리
+          + 리액티브 원격 API 호출
+          + 리액티브 지원 외부 서비스
+          + @Async 블록킹 IO
+* 코드에서 블록킹 작업이 발생하지 않도록 Flux 스트림 또는 Mono에 데이터를 넣어서 전달
+
+## 리액티브 함수형은 꼭 성능 때문만?
+* 함수형 스타일 코드를 이용해 간결하고 읽기 좋고 조합하기 편한 코드 작성
+* 데이터 흐름에 다양한 오퍼레이터 적용
+* 연산을 조합해서 만든 동시성 정보가 노출되지 않는 추상화된 코드 작성
+  * 동기, 비동기, 블록킹, 논블록킹 등을 유연하게 적용
+* 데이터의 흐름의 속도를 제어할 수 있는 메커니즘 제공
+
+## 논블록킹 IO에만 효과가 있나?
+* 시스템 외부에서 발생하는 이벤트에도 유용
+* 클라이언트로부터의 이벤트에도 활용 가능
+
+## ReactiveStreams
+* WebFlux가 사용하는 Reactor외에 RxJava2를 비롯한 다양한 리액티브 기술에 적용된 표준 인터페이스
+* 다양한 기술, 서비스 간의 상호 호환성에 율
+* 자바9에 Flow API로 포함
+
+## 뭘 공부해야 하나
+* 자바 8+함수형 프로그래밍에 익숙해질 것
+* CompletableFuture와 같이 비동기 작업의 조합, 결합에 뛰어난 툴의 사용법을 익힐 것
+* ReactorCore 학습
+  * Mono/Flux, 오퍼레이터, 스케줄러
+* WebFlux와 스프링의 리액티브 스택 공부
+* 비동기 논블록킹 성능과 관련된 벤치마킹, 모니터링, 디버깅 연구
+* 테스트
+
+스프링 리액티브 라이브 코딩은 https://www.youtube.com/tobyleetv
