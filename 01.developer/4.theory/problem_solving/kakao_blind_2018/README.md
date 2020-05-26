@@ -1,6 +1,6 @@
 # KAKAO Blind Recruitment 2017
 
-* [KAKAO Blind Recruitment 2017](https://programmers.co.kr/learn/challenges?selected_part_id=9317)
+* [2018 KAKAO Blind Recruitment](https://programmers.co.kr/learn/challenges?selected_part_id=9317)
 
 ## 1차
 * 추석 트래픽
