@@ -5,7 +5,7 @@
 ## 카카오프렌즈 컬러링북
 
 ## 보행자 천국
-* https://programmers.co.kr/learn/courses/30/lessons/1832?language=java
+* [](https://programmers.co.kr/learn/courses/30/lessons/1832?language=java)
 
 
 ## 브라이언의 고민

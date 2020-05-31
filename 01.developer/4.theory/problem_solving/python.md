@@ -3,6 +3,12 @@
 
 ## 장점
 ### 큰 숫자를 쉽게 다룰 수 있음
+
+
+* [hackerrank - A Very Big Sum - Python3](https://junho85.pe.kr/1524)
+
+
+### 범위 조건문을 한번에 나타낼 수 있음
 ```
 if s <= x and x <= t:
 ```
@@ -11,11 +17,7 @@ if s <= x and x <= t:
 if s <= x <= t:
 ```
 
-https://junho85.pe.kr/1524
-
-
-### 범위 조건문을 한번에 나타낼 수 있음
-https://junho85.pe.kr/1531
+* [hackerrank - Apple and Orange - Python3](https://junho85.pe.kr/1531)
 
 
 ## 단점
