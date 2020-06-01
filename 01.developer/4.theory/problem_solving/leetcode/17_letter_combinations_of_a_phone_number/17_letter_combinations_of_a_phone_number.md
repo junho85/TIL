@@ -1,5 +1,5 @@
 # 17. Letter Combinations of a Phone Number
-* https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+문제: [](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
 
 * 휴대폰 2~9 까지 숫자는 각각 입력 가능한 알파벳 목록이 있다. 2 - abc, 3 - def...
 * "23" 을 입력 했을 때 가능한 조합은 ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"] 이다.
