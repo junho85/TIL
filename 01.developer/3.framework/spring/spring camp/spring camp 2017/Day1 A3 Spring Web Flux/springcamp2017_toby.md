@@ -440,7 +440,7 @@ public Mono<ServerResponse> getPerson(ServerRequest request) {
 ## 논블록킹 API 호출은 WebClient
 * AsyncRestTemplate의 리액티브 버전
 * 요청을 Mono/Flux로 전달할 수 있고
-* 응답ㅇ르 Mono/Flux형태로 가져온다
+* 응답을 Mono/Flux형태로 가져온다
 
 ```java
 @GetMapping("/webclient")
