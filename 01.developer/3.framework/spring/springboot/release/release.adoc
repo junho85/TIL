@@ -1,0 +1,7 @@
+= Spring Boot Release
+
+[%hardbreaks]
+link:1.2[1.2]
+link:2.2[2.2]
+link:2.3[2.3]
+
