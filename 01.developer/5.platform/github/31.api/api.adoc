@@ -1,0 +1,24 @@
+= github api
+
+https://developer.github.com/v3/
+
+https://api.github.com 로 요청
+
+
+https://api.github.com/repos/junho85/TIL
+
+== Commits
+
+https://developer.github.com/v3/git/commits/
+
+== Releases
+=== Create a release
+* [Create a release](https://developer.github.com/v3/repos/releases/#create-a-release)
+
+== Pull Requests
+* https://developer.github.com/v3/pulls/[Pull Requests]
+
+=== Create a pull request
+* https://developer.github.com/v3/pulls/#create-a-pull-request[Create a pull request]
+* https://developer.github.com/changes/2019-02-14-draft-pull-requests/[Preview the new Draft Pull Requests API]
+
