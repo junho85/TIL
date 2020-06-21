@@ -1,0 +1,8 @@
+= 2. 강사 소개
+
+백기선
+* 현재 마이크로소프트에서 개발자로 재직 중
+* 아마존, 네이버
+* Youtube채널 운영중 https://www.youtube.com/user/whiteship2000
+* 온라인 강좌 운영 중
+

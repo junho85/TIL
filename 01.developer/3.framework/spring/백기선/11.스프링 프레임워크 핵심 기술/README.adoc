@@ -1,0 +1,31 @@
+= 스프링 프레임워크 핵심 기술
+
+https://www.inflearn.com/course/spring-framework_core
+
+학습 목표
+
+* 스프링 프레임워크의 핵심 기술 IoC, AOP, PSA(Portable Service Abstraction)를 이해합니다.
+* 스프링 프레임워크 IoC 컨테이너의 다양한 기능ㅇ르 사용할 수 있습니다.
+* 다양한 방법으로 빈을 정의하고 의존 관계를 주입할 수 있습니다.
+* 스프링 AOP를 사용하여 Aspect를 모듈화 할 수 있습니다.
+* 그밖에 다양한 스프링 핵심 기술을 이해하고 또 활용할 수 있습니다.
+
+학습 목차
+
+* IoC (Inversion of Control) 컨테이너와 빈
+* 리소스
+* validation
+* 데이터 바인딩
+* SpEL (Spring Expression Language)
+** Value 애노테이션
+* 스프링 AOP (Aspect Oriented Programming)
+* Null-Safety
+** Spring5에 들어간 Null관련 유틸리티
+
+스프링부트 기반으로 소개함
+
+강의자료: https://drive.google.com/file/d/1BXEnAWObf3VpzgNZJBN_UbY0UK8atTos/view
+
+
+== References
+https://academey.github.io/spring/2019/03/15/sprign-framework-core.html[스프링 프레임워크 핵심 기술 정리 (백기선님 인프런 강좌)]
