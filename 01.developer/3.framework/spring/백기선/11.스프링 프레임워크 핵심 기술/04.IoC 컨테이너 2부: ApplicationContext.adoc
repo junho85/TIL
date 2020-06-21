@@ -1,0 +1,23 @@
+= 4. IoC 컨테이너 1부: ApplicationContext
+
+빈 설정 -> 스프링 IoC 컨테이너
+
+.스프링 IoC 컨테이너의 역할
+* 빈 인스턴스 생성
+* 의존 관계 설정
+* 빈 제공
+
+.ApplicationContext
+* ClassPathXmlApplicationContext (XML)
+* AnnotationConfigApplicationContext (java)
+
+.빈 설정
+* 빈 명세서
+* 빈에 대한 정의를 담고 있다.
+** 이름
+** 클래스
+** 스코프
+** 생성자 아규먼트 (constructor)
+** 프로퍼트 (setter)
+** ...
+

@@ -1,0 +1,57 @@
+= Spring Framework 1.0
+
+https://spring.io/blog/2004/03/24/spring-framework-1-0-final-released[Spring Framework 1.0 Final Released 2004.03.24]
+
+
+https://docs.spring.io/spring/docs/1.0.0/
+
+https://docs.spring.io/spring/docs/1.0.0/javadoc-api/
+
+== Interface Application Context
+=== All Superinterfaces
+* BeanFactory
+* HierarchicalBeanFactory
+* ListableBeanFactory
+* MessageSource
+* ResourceLoader
+
+=== All Known Subinterfaces
+* ConfigurableApplicationContext
+* ConfigurableWebApplicationContext
+* WebApplicationContext
+
+=== All Known Implementing Classes
+* AbstractApplicationContext
+* StaticWebApplicationContext
+* XmlWebApplicationContext
+** 이미 xml 설정을 지원 하고 있었나?
+** WebApplicationContext implementation that takes configuration from an XML document.
+** 기본적으로 /WEB-INF/applicationContext.xml설정을 사용함.
+** /WEB-INF/test-servlet.xml
+
+== maven
+https://mvnrepository.com/artifact/org.springframework/spring/1.0
+
+maven 등록은 2005년 12월 23일
+pom 157 bytes, jar 935 KB
+
+
+[source]
+----
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring</artifactId>
+    <version>1.0</version>
+</dependency>
+----
+
+
+
+[source]
+----
+compile group: 'org.springframework', name: 'spring', version: '1.0'
+----
+
+
+https://docs.spring.io/spring-javaconfig/docs/1.0.0.m3/apidocs/org/springframework/config/java/annotation/Bean.html
+

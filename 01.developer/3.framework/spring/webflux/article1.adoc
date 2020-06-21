@@ -1,0 +1,83 @@
+= 사용하면서 알게 된 Reactor, 예제 코드로 살펴보기 2018.05.29
+
+https://tech.kakao.com/2018/05/29/reactor-programming/
+
+Reactor는 JVM위에서 동작하는 논블럭킹 애플리케이션을 만들기 위한 리액티브 라이브러리
+
+Java8, Reactor 3.1.7
+
+
+== Mono와 Flux
+Mono https://projectreactor.io/docs/core/release/reference/#mono
+Flux https://projectreactor.io/docs/core/release/reference/#flux
+
+
+== 하나의 스트림에서 여러 스트림으로
+
+=== 과일바구니 예제
+
+baskets = [basket1,2,3] 3개의 과일바구니
+
+Flux.fromIterable - Iterable을 Flux로 변환
+
+=== 바구니 속 과일 종류(중복 없이) 및 각 종류별 개수 나누기
+각 과일 종류 나열
+각 과일이 몇 개씩 들어 있는지
+
+[source,java]
+----
+        for (List<String> basket : baskets) {
+            HashMap<String, Integer> temp = new HashMap<>();
+            for (String fruit : basket) {
+                Integer integer = temp.putIfAbsent(fruit, 1);
+                if (integer != null) {
+                    temp.put(fruit, integer + 1);
+                }
+            }
+            System.out.println(temp);
+        }
+----
+
+간단...
+
+[source]
+----
+{orange=2, kiwi=2, lemon=2}
+{banana=1, lemon=2, kiwi=1}
+{orange=1, lemon=1, strawberry=2, grape=1}
+----
+
+기능들을 추상화한 연산자들
+
+distinct - 중복 없이 값을 처리하는 연산자
+groupBy - key를 기준으로 Flux로 그룹을 묶음
+count - 스트림에서 내려주는 값의 개수를 셈
+
+basketFlux로 부터 각각의 바구니 꺼내고 새로운 Publisher로 바꿔주려면
+flatMap, flatMapSequential, concatMap
+
+flatMap - 리턴하는 Publisher가 비동기로 동작할 때 순서를 보장하지 않음
+flatMapSequential, concatMap은 순서 보장
+concatMap은 인자로 지정된 함수에서 리턴하는 Publisher의 스트림이 다 끝난 후에 그 다음 넘어오는 값의 Publisher스트림을 처리하지만,
+flatMapSequential은 일단 오는 대로 구독하고 결과는 순서에 맞게 리턴하는 역할을 해서, 비동기 환경에서 동시성을 지원하면서도 순서를 보장할 때 쓰임
+
+[source,java]
+----
+basketFlux.concatMap(basket -> {
+    final Mono<List<String>> distinctFruits = Flux.fromIterable(basket).distinct().collectList();
+    final Mono<Map<String, Long>> countFruitsMono = Flux.fromIterable(basket)
+            .groupBy(fruit -> fruit) // 바구니로 부터 넘어온 과일 기준으로 group을 묶는다.
+            .concatMap(groupedFlux -> groupedFlux.count()
+                .map(count -> {
+                    final Map<String, Long> fruitCount = new LinkedHashMap<>();
+                    fruitCount.put(groupedFlux.key(), count);
+                    return fruitCount;
+                }) // 각 과일별로 개수를 Map으로 리턴
+            ) // concatMap으로 순서보장
+            .reduce((accumulatedMap, currentMap) -> new LinkedHashMap<String, Long>() { {
+                putAll(accumulatedMap);
+                putAll(currentMap);
+            }}); // 그동안 누적된 accumulatedMap에 현재 넘어오는 currentMap을 합쳐서 새로운 Map을 만든다. // map끼리 putAll하여 하나의 Map으로 만든다.
+    // return ???
+});
+----

@@ -1,0 +1,5 @@
+= AsciiDoc Recommended Practices
+
+https://asciidoctor.org/docs/asciidoc-recommended-practices/
+
+확장자는 .adoc 을 쓰기를 권장합니다.
