@@ -1,13 +1,14 @@
-# gradle plugins
+= gradle plugins
 
-## java
+== java
 https://docs.gradle.org/current/userguide/java_plugin.html
 
-```
+[source]
+----
 plugins {
     id 'java'
 }
-```
+----
 
 java 프로젝트이면 java plugin 을 설정해 두는 것이 좋다.
 
@@ -18,7 +19,9 @@ project layout 을 잡아 준다.
 기본은 src/main/java 등의 설정
 
 바꿔줄 수도 있다.
-```
+
+[source]
+----
 sourceSets {
     main {
         java {
@@ -29,78 +32,93 @@ sourceSets {
         }
     }
 }
-```
+----
 
-## idea
+== idea
 https://docs.gradle.org/current/userguide/idea_plugin.html
 
-```
+[source]
+----
 plugins {
     id 'idea'
 }
-```
+----
 
-## sonarqube
+== sonarqube
 https://plugins.gradle.org/plugin/org.sonarqube
 
-```
+[source]
+----
 plugins {
   id "org.sonarqube" version "2.7.1"
 }
-```
+----
 
 
-## jacoco
+== jacoco
 https://docs.gradle.org/current/userguide/jacoco_plugin.html
 
-```
+[source]
+----
 plugins {
     id 'jacoco'
 }
-```
+----
 
-## eclipse
+== eclipse
 https://docs.gradle.org/current/userguide/eclipse_plugin.html
-```
+
+[source]
+----
 plugins {
     id 'eclipse'
 }
-```
+----
 
-## groovy
+== groovy
 https://docs.gradle.org/current/userguide/groovy_plugin.html
-```
+
+[source]
+----
 plugins {
     id 'groovy'
 }
-```
+----
 
-## spring boot
+== spring boot
 https://plugins.gradle.org/plugin/org.springframework.boot
-```
+
+[source]
+----
 plugins {
   id "org.springframework.boot" version "2.1.7.RELEASE"
 }
-```
+----
 
 https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/
-```
+
+[source]
+----
 plugins {
 	id 'org.springframework.boot' version '2.1.7.RELEASE'
 }
-```
+----
 
-## net.researchgate.release
+== net.researchgate.release
 https://plugins.gradle.org/plugin/net.researchgate.release
 Using the plugins DSL:
-```
+
+[source]
+----
 plugins {
   id "net.researchgate.release" version "2.8.1"
 }
-```
+----
 
 Using legacy plugin application
-```
+
+[source]
+----
 buildscript {
   repositories {
     maven {
@@ -113,4 +131,4 @@ buildscript {
 }
 
 apply plugin: "net.researchgate.release"
-```
+----
