@@ -1,0 +1,39 @@
+= HTTP response status codes
+
+== 304 Not Modified
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304
+https://developer.mozilla.org/ko/docs/Web/HTTP/Status/304
+
+HTTP 304 Not Modified 클라이언트 리디렉션 응답 코드는 요청된 리소스를 다시 전송할 필요가 없음을 나타냅니다. 캐시된 리소스에 대한 암시적 리디렉션입니다. 이는 GET 또는 HEAD 요청과 같은 요청 방법이 안전하거나 요청이 조건부이고 If-None-Match 또는 If-Modified-Since 헤더를 사용하는 경우에 발생합니다.
+
+
+
+=== 조건부 GET 요청. Conditional GET Request
+HTTP Get요청에 다음 필드가 있다면 HTTP Conditional GET으로 변경
+
+* If-Modified-Since
+* If-Unmodified-Since
+* If-Match
+* If-None-Match
+* If-Range header fields
+
+클라이언트가 조건부 GET 요청을 했을 때 문서가 수정되지 않았으면 서버는 304로 응답한다.
+
+메시지-바디를 포함하면 안된다.
+
+헤더 필드 후에 처음 공백라인으로 종료됨.
+
+304 응답을 받았지만 캐시된 파일이 없다면 브라우저에서는 오류페이지를 보여주게 됩니다.
+
+=== References
+http://www.linuxchannel.net/board/read.php?table=qna&no=3948[Re: 아파치에서 304 에러 메세지 뜻이 뭔가요?]
+
+
+== References
+http://www.faqs.org/rfcs/rfc2616.html[RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1]
+
+http://linuxchannel.net/docs/Apache_Quick_Reference_Card.html[Apache Quick Reference Card]
+
+https://ohgyun.com/175[HTTP 304 Not Modified]
+
+http://wiki.gurubee.net/pages/viewpage.action?pageId=26739910[HTTP 304 Not Modified의 이해 및 예제]
