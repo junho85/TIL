@@ -26,5 +26,8 @@ spring-boot-starter-validation을 따로 추가해 주어야함
 https://github.com/spring-projects/spring-boot/issues/19550[Do not include the validation starter in web starters by default #19550]
 
 
+== 정리
+https://junho85.pe.kr/1581[Spring Boot 2.3 릴리즈 노트]
+
 == References
-[Spring Boot 2 3, Web-starter doesn't bring Validation-starter anymore 2020.05.26](https://www.youtube.com/watch?v=cP8TwMV4LjE)
+https://www.youtube.com/watch?v=cP8TwMV4LjE[Spring Boot 2 3, Web-starter doesn't bring Validation-starter anymore 2020.05.26]
