@@ -1,0 +1,27 @@
+= Web Exception
+
+* java.lang.Object
+** java.lang.Throwable
+*** java.lang.Exception
+**** java.lang.RuntimeException
+***** org.springframework.core.NestedRuntimeException
+****** org.springframework.web.server.ResponseStatusException
+******* org.springframework.web.server.ServerWebInputException
+
+
+== ResponseStatusException
+* MediaTypeNotSupportedStatusException
+* MethodNotAllowedException
+* NotAcceptableStatusException
+* ServerErrorException
+* ServerWebInputException
+* UnsupportedMediaTypeStatusException
+
+
+
+=== ServerWebInputException
+https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/server/ServerWebInputException.html
+
+
+status 404 (bad request) 에러를 위한 예외입니다. 추가 필드를 제공합니다. (예를 들어 옵셔널한 MethodParameter)
+
