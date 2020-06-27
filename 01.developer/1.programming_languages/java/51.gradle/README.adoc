@@ -1,35 +1,39 @@
-# gradle
+= gradle
 
-## plugin
-* [plugin](plugin.md)
+== plugin
+* 12.plugin/plugin.adoc[plugin]
 
-## configuration build.gradle
+== configuration build.gradle
 
 
 
-## spring boot
+== spring boot
 * https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/
-```
+
+[source]
+----
 plugins {
 	id 'org.springframework.boot' version '2.1.7.RELEASE'
 }
-```
+----
 
-## SonarQubePlugin
+== SonarQubePlugin
 
-```
+[source]
+----
 Build file '/Users/junho85/IdeaProjects/someproject/build.gradle' line: 19
 A problem occurred evaluating root project 'someproject'.
 > Failed to apply plugin [id 'org.sonarqube']
    > Could not create plugin of type 'SonarQubePlugin'.
       > Could not generate a decorated class for class org.sonarqube.gradle.SonarQubePlugin.
          > org/gradle/listener/ActionBroadcast
-```
+----
 
 
-## java.lang.UnsupportedOperationException
+== java.lang.UnsupportedOperationException
 
-```
+[source]
+----
 FAILURE: Build failed with an exception.
 
 * What went wrong:
@@ -45,13 +49,14 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 See https://docs.gradle.org/4.8.1/userguide/command_line_interface.html#sec:command_line_warnings
 
 CONFIGURE FAILED in 0s
-```
+----
 
 gradle 버전 2 쓰다가 4 로 올라와서 기능들이 동작하지 않아서 그런듯.
 
 build.gradle 파일을 마이그레이션을 해 주어야 될 가능성이 높다.
 
-```
+[source]
+----
 buildscript {
     repositories {
         mavenLocal()
@@ -100,13 +105,14 @@ dependencies {
     // test
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
-```
+----
 
-```
+[source]
+----
 task wrapper(type: Wrapper) {
     gradleVersion = '2.3'
 }
 
-```
+----
 
 * [How to fix Gradle 4.4/4.7 + JDK 10 issue on IntelliJ IDEA 2018.1.x 2018.06.05](https://iwillteachyoukotlin.com/2018/06/05/fix-gradle-4-4-4-7-jdk-10-intellij-idea-2018-1/)
