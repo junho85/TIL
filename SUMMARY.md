@@ -37,7 +37,7 @@
   * [kotlin](01.developer/1.programming_languages/kotlin/README.md)
     * [2 코틀린 기초.md](01.developer/1.programming_languages/kotlin/kotlin_in_action/part1/2_코틀린기초.md)
 * [spring framework](01.developer/3.framework/spring/README.md)
-  * [spring boot](01.developer/3.framework/spring/springboot/README.md)
+  * [spring boot](01.developer/3.framework/spring/springboot/README.adoc)
 * [game](game/README.md)
   * [ingress](game/ingress.md)
   * [Rockman](game/rockmanx/README.md)
