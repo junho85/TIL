@@ -20,3 +20,45 @@
 
 .프록시
 * https://en.wikipedia.org/wiki/Proxy_pattern
+
+== 싱글톤
+대부분 싱글톤 사용
+
+== 프로토타입
+매번 새로운 인스턴스
+
+
+프로토타입이 싱글톤 사용하면 아무 문제 없음.
+
+싱글톤에서 프로토타입빈을 사용하면. 프로토타입이 변경되지 않음.
+
+proxy모드 설정
+
+[source,java]
+----
+@Component @Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
+----
+
+cglibrary 라는 3rd party 라이브러리.
+
+클래스기반의 프록시로 만들어서
+
+ScopedProxyMode.INTERFACES
+
+뒤에 AOP에서 좀 더 자세히 다룹니다.
+
+ScopedProxyMode.TARGET_CLASS대신 ObjectProvider로 감싸는 방법도 있음.
+
+[source,java]
+----
+    private ObjectProvider<Proto> proto;
+
+    public Proto getProto() {
+        return proto.getIfAvailable();
+    }
+----
+
+ScopedProxyMode.TARGET_CLASS 이게 더 나아보임.
+
+
+싱글톤이다 보니 쓰레드 세이프에 신경 써야 한다.
