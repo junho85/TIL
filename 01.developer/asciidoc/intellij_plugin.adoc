@@ -1,0 +1,1 @@
+https://plugins.jetbrains.com/plugin/7391-asciidoc[AsciiDoc] 플러그인을 별도로 설치해 주어야 합니다. Markdown처럼 오른쪽에 미리보기가 가능합니다. 다만 include문서는 미리보기가 안됩니다. 문서를 실행하면 브라우저가 뜨면서 문서가 나타나는데 거기서는 include기능이 적용됩니다.

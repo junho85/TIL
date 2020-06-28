@@ -1,12 +1,20 @@
-= AsciiDoc
+:toc:
 
+:sectlinks:
+
+= AsciiDoc
 안녕하세요.
 
 반갑습니다.
+ 안녕하세요.
+ 글쎼요.
+
+== Include
 
 --
 include::include_test.adoc[]
 --
+
 
 NOTE: 노트
 
@@ -18,8 +26,34 @@ CAUTION: 주의
 
 WARNING: 경고
 
+
+[#link]
+== link
+[%hardbreaks]
+link:recommended_practices.adoc[recommended_practices.adoc]
+
+.link to id
+link:#comment[comment] +
+link:#table[table]
+
+
+[#comment]
+== comment
+주석 기능.
+// 여기에 적은 내용은 나오지 않습니다.
+
+[#table]
+== Table
+include::table.adoc[]
+
 == IntelliJ Plugin
-https://plugins.jetbrains.com/plugin/7391-asciidoc[AsciiDoc] 플러그인을 별도로 설치해 주어야 합니다. Markdown처럼 오른쪽에 미리보기가 가능합니다. 다만 include문서는 미리보기가 안됩니다. 문서를 실행하면 브라우저가 뜨면서 문서가 나타나는데 거기서는 include기능이 적용됩니다.
+include::intellij_plugin.adoc[]
 
 == 정리
 * https://junho85.pe.kr/1542[AsciiDoc과의 조우. MarkDown이랑 뭐가 달라? 2020.05.18]
+
+
+== References
+* https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc Syntax Quick Reference]
+* https://powerman.name/doc/asciidoc[AsciiDoc cheatsheet]
+** 그런데 일부 내용은 안 맞는거 같음. -------- 헤더 같은거 되긴 한데 권장 안하는 방식인듯?
