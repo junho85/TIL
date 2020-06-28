@@ -1,0 +1,17 @@
+= Spring for Apache Kafka
+
+https://docs.spring.io/spring-kafka/reference/html/
+
+* https://spring.io/projects/spring-kafka[Spring for Apache Kafka]
+
+@KafkaListener 애노테이션으로 사용
+
+* KafkaTemplate
+* KafkaMessageListenerContainer
+* @KafkaListener
+* KafkaTransactionManager
+* spring-kafka-test jar with embedded kafka server
+
+
+== References
+https://www.baeldung.com/spring-kafka[Intro to Apache Kafka with Spring]
