@@ -1,0 +1,47 @@
+= Lombok
+
+== @Getter, @Setter
+https://projectlombok.org/features/GetterSetter
+
+getXxx, setXxx 생성
+boolean 타입이면 isXxx, setXxx
+
+== 생성자
+https://projectlombok.org/features/constructor
+
+* @NoArgsConstructor - 파라미터가 없는 기본 생성자
+* @RequiredArgsConstructor - final, @NonNull인 필드에 대한 생성자
+* @AllArgsConstructor - 모든 필드 값을 파라미터로 받는 생성자
+** 스프링에서 생성자로 주입 받기 좋음
+
+== @ToString
+https://projectlombok.org/features/ToString
+
+클래스명(필드1명=필드1값,필드2명=필드2값,...)
+
+=== 제외
+----
+@ToString.Exclude private String password;
+----
+
+----
+@ToString(exclude = "password")
+----
+
+
+== @EqualsAndHashCode
+https://projectlombok.org/features/EqualsAndHashCode[@EqualsAndHashCode]
+
+@EqualsAndHashCode(callSuper = true)
+callSuper = true 부모 클래스 필드 값들도 동일한지 체크
+callSuper = false 자신 클래스의 필드 값만 사용하여 동일한지 체크
+
+
+== @Data
+https://projectlombok.org/features/Data
+
+@ToString, @EqualsAndHashCode, @Getter, @Setter, @RequiredArgsConstructor 한번에 생성
+
+
+== References
+* https://www.daleseo.com/lombok-popular-annotations/[[자바] 자주 사용되는 Lombok 어노테이션]
