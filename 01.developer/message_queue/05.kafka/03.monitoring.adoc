@@ -1,0 +1,22 @@
+= kafka monitoring
+
+== Kafka Offset Monitor
+http://quantifind.github.io/KafkaOffsetMonitor/
+
+https://github.com/quantifind/KafkaOffsetMonitor
+
+2015.08.20 마지막으로 업데이트 되고 있지 않음.
+
+jar 파일 다운로드
+
+
+----
+java -cp KafkaOffsetMonitor-assembly-0.2.1.jar com.quantifind.kafka.offsetapp.OffsetGetterWeb \
+--zk localhost:2181 \
+--port 21810 --refresh 10.seconds --retain 2.days
+----
+
+== References
+https://epicdevs.com/22[[Apache Kafka\] 4. 모니터링하기]
+
+

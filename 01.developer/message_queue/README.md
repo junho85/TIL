@@ -1,7 +1,7 @@
 # Message, Queue, etc...
 
-* [RabbitMQ](rabbitmq/README.md)
-* [Kafka](kafka.md)
+* [RabbitMQ](06.rabbitmq/README.md)
+* [Kafka](05.kafka/01.kafka.adoc)
 * ActiveMQ
 * ZeroMQ
 

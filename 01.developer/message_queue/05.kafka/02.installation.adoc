@@ -1,0 +1,24 @@
+= Kafka Installation
+
+== OSX
+
+=== ZooKeeper 설치
+----
+brew install zookeeper
+----
+Kafka의 컨트롤러선정, 브로커 메타데이터저장, 토픽 메타데이터 저장, client 할당 정보 저장, 카프카 토픽 ACL(Access Control Lists) 저장 등의 역할
+
+=== Kafka 설치
+----
+brew install kafka
+----
+
+=== 실행
+----
+brew services start zookeeper
+brew services start kafka
+----
+
+== References
+https://blog.voidmainvoid.net/167[Macbook에 Kafka 1분만에 설치하기]
+

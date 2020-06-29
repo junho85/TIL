@@ -1,0 +1,7 @@
+= Kafka
+
+== Spring for Apache Kafka
+link:../../3.framework/spring/08.kafka/README.adoc[test]
+
+== Installation
+link:02.installation.adoc[installation]
