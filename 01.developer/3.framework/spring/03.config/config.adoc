@@ -1,0 +1,18 @@
+= spring config
+
+== Auto-configuration
+https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-auto-configuration
+
+
+=== disabling specific auto-configuration
+----
+import org.springframework.boot.autoconfigure.*;
+import org.springframework.boot.autoconfigure.jdbc.*;
+
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
+public class MyApplication {
+}
+----
+
+
+== XML
