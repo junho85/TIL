@@ -12,6 +12,19 @@ https://docs.spring.io/spring-kafka/reference/html/
 * KafkaTransactionManager
 * spring-kafka-test jar with embedded kafka server
 
+== Sample
+https://github.com/spring-projects/spring-kafka/tree/master/samples
+
+
+== KafkaTemplate
+https://docs.spring.io/spring-kafka/reference/html/#kafka-template
+
+KafkaTemplate는 producer를 감쌉니다. Kafka 토픽들로 데이터를 전송하기 위한 편리한 메서드들을 제공합니다.
+
+자세한건 javadoc 참고 https://docs.spring.io/spring-kafka/api/org/springframework/kafka/core/KafkaTemplate.html
+
+
 
 == References
-https://www.baeldung.com/spring-kafka[Intro to Apache Kafka with Spring]
+* https://www.baeldung.com/spring-kafka[Intro to Apache Kafka with Spring]
+* https://dzone.com/articles/spring-for-apache-kafka-deep-dive-part-1-error-han[Spring for Apache Kafka — Part 1: Error Handling, Message Conversion, and Transaction Support]
