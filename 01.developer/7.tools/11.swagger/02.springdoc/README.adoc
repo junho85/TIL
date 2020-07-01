@@ -1,0 +1,58 @@
+= springdoc
+
+https://springdoc.org/
+
+swagger를 사용하고 있음.
+
+swagger는 2018년 이후로 업데이트가 안되고 있음.
+
+OpenAPI 3 지원
+
+== migration
+https://springdoc.org/migrating-from-springfox.html
+
+
+
+== References
+* https://reflectoring.io/spring-boot-springdoc/['Code First' API Documentation with Springdoc and Spring Boot]
+* https://dzone.com/articles/doing-more-with-springdoc-openapi[Doing More With Springdoc-OpenAPI]
+
+=== Bringing together OpenAPI 3 and Spring Boot
+https://www.youtube.com/watch?v=utRxyPfFlDw[Bringing together OpenAPI 3 and Spring Boot by Badr Nasslahsen @ Spring I/O Bridge 2020.06.16]
+
+
+What Is OpenAPI 3?
+* OpenAPI Specification (formerly Swagger Specification) is an API description format for REST APIs.
+* An OpenAPI file aloows you to describe:
+** Available endpoints(/users) and operations on each endpoint (GET /users, POST /users)
+** Operation parameters Input and output for each operation
+** ...
+
+
+Why springdoc-openapi?
+* many industry standards are using OpenAPI format: Open Banking, PSD2, FHIR, ISO 20022, BIAN, IATA, and others.
+* All the modern API Management solutions are supporting OpenAPI 3 format, and the vendors prefer this format to benefit from all the functionalities of their solution.
+* The existing Open Source libraries that supported both swagger and spring-boot, has not evolved with new standard OpenAPI 3 which has been released since July 2017.
+* springdoc-openapi java library helps to automate the generation of API documentation ...
+
+
+How do we migrate from swagger to OpenAPI 3?
+
+
+Integration with spring-web
+* For spring-web projects, they just need to add the springdoc-openapi dependency
+* All the spring-mvc
+
+
+Integration with spring-webflux
+* For spring-webflux projects with annotated controllers, they just need to add
+
+Integration with spring-hateoas
+* The projects that use spring-hateoas or that needs the Pageable (spring-data-commons) type
+
+Integration with spring-security and OAuth 2.0
+* For a project that uses spring-security, you should add the following dependency, together with the springdoc-openapi-ui dependency.
+* This dependency helps ignoring @AuthenticationPrincipal, @Authentication in case they are used or REST Controllers.
+...
+
+
