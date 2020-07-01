@@ -1,0 +1,125 @@
+= Spring Boot Kafka
+
+gradle에 추가
+----
+implementation 'org.springframework.kafka:spring-kafka'
+----
+
+== properties
+https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html
+
+.spring.kafka.admin
+* client-id
+* fail-fast
+* properties.*
+* security.protocol
+* ...
+
+.spring.kafka.bootstrap-servers
+.spring.kafka.client-id
+
+.spring.kafka.consumer
+* auto-commit-interval
+* auto-offset-reset
+* bootstrap-servers
+* client-id
+* enable-auto-commit
+* fetch-max-wait
+* fetch-min-size
+* group-id
+* heartbeat-interval
+* isolation-evel
+* key-deserializer
+* max-poll-records
+* properties.*
+* security.protocol
+* ssl.key-password
+* ssl.key-store-location
+* ssl.key-store-password
+* ssl.key-store-type
+* ssl.protocol
+* ssl.trust-store-location
+* ssl.trust-store-password
+* ssl.trust-store-type
+* value-deserializer
+
+.spring.kafka.jaas
+* control-flag
+* enabled
+* login-module
+* options.*
+
+.spring.kafka.listener
+* ack-count
+* ack-mode
+* ack-time
+* client-id
+* concurrency - 리스너 컨테이너의 쓰레드 개수
+* idle-event-interval
+* log-container-config
+* missing-topics-fatal
+* monitor-interval
+* no-poll-threshold
+* poll-timeout
+* type
+
+.spring.kafka.producer
+* acks
+* batch-size
+* bootstrap-servers
+* buffer-memory
+* client-id
+* compression-type
+* key-serializer
+* properties.*
+* retries
+* security.protocol
+* ssl.key-password
+* ssl.key-store-location
+* ssl.key-store-password
+* ssl.key-store-type
+* ssl.protocol
+* ssl.trust-store-location
+* ssl.trust-store-password
+* ssl-.trust-store-type
+* transaction-id-prefix
+* value-serializer
+
+.spring.kafka
+* properties.*
+* security.protocol
+* ssl.key-store-location
+* ssl.key-store-password
+* ssl.key-store-type
+* ssl.protocol
+* ssl.trust-store-location
+* ssl.trust-store-password
+* ssl.trust-store-type
+
+.spring.kafka.streams
+* application-id
+* auto-startup
+* bootstrap-servers
+* cache-max-size-buffering
+* client-id
+* properties.*
+* replication-factor
+* security.protocol
+* ssl.key-password
+* ssl.key-store-location
+* ssl.key-store-password
+* ssl.key-store-type
+* ssl.protocol
+* ssl.trust-store-location
+* ssl.trust-store-password
+* ssl.trust-store-type
+* state-dir
+
+.spring.kafka
+* template.default-topic - default topic to which messages are sent.
+
+
+== References
+* https://www.confluent.io/blog/apache-kafka-spring-boot-application/[How to Work with Apache Kafka in Your Spring Boot Application]
+* https://codenotfound.com/spring-kafka-boot-example.html[Spring Kafka - Spring Boot Example]
+* https://hahahia.tistory.com/157[Spring Boot + Spring Kafka 를 이용한 Consumer 구현 2019.12.14]
