@@ -1,0 +1,37 @@
+= 10. IoC 컨테이너 7부: MessageSource
+
+국제화 (i18n) 기능을 제공하는 인터페이스.
+
+.ApplicationContext extends MessageSource
+* getMessage(String code, Object[] args, String defaultMessage, Locale locale)
+* ...
+
+.스프링 부트를 사용한다면 별다른 설정 필요없이 messages.properties 사용할 수 있음
+* messages.properties
+* messages_ko_kr.properties
+* ...
+
+리로딩 기능이 있는 메시지 소스 사용하기
+
+----
+@Bean
+public MessageSource messageSource() {
+  var messageSource = new RelodableResourceBundleMessageSource();
+  messageSource.setBasename("classpath:/messages");
+  messageSource.setDefaultEncoding("UTF-8");
+  messageSource.setCacheSeconds(3);
+  return messageSource;
+}
+----
+
+
+== MessageSource
+https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/MessageSource.html
+
+
+ReloadableResourceBundleMessageSource 사용하면 수정하고 빌드 하면 바로 적용된다.
+
+cmd + F9
+
+
+
