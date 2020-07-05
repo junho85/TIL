@@ -1,0 +1,111 @@
+= 11. IoC 컨테이너 8부: ApplicationEventPublisher
+
+https://www.inflearn.com/course/spring-framework_core/lecture/15514
+
+
+이벤트 프로그램에 필요한 인터페이스 제공. https://en.wikipedia.org/wiki/Observer_pattern[옵저버 패턴] 구현체.
+
+.ApplicationContext extends https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/ApplicationEventPublisher.html[ApplicationEventPublisher]
+* publishEvent(ApplicationEvent event)
+
+.이벤트 만들기
+* ApplicationEvent 상송
+* 스프링 4.2 부터는 이 클래스를 상속받지 않아도 이벤트로 사용할 수 있다.
+
+.이벤트 발생 시키는 방법
+* ApplicationEventPublisher.publishEvent();
+
+.이벤트 처리하는 방법
+* ApplicationListener<이벤트> 구현한 클래스 만들어서 빈으로 등록하기.
+* 스프링 4.2 부터는 https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/event/EventListener.html[@EventListener]를 사용해서 빈의 메소드에 사용할 수 있다.
+* 기본적으로는 synchronized.
+* 순서를 정하고 싶다면 @QOrder와 함께 사용.
+* 비동기적으로 실행하고 싶다면 @Async와 함께 사용.
+
+.스프링이 제공하는 기본 이벤트
+* ContextRefreshedEvent: ApplicationContext를 초기화 했거나 리프래시 했을 때 발생.
+* ContextStartedEvent: ApplicationContext를 start()하여 라이프사이클 빈들이 시작신호를 받은 시점에 발생.
+* ContextStoppedEvent: ApplicationContext를 stop()하여 라이프사이클 빈들이 정지신호를 받은 시점에 발생.
+* ContextClosedEvent: ApplicationContext를 close()하여 싱글톤 빈 소멸되는 시점에 발생.
+* RequestHandledEvent: HTTP 요청을 처리했을 때 발생.
+
+
+== MyEvent
+
+ApplicationEvent 상속
+
+데이터 실어서 보낼 수 있음.
+
+----
+@Autowired
+ApplicationContext applicationContext;
+
+applicationContext.publishEvent(new MyEvent(this, 100));
+----
+도 되고
+
+----
+@Autowired
+ApplicationEventPublisher eventPublisher;
+
+eventPublisher.publishEvent(new MyEvent(this, 100));
+----
+도 된다.
+
+
+4.2 부터는 ApplicationEvent 상속 받지 않아도 된다.
+
+스프링이 추구. 비침투성.
+
+프레임워크 소스가 나의 코드에 최대한 들어가지 않도록 한다.
+
+핸들러도 마찬가지로 특정한 클래스를 구현하지 않아도 된다.
+----
+public class MyEventHandler implements ApplicationListener<MyEvent> {
+----
+
+빈으로는 등록되어야 한다.
+
+----
+    @EventListener
+    public void handle(MyEvent myEvent) {
+        System.out.println("이벤트 받았다. 데이터는 " + myEvent.getData());
+    }
+----
+
+AnotherHandler 추가.
+
+핸들러는 순차적으로 실행된다.
+
+둘다 main Thread
+
+순서가 중요한 경우 순서를 정해줄 수 있음.
+
+@Order(Ordered.HIGHEST_PRECEDENCE)
+
+@Order(Ordered.HIGHEST_PRECEDENCE + 2)
+숫자가 높을 수록 우선 순위 낮음
+
+@Async 쓰면 @Order는 의미 없음.
+
+쓰레드를 main 으로 같다.
+
+@Async만 붙인다고 비동기가 되지는 않는다.
+
+@EnableAsync 사용해야 한다.
+----
+@SpringBootApplication
+@EnableAsync
+public class DemoApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+----
+
+thread가 task-1,task-2
+
+
+ContextClosedEvent 종료 될 때
+
+자세한건 스프링부트 강좌에서
