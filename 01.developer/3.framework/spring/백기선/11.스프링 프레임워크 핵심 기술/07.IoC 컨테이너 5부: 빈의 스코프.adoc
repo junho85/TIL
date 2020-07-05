@@ -21,6 +21,8 @@
 .프록시
 * https://en.wikipedia.org/wiki/Proxy_pattern
 
+image::07.proxy-pattern.png[]
+
 == 싱글톤
 대부분 싱글톤 사용
 
