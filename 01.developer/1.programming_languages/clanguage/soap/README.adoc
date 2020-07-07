@@ -1,0 +1,18 @@
+= soap
+
+== gSOAP
+https://sourceforge.net/projects/gsoap2/files/
+
+http://www.cs.fsu.edu/~engelen/soap.html
+
+== csoap
+http://csoap.sourceforge.net/
+
+== libsoup
+https://wiki.gnome.org/LibSoup
+
+
+== References
+https://blog.naver.com/wisereign/30021319895[gSOAP 초급에서 중고급 프로그래머 되기 2007.08.22]
+
+https://www.genivia.com/dev.html[Getting Started with gSOAP]
