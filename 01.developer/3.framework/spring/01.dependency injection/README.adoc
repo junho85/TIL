@@ -1,0 +1,81 @@
+= Spring - Dependency Injection 의존관계 주입
+
+
+== Dependency Injection
+DI는 스프링에서만 사용하는 개념이 아니고 원래 있던 개념이다. 스프링을 생각하지 않고 DI에 대해서 알아보자.
+
+객체 내부에서 다른 객체를 생성하면 강한 결합이 생긴다.
+
+[source,java]
+----
+class A {
+  private B b;
+}
+
+class B {}
+----
+A클래스 내부의 B클래스를 C클래스로 바꾸려면 A클래스를 수정해 주어야 한다.
+
+결합을 느슨하게 해보자. A클래스를 수정하지 않으려면?
+
+=== Setter Based Injection 수정자 주입
+[source,java]
+----
+class A {
+  private B b;
+
+  public void setB(B b) {
+    this.b = b;
+  }
+}
+
+interface B {}
+----
+setB를 만들어서 b를 지정 할 수 있도록 한다.
+
+B는 인터페이스로 만들어서 구현체를 바꿔 끼울 수 있도록 한다.
+
+그런데 B를 주입하지 않아도 A는 생성이 된다. B가 없어서 문제가 될 수 있다.
+
+
+=== Constructor based Injection 생성자 주입
+----
+class A {
+  final private B b;
+
+  public A(B b) {
+    this.b = b;
+  }
+}
+
+interface B {}
+----
+
+일부러 null을 주입하는게 아니면 B를 주입하게 된다.
+
+final 로 선언해서 실수로 중간에 바꾼다던지 실수를 방지 할 수 있다.
+
+
+== 스프링에서의 DI
+수정자 주입, 생성자 주입 뿐 아니라 필드 주입을 할 수 있다.
+
+=== Field Injection 필드 주입
+
+[source,java]
+----
+class A {
+  @Autowired
+  private B b;
+}
+
+interface B {}
+----
+
+=== Setter based Injection
+
+
+=== Constructor based Injection
+
+
+== References
+* https://yaboong.github.io/spring/2019/08/29/why-field-injection-is-bad/[스프링 - 생성자 주입을 사용해야 하는 이유, 필드인젝션이 좋지 않은 이유 2019.08.29]
