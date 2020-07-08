@@ -1,0 +1,142 @@
+= 13. Resource 추상화
+
+https://www.inflearn.com/course/spring-framework_core/lecture/15517
+
+org.springframework.core.io.Resource
+
+.특징
+* java.net.URL을 추상화 한 것.
+* 스프링 내부에서 많이 사용하는 인터페이스.
+
+.추상화 한 이유
+* 클래스패스 기준으로 리소스 읽어오는 기능 부재
+* ServletContext를 기준으로 상대 경로로 읽어오는 기능 부재
+* 새로운 핸들러를 등록하여 특별한 URL 접미사를 만들어 사용할 수 있지만 구현이 복잡하고 편의성 메소드가 부족하다.
+
+.https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/io/Resource.html[인터페이스 둘러보기]
+* 상속 받은 인터페이스
+* 주요 메서드
+** getInputStream()
+** exist()
+** isOpen()
+** getDescription(): 전체 경로 포함한 파일 이름 또는 실제 URL
+
+.구현체
+* UrlResource: https://docs.oracle.com/javase/7/docs/api/java/net/URL.html[java.net.URL] 참고, 기본으로 지원하는 프로토콜 http, https, ftp, file, jar.
+* ClassPathResource: 지원하는 접두어 classpath:
+* FileSystemResource
+* ServletContextResource: 웹 애플리케이션 루트에서 상대 경로로 리소스 찾는다.
+* ...
+
+.리소스 읽어오기
+* Resource의 타입은 location 문자열과 **ApplicationContext의 타입**에 따라 결정 된다.
+** ClassPathXmlApplicationContext -> ClassPathResource
+** FileSystemXmlApplicationContext -> FileSystemResource
+** WebApplicationContext -> ServletContextResource
+* ApplicationContext의 타입에 상관없이 리소스 타입을 강제하려면 java.net.URL 접두어(+classpath:)중 하나를 사용할 수 있다.
+** classpath:me/whiteship/config.xml -> ClassPathResource
+** file:///some/resource/path/config.xml -> FileSystemResource
+
+== application context
+
+지금까지 appliction context 부가기능
+
+appliction context 빈팩토리만 하는게 아니고
+
+resource loader
+
+event publisher
+
+메시지 소스의 역할도 했었음
+
+environment capable이라고 environment도 다룰 수 있었음
+
+스프링과 구글쥬스를 비교하는 시도도 많았고. 사과와 오렌지를 비교하는거랑 비슷하다고 생각함.
+
+== Resource
+이전까지 IoC
+
+많은 부분을 차지하는 추상화 중의 일부분
+
+리소스 추상화에 대해 살펴봅니다.
+
+어떤걸 추상화 시켰냐 하면. java.net.URL을 감싼거
+
+org.springframework.core.io.Resource로 감싸서 실제 로우 레벨에 접근하는 기능. 리소스 자체를 추상화 시킨거.
+
+추상화 시킨 이유는 기존 java.net.URL이 classpath 기준으로 가져 오는 기능 없음. http, https같은거  지원하지만 스프링입장에서는 classpath가져오는거도 같다고 봄
+
+방법을 통일 시킴. 하나의 인터페이스 resource로 통일.
+
+방법은 getResource
+
+[source,java]
+----
+public interface Resource extends InputStreamSource
+
+var ctx = new ClassPathXmlApplicationContext("asdf.xml");
+----
+
+classpath 기준으로 asdf.xml 찾아서 불러옴
+
+FileSystemXmlApplicationContext 파일 시스템 경로 기준으로 찾아서 불러옴
+----
+var ctx = new FileSystemXmlApplicationContext("asdf.xml");
+----
+
+
+WebApplicationContext는 인터페이스
+
+GenericWebApplicationContext를 많이 사용
+
+https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html
+
+
+----
+Resource resource = resourceLoader.getResource("classpath:text.txt");
+Resource resource = resourceLoader.getResource("file///text.txt");
+----
+
+접두어를 잘 활용하길 권장
+
+classpath:
+
+접두어에 따라 다른 클래스가 된다.
+
+클래스패스 위주로 많이 사용한다.
+----
+Resource resource = resourceLoader.getResource("classpath:text.txt");
+// class org.springframework.core.io.ClassPathResource
+----
+
+----
+Resource resource = resourceLoader.getResource("text.txt");
+// class org.springframework.web.context.support.ServletContextResource
+----
+
+파일은 /// 3개 써야됨.
+----
+Resource resource = resourceLoader.getResource("file:///text.txt");
+// class org.springframework.core.io.FileUrlResource
+----
+
+wile card도 사용할 수 있다.
+----
+/WEB-INF/*-context.xml
+com/mycompany/**/applicationContext.xml
+file:C:/some/path/*-context.xml
+classpath:com/mycompany/**/applicationContext.xml
+----
+
+classpath 에 *을 사용할 수도 있다.
+----
+ApplicationContext ctx =
+    new ClassPathXmlApplicationContext("classpath*:conf/appContext.xml");
+----
+
+
+자세한건 레퍼런스
+
+https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#spring-core[Core Technologies]
+
+Next link:14.Validation%20추상화.adoc[14.Validation 추상화^]
