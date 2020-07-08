@@ -1,0 +1,65 @@
+= adoptopenjdk
+* https://adoptopenjdk.net/index.html
+
+== installation
+상세 버전 지정은 어떻게 하지?
+
+=== adoptopenjdk11
+
+[source]
+----
+brew cask install adoptopenjdk11
+----
+
+[source]
+----
+$ brew cask install adoptopenjdk11
+Updating Homebrew...
+==> Downloading https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.7%2B10/OpenJDK11U-jdk_x64_mac_hotspot_11.0.7_10.pkg
+==> Downloading from https://github-production-release-asset-2e65be.s3.amazonaws.com/140419044/9ef56580-7f38-11ea-9145-7f63713950c7?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential
+######################################################################## 100.0%
+==> Verifying SHA-256 checksum for Cask 'adoptopenjdk11'.
+==> Installing Cask adoptopenjdk11
+==> Running installer for adoptopenjdk11; your password may be necessary.
+==> Package installers may write to any location; options such as --appdir are ignored.
+Password:
+installer: Package name is AdoptOpenJDK
+installer: Upgrading at base path /
+installer: The upgrade was successful.
+package-id: net.adoptopenjdk.11.jdk
+version: 11.0.7+10
+volume: /
+location: Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk
+install-time: 1594171549
+🍺  adoptopenjdk11 was successfully installed!
+----
+
+=== adoptopenjdk8
+
+[source]
+----
+brew tap AdoptOpenJDK/openjdk
+brew cask install adoptopenjdk8
+----
+
+설치 정보
+
+[source]
+----
+$ brew cask info adoptopenjdk8
+adoptopenjdk8: 8,252:b09.1
+https://adoptopenjdk.net/
+/usr/local/Caskroom/adoptopenjdk8/8,242:b08 (98MB)
+From: https://github.com/adoptopenjdk/homebrew-openjdk/blob/HEAD/Casks/adoptopenjdk8.rb
+==> Name
+AdoptOpenJDK 8
+==> Artifacts
+OpenJDK8U-jdk_x64_mac_hotspot_8u252b09.pkg (Pkg)
+----
+
+설치 위치: /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+
+== 정리
+
+== References
+* https://findstar.pe.kr/2019/01/20/install-openjdk-by-homebrew/[homebrew로 opendjk 설치하기 2019.01.20]
