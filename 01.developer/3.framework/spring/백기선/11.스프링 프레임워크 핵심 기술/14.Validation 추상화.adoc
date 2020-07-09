@@ -1,0 +1,133 @@
+= 14. Validation 추상화
+
+https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/validation/Validator.html[org.springframework.validation.Validator]
+
+애플리케이션에서 사용하는 객체 검증용 인터페이스.
+
+.특징
+* 어떠한 계층과도 관계가 없다. => 모든 계층(웹, 서비스, 데이터)에서 사용해도 좋다.
+* 구현체 중 하나로, JSR-303(Bean Validation 1.0)과 JSR-349(Bean Validation 1.1)을 지원한다. (https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/validation/beanvalidation/LocalValidatorFactoryBean.html[LocalValidatorFactoryBean])
+* DataBinder에 들어가 바인딩 할 때 같이 사용되기도 한다.
+
+.인터페이스
+* boolean supports(Class clazz): 어떤 타입의 객체를 검증할 떄 사용할 것인지 결정함
+* void validate(Object obj, Errors e): 실제 검증 로직을 이 안에서 구현
+** 구현할 떄 ValidationUtils 사용하며 편리함.
+
+.스프링 부트 2.0.5 이상 버전을 사용할 때
+* LocalValidatorFactoryBean 빈으로 자동 등록
+* JSR-380(Bean Validation 2.0.1) 구현체로 hibernate-validator 사용.
+* https://beanvalidation.org/[https://beanvalidation.org]
+
+==
+
+spring framework에서 제공하는 추상화중 하나인 Validation관련된 추상화
+
+검증하는거
+
+validator를 제공함
+
+주로 스프링 MVC사용하지만 웹계층 전용은 아님.
+
+어떠한 레이어든 모두 사용할 수 있는 일반적인 인터페이스
+
+Bean Validation 1.0, 1.1지원하고 있음.
+
+Bean Validation은 Java 표준 스펙
+
+https://docs.jboss.org/hibernate/beanvalidation/spec/2.0/api/
+
+두가지 메서드를 구현해야함
+
+----
+public class EventValidator implements Validator {
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return Event.class.equals(clazz);
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "title", "notempty", "Empty title is not allowed.");
+    }
+}
+----
+
+----
+        Event event = new Event();
+        EventValidator eventValidator = new EventValidator();
+        Errors errors = new BeanPropertyBindingResult(event, "event");
+
+        eventValidator.validate(event, errors);
+
+        System.out.println(errors.hasErrors());
+
+        errors.getAllErrors().forEach(e -> {
+            System.out.println("====== error code =====");
+            Arrays.stream(e.getCodes()).forEach(System.out::println);
+            System.out.println(e.getDefaultMessage());
+        });
+----
+
+하나는 support
+
+validate 검증작업이 일어나는 곳
+
+최근에는 validator 직접 구현해서 잘 안쓰고
+
+spring이 제공해주는 LocalValidatorFactoryBean
+
+Bean Validation을 제공해주는 validator
+
+EventValidator사용하지 않고
+
+----
+    @Autowired
+    Validator validator;
+----
+
+----
+System.out.println(validator.getClass());
+----
+LocalValidatorFactoryBean이 주입된다는데 좀 다르게 나온다.
+----
+class org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport$NoOpValidator
+----
+
+@NotEmpty사용이 안되는데 spring boot 2.3 에서 validation이 web에서 빠졌기 때문. 직접 추가해 주어야 한다.
+
+----
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+----
+
+추가해 주고 나면
+----
+class org.springframework.validation.beanvalidation.LocalValidatorFactoryBean
+----
+로도 잘 나오고 @NotEmpty같은 애노테이션들도 사용 할 수 있게 된다.
+
+----
+    @NotNull @Min(0)
+    Integer limit;
+----
+인데 -1로 세팅하면
+----
+must be greater than or equal to 0
+----
+
+
+----
+    @Email
+    String email;
+----
+인데 "aaa2"로 세팅하면
+----
+must be a well-formed email address
+----
+
+Prev link:13.Resource%20추상화.adoc[13.Resource 추상화] +
+Next 15
