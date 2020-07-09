@@ -81,7 +81,7 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-applicat
 * ssl.protocol
 * ssl.trust-store-location
 * ssl.trust-store-password
-* ssl-.trust-store-type
+* ssl.trust-store-type
 * transaction-id-prefix
 * value-serializer
 
