@@ -1,0 +1,85 @@
+= 17.SpEL (스프링 Expression Language)
+
+https://www.inflearn.com/course/spring-framework_core/lecture/15523
+
+.https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions[스프링 EL]이란?
+* 객체 그래프를 조회하고 조작하는 기능을 제공한다.
+* https://docs.oracle.com/javaee/5/tutorial/doc/bnahq.html[Unified EL]과 비슷하지만, 메소드 호출을 지원하며, 문자열 템플릿 기능도 제공한다.
+* OGNL, MVEL, JBOss EL 등 자바에서 사용할 수 있는 여러 EL이 있지만, SpEL은 모든 스프링 프로젝트 전반에 걸쳐 사용할 EL로 만들었다.
+* 스프링 3.0 부터 지원
+
+.SpEL 구성
+* ExpressionParser parser = new SpelExpressionParser()
+* StandardEvaluationContext context = new StandardEvaluationContext(bean)
+* Expression expression = parser.parseExpression("SpEL 표현식")
+* Strin gvalue = expression.getValue(context, String.class)
+
+.문법
+* #{"표현식"}
+* #{"프로퍼티"}
+* 표현식은 프로퍼티를 가질 수 있지만, 반대는 안 됨.
+** #{${my.data} + 1}
+* https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions-language-ref[레퍼런스] 참고
+
+.실제로 어디서 쓰나?
+* @Value 애노테이션
+* @ConditionalOnExpression 애노테이션
+* https://docs.spring.io/spring-security/site/docs/3.0.x/reference/el-access.html[스프링 시큐리티]
+** 메소드 시큐리티, @PreAuthorize, @PostAuthorize, @PreFilter, @PostFilter
+** XML 인터셉터 URL 설정
+** ...
+* https://spring.io/blog/2014/07/15/spel-support-in-spring-data-jpa-query-definitions[스프링 데이터]
+** @Query 애노테이션
+* https://blog.outsider.ne.kr/997[Thymeleaf]
+
+
+== 정리
+표현식 안에 property 넣을 수 있음.
+
+property 안에 표현식을 넣을 수는 없음.
+
+https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions-ref-literal
+
+
+[source,java]
+----
+@Component
+public class AppRunner implements ApplicationRunner {
+    @Value("#{1 + 1}")
+    int value;
+
+    @Value("#{'hello ' + 'world'}")
+    String greeting;
+
+    @Value("#{1 eq 1}")
+    boolean trueOrFalse;
+
+    @Value("hello")
+    String hello;
+
+    @Value("${my.value}")
+    int myValue;
+
+    @Value("#{${my.value} eq 100}")
+    boolean isMyValue;
+
+    @Value("#{'spring'}")
+    String spring;
+
+    @Value("#{sample.data}")
+    int sampleData;
+
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+        System.out.println("===============");
+        System.out.println(value);
+        System.out.println(greeting);
+        System.out.println(trueOrFalse);
+        System.out.println(hello);
+        System.out.println(myValue);
+        System.out.println(isMyValue);
+        System.out.println(spring);
+        System.out.println(sampleData);
+    }
+}
+----
