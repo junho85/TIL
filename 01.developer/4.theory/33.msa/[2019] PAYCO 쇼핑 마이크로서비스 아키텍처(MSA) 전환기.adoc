@@ -1,0 +1,220 @@
+= [2019] PAYCO 쇼핑 마이크로서비스 아키텍처(MSA) 전환기
+
+https://youtu.be/l195D5WT_tE[[2019] PAYCO 쇼핑 마이크로서비스 아키텍처(MSA) 전환기 2020.01.20]
+
+
+
+== PAYCO Shopping
+
+검색기반의 큐레이션 서비스
+
+== NCP - NHN Commerce Platform (Naver Cloud Platform 아님)
+
+클라우드 기반으로 되어 있어서 사용자가 급증해도 안정적
+
+Spring 4기준
+
+Gradle 멀티 프로젝트
+
+모놀리스 프로젝트
+
+== 추가 기능들
+
+버그, 성능, 추가 필요 API, 어드민...
+
+비대해지는 Common 모듈
+
+== 빌드 시간 증가
+전체 파일 수 1만여 개
+
+Common 빌드 하는데도 2분 넘게
+
+== 생산성 감소
+* 변경으로 인한 Side Effect
+* 변경은 최소한으로 (Ctrl + C, Ctrl + V)
+* 변경은 최소한으로 (if(페이코쇼핑))
+* 라이브러리 버전 올리는 게 힘들다
+** jedis -> lettuce로 바꾸려고 하니 spring 5로 올려야 되는데 다른거도 다 올려줘야 된다.
+* Scale out????
+
+== 서비스의 분리
+.How?
+* 새로운 PaycoShopping Repo 생성 후 Ctrl + C, V? - 쉽지만 무식한 방법(쌍둥이 용?)
+* 배포 시간을 줄이고 싶은데?
+* 섞여있는 소스를 한 땀 한 땀 발라냄? - 오래된 기반 프레임워크(또 다른 용의 탄생?)
+* 시스템 업그레이드도 자유롭고 싶은데?
+
+.Microservice Architecture!
+* 모듈 간 낮은 커플링
+* 독립적인 배포
+* 아키텍처의 유연함
+
+다른 언어로 갭라 할 수 있는 좋은 기회. Kotlin
+
+== MSA의 시작
+. 현재 상황 파악 및 Plan
+* 누가 하지?
+* 어느 범위까지 MSA로 전환할 것인가?
+* 도입 방법은 어떻게 할 것인가?
+* 무엇부터 전환할 것인가?
+
+.기술 스택 조사
+* 어디선 뭘 썼다더라
+* 최근 트렌드는 무엇인가?
+* 그래서 우리에게 맞은 기술 스택은 무엇인가?
+
+== 기술 스택 조사
+Spring 5
+
+TypeScript
+
+Kotlin
+
+Docker
+
+...
+
+== 현재 사용하고 있는 기능의 전수 조사
+* 기능 기준 RESTful API 목록 추출(GET, POST, PUT, DELETE)
+* 업무 도메인 별로 기능 취합
+
+== 도메인 별 Microservice 생성
+* Product
+* Partner
+Order
+Event
+Category
+...
+
+== 도메인 결합
+도메인 별로 소스 중복 생김
+
+Product, Category
+Banner, Product Section, Event, Popup
+Order
+Partner
+
+== 4개의 Microservice
+Product
+Display
+Order
+Partner
+
+== API Gateway
+
+
+== Service Discovery
+
+Netflix Zuul, Eureka
+
+== Spring Cloud Netflix
+
+== Gateway & Service Discovery
+
+Webflux로 개발하고 있었는데 Zuul에서 블록킹.
+
+Spring cloud로 고개를 돌림
+
+== Zuul VS Spring Cloud Gateway
+
+Stack overflow 의 spring cloud gateway 개발자
+
+Zuul은 servlet 2.5 blocking API
+
+Spring Cloud Gateway
+
+==
+
+== Service Discovery
+
+== Legacy Configuration
+
+== Cloud Configuration
+
+Spring Cloud Config Server
+
+@RefreshScope
+
+== Cloud Config
+
+== Containerize
+
+== Docker Repository
+
+.Nexus Repository Manager 3
+* Maven Internal Registry (Private)
+* Docker Internal Registry (Private)
+* Maven Proxy Registry
+* Docker Proxy Registry
+* apt, bower, npm, pypi, yum ...
+
+== Build & Deploy
+
+ansible playbook
+
+
+== Monitoring
+* nSight(NHN 사내 표준 모니터링 툴)
+* Scouter - Zipkin
+* Grafana
+* Scouter - xlog
+
+
+== Swagger Based Documentation
+
+백엔드 개발 조직간에서 의사소통이 필요해짐
+
+== Swagger Annotation
+
+...
+
+.장점
+* API 문서의 현행화가 쉬움
+* 이해하기 쉽고, 개발도 쉬움
+* 주석을 대체할 수 있음
+
+.단점
+* 개발 로직 과는 상관없는 코드 (현행화를 잘 안하게 됨)
+* Spec file만 별도로 생성할 수 없음
+* 분산 환경에서의 문서 통합이 어려움
+* functional endpoint 방식에서는 API 문서화가 불가능
+
+== Spring REST Docs + OpenAPI 3.0 + Swagger UI
+.보완 대책
+* Spring REST Docs
+* OpenAPI 3.0
+* Swagger UI
+
+== Test Code For Documents
+[source,kotlin]
+----
+@Test
+@DisplayName....
+----
+
+== 최종 아키텍처
+
+== 결과 Project Modules
+
+== 서비스 종료
+2018-05-14~2019-09-30
+
+== Contributor!
+신규 프로젝트에 결함이 많음
+
+== 이후 과제
+NCP
+
+== 회고
+* 욕심부리지 말자.
+* 디테일에 신경 쓰자.
+* 한 번에 하나씩..
+* 서비스는 안정성이 중요!
+* 하지만 장애를 두려워하지 말자!
+
+== CNCF
+https://www.cncf.io/[Cloud Native Computing Foundation]
+
+
+== References
+* https://www.joinc.co.kr/w/man/12/msaPayco[PAYCO 쇼핑 마이크로서비스 아키텍처(MSA) 전환기]
