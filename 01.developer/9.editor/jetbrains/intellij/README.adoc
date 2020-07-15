@@ -1,0 +1,14 @@
+= IntelliJ
+
+== Disable git add confirmation for new file
+
+image::file.png[]
+
+File -> New Projects Settings -> Preferences for New Projects -> Version Control -> Confirmation -> When files are created
+
+image::file2.png[]
+
+Do not add 로 선택
+
+=== References
+https://intellij-support.jetbrains.com/hc/en-us/community/posts/360008583279-How-to-disable-Intellij-froam-adding-files-to-git-automatically[How to disable Intellij from adding files to git automatically]
