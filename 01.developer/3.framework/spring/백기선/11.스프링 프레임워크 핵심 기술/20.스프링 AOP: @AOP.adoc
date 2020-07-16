@@ -1,0 +1,139 @@
+= 20. 스프링 AOP: @AOP.adoc
+
+https://www.inflearn.com/course/spring-framework_core/lecture/15527
+
+애노테이션 기반의 스프링 @AOP
+
+의존성 추가
+----
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-aop</artifactId>
+</dependency>
+----
+
+.애스팩트 정의
+* @Aspect
+* 빈으로 등록해야 하니까 (컴포넌트 스캔을 사용한다면) @Component도 추가.
+
+.포인터컷 정의
+* @Pointcut(표현식)
+* 주요 표현식
+** execution
+** @annotation
+** bean
+* 포인트컷 조합
+** &&, ||, !
+
+.어드바이스 정의
+* @Before
+* @AfterReturning
+* @AfterThrowing
+* @Around
+
+.참고
+* https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#aop-pointcuts
+
+== 정리
+
+ProxySimpleEventService.java 를 삭제 했기 때문에 시간 측정이 안됨
+
+의존성 추가
+----
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-aop</artifactId>
+</dependency>
+----
+
+위버는 쓰지 않음.
+
+PJP - 어드바이스가 적용되는 대상
+
+타겟에 해당하는 메서드를 호출하고 리턴하니 아무 일도 일어 나지 않음.
+----
+@Component
+@Aspect
+public class PerfAspect {
+    public Object logPerf(ProceedingJoinPoint pjp) throws Throwable {
+        Object retVal = pjp.proceed();
+        return retVal;
+    }
+}
+----
+
+여기서 시간을 측정하는 기능을 추가해 준다.
+
+----
+@Component
+@Aspect
+public class PerfAspect {
+    @Around("execution(* kr.pe.junho85..*.EventService.*(..))")
+    public Object logPerf(ProceedingJoinPoint pjp) throws Throwable {
+        long begin = System.currentTimeMillis();
+        Object retVal = pjp.proceed();
+        System.out.println(System.currentTimeMillis() - begin);
+        return retVal;
+    }
+}
+----
+
+그런데 delete에는 측정하고 싶지 않다.
+
+애노테이션을 만들면 편함.
+
+----
+/**
+ * 이 애노테이션을 사용하면 성능을 로깅해 줍니다.
+ */
+@Documented
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.CLASS)
+public @interface PerfLogging {
+}
+----
+
+@PerfLogging를 붙여 준다.
+----
+    @PerfLogging
+    @Override
+    public void createEvent() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Created an event");
+    }
+----
+
+
+----
+@Component
+@Aspect
+public class PerfAspect {
+    @Around("@annotation(PerfLogging)")
+    public Object logPerf(ProceedingJoinPoint pjp) throws Throwable {
+        long begin = System.currentTimeMillis();
+        Object retVal = pjp.proceed();
+        System.out.println(System.currentTimeMillis() - begin);
+        return retVal;
+    }
+}
+----
+
+bean 에 적용하기
+----
+@Around("bean(simpleEventService)")
+----
+
+
+----
+    @Before("bean(simpleEventService)")
+    public void hello() {
+        System.out.println("hello");
+    }
+----
+
+더 깊게 보려면 레퍼런스. 토비의 스프링 3
+
