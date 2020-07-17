@@ -1,0 +1,11 @@
+= tmux usage
+
+처음 세션 생성 하면서 이름 정하기
+----
+tmux new -s june
+----
+
+지정한 이름의 세션에 붙기
+----
+tmux a -t june
+----
