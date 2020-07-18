@@ -1,0 +1,6 @@
+= 22.outro
+
+https://www.inflearn.com/course/spring-framework_core/lecture/15531
+
+추상 API들을 살펴 봤음
+
