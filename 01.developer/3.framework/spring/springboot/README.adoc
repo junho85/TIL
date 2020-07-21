@@ -5,6 +5,7 @@
 
 == Spring Initializr
 * https://start.spring.io/[Spring Initializr]
+* https://junho85.pe.kr/1616[Spring Boot - spring initializr 에서 프로젝트 생성하기. https://start.spring.io]
 
 == ETC
 https://stackoverflow.com/tags/spring-boot
