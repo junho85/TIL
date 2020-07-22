@@ -12,3 +12,7 @@ Do not add 로 선택
 
 === References
 https://intellij-support.jetbrains.com/hc/en-us/community/posts/360008583279-How-to-disable-Intellij-froam-adding-files-to-git-automatically[How to disable Intellij from adding files to git automatically]
+
+
+== 터미널에서 IntelliJ 열기 - command line launcher
+* 정리: https://junho85.pe.kr/1448[터미널에서 IntelliJ 실행하기. 커맨드라인에서 spring boot 프로젝트 만들고 연결까지 2019.11.02]
