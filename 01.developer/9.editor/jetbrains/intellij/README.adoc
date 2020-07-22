@@ -10,6 +10,9 @@ image::file2.png[]
 
 Do not add 로 선택
 
+=== 정리
+* https://junho85.pe.kr/1619[IntelliJ - Add File to Git 끄기 2020.07.23]
+
 === References
 https://intellij-support.jetbrains.com/hc/en-us/community/posts/360008583279-How-to-disable-Intellij-froam-adding-files-to-git-automatically[How to disable Intellij from adding files to git automatically]
 
