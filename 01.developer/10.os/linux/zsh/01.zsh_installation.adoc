@@ -1,18 +1,24 @@
-# zsh installatoin
+= zsh installation
 * osx catalina 부터는 기본 zsh (이전에는 bash)
 * 하지만 바꿔줄 수 있음. chsh
 
-## centos
-```
-sudo yum install zsh
-```
+== centos
 
-## ubuntu
-```
+[source]
+----
+sudo yum install zsh
+----
+
+== ubuntu
+
+[source]
+----
 sudo apt-get install zsh
-```
+----
 
 기본 shell 로 변경
-```
+
+[source]
+----
 chsh -s $(which zsh)
-```
+----

@@ -1,15 +1,17 @@
-# zsh-syntax-highlighting
+= zsh-syntax-highlighting
 
 * 커맨드에 syntax 색상을 먹여 줍니다.
-* [](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+* https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 
-```
+== OSX
+[source]
+----
 brew install zsh-syntax-highlighting
-```
+----
 
-or
-
-```
+== ALL
+[source]
+----
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
-```
+----

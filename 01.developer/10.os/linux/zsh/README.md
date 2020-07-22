@@ -2,13 +2,13 @@
 * linux 뿐 아니라 osx 등도 해당 되는 내용 입니다.
 
 ## zsh 설치
-* [01.zsh_installation.md](01.zsh_installation.md)
+* [01.zsh_installation.md](01.zsh_installation.adoc)
 
 ## antigen
-* [antigen](03.antigen.md)
+* [antigen](03.antigen.adoc)
 
 ## oh my zsh 설치
-* [02.oh-my-zsh](02.oh-my-zsh.md)
+* [02.oh-my-zsh](02.oh-my-zsh.adoc)
 
 ## theme
 ### bullet-train
@@ -18,10 +18,10 @@
 * [zsh-autosuggestions](zsh-autosuggestions.md)
 
 ## zsh-syntax-highlighting
-* [zsh-syntax-highlighting](12.zsh-syntax-highlighting.md)
+* [zsh-syntax-highlighting](12.zsh-syntax-highlighting.adoc)
 
 ## autojump
-* [autojump](13.autojump.md)
+* [autojump](13.autojump.adoc)
 
 ## iterm
 * [](https://draculatheme.com/iterm/)

@@ -1,16 +1,23 @@
-# antigen
+= antigen
+
 * zsh 관련 설정 설치에 antigen 이 유용함.
 
-## installation
+== installation
 * [Installation](https://github.com/zsh-users/antigen/wiki/Installation)
-```
+
+[source]
+----
 brew install antigen
-```
+----
 
 ubuntu
-```
+
+[source]
+----
 curl -L git.io/antigen > antigen.zsh
-```
-```
+----
+
+[source]
+----
 source ~/th-to-antigen/antigen.zsh
-```
+----
