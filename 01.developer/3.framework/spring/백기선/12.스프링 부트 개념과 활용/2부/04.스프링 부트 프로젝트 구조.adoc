@@ -1,0 +1,19 @@
+= 04.스프링 부트 프로젝트 구조
+
+https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/lecture/13518
+
+https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-structuring-your-code
+
+.메이븐 기본 프로젝트 구조와 동일
+* 소스 코드 (src/main/java)
+* 소스 리소스 (src/main/resources)
+* 테스트 코드 (src/test/java)
+* 테스트 리소스 (src/test/resources)
+** 이건 안만들어져 있는데 직접 만들면 됨
+
+.메인 애플리케이션 위치
+* 기본 패키지
+
+package가 따로 없는 default package는 피하길 권장. 모든 jar를 스캔하게 됨.
+
+com.example.project 처럼 reversed domain name을 사용하길 권장함.
