@@ -12,11 +12,15 @@
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ----
 
-~/.zshrc 플러그인에 추가
+~/.zshrc 플러그인(plugins)에 추가
 
 [source]
 ----
-plugins=(zsh-autosuggestions)
+plugins=(
+...
+zsh-autosuggestions
+...
+)
 ----
 
 터미널을 새로 연다.

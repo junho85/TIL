@@ -3,6 +3,16 @@
 * 커맨드에 syntax 색상을 먹여 줍니다.
 * https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 
+== centos
+----
+sudo yum install zsh-syntax-highlighting
+----
+
+~/.zshrc 수정
+----
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+----
+
 == OSX
 [source]
 ----

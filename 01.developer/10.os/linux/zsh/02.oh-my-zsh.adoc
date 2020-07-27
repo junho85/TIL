@@ -32,5 +32,10 @@ setproxy wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 setproxy source ./install.sh
 ----
 
+----
+setproxy wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+----
+
+
 == References
 * https://stackoverflow.com/questions/11378607/oh-my-zsh-disable-would-you-like-to-check-for-updates-prompt[Oh My Zsh - Disable 'Would you like to check for updates' prompt]
