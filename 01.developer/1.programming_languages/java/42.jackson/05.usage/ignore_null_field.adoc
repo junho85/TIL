@@ -1,0 +1,58 @@
+= Ignore null fields
+
+== serialization inclusion
+[source,java]
+----
+mapper.setSerializationInclusion(Include.NON_NULL);
+----
+
+2.5 전에는
+----
+mapper.getSerializationConfig().setSerializationInclusion(Inclusion.NON_NULL);
+----
+
+== @JsonInclude(JsonInclude.Include.NON_NULL)
+
+클래스의 모든 필드에 적용
+[source,java]
+----
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class Person {
+  private String name;
+  private String hobby;
+  // ...
+}
+----
+
+필드별로도 지정할 수 있음
+
+[source,java]
+----
+public class Person {
+  @JsonInclude(JsonInclude.Include.NON_NULL)
+  private String name;
+  private String hobby;
+  // ...
+}
+----
+
+== spring
+
+https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html
+
+----
+spring.jackson.default-property-inclusion=non_null
+----
+
+----
+spring:
+  jackson:
+    default-property-inclusion: non_null
+----
+
+== (Deprecated) @JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
+1.9.11 ~ 2.x
+
+== References
+https://mkyong.com/java/jackson-how-to-ignore-null-fields/[Jackson – How to ignore null fields]
+
