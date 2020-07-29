@@ -36,7 +36,7 @@ public class Person {
 }
 ----
 
-== spring
+== springboot
 
 https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html
 
@@ -52,6 +52,9 @@ spring:
 
 == (Deprecated) @JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 1.9.11 ~ 2.x
+
+== 정리
+https://junho85.pe.kr/1626[Jackson Json - null 필드 생략하기 2020.07.30]
 
 == References
 https://mkyong.com/java/jackson-how-to-ignore-null-fields/[Jackson – How to ignore null fields]
