@@ -1,0 +1,40 @@
+= jackson json - pretty printer
+
+----
+mapper.writerWithDefaultPrettyPrinter().writeValueAsString(staff);
+----
+
+
+== springboot
+https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-customize-the-jackson-objectmapper
+
+----
+spring.jackson.serialization.indent_output=true
+----
+
+
+----
+@SpringBootTest
+public class MyTest {
+    @Autowired
+    private ObjectMapper mapper;
+
+    @Test
+    public void test() throws JsonProcessingException {
+        Person person = Person.builder()
+                .firstName("Michael")
+                .lastName("Jordan")
+                .byName("Air Jordan")
+                .build();
+
+        System.out.println(mapper.writeValueAsString(person));
+        System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(person));
+    }
+}
+----
+
+== 정리
+https://junho85.pe.kr/1627[Jackson Json - json 가독성 높이기. pretty printer]
+
+== References
+https://mkyong.com/java/how-to-enable-pretty-print-json-output-jackson/[Jackson – How to enable pretty print JSON output]
