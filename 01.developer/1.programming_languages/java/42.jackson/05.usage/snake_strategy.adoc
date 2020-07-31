@@ -1,0 +1,16 @@
+= Snake Case Strategy
+
+----
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+----
+
+== springboot
+----
+spring.jackson.property-naming-strategy=SNAKE_CASE
+----
+
+== 정리
+https://junho85.pe.kr/1628[Jackson Json - json name을 snake case로 바꾸기 2020.08.01]
+
+== References
+https://itmining.tistory.com/148[Spring Jackson 프로퍼티 Naming Strategy 2019.11.26]
