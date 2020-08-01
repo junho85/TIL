@@ -1,0 +1,7 @@
+= Command Line Tools
+
+https://developer.apple.com/library/archive/technotes/tn2339/_index.html[Building from the Command Line with Xcode FAQ]
+----
+What is the Command Line Tools Package?
+The Command Line Tools Package is a small self-contained package available for download separately from Xcode and that allows you to do command line development in macOS. It consists of the macOS SDK and command-line tools such as Clang, which are installed in the /Library/Developer/CommandLineTools directory.
+----
