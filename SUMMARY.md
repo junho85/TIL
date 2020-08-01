@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [Problem Solving](01.developer/4.theory/problem_solving/README.md)
-  * [leetcode](01.developer/4.theory/problem_solving/leetcode/README.md)
+  * [leetcode](01.developer/4.theory/problem_solving/leetcode/README.adoc)
     * [1. Two Sum](01.developer/4.theory/problem_solving/leetcode/1_two_sum/1_two_sum.md)
         * [CPP](01.developer/4.theory/problem_solving/leetcode/1_two_sum/1_two_sum_cpp.md)
         * [Java](01.developer/4.theory/problem_solving/leetcode/1_two_sum/1_two_sum_java.md)
