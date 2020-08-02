@@ -1,0 +1,18 @@
+= leetcode
+
+* https://leetcode.com/
+
+== python
+
+기본 라이브러리
+----
+import collections
+import heapq
+import functools
+import itertools
+import re
+import sys
+import math
+import bisect
+from typing import *
+----
