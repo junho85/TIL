@@ -1,0 +1,4 @@
+= bootcamp
+
+== References
+https://support.apple.com/en-us/HT201468[Install Windows 10 on your Mac with Boot Camp Assistant]
