@@ -1,0 +1,9 @@
+= Kafka usage
+
+== Consume
+
+https://kafka.apache.org/quickstart#quickstart_consume
+
+----
+$ kafka-console-consumer --bootstrap-server localhost:9092 --topic my-test --from-beginning
+----
