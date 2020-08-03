@@ -1,0 +1,3 @@
+= 실전 아파치 카프카: 애플리케이션 개발부터 파이프라인, 사물인터넷 데이터 허브
+
+https://books.google.co.kr/books?id=X2vXDwAAQBAJ&pg=PA39&source=gbs_selected_pages&cad=2#v=onepage&q&f=false
