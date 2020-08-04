@@ -1,7 +1,20 @@
 = Kafka
 
+메시지큐 모델이 아니고 펍섭모델
+
+
 == Spring for Apache Kafka
 link:../../3.framework/spring/08.kafka/README.adoc[test]
 
 == Installation
 link:02.installation.adoc[installation]
+
+
+== Learn
+
+https://www.youtube.com/watch?v=PzPXRmVHMxI[Apache Kafka in 5 minutes 2019.05.01]
+
+https://www.udemy.com/course/apache-kafka/
+
+https://www.udemy.com/course/apache-kafka/?couponCode=AUG_20_GET_STARTED
+

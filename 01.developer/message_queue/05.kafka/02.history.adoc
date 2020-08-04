@@ -1,20 +1,38 @@
 = kafka history
 
-* LinkedIn에서 개발 되었음. 2011년에 오픈소스로 제공됨.
+* LinkedIn에서 개발 되었음.
+* 2009년 출시.
+* 2011년에 오픈소스로 제공됨.
 ** https://blog.linkedin.com/2011/01/11/open-source-linkedin-kafka[Open-sourcing Kafka, LinkedIn's distributed message queue 2011.01.11]
 * 2012년 10월 23일 Apache Incubator에서 졸업.
 ** https://incubator.apache.org/projects/kafka.html
+** 인큐베이터 프로젝트로 공개될 때 버전은 0.7.0
+** 인큐베이터 졸업 시 버전은 0.8.0
+* 2014년 11월 링크드인에서 카프카를 개발하던 개발자 몇몇이 Confluent라는 회사를 만들었습니다. Kafka에 집중하기 위함.
+** https://fortune.com/2014/11/06/linkedin-kafka-confluent/
+
+
+== Naming
 * Jay Kreps가 Kafka라고 이름 지음. Franz Kafka작가의 이름을 땀.
 ** 카프카의 작품을 좋아했고 "글자에 최적화 된 시스템"이기 때문임.
 ** https://qr.ae/pNslNL
 ** https://www.linkedin.com/in/jaykreps[Jay Kreps]
-* 2014년 11월 링크드인에서 카프카를 개발하던 개발자 몇몇이 Confluent라는 회사를 만들었습니다. Kafka에 집중하기 위함.
-** https://fortune.com/2014/11/06/linkedin-kafka-confluent/
 
+
+== 정리
+https://junho85.pe.kr/1630[분산 메시징 시스템 카프카(Kafka)의 간단한 역사와 이름의 의미 2020.08.03]
 
 == References
 https://en.wikipedia.org/wiki/Apache_Kafka[Apache Kafka]
 
 https://www.confluent.io/what-is-apache-kafka/[What is Apache Kafka?]
 
+https://www.youtube.com/watch?v=3F4XwgCfQc8[아파치 카프카의 탄생 스토리]
+네하 나크헤데 NEHA Narkhede - Co-founder & CTO / Confluent
 
+2009년 상용버전 출시
+
+https://www.linkedin.com/in/nehanarkhede/[Co-founder and CTO, Confluent]
+
+
+https://www.confluent.io/confluent-cloud/#view-pricing
