@@ -1,0 +1,24 @@
+= 프로젝트명 작명
+
+== 메시지 전달 프로젝트
+메시지를 받아서 다른 곳에 전달해 주는 프로젝트에 사용하기 좋은 이름
+
+=== 어벤저스
+헤임달(Heimdall), 비프로스트(bifrost)
+
+=== https://ko.wikipedia.org/wiki/%EB%B6%84%EB%A5%98:%EC%A0%84%EB%A0%B9%EC%9D%98_%EC%8B%A0[전령의 신]
+
+메르쿠리우스, 아그니, 이리스(아이리스), 트리톤, 프로메테우스, 헤르메스, 헤르모드, 헤임달과
+
+=== 다리
+
+금문교 golden gate bridge
+
+무지개(rainbow)
+
+
+== 정리
+https://junho85.pe.kr/1632[메시지 전달 서비스 프로젝트 작명하기 2020.08.05]
+
+== References
+https://ko.wikipedia.org/wiki/%EB%B6%84%EB%A5%98:%EC%A0%84%EB%A0%B9%EC%9D%98_%EC%8B%A0[전령의 신]
