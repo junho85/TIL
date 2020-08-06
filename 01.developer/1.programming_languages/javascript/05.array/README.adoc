@@ -1,0 +1,37 @@
+= javascript - array
+
+[source]
+----
+[...Array(5).keys()];
+ => [0, 1, 2, 3, 4]
+----
+
+== empty array
+
+[source,javascript]
+----
+var arr = ['a','b','c','d','e','f'];
+arr = [];
+----
+
+[source,javascript]
+----
+arr.length = 0;
+----
+
+[source,javascript]
+----
+arr.splice(0, arr.length)
+----
+
+[source,javascript]
+----
+while (arr.length > 0) {
+    arr.pop();
+}
+----
+
+== References
+* https://stackoverflow.com/questions/3895478/does-javascript-have-a-method-like-range-to-generate-a-range-within-the-supp[Does JavaScript have a method like “range()” to generate a range within the supplied bounds?]
+* https://stackoverflow.com/questions/1232040/how-do-i-empty-an-array-in-javascript[How do I empty an array in JavaScript?]
+* http://jsben.ch/hyj65[empty an array (length, pop, splice, shift)]
