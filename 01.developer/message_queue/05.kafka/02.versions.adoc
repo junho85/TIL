@@ -1,0 +1,9 @@
+= kafka versions
+
+== kafka client 하위 호환성
+
+https://blog.voidmainvoid.net/193[Kafka broker와 java client의 버젼 하위호환성 정리 2019.02.14]
+
+https://cwiki.apache.org/confluence/display/KAFKA/KIP-97%3A+Improved+Kafka+Client+RPC+Compatibility+Policy[KIP-97: Improved Kafka Client RPC Compatibility Policy]
+
+https://cwiki.apache.org/confluence/display/KAFKA/Compatibility+Matrix[Compatibility Matrix]
