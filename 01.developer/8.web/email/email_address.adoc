@@ -1,0 +1,32 @@
+= Email Address
+
+== Maximum Length
+254자 이다.
+
+
+http://stackoverflow.com/questions/386294/what-is-the-maximum-length-of-a-valid-email-address[What is the maximum length of a valid email address?]
+
+
+작성자 J. Klensin
+
+https://tools.ietf.org/html/rfc3696[RFC 3696 - J. Klensin February 2004] 에서는 320 자 라고 되어 있음
+----
+   In addition to restrictions on syntax, there is a length limit on
+   email addresses.  That limit is a maximum of 64 characters (octets)
+   in the "local part" (before the "@") and a maximum of 255 characters
+   (octets) in the domain part (after the "@") for a total length of 320
+   characters.  Systems that handle email should be prepared to process
+   addresses which are that long, even though they are rarely
+   encountered.
+----
+
+원본 RFC 3696 에서는 320자라고 했으나 John Klensin 이 틀렸음을 인정 했다고 함.
+
+https://www.rfc-editor.org/errata_search.php?rfc=3696&eid=1690
+
+
+
+== References
+https://laughingsquid.com/the-worlds-longest-active-email-address/[The World's Longest Active Email Address (345 Characters) 2010.08.13]
+유머사이트라 재미로 보는거
+
