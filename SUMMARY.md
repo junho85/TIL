@@ -22,7 +22,7 @@
   * [cut](01.developer/10.os/linux/command_util/cut.md)
 * [Programming Languages](01.developer/1.programming_languages/README.md)
   * [javascript](01.developer/1.programming_languages/javascript/README.md)
-    * [array](01.developer/1.programming_languages/javascript/05.array/README.md)
+    * [array](01.developer/1.programming_languages/javascript/05.array/README.adoc)
     * [base64](01.developer/1.programming_languages/javascript/base64/README.md)
     * [canvas](01.developer/1.programming_languages/javascript/35.canvas/README.md)
     * [date](01.developer/1.programming_languages/javascript/33.date/README.md)

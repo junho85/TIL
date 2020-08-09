@@ -46,6 +46,12 @@ link:#table[table]
 == Table
 include::table.adoc[]
 
+== 위첨자/아래첨자
+
+위첨자^superscript^
+
+아래첨자~subscript~
+
 == IntelliJ Plugin
 include::intellij_plugin.adoc[]
 
