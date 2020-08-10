@@ -1,0 +1,15 @@
+위첨자^superscript^
+
+아래첨자~subscript~
+
+위첨자^띄어 쓰기 안된다^
+
+++++
+띄어쓰기<sup>띄어쓰기 하려면 HTML 사용</sup>
+++++
+
++++test<sup>hello world</sup>+++
+
+=== References
+https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/
+https://asciidoctor.org/docs/user-manual/#subscript-and-superscript
