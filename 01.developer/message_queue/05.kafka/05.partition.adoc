@@ -1,0 +1,10 @@
+= kafka partition
+
+파티션은 Kafka의 병렬 처리 단위
+
+Consumer들이 병렬 처리 하려면 파티션은 Consumer개수 이상이어야 함.
+
+== References
+https://sori-nori.gitlab.io/docs/how-to-choose-the-number-of-partition-in-a-kafka-cluster/[Kafka Topic의 partition 수 정하기 2016.12.07]
+
+https://www.confluent.io/blog/how-choose-number-topics-partitions-kafka-cluster/[How to choose the number of topics/partitions in a Kafka cluster? 2015.03.12]
