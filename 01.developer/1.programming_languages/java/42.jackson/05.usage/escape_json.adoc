@@ -1,0 +1,48 @@
+= Jackson - JSON String Escape
+
+[source,java]
+----
+Map<String, Object> message = new HashMap<>();
+message.put("type", "BIG");
+
+ObjectMapper mapper = new ObjectMapper();
+String s = mapper.writeValueAsString(message);
+
+System.out.println(s); // {"type":"BIG"}
+
+JsonStringEncoder encoder = JsonStringEncoder.getInstance();
+char[] escapedJson = encoder.quoteAsString(s);
+System.out.println(escapedJson); // {\"type\":\"BIG\"}
+
+// char[] to String
+System.out.println(String.valueOf(escapedJson)); // {\"type\":\"BIG\"}
+System.out.println(new String(escapedJson)); // {\"type\":\"BIG\"}
+----
+
+== 정리
+https://junho85.pe.kr/1642[Jackson - Json String Escape]
+
+== References
+https://stackoverflow.com/questions/21576475/escape-json-string-in-java[Escape JSON string in Java]
+https://www.ietf.org/rfc/rfc4627.txt[The application/json Media Type for JavaScript Object Notation (JSON)]
+----
+         string = quotation-mark *char quotation-mark
+
+         char = unescaped /
+                escape (
+                    %x22 /          ; "    quotation mark  U+0022
+                    %x5C /          ; \    reverse solidus U+005C
+                    %x2F /          ; /    solidus         U+002F
+                    %x62 /          ; b    backspace       U+0008
+                    %x66 /          ; f    form feed       U+000C
+                    %x6E /          ; n    line feed       U+000A
+                    %x72 /          ; r    carriage return U+000D
+                    %x74 /          ; t    tab             U+0009
+                    %x75 4HEXDIG )  ; uXXXX                U+XXXX
+
+         escape = %x5C              ; \
+
+         quotation-mark = %x22      ; "
+
+         unescaped = %x20-21 / %x23-5B / %x5D-10FFFF
+----
