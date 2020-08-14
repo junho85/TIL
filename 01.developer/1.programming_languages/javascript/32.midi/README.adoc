@@ -1,0 +1,11 @@
+= JavaScript - MIDI
+
+https://www.w3.org/TR/webmidi/[Web MIDI API]
+
+https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess[MIDIAccess]
+
+
+== References
+https://www.smashingmagazine.com/2018/03/web-midi-api/[Getting Started With The Web MIDI API]
+
+https://medium.com/swinginc/playing-with-midi-in-javascript-b6999f2913c3[Playing with MIDI in JavaScript 2018.05.17]
