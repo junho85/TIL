@@ -1,0 +1,10 @@
+= IntelliJ - http
+
+
+----
+### test
+GET https://daum.net
+----
+
+== References
+https://www.jetbrains.com/help/idea/exploring-http-syntax.html[Exploring the HTTP request in Editor syntax]
