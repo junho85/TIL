@@ -1,0 +1,11 @@
+= 라디오
+
+== 회로도
+https://www.electroschematics.com/tiny-fm-radio/[Small FM Radio Circuit]
+https://www.electroschematics.com/small-fm-receiver/[Simple FM Receiver Circuit]
+https://www.electroschematics.com/fm-radio-receiver/[FM Radio Receiver]
+
+https://en.wikipedia.org/wiki/Envelope_detector
+
+== GQRX 와 RTL-SDR Dongle 로 라디오 듣기
+https://www.youtube.com/watch?v=NkLJs6p4dsk[GQRX 와 RTL-SDR Dongle 로 라디오 듣기2018.05.30]
