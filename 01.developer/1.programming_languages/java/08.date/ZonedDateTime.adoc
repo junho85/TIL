@@ -1,0 +1,34 @@
+= Java - ZonedDateTime
+
+== parse
+
+zone 문자가 없으면 zone은 offset과 같다.
+
+----
+ZonedDateTime zDate = ZonedDateTime.parse("2020-08-20T19:01:02+09:00");
+
+System.out.println(zDate); // 2020-08-20T19:01:02+09:00
+System.out.println(zDate.getYear()); // 2020
+System.out.println(zDate.getMonthValue()); // 8
+System.out.println(zDate.getDayOfMonth()); // 20
+System.out.println(zDate.getHour()); // 19
+System.out.println(zDate.getMinute()); // 1
+System.out.println(zDate.getSecond()); // 2
+System.out.println(zDate.getOffset()); // +09:00
+System.out.println(zDate.getZone()); // +09:00
+----
+
+zone 문자를 입력한 경우
+----
+ZonedDateTime zDate2 = ZonedDateTime.parse("2020-08-20T19:01:02+09:00[Asia/Seoul]");
+
+System.out.println(zDate2); // 2020-08-20T19:01:02+09:00
+System.out.println(zDate2.getYear()); // 2020
+System.out.println(zDate2.getMonthValue()); // 8
+System.out.println(zDate2.getDayOfMonth()); // 20
+System.out.println(zDate2.getHour()); // 19
+System.out.println(zDate2.getMinute()); // 1
+System.out.println(zDate2.getSecond()); // 2
+System.out.println(zDate2.getOffset()); // +09:00
+System.out.println(zDate2.getZone()); // Asia/Seoul
+----

@@ -1,0 +1,16 @@
+= Java - OffsetDateTime
+
+== parse
+
+----
+OffsetDateTime oDate = OffsetDateTime.parse("2020-08-20T19:01:02+09:00");
+
+System.out.println(oDate); // 2020-08-20T19:01:02+09:00
+System.out.println(oDate.getYear()); // 2020
+System.out.println(oDate.getMonthValue()); // 8
+System.out.println(oDate.getDayOfMonth()); // 20
+System.out.println(oDate.getHour()); // 19
+System.out.println(oDate.getMinute()); // 1
+System.out.println(oDate.getSecond()); // 2
+System.out.println(oDate.getOffset()); // +09:00
+----

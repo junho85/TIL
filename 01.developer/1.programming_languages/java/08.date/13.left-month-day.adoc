@@ -1,0 +1,29 @@
+= 남은 개월, 일 확인하기
+
+오늘부터 특정일이 몇개월 며칠 남았는지 확인하는 방법니다.Java8의 LocalDate와 Period를 이용해서 코드를 작성하였습니다.
+
+[source,java]
+----
+LocalDate theDate = LocalDate.of(2030, 4, 1);
+Period period = LocalDate.now().until(theDate);
+
+System.out.println(period.getYears() * 12 + period.getMonths() + "개월");
+System.out.println(period.getDays() + "일");
+----
+
+아래는 약간 응용해서 지정한 날을 기준으로 몇개월 며칠 남았는지 확인하는 코드입니다.
+
+[source,java]
+----
+LocalDate startDate = LocalDate.of(2020, 3, 17);
+LocalDate endDate = LocalDate.of(2030, 4, 1);
+
+Period period = startDate.until(endDate);
+
+assertThat(period.getYears() * 12 + period.getMonths()).isEqualTo(120);
+assertThat(period.getDays()).isEqualTo(15);
+----
+
+== 정리
+* https://junho85.pe.kr/1476[Java - "x개월 x일 남았습니다" 구하기 2020.03.17]
+

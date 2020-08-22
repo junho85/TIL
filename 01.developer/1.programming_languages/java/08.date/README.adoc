@@ -1,0 +1,13 @@
+= java - date
+
+== Java SE 8 Date and Time
+
+https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html[Java SE 8 Date and Time]
+
+java.util.Date, SimpleDateFormatter는 thread-safe하지 않음.
+java.utilDate는 1900년부터 시작. months는 1부터. days는 0부터. 직관적이지 않음. not very intuitive
+그래서 third-party date and time 라이브러리들이 있음. Joda-Time같은 것들
+
+Joda-Time 저자 (Stephen Colebourne)와 Oracle이 JSR 310을 따라 java.time패키지를 만들었음
+
+
