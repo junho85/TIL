@@ -1,0 +1,4 @@
+= 스프링부트 JPA 활용
+
+https://www.inflearn.com/course/스프링부트-JPA-활용-1
+

@@ -1,0 +1,12 @@
+= 자바 ORM 표준 JPA 프로그래밍
+
+https://www.inflearn.com/course/ORM-JPA-Basic
+
+== References
+https://www.slideshare.net/zipkyh/ksug2015-jpa1-jpa-51213397[Ksug2015 - JPA1, JPA 소개]
+https://www.slideshare.net/zipkyh/ksug2015-jpa2-jpa[Ksug2015 - JPA2, JPA 기초와매핑]
+https://www.slideshare.net/zipkyh/ksug2015-jpa3-jpa[Ksug2015 - JPA3, JPA 내부구조]
+https://www.slideshare.net/zipkyh/ksug2015-jpa4[Ksug2015 jpa4 객체지향쿼리]
+https://www.slideshare.net/zipkyh/ksug2015-jpa5-jpa[Ksug2015 jpa5 스프링과jpa]
+https://www.slideshare.net/zipkyh/spring-datajpa[SpringDataJPA - 스프링 캠프 2013]
+

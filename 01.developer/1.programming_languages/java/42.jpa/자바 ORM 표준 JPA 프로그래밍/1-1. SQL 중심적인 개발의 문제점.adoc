@@ -1,0 +1,158 @@
+= 섹션 1. JPA 소개
+
+https://www.inflearn.com/course/ORM-JPA-Basic/lecture/21670?tab=note
+
+== 데이터베이스 세계의 헤게모니 - 관계형...
+
+SQL!
+
+== 무한 반복, 지루한 코드
+CRUD
+INSERT INTO ...
+UPDATE ...
+SELECT ...
+DELETE ...
+자바 객체를 SQL로 ...
+SQL을 자바 객체로 ...
+
+== 객체 CRUD
+
+public class Member
+
+연락처 컬럼 추가 하려면. Member에 추가 하고 쿼리 다 수정. 한땀 한땀
+
+SQL에 의존적인 개발을 피하기 어렵다.
+
+== 패러다임의 불일치. 객체 vs 관계형 데이터베이스
+
+'객체 지향 프로그래밍은 추상화, 캡슐화, 정보은닉, 상속, 다형성 등 시스템의 복잡성을 제어할 수 있는...'
+
+== 객체를 영구 보관하는 다양한 저장소
+
+Object
+
+RDB, NoSQL, File, OODB(방한기술)
+
+현실적인 대안은 관계형 DB
+
+파일은 검색 못함
+
+NoSQL 메인이 되지는 않음
+
+== 객체를 관계형 데이터베이스에 저장
+
+개발자. SQL 매퍼
+
+== 객체와 관계형 데이터베이스의 차이
+1. 상속
+2. 연관관계
+3. 데이터 타입
+4. 데이터 식별 방법
+
+== 상속
+
+
+== Album 저장
+1. 객체 분해
+2. INSERT ..
+
+== Album 조회
+1. 각각의 테이블에 따른
+...
+
+join 쿼리 만들고 가져온 결과를 가지고...
+
+== 자바 컬렉션에 저장하면?
+add
+
+== 자바 컬렉션에서 조회하면?
+Album album = list.get(albumId);
+
+부모 타입으로 조회 후 다형성 활용
+Item item = list.get(albumId);
+
+관계형DB에 넣고 빼는 순간 맵핑 작업을 개발자가 한땀한땀 해줘야 되는게 번잡한 일
+
+== 연관관계
+- 객체는 참조를 사용: member.getTeam()
+- 테이블은 외래 키를 사용: JOIN ON M.TEAM_ID = T.TEAM_ID
+
+객체는 한방향
+
+테이블은 양방향
+
+차이가 있다
+
+== 객체를 테이블에 맞추어 모델링
+
+
+== 객체다운 모델링
+
+
+== 객체 모델링 저장
+
+== 객체 모델링 조회
+
+== 객체 모델링, 자바 컬렉션에 관리
+
+----
+list.add(member);
+
+Member member = list.get(memberId);
+Team team = member.getTeam();
+----
+
+== 객체 그래프 탐색
+객체는 자유롭게 객체 그래프를 탐색할 수 있어야 한다.
+
+...
+
+== 객체 그래프 탐색
+객체는 자유롭게 객체 그래프를 탐색할 수 있어야 한다
+
+== 처음 실행하는 SQL에 따라 탐색 범위 결정
+
+멤버랑 팀만 채움.
+
+member.getOrder(); // null
+
+== 엔티티 신뢰 문제
+
+----
+class MemberService {
+  ...
+  public void process() {
+    Member member = memberDAO.find(memberId);
+    member.getTeam(); // ???
+    member.getOrder().getDelivery(); // ???
+}
+----
+
+== 모든 객체를 미리 로딩할 수는 없다.
+상황에 따라 동일한 회원 조회 메서드를 여러벌 생성
+
+memberDAO.getMember(); // Member만 조회
+memberDAO....
+
+
+계층형 아키텍처. 진정한 의미의 계층 분할이 어렵다.
+
+== 비교하기
+
+
+== 비교하기 - 자바 컬렉션에서 조회
+
+----
+String memberId = "100";
+Member member1 = list.get(memberId);
+Member member2 = list.get(memberId);
+
+member1 == member2; // 같다.
+----
+
+객체답게 모델링 할수록 매핑 작업만 늘어난다
+
+객체를 자바 컬렉션에 저장 하듯이 DB에 저장할 수는 없을까?
+
+== JPA - Java Persistence API
+
