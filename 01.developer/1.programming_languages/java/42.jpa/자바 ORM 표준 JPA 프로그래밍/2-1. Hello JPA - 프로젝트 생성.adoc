@@ -1,0 +1,59 @@
+= 2-1. Hello JPA - 프로젝트 생성
+
+== 목차
+- Hello JPA - 프로젝트 생성
+- Hello JPA - 애플리케이션 개발
+
+== Hello JPA - ...
+
+== H2 데이터베이스 설치와 실행
+
+- https://www.h2database.com/
+- 최고의 실습용 DB
+- 가볍다. (1.5M)
+- 웹용 쿼리툴 제공
+- MySQL, Oracle 데이터베이스 시뮬레이션 기능
+- 시퀀스, AUTO INCREMENT 기능 지원
+
+
+처음에 DB생성 안되어 있어서 오류 나면 JDBC URL 에
+jdbc:h2:~/test
+넣고 연결 하면 생성 됨.
+
+이후에는
+jdbc:h2:tcp://localhost/~/test
+
+파일에 직접 접근하는 방식은 파일에 락이 걸려서 여러곳에서 접속을 못하는 문제가 있음
+
+== 메이븐 소개
+- https://maven.apache.org
+- 자바 라이브러리, 빌드 관리
+- 라이브러리 자동 다운로드 및 의존성 관리
+- 최근에는 그래들(Gradle)...
+
+== 프로젝트 생성
+* 자바 8이상 (8권장)
+* 메이븐 설정
+** groupId: jpa-basic
+** artifactId
+
+내가 사용할 spring boot 버전을 보고 정한다.
+
+h2database는 다운받은 버전과 맞춘다
+
+== JPA 설정하기
+- JPA 설정 파일
+- /META-INF/
+
+persistence.xml
+
+== 데이터베이스 방언
+* JPA는 특정 데이터베이스에 종속 X
+* 각각의 데이터베이스가 제공하는 SQL 문법과 함수는 조금씩 다름
+** 가변 문자: MySQL은 VARCHAR, Oracle은 VARCHAR2
+** 문자열을 자르는 함수: SQL 표준은 SUBSTRING(), Oracle은 SUBSTR()
+** 페이징: MySQL은 LIMIT, Oracle은 ROWNUM
+* 방언: SQL 표준을 지키지 않는 특정 데이터베이스만의 고유한 기능
+
+== 데이터베이스 방언
+

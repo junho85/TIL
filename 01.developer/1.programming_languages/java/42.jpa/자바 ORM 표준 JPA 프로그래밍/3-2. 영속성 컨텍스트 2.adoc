@@ -1,0 +1,60 @@
+= 3-1. 영속성 컨텍스트 2
+
+https://www.inflearn.com/course/ORM-JPA-Basic/lecture/21687?tab=curriculum
+
+== 엔티티 조회, 1차 캐시
+
+영속 컨텍스트(entityManager)
+
+----
+// 객체를 생성한 상태(비영속)
+Member member = new Member();
+member.setId("member1");
+member.setUsername("회원1");
+
+// 엔티티를 영속
+em.persist(member);
+----
+
+== 1차 캐시에서 조회
+
+----
+// 객체를 생성한 상태(비영속)
+Member member = new Member();
+member.setId("member1");
+member.setUsername("회원1");
+
+// 1차 캐시에 저장됨
+em.persist(member);
+
+// 1차 캐시에서 조회
+Member findMember = em.find(Member.class, "member1");
+----
+
+== 데이터베이스에서 조회
+----
+Member findMember2 = em.find(Member.class, "member2");
+----
+
+
+== 영속 엔티티의 동일성 보장
+
+----
+Member findMember1 = em.find(Member.class, 101L); // DB에서 조회
+Member findMember2 = em.find(Member.class, 101L); // 1차 캐시에 있는 것 조회
+
+System.out.println(findMember1 == findMember2); // true
+----
+
+== 엔티티 등록. 트랜잭션을 지원하는 쓰기 지연
+
+----
+em.persist(memberA);
+em.persist(memberB);
+
+// 커밋하는 순간
+...
+----
+
+== transaction.commit();
+

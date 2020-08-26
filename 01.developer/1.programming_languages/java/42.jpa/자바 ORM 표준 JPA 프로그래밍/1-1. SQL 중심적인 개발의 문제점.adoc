@@ -31,7 +31,7 @@ SQL에 의존적인 개발을 피하기 어렵다.
 
 Object
 
-RDB, NoSQL, File, OODB(방한기술)
+RDB, NoSQL, File, OODB(망한기술)
 
 현실적인 대안은 관계형 DB
 
