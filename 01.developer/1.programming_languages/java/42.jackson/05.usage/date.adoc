@@ -1,0 +1,6 @@
+= Jackson - Date
+
+== ZonedDateTime
+
+== References
+https://www.it-swarm.dev/ko/java/jacksonzoneddatetime%EC%9D%84-iso-8601-%EB%AC%B8%EC%9E%90%EC%97%B4%EB%A1%9C-%EC%A7%81%EB%A0%AC%ED%99%94/836045164/[Jackson-ZonedDateTime을 ISO 8601 문자열로 직렬화]
