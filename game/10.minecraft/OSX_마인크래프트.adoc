@@ -1,0 +1,21 @@
+= OSX 마인크래프트
+
+== 단축키
+
+== Minecraft Forge
+http://files.minecraftforge.net/
+
+== References
+https://www.youtube.com/watch?v=O4nvHSAoKc4[마인크래프트 맥 유저에게 유익한것들 링크까지 포함!(터치바 f1, f2, 한글체팅모드, 옵티파인 쉐이더, 망토) 2019.10.25]
+
+쉐이더
+http://shadersmods.com/
+
+옵티파인
+https://optifine.net/downloads
+
+망토 설정하는곳
+https://minecraftcapes.co.uk/
+
+한글패치모드
+https://creos.tistory.com/entry/koreanchat
