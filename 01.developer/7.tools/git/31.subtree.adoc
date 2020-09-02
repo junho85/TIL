@@ -1,0 +1,81 @@
+= git - subtree
+
+[source,shell]
+----
+git subtree add --prefix subtree git@github.com:junho85/subtree.git master
+----
+
+push
+[source,shell]
+----
+git subtree push --prefix subtree git@github.com:junho85/subtree.git master
+----
+
+
+pull
+[source,shell]
+----
+git subtree pull --prefix subtree git@github.com:junho85/subtree.git master
+----
+
+
+
+== References
+https://blog.rhostem.com/posts/2020-01-03-code-sharing-with-git-subtree[Git subtree를 활용한 코드 공유 2020-01-3]
+
+
+https://iseongho.github.io/posts/git-subtree/[Git Subtree 사용법 - 하나의 저장소에서 여러 저장소를 관리하기 2018.08.19]
+
+상위 저장소에서 다른 저장소를 clone하게 되는 경우가 있음. 상위 저장소에서 하위 저장소를 push하면 다른 저장소들은 빈 폴더로 push가 됨(무슨 말이지? 빈 폴더로 push?)
+
+상위 저장소로 이동
+[source,shell]
+----
+git clone Parent.git
+cd Parent
+----
+
+원격 참조 추가
+[source,shell]
+----
+# git remote add { Remote name } { Child repo }
+git remote add remote-child Child.git
+----
+
+subtree 추가
+[source,shell]
+----
+# git subtree add --prefix { Child path } { Remote name } { Child branch }
+git subtree add --prefix childs/project remote-child master
+----
+
+subtree 관리
+* parent 저장소에서 child관리 (parent 입장에서 subtree는 평범한 폴더)
+* child의 저장소를 직접 관리 (git subtree push, git subtree pull)
+
+parent 저장소에서 child관리
+[source,shell]
+----
+git add { Child path }
+git commit -m { Commit message }
+git push origin { branch }
+----
+parent 저장소에만 child의 변경 사항이 반영됨
+
+child의 저장소를 직접 관리
+
+[source,shell]
+----
+# push
+git subtree push --prefix { Child path } { Remote name } { Child branch }
+
+# pull
+git subtree pull --prefix { Child path } { Remote name } { Child branch }
+----
+
+https://homoefficio.github.io/2015/07/18/git-subtree/[git subtree - 프로젝트 안의 또 다른 프로젝트 2015-07-18]
+* 블로그 플랫폼에 테마 사용. 테마의 폰트가 마음에 들지 않음
+* hexo, 테마는 각각의 git repo
+* hexo안에 테마를 포함
+* 프로젝트 안에 또 다른 프로젝트가 존재
+
