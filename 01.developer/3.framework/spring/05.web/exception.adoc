@@ -25,3 +25,22 @@ https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframe
 
 status 404 (bad request) 에러를 위한 예외입니다. 추가 필드를 제공합니다. (예를 들어 옵셔널한 MethodParameter)
 
+== @ControllerAdvice
+모든 예외를 한 곳에서 처리할 수 있음.
+[source,java]
+----
+@ControllerAdvice
+public class GlobalExceptionHandler {
+  @ExceptionHandler(SomeException.class)
+  protected ResponseEntity<ErrorResponse> handleSomeException(SomeException e) {
+    log.error("...", e);
+    final ErrorResponse response = ErrorResponse.of(ErrorCode.SOME_ERROR, e.getBindingResult());
+    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+  }
+  ...
+}
+----
+
+
+== References
+https://github.com/cheese10yun/spring-guide/blob/master/docs/exception-guide.md[Exception Guide]
