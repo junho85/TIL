@@ -1,0 +1,50 @@
+= Exception
+
+----
+        Object
+       Throwable
+      |             |
+Error                    Exception
+                         |         |
+          (Checked Exception)      RuntimeException
+                                (Unchecked Exception)
+----
+
+== Checked Exception과 Unchecked Exception
+
+=== Checked Exception
+* 처리여부: 반드시 예외를 처리해야 함
+* 확인시점: 컴파일 단계
+** try, catch 구문이나 메서드의 throws에 없으면 컴파일 에러가 발생. IDE에서 미리 잡아 주기도 함.
+* 예외발생시 트랜잭션 처리: roll-back 하지 않음
+* 대표 예외: Exception의 상속받는 하위 클래스 중 Runtime Exception을 제외한 모든 예외
+** IOException, SQLException
+
+
+=== Unchecked Exception (Runtime Exception)
+* 처리여부: 명시적인 처리를 강제하지 않음
+* 확인시점: 실행단계
+* 예외발생시 트랜잭션 처리: roll-back 함
+* 대표 예외: RuntimeException 하위 예외
+** NullPointerException
+** IllegalArgumentException
+** IndexOutOfBoundException
+** SystemException
+
+
+== 예외 처리 방법
+. 예외복구: 다른 작업 흐름으로 유도
+. 예외처리 회피: 처리하지 않고 호출한 쪽으로 throw
+. 예외 전환: 명확한 의미의 예외로 전환 후 throw
+
+
+
+== References
+http://www.nextree.co.kr/p3239/[Java 예외(Exception) 처리에 대한 작은 생각 2013.12.31]
+https://cheese10yun.github.io/checked-exception/[Checked Exception을 대하는 자세 2019.05.17]
+https://github.com/cheese10yun/spring-guide/blob/master/docs/exception-guide.md[Exception Guide]
+====
+1. try catch를 최대한 지양해라
+2. try catch로 에러를 먹고 주는 코드는 지양해라(이런 코드가 있다면 로그라도 추가해주세요...)
+3. try catch를 사용하게 된다면 더 구체적인 Exception을 발생시키는 것이 좋다.
+====
