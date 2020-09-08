@@ -1,16 +1,13 @@
 = Spring Boot 2.3
 
 
-https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3-Release-Notes
+https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3-Release-Notes[Spring Boot 2.3 Release Notes]
 
-Validation Starter 가 분리됨
+== Validation Starter 가 분리됨
 
-Web, WebFlux에서 기본으로 가져 오지 않음.
-spring-boot-starter-validation을 따로 추가해 주어야함
+Web, WebFlux 디펜던시에서 이전에는 validation이 기본 포함이었으나 이번 버전부터는 빠졌습니다.
 
-보통 Spring Web만 추가 하면 되었는데 Validation을 추가해 주어야함.
-
-@NotEmpty, @Valid 이런거 기본으로 쓸 수 없음
+validation을 사용하려면 spring-boot-starter-validation을 추가해서 사용해야 합니다.
 
 [source,xml]
 ----
@@ -19,7 +16,7 @@ spring-boot-starter-validation을 따로 추가해 주어야함
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 ----
-추가해주면 @NotEmpty, @Valid 사용 할 수 있게 된다.
+추가해주면 @NotEmpty, @Valid 사용 할 수 있게 됩니다.
 
 
 이슈
