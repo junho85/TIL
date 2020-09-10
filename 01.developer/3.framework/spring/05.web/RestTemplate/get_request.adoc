@@ -1,0 +1,52 @@
+= Get Request
+
+== GET 요청 하고 응답 출력
+
+[source,java]
+----
+RestTemplate restTemplate = new RestTemplate();
+
+String url = "http://localhost:8080/api/users";
+
+ResponseEntity<String> response = restTemplate.getForEntity(url + "/123", String.class);
+
+System.out.println(response.getStatusCode()); // 200 HttpStatus.OK
+System.out.println(response.getBody());
+----
+
+== 응답 받은 json string을 Jackson으로 JSON 객체로 변환
+
+[source,java]
+----
+ObjectMapper mapper = new ObjectMapper();
+JsonNode root = mapper.readTree(response.getBody());
+JsonNode name = root.path("name");
+assertThat(name.asText(), notNullValue());
+----
+
+== 헤더 넣어서 요청 하기
+restTemplate.getForEntity 를 사용하지 않고 restTemplate.exchange를 사용합니다.
+
+[source,java]
+----
+HttpHeaders headers = new HttpHeaders();
+headers.setContentType(MediaType.APPLICATION_JSON);
+headers.set(HttpHeaders.AUTHORIZATION, "Bearer 1234");
+
+final HttpEntity<String> request = new HttpEntity<>(headers);
+
+ResponseEntity<MeResponse> responseEntity = restTemplate.exchange(
+        url,
+        HttpMethod.GET,
+        request,
+        MeResponse.class
+);
+return responseEntity.getBody();
+----
+
+
+== References
+* https://www.baeldung.com/rest-template[The Guide to RestTemplate 2020.02.12]
+** https://github.com/eugenp/tutorials/tree/master/spring-resttemplate
+* https://www.baeldung.com/spring-resttemplate-post-json[RestTemplate Post Request with JSON 2019.10.29]
+* https://attacomsian.com/blog/spring-boot-resttemplate-get-request-parameters-headers[RestTemplate GET Request with Parameters and Headers]
