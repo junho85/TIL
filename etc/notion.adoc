@@ -1,0 +1,4 @@
+= Notion. 노션
+
+== References
+https://dololak.tistory.com/603[노션의 단축키 알아보기 2019.01.09]
