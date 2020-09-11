@@ -1,0 +1,14 @@
+= DecimalFormat 숫자에 콤마 찍기
+
+[source,java]
+----
+DecimalFormat df1 = new DecimalFormat("#,###");
+assertThat(df1.format(123456789)).isEqualTo("123,456,789");
+
+DecimalFormat df2 = new DecimalFormat("###,###");
+assertThat(df2.format(123456789)).isEqualTo("123,456,789");
+----
+
+== References
+* https://jamesdreaming.tistory.com/203[자바 코딩 숫자 콤마 찍기 (금액 표기) 2018.07.06]
+* https://docs.oracle.com/javase/tutorial/i18n/format/decimalFormat.html#numberpattern
