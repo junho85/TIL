@@ -1,0 +1,10 @@
+= DTO - Data Transfer Object
+
+== References
+https://martinfowler.com/eaaCatalog/dataTransferObject.html[Data Transfer Object]
+https://www.slipp.net/questions/93[DTO는 어느 레이어까지 사용하는 것이 맞을까? 2013.02.22]
+
+
+https://velog.io/@aidenshin/DTO%EC%97%90-%EA%B4%80%ED%95%9C-%EA%B3%A0%EC%B0%B0[DTO에 관한 생각 2020.02.24]
+
+https://dbbymoon.tistory.com/4[Entity to DTO, DTO to Entity 그리고 ModelMapper 2019.05.16]
