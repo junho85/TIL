@@ -4,13 +4,7 @@ https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/le
 
 https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-dependency-management
 
-스프링 부트가 어떻게 수많은 의존성을 가져왔는지 설명.
-
-이게 왜 좋은지 설명.
-
-의존성 정의한게 별로 없음. 버전을 명시하지도 않았음. 적절한 버전으로 가져옴.
-
-스프링부트의 의존성 관리 기능 때문.
+스프링 부트가 어떻게 수많은 의존성을 가져왔는지. 이게 왜 좋은지 설명. 의존성 정의한게 별로 없음. 버전을 명시하지도 않았음. 적절한 버전으로 가져옴. 스프링부트의 의존성 관리 기능 때문.
 
 parent pom에 보면 또 parent있음
 
@@ -22,25 +16,27 @@ image::01.file.png[]
 
 image::01.file2.png[]
 
-우리가 직접 관리해야할 의존성의 수가 줄어듬.
+우리가 직접 관리해야할 의존성의 수가 줄어듬. 우리의 일이 줄어든 다는 의미.
 
-spring 버전을 올린다거나 3rd party 라이브러리 올리려면.
+그냥 spring framework를 사용하게 되면 spring 버전을 올린다거나 3rd party 라이브러리 올리려면 라이브러리간의 버전에 따른 차이로 인해 문제가 생길 수 있습니다. 올린 버전과 스프링이 호환이 되는지 알 수 없습니다. 문제가 생기면 다른 버전 찾거나 버전 내려서 맞추어 주어야 합니다.
 
-문제가 생기면 다른 버전 찾거나. 버전 내려서 맞추거나.
+그런데 spring boot가 등장해서 의존성 관리 해 주고 나서는 할 일이 별로 없어졌습니다.
 
-그런데 spring boot가 등장해서 의존성 관리 해 주고 나서는 할일이 별로 없음.
+예를 들어 예전에 cglib에서 충돌 많이 났었습니다. 하이버네이트에서 참조 하는 버전이랑 스프링에서 참조하는 버전이 달라서 문제가 많았습니다. 충돌 해결 방법을 공유하고 그랬는데 요즘은 그럴일이 잘 없습니다.
 
-예전에 cglib에서 충돌 많이 났었음. 하이버네이트 같은거. 충돌 해결 방법 공유하고 그랬는데 요즘은 그럴일이 잘 없음.
+특별히 원하는 버전이 있으면 직접 적어주면 됩니다. 오버라이딩이 됩니다.
 
-특별히 원하는 버전이 있으면 직접 적어주면 됨. 오버라이딩이 됨.
+parent가 이미 있으면 parent에 선언
 
-parent 폼 쓰지 않고 하는 방법
+parent pom 쓰지 않고 하는 방법
 
-13.2.2 Using Spring Boot without the Parent POM
+https://docs.spring.io/spring-boot/docs/2.0.3.RELEASE/reference/html/using-boot-build-systems.html#using-boot-maven-without-a-parent[13.2.2 Using Spring Boot without the Parent POM]
 
 기존의 부모가 있다면. 싸서 사용. 부모의 부모로 만들길.
 
 dependencyManagement 사용. 단점. 의존성만 가져 오는게 아니고 그 밖에 다른 것들 설정이 있는데. (java가 1.8. 인코딩 UTF-8. ...). 플러그인. 스프링 부트에 최적화된 설정들이 있는데 이런 설정들이 안먹히게 됨.
 
-parent로 쓰는걸 추천드림. parent로 받아서 사용해서 더 많은 기본세팅을 사용할 수 있음.
+yml, yaml, properties 추가 해주는 등 최적화 설정. 플러그인 설정. 안먹힘.
+
+parent로 쓰는걸 추천드림. parent로 받아서 사용해야 더 많은 기본세팅을 사용할 수 있음.
 
