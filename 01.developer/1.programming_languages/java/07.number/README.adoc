@@ -1,0 +1,9 @@
+= Number
+
+[java,source]
+----
+DecimalFormat df = new DecimalFormat("#,###");
+----
+
+== References
+https://all-record.tistory.com/192[자바 숫자 Format 변경 - DecimalFormat 2019.08.04]
