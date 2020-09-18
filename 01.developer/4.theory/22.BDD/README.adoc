@@ -1,0 +1,23 @@
+= BDD - Behavior-Driven Development
+
+== Exception
+----
+@Test
+public void createCityWithIdThrowsException() {
+  // Given
+  Person person = new Person("홍길동", 25);
+
+  // When
+  final Throwable throwable = catchThrowable(() -> personService.personalTraining(person));
+
+  // Then
+  then(throwable)
+    .as("PersonServiceException should be thrown if height is missed")
+    .isInstanceOf(PersonServiceException.class)
+    .as("Check that message contains the person name")
+    .hasMessageContaining(person.getName());
+}
+----
+
+== References
+https://thepracticaldeveloper.com/2018/05/10/write-bdd-unit-tests-with-bddmockito-and-assertj/#given-when-then-tests-that-a-human-can-read[Write BDD Unit Tests with BDDMockito and AssertJ 2018.05.10]
