@@ -1,0 +1,5 @@
+= mysql
+
+
+== References
+https://kyeoneee.tistory.com/17[테이블의 character set 확인 및 변경 2017.10.11]
