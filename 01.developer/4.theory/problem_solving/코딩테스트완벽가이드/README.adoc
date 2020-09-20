@@ -1,0 +1,29 @@
+= 코딩 테스트 완벽 가이드
+
+github: https://github.com/onlybooks/algorithm-interview
+
+http://docs.likejazz.com/algorithm-interview/[알고리즘 코딩 테스트 책 출간 안내 2020.07.08]
+
+== 정오표
+https://www.onlybook.co.kr/entry/algorithm-interview-errata
+
+
+
+
+== References
+https://www.youtube.com/watch?v=fNyGHpSWhTA[코딩 테스트 완벽 가이드 책 파이썬 알고리즘 인터뷰 2020.09.14]
+도식화
+200장이 넘는 일러스트
+
+CPython 소스코드
+
+파이썬이 어떤 특징
+
+깔끔한 풀이
+
+이직 가이드
+
+면접관 문제 출제 경험
+
+자막 폰트: 배달의민족 을지로체
+
