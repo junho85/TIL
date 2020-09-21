@@ -97,3 +97,5 @@ if (Optional.ofNullable(isAdmin).filter(s -> s.equals("true")).isPresent()) {
   * [자바8 Optional 3부: Optional을 Optional답게 2017.01.15](http://www.daleseo.com/java8-optional-effective/)
 * [자바8 Optional이란 2018.10.14](https://advenoh.tistory.com/15)
 * [3. Optional Class 2017.03.10](https://asfirstalways.tistory.com/354)
+* [26 Reasons Why Using Optional Correctly Is Not Optional 2018.11.28](https://dzone.com/articles/using-optional-correctly-is-not-optional)
+* [Java Optional 바르게 쓰기 2019.10.03](http://homoefficio.github.io/2019/10/03/Java-Optional-%EB%B0%94%EB%A5%B4%EA%B2%8C-%EC%93%B0%EA%B8%B0/)
