@@ -18,3 +18,5 @@ https://www.udemy.com/course/apache-kafka/
 
 https://www.udemy.com/course/apache-kafka/?couponCode=AUG_20_GET_STARTED
 
+== IBM Developer Day 2019
+https://www.youtube.com/watch?v=fikIR4eUkM0[카프카, 어떻게 하면 더 효율적으로 사용할까?_고승범/카카오 ::: IBM Developer Day 2019]
