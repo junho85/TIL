@@ -1,6 +1,6 @@
 = springdoc
 
-https://springdoc.org/
+https://springdoc.org/[springdoc-openapi Library for OpenAPI 3 with spring-boot]
 
 swagger를 사용하고 있음.
 
@@ -10,6 +10,9 @@ OpenAPI 3 지원
 
 == migration
 https://springdoc.org/migrating-from-springfox.html
+
+== demo
+git@github.com:springdoc/springdoc-openapi-demos.git
 
 
 
