@@ -45,7 +45,7 @@
     * [Rockman X 2](game/rockmanx/rockmanx2/README.md)
     * [Rockman X 3](game/rockmanx/rockmanx3/rockmanx3.md)
 * [database](01.developer/2.database/README.md)
-  * [mysql](01.developer/2.database/mysql/README.md)
+  * [mysql](01.developer/2.database/mysql/README.adoc)
 * [me](me/README.md)
   * [resume](me/resume/README.md)
     * [experience](me/resume/experience.md)
