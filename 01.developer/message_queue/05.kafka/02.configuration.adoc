@@ -1,0 +1,5 @@
+= kafka configuration
+
+== References
+https://heodolf.tistory.com/11[무작정 시작하기 (3) - Kafka 설정 2019.11.20]
+https://kafka.apache.org/documentation/#configuration[DOCUMENTATION configuration]
