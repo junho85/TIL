@@ -1,0 +1,13 @@
+= @KafkaListener
+
+== Concurrency
+----
+@KafkaListener(id = "myListener", topics = "myTopic",
+        autoStartup = "${listen.auto.start:true}", concurrency = "${listen.concurrency:3}")
+public void listen(String data) {
+    ...
+}
+----
+
+== References
+https://docs.spring.io/spring-kafka/reference/html/#kafka-listener-annotation[@KafkaListener Annotation]
