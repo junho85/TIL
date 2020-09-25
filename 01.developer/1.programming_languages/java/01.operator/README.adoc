@@ -1,0 +1,4 @@
+= Java Operator
+
+== References
+https://stackoverflow.com/questions/10064068/using-a-bitwise-inside-an-if-statement[Using a bitwise & inside an if statement]
