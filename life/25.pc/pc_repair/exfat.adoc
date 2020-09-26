@@ -1,0 +1,16 @@
+= exfat
+
+맥에서 exfat 외장하드를 그냥 뽑고 나면 다시 연결 하면 불만 껌뻑 거린다.
+
+윈도우PC에 연결하면 복구가 진행됨. 용량에 따라 수분이 걸림.
+
+맥에서 복구하려면 터미널에서
+----
+sudo fsck_exfat /dev/disk...
+----
+
+
+
+
+== References
+https://www.youtube.com/watch?v=tliH4RJEI3w[맥os에서 exfat 하드디스크 복구하기 | How to fix exfat drive on Mac]
