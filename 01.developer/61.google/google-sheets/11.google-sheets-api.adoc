@@ -1,9 +1,9 @@
-= Google Sheets
+= Google Sheets API
 
 == API
 https://developers.google.com/sheets/api
 
-=== python
+== python
 https://developers.google.com/sheets/api/quickstart/python
 
 
@@ -11,3 +11,4 @@ https://developers.google.com/sheets/api/quickstart/python
 ----
 pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ----
+
