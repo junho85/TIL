@@ -1,0 +1,19 @@
+= Lombok - 생성자 Constructor
+
+https://projectlombok.org/features/constructor
+
+* @NoArgsConstructor - 파라미터가 없는 기본 생성자
+* @RequiredArgsConstructor - final, @NonNull인 필드에 대한 생성자
+** 스프링에서 생성자로 주입 받기 좋음
+* @AllArgsConstructor - 모든 필드 값을 파라미터로 받는 생성자
+
+== @NoArgsConstructor - 파라미터가 없는 기본 생성자
+
+== @RequiredArgsConstructor - final, @NonNull인 필드에 대한 생성자
+초기화 되지않은 final 필드, @NonNull이 붙은 필드들로 생성자를 만들어줍니다. 스프링의 생성자 의존성 주입에서 유용하게 사용할 수 있습니다.
+
+== @AllArgsConstructor - 모든 필드 값을 파라미터로 받는 생성자
+
+
+== References
+https://medium.com/webeveloper/requiredargsconstructor-%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%A3%BC%EC%9E%85-dependency-injection-4f1b0ac33561[@RequiredArgsConstructor 를 이용한 의존성 주입(Dependency Injection)]

@@ -7,12 +7,7 @@ getXxx, setXxx 생성
 boolean 타입이면 isXxx, setXxx
 
 == 생성자
-https://projectlombok.org/features/constructor
 
-* @NoArgsConstructor - 파라미터가 없는 기본 생성자
-* @RequiredArgsConstructor - final, @NonNull인 필드에 대한 생성자
-* @AllArgsConstructor - 모든 필드 값을 파라미터로 받는 생성자
-** 스프링에서 생성자로 주입 받기 좋음
 
 == @ToString
 https://projectlombok.org/features/ToString
