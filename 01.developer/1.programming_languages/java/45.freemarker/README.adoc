@@ -1,0 +1,4 @@
+= FreeMarker
+
+== References
+https://freemarker.apache.org/docs/ref_builtins_string.html
