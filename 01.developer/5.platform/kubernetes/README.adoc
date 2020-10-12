@@ -28,5 +28,15 @@ NAME              HOSTS                                  ADDRESS          PORTS 
 m...-ingress      m...-dev.devel.kakao.com               ...,10.202....   80        14d
 ----
 
+== util
+=== zsh-kubectl-prompt
+context와 namespace출력
+----
+$ brew tap superbrothers/zsh-kubectl-prompt
+$ brew install zsh-kubectl-prompt
+----
+
+
 == References
 * https://kubernetes.io/ko/docs/reference/kubectl/cheatsheet/[kubectl 치트 시트]
+* https://freesoft.dev/program/86397709[zsh-kubectl-prompt]
