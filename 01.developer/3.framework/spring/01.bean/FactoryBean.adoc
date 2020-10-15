@@ -1,0 +1,19 @@
+= FactoryBean
+
+스프링빈 컨테이너에는 일반 빈과 팩터리빈이 있습니다. 일반 빈은 직접 사용하고 팩터리빈은 프레임워크에 의해 관리되는 객체 자체를 생성 할 수 있습니다.
+
+FactoryBean인터페이스를 구현해서 팩터리빈을 만들 수 있습니다.
+
+FactoryBean
+- T getObject() throws Exception;
+- Class<?> getObjectType();
+- boolean isSingleton(); // default true
+
+* getObject() - factory에 의해 생성되는 객체를 리턴합니다.이 객체는 스프링 컨테이너에서 사용됩니다.
+* getObjectType() - FactoryBean이 생성한느 객체의 타입을 리턴합니다.
+* isSingleton() - FactoryBean에 의해 생성된 객체가 싱글턴인지 아닌지 알려줍니다.
+
+
+
+== References
+https://www.baeldung.com/spring-factorybean[How to use the Spring FactoryBean? 2020.02.12]
