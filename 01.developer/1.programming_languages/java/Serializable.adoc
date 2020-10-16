@@ -1,0 +1,54 @@
+= Java - Serializable
+
+== 직렬화 - Serialize
+* 자바 시스템 내부에서 사용되는 Object 또는 Data를 외부의 자바 시스템에서도 사용할 수 있도록 byte 형태로 데이터를 변환하는 기술
+
+== 역직렬화 - Deserialize
+* byte로 변환된 Data를 원래대로 Object나 Data로 변환하는 기술
+
+== java.io.Serializable
+----
+public interface Serializable {
+}
+----
+
+== 직렬화 쓰는 이유
+* 자바 시스템에 최적화
+
+== 단점
+* 변경에 취약
+* 용량이 크다
+
+
+== 사용하는 곳
+=== Servlet Session
+* 메모리에서 세션을 관리하는 경우 직렬화 필요 없음.
+* 파일 등으로 저장하면 세션이 직렬화 되어 저장된다.
+
+=== Cache
+
+=== Java RMI
+* 원격 시스템 간의 메시지 교환을 위해서 사용하는 자바에서 지원하는 기술
+
+== 직렬화 방법
+java.io.ObjectOutputStream 객체 이용
+객체를 직렬화하여 바이트 배열(byte[])형태로 변환
+
+
+== serialVersionUID
+
+----
+private static final long serialVersionUID = 1L;
+----
+
+== 결론
+* 자주 변경되는 클래스의 객체는 사용 안 하는 것이 좋음. 변경에 취약.
+* 용량 문제. 타입에 대한 정보 등 클래스의 메타 정보도 가지고 있어서 다른 포맷에 비해 용량이 크다.
+* 역직렬화시 예외가 생길 수 있다고 가정하고 개발한다.
+
+
+== References
+* https://nesoy.github.io/articles/2018-04/Java-Serialize[Java의 직렬화(Serialize)란? 2018.04.18]
+* https://woowabros.github.io/experience/2017/10/17/java-serialize.html[자바 직렬화, 그것이 알고싶다. 훑어보기편 2017.10.17]
+* https://woowabros.github.io/experience/2017/10/17/java-serialize2.html[자바 직렬화, 그것이 알고싶다. 실무편 2017.10.17]
+* https://docs.oracle.com/javase/8/docs/platform/serialization/spec/serial-arch.html[]
