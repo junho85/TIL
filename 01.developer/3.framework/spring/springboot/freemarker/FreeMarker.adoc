@@ -1,0 +1,17 @@
+= SpringBoot - FreeMarker
+
+FreeMarker Template Language (FTL)
+
+기본 확장잘르 .ftl -> .ftlh로 바꿨나?
+
+----
+spring.freemarker.template-loader-path=classpath:/templates
+spring.freemarker.suffix=.ftl
+----
+
+기본 템플릿 경로는 resources/templates
+
+
+
+== References
+* http://zetcode.com/springboot/freemarker/[Spring Boot FreeMarker tutorial]
