@@ -1,4 +1,61 @@
 = JUnit 5
 
+== JUnit 4 -> JUnit 5변경
+
+=== Gradle
+JUnit 4
+----
+testImplementation group: 'junit', name: 'junit', version: '4.12'
+----
+
+JUnit 5
+----
+testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+----
+
+----
+test {
+    useJUnitPlatform()
+}
+----
+
+=== import
+JUnit 4
+----
+import org.junit.Test;
+----
+
+JUnit 5
+----
+import org.junit.jupiter.api.Test;
+----
+
+=== expected -> assertThrows
+JUnit 4
+----
+@Test(expected=JedisDataException.class)
+----
+
+JUnit 5
+----
+Assertions.assertThrows(JedisDataException.class, () -> {
+----
+
+=== @Ignore -> @Disabled
+JUnit 4
+----
+@Ignore
+----
+
+JUnit 5
+----
+@Disabled
+----
+
+=== 정리
+https://junho85.pe.kr/1711[개인 프로젝트 JUnit4에서 JUnit5로 변경 2020.10.20]
+
+
 == References
 https://javacan.tistory.com/entry/JUnit-5-Intro[JUnit 5 소개]
