@@ -1,0 +1,10 @@
+= Spring email - Template
+
+== ThymeLeaf
+
+
+== FreeMarker
+
+
+== Refereces
+https://www.baeldung.com/spring-email-templates[Using ThymeLeaf and FreeMarker Emails Templates with Spring]

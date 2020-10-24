@@ -1,0 +1,15 @@
+= Spring
+
+spring boot는 link:spring-boot-starter-mail.adoc[spring boot starter mail]로 이동하세요.
+
+== maven
+----
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context-support</artifactId>
+    <version>5.2.9.RELEASE</version>
+</dependency>
+----
+
+
+MailSender 인터페이스:

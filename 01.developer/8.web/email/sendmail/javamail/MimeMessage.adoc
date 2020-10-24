@@ -1,0 +1,4 @@
+= JavaMail - MimeMessage
+
+== References
+https://docs.oracle.com/javaee/7/api/javax/mail/internet/MimeMessage.html?is-external=true
