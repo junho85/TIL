@@ -4,6 +4,19 @@
 == installation
 상세 버전 지정은 어떻게 하지?
 
+=== adoptopenjdk15
+[source]
+----
+brew cask install adoptopenjdk15
+----
+
+=== adoptopenjdk13
+[source]
+----
+brew cask install adoptopenjdk13
+----
+
+
 === adoptopenjdk11
 
 [source]
