@@ -9,5 +9,51 @@ public void listen(String data) {
 }
 ----
 
+== topic여러개 설정하기
+
+[source,java]
+----
+@KafkaListener(id = "myGroupId", topics = {"${kafka.topic.member-old}", "${kafka.topic.member}"})
+public void kafkaListener(MessageDto messageDto) {
+    switch (messageDto.getType()) {
+        case REGISTER: {
+            memberService.register(messageDto);
+            break;
+        }
+        case WITHDRAWAL: {
+            memberService.withdrawal(messageDto.getId());
+            break;
+        }
+        default: {
+            throw new RuntimeException("wrong type error. type=" + messageDto.getType());
+        }
+    }
+}
+----
+
+== SpEL(Spring Expression Language)를 이용해서 topic여러개 설정하기
+
+[source,java]
+----
+@KafkaListener(id = "myGroupId", topics = "#{'${kafka.topic.member}'.split(',')}")
+public void kafkaListener(MessageDto messageDto) {
+    switch (messageDto.getType()) {
+        case REGISTER: {
+            memberService.register(messageDto);
+            break;
+        }
+        case WITHDRAWAL: {
+            memberService.withdrawal(messageDto.getId());
+            break;
+        }
+        default: {
+            throw new RuntimeException("wrong type error. type=" + messageDto.getType());
+        }
+    }
+}
+----
+
+* 정리: https://junho85.pe.kr/1727[Spring - @KafkaListener topic 여러개 사용하기. 설정에서 여러개 불러 오려면?]
+
 == References
 https://docs.spring.io/spring-kafka/reference/html/#kafka-listener-annotation[@KafkaListener Annotation]
