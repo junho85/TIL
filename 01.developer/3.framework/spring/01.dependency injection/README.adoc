@@ -39,22 +39,7 @@ B는 인터페이스로 만들어서 구현체를 바꿔 끼울 수 있도록 �
 
 
 === Constructor based Injection 생성자 주입
-----
-class A {
-  final private B b;
-
-  public A(B b) {
-    this.b = b;
-  }
-}
-
-interface B {}
-----
-
-일부러 null을 주입하는게 아니면 B를 주입하게 된다.
-
-final 로 선언해서 실수로 중간에 바꾼다던지 실수를 방지 할 수 있다.
-
+link:constructor_based_injection.adoc[Constructor based Injection 생성자 주입]
 
 == 스프링에서의 DI
 수정자 주입, 생성자 주입 뿐 아니라 필드 주입을 할 수 있다.
@@ -77,5 +62,3 @@ interface B {}
 === Constructor based Injection
 
 
-== References
-* https://yaboong.github.io/spring/2019/08/29/why-field-injection-is-bad/[스프링 - 생성자 주입을 사용해야 하는 이유, 필드인젝션이 좋지 않은 이유 2019.08.29]

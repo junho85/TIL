@@ -1,0 +1,24 @@
+= Constructor based Injection 생성자 주입
+
+----
+class A {
+  final private B b;
+
+  public A(B b) {
+    this.b = b;
+  }
+}
+
+interface B {}
+----
+
+* 일부러 null을 주입하는게 아니면 B를 주입하게 된다. NullPointerException을 발지하는데 도움이 된다.
+* final 로 선언해서 실수로 중간에 바꾼다던지 실수를 방지 할 수 있다.
+
+== lombok과 스프링 생성자 주입
+* lombok에서 @RequiredArgsConstructor는 final, @NonNull인 필드에 대한 생성자입니다.
+* 이러한 특성을 이용하면 스프링에서 생성자 주입을 활용하기 편리합니다.
+
+== References
+* https://www.baeldung.com/spring-injection-lombok[Constructor Injection in Spring with Lombok]
+* https://yaboong.github.io/spring/2019/08/29/why-field-injection-is-bad/[스프링 - 생성자 주입을 사용해야 하는 이유, 필드인젝션이 좋지 않은 이유 2019.08.29]
