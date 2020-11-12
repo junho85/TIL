@@ -1,0 +1,10 @@
+= IntelliJ Google Cloud
+
+== google cloud sdk 설치
+----
+brew cask install google-cloud-sdk
+----
+
+https://formulae.brew.sh/cask/google-cloud-sdk
+
+https://cloud.google.com/sdk/docs/install?hl=ko[Google Cloud SDK 설치]
