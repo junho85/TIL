@@ -1,0 +1,18 @@
+= redis server configuration
+
+== maxmemory-policy
+.allkeys-lru
+일반적인 캐시로 사용하려면 allkeys-lru를 사용합니다. 최근에 사용한 것을 오래 보관합니다.
+
+.volatile-*
+메모리가 부족한 경우에 expire대상이 없으면 OOM 오류를 반환합니다.
+
+.noeviction
+기존 데이터를 삭제 하지 않습니다. 메모리가 다 차면 OOM 오류를 반환합니다.
+
+
+== References
+
+* https://zetawiki.com/wiki/%EB%A0%88%EB%94%94%EC%8A%A4_%EC%84%A4%EC%A0%95_maxmemory-policy[레디스 설정 maxmemory-policy]
+* https://redis.io/topics/config[Redis configuration]
+* https://redis.io/topics/lru-cache[Using Redis as an LRU cache]
