@@ -1,0 +1,4 @@
+= Java Enum
+
+== References
+* https://www.baeldung.com/java-enum-values[Attaching Values to Java Enum]
