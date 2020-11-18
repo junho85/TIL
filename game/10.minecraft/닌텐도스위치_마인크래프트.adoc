@@ -1,4 +1,26 @@
 = 닌텐도스위치 마인크래프트
 
+== 1.16.100
+2020.11.17 패치됨
+
+* https://minecraft.gamepedia.com/Bedrock_Edition_1.16.100
+* https://feedback.minecraft.net/hc/en-us/articles/360052592091-Minecraft-1-16-100-Bedrock-
+* https://twitter.com/MojangStatus/status/1328536246474461185
+* https://www.youtube.com/watch?v=BcAeOfUSfXU[Minecraft Bedrock 1.16.100 Update Is Coming! ✅ - 130+ Bug Fixes - New Big Features! - (Bedrock News)]
+
+.Basalt
+* 깨는 시간이 더 길어짐
+* 가스트의 화염구에 저장력이 생김
+.Bee Nests
+* 지도의 노란색으로 표시
+.Brewing Stands 양조대
+* blackstone을 이용해서 만들 수 있음.
+.Chains
+* 모든 방향에서 배치 가능
+.Farmland
+* ..
+.Lanterns
+* ..
+
 == 정리
 https://junho85.pe.kr/1649[마인크래프트 - 이제 조금 알 거 같다. 침대와 리스폰 지역 설정 2020.08.19]
