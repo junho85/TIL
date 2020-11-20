@@ -1,0 +1,4 @@
+= Jackson Json - Naming Strategy
+
+== References
+https://www.baeldung.com/json-multiple-fields-single-java-field[Mapping Multiple JSON Fields to a Single Java Field]
