@@ -2,3 +2,28 @@
 
 == blogs
 https://www.nurinamu.com/[nurinamu's the BLACKBOOK]
+
+
+== 백기선
+https://www.whiteship.me/[Whiteship]
+
+== 박상권 Ted Park
+
+https://medium.com/@gun0912
+
+https://medium.com/%EB%B0%95%EC%83%81%EA%B6%8C%EC%9D%98-%EC%82%BD%EC%A7%88%EB%B8%94%EB%A1%9C%EA%B7%B8
+
+https://gun0912.tistory.com/
+
+https://www.youtube.com/channel/UCd-ybVsh-R9y0Yq0BZMVCPg[개발자 테드박 [개발/IT업계의 이야기]]
+
+
+== 백승주
+https://whitepaek.tistory.com[WHITEPAEK Tech Docs]
+
+https://whitepaek.tistory.com/59[인텔리제이 책 추천, "IntelliJ IDEA 프로젝트에 활용하기" 출간 2020.07.05]
+
+
+== 이동욱
+
+https://jojoldu.tistory.com/[기억보단 기록을]
