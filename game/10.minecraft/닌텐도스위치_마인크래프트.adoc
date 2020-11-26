@@ -1,10 +1,20 @@
 = 닌텐도스위치 마인크래프트
 
+== 1.16.101
+2020.11.25 패치됨
+
+https://feedback.minecraft.net/hc/en-us/articles/360052372592-Minecraft-1-16-101-Bedrock-
+
+https://minecraft.gamepedia.com/Bedrock_Edition_1.16.101
+
+1.16.100에서 동물들이 멈추는 증상이랑 몹이 안보이는게 공격 받는 문제가 생겼는데 그거에 대한 패치 이야기는 안 보임.
+
 == 1.16.100
 2020.11.17 패치됨
 
-* https://minecraft.gamepedia.com/Bedrock_Edition_1.16.100
 * https://feedback.minecraft.net/hc/en-us/articles/360052592091-Minecraft-1-16-100-Bedrock-
+
+* https://minecraft.gamepedia.com/Bedrock_Edition_1.16.100
 * https://twitter.com/MojangStatus/status/1328536246474461185
 * https://www.youtube.com/watch?v=BcAeOfUSfXU[Minecraft Bedrock 1.16.100 Update Is Coming! ✅ - 130+ Bug Fixes - New Big Features! - (Bedrock News)]
 
