@@ -6,12 +6,21 @@
 
 물살을 만들어서 특정 구역으로 모이도록 작업 - 네더에서는 못함
 
-
-
-
 == 오버월드
 
 https://blog.naver.com/PostView.nhn?blogId=122yechan&logNo=221792179227[마인크래프트 경험치 농장 만드는법 / 가장빠른 경험치 2020.02.01]
+
+== 몹생성기
+https://www.youtube.com/watch?v=aIuOSC7bdwI
+
+소울샌드(영혼모래)물이용해서 엘리베이터
+
+
+https://ohspsp.tistory.com/685
+
+일일이 물양동이로 채우기 힘드니 다시마를 이용하면 스류지로 바꿔줌
+
+
 
 == 네더
 
