@@ -1,0 +1,25 @@
+= babel
+
+https://babeljs.io/
+
+
+== installation
+
+----
+npm install -g babel
+----
+
+babel-cli 설치
+----
+npm install --save-dev -g babel-cli
+----
+
+== 프로젝트에 넣기
+----
+npm install --save-dev babel-core
+npm install --save-dev @babel-core
+----
+
+
+== References
+https://gist.github.com/falsy/141dece272d95f793bf7c41e54408856
