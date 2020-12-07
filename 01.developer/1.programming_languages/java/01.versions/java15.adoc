@@ -1,0 +1,12 @@
+= Java 15
+
+== Text Blocks
+----
+var hello = """
+        hello world
+        nice to meet you
+        """;
+System.out.println(hello);
+----
+
+* https://www.infoq.com/articles/java-text-blocks/
