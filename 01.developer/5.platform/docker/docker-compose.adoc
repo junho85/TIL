@@ -1,0 +1,35 @@
+= Docker Compose
+
+
+== up - start
+----
+docker-compose up -d
+----
+
+-d 백그라운드 실행
+
+== down - shutdown
+----
+docker-compose down
+----
+
+== ps
+
+----
+docker-compose ps
+----
+
+== logs
+----
+docker-compose logs
+----
+
+== docker-compose run
+
+----
+docker-compose run kafka /bin/bash
+----
+
+
+== References
+* https://nirsa.tistory.com/81[[Docker CE\] docker-compose 기본 명령어 정리 2020.01.22]
