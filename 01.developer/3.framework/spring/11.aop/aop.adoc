@@ -1,0 +1,8 @@
+= Spring AOP
+
+== @AfterThrowing
+
+
+== References
+* https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#aop-pointcuts[5.4.3. Declaring a Pointcut]
+* https://engkimbs.tistory.com/746[[Spring\] 스프링 AOP (Spring AOP) 총정리 : 개념, 프록시 기반 AOP, @AOP 2018.12.20]
