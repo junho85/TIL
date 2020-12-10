@@ -1,0 +1,19 @@
+= kubernetes - tutorial - Hello Minikube
+
+minikube는 로컬 kubernetes이다.
+
+https://minikube.sigs.k8s.io/docs/start/
+
+----
+brew install minikube
+----
+
+----
+minikube start
+----
+
+
+
+https://kubernetes.io/ko/docs/tutorials/hello-minikube/[Hello Minikube]
+
+
