@@ -1,0 +1,18 @@
+= Kubernetes sample
+
+== echo
+
+----
+kubectl run echoserver --generator=run-pod/v1 --image="k8s.gcr.io/echoserver:1.10" --port=8080
+----
+
+----
+kubectl expose po echoserver --type=NodePort service/echoserver exposed
+----
+
+
+== kafka
+
+----
+kubectl run kafka-app --image kafka
+----
