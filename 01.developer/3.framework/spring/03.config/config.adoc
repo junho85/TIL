@@ -16,3 +16,12 @@ public class MyApplication {
 
 
 == XML
+
+
+== @Configuration
+
+== @TestConfiguration
+ComponentScan대상이 아니라서 테스트에서 사용하려면 @Import로 명시해서 사용해야 됨.
+
+* https://blog.naver.com/vefe/222075839493[@TestConfiguration, @TestComponent 2020.08.31]
+
