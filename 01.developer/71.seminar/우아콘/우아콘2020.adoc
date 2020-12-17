@@ -1,0 +1,19 @@
+= 우아콘 2020
+
+https://www.woowacon.com/contents/index
+
+== [우아콘2020] Keynote_지난 4년간의 Key Milestones
+* https://www.youtube.com/watch?v=VlX4tVfxfz8
+
+== 배달의민족 마이크로서비스 여행기
+
+link:++\\배달의민족 마이크로서비스 여행기\배달의민족 마이크로서비스 여행기.adoc++[배달의민족 마이크로서비스 여행기]
+
+
+== 배민 프론트서버의 사실과 오해
+
+https://www.youtube.com/watch?v=38cmd_fYwQk
+
+
+
+권용근
