@@ -8,6 +8,9 @@ https://kafka.apache.org/quickstart#quickstart_consume
 $ kafka-console-consumer --bootstrap-server localhost:9092 --topic my-test --from-beginning
 ----
 
+----
+$ kafka-console-consumer --bootstrap-server localhost:9092 --topic my-test --property print.key=true --property key.separator="," --from-beginning
+----
 
 == Produce
 ----
