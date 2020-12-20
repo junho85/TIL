@@ -1,0 +1,12 @@
+= Spring Boot 2.4
+
+== Config File Processing (application properties and YAML files)
+https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-Config-Data-Migration-Guide[Spring Boot Config Data Migration Guide]
+
+
+
+spring.profiles deprecated. spring.config.activate.on-profile로 변경
+
+== References
+* https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.4-Release-Notes[Spring Boot 2.4 Release Notes]
+* https://medium.com/@kevin_park/springboot-2-4-0-%EB%B3%80%EA%B2%BD-%EB%82%B4%EC%9A%A9-ef452b860fb5[Springboot 2.4.0 변경 내용 2020.11.16]
