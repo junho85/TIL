@@ -1,0 +1,11 @@
+= webflux 세미나
+
+== NHN FORWARD 2020 내가 만든 WebFlux가 느렸던 이유
+
+https://www.youtube.com/watch?v=I0zMm6wIbRI[NHN FORWARD 2020 내가 만든 WebFlux가 느렸던 이유 2020.12.13]
+
+https://forward.nhn.com/session/26
+
+김병부
+
+
