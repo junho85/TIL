@@ -1,0 +1,203 @@
+= 도메인 주도 개발(DDD)의 처음과 끝, Value Object - 차영호(@andrewchaa)
+
+* https://www.youtube.com/watch?v=cWdFxBi6joA[도메인 주도 개발(DDD)의 처음과 끝, Value Object - 차영호(@andrewchaa) 2017.08.28]
+
+EMOCON 2017 S/S
+
+* Samsung SDS EU -> KIA UK -> totaljobs.com -> ...
+* C# 개발자
+
+Primitives
+
+----
+public class Address {
+  public string PostCode { get; set; }
+}
+----
+
+string으로 우편 번호를 표현할 수 있는지?
+
+* Post Code
+** 8 Characters limit including space
+** Only Alpha-Numeric
+* String
+** As long as database allows
+...
+
+----
+public class PostCode {
+  private readonly string _value;
+  public PostCode(string value) {
+    _value = value;
+...
+----
+
+Primitives 좋아하다 골로 간다면?
+
+int -> decimal
+
+Replace Data Value with Object
+* by Martin Fowler
+
+Why we prefer value object
+
+Business Logic
+
+string data type can't handle
+
+Validation
+
+Value objects have behaviours
+* 거의 대부분(Often ...)
+
+Parsing
+
+Slim and focused Domain objects
+
+도메인 오브젝트가 좀 더 간단하게 된다
+
+Wrapping primitive types in F#
+
+Are we convinced now? (약이 좀 팔렸...)
+
+Value Object
+
+Describe something about the entity or the things it owns
+* Ship -> Cargo capacity
+* Grocery -> Stock level
+* Financial Report -> Quarterly turnovers
+
+Represent a descriptive, identity-less concept
+* I pay ￡3.99 for Brie, Avocado, and Tomato toast at Pret
+* As long as the value is ￡3.99, they don't ...
+
+Value object upon value objects
+
+
+Now the value object handles the business logic
+
+More behaviours into value objects
+* To keep
+
+Characteristics of value objects
+
+Identity-less
+* May have ids using some database persistence strategies
+
+== Attribute-based Equality
+* Considered equal if they have the same value
+
+* In case of money,
+* this.Value == other.Value
+* this.Currency == ...
+
+== Behaviour-rich and Cohesive
+* Exposes expressive domain-oriented behaviours in the same place
+
+----
+public class Meters {
+  public Miles ToMiles() {
+  ...
+}
+----
+
+== Slim Domain object with Rich Value Objects
+...
+
+== Immutable
+* Use readonly instance variables
+
+----
+public class Money : ValueObject<Money> {
+  private readonly decimal Value;
+
+  public Money() : this(0m) {...
+----
+
+== Combinable
+
+== Self-Validating
+* All money is accurate to two decimal places
+* All money must be a positive value
+** Balance can be a negative value
+
+== Validate in the constuctor
+----
+
+----
+
+== Validate inside a factory method
+
+----
+...
+
+  public static Money Create(decimal amount) {
+    if (amount & 0.01m != 0)
+      throw new MoreThanTwoDecimalPlacesException();
+    if (amount < 0)
+      throw...
+----
+
+== Testable
+----
+public void First_names_cannot_be_empty() {
+  try {
+    var name = new Name("", "Torvalds");
+  } catch (ApplicationException e) {
+    Assert.AreEqual("You must specify a first name.", e.Message);
+    return;
+  }
+  Assert.Fail("No ApplicationException was thrown");
+}
+----
+
+== Common Modeling Pattern
+
+== Static Factory Method
+...
+
+== Micro Types (or Tiny Types)
+* Further wrapping already-expressive types with even more expressive types
+* Adds contextual clarity to ...
+
+----
+public class OvertimeCalculator {
+  public OvertimeHours Calculate(HoursWorked worked, ContractedHours contracted) {
+    var overtimeHours = worked.Hours - contracted.Hours;
+    return new OvertimeHours(overtimeHours);
+  }
+}
+----
+
+== Collection Aversion
+* Instead of a collection ...
+
+----
+public class PhoneBook : ValueObject<PhoneBook> {
+  public readonly PhoneNumber HomeNumber;
+  public readonly PhoneNumber MobileNumber;
+  public readonly PhoneNumber WorkNumber;
+
+  public PhoneBook(PhoneNumber homeNum, PhoneNumber mobileNum, ...) {
+...
+----
+
+== ToString()
+----
+public override string ToString() {
+  return _value;
+}
+----
+
+== Conversion
+
+== Resources
+
+
+
+== References
+
+https://twitter.com/sh84ahn/status/852880082624331776
+
+https://www.crowdcast.io/e/emocon-2017-ss/3
+
