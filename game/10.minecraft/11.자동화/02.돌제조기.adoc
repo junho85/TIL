@@ -1,0 +1,15 @@
+= 돌 제조기
+
+== References
+* https://www.youtube.com/watch?v=814HiGUdrQs[초보가 쓰면 제대로 작동을 안하는 생돌 생성기 ㅋㅋㅋ 「뚜뚜형의 솔로생활 435화(마인크래프트 JE, PC야생)」 2020.03.28]
+* https://www.youtube.com/watch?v=mMsHXFrsDbk[초간단+초고속+2명 동시 채굴 가능!? 완전 사기 생돌 생성기 만들기! 「뚜뚜형의 솔로생활 380화(마인크래프트 JE, PC야생)」 2019.09.20]
+** 용암에 좀 탐
+* https://www.youtube.com/watch?v=A3dRPiBFDD8[「마인크래프트」코블스톤이요? 내껀 한 차원 더 높습니다! 자동 돌 생성기! 뚜두의 솔로생활 Part78 2018.04.12]
+
+
+* https://www.youtube.com/watch?v=lJxs_lewYq8[[박스\] 143개의 돌을 무료지급! l 자동 돌 공장 2017.09.19]
+** 한 줄 만들고 전체 밀어서 박스 넓적하게 생성함
+** 이거 응용하면 큐브 모양도 가능 할 듯?
+
+* https://www.youtube.com/watch?v=mRp2jM7c9Cg[*잠수해도 캐는 자동 광질*찾음ㅋㅋㅋ ㄹㅇ 꿀팁ㅋㅋㅋ [마인크래프트 야생 #84\] Minecraft Hardcore - 루태 2019.09.08]
+** 콘크리트도 가능

@@ -10,3 +10,7 @@ https://chasgamers.com/korean-minecraft-pistoncobblestone/[피스톤식 자갈 �
 레스스톤 횃불 위에 조약돌이 생성 되면 위에 있는 끈끈이 피스톤이 돌을 밀게 됨
 
 돌을 밀게 되면...
+
+
+== References
+* https://www.youtube.com/watch?v=lGEQkPTwF_4[「BE야생/#53」 이거 하나면 분당 200개의 돌을 얻는다? (뚜뚜형) 2019.09.06]
