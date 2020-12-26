@@ -30,6 +30,12 @@ docker-compose logs
 docker-compose run kafka /bin/bash
 ----
 
+== kill
+https://docs.docker.com/compose/reference/kill/
+
+----
+docker-compose kill
+----
 
 == References
 * https://nirsa.tistory.com/81[[Docker CE\] docker-compose 기본 명령어 정리 2020.01.22]
