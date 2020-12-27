@@ -1,5 +1,13 @@
 = 닌텐도스위치 마인크래프트
 
+== 1.16.201
+https://minecraft.gamepedia.com/Bedrock_Edition_1.16.201
+
+== 1.16.200
+https://feedback.minecraft.net/hc/en-us/articles/360052712132
+
+https://minecraft.gamepedia.com/Bedrock_Edition_1.16.200
+
 == 1.16.101
 2020.11.25 패치됨
 
