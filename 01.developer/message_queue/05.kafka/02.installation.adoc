@@ -19,6 +19,13 @@ brew services start zookeeper
 brew services start kafka
 ----
 
+=== 정지
+----
+brew services stop kafka
+brew services stop zookeeper
+----
+
+
 == References
 https://blog.voidmainvoid.net/167[Macbook에 Kafka 1분만에 설치하기]
 
