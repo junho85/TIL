@@ -14,8 +14,7 @@ $ rm -rf old-repository.git
 ```
 
 ## 정리
-* [git repository 복제하기. fork 아님. mirror
-](https://junho85.pe.kr/1543)
+* [git repository 복제하기. fork 아님. mirror](https://junho85.pe.kr/1543)
 
 ## References
 * [Duplicating a repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository)
