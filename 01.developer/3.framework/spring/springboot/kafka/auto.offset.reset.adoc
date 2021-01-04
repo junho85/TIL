@@ -1,0 +1,4 @@
+= kafka auto.offset.reste
+
+== References
+* https://blog.voidmainvoid.net/305[카프카 auto.offset.reset 종류 및 사용방법 2020.02.06]
