@@ -1,13 +1,23 @@
 = exfat
 
+== OSX에서 exfat 정상 제거 안했을 때 인식 못하는 케이스
 맥에서 exfat 외장하드를 그냥 뽑고 나면 다시 연결 하면 불만 껌뻑 거린다.
 
 윈도우PC에 연결하면 복구가 진행됨. 용량에 따라 수분이 걸림.
 
-맥에서 복구하려면 터미널에서
+맥에서 복구하려면 터미널에서 fsck_exfat 명령어를 직접 실행해서 복구합니다.
+
+명령어에서 /dev/disk어쩌고 숫자는 Disk Utility에서 확인합니다.
+
+image::image-2020-12-21-01-05-42-027.png[]
+
 ----
-sudo fsck_exfat /dev/disk...
+sudo fsck_exfat /dev/disk2s2
 ----
+
+Resource Busy가 뜨면 자체적으로 검사를 진행하는 중인 것이니 끝날 때 까지 기다렸다고 다시 시도합니다.
+
+clean 어쩌고 나오면 그냥 n
 
 
 
