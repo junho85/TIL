@@ -29,3 +29,11 @@ public class H2ServerConfig {
     }
 }
 ----
+
+포트 지정하려면
+----
+return Server.createTcpServer("-tcpPort", "9093").start();
+----
+
+== References
+
