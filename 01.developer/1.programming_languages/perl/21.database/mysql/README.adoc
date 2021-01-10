@@ -1,8 +1,10 @@
-# perl - mysql
+= perl - mysql
 
 
-## example
-```
+== example
+
+[source]
+----
 my $host = "localhost";
 my $port = "3306";
 my $username = "junho85";
@@ -16,7 +18,7 @@ my $sth = $dbh->prepare('insert into history (date, user, message) value (?, ?, 
     or die "prepare statement failed: $dbh->errstr()";
 
 $sth->execute("20200102", "user", "message") or die "execution failed: $dbh->errstr()";
-```
+----
 
-## References
-* [DBD::mysql](https://metacpan.org/pod/DBD::mysql)
+== References
+* https://metacpan.org/pod/DBD::mysql[DBD::mysql]
