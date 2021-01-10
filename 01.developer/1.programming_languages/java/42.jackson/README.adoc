@@ -1,2 +1,10 @@
 = jackson
 
+== MismatchedInputException
+
+https://jinseongsoft.tistory.com/232
+
+
+== No serializer found for class
+
+https://steady-hello.tistory.com/90
