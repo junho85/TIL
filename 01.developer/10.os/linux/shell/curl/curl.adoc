@@ -1,0 +1,8 @@
+= curl
+
+----
+curl -v -L  -X POST -H 'Accept: application/json' -H 'Authorization: Bearer 12345' 'https://www..example.com/api/myresource'
+----
+
+== References
+https://www.lesstif.com/software-architect/curl-http-get-post-rest-api-14745703.html
