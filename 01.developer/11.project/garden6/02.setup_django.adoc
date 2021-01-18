@@ -1,0 +1,5 @@
+= Garden6 setup django project
+
+----
+pip install -r requirements.txt
+----

@@ -1,0 +1,87 @@
+= Garden6 Project
+
+garden5의 코드를 가져와서 사용.
+
+garden5로 된 부분을 garden6로 변경
+
+== slack
+* token: https://slack.com/help/articles/215770388-Create-and-regenerate-API-tokens
+* OAuth & Permissions에 가서 Scope에 channels:history추가 하고 Install to Workspace인가?
+
+앱을 만들고
+https://api.slack.com/apps/A01KDPGV657
+
+App-Level Tokens에서 Generate Token
+
+Token Name: attendance
+권한 scope추가.
+connections:write
+authorization:read
+
+#commit 방에서
+/invite @garden6
+으로 봇을 초대 해야됨
+
+config.ini
+* SLACK_API_TOKEN = 생성한 토큰
+* CHANNEL_ID = apps/뒤에 있는 값?
+
+== 도메인
+* https://www.gabia.com/
+* A 레코드 추가. garden6
+
+== 구글 애널리틱스
+* Admin 페이지 가서 Create Property로 추가
+* 참고: https://www.monsterinsights.com/how-to-add-a-property-in-google-analytics/#:~:text=Step%201%3A%20Create%20a%20New%20Property%20in%20Google%20Analytics&text=Now%20click%20on%20Admin%20in,reporting%20time%20zone%2C%20and%20currency.
+[] google_analytics.html
+
+== 서버 배포
+----
+git clone git@github.com:junho85/garden6.git
+cd /home/junho85/web/garden6
+python3.7 -m virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+----
+
+[source]
+----
+sudo vi /etc/apache2/sites-enabled/000-default.conf
+----
+
+----
+# garden6
+<VirtualHost *:80>
+    ServerName garden6.junho85.pe.kr
+
+    WSGIDaemonProcess garden6.junho85.pe.kr python-home=/home/junho85/web/garden6/venv python-path=/home/junho85/web/garden6/
+    WSGIProcessGroup garden6.junho85.pe.kr
+
+    WSGIScriptAlias / /home/junho85/web/garden6/garden6/wsgi.py
+
+    ErrorLog "/var/log/apache2/garden6-error_log"
+    CustomLog "/var/log/apache2/garden6-access_log" common
+
+    <Directory /home/junho85/web/garden6/garden6>
+    <Files wsgi.py>
+        Require all granted
+    </Files>
+    </Directory>
+</VirtualHost>
+----
+
+----
+sudo service apache2 stop
+sudo service apache2 start
+----
+* /var/log/apache2
+
+
+* config.ini
+* users.yaml
+
+== cron
+
+----
+0 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,23 * * * /home/junho85/web/garden6/venv/bin/python /home/junho85/web/garden6/attendance/cli_collect.py
+----

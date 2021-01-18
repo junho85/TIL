@@ -1,0 +1,24 @@
+= Garden6 - python installation
+
+현재 osx python은 3.9이지만 프로젝트가 python 3.7기반이기 때문에 python 3.7설치
+
+----
+$ brew install python@3.7
+----
+
+----
+echo 'export PATH="/usr/local/opt/python@3.7/bin:$PATH"' >> ~/.zshrc
+----
+
+== Virtualenv
+----
+pip3.7 install virtualenv
+python3.7 -m virtualenv venv
+source venv/bin/activate
+----
+
+적용이 잘 되었는지 확인합니다.
+----
+$ python -V
+Python 3.7.9
+----
