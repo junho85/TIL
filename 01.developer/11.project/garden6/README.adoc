@@ -1,0 +1,12 @@
+= garden6
+
+== github 봇 연동
+#commit 채널에 와서
+----
+/github subscribe organization/repository
+e.g. /github subscribe junho85/TIL
+----
+
+== slack scrapper
+* slack message를 주기적으로 긁어서 DB에 저장
+
