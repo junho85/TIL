@@ -1,0 +1,90 @@
+= Perl - sleep
+
+perl에서 기본 제공되는 함수중 sleep은 초단위로 잠깐 동안 동작을 멈추는 함수입니다.
+
+예제를 봅시다.
+
+----
+#!/usr/bin/perl
+use strict;
+use warnings FATAL => 'all';
+
+use POSIX 'strftime';
+
+sub print_now {
+    my $date = strftime '%Y/%m/%d %H:%M:%S', localtime;
+    print $date."\n";
+}
+
+print_now();
+sleep(1);
+print_now();
+sleep(1);
+print_now();
+sleep(1);
+----
+결과는 현재 시각을 출력하고 1초 쉬는 것을 3번 반복합니다.
+
+----
+2021/01/17 21:45:36
+2021/01/17 21:45:37
+2021/01/17 21:45:38
+----
+
+그런데 만약 밀리초만큼만 sleep을 걸고 싶은 경우가 있습니다.
+
+sleep(1) 대신 sleep(0.5)를 주면 어떻게 될까요?
+
+----
+2021/01/17 21:46:38
+2021/01/17 21:46:38
+2021/01/17 21:46:38
+----
+
+소수점은 무시되고 sleep(0)이 되어버립니다.
+
+만약 밀리초만큼만 sleep을 걸려면 어떻게 해야 될까요?
+
+Time::HiRes 모듈을 사용해야 합니다.
+
+----
+use Time::HiRes;
+
+Time::HiRes::sleep(0.5);
+----
+
+----
+#!/usr/bin/perl
+use strict;
+use warnings FATAL => 'all';
+
+use Time::HiRes;
+
+use POSIX 'strftime';
+
+sub print_now {
+    my $date = strftime '%Y/%m/%d %H:%M:%S', localtime;
+    my $t = Time::HiRes::time;
+    $date .= sprintf ".%03d", ($t-int($t))*1000;
+    print $date."\n";
+}
+
+print_now();
+Time::HiRes::sleep(0.5);
+print_now();
+Time::HiRes::sleep(0.5);
+print_now();
+Time::HiRes::sleep(0.5);
+----
+
+결과는 다음과 같습니다.
+
+----
+2021/01/17 21:57:38.897
+2021/01/17 21:57:39.400
+2021/01/17 21:57:39.904
+----
+
+
+== 정리
+https://junho85.pe.kr/1804[perl - millisecond로 sleep주는 방법 2021.01.19]
