@@ -1,0 +1,12 @@
+= Spring Boot Graceful Shutdown
+
+spring boot 2.3부터는 application.yml 설정으로 가능
+----
+server:
+  shutdown: graceful
+----
+
+이전 버전이면 actuator를 구현하는 방식이 있음
+
+== References
+* https://bravenamme.github.io/2020/10/06/graceful-shutdown/[Spring boot Graceful Shutdown 2020.10.06]
