@@ -77,8 +77,11 @@ sudo service apache2 start
 * /var/log/apache2
 
 
-* config.ini
+* config.
+** SLACK_API_TOKEN
+** CHANNEL_ID
 * users.yaml
+** https://api.slack.com/methods/users.list/test
 
 == cron
 
