@@ -1,0 +1,13 @@
+= django - login/logout
+
+settings.py의 INSTALLED_APPS에
+
+[source]
+----
+'django.contrib.auth',
+----
+앱이 기본적으로 추가되어 있습니다. 이 앱은 로그인/로그아웃 기능을 손쉽게 구현할 수 있도록 해줍니다.
+
+
+== References
+* https://wikidocs.net/71259[3-05 로그인·로그아웃 구현하기]
