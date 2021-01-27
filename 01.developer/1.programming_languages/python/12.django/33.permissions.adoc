@@ -1,0 +1,33 @@
+= django - 권한
+
+== 뷰
+=== has_perm
+
+=== 권한 데코레이터
+
+@login_required 로그인 한 사용자만 허용
+
+----
+from django.contrib.auth.decorators import login_required
+
+@login_required
+
+----
+
+@permission_required('권한', redirect 주소) 명시된 권한을 가진 사용자만 허용
+
+
+
+
+== 템플릿
+=== {% user.is_authenticated %}
+
+[source,pytyon]
+----
+{% if user.is_authenticated %}
+{% else %}
+{% endif %}
+----
+
+== References
+* https://heiswed.tistory.com/entry/%EC%9E%A5%EA%B3%A0Django-%EA%B0%9C%EB%B0%9C-%EA%B6%8C%ED%95%9Cpermission-%ED%99%94%EB%A9%B4-%EA%B4%80%EB%A6%AC[장고(Django) 개발: 권한(permission) 화면 관리
