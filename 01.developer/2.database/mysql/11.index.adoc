@@ -1,0 +1,9 @@
+= MySQL Index
+
+== Show index
+----
+show idnex from table;
+----
+
+== References
+* https://dev.mysql.com/doc/refman/8.0/en/show-index.html[13.7.7.22 SHOW INDEX Statement]
