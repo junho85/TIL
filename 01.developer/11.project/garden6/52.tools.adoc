@@ -1,0 +1,72 @@
+= Admin Tools
+
+== tools 앱 추가
+기본적으로 admin이 있기 때문에 tools로 생성
+
+----
+python manage.py startapp tools
+----
+
+----
+{% extends 'attendance/base.html' %}
+
+{% block content %}
+
+    TODO
+
+{% endblock %}
+----
+
+=== tools/urls.py
+[source,python]
+----
+from django.urls import path
+from . import views
+
+app_name = 'tools'
+
+urlpatterns = [
+    path('', views.index, name='index'), # 관리툴 첫화면
+]
+----
+
+tools/views.py
+
+@login_required 데코레이터를 이용합니다.
+
+[source,python]
+----
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+
+
+@login_required
+def index(request):
+    context = {
+    }
+    return render(request, 'tools/index.html', context)
+----
+
+
+
+garden6/urls.py
+----
+path('tools/', include('tools.urls')),
+----
+
+
+=== login 관련 코드 개선
+
+
+garden6/settings.py
+----
+LOGIN_URL = '/common/login'
+----
+
+----
+LOGIN_REDIRECT_URL = '/tools'
+----
+
+----
+<input type="hidden" name="next" value="{{ next }}">
+----
