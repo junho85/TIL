@@ -1,11 +1,16 @@
 = Admin Tools
 
 == tools 앱 추가
-기본적으로 admin이 있기 때문에 tools로 생성
+기본적으로 django는 admin기능을 가지고 있습니다. admin을 커스텀하게 잘 수정하는 방법도 있겠지만 저는 별도의 페이지를 생성해 보기로 했습니다.
+
+admin이랑 겹치지 않게 tools라는 앱을 추가하였습니다.
 
 ----
 python manage.py startapp tools
 ----
+
+== templates/tools/index.html
+templates/tools/index.html 파일을 작성합니다.
 
 ----
 {% extends 'attendance/base.html' %}
@@ -16,23 +21,12 @@ python manage.py startapp tools
 
 {% endblock %}
 ----
+아직 아무 기능 없는 빈 페이지입니다.
 
-=== tools/urls.py
-[source,python]
-----
-from django.urls import path
-from . import views
+http://garden6.junho85.pe.kr/tools/ 에 접근하면 나타나는 페이지인데 로그인한 사용자만 접근 가능합니다.
 
-app_name = 'tools'
 
-urlpatterns = [
-    path('', views.index, name='index'), # 관리툴 첫화면
-]
-----
-
-tools/views.py
-
-@login_required 데코레이터를 이용합니다.
+== tools/views.py
 
 [source,python]
 ----
@@ -47,26 +41,57 @@ def index(request):
     return render(request, 'tools/index.html', context)
 ----
 
+views.py에 앞서 작성한 index.html를 연결합니다.
 
+중요한 건 @login_required 데코레이터입니다. 이 데코레이터를 이용하면 로그인한 사용자만 접근하는 view로 설정됩니다.
 
-garden6/urls.py
+=== tools/urls.py
+[source,python]
+----
+from django.urls import path
+from . import views
+
+app_name = 'tools'
+
+urlpatterns = [
+    path('', views.index, name='index'), # 관리툴 첫화면
+]
+----
+tools의 url 라우팅을 설정하여 views.index와 연결합니다.
+
+=== garden6/urls.py
 ----
 path('tools/', include('tools.urls')),
 ----
+여기에 tools를 추가해야 tools/urls.py가 동작합니다.
+
 
 
 === login 관련 코드 개선
-
 
 garden6/settings.py
 ----
 LOGIN_URL = '/common/login'
 ----
+로그인이 필요한 경우 이동되는 url을 설정합니다.
 
 ----
 LOGIN_REDIRECT_URL = '/tools'
 ----
 
+templates/login.html
 ----
 <input type="hidden" name="next" value="{{ next }}">
 ----
+기존 로그인폼 코드에 next input을 추가합니다.
+
+로그인이 필요한 페이지에 접근하면 자동으로 url뒤에 "?next=접근경로"가 추가되는데요. 로그인 후 해당 url로 이동할 수 있도록 합니다.
+
+앞서 설정한 LOGIN_REDIRECT_URL과 동작이 겹치는데요. LOGIN_REDIRECT_URL은 next 파라미터가 없는 경우 동작합니다. next 파라미터가 우선순위가 더 높다고 보면 됩니다.
+
+우선순위: next > LOGIN_REDIRECT_URL
+
+참고: https://docs.djangoproject.com/en/3.1/ref/settings/
+
+== 정리
+* https://junho85.pe.kr/1815[정원사들 출석부 - 로그인 유저만 접근 가능한 페이지 생성]
