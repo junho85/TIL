@@ -1,0 +1,16 @@
+= javascript - add days
+
+[source,javascript]
+----
+Date.prototype.addDays = function(days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+}
+
+var date = new Date();
+
+alert(date.addDays(5));
+----
+
+* https://stackoverflow.com/questions/563406/add-days-to-javascript-date[Add days to JavaScript Date]

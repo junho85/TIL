@@ -1,0 +1,6 @@
+= javascript - today
+
+[source,javascript]
+----
+var today = new Date();
+----

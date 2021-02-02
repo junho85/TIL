@@ -1,0 +1,17 @@
+= javascript - diff days
+
+* date 끼리 빼주면 된다.
+* 기념일이나 꾸준히 몇일째 인지 구하려면 +1 해주면 된다.
+
+[source,javascript]
+----
+
+function diffDays(baseDay, today) {
+    return (today - baseDay) / 24 / 60 / 60 / 1000;
+}
+
+const startDay = new Date('2018-10-15');
+const today = new Date('2019-01-22');
+
+console.log(diffDays(startDay, today));
+----

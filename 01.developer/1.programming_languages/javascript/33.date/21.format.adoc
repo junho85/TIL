@@ -1,0 +1,59 @@
+= javascript - date format
+
+== yyyymmdd 포멧
+
+* javascript Date 객체에 날짜를 yyyymmdd 포멧으로 리턴하는 함수 추가 하는 예제
+
+[source,javascript]
+----
+Date.prototype.yyyymmdd = function() {
+  var mm = this.getMonth() + 1;
+  var dd = this.getDate();
+
+  return [this.getFullYear(),
+          (mm>9 ? '' : '0') + mm,
+          (dd>9 ? '' : '0') + dd
+         ].join('');
+};
+
+var date = new Date();
+date.yyyymmdd();
+
+----
+
+output
+
+[source,javascript]
+----
+"20180703"
+----
+
+== hhmmss 포멧
+* javascript Date 객체에 날짜를 hhmmss 포멧으로 리턴하는 함수 추가 하는 예제
+
+[source,javascript]
+----
+Date.prototype.hhmmss = function() {
+  var hh = this.getHours();
+  var mm = this.getMinutes();
+  var ss = this.getSeconds();
+
+  return [(hh>9 ? '' : '0') + hh,
+          (mm>9 ? '' : '0') + mm,
+          (ss>9 ? '' : '0') + ss,
+         ].join('');
+};
+
+var date = new Date();
+date.hhmmss();
+----
+
+output
+
+[source,javascript]
+----
+"165731"
+----
+
+== 정리
+* https://junho85.pe.kr/999[javascript - date yyyymmdd, hhmmss, yyyymmddhhmmss, yyyymmddhhmm 2018.07.11]

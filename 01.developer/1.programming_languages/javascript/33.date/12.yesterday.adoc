@@ -1,0 +1,6 @@
+= javascript - yesterday
+
+[source,javascript]
+----
+var yesterday = new Date(new Date().setDate(new Date().getDate()-1));
+----
