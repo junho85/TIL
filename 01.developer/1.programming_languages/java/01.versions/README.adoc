@@ -1,0 +1,32 @@
+= java versions
+
+== Java 15
+* Sealed classes (experimental)
+
+== Java 14
+* Data Classes: record (experimental)
+
+== Java 13
+* Multi-line Strings (experimental, full feature: Java 15)
+
+== Java 12
+* Switch Expression (experimental, full feature: Java 14)
+
+== Java 11
+* Single Source File Launch
+
+== Java 10
+* Type Inference with var
+
+== Java 9
+* JShell
+
+
+== Java 8
+* Functional Programming
+* Streams
+* Optional
+
+
+== References
+* https://medium.com/swlh/from-java-8-to-java-15-in-ten-minutes-f42d422a581e[From Java 8 to Java 15 in Ten Minutes 2021.01.18]
