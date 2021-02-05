@@ -1,0 +1,28 @@
+= git branch
+
+== delete
+
+[source,shell]
+----
+$ git branch -d <branchname>
+----
+
+== 원격 브랜치 삭제하기. delete remote branch
+
+[source,shell]
+----
+$ git push origin --delete <branchname>
+----
+
+원격 저장소의 develop 브랜치 삭제하기
+----
+$ git push origin --delete develop
+----
+
+
+== 정리
+* https://junho85.pe.kr/1432[git branch 삭제]
+* https://junho85.pe.kr/1821[git 원격 브랜치 삭제하기 2021.02.05]
+
+== References
+* https://backlog.com/git-tutorial/kr/stepup/stepup2_5.html[4. 브랜치 삭제하기]
