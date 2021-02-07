@@ -1,2 +1,7 @@
 = Google Sheets
 
+== Short cut
+cmd + /
+
+Move to next sheet - cmd + shift + pg-down or option + down
+Move to previous sheet - cmd + shift + pg-up or option + up
