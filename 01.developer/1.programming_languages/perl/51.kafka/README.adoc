@@ -1,0 +1,22 @@
+= perl kafka
+
+rdkafka가 없다고 오류 나면
+
+osx
+
+----
+$ brew install librdkafka
+----
+
+centos
+----
+$ sudo yum install librdkafka
+----
+
+
+libcrypto가 필요하다고 하면
+----
+$ brew install openssl
+----
+
+... 잘 안된다.
