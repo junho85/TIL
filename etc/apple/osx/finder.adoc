@@ -1,0 +1,15 @@
+= finder
+
+== 강제 종료
+* Cmd + Opt + Shift + ESC로 강제 종료
+* Activity Monitor에서 강제 종료
+* 터미널: killall Finder
+* Force Quit Applications
+* GUI에서 종료: 사과 -> Shift누르면 Force Quit Finder 나타남.
+* 독의 실행 아이콘 Opt + 마우스 우클릭 후 Relaunch
+
+
+* 정리: https://junho85.pe.kr/1811[osx - kill finder. finder 강제 종료 시키기. Big Sur로 올리고 나서 AirDrop이 행업되는 증상 임시 해결 2021.01.26]
+
+== References
+* https://smallbusiness.chron.com/kill-finder-mac-49025.html[How to Kill the Finder on a Mac]
