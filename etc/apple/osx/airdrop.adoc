@@ -1,0 +1,15 @@
+= mac osx - airdrop
+
+== References
+* https://discussions.apple.com/thread/252087484[macOS Big Sur - Air Drop Problems]
+
+----
+Boot into Safe Mode by booting with the Shift key held down and check there to see if the problem persists.  Reboot normally and test again.
+
+NOTE: Safe Mode boot can take up to 10 minutes as it's doing the following;
+• Verifies your startup disk and attempts to repair directory issues, if needed
+• Loads only required kernel extensions (prevents 3rd party kernel/extensions from loading)
+• Prevents Startup Items and Login Items from opening automatically
+• Disables user-installed fonts
+• Deletes font caches, kernel cache, and other system cache files
+----
