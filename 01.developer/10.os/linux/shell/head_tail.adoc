@@ -1,0 +1,11 @@
+= head, tail
+
+== head
+----
+display first lines of a file
+----
+
+== tail
+----
+display the last part of a file
+----
