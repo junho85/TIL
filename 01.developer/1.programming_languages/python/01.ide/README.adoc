@@ -1,0 +1,14 @@
+= python IDE. 개발도구
+
+== PyCharm
+* https://www.jetbrains.com/ko-kr/pycharm/features/editions_comparison_matrix.html[Professional 에디션과 Community 에디션 차이]
+
+=== 설치
+* https://www.jetbrains.com/ko-kr/pycharm/download
+* https://www.jetbrains.com/ko-kr/toolbox-app/[toolbox]
+
+toolbox를 먼저 설치하고 toolbox에서 PyCharm을 설치하는 것이 쉽고 편리합니다.
+
+
+== 정리
+* https://junho85.pe.kr/1829[Python 개발도구 PyCharm Community Edition 설치하기]
