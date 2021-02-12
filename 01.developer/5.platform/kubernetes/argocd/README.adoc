@@ -1,0 +1,30 @@
+= Argocd
+
+https://argoproj.github.io/argo-cd/
+
+Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
+
+
+== References
+=== Kubernetes SIG Apps 20180730
+https://www.youtube.com/watch?v=aWDIQMbp1cc[Kubernetes SIG Apps 20180730]
+
+https://github.com/jessesuen/argocd-example-apps
+
+.Key Features
+* Syncing of applications to its desired state as defined in Git
+* Automated deployment of applications to specified target environments
+* Continuous monitoring of deployed applications
+* Web and CLI based visualization of applications and differences between live vs. target state
+* Rollback/Roll-anywhere to any application state committed in the git repository
+* SSO Integration (OIDC, LDAP, SAML 2.0, GitLab, Microsoft, LinkedIn)
+* Webhook Integration (GitHub, BitBucket, GitLab)
+* PreSync, Sync, PostSync hooks to support complex application rollouts (e.g. blue/green & canary)
+* Parameter overrides for overriding ksonnet/helm parameters in git
+* Can be used standalone or as part of any existing or new CI/CD pipeline
+
+=== Introduction to Argo CD : Kubernetes DevOps CI/CD 2019.11.03
+* https://www.youtube.com/watch?v=2WSJF7d8dUg[Introduction to Argo CD : Kubernetes DevOps CI/CD]
+
+
+repoURL
