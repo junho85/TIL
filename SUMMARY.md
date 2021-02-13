@@ -41,7 +41,7 @@
 * [game](game/README.md)
   * [ingress](game/ingress.md)
   * [Rockman](game/rockmanx/README.md)
-    * [Rockman X 1](game/rockmanx/rockmanx1.md)
+    * [Rockman X 1](game/rockmanx/rockmanx1/rockmanx1.adoc)
     * [Rockman X 2](game/rockmanx/rockmanx2/README.md)
     * [Rockman X 3](game/rockmanx/rockmanx3/rockmanx3.md)
 * [database](01.developer/2.database/README.md)
