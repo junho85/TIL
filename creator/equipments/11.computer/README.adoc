@@ -1,5 +1,14 @@
 = 방송용 컴퓨터
 
+== VGA. GPU
+
+
+== 정보수집. 어로스 Aorus X5 V6
+
+https://gongpotan.tistory.com/14[어로스 Aorus X5 V6 구매. 2018.05.31]
+6세대 CPU에 파스칼 GTX 1070 탑재모델
+
+3DMARK Fire Strike 13239
 
 == References
 === 투컴 세팅시 필요한 송출용 컴퓨터 사양 2019-04-12

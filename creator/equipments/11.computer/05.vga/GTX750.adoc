@@ -1,0 +1,5 @@
+= GTX 750
+
+https://www.nvidia.com/en-us/geforce/graphics-cards/geforce-gtx-750/specifications/
+
+PCI Express 3.0
