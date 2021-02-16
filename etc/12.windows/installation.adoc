@@ -1,0 +1,10 @@
+= windows 10 설치
+
+== Windows 10 디스크 이미지 ISO 파일 다운 받기
+
+https://www.microsoft.com/ko-kr/software-download/windows10ISO[Windows 10 디스크 이미지 다운로드(ISO 파일)]
+
+* 버전 선택: Windows 10
+* 언어 선택: 한국어
+* 64-bit 다운로드
+
