@@ -1,0 +1,26 @@
+= Confluence Wiki
+
+== 목차
+[source,css]
+----
+.toc-float {
+        position: -webkit-sticky; /* 사파리 브라우저 지원 */
+        position: sticky;
+        top: 100px;
+        width: 500px;
+        float:  right;
+        z-index: 1;
+        background:  rgba(229, 232, 232, 0.80);
+        padding: 10px 15px 20px 5px;
+        border: 1px solid #0096d6;
+        border-radius: 5px;
+}
+
+.toc-float:before {
+  content: "목차";
+  padding-left: 15px;
+}
+----
+
+
+https://marketplace.atlassian.com/apps/1221271/easy-heading-macro-for-confluence?hosting=server&tab=overview[Easy Heading Macro for Confluence]
