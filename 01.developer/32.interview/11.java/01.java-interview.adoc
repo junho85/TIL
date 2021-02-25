@@ -1,0 +1,18 @@
+= Java Interview
+
+== References
+
+https://java.ihoney.pe.kr/77[기술면접 관련 내용 정리 2009.09.02]
+
+----
+cmd.equals("Test")
+----
+cmd가 null인 경우 NullPointerException이 발생할 수 있음. IntelliJ같은 툴에서는 이런거 미리 경고 해 줌
+
+----
+"Test".equals(cmd)
+----
+로 바꿔주면 NullPointerException을 피할 수 있음.
+
+
+https://java.ihoney.pe.kr/78?category=398192[Java를 익히기 위한 13가지 학습 항목들 2009.09.04]
