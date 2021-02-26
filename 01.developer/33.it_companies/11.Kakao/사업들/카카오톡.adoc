@@ -1,0 +1,8 @@
+= 카카오톡
+
+== References
+* https://tech.kakao.com/2020/07/22/recruit-kakaotalk-backend/[카카오톡의 백엔드를 담당하는 ‘기반서비스개발팀’ 이야기 2020.07.22]
+
+* Domain Modeling Made Functional
+* 데이터 중심 애플리케이션 설계 (Designing Data-Intensive Application)
+* 마스터링 분산 추적 (Mastering Distributed Tracing)
