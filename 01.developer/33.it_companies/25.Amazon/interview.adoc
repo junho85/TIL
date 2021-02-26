@@ -1,0 +1,6 @@
+= Amazon - Interview
+
+== References
+https://brunch.co.kr/@worker-in-yvr/12[아마존 인터뷰에 떨어지다 2018.09.11]
+
+https://steemit.com/kr/@asbear/amazon[Amazon 취업 후기 - 컨택부터 오퍼까지 2017.07.28]
