@@ -1,0 +1,91 @@
+= String, StringBuilder, StringBuffer
+
+* String은 멀티쓰레드 환경에서 안전합니다. 하지만 문자열 연산이 많다면 성능저하가 발생할 수 있습니다.
+* StringBuffer는 멀티쓰레드 환경에서 안전합니다. (thread-safe)
+* StringBuilder는 단일쓰레드 환경이나 동기화를 고려하지 않아도 되는 경우에 사용합니다.
+
+String연산을 많이 하는 경우 StringBuilder > StringBuffer > String 순으로 속도 차이가 발생.
+메모리 사용은 String은 많이 사용하고 StringBuilder, StringBuffer는 같다고 보면 됨.
+
+== java.lang.String
+
+https://www.tutorialspoint.com/java/lang/java_lang_string.htm
+
+=== java7 String
+https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
+
+
+== References
+* https://ifuwanna.tistory.com/221[[Java\] String, StringBuffer, StringBuilder 차이 및 장단점 2020.01.28]
+* https://novemberde.github.io/2017/04/15/String_0.html[Java에서 String, StringBuilder, StringBuffer의 차이 2017.04.15]
+** .hashCode()로 주소 확인. 연산을 할 때 마다 주소가 바뀜.
+* https://javahungry.blogspot.com/2013/06/difference-between-string-stringbuilder.html[Difference Between String , StringBuilder And StringBuffer Classes With Example : Java]
+
+
+
+http://hongsgo.egloos.com/2033998[자바 문자열 객체(String,StringBuffer,StringBuilder) 정규표현식.. 2008.08.26]
+
+연산속도: String 95초, StringBuffer 0.24초, StringBuilder 0.17초
+메모리 용량: String 약 95GB, StringBuffer 약 28MB, 9.5MB(String으로 변환), StringBuilder 약 28MB, 9.5MB(String으로 변환)
+
+정리 응답시간은 String보다 StringBuffer가 약 367배 빠르며, StringBuilder가 약 512배 빠르다. 메모리 용량은 String이 3,390배 더 사용
+
+* String은 짧은 문자열을 더할 경우 사용
+* StringBuffer는 스레드에 안전한 프로그램이 필요할 때나, 개발중인 시스템의 부분이 스레드에 안전한지 모를 경우 사용
+* StringBuilder는 스레드에 안전한지 여부가 전혀 관계없는 프로그램을 개발 할 때 사용
+
+String객체를 사용하더라도 JDK 5.0 이상의 버전을 사용하면 StringBuilder로 변환하여 컴파일 함.
+
+
+https://java.ihoney.pe.kr/75[Strng 과 StringBuffer, StringBuilder 의 차이점(090902 수정) 2009.09.01]
+
+
+=== Top 50 Java String Interview Questions And Answers
+https://javahungry.blogspot.com/2018/09/top-50-java-string-interview-questions-and-answers.html[Top 50 Java String Interview Questions And Answers]
+
+.Q1. String은 무엇인가?
+
+String은 java.lang 패키지에 있는 클래스입니다. String 클래스는 문자열을 나타냅니다. 문자열은 일정하며 생성되고 나서 값이 변경되지 않습니다.
+
+.Q2 Java에서 String은 불변(Immutable)인가?
+String 클래스는 불변(Immutable)입니다. 값은 바뀔 수 없습니다.
+
+.Q3 Java에서 String은 keyword인가?
+String은 java에서 키워드는 아닙니다.
+
+.Q4 다음 new 키워드로 생성되는 객체는 몇 개 인가?
+----
+String str = new String("JavaHungry");
+----
+2개의 객체가 생성됩니다. 하나는 힙메모리이고 하나는 문자열 상수풀입니다.
+
+https://starkying.tistory.com/entry/what-is-java-string-pool[String Constant Pool이란? 2020.07.20]
+
+.Q5 Java에서 String reverse하는 프로그램을 작성하시오.
+
+.Q6 String을 char Array로 바꾸려면?
+
+toCharArray() 메서드를 사용해서 바꿉니다.
+
+.Q7 String 객체를 만드는 방법들?
+
+두가지 방법이 있습니다. new 연산자를 이용한 방법과 문자열 리터럴을 사용하는 방법입니다.
+new 연산자를 사용하여 만든 객체는 힙 메모리에 저장되고 문자열 리터럴은 문자열 상수 풀에 저장됩니다.
+
+----
+String str = "hello world";  // String literal
+String str = new String("hello world"); // using new operator
+----
+
+.Q8 String은 thread-safe 합니까?
+String 객체는 불변입니다. 그 말은 thread-safe 하기도 하다는 의미입니다.
+
+.Q9 String, StringBuilder, StringBuffer 중 final 인 것은?
+모두 final 클래스입니다.
+
+final 클래스는 확장할 수 없는 클래스입니다.
+
+.Q10 String은 primitive type 인가요? object (derived) type인가요?
+
+object (derived) type 입니다.
+
