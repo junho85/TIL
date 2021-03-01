@@ -1,0 +1,38 @@
+= 드라이퍼스 모델 - The Dreyfus Model of Skill Acquisition
+
+http://egloos.zum.com/smile/v/1153847[드라이퍼스 모델(The Dreyfus Model of Skill Acquisition)]
+
+Table 2. Model of Debugging Abilities and Habits.
+
+Stage, Debugging Abilities and Habits.
+
+.Novice
+* Lacks debugging skills
+* Repeats the same types of defects frequently throughout a program
+* Debugs programs haphazardly instead of following a plan
+* Spends considerable amounts of time on debugging
+* Gives up easily and depends on others for assistance
+
+.Advanced Beginner
+* Develops debugging skills through experience; recognizes symptoms of previously experienced defects
+* Repeats the same types of defects occasionally throughout a program
+* Begins adapting approaches to debugging based on prior successes and failures
+* Attempts less familiar debugging techniques only as a last resort
+* Relies to some extent on others for assistance
+
+.Competent
+* Knows a variety of debugging techniques
+* Approaches debugging systematically; evaluates the situation to determine which techniques to use
+* Alternates between techniques when certain techniques are not effective
+* Identifies most defects independently
+
+.Proficient
+* Sees debugging as part of program development as a whole
+* Develops skills in other areas of program development to facilitate debugging
+* Optimizes decision-making abilities and approaches to debugging
+* Asks others for assistance rarely and assists others
+
+.Expert
+* Approaches debugging intuitively due to extensive experience; debugging is second-nature
+* Identifies complex and/or unfamiliar defects successfully
+* Asks others for assistance rarely and assists others
