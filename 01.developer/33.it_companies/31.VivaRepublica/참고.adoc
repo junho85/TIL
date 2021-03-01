@@ -1,0 +1,94 @@
+= 비바리퍼블리카 참고 자료
+
+== 토스 다큐멘터리ㅣFINTECH - BEHIND THE SIMPLICITY 2021.02.18
+https://www.youtube.com/watch?v=AuMyGHuxvOM[토스 다큐멘터리ㅣFINTECH - BEHIND THE SIMPLICITY 2021.02.18]
+
+https://toss.im/fintech
+
+
+김봉진 우아한형제들 의장
+
+안성우 직방 대표
+
+황희승 잡플래닛 대표
+
+Daegwon Chae Bond Capital, General Partner
+
+Peter Sanborn Paypal, Vice President
+
+Sue Kelsey Master Card, Global Lead
+
+이승건 Toss Leader
+
+박재민 토스증권 리더
+
+정희연 토스 UX 헤드
+
+안지영 토스 프로덕트 오너
+
+남영철 토스 초기멤버 Toss Advisor Group
+
+2014년 베타 서비스 셧다운
+서비스 출시 두 달 만에 금융 서비스 규제로 인한 서비스 중단
+
+2월 출시. 두 달 만에 중단
+
+김한준 토스 첫 투자자. Altos Ventures 대표
+
+CMS (Cash Management Service)
+
+임정욱 TBT 공동대표. 전 스타트업얼라이언스...
+
+신우석 Brain & Company 파트너. 토스뱅크 컨소시엄 컨설팅사
+
+이형석 토스 테크놀로지 헤드
+
+최민수 토스 브랜드 디자인팀 리더
+
+오창훈 토스증권 테크놀로지 헤드
+
+김민표 토스페이먼츠 리더
+
+김종상 토스 프로덕트 오너
+
+토스 긴급재난지원금 서비스
+
+윤기열 토스 커뮤니케이션팀 리더
+
+송금부터 4년 반 120개 서비스 남아 있는게 40개. 80개 정도 런칭 했다가 사라짐.
+
+토스 신용조회 서비스
+
+신평사 (신용평가사)
+
+은행
+
+홍민택 - 토스뱅크팀 리더
+
+보험
+
+조병익 토스인슈어런스 리더
+
+투자
+
+결제
+
+PG
+
+신뢰 쌓아가기
+
+신용석 토스 정보보호최고책임자
+
+2020.07.06 고객 피해 전액 책임제
+
+완전히 새로운 금융
+
+법인카드 무제한
+
+김유리 토스 경영기획총괄
+
+김태은 토스 프로덕트 오너
+
+손민탁 토스 iOS 개발자
+
+정희연 토스 UX 헤드
