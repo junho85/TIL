@@ -1,0 +1,22 @@
+= 마켓컬리
+
+https://helloworld.kurly.com/blog/experience-the-kurly-interview-process/[두근두근 컬리의 면접, 팀에서 성장하기 2021.01.12]
+
+면접 준비
+
+.Java
+* ArrayList, HashMap 내부 구조에 대해서 정리
+* 인터페이스와 추상 클래스에 대해서 정리
+* 내부 클래스는 왜 static이어야 하는지, Java 가비지 컬렉터에 대해서도 정리
+* 주요 Annotation 사용 방법에 대해서 정리
+
+.Spring
+* IoC에 대한 내용. 매일 사용하는 Spring Bean이 어떻게 주입되는지 정리
+* Bean의 생명 주기에 대해 정리
+
+.MySQL
+* 인덱스 정리
+
+.Micro-Service
+
+합격 후 7개월 후

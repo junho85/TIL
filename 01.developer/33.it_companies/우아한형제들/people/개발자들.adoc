@@ -1,0 +1,37 @@
+= 우아한형제들 개발자들
+
+== 김영한
+* github: https://github.com/holyeye
+
+.기사
+https://younghoe.wordpress.com/2015/09/16/%EC%9E%90%EB%B0%94-orm-%ED%91%9C%EC%A4%80-jpa-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%A0%80%EC%9E%90-%EA%B9%80%EC%98%81%ED%95%9C%EC%9D%84-%EB%A7%8C%EB%82%98%EB%8B%A4/[자바 ORM 표준 JPA 프로그래밍 저자 김영한을 만나다 2015.09.16]
+SK플래닛 시절
+
+https://www.facebook.com/zipkyh/posts/919156491478070[2015.07.08]
+
+== 이동욱
+* jojoldu/창천향로
+* https://www.imaso.co.kr/archives/4869[이동욱 배달의민족 개발자 “개발자는 문제 해결사, 재능이 전부가 아니다” 2019.02.27]
+* https://jojoldu.tistory.com/[기억보단 기록을]
+* https://brunch.co.kr/@jojoldu[창천향로]
+* https://www.facebook.com/devbeginner/
+* https://github.com/jojoldu/junior-recruit-scheduler[주니어 개발자를 위한 취업 정보]
+* https://jojoldu.github.io/[이력서]
+* https://github.com/jojoldu/jojoldu.github.io[이력서]
+
+인프런
+https://www.inflearn.com/pages/leedonguk_interview
+https://www.inflearn.com/course/intellij-guide
+
+.기사
+* http://it.chosun.com/site/data/html_dir/2018/10/29/2018102900482.html[과학·기술
+[마소 394호\] AWS EC2와 트래비스CI를 활용한 무중단 배포 서비스 2018.10.29]
+
+== 호돌맨
+
+https://hodolman.com/26[안녕, 우아한형제들 2019.12.15]
+
+== 킹뽀대
+
+https://blog.kingbbode.com/
+
