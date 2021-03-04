@@ -1,0 +1,24 @@
+= Java String
+
+== java.lang.String
+
+https://www.tutorialspoint.com/java/lang/java_lang_string.htm
+
+== java doc String
+https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html[Class String]
+
+https://docs.oracle.com/javase/9/docs/api/java/lang/String.html[Class String]
+
+https://docs.oracle.com/javase/7/docs/api/java/lang/String.html[Class String]
+
+
+== intern
+https://www.latera.kr/blog/2019-02-09-java-string-intern/[Java의 String.intern() 살펴보기 2019.02.09]
+c코드 까지 까보면서 분석
+
+== String pool
+
+https://doohong.github.io/2018/03/04/java-string-pool/
+
+String pool은 java6 버전까지 Perm 영역이었음. Perm영역은 고정된 사이즈여서 Runtime에 사이즈가 확장되지 않음.
+그래서 intern되는 String값이 커지면 OutOfMemoryException을 발생시킬 수 있었고 그에따라 java7에서는 String pool이 heap영역으로 들어갔다.
