@@ -1,0 +1,19 @@
+= apple 인앱결제
+
+https://developer.apple.com/videos/play/wwdc2020/10661/[What’s new with in-app purchase]
+
+
+
+== 인앱 정기결제
+https://developer.apple.com/app-store/subscriptions/[Auto-renewable Subscriptions]
+
+https://developer.apple.com/documentation/storekit/skpaymentqueuedelegate/3521328-paymentqueueshouldshowpriceconse[paymentQueueShouldShowPriceConsent(_:)]
+
+https://developer.apple.com/documentation/storekit/in-app_purchase/subscriptions_and_offers/handling_subscriptions_billing[Handling Subscriptions Billing]
+
+https://developer.apple.com/documentation/storekittest/sktestsession/3579481-enableautorenewfortransaction[enableAutoRenewForTransaction(identifier:)]
+
+https://developer.apple.com/documentation/storekittest/sktestsession/3579479-disableautorenewfortransaction[disableAutoRenewForTransaction(identifier:)]
+
+
+https://steemit.com/kr/@yjiq150/ios-iap-auto-renewable-subscription[iOS 인앱 정기결제(IAP Auto-renewable Subscription) 튜토리얼 2018.03.12]
