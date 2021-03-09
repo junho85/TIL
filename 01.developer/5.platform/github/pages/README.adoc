@@ -1,0 +1,17 @@
+= github pages
+
+== github page 생성 방법
+username.github.io 리파지토리 생성
+
+index.html 작성해서 올리면 끝
+
+Jekyll을 이용하면 이력서나 블로그 등도 손쉽게 만들 수 있습니다.
+
+
+== references
+* https://velog.io/@junghyeonsu/React-Github-Pages%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-%EB%82%98%EB%A7%8C%EC%9D%98-%EC%9D%B4%EB%A0%A5%EC%84%9C-%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-pm1t1a9a[[React\] Github Pages를 이용해 나만의 이력서 페이지 만들기 2021.01.21]
+- https://junghyeonsu.github.io/introduce-myself/
+* https://pages.github.com/[]
+* https://dogfeet.github.io/articles/2012/github-pages.html[GitHub의 페이지 기능 이용하기]
+* https://devinlife.com/howto/[]
+* https://devinlife.com/howto%20github%20pages/github-blog-intro/[GitHub Pages 블로그 소개]

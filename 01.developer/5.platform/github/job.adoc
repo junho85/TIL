@@ -1,0 +1,13 @@
+= github 이력서, 취업, 일자리 구하기
+
+== github 이력서
+* https://jojoldu.github.io/
+* https://github.com/thumbsu/resume
+* https://github.com/JSpiner/RESUME
+
+* http://resume.github.io/
+- 이력서 만들어 주는 사이트
+
+== References
+* https://sujinlee.me/professional-github/[깃허브(GitHub)로 취업하기 2018.03.29]
+* https://woowabros.github.io/experience/2017/07/17/resume.html[이직초보 어느 개발자의 이력서 만들기 2017.07.17]
