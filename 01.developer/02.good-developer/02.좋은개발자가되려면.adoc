@@ -95,8 +95,6 @@ markerNames와 Ids없애고 markers = []로 선언. Marker클래스는 name과 i
 품이 많이 들어가는 작업은 Advanced Beginner가 거의 하고, Competent는 그걸 정리해서 수준을 끌어 올림
 
 
-===
-
 https://docs.google.com/document/d/1A10nVZVaqDx46zTvXVSxFV0dlmC-8q5yDWsdGoL6yNU[나는 어쩌다가 해외 개발사의 제의를 받았나?]
 
 
