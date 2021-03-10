@@ -1,0 +1,27 @@
+= Java 11
+
+http://openjdk.java.net/projects/jdk/11/
+
+
+== References
+* https://shg9411.github.io/Java-11/[Java 11로 전환해야 하는 이유 2021.01.20]
+
+Java10에서 var type 생겼고, Java 11에서는 람다파라미터에서 좀 더 명시적으로 var를 이용 가능.
+
+[source,java]
+----
+list.stream().map((@NotNull var s) -> s.toLowerCase()).collect(Collectors.toList());
+----
+
+* HTTP Client (Standard)
+** Non-Blocking request and response 지원
+** Backpressure 지원
+** Factory method 형태로 지원
+** HTTP/2 지원
+** websocket 지원
+* ZGC(The Z Garbage Collector) : A Scalable Low-Latency Garbage Collector (Experimental)
+** GC 일시 중지 시간이 10ms를 초과하지 않음
+** 8MB 에서 16TB의 힙을 처리
+* Flight Recorder
+** Oracle Java의 상용 addon이었던 JFR(Java Flight Recorder)를 오픈소스로 개발
+** JFR은 실행 중인 Java 애플리케이션의 진단 및 프로파일링 데이터를 수집하는 도구로, 주로 실행 중인 Thread, GC Cycles, Locks, Socktes, 메모리 사용량 등에 대한 데이터를 수집
