@@ -88,13 +88,17 @@ https://engineering.linecorp.com/ko/blog/things-i-prepared-to-be-a-line-server-d
 * 이력서
 
 
+== 개발자 이력서 작성하기 (feat. 이력서 공개) 2020.01.13
+https://brunch.co.kr/@hee072794/132[개발자 이력서 작성하기 (feat. 이력서 공개) 2020.01.13]
+
+https://wonny.space/writing/work/engineer-resume[개발자 이력서 작성하기 (feat. 이력서 공개) 2020.06.13]
+
+https://www.notion.so/Wonny-e64e2e55653c4d8b8b632118b36bdd72[Wonny | 데이터로 일하는 개발자]
 
 == 개발자 이력서들
 === 경력
 * https://jojoldu.github.io/[이동욱]
 
-=== 신입
-* https://jyami.tistory.com/8[Backend Developer Resume 2020.06.12]
 
 == 기타
 https://www.slideshare.net/ssuser69b63d1/ss-82150195[나의 이직 이야기]

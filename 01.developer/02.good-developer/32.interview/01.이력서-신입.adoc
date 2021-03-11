@@ -1,0 +1,9 @@
+= 이력서
+
+== 신입 소프트웨어 엔지니어의 영문 이력서 작성하기 2018.03.26
+https://sujinlee.me/entry-level-en-resume/[신입 소프트웨어 엔지니어의 영문 이력서 작성하기 2018.03.26]
+
+== 이력서들
+
+=== 신입
+* https://jyami.tistory.com/8[Backend Developer Resume 2020.06.12]
