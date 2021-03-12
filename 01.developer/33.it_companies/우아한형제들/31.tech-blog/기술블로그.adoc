@@ -1,0 +1,10 @@
+= 우아한형제들 기술블로그
+
+== 신규 포인트 시스템 전환기 #1 - 개발 단계 2018.10.12
+https://woowabros.github.io/experience/2018/10/12/new_point_story_1.html[신규 포인트 시스템 전환기 #1 - 개발 단계 2018.10.12]
+
+
+== 그 팀은 어떻게 개발하나요? (정산시스템)
+
+https://www.notion.so/5badc2ba03904832bce8fdf3dc4a407b[그 팀은 어떻게 개발하나요? (정산시스템)]
+

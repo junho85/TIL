@@ -1,11 +1,5 @@
 = 배달의민족
 
-== 채용
-https://resume.woowahan.com/jobs/view.aspx?cc=244001&jidx=105678&pidx=11198&bidx=166014[[배민서비스실\] 배민서비스 서버 개발자 모집]
-
-
-https://www.wanted.co.kr/wd/26669[[배민서비스실\] 배민서비스 서버 개발자]
-
 
 == 베트남
 

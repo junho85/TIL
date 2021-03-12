@@ -1,0 +1,29 @@
+= 쿠팡 코딩테스트
+
+== References
+
+
+
+https://skytitan.tistory.com/228[[코딩테스트\] 2020 쿠팡 하반기 코딩테스트 합격 2020.10.16]
+
+구현 문제가 거의 다. 실제 쿠팡이라는 기업에서 있을만한 상황에 대해서 프로그램으로 구현하는 그런 느낌
+
+마지막 문제가 dp를 써야되는 문제인데 잘못 풀어서 시간초과가 날 것 같았는데 다행히 3솔로도 통과가 된 듯
+
+Tech Interview로 진행
+
+
+
+https://shg9411.github.io/%EC%BF%A0%ED%8C%A1-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%9B%84%EA%B8%B0/[쿠팡 코딩테스트 후기 2020.02.14]
+
+프로그래머스에서 2시간 동안 3문제 푸는 형식으로 진행
+C, C++, Java, Swift, Python 지원 언어. Python으로 시험침
+코드 복붙 안됨
+
+1번 문제. solved.ac기준 bronze2정도. 대략 10분 소요. 특별한 알고리즘을 요구하지는 않는 문제
+2번 문제. solved.ac기준 silver1 ~ silver2 정도. 평소 조합을 만들 때 itertools모듈을 자주 이용하는데, 2번 문제는 원소의 개수가 정해져있지 않아서 직접 구현하는게 나을 것 같아 DFS를 이용하여 구현. 대략 20분 소요
+3번 문제. 작업 스케줄링 알고리즘. solved.ac 기준 gold2 이상
+일정 시간 내에서 일련의 작업들을 하면서 도출할 수 있는 최상의 결과를 출력하는 문제.
+https://riptutorial.com/dynamic-programming/example/25784/weighted-job-scheduling-algorithm
+글을 보면서 풀어봤지만 예제조차 맞추지 못함.
+
