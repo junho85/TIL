@@ -1,0 +1,31 @@
+= CyclicRotation
+
+배열 A를 K만큼 오른쪽 shift
+
+K~끝 까지 + 0~K-1까지 합치면 되겠지?
+
+----
+def solution(A, K):
+    return A[-K:] + A[0:-K]
+----
+
+그런데 small2, maximal에서 WRONG ANSWER뜸
+
+K가 배열의 길이를 초과 하는 경우 제대로 안 되는 경우 처리
+----
+def solution(A, K):
+    K = K % len(A)
+    return A[-K:] + A[0:-K]
+----
+
+empty array 케이스에서 실패. empty인 경우 자기 자신 리턴 하도록 처리
+----
+def solution(A, K):
+    if len(A) == 0:
+        return A
+
+    K = K % len(A)
+    return A[-K:] + A[0:-K]
+----
+
+성공!
