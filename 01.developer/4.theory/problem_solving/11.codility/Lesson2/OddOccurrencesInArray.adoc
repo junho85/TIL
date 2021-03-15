@@ -1,0 +1,46 @@
+= OddOccurrencesInArray
+
+N개의 정수로 이루어진 비어 있지 않은 배열 A
+배열에는 하나의 홀수가 포함되고 배열의 각 요소는
+
+----
+  A[0] = 9  A[1] = 3  A[2] = 9
+  A[3] = 3  A[4] = 9  A[5] = 7
+  A[6] = 9
+----
+
+index 0, 2의 요소는 9
+1,3은 3
+4,6은 9
+5는 7이고 짝이 없음
+
+7을 리턴한다.
+
+각 숫자의 개수를 구하고 짝수개인 것을 찾는다.
+
+----
+def solution(A):
+    count = {}
+    for a in A:
+        if a in count:
+            count[a] += 1
+        else:
+            count[a] = 1
+
+    for (k, v) in count.items():
+        if v % 2 == 1:
+            return k
+----
+
+
+Counter를 이용할 수도 있습니다.
+----
+from collections import Counter
+
+def solution(A):
+    count = Counter(A)
+
+    for (k, v) in count.items():
+        if v % 2 == 1:
+            return k
+----
