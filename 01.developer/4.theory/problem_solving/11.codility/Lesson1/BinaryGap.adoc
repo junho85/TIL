@@ -1,0 +1,50 @@
+= BinaryGap
+
+https://app.codility.com/programmers/lessons/1-iterations/binary_gap/
+
+binary gap은 2진수 숫자가 있고 양끝이 1로 둘러싸여진 연속된 0의 최대 시퀀스이다.
+
+9는 2진수로 1001이고 binary gap은 2이다. 529는 2진수로 1000010001이다. binary gap은 두개이고 각각 4와 3이다. 20은 10100이고 binary gap은 1. 15는 1111이고 binary gap이 없다. 32는 100000이고 binary gap이 없다.
+
+가장 긴 binary gap을 리턴하고 없으면 0을 리턴한다.
+
+
+https://app.codility.com/programmers/lessons/1-iterations/binary_gap/start/
+
+
+
+https://app.codility.com/c/run/trainingPZXWWF-EW3/
+
+[source,python]
+----
+def solution(N):
+    return max([len(x) for x in format(N, 'b').strip('0').split('1')])
+----
+
+* format(N, 'b')의 는 N을 2진수로 변환합니다.
+* 1 사이에 있는 0의 개수를 구하는 거라 양쪽 끝에 있는 0을 버립니다.
+* '1'로 split 하면 연속된 '0'으로 이루어진 문자열로 구성된 배열이 리턴됩니다.
+* [len(x) for x in arr]로 문자열들의 길이로 구성된 배열을 만듭니다.
+* 길이들 중 가장 큰 값을 리턴합니다.
+
+정리:
+
+
+[source,java]
+----
+public class BinaryGap {
+    public static void main(String[] args) {
+        BinaryGap b = new BinaryGap();
+        System.out.println(b.solution(32));
+    }
+
+    public int solution(int N) {
+        return Arrays.stream(Integer.toBinaryString(N).replaceAll("0*$", "")
+                .split("1"))
+                .map(String::length)
+                .max(Integer::compare)
+                .orElse(0);
+    }
+}
+----
+java에서는 가장 큰 값이 없으면 0을 리턴하도록 orElse(0)을 적어주어야 됨.
