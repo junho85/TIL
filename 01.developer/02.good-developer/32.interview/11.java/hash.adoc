@@ -1,0 +1,32 @@
+= Hash
+
+== Hash Table은 프로그래머의 기본기 2018.07.23
+
+https://www.youtube.com/watch?v=S7vni1hdsZE[Hash Table은 프로그래머의 기본기 2018.07.23]
+
+컴퓨터의 속성을 잘 이용
+
+O(1)
+
+Hash Map 만들어봐
+
+이거는 A바구니, 저거는 B바구니
+
+binning
+
+key가 바코드. value가 물체.
+
+어떤 바구니에 넣을지 결정. 수학적으로 결정.
+
+대문자 A ascii 65, B 66
+
+바구니 10개. 0~9번. 65가 오면. 나누기 10. 나머지로.
+
+오브젝트? 모든 건 숫자. 어떻게 수로 바꾸느냐가 문제.
+
+어떻게 해쉬코드를 만드느냐가 핵심.
+
+c# 모든 객체는 getHashCode
+
+
+https://ecsimsw.tistory.com/entry/Hash-Table-%EC%9B%90%EB%A6%AC%EC%99%80-%EA%B5%AC%ED%98%84[자바 깊이 알기 / Hash Table 원리와 구현 2020.07.13]
