@@ -1,0 +1,5 @@
+= JPA 프로그래밍 기본기 다지기
+
+https://ryan-han.com/post/jpa/jpa_basics/[<JPA 프로그래밍 기본기 다지기> 내용 정리 2019.04.23]
+
+https://www.youtube.com/watch?v=WfrSN9Z7MiA

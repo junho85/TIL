@@ -1,0 +1,6 @@
+= ORM
+
+== References
+* https://okky.kr/article/286812[ORM의 사실과 오해 2015.07.28]
+
+* https://okky.kr/article/59888[Hibernate vs iBatis 논쟁 정리... from Struts mailing list... 2005.08.15]

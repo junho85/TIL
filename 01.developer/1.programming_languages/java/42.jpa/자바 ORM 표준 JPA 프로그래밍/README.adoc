@@ -2,6 +2,9 @@
 
 https://www.inflearn.com/course/ORM-JPA-Basic
 
+https://github.com/holyeye/jpabook
+
+
 == References
 https://www.slideshare.net/zipkyh/ksug2015-jpa1-jpa-51213397[Ksug2015 - JPA1, JPA 소개]
 https://www.slideshare.net/zipkyh/ksug2015-jpa2-jpa[Ksug2015 - JPA2, JPA 기초와매핑]

@@ -2,6 +2,18 @@
 
 https://www.inflearn.com/course/ORM-JPA-Basic/lecture/21735?tab=curriculum
 
+우아한형제들 개발팀장
+
+mapper도입으로 좀 줄었지만 sql query한땀한땀 작성해야됨
+
+jpa. 개발자 대신 sql 생성. 객체를 저장하거나 불러옴
+
+JDBC
+MyBatis, JdbcTemplate - 소
+JPA - 트랙터
+
+SQL 한땀한땀 작성하는건 비효율적
+
 == JPA 실무에서 어려운 이유!
 - 처음 JPA나 스프링 데이터 JPA를 만나며?
 - SQL 자동화, 수십줄의 코드가 한 두줄로!

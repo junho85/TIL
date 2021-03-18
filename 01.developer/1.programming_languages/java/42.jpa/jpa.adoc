@@ -1,6 +1,6 @@
 = JPA Java Persistent API
 
-* [[JPA] JPA란 무엇인가? 2015.05.01](https://blog.woniper.net/255)
+* https://blog.woniper.net/255[[JPA\] JPA란 무엇인가? 2015.05.01]
 
 == Naming Strategy 이름 매핑 전략
 
