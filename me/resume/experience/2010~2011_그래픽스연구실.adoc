@@ -1,0 +1,4 @@
+= Graphics Lab / Daegu, Korea / Assistant / Aug 2010 ~ June 2011
+
+* Develop 3D modeling tool
+* OpenGL, python

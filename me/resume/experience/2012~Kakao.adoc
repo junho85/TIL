@@ -1,0 +1,28 @@
+= Kakao / Seongnam-si, Gyeonggi-do, Korea / Software Engineer / Jan 2012 ~ Present
+
+.2020.04~ My구독개발파트
+* 2020.04 ~ 회원, 서비스
+* 2021.01 서비스 론칭
+
+.2012.01~2020.04 메일개발파트
+* SMTP server
+** Java, SMTP
+* Event Publish-subscribe Platform. Collect email log. Tools
+** Java, Logstash, Kafka, NodeJS, HBase
+* Paid User Email Service
+** Java, Oracle
+* Register, withdraw, login message handling
+** Spring Boot, RabbitMQ
+* Bulk mail sending service
+** Spring, MySQL, Redis, jQuery, Bootstrap, DKIM
+* User domain email service
+** Java, DNS
+* Legacy Service / lmtp, imap, confirm mail, etc…
+** C, CGI, CMake, Apache, MySQL
+* Office Library System
+** Spring / MySQL / Barcode
+
+.기타
+* 2012년 Daum Communications로 입사.
+* 2014년 카카오와 합병해서 다음카카오로 사명 변경
+* 2015년 카카오로 사명변경

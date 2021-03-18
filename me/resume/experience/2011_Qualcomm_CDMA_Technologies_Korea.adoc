@@ -1,0 +1,6 @@
+= Qualcomm CDMA Technologies Korea / Seoul, Korea / Assistant / July 2011 ~ Dec 2011
+
+* Support multimedia team
+* C, JTAG, Android
+
+* 기간: 정확히 기억 안나는데 facebook에 적혀 있기로는 2011.07.04~2011.12.30

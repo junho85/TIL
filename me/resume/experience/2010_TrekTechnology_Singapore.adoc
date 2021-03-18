@@ -1,0 +1,5 @@
+== Trek Technology / Singapore / Assistant Software Engineer / Mar 2010 ~ Aug 2010
+* Develop Wifi SD Card, Wifi Camera
+* Linux, JTAG, CGI, C, lighttpd
+
+* 기간: March 1, 2010 - August 13, 2010 (맞나? 페북에 적혀 있는 것임. 확인 필요)

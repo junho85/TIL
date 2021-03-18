@@ -1,0 +1,9 @@
+== 위니텍 May 2006 ~ May 2009
+* 병역특례병
+* 연구비지원시스템 Develop Industry-Academic Research System
+** 기술: MiPlatform, Oracle, Oracle Application Server, Java Servlet, JSP, JavaScript, UNIX
+* 사내 프로젝트 관리 시스템 Project Management System
+** 기술: Ajax, JBoss, Oracle, MySQL, JSP, JavaScript, XML, HTML, Linux
+
+* 기간: May 1, 2006 - May 22, 2009 (맞나? 페북에 적혀 있는 것임. 확인 필요)
+* 직책: 팀원?
