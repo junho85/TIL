@@ -1,0 +1,17 @@
+= IBM Cloud를 이용한 무료 마인크래프트 서버 만들기
+
+https://www.inflearn.com/course/IBM-%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8-%EC%84%9C%EB%B2%84
+
+IBM Kubernetes Service(IKS)
+
+== IBM 무료 클라우드 서비스에 가입하기
+https://www.inflearn.com/course/IBM-%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8-%EC%84%9C%EB%B2%84/lecture/36316
+
+https://cloud.ibm.com/
+
+== 마인크래프트 서버의 게임 데이터를 백업하기
+https://www.inflearn.com/course/IBM-%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8-%EC%84%9C%EB%B2%84/lecture/36846
+
+== 마인크래프트 서버의 게임 데이터를 백업하기
+https://www.inflearn.com/course/IBM-%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8-%EC%84%9C%EB%B2%84/lecture/36847
+
