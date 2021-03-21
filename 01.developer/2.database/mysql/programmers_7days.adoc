@@ -1,0 +1,153 @@
+= Programmers 7 Days
+
+* https://programmers.co.kr/events/7day-sql
+
+ANIMAL_INS 동물 보호소에 들어온 동물의 정볼르 담은 테이블
+----
+ANIMAL_ID 아이디
+ANIMAL_TYPE 생물 종
+DATETIME 보호 시작일
+INTAKE_CONDITION  보호 시작 시 상태
+NAME 이름
+SEX_UPON_INTAKE 성별 및 중성화 여부
+----
+
+ANIMAL_OUTS 동물 보호소에서 입양 보낸 동물의 정보를 담은 테이블
+
+----
+ANIMAL_ID 아이디
+ANIMAL_TYPE 생물 종
+DATETIME 입양일
+NAME 이름
+SEX_UPON_OUTCOME 성별 및 중성화 여부
+----
+
+== Day1
+https://programmers.co.kr/learn/courses/30/lessons/59034[모든 레코드 조회하기]
+
+[source,sql]
+----
+SELECT * from animal_ins
+----
+
+https://programmers.co.kr/learn/courses/30/lessons/59035[역순 정렬하기]
+
+[source,sql]
+----
+SELECT name, datetime from animal_ins order by animal_id desc;
+----
+
+== Day2
+https://programmers.co.kr/learn/courses/30/lessons/59036[아픈 동물 찾기]
+
+[source,sql]
+----
+SELECT animal_id, name
+FROM ANIMAL_INS
+WHERE intake_condition = 'Sick'
+order by animal_id
+----
+
+https://programmers.co.kr/learn/courses/30/lessons/59037[어린 동물 찾기]
+
+[source,sql]
+----
+SELECT animal_id, name
+FROM ANIMAL_INS
+WHERE intake_condition <> 'Aged'
+order by animal_id
+----
+
+== Day3
+
+https://programmers.co.kr/learn/courses/30/lessons/59038[최솟값 구하기]
+
+[source,sql]
+----
+SELECT datetime
+FROM ANIMAL_INS
+order by datetime
+limit 1
+----
+
+https://programmers.co.kr/learn/courses/30/lessons/59039[이름이 없는 동물의 아이디]
+
+[source,sql]
+----
+SELECT animal_id
+FROM ANIMAL_INS
+WHERE name is null
+order by animal_id
+----
+
+== Day4
+
+https://programmers.co.kr/learn/courses/30/lessons/59040[고양이와 개는 몇 마리 있을까]
+
+[source,sql]
+----
+SELECT animal_type, count(*)
+FROM ANIMAL_INS
+group by animal_type
+order by animal_type
+----
+
+https://programmers.co.kr/learn/courses/30/lessons/59041[동명 동물 수 찾기]
+
+[source,sql]
+----
+SELECT name, count(*) count
+FROM ANIMAL_INS
+where name is not null
+group by name
+having count >= 2
+order by name
+----
+
+
+== Day5
+
+
+https://programmers.co.kr/learn/courses/30/lessons/59042[없어진 기록 찾기]
+
+천재지변으로 인해 일부 데이터가 유실
+
+입양을 간 기록은 있는데, 보호소에 들어온 기록이 없는 동물의 ID와 이름을 ID 순으로 조회
+
+left join을 하고 animal_id 가 null 인 것 찾기
+
+[source,sql]
+----
+select animal_outs.animal_id, animal_outs.name
+from animal_outs left join animal_ins
+on animal_outs.animal_id = animal_ins.animal_id
+where animal_ins.animal_id is null
+----
+
+
+https://programmers.co.kr/learn/courses/30/lessons/59043[있었는데요 없었습니다]
+
+관리자의 실수로 일부 동물의 입양일이 잘못 입력되었음. 보호 시작일보다 입양일이 더 빠른 동물의 아이디와 이름을 조회. 보호 시작일이 빠른 순으로 조회
+
+[source,sql]
+----
+select animal_outs.animal_id, animal_outs.name
+from animal_outs join animal_ins
+on animal_outs.animal_id = animal_ins.animal_id
+where animal_ins.datetime > animal_outs.datetime
+order by animal_ins.datetime
+----
+
+
+== Day6
+
+https://programmers.co.kr/learn/courses/30/lessons/59044[오랜 기간 보호한 동물(1)]
+
+아직 입양을 못 간 동물 중, 가장 오래 보호소에 있었던 동물 3마리의 이름과 보호 시작일을 조회
+정렬: 보호 시작일 순
+
+----
+
+----
+
+== Day7
