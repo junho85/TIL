@@ -1,0 +1,95 @@
+= SELECT
+
+== 모든 레코드 조회하기
+https://programmers.co.kr/learn/courses/30/lessons/59034
+
+말 그대로 모든 레코드 조회하기입니다.
+
+----
+SELECT * FROM animal_ins
+----
+
+== 역순 정렬하기
+
+https://programmers.co.kr/learn/courses/30/lessons/59035
+
+동물의 이름과 보호 시작일을 조회하는데 ANIMAL_ID 역순으로 정렬합니다.
+
+----
+SELECT name, datetime
+FROM animal_ins
+order by animal_id desc
+----
+
+이름과 보호 시작일은 각각 name, datetime입니다. order by animal_id로 정렬하고 desc를 붙여서 역순으로 정렬합니다.
+
+== 아픈 동물 찾기
+
+https://programmers.co.kr/learn/courses/30/lessons/59036
+
+아픈 동물을 찾고 아이디와 이름을 조회합니다. 정렬은 아이디 순입니다.
+
+
+----
+SELECT animal_id, name
+FROM ANIMAL_INS
+WHERE intake_condition = 'Sick'
+order by animal_id
+----
+
+intake_condition이 'Sick'인 것을 찾으면 됩니다.
+
+== 어린 동물 찾기
+
+https://programmers.co.kr/learn/courses/30/lessons/59037
+
+어린 동물은 따로 구분은 없고 다만 Aged(나이 든) 동물이 있으니 나이 든 동물이 아닌 동물을 찾습니다. 아이디와 이름을 조회하고 아이디 순으로 정렬합니다.
+
+----
+SELECT animal_id, name
+FROM ANIMAL_INS
+WHERE intake_condition <> 'Aged'
+order by animal_id
+----
+
+== 동물의 아이디와 이름
+
+https://programmers.co.kr/learn/courses/30/lessons/59403
+
+동물의 아이디와 이름을 ANIMAL_ID순으로 조회합니다.
+
+----
+SELECT animal_id, name
+FROM animal_ins
+order by animal_id
+----
+
+== 여러 기준으로 정렬하기
+
+https://programmers.co.kr/learn/courses/30/lessons/59404
+
+아이디와 이름, 보호 시작일을 이름순으로 조회합니다. 단 이름이 같은 동물 중에서는 보호를 나중에 시작한 동물을 먼저 보여줍니다.
+
+----
+SELECT animal_id, name, datetime
+FROM animal_ins
+order by name, datetime desc
+----
+
+order by 뒤에 정렬 기준 순서대로 적습니다. 이름순으로 먼저 정렬하고 datetime에는 desc를 넣어서 역순 정렬을 해서 보흐를 나중에 시작한 동물이 먼저 보이도록 합니다.
+
+== 상위 n개 레코드
+
+https://programmers.co.kr/learn/courses/30/lessons/59405
+
+----
+SELECT name
+FROM animal_ins
+order by datetime
+limit 1
+----
+
+
+== 정리
+https://junho85.pe.kr/1865[Programmers - SELECT 문제들 풀어보기 2021.03.21]
+
