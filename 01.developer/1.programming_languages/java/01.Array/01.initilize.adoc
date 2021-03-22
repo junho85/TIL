@@ -1,0 +1,9 @@
+= Initialize Array
+
+[source,java]
+----
+List<String> list = Arrays.asList("hello", "world");
+----
+
+== References
+* https://www.baeldung.com/java-initialize-array[Initializing Arrays in Java]
