@@ -1,6 +1,13 @@
 = CyclicRotation
 
-배열 A를 K만큼 오른쪽 shift
+https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/start/
+
+배열 A를 K만큼 오른쪽 shift하는 문제입니다.
+
+A = [3, 8, 9, 7, 6]
+K = 6
+
+결과는 [6, 3, 8, 9, 7] 입니다.
 
 K~끝 까지 + 0~K-1까지 합치면 되겠지?
 

@@ -1,5 +1,7 @@
 = OddOccurrencesInArray
 
+https://app.codility.com/programmers/lessons/2-arrays/odd_occurrences_in_array/
+
 N개의 정수로 이루어진 비어 있지 않은 배열 A
 배열에는 하나의 홀수가 포함되고 배열의 각 요소는
 
