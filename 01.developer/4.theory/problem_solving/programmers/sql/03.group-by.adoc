@@ -1,0 +1,84 @@
+= GROUP BY
+
+https://programmers.co.kr/learn/courses/30/lessons/59040
+
+== 고양이와 개는 몇 마리 있을까
+
+https://programmers.co.kr/learn/courses/30/lessons/59040
+
+----
+SELECT animal_type, count(*)
+FROM ANIMAL_INS
+group by animal_type
+order by animal_type
+----
+
+== 동명 동물 수 찾기
+
+https://programmers.co.kr/learn/courses/30/lessons/59041
+
+----
+SELECT name, count(*) count
+FROM ANIMAL_INS
+where name is not null
+group by name
+having count >= 2
+order by name
+----
+
+== 입양 시각 구하기(1)
+
+https://programmers.co.kr/learn/courses/30/lessons/59412
+
+----
+select hour(datetime) hour, count(*) count
+from ANIMAL_OUTS
+where hour(datetime) >= 9 and hour(datetime) < 20
+group by hour
+order by hour
+----
+
+== 입양 시각 구하기(2)
+
+https://programmers.co.kr/learn/courses/30/lessons/59413
+
+0시 부터 23시 까지 count가 0이더라도 나오도록 해야합니다.
+
+0~23이 나오는 가상의 테이블을 만들고 animal_outs와 hour로 join을 걸어 줍니다.
+
+----
+select hour, count(a.animal_id)
+from (SELECT 0 AS hour
+         UNION ALL SELECT 1
+         UNION ALL SELECT 2
+         UNION ALL SELECT 3
+         UNION ALL SELECT 4
+         UNION ALL SELECT 5
+         UNION ALL SELECT 6
+         UNION ALL SELECT 7
+         UNION ALL SELECT 8
+         UNION ALL SELECT 9
+         UNION ALL SELECT 10
+         UNION ALL SELECT 11
+         UNION ALL SELECT 12
+         UNION ALL SELECT 13
+         UNION ALL SELECT 14
+         UNION ALL SELECT 15
+         UNION ALL SELECT 16
+         UNION ALL SELECT 17
+         UNION ALL SELECT 18
+         UNION ALL SELECT 19
+         UNION ALL SELECT 20
+         UNION ALL SELECT 21
+         UNION ALL SELECT 22
+         UNION ALL SELECT 23
+) h left join ANIMAL_OUTS a on h.hour = hour(a.datetime)
+group by hour
+order by hour
+----
+
+TODO
+
+with recursive를 이용하는 방법도 있는데 h2에서는 안되는 거 같아서 보류. mysql에서 해봐야겠다.
+
+변수 사용 방법도 있다는데 이 역시 h2에서 제대로 안되는건지 모르겠습니다. mysql에서 해봐야 겠습니다.
