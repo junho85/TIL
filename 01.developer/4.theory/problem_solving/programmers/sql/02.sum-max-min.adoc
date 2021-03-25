@@ -87,3 +87,6 @@ from (
          where name is not null
          group by name) animal;
 ----
+
+== 정리
+* https://junho85.pe.kr/1868[Programmers - SQL - SUM, MAX, MIN 문제들 풀어보기 2021.03.24]

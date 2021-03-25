@@ -27,14 +27,17 @@ https://programmers.co.kr/learn/courses/30/lessons/59034[모든 레코드 조회
 
 [source,sql]
 ----
-SELECT * from animal_ins
+SELECT * FROM animal_ins
 ----
 
 https://programmers.co.kr/learn/courses/30/lessons/59035[역순 정렬하기]
 
 [source,sql]
 ----
-SELECT name, datetime from animal_ins order by animal_id desc;
+SELECT name, datetime
+FROM animal_ins
+order by animal_id desc
+;
 ----
 
 == Day2

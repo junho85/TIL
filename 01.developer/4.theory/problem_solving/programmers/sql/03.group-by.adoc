@@ -13,6 +13,14 @@ group by animal_type
 order by animal_type
 ----
 
+----
+SELECT animal_type, count(*)
+FROM ANIMAL_INS
+where animal_type in ('Cat', 'Dog')
+group by animal_type
+order by animal_type
+----
+
 == 동명 동물 수 찾기
 
 https://programmers.co.kr/learn/courses/30/lessons/59041
@@ -34,6 +42,15 @@ https://programmers.co.kr/learn/courses/30/lessons/59412
 select hour(datetime) hour, count(*) count
 from ANIMAL_OUTS
 where hour(datetime) >= 9 and hour(datetime) < 20
+group by hour
+order by hour
+----
+
+----
+select hour(datetime) hour, count(*) count
+from ANIMAL_OUTS
+where time(datetime) >= '09:00'
+and   time(datetime) <= '19:59'
 group by hour
 order by hour
 ----
@@ -82,3 +99,7 @@ TODO
 with recursive를 이용하는 방법도 있는데 h2에서는 안되는 거 같아서 보류. mysql에서 해봐야겠다.
 
 변수 사용 방법도 있다는데 이 역시 h2에서 제대로 안되는건지 모르겠습니다. mysql에서 해봐야 겠습니다.
+
+
+== 정리
+* https://junho85.pe.kr/1869[Programmers - SQL - GROUP BY 문제들 풀어보기 2021.03.25]
