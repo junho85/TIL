@@ -1,0 +1,32 @@
+= Versioning
+
+
+== 유의적 버전. Sementic Versioning
+
+https://semver.org/lang/ko/
+
+
+https://velog.io/@iamjoo/Semantic-Versioning%EC%9D%B4%EB%9E%80[Semantic Versioning이란? 2020.06.10]
+
+Nodejs, npm모두 Semantic Versioning을 따르고 있음
+major, minor, patch
+
+
+
+
+
+== References
+https://blog.sonim1.com/243[다양한 소프트웨어 버전 명명 (Software versioning) 2020.04.03]
+
+CalVer (날짜 기반 Versioning)
+Ubuntu 4.10, 19.04
+Windows 95, 2000
+
+NumVersion (숫자 기반 버저닝)
+TeX
+
+마지막 즈음에
+{year}.{weeknumber}.{patch}
+
+
+https://spoqa.github.io/2012/12/18/semantic-versioning.html[Semantic Versioning 소개 2012.12.18]
