@@ -1,0 +1,3 @@
+= perl - redis
+
+https://metacpan.org/pod/Redis
