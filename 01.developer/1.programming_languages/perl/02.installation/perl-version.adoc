@@ -1,0 +1,6 @@
+= perl versions
+
+== 5.22.0
+https://dev.perl.org/perl5/news/2015/perl-5.22.0.html
+
+https://metacpan.org/release/RJBS/perl-5.22.0
