@@ -1,4 +1,4 @@
-= 라벨프린터
+= 부라더 라벨프린터
 
 == 라벨터치 1100Plus
 
@@ -16,8 +16,20 @@ TZ-N231
 
 https://coupa.ng/bomCvV
 
+2021.03.03 75,840원
 2020.07.08 78,090원 (왜이리 올랐어)
 2020.02.06 기준 67,000원
+
+== 부라더 블루투스 라벨프린터 P-TOUCH CUBE PT-P710BT
+
+https://coupa.ng/bSK3QO
+
+image::image-2021-03-03-19-47-42-504.png[]
+
+/Users/junho85/WebstormProjects/TIL/life/17.appliance
+
+2021.03.03 149,560원
+
 
 == P-Touch 2700
 
