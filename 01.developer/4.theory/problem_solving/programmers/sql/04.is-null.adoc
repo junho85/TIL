@@ -42,3 +42,6 @@ select animal_type,
 from animal_ins
 order by animal_id
 ----
+
+== 정리
+* https://junho85.pe.kr/1870[Programmers - SQL - IS NULL 문제들 풀어보기 2019.03.26]

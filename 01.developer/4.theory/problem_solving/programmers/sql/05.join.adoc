@@ -1,0 +1,64 @@
+= JOIN
+
+https://programmers.co.kr/learn/courses/30/parts/17046
+
+== 없어진 기록 찾기
+
+https://programmers.co.kr/learn/courses/30/lessons/59042
+
+----
+select animal_outs.animal_id, animal_outs.name
+from animal_outs left join animal_ins
+on animal_outs.animal_id = animal_ins.animal_id
+where animal_ins.animal_id is null
+----
+
+== 있었는데요 없었습니다
+
+https://programmers.co.kr/learn/courses/30/lessons/59043
+
+관리자의 실수로 일부 동물의 입양일이 잘못 입력되었다. 보호 시작일보다 입양일이 더 빠른 동물의 아이디와 이름을 조회. 보호 시작일이 빠른 순으로 정렬
+
+----
+select animal_outs.animal_id, animal_outs.name
+from animal_outs join animal_ins
+on animal_outs.animal_id = animal_ins.animal_id
+where animal_ins.datetime > animal_outs.datetime
+order by animal_ins.datetime
+----
+
+== 오랜 기간 보호한 동물(1)
+
+https://programmers.co.kr/learn/courses/30/lessons/59044
+
+아직 입양을 못 간 동물 중, 가장 오래 보호소에 있었떤 동물 3마리의 이름과 보호 시작일을 조회
+보호 시작일 순으로 조회
+
+----
+select animal_ins.name, animal_ins.datetime
+from animal_ins left join animal_outs
+on animal_ins.animal_id = animal_outs.animal_id
+where animal_outs.animal_id is null
+order by datetime
+limit 3
+----
+
+== 보호소에서 중성화한 동물
+
+https://programmers.co.kr/learn/courses/30/lessons/59045
+
+보호소에 들어올 당시에는 중성화 되지 않고 나갈 떄 중성화 된 동물
+아이디, 생물 종, 이름 조회
+아이디 순
+
+----
+select animal_ins.animal_id, animal_ins.animal_type, animal_ins.name
+from animal_outs join animal_ins
+on animal_ins.animal_id = animal_outs.animal_id
+where animal_ins.sex_upon_intake in ('Intact Male', 'Intact Female')
+and animal_outs.sex_upon_outcome in ('Neutered Male', 'Spayed Female')
+order by animal_id
+----
+
+== 정리
+* https://junho85.pe.kr/1871[Programmers - SQL - JOIN 문제들 풀어보기 2021.03.27]
