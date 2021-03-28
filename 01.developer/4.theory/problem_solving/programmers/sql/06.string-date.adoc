@@ -1,0 +1,72 @@
+= String, Date
+
+https://programmers.co.kr/learn/courses/30/parts/17047
+
+== 루시와 엘라 찾기
+
+https://programmers.co.kr/learn/courses/30/lessons/59046
+
+동물 보호소에 들어온 동물 중 이름이 Lucy, Ella, Pickle, Rogan, Sabrina, Mitty인 동물의 아이디와 이름, 성별 및 중성화 여부를 조회하는 SQL 문을 작성
+
+----
+select animal_id, name, sex_upon_intake
+from animal_ins
+where name in ('Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty')
+----
+
+== 이름에 el이 들어가는 동물 찾기
+
+https://programmers.co.kr/learn/courses/30/lessons/59047
+
+el이 들어가고 Dog
+like는 기본적으로 대소문자를 구분하지 않음
+이름순 정렬
+
+----
+select animal_id, name
+from animal_ins
+where animal_type = 'Dog'
+and name like '%el%'
+order by name
+----
+
+== 중성화 여부 파악하기
+
+https://programmers.co.kr/learn/courses/30/lessons/59409
+
+----
+select animal_id, name, if (`sex_upon_intake` REGEXP ('Neutered|Spayed'), 'O', 'X')
+from animal_ins
+order by animal_id
+----
+
+== 오랜 기간 보호한 동물(2)
+
+https://programmers.co.kr/learn/courses/30/lessons/59411
+
+입양을 간 동물 중, 보호 기간이 가장 길었던 동물 두 마리의
+아이디와 이름
+보호 기간이 긴 순으로 정렬
+
+----
+select animal_id, name
+from (
+         select o.animal_id, o.name, o.datetime - i.datetime term
+         from animal_outs o
+                  join animal_ins i on o.animal_id = i.animal_id
+     ) t
+order by term desc
+limit 2
+----
+
+== DATETIME에서 DATE로 형 변환
+
+https://programmers.co.kr/learn/courses/30/lessons/59414
+
+----
+select animal_id, name, date_format(datetime, '%Y-%m-%d') 날짜
+from animal_ins
+----
+
+== 정리
+* https://junho85.pe.kr/1872[Programmers - SQL - String, Date 문제들 풀어보기 2021.03.28]

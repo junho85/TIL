@@ -7,13 +7,6 @@
 String연산을 많이 하는 경우 StringBuilder > StringBuffer > String 순으로 속도 차이가 발생.
 메모리 사용은 String은 많이 사용하고 StringBuilder, StringBuffer는 같다고 보면 됨.
 
-== java.lang.String
-
-https://www.tutorialspoint.com/java/lang/java_lang_string.htm
-
-=== java7 String
-https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
-
 
 == References
 * https://ifuwanna.tistory.com/221[[Java\] String, StringBuffer, StringBuilder 차이 및 장단점 2020.01.28]
