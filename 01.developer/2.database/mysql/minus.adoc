@@ -1,0 +1,26 @@
+= mysql - minus
+
+오라클에는 두 select문의 결과의 차이를 구할 수 있는 MINUS 구문이 있습니다.
+
+예를 들어 member테이블에서 2021-01-10부터 생성된 데이터 중 status가 ACTIVE인 id들을 빼는 방법입니다.
+----
+SELECT id FROM member WHERE created_at >= '2021-01-10'
+MINUS
+SELECT id FROM member WHERE status = 'ACTIVE'
+----
+사실 이건 where조건으로 간단히 처리 할 수 있는거라 좀 더 적절한 예제로 변경 필요.
+
+== NOT IN
+
+== NOT EXISTS
+
+== LEFT OUTER JOIN
+
+== 성능
+일반적으로 LEFT OUTER JOIN > NOT EXISTS > NOT IN 순으로 성능이 좋다고 합니다.
+
+성능 테스트도 해 보면 좋겠음.
+
+== References
+* https://sarc.io/index.php/mariadb/970-mysql-minus[MySQL에서 MINUS 구현]
+* http://intomysql.blogspot.com/2011/01/mysql-minus-intersect.html[MySQL에서 MINUS와 INTERSECT 집합 연산]
