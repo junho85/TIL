@@ -1,6 +1,14 @@
 = Deview 2017
 
 == Day1, 2-2. 그런 REST API로 괜찮은가
+
+https://deview.kr/2017/schedule/212
+
+https://tv.naver.com/v/2292653
+
+https://slides.com/eungjun/rest[rest]
+
+
 https://www.youtube.com/watch?v=RP_f5dMoHFc[Day1, 2-2. 그런 REST API로 괜찮은가 2017.11.20]
 
 REpresentational State Transfer
@@ -391,3 +399,10 @@ Media type을 IANA에 등록하기
 * REST를 따르겠다면, Self-descriptive와 HATEOAS를 만족시켜야한다.
 ** Self-descriptive는 custom media type이나 profile link relation 등올 만족시킬 수 있다.
 ** HATEOAS는 ...
+
+=== 발표 내용 정리
+* https://velog.io/@kjh03160/%EA%B7%B8%EB%9F%B0-REST-API%EB%A1%9C-%EA%B4%9C%EC%B0%AE%EC%9D%80%EA%B0%80[그런 REST API로 괜찮은가? 2021.02.21]
+* https://blog.naver.com/gofkdvjvl/221824806443[[NAVER D2 그런 REST API로 괜찮은가\] 정리 2020.02.25]
+* https://sookiwi.com/posts/tech/2018/11/11/Is-it-okay-with-such-REST-APIs/[그런 REST API로 괜찮은가 정리 2018.11.11]
+* https://steemit.com/rest/@loowin/rest-api[2018.02.05]
+* https://roo-26.tistory.com/14[그런 ' REST API ' 로 괜찮은가 2019.08.20]
