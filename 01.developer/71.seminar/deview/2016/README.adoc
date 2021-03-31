@@ -1,0 +1,267 @@
+= Deview 2016
+
+== rest에서 graph ql과 relay로 갈아타기 이정우
+
+https://deview.kr/2016/schedule#session/149[REST에서 GraphQL과 Relay로 갈아타기]
+
+https://www.slideshare.net/deview/112rest-graph-ql-relay[[112\]rest에서 graph ql과 relay로 갈아타기 이정우]
+
+.목차
+1. REST API - Status Quo & Limitations
+2. GraphQL - How it replaces REST
+3. Relay - Data fetching and management
+
+1. REST API 소개
+
+웹 개발 아키텍처
+리소스를 URI로 표현
+GET, POST, PUT, DELET 활용
+
+jsonapi
+https://jsonapi.org/format/
+
+application/vnd.api+json
+
+https://www.iana.org/assignments/media-types/application/vnd.api+json
+
+
+REST API 한계
+
+필드 제한 (Sparse Fieldset)
+
+
+Side Effect
+
+POST /payments/를 하니 유저 1의 credit이 변경되었다.
+그런데 클라이언트에서 이미 유저 1를 불러왔으며 credit값이 아직 동기화 되지 않았다.
+- POST Response에 만들어진 payment와 같이 변경된 유저도 가져오기?
+- GET /users/1/ 로 한번 더 가져오기?
+
+Query Hell
+실제사례:
+- 요청의 저자, 예약, 예약한 에디터, 교정본, 교정본 에디터, 그리고 교정본 리뷰를 가져오기
+- 더불어 각자 필드마다 가져올 수 있는 필드 제한하기
+
+GET /drafts/?
+include=author,reservation.editor,revision.editor,revision.review&fields[draft]=...
+
+라이브러리 부족
+* RESTful과 JSON API는 프로토콜이지 쓸만한 라이브러리가 없다.
+* 결국 직접 구현해서 사용... jsonapi.js
+* 서버의 모든 endpoint에서 JSON API에 맞게 답변을 해줘야한다.
+* 클라이언트에서도 데이터를 받아서 Store에 보관해야한다.
+* 비즈니스 로직 짜기도 바쁜데 라이브러리 관리까지??
+
+
+React - JS와 HTML합쳐버림, Graphql - REST 대체
+
+2. GraphQL 소개
+
+쿼리 언어
+
+----
+{
+  presentation {
+    id
+    title
+    content
+...
+----
+
+
+쿼리 언어
+- Arguments
+- Alias
+- Fragment
+- Variables
+
+----
+{
+  posts(category:...
+----
+
+Different Request
+
+REST의 URI는 GraphQL 쿼리로 좀 더 간결하게 표현 가능
+
+2. REST와 GraphQL 비교하기
+
+Different Methods
+
+GET -> query
+POST -> mutation {
+  createUser(...)
+DELETE ->
+----
+mutation {
+  deleteUser(userId: "1") {
+    success
+  }
+}
+
+----
+
+Schema Definition
+
+----
+import { GraphQLSchema, ...
+...
+----
+
+
+GraphQLObjectType
+
+----
+const query = new GraphQLObjectType({
+  name: 'Query',
+...
+----
+
+GraphiQL
+자동 문서화와 Type Inspection...
+
+React (2013), GraphQL (2015), Relay (2015)
+
+Relay가 GraphQL에서 확장하는 컨셉
+
+...
+
+Node
+Resource에 대한 단일 Interface
+Data management면에서 유리함.
+
+----
+query {
+  node(id: "1") {
+    id
+    username
+    age
+  }
+}
+----
+
+3. Relay 소개
+Node
+하지만 String만으로는 어떤 Resource인지 알기 힘들어서 type과 id가 합쳐진 GlobalId를 사용
+
+----
+query {
+  node(id: "dXNlcjox") {
+    ... on User {
+      id
+      username
+      age
+    }
+  }
+}
+----
+
+----
+import {
+  fromGlobalId,
+  toGlobalId,
+} from 'graphql-relay';
+
+const globalId = toGlobalId('user', 1);
+// globalId = 'dXNlcjox'
+const { type, id } = fromGlobalId('dXNlcjox')
+// type = 'user', id = 1
+----
+
+...
+
+Connection
+다수의 Node를 가져올때 사용
+pagination에 특화되있음
+
+
+----
+query {
+  connections {
+    users(first: 10) {
+      pageInfo {
+        hasNextPage
+      }
+      edges {
+        cursor
+        node {
+          id
+          username
+        }
+      }
+    }
+  }
+}
+----
+
+
+----
+import {
+  connectionDefinitions,
+  connectionArgs,
+} from 'graphql-relay';
+
+const {
+  connectionType: userConnectionType,
+} = connectionDefinitions({ nodeType: userType });
+
+const connectionsType = new GraphQLObjectType({
+  name: 'Connections',
+  fields: {
+    users: {
+      type: userConnectionType,
+      args: connectionArgs,
+      resolve: (root, args) => {
+        const { after, before, first, last } = args;
+        // after, before, first, last를 이용해 DB에서 유저를 가져오기
+     ...
+----
+
+데이터 의존성과 React 컴포넌트가 공존한다
+
+EditorList
+  EditorCard
+    EditorInfo
+    EditorStat
+
+...
+
+3. Mutation in Relay
+
+Mutation config
+
+Mutation의 Side Effect를 적용시키는 방식을 Config에 명시하면 클라이언트에 적절하게 반영
+
+예제)
+이미 불러온 Node의 값을 업데이트
+기존에 불러온 Connection에 추가/제거
+
+...
+
+3. REST에서 GraphQL Relay로 갈아타기
+
+Summary
+GET, POST, PUT, DELETE으로 모든 것을 해결해야 함
+-> 데이터 가져올땐 query (node, connections, 등) 사용, 변경할땐 mutation 사용
+
+기본값으로 어떤걸 불러올지 정하기가 애매함
+-> 항상 데이터 의존성을 명시
+
+필드 타입이 정해져 있지 않아서 따로 문서화를 하지 않으면 협업이 힘듬
+-> GraphQL은 타입이 정해져 있고 프로토콜 단에서 확인할 수 있음 (Int...)
+
+데이터 의존성을 URI에 명세하려면 복잡해진다.
+-> 데이터 의존성을 명세한 query / mutation를 보낸다
+
+데이터 변경사항을 클라이언트에서 처리하는 방식이 제각각
+-> Mutation Config만 잘 써주면 알아서 데이터 변경사항을 처리한다
+
+Aftermath
+
+Data management를 React와 묶어줘서 생산성과 개발 속도가 크게 향상
+Query build + Cache로 인하여 성능 향상
+
+지금 존재하는 온라인 문서만으로는 Relay의 진입장벽은 꽤 높은 편
+현재 Relay는 실시간 지원이 미비...
+현재 GraphQL Relay만으론 안정적인 서비스 구현이 가능... 하지만 앚기 실험적인 생태계
+
