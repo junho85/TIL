@@ -1,0 +1,180 @@
+= OOAD (Object-Oriented Analysis and Design) 객체 지향 분석과 설계
+
+:hardbreaks-option:
+
+[cols="1"]
+|===
+|Car
+|engine
+windows
+wheels
+handle
+|startEngine()
+stopEngine()
+accelerate()
+break()
+|===
+
+== 정리
+* https://junho85.pe.kr/1878[OOAD (Object-oriented analysis and design) 2021.04.03]
+
+== References
+http://egloos.zum.com/nom3203/v/2502870[Object-Oriented Analysis and Design(OOAD) 2011-02-19]
+
+객체 지향 분석과 설계
+
+OOAD란 소프트웨어를 개발하는 하나의 방법론. 모든 소프트웨어 시스템의 주요 기본요소를 사물을 가리키는 객체와 그 객체들을 하나의 집합으로 묶은 클래스로 구성하는 객체지향적인 분석과 설계 방법
+
+객체지향적. 현실세계에 싫재하는 사물, 즉 객체들을 지향한다는 것
+자바는 OOP(객체지향적 프로그램). 객체들을 프로그램에 응용하여 객체지향적인 시스템을 설계한다는 의미. 예를 들어 쇼핑몰을 구축한다고 가정하면 여기서의 객체는 '고객,상품,결제계좌 등'
+
+객체지향적이라는 것은 바로 이러한 실제 생활들을 보다 편리하고 빠르게 이용할 수 있게하는 프로그램을 현실생활에 기초해서 설계한다는 개념. 객체지향이란 개념은 이러한 실용성때문에 최근에 급속히 확장해 가고있다.
+
+모델이란 하나의 시스템을 개발하는데 있어 현실을 추상화 시켜놓은 청사진. 예를 들면 건물을 짓기 위한 총체적인 설계도와 사용자의 요구사항을 반영한 추상적인 개념을 말한다.
+건축공학의 전유물이 아니고 최근에는 소프트웨어 공학(Software Engineering)에서 많이 사용된다. 즉 기업에서 필요한 거대한 정보시스템 모델을 만들어 나가는 것이 모델링.
+
+모델링이란 이러한 정보시스템 설계모델을 실제 현실세계에 맞게 구현하는 작업.
+모델이 필요한 이유는 미리 모델을 만들어 보면서 앞으로 개발하려는 시스템을 좀 더 구체적이고도 명확하게 인식 할 수 있기 때문.
+
+모델링의 목적
+
+모델은 시스템을 현재 또는 원하는 모습으로 가시화하도록 도움을 준다.
+모델은 시스템의 구조와 행동을 명세화 할 수 있게 해준다.
+모델은 시스템을 구축하는 틀을 제공
+모델은 우리가 결정한 것을 문서화한다
+
+모델링 원리
+
+생성할 모델을 선택하는데 따라 문제를 공략하는 방법과 해결책을 실현하는 방법에 큰 영향을 준다
+모든 모델은 다양한 수준의 정밀도를 표현할 수 있다.
+가장 훌륭한 모델은 현실을 반영한다.
+하나의 모델로는 충분치 않다. 특수한 모델은 여러 개의 모델을 선정, 그 중에 하나를 선택해 모델링 해야 한다.
+
+모델링의 종류는?
+
+객체지향 모델링: 최근 각광 받고 있는 개발 방법론으로 객체와 클래스가 주요 요소. OOAD가 그 방법론을 말한다.
+알고리즘 모델링: 기존의 소프트웨어 개발 방법론으로 함수가 주요 요소.
+
+소프트웨어 개발단계
+1. 고객 요구 분석
+사용자 요구 분석. Customizing이라는 과정을 통해 고객의 요구사항을 빠짐없이 기록하고 분석하는 업무를 장기간에 걸쳐 실행하여, 보다 구체적인 고객요구사항을 추출해낸다. 프로젝트 성공을 결정하는 가장 중요한 작업으로 전체 프로젝트의 성패를 결정짓는 중요한 작업.
+2. OOAD 통한 디자인 - 시스템에 대한 전체적인 분석과 설계를 통해 모델을 만든다.
+3. Attribute 추출 - 객체와 변수를 추출한다.
+4. Operation 추출 - 메소드를 추출한다.
+5. 개발시작(코딩) - 실제 코드를 작성한다.
+6. 모듈 별 통합 검증 - 각 단계별 통합 검증과 테스트를 통해 코드를 완성해 간다.
+7. 고객 확인 검증 - 사용자의 요구사항과 부합하는지를 사용자 테스트를 통해 검증
+8. 완료 - 시스템 구축 완료
+9. 유지보수 - 시스템을 안정적으로 유지하고 에러사항이나 문제발생시 신속하게 고객에게 대응하는 과정
+
+4. Object Orientation의 개요
+가. 시스템 설계를 위한 기술
+나. 현실 세계에 존재하는 사물을 프로그램 엄언어를 이용해 Application 설계를 가능하게하는 시스템 설계를 말한다.
+다. 시스템의 역할
+- 프로그램은 객체에게 무슨 작업을 할 것인가를 질의
+- Object Attribute: 어떠한 객체인가를 아는 특성을 말한다.
+- Object Operations: 객체가 알고 있는 무엇을 실행하는 것
+
+5. Object Attributes와 Operation
+
+가. Attribute
+- Property 즉 '속성'
+- Object나 Data가 갖고 있는 특성을 추출해 사용
+- 주로 명사형으로 표현
+- 예를 들자면, "자동차라는 클래스에서 엔진 휠 핸들 등과 같은 객체"
+- 명사형으로 표현
+- 변수나 상수데이터
+
+나. Operation
+- Object에 Action을 부여하여 Object로 하여금 어떠한 행동을 취하게 하는 역할. 주로 Class File에서는 Method
+- 다시 말하자면 "객체가 무엇인가를 실행하는 것"
+- 자동차를 예로 "운전하다, 세차하다, 팔다, 새로사다"라는 동사형로 표현
+
+다. Abstract
+- 추상화란 "명사와 동사를 추출하는 것". 실제 객체를 프로그램으로 응용해 내는 것
+- 가장 중요한 과정. 추상화를 어떻게 하느냐에 따라 클래스 설계가 결정된다. 이것이 모델링의 핵심과제이고, 성패를 결정짓는 주요 요소
+
+6. UML (Unified Modeling Language)을 이용한 객체 모델링 예제
+
+가. UML (Unified Modeling Language)의 역사
+- 1994년 10월 James Rumbaugh(GM사)의 OMT(Object Modeling Technique) 개발방법론. Ivar Jacobson(Objectory사)의 OOSE(Object-Oriented Software Engineering) 방법론. Grady Booch(National Software사) 방법론 등을 하나로 통합하려는 노력에 의해 만들어짐
+- 1995년 10월 0.8 버전 발표: Booch와 MT 통합
+- 1996년 7월: UML 0.9 버전 발표 (OOSE와 통합)
+- 1997년 7월: UML 1.0버전 OMG(Object Management Group)에 제출
+- 1997년 11월: UML은 OMG에 의해 표준 모델링 언어로 지정됨
+
+나. UML이란?
+- 객체지향 설계를 하는데 있어서 효율적인 방법을 제공. 객체를 추출하고 설계하는 방법을 제공함으로서 보다 쉽고 빠르게 작업을 마칠 수 있게한다. 최근에는 대규모 프로젝트를 추진하는데 있어서 가장 중요한 분야로 등장하였고, 그 중요성은 갈수록 증가하고 있다. 실제 UML은 최근에 각종 개발 툴 개발업체들이 지속적으로 업그레이드 하고있고, 새로운 기능들을 추가하고 있다. 그 대표적 회사로 Rational Rose
+
+- 실제 사용 예
+
+[cols="1"]
+|===
+|Class name
+|attribute
+|operation
+|===
+
+
+Shift 제조회사의 주문 공급 시스템 설계에 관한 UML 모델링의 예
+
+[cols="1"]
+|===
+|Shirt
+|orderId
+customerId
+dateOrdered
+itemsOrdered
+payment
+placeBy
+|initialize()
+calcAmountOwed()
+printOrder()
+makePayment()
+changeItem()
+|===
+
+설명
+[cols="1,1,1"]
+|===
+|Class|Order|Order는 객체이름
+|attributes|orderId
+customerId
+dateOrdered
+itemsOrdered
+payment
+placeBy|명사형으로 Shirt의 주문 날짜, ID, 주문 품목, 가격, 위치 등을 나타낸다. 이것이 객체.
+attributes 속성은 다시 각 항목별로 다시 설계하면 된다. 예를 들면 customer에 대해서 다시 모델링을 하면 된다.
+|operations|initialize()
+calcAmountOwed()
+printOrder()
+makePayment()
+changeItem()|여기에는 객체들의 속성을 실행하는 동사형을 추출해야한다. 먼저 주문내역을 초기화하고 주문내역에 대한 가격을 산출하며, 주문내역을 출력한다. 그리고 지불내역을 만들고 변경하되 품목을 정리한다.
+
+라. Class 생성하기
+- 객체는 Class의 Instance이다. 이 말은 객체는 Class가 만들어낸 구체적인 산물이란 의미
+- Class란 객체를 만들기 위한 Category이며, Object의 근본. Class가 없으면 객체는 존재할 수 없다. 위의 Diagram은 Shirt의 Class설계도
+- 위에서 Attribute는 Object의 Attribute들이다. Class안에서 객체가 생성되어야 프로그램을 실행할 수 있는 것이다.
+
+7. Procedural Programming과 Object-Oriented Programing의 차이점
+
+가. "절차적 언어와 객체 지향적 언어의 차이는 무엇인가?"
+
+- 여기서 객체지향적 언어인 자바는 은닉(Encapsulation)속성이 있다. 은닉성이란 숨겨진다는 것을 말한다. 클래스 안에 객체와 메소드, 변수 데이터를 담아두고 약국에서 파는 캡슐처럼 외부에서의 임의의 접근을 차단할 수 있다는 것을 말한다. Access Level(public, private, protected)을 통해 변수 데이터에 접근을 조정할 수 있다.
+- 그럼 무엇을 숨긴다는 말인가? 바로 중요한 data를 보호할 필요가 있을 떄 외부에서의 임의의 접근을 차단할 수 있다는 것. 객체지향적 언어의 가장 중요한 특성. 신용카드의 비밀번호를 아무나 접근하게 해서는 안 된다는 것. 절차적 언어는 이런은닉성을 가질 수 없다.
+
+나. 은닉성의 장점은 무엇인가?
+- class내부가 어떻게 구성되어있는지를 프로그래머만 알면 되고 사용자는 class에 대해서는 알 필요가 없다는 것
+- 중요한 데이터에 대해 관리자만이 접근하게 하고 사용자들은 공개된 메서드(Accessor)를 통해 접근
+- 유지보수가 쉽다
+
+다. Implements
+- 사용자는 interface를 통해서만 접근가능. public(공용)으로 선언함. 사용자는 Logic을 알 필요가 없이 사용만 하면 됨
+- 관리자는 은닉성을 통해 class를 관리. private으로 선언해 같은 class내에서만 접근 가능하게 하여 중요자료를 보호
+
+
+https://en.wikipedia.org/wiki/Object-oriented_analysis_and_design[Object-oriented analysis and design]
+
+
+
+http://dslab.konkuk.ac.kr/class/2019/19SMA/Lecture%20Note/OOAD.pdf[OOAD/UML 기본 - 건국대학교 유준범]
