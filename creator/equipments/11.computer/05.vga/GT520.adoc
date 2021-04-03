@@ -5,3 +5,12 @@ https://www.techpowerup.com/gpu-specs/geforce-gt-520.c285[NVIDIA GeForce GT 520]
 PCIe 2.0 x16
 
 구형 데스크탑에서 사용중.
+
+
+* GRAPHICS PROCESSOR: GF119
+* CORES: 48
+* TMUS: 8
+* ROPS: 4
+* MEMORY SIZE: 1024 MB
+* MEMORY TYPE: DDR3
+* BUS WIDTH: 64 bit
