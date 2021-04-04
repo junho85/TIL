@@ -1,0 +1,29 @@
+GET http://localhost:80/api/item?id=99
+Accept: application/json
+
+###
+
+
+
+
+
+
+
+
+
+### GET
+# curl -X GET "http://httpbin.org/get" -H "accept: application/json"
+GET http://httpbin.org/get
+accept: application/json
+
+### POST
+# curl -X POST "http://httpbin.org/post" -H "accept: application/json"
+POST http://httpbin.org/post
+accept: application/json
+
+### DELETE
+# curl -X DELETE "http://httpbin.org/delete" -H "accept: application/json"
+DELETE http://httpbin.org/delete
+accept: application/json
+
+

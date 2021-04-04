@@ -6,5 +6,51 @@
 GET https://daum.net
 ----
 
+== 정리
+* https://junho85.pe.kr/1879[IntelliJ - http 요청 테스트 - HTTP Request 2021.04.04]
+
 == References
 https://www.jetbrains.com/help/idea/exploring-http-syntax.html[Exploring the HTTP request in Editor syntax]
+
+* https://jojoldu.tistory.com/366[IntelliJ http Client 응답값 변수로 저장하고 사용하기
+ 2018.12.24]
+
+> {% %}
+.http 파일의 응답 결과를 다루는 스크립트 코드 선언문
+
+client.global.set 전역변수 선언
+
+response.headers.valueOf
+response: 실행한 요청의 결과를 담는 변수
+response.headers: 요청의 결과 중 HTTP Header에 담긴 값들
+.valueOf("Set-Cookie"): Header의 값 중 쿠키값인 Set-Cookie를 가져옴
+
+client.log - 필요한 내용을 로그로 출력
+client.global.get("JSESSIONID") - 전역 변수로 선언된 값중 하나를 가져옴. client.global.set("JSESSIONID")로 저장한 값을 가져옴
+
+Javascript기반으로 작동됨.
+
+
+https://blog.jetbrains.com/phpstorm/2018/04/handling-reponses-in-the-http-client/[Handling responses in the HTTP Client 2018.04.10]
+
+
+https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html[HTTP client in IntelliJ IDEA code editor]
+
+----
+GET host/api/test
+
+> scripts/my-script.js
+----
+
+----
+GET https://httpbin.org/status/200
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+----
+
+
+https://www.jetbrains.com/help/idea/testing-restful-web-services.html[Test RESTful Web services]
