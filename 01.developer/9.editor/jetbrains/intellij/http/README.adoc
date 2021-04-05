@@ -8,6 +8,7 @@ GET https://daum.net
 
 == 정리
 * https://junho85.pe.kr/1879[IntelliJ - http 요청 테스트 - HTTP Request 2021.04.04]
+* https://junho85.pe.kr/1880[IntelliJ - http 요청 테스트 - HTTP Request - 테스트 스크립트 예제 2021.04.05]
 
 == References
 https://www.jetbrains.com/help/idea/exploring-http-syntax.html[Exploring the HTTP request in Editor syntax]
@@ -15,7 +16,9 @@ https://www.jetbrains.com/help/idea/exploring-http-syntax.html[Exploring the HTT
 * https://jojoldu.tistory.com/366[IntelliJ http Client 응답값 변수로 저장하고 사용하기
  2018.12.24]
 
+----
 > {% %}
+----
 .http 파일의 응답 결과를 다루는 스크립트 코드 선언문
 
 client.global.set 전역변수 선언

@@ -1,20 +1,15 @@
+### GET
 GET http://localhost:80/api/item?id=99
 Accept: application/json
-
-###
-
-
-
-
-
-
-
-
 
 ### GET
 # curl -X GET "http://httpbin.org/get" -H "accept: application/json"
 GET http://httpbin.org/get
 accept: application/json
+
+> test.js
+
+
 
 ### POST
 # curl -X POST "http://httpbin.org/post" -H "accept: application/json"
