@@ -1,0 +1,40 @@
+= 03. 서블릿 애플리케이션 개발
+
+
+https://www.inflearn.com/course/%EC%9B%B9-mvc/lecture/17382?tab=curriculum
+
+
+javax.servlet-api 4.0.1
+
+
+HelloServlet.java
+
+init - 처음 한번만 호출됨
+doGet
+destroy
+
+doGet 구현
+System.out.println("doGet");
+resp.getWriter().println("<html>");
+...
+
+web.xml에 servlet등록
+
+----
+<web-app>
+  ...
+
+  <servlet>
+    <servlet-name>hello</servlet-name>
+    <servlet-class>me.whiteship.HelloServletservlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>hello</servlet-name>
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+</web-app>
+----
+
+
+== References
