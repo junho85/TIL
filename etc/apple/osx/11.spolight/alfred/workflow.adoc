@@ -1,0 +1,25 @@
+= Alfred - Workflow
+
+https://www.alfredapp.com/workflows/
+
+== jetbrains - idea(interllij), pstorm, ...
+https://github.com/bchatard/alfred-jetbrains
+
+----
+$ npm install -g @bchatard/alfred-jetbrains
+----
+
+
+== vscode
+https://github.com/kbshl/alfred-vscode
+
+----
+npm install --global alfred-vscode
+----
+
+== daum dictionary
+https://www.packal.org/workflow/daum-multi-dictionary[Daum multi dictionary]
+
+== References
+
+* https://sungjk.github.io/2020/12/13/alfred-tips.html[귀차니즘을 해결해주는 Alfred 2020.12.13]

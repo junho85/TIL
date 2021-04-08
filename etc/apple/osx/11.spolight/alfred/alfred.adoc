@@ -1,0 +1,23 @@
+= Alfred
+
+https://www.alfredapp.com/
+
+
+== 할인
+
+매년 2월 말 정도 되면 출시 기념일 할인을 한다.
+
+https://macnews.tistory.com/4214[1년에 딱 한 번! '알프레드(Alfred)' 출시 6주년 기념 할인 이벤트 2016.02]
+
+== 2021.04.08
+앱 스토어에는 Version 1.2
+
+사이트에는 Alfred 4 버전임
+
+파워팩 구입은 £49인데 환율상 75,297원 정도 함. 구입
+
+== 정리
+* https://junho85.pe.kr/1883[Mac OSX - Spotlight보다 Alfred (알프레드) 2021.04.08]
+
+== References
+* https://www.youtube.com/watch?v=6PkeNETw_5M[맥 사용자들의 베스트 앱, 알프레드 [워크플로우 편] | 맥 사용 설명서 2018.12.10]

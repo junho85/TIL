@@ -1,0 +1,25 @@
+= Alfred vs Spotlight
+
+== Alfred
+
+https://apps.apple.com/kr/app/alfred/id405843582?l=en&mt=12
+
+Opt + Space
+
+
+== Spotlight
+
+Mac OS X 내장
+
+Cmd + Space
+
+https://support.apple.com/ko-kr/guide/mac-help/mh26783/mac[Mac의 Spotlight 키보드 단축키]
+
+https://osxdaily.com/2012/03/09/spotlight-keyboard-shortcuts/[13 Must-Know Spotlight Keyboard Shortcuts for Mac 2012.03.09]
+
+== Alfred vs Spotlight
+
+Spotlight에 비해서 좋은 점?
+
+https://www.slant.co/versus/1673/6394/~alfred_vs_spotlight[]
+
