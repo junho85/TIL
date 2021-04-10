@@ -1,0 +1,46 @@
+= 06. 스프링 MVC 연동
+
+https://www.inflearn.com/course/%EC%9B%B9-mvc/lecture/17385?tab=note&speed=1.5
+
+서블릿 애플리케이션에 스프링 연동하기
+* 서블릿에서 스프링이 제공하는 IoC 컨테이너 활용하는 방법
+* 스프링이 제공하는 서블릿 구현체 DispatcherServlet 사용하기
+
+ContextLoaderListener
+* 서블릿 리스너 구현체
+* ApplicationContext를 만들어 준다.
+* Application...
+
+
+----
+@RestController
+public class HelloController {
+  @Autowired
+  HelloService helloSErvice;
+
+  @GetMapping("/hello")
+  public String hello() {
+    return "Hello, " + helloService.getName();
+  }
+}
+----
+
+web.xml
+----
+<servlet>
+  <servlet-name>app</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet>
+  <init-param>
+    <param-name>contextClass</param-name>
+    <param-value>org.springframework.web.context.support.AnnotationConfig....</param-value>
+  </init-param>
+  <init-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value></param-value>
+  </init-param>
+</servlet>
+----
+
+
+== References
+* https://leejongchan.tistory.com/75?category=955821[서블릿과 스프링 MVC 연동 2021.01.01]
