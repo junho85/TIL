@@ -1,0 +1,50 @@
+= 09. DispatcherServlet 3부
+
+https://www.inflearn.com/course/%EC%9B%B9-mvc/lecture/17388?tab=note&speed=1.5
+
+DispatcherServlet 동작 원리 3부: 커스텀 ViewResolver
+
+ViewResolver
+* InternalResourceViewResolver
+
+InternalResourceViewResolver
+* Prefix
+* Suffix
+
+
+
+----
+@org.springframework.stereotype.Controller("/simple")
+public class SimpleController implements Controller {
+  @Override
+  public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    return new ModelAndView("/WEB-INF/simple.jsp");
+  }
+}
+----
+
+HandlerMapping의 기본적략은 2가지
+
+DispatcherServlet.properties
+
+WebConfig
+----
+@Configuration
+@ComponentScan
+public class WebConfig {
+  @Bean
+  public InternalResourceViewResolver viewResolver() {
+    InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+    viewResolver.setPrefix("/WEB-INF/");
+    viewResolver.setSuffix(".jsp");
+    return viewResolver;
+  }
+}
+----
+
+/WEB-INF/, .jsp 생략할 수 있게 됨.
+
+
+
+== References
+* https://leejongchan.tistory.com/84?category=955821[DispatcherServlet 동작 원리 3부 : 커스텀 ViewResolver 2021.01.04]
