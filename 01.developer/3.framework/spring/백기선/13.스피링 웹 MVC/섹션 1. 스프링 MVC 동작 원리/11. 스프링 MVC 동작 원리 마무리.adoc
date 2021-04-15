@@ -1,0 +1,46 @@
+= 11. 스프링 MVC 동작 원리 마무리
+
+https://www.inflearn.com/course/%EC%9B%B9-mvc/lecture/17390?tab=note&speed=1.5
+
+결국엔 (굉장히 복잡한) Servlet
+= DispatcherServlet
+
+DispatcherServlet 초기화
+1. 특정 타입에 해당하는 빈을 찾는다.
+2. 없으면 기본 전략을 사용한다. (DispatcherServlet.properteis)
+
+스프링 부트 사용하지 않는 스프링 MVC
+* 서블릿 컨테이너(e.g. 톰캣)에 등록한 웹 애플리케이션(WAR)에 DispatcherServlet을 등록한다.
+** web.xml에 서블릿 등록
+** 또는 WebApplicationInitializer에 자바 코드로 서블릿 등록 (스프링 3.1+, 서블릿 3.0+)
+* 세부 구성 요소는 빈 설정하기 나름.
+
+스프링 부트로 사용하는 스프링 MVC
+* 자바 애플리케이션에 내장 톰캣을 만들고 그 안에 DispatcherServlet을 등록한다.
+** 스프링 부트 자동 설정이 자동으로 해줌.
+* 스프링 부트의 주관에 따라 여러 인터페이스 구현체를 빈으로 등록한다.
+
+
+WebConfig
+----
+----
+
+[source,java]
+----
+public class WebApplication impelements WebApplicationInitializer {
+  @Override
+  public void onStartup(ServletContext servletContext) throws ServletException {
+    AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext..
+    context.register(WebConfig.class);
+    context.refresh();
+
+    DispatcherServlet dispatcherServlet = new DispatcherServlet(context);
+    ServletRegistration.Dynamic app = servletContext.addServlet("...
+    app.addMapping("/app/*");
+  }
+}
+----
+
+
+== References
+* https://leejongchan.tistory.com/88?category=955821[스프링 MVC 동작 원리 마무리 2021.01.05]
