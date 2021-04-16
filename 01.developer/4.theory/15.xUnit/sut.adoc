@@ -1,0 +1,11 @@
+= SUT - System Under Test
+
+http://xunitpatterns.com/SUT.html[SUT]
+
+SUT는 system under test의 약자로 테스트 하는 무언가를 의미합니다.
+
+클래스면 CUT, 객체면 OUT, 메서드는 MUT
+
+== References
+* https://www.tutorialspoint.com/software_testing_dictionary/system_under_test.htm[System Under Test]
+* https://docs.microsoft.com/ko-kr/archive/blogs/ploeh/naming-sut-test-variables[Naming SUT Test Variables 2008.10.06]
