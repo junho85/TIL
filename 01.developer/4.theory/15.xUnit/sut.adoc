@@ -6,6 +6,15 @@ SUT는 system under test의 약자로 테스트 하는 무언가를 의미합니
 
 클래스면 CUT, 객체면 OUT, 메서드는 MUT
 
+* AUT - Application Under Test
+* MUT - Method Under Test
+* CUT - Class Under Test
+* OUT - Object Under Test
+
+Erick Dietrich는 target
+
 == References
 * https://www.tutorialspoint.com/software_testing_dictionary/system_under_test.htm[System Under Test]
 * https://docs.microsoft.com/ko-kr/archive/blogs/ploeh/naming-sut-test-variables[Naming SUT Test Variables 2008.10.06]
+* https://specify.readme.io/docs/sut-system-under-test[SUT (System Under Test)]
+* https://daedtech.com/test-readability-best-of-all-worlds/[Test Readability: Best of All Worlds ]
