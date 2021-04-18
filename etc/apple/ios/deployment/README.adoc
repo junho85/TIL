@@ -1,0 +1,5 @@
+= iOS 앱 배포
+
+== References
+* https://ios-development.tistory.com/246?category=936128[[iOS 앱 배포 준비\] 애플에 배포하기 위한 4가지 개념 2020.11.29]
+

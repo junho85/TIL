@@ -1,0 +1,24 @@
+= UDID
+
+== 확인 방법
+
+=== Finder?
+
+
+=== System Information
+
+USB 연결 후 System Report -> Hardware -> USB -> 가서 아이폰 선택하면 UDID 확인 할 수 있음
+
+=== https://get.udid.io
+
+아이폰 사파리에서 https://get.udid.io 접근.
+
+버튼 누르고 설정 가서 뭐뭐 누르면 다시 사파리로 들어가는데 get.udid.io 사이트에 UDID가 나옴. 이메일로 보낼 수 있음.
+
+
+
+
+
+== References
+* https://ios-development.tistory.com/249[[iOS 앱 배포 준비\] Device 등록, UDID 2020.11.29]
+
