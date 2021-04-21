@@ -1,0 +1,145 @@
+= RESTful
+
+== [10분 테코톡] 🙋‍♂️이지의 RESTful 2019.07.31
+
+https://www.youtube.com/watch?v=xY7cpMuWh4w[[10분 테코톡\] 🙋‍♂️이지의 RESTful 2019.07.31]
+
+ful붙으면 성격을 가지는
+
+REpresentational 표현
+State 상태
+Transfer 전달
+
+자원의 표현을 가지고 상태 전달
+상태 전달 = HTTP Method
+
+RESTful?
+
+REST란 아키텍쳐 스타일의 제약조건을 모두 만족하는 시스템
+
+REST 아키텍쳐의 제약조건
+1. Client - Server
+2. Stateless
+3. Cache
+4. Uniform Interface
+  1. Identification of Resources
+  2. ...
+  3. M...
+...
+5. Layered System
+
+Richardson Maturity Model
+
+Glory of REST
+
+Level 3: Hypermedia Controls
+Level 2: HTTP Verbs
+Level 1: Resources
+Level 0:
+
+
+Level0
+* HTTP를 RPC를 기반으로한 원격 통신을 위한 터널링 메커니즘으로 사용됨
+* POX(Plain Old XML)를 주고 받는 단순한 RPC 스타일 시스템
+
+RPC(Remote Procedure Call): 별도의 원격 제어를 위한 코딩 없이 다른 주소 공간에서 함수나 프로시절르 실행할 수 있게하는 프로세스간 통신 기술
+
+예제
+
+2019년 7월 26일, 회의실 1의 예약되지 않은 시간대를 알아내는 요청
+
+----
+POST /appointment...
+----
+
+서버가 16~17시, 19~21시에 예약이...
+
+19~21시 회의실을 예약하는 요청
+
+예약이 성공된 경우
+
+HTTP/1.1 200 OK
+...
+
+예약이 실패한 경우
+HTTP/1.1 200 OK
+...
+
+Server - Client
+* Client가 Server에게 Request를 보내고, Server가 Client에게 Response를 보내는 구조
+* 서버는 API 제공과 제공된 API를 이용...
+
+Stateless
+* 클라이언트와 서버의 통신에는 상태가 없어야한다
+* 모든 요청은 필욯나 모든 정보를 담고 있어야 한다
+
+
+Layered System
+* 계층으로 구성이 가능해야한다.
+* 클라이언트 입장에서는 서버만 호출함
+...
+
+Manipluation of Resources through Representation...
+
+Level1 - Resources
+* 리소스를 도입한다
+* 모든 요청을 단일 서비스 엔드포인트로 보내는 것이 아니라 개별 리소스와 통신한다
+...
+
+Identification of Resources
+* 자원은 유일하게 식별가능해야 한다
+* Resource가 하나 이상의 유일한 특정 주소인 URI로 식별되는지
+* 아직 POST Method로만 Request를 보내기 때문에 URI나 RequestBody로 어떤 동작을 할지...
+
+
+Level2 - HTTP Methods
+* GET, PUT, ...
+
+Manipulation of Resources through Representation
+HTTP Methods    Idempotent    Safe
+
+
+Manipulation of Resources through ...
+
+
+Self - Descriptive Messages
+* 메시지는 스스로를 설명해야한다
+* 메시지는 요청 작업을 완료할 수 있도록, 응답을 이해할 수 있도록 충분한 정보들을 ...
+
+Level2
+
+Self - Descriptive Messages
+* 발생한 에러의 종류를 커뮤니케이션 하기위해...
+
+
+Cache
+* 일반적인 서비스에서 60~80% 가량의 트랜잭션이 Select와 같은 조회성 트랜잭션
+...
+
+Level3
+* HATEOAS 도입
+* 클라이언트가 전적으로 서버와 동적인 상호작용이 가능함
+* 클라이언트가...
+
+...
+
+서버가 16~17시, 19~21시에 예약이 비었다는 정보를 알려주는 응답
+
+Hypermedia As The Engine Of Application State
+* 하이퍼링크를 통해서 애플리케이션의 상태가 전이되어야한다
+* HTTP Response에 다음 Action이나 관계되는 리소스에 대한 HTTP Link를 함께 리턴
+* 요청 ...
+
+마지막 제약조건
+
+Code-On-Demand(Option)
+서버가 네트워크를 통해 클라이언트에 프로그램을 전달하면 그 프로그램이 클라이언트에서 실행될 수 있어야한다
+
+JAVASCRIPT
+
+정리
+1. REST는 소프트웨어 아키텍쳐의 한 형식이다
+2. REST 아키텍쳐는 여러 개의 제약 조건을 가지고 있다.
+3. RESTful은 위의 제약 조건들을 모두 만족시켜야 한다.
+4. HTTP Method, Status Code를 용도에 맞게 써야하고, HTTP 헤더와 Link를 신경쓰면 RESTful한 서비스를 설계할 수 있다.
+
