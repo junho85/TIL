@@ -1,0 +1,169 @@
+= Servlet & Spring
+
+
+https://www.youtube.com/watch?v=2pBsXI01J6M[[10분 테코톡\] 🌻타미의 Servlet vs Spring 2020.06.25]
+
+Servlet VS Spring Web MVC
+
+Servlet 웹 애플리케이션을 만들 때 필요한 인터페이스
+
+Spring Web MVC
+
+Spring Framework에 있는 모듈...
+
+동적 데이터를 처리하는 CGI Common Gateway Interface
+
+Process 실행중인 프로그램 인스턴스 (메모리에 적재된 프로그램)
+
+Thread 한 프로세스 내의 동작 흐름
+
+
+CGI는 많은 사용자를 처리하기엔 무리
+
+개선점2. Singleton
+
+Web Server - 정적 데이터 처리
+
+Web Application Server 동적 데이터 처리
+
+WebContainer: 요청이 들어오면 Thread를 생성하고, Servlet을 실행시킨다. Servelt Intervace에 따라 ...
+
+Init: Servlet Instance 생성(initialize)
+Service: 실제 기능이 수행되는 곳
+abstract class HttpServiet Extends Servlet
+HTTP Method (GET...)에 따라 doGet, doPost()... doXXX() 개발자가 구현
+Destroy: Servlet Instance가 사라진다.
+- 보통 container가 종료된느 시점에 destroy() 호출
+- 특정 servlet 로드/언로드 시에도 사용
+
+각 메서드는 Servlet Container(Tomcat)이 호출해준다.
+
+Web.xml (설정 파일) servlet Mapping
+WAS에게 Servlet 객체 - URL mapping 정보를 알려준다.
+
+url 마다 servlet이 생기고 맵핑
+
+Web.xml
+MemberServlet
+LineServlet
+StationServlet
+
+Spring Web MVC에서는 Servlet을 어떻게 사용할까?
+Dispatcher Servlet
+
+Servlet Container - DispatcherServelet
+모든 요청이 들어왔을 떄, Dispatcher Servlet
+
+요청에 따라 적절한 Controller를 찾는다.
+-> 찾는 방법은 Spring Framework
+
+Spring Framework에서 제공하는 HandlerMapping
+어떤 방식의 HandlerMapping을 사용할지 설정파일에 지정
+
+Dispatcher Servlet - Handler mapping
+
+1. BeanNameHandlerMapping
+2. ControllerClassNameHandlerMapping
+3. SimpleUrlHandlerMapping
+4. DefaultAnnotationHandlerMapping
+
+@Controller
+
+Dispatcher Servler - Handler Adapter - Controller
+
+HandlerMapping에서 찾은 Handler(Controller)의 메서드를 호출한다
+...
+
+View 이름으로 실제 View...
+
+View에 Model(data)를 포함시킨다.
+
+Spring Web MVC없을 때
+
+url마다 서블릿이 필요했음
+
+/member -> Member Servlet
+/line -> Line Servlet
+/station -> Station Servlet
+
+Url마다 servlet을 생성 Web.xml로 servlet 관리
+
+Spring Web MVC
+Dispatcher Servler에서
+
+S
+
+
+
+== [10분 테코톡] 👨‍🎨규동의 Servlet & Spring 2019.11.27
+https://www.youtube.com/watch?v=cmwmamOQmPc[[10분 테코톡\] 👨‍🎨규동의 Servlet & Spring 2019.11.27]
+
+1. Servlet VS Spring
+2. CGI? Servlet?
+3. Spring & Servlet
+
+Servlet
+HTML등의 웹 콘텐츠를 생성하고 전달하기 위해 Servlet 클래스의 구현 규칙을 지켜 자바로 만들어진 프로그램
+
+Spring
+자바 엔터프라이즈 개발을 편리하게 해주는 오픈소스 경량급 애플리케이션 프레임워크
+
+Servlet Interface를 상속받아 구현
+
+CGI? Servlet? JSP?
+
+Static Web page
+
+Dynamic Web Page
+
+CGI - 1Client 1Process. 객체지향 X
+Servlet - Java! 객체지향! 멀티쓰레드, 보안...
+
+서블릿도 CGI규칙에 따라 데이터를 주고 받지만 이를 서블릿을 가지고 있는 컨테이너에게 위임하고 대신 서블릿 컨테이너와 서블릿 사이의 규칙이 존재
+
+하나의 요청에서 하나의 프로세스가 껐다 켜졌다 하는 구조 X
+Servlet이 컨테이너 내부에서 쓰레드 단위로
+요청을 처리하고 그것이 어떤 생명 주기를 가집니다.
+흐름은 개발자가 아니라 ...
+
+Servlet은 웹서버 내부에서 동작하는 작은 자바 프로그램
+Servlet은 일반적으로 HTTP를 통해 웹 Client들로부터 요청을 수신하고 응답합니다.
+Servlet 인터페이스를 구현하기 위해선 GenericServlet을 상속받거나 HTTP Servlet...
+
+Servlet 인터페이스는 Servlet을 초기화하고, 요청을 처리하고, Servlet을 서버에서 제거하는 방법에 대해 정의합니다. 이러한 방법을 Life Cycle이라고 하며 다음과 같은 순서로 호출됩니다.
+
+1. Servlet은 생성될...
+
+이미 생성된 Servlet 객체는 메모리에 남겨두어 동일한 서블릿에 대해 다시 init()을 실행하지 않고 재사용
+
+GenericServlet
+service메서드를 제외한 나머지
+Servlet 인터페이스의 메서드를 구현해놓은 abstract class HTTP프로토콜 외 독립적인 프로토콜의 서블릿을 만들때 사용
+
+HttpServlet
+우리가 주로 사용하는 것.
+Http 프로토콜의 기능(doGet, doPost) 제공
+
+스프링 부트 DispatcherServlet의 상속구조
+
+Object
+- GenericServlet
+-- HttpServlet
+--- HttpServletBean
+---- FrameworkServlet
+----- DispatcherServlet
+
+Servlet <interface>
+GenericServlet
+HttpServlet
+- method를 구함
+그에 맞는 메소드 호출
+
+HttpServletBean
+
+FrameworkServlet
+doGet을 override해 processRequest실행
+processRequest가 인터셉터와 관련된 처리를 한 후 FrameworkServlet의 doService라는 추상 메소드를 호출
+
+DispatcherServlet
+핸들러를 매핑하고 핸들러를 작동시켜 ModelAndView를 얻음 그리고 rpcoessDispatchResult를 호출해 렌더링
