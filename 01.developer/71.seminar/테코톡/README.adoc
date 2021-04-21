@@ -1,2 +1,19 @@
 = 우아한 형제들 테코톡
 
+https://www.youtube.com/watch?v=OdpPvdB7qZY[[10분 테코톡\] 💎 또링의 Spring과 Spring Boot 2020.07.15]
+
+https://ssoco.tistory.com/66[Spring🌱 vs SpringBoot🌼 2020.06.08]
+
+Spring이 해결하고자 하는 것
+
+Dependency Injection(DI) - 의존성 주입
+Duplication/Plumbing Code - 중복된 코드 제거
+Integration with Other Frameworks - 다른 프레임워크와의 통합
+
+Spring Boot가 해결하고자 하는 것
+최소한의 번거로움으로 스프링 기반의 프로덕션 급 응용 프로그램 및 서비스를 쉽게 만들 수 있도록하는 것을 목표
+
+Auto Configuration
+Easy dependency Management
+Embedded Servlet Container Support - 내장 서블릿 컨테이너 (내장 서버)
+

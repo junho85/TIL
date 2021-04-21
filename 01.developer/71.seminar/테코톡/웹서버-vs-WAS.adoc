@@ -1,0 +1,5 @@
+= 웹서버 vs WAS
+
+== [10분 테코톡] 👩‍🦰희봉의 웹서버 vs WAS 2019.08.21
+https://www.youtube.com/watch?v=NyhbNtOq0Bc[[10분 테코톡\] 👩‍🦰희봉의 웹서버 vs WAS 2019.08.21]
+
