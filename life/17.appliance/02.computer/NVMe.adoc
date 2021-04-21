@@ -1,0 +1,23 @@
+= NVMe Non-Vilatile Memory Express
+
+== 기가바이트 NVMe M.2 2280 SSD 1TB
+https://coupa.ng/bV0Stb
+
+2021.04.12 132,550원
+
+Sequential Read 2500MB/s
+Sequential Write 2100MB/s
+Random Read 295k
+Random Write 430k
+
+
+== 삼성전자 970 EVO M.2 PCIe NVMe SSD 1TB
+
+https://coupa.ng/bV0SMW
+
+2021.04.12 182,560원
+
+Sequential Read 3400MB/s
+Sequential Write 2500MB/s
+Random Read 500,000 IOPS
+Random Write 450,000 IOPS
