@@ -55,3 +55,49 @@ if (a_len != b_len) return false;
 
 이렇게 가정해도 될지. 라이브러리를 사용해도 될지. 등 본인 마음대로 하는 것이 아니고 생각을 이야기 하면서 해결해 나가는 과정이 핵심. Brute force부터 차근차근 장단점 이야기 하면서 알고리즘을 개선시켜 나감.
 
+
+== References
+=== 배민, 스타트업 기술면접 공개! - 대표 질문 3가지! 2021.04.06
+https://www.youtube.com/watch?v=3ArYMq5AomI[배민, 스타트업 기술면접 공개! - 대표 질문 3가지! 2021.04.06]
+
+호돌맨. 신입. 진정성. 부트캠프. 토이프로젝트. 블로그에 내용 정리
+
+향로. Ruby ORM. fetchJoin, 영속성 컨텍스트 다른 점
+
+equals(), hashCode()가 무슨 메서드고 어떨 때 써야하는지
+
+
+로그인 기능 구현
+
+세션
+
+HttpSession 클래스
+
+httpSession.getAttribute("user")
+
+사용자 A, B 어떻게 구분?
+
+
+Shell Script function return 문이 어떻게 다른지? 어떻게 풀어야 하는지?
+
+
+jpa N+1 쓰려면 fetchJoin
+
+fetchJoin하면 쿼리 결과물이 어떻게 되는지?
+
+부모1개, 자식10개 fetchJoin 쓰면 결과물이 몇개가 되는지?
+
+최근에 본 기술책, 아티클, 포스팅, 공식 문서
+
+effective java라고 하면 어떤게 인상 깊었는지. 가장 많이 인용 되는 내용. 챕터.
+
+Reference type과 Primitive type 차이? 책에 있는 내용 알려 달라.
+
+이력서에 따라 다름.
+
+
+호돌맨.
+
+단방향, 양방향 차이
+
+
