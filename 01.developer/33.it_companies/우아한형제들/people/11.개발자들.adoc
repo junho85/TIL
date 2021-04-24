@@ -35,3 +35,17 @@ https://hodolman.com/26[안녕, 우아한형제들 2019.12.15]
 
 https://blog.kingbbode.com/
 
+
+== 김민태
+
+https://www.youtube.com/watch?v=U0YWdnSKDfw[개발자가 실력을 향상시킬 방법은 ○○뿐이에요_우아한형제들 김민태의 이야기 2018.10.15]
+
+프론트엔드 개발자
+
+반복
+
+숙련도를 만들어야 한다
+
+자기 것으로 만드는 과정과 시간이 필요하다
+
+
