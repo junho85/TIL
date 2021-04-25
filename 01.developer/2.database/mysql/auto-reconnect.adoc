@@ -1,0 +1,7 @@
+= mysql - autoReconnect
+
+== References
+* https://blog-han.tistory.com/40[[버그해결\]MySQL , Maria DB Connection을 잃어버리는 문제 해결 2019.03.27]
+
+autoReconnect=true
+validationQuery="select 1"
