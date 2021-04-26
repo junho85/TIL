@@ -1,0 +1,28 @@
+= Java Interview - Primitive type (원시 타입) Vs Reference Type (참조형 타입)
+
+* 기본 타입과 참조 타입
+
+== Primitive type
+* stack 에 저장
+* 저장공간에 실제 값이 저장
+* 모두 8개의 타입
+* 논리형: boolean
+* 수치 타입
+** 정수형: byte, short, int, long
+** 실수형(부동소수점): float, double
+** 문자형: char
+
+== Reference type, Object (derived) type
+* heap 에 저장
+* 배열, 열거형 클래스, 인터페이스, 클래스
+* Integer, Double...
+* 기본형 타입을 제외한 타입들 모두 참조형 타입
+* 빈 객체를 의미하는 Null이 존재
+
+== References
+* https://gbsb.tistory.com/6[자바의 데이터 타입(Primitive type, Reference type)]
+* https://gosasac.tistory.com/42[자바 Primitive Type과 Reference Type 2020.02.26]
+* https://www.w3spoint.com/is-string-a-primitive-type-or-derived-type[Is String A Primitive Type Or Derived Type?]
+
+String is not a primitive type, it is a derived type.
+
