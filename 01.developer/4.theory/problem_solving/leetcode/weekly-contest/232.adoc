@@ -1,0 +1,88 @@
+= Weekly Contest 232
+
+https://leetcode.com/contest/weekly-contest-232
+
+== 1790. Check if One String Swap Can Make Strings Equal
+
+https://leetcode.com/contest/weekly-contest-232/problems/check-if-one-string-swap-can-make-strings-equal/
+
+최소 한 번 글자 하나의 위치만 바꿔서 똑같이 만들 수 있는지
+
+* "bank", "kanb"는 첫번째와 마지막 글자의 순서를 바꾸면 됨. true
+* "attack", "defend"는 불가능. false
+* "kelb", "kelb"는 안바꾸고 가능. true
+* "abcd", "dcba"는 한번바꿔서는 불가능. false
+
+100자라서 O(n^3)해도 타임 아웃 안남
+
+
+
+== 1791. Find Center of Star Graph
+
+https://leetcode.com/contest/weekly-contest-232/problems/find-center-of-star-graph/
+
+star그래프. 하나에 다른 모든 노드들이 연결 되어 있는 그래프
+
+* 노드 길이 10만 까지
+
+
+== 1792. Maximum Average Pass Ratio
+
+https://leetcode.com/contest/weekly-contest-232/problems/maximum-average-pass-ratio/
+
+똑똑한 학생들을 넣어서 합격률을 최대로 높인다.
+
+greedy 알고리즘 활용.
+
+hyo.
+a/b <= 1 했을 때
+a/b <= (a+1)/(b+1)
+
+a <= b
+
+한명 추가 했을 때, 두명 추가 했을 때
+추가 하면 할 수록 올라가는 비율이 떨어짐
+
+10^5라서 시간 초과가 나올 수 있음.
+
+priority queue를 사용했음
+
+산오리. javascript에는 큐가 없음.
+
+== 1793. Maximum Score of a Good Subarray
+
+https://leetcode.com/contest/weekly-contest-232/problems/maximum-score-of-a-good-subarray/
+
+greedy 알고리즘 활용.
+
+hyo.
+최솟값.
+
+길이가 10^5
+O(n^3)
+
+left, right, minimum
+
+3,7 보다는 7,4가 좋음.
+
+4,3,7
+3,7,4
+7,4,5
+
+7은 무조건 들어가야 됨
+
+길이가 3개 이면
+
+...
+
+큰쪽으로 확장
+
+
+산오리. 전체 부터 줄여 나가는 방법
+하나씩 줄이면 끝이 없으니 minimum값이 포인트라 생각하고 nums를 소팅 (nlogn)
+작은 숫자를 점점 빼가는 거
+
+h.
+o(nlogn)까지는 시간초과 나지 않음
+
+수천만. 코드포스에서는 통과되는데 릿코드에서는 안되는. 코드포스는 케이스마다 1~2초. 릿코드는 테스트 케이스 다 합친게 10초 인듯.
