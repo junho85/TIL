@@ -1,0 +1,15 @@
+= Statement, PreparedStatement
+
+== References
+https://java.ihoney.pe.kr/76[Statement 와 PreparedStatement의 차이 2009.09.01]
+
+java.sql.Statement
+----
+public interface Statement extends Wrapper
+----
+정적 SQL 문을 실행해, 작성된 결과를 돌려주기 위해서 사용되는 객체
+
+java.sql.PreparedStatement
+
+프리컴파일 된 SQL문을 나타내는 객체
+여러 차례 효율적으로 실행하는 목적
