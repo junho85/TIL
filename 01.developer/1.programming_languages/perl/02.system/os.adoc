@@ -1,0 +1,22 @@
+= perl - os
+
+== OSX
+[source,bash]
+----
+$ perl -e 'print "$^O";'
+darwin
+----
+
+== linux
+[source,bash]
+----
+$ perl -e 'print "$^O";'
+linux
+----
+
+== Windows
+[source,bash]
+----
+$ perl -e 'print "$^O";'
+?
+----
