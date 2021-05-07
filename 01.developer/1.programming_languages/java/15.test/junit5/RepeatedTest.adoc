@@ -1,0 +1,6 @@
+= JUnit5 - RepeatedTest
+
+https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/RepeatedTest.html
+
+== 정리
+* https://junho85.pe.kr/1912[JUnit5 - 특정 테스트를 여러번 돌리고 싶다면? @RepeatedTest 2021.05.07]
