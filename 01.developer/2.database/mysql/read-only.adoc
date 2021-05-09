@@ -1,0 +1,24 @@
+= mysql - read only
+
+== Check
+----
+SELECT @@global.read_only;
+----
+
+== Set
+----
+SET GLOBAL read_only=1;
+----
+
+== Config
+
+my.cnf 설정 추가
+
+----
+read_only
+----
+
+
+
+== References
+https://adminuser.wordpress.com/2013/01/08/check-if-make-a-mysql-instance-read-only/[Check if / Make a MySQL instance read only]
