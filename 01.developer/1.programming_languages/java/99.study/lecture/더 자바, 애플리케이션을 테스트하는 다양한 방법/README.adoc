@@ -1,0 +1,60 @@
+= 더 자바, 애플리케이션을 테스트하는 다양한 방법
+
+https://www.inflearn.com/course/the-java-application-test
+
+== 섹션 0. 1부 JUnit 5
+=== 강의 자료
+=== JUnit 5 소개
+=== JUnit 5 시작하기
+=== JUnit 5 테스트 이름 표시하기
+=== JUnit 5 Assertion
+=== JUnit 5 조건에 따라 테스트 실행하기
+=== JUnit 5 태깅과 필터링
+=== JUnit 5 커스텀 태그
+=== JUnit 5 테스트 반복하기 1부
+=== JUnit 5 테스트 반복하기 2부
+=== JUnit 5 테스트 인스턴스
+=== JUnit 5 테스트 순서
+=== JUnit 5 junit-platform.properties
+=== JUnit 5 확장 모델
+=== JUnit 5 마이그레이션
+=== JUnit 5 연습 문제
+
+== 섹션 1. Mockito
+=== Mockito 소개
+=== Mockito 시작하기
+=== Mock 객체 만들기
+=== Mock 객체 Stubbing
+=== Mock 객체 Stubbing 연습 문제
+=== Mock 객체 확인
+=== BDD 스타일 Mockito API
+=== Mockito 연습 문제
+
+== 섹션 2. 도커와 테스트
+=== Testcontainers 소개
+=== Testcontainers 설치
+=== Testcontainers 기능 살펴보기
+=== 컨테이너 정보를 스프링 테스트에서 참조하기
+=== Testcontainers 도커 Compose 사용하기 1부
+=== Testcontainers 도커 Compose 사용하기 2부
+
+== 섹션 3. 성능 테스트
+=== JMeter 소개
+=== JMeter 설치
+=== JMeter 사용하기
+
+== 섹션 4. 운영 이슈 테스트
+=== Chaos Monkey 소개
+=== CM4SB 설치
+=== CM4SB 응답 지연
+=== CM4SB 에러 발생
+
+== 섹션 5. 아키텍처 테스트
+=== ArchUnit 소개
+=== ArchUnit 설치
+=== ArchUnit 패키지 의존성 확인하기
+=== ArchUnit JUnit 5 연동
+=== ArchUnit 클래스 의존성 확인하기
+
+== 섹션 6. 정리
+=== 마무리
