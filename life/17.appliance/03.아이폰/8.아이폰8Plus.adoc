@@ -1,0 +1,4 @@
+= iPhone 8 Plus
+
+== 제품사양
+https://support.apple.com/kb/SP768?locale=ko_KR[iPhone 8 Plus - 제품사양]

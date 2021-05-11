@@ -1,0 +1,50 @@
+= iPhone 12 Pro
+
+== 제품사양
+https://support.apple.com/kb/SP831?viewlocale=ko_KR&locale=ko_KR[iPhone 12 Pro - 제품사양]
+
+
+크기 및 무게
+가로: 71.5mm
+세로: 146.7mm
+두께: 7.4mm
+무게: 187g
+
+== References
+https://www.youtube.com/watch?v=5zgi0e88Jhs[충격고백..갤럭시에서 갈아탈까? 애플 iPhone 12 Pro 언빡싱 & 11 Pro 와 달라진점 6가지 살펴보기 2020.10.27]
+
+◆ Spec.
+모델명 : 애플 아이폰 12 프로
+디스플레이 : 6.1인치 Super Retina XDR OLED
+프로세서 : 애플 A14 Bionic
+전면 카메라 : 1,200만 화소
+초광각 카메라 : 1,200만 화소
+광각 카메라 : 1,200만 화소
+망원 카메라 : 1,200만 화소
+RAM : 6GB LPDDR4X
+저장공간 : 128/256/512GB
+무게 : 187g
+배터리 : 2,815mAh
+색상 : 퍼시픽 블루, 그래파이트, 실버, 골드
+가격 : 135만원 ~
+
+11 Pro와 달라진 점
+
+박스 사이즈가 반으로 줄었음
+
+C to 라이트닝
+
+각진 디자인
+
+유광. 지문이 잘 묻음.
+
+카메라 센서는 같음
+
+배터리 용량이 줄어들었음
+
+CPU 바뀜 A13 -> A14
+
+메모리 2GB 늘었음
+
+방수 성능 좋아짐
+

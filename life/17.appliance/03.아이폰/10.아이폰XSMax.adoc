@@ -1,0 +1,23 @@
+= iPhone XS Max
+
+== 제품사양
+https://support.apple.com/kb/SP780?locale=ko_KR[iPhone XS Max - 제품사양]
+
+크기 및 무게2
+가로: 77.4mm
+세로: 157.5mm
+두께: 7.7mm
+무게: 208g
+
+디스플레이
+Super Retina HD 디스플레이
+6.5형(대각선) 전체 화면 OLED Multi-Touch 디스플레이
+HDR 디스플레이
+2688 x 1242 픽셀 해상도(458ppi)
+1,000,000:1 명암비(일반)
+True Tone 디스플레이
+와이드 컬러 디스플레이(P3)
+3D Touch
+625cd/m2 최대 밝기(일반)
+지문 및 유분 방지 코팅
+여러 언어 및 문자 동시 표시 지원

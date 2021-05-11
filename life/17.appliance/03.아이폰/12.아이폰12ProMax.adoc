@@ -1,0 +1,60 @@
+= iPhone 12 Pro MAX
+
+출시 연도: 2020년
+용량: 128GB, 256GB, 512GB
+색상: 실버, 그래파이트, 골드, 퍼시픽 블루
+모델 번호: A2342(미국), A2410(캐나다, 일본), A2412(중국 본토, 홍콩, 마카오), A2411(기타 국가 및 지역)
+
+
+== 제품사양
+https://support.apple.com/kb/SP832?locale=ko_KR[iPhone 12 Pro Max - 제품사양]
+
+크기 및 무게
+가로: 78.1mm
+세로: 160.8mm
+두께: 7.4mm
+무게: 226g
+
+https://discussionskorea.apple.com/thread/252087169[아이폰12 프로맥스 3G유심으로 기존처럼 전화 문자 데이터 가능한가요? 2020.11.24]
+기본적으로 유심 크기가 Nano 유심이라면 연결후 사용할수 있으며 iPhone 에서는 별도의 제약이 없습니다
+
+
+
+== References
+https://www.apple.com/kr/iphone-12-pro/
+
+https://www.apple.com/kr/trade-in/[보상 판매]
+
+https://support.apple.com/ko-kr/HT201296[iPhone 모델 식별하기]
+
+https://support.apple.com/ko-kr/HT208200[iPhone, iPad 또는 iPod touch의 모델 번호 찾기]
+
+
+https://www.youtube.com/watch?v=c1RQVN1ighs[역대급 판매량인 이유? 애플 아이폰 12 아주 자세한 사용기! + 아이폰 11과 달라진 점 비교 2020.11.06]
+
+11 vs 12 차이점
+
+OLED
+
+베젤이 얇아짐
+
+해상도 증가
+
+리얼블랙
+
+케이스호환
+
+무게 30g정도 줄어듦
+
+2m 수심 30분 -> 6m 수심 30분
+
+통신 모뎀
+
+퀄컴 모뎀. 안테나 잘 터짐. 인텔 모뎀 보다 원활
+
+F1.8 -> F1.6
+
+전면 카메라 개선
+
+야간 모드
+
