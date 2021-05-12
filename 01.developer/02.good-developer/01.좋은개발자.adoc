@@ -3,6 +3,8 @@
 == 좋은 개발자란?
 좋은 개발자란 무엇인가? 사람마다 생각하는 좋은 개발자는 다를 것이다. 어떤 개발자가 좋은 개발자인지 생각해본다.
 
+나쁜 개발자?
+
 기술적으로 뛰어난 역량을 가진 개발자.
 
 커뮤니케이션 능력이 좋은 개발자.
@@ -47,4 +49,16 @@ Triple sum. 숫자 리스트가 주어지고 3개의 수를 골라 합이 0이 �
 
 * facebook: https://www.facebook.com/kwangswei
 * tistory: https://kwangswei.tistory.com
+
+
+== References
+
+https://www.facebook.com/hacker.golbin/posts/10159209972220040[좋은 개발자의 조건 2021.05.12]
+
+https://sangminpark.blog/2021/05/11/%ec%bd%94%eb%8d%94/[코더]
+
+
+1. 코딩능력
+2. 겸손
+3. 커뮤니케이션 능력
 
