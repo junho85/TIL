@@ -1,7 +1,4 @@
-= 쉐보레 스파크
-
-* 허니멜로옐로우 GUD
-* https://blog.gm-korea.co.kr/3236[2013 스파크 허니멜로 옐로우! 스파크 노랑이 실물 직찍! 2012.12.20]
+= 스파크 등(light)
 
 == 브레이크등, 테일램프
 https://www.facebook.com/oliviado85/posts/1007248969697286
@@ -23,13 +20,14 @@ https://www.facebook.com/oliviado85/posts/1007248969697286
 http://item.gmarket.co.kr/Item?goodsCode=1564733675
 1200원
 
+=== 정리
+* https://junho85.pe.kr/1675[스파크 차량 브레이크등 직접 갈아 끼우기 2020.09.14]
 
 == 번호판등 전구
 https://www.facebook.com/oliviado85/posts/814839908938194
 
 * https://coupa.ng/bkPRIo[쉐보레 스파크 번호판등 전구 13505773]
 ** 2020.01.27 기준 1200원
-
 
 == 실내등
 https://www.facebook.com/oliviado85/posts/814839808938204
@@ -60,27 +58,3 @@ image::relay.png[]
 * https://coupa.ng/bkPPcM[쉐보레 순정품 스파크 마티즈 크리에이티브 턴시그널 비상등릴레이 96312545] 7400원 + 2500원
 ** 2020.01.26 기준 9200 + 2500
 
-
-== 와이퍼
-https://www.facebook.com/oliviado85/posts/814836092271909
-
-https://coupa.ng/bkPQV1
-
-
-== 페인트
-image::paint_magic_tip.png[]
-* https://coupa.ng/bnh7wj[매직팁카페인트 쉐보레(GUD) (색상1개+투명1개)] 2020.01.26 기준 12800원
-* https://coupa.ng/bnh7PZ[쉐보레 스파크 GUD (주문생산컬러) 허니멜로우옐로우 붓펜 자동차 차량용 카 페인트] 2020.01.26 기준 12000원
-
-== 뒷좌석 공간
-
-image::spark_space.png[]
-출처: https://blog.naver.com/unique8857/220279887401[마티즈 크리에이티브 (스파크) 트렁크 입구 사이즈]
-
-* 트렁크 입구
-** 가로 70~93cm
-** 세로 70cm
-* 뒷좌석 접은 공간
-** 깊이: 120cm (앞좌석도 최대한 당기면 55인치 TV 겨우 들어감)
-
-뒷좌석 발판쪽은?
