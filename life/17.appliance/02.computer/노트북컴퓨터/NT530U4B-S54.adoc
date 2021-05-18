@@ -66,5 +66,10 @@ regedit -> 찾기 EnableUlps -> 값을 0으로 변경
 https://community.amd.com/t5/graphics/ulps-how-to-disable/td-p/228333[ULPS: How to disable 2014.05.08]
 
 == 정리
+* https://junho85.pe.kr/1923[삼성전자 시리즈5 노트북 NT530U4B-S54 윈도우10 설치 성공 2021.05.17]
 * https://junho85.pe.kr/1913[삼성전자 시리즈5 노트북 NT530U4B-S54 윈도우10 설치 2차 시도 2021.05.08]
 * https://junho85.pe.kr/1911[삼성전자 시리즈5 노트북 NT530U4B-S54 윈도우10 설치 가능? 2021.05.06]
+
+
+== References
+https://cdmanii.com/2813[삼성 시리즈5 울트라 리뷰 SSD 성능 제한 풀기 NT530U4B-S54 2012.02.03]
