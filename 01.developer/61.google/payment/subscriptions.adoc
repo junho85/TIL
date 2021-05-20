@@ -1,0 +1,69 @@
+= Google Play 정기 결제 판매
+
+:hardbreaks:
+
+https://developer.android.com/google/play/billing/subscriptions?hl=ko[정기 결제 판매]
+
+https://developer.android.com/google/play/billing/integrate?hl=ko#life[앱에 Google Play 결제 라이브러리 통합]
+
+
+구매 토큰 및 주문 ID
+
+* 구매 토큰: Google Play에서 제품에 대한 구매자의 자격을 나타내는 문자열. SKU로 표시되는 특정 제품과 관련하여 자격이 있음을 나타냄. 개발자는 구매 토큰을 Google Play Developer API와 함께 사용할 수 있음
+* 주문 ID: Google Play에서 금융 거래를 나타내는 문자열. 구매자에게 이메일로 전송되는 영수증에 포함. 주문 ID를 사용하여 환불을 관리. 주문 ID는 판매 및 판매 대금 보고서에서도 사용
+
+주문 ID는 금융 거래가 발생할 때마다 생성
+
+구매 토큰은 사용자가 구매 흐름을 완료할 때만 생성
+
+
+
+https://developers.google.com/android-publisher/api-ref/rest/v3/purchases.subscriptions
+
+
+https://medium.com/androiddevelopers/implementing-linkedpurchasetoken-correctly-to-prevent-duplicate-subscriptions-82dfbf7167da[Implementing linkedPurchaseToken correctly to prevent duplicate subscriptions 2018.08.23]
+
+orderId는 있는데 purchase token은 없음. orderId로 purchase token알 수 있나?
+
+== RTDN - Real-time Developer Notifications
+https://developer.android.com/google/play/billing/rtdn-reference?hl=ko
+
+https://developer.android.com/google/play/billing/rtdn-reference
+여기에는 purchaseToken 있는데? 구독 구매시에도 날아오나?
+
+https://developers.google.com/android-publisher/api-ref/rest/v3/purchases.subscriptions/acknowledge
+
+
+
+https://www.youtube.com/watch?v=MlaQdWoSRcQ[Understanding subscriptions 2018.11.14]
+
+Google Cloud Pub/Sub
+
+
+https://www.youtube.com/watch?v=foAS0KbLKBg[Understand subscription purchase flow 2018.11.14]
+
+Google Play Billing Library
+
+<- startConnection()
+-> onBillingSetupFinished()
+<- queryPurchases()
+<- launchBillingFlow()
+-> onPurchasesUpdated()
+purchase token
+receipt: order id
+
+app이 purchase token을 서버에 전달
+서버가 purchase token 받으면 Google Play Developer API로 전달
+확인해서 다시 돌려줌. 서버에 저장. 구독 활성화
+
+https://www.youtube.com/watch?v=D8i_-H64TN8[Learn about subscription upgrade and downgrade 2018.11.14]
+
+<- startConnection()
+-> onBillingSetupFinished()
+<- queryPurchases()
+<- BillingFlow...
+
+unique SKU
+
+Google Play Developer API로 Purchase Token 보내면 Linked Purchase Token으로 돌려줌. 서버에서 Purchase Token대체
+
