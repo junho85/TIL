@@ -8,6 +8,11 @@ docker-compose up -d
 
 -d 백그라운드 실행
 
+특정 서비스만 구동 시키기
+----
+docker-compose -f ./docker-compose.yml up -d kafka
+----
+
 == down - shutdown
 ----
 docker-compose down
@@ -17,6 +22,13 @@ docker-compose down
 
 ----
 docker-compose ps
+----
+
+----
+            Name                         Command             State                      Ports
+----------------------------------------------------------------------------------------------------------------
+test-docker_kafka_1       /app-entrypoint.sh /run.sh   Exit 1
+test-docker_zookeeper_1   /app-entrypoint.sh /run.sh   Up       0.0.0.0:2181->2181/tcp, 2888/tcp, 3888/tcp
 ----
 
 == logs
