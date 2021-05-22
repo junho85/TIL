@@ -13,8 +13,7 @@ GET https://daum.net
 == References
 https://www.jetbrains.com/help/idea/exploring-http-syntax.html[Exploring the HTTP request in Editor syntax]
 
-* https://jojoldu.tistory.com/366[IntelliJ http Client 응답값 변수로 저장하고 사용하기
- 2018.12.24]
+* https://jojoldu.tistory.com/366[IntelliJ http Client 응답값 변수로 저장하고 사용하기 2018.12.24]
 
 ----
 > {% %}
