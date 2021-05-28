@@ -2,8 +2,8 @@
 
 
 == 벽식, 기둥식 (라멘)
-* [아파트 구조, 층간소음의 비밀 2016.07.17](https://www.youtube.com/watch?v=Q3MUBHNOZCY)
-** [아파트 구조, 층간소음의 비밀 2016.07.21](http://news.kbs.co.kr/news/view.do?ncd=3316059)
+* https://www.youtube.com/watch?v=Q3MUBHNOZCY[아파트 구조, 층간소음의 비밀 2016.07.17]
+** http://news.kbs.co.kr/news/view.do?ncd=3316059[아파트 구조, 층간소음의 비밀 2016.07.21]
 ** 아파트 바닥 구조
 *** 5가지 단면
 **** 바닥 마감재바닥 마감재
@@ -35,9 +35,9 @@
 ** 경량충격음: 가볍고 딱딱한 충격에 의한 충격음 - 예) 작은 물건이 떨어지는 소리
 ** 중량충격음: 무겁고 부드러운 충격에 의한 충격음 - 예) 어린이 뛰는 소리, 어른이 걷는 소리
 
-* [[건설경제] 공동주택 층간소음 줄어들까? 실제시공 '현장' 확인, 더 꼼꼼해진 인증절차 2019.11.11](https://www.youtube.com/watch?v=06e6IGgDC-4)
+* https://www.youtube.com/watch?v=06e6IGgDC-4[[건설경제] 공동주택 층간소음 줄어들까? 실제시공 '현장' 확인, 더 꼼꼼해진 인증절차 2019.11.11]
 
-* [[건축시공과정31] 12.층간차음재_아파트시공순서_층간소음 해결은 차음재 두께 2019.10.12](https://www.youtube.com/watch?v=ccVUg4P_al4)
+* https://www.youtube.com/watch?v=ccVUg4P_al4[[건축시공과정31] 12.층간차음재_아파트시공순서_층간소음 해결은 차음재 두께 2019.10.12]
 ** 층간차음재. 층간소음해결은 차음재 두께
 ** 층간소음 1dB 만이라도 더 줄이자
 *** 좋은 성능의 차음재를 두껍게 깐다.
@@ -58,16 +58,8 @@
 *** 2. 차음재 위에 테이프. 차음재 사이
 *** 3. ...
 
-* [참기 힘들어 층간소음 측정했는데…문제 없다고? 2016.07.07](https://news.kbs.co.kr/news/view.do?ncd=3307762)
+* https://news.kbs.co.kr/news/view.do?ncd=3307762[참기 힘들어 층간소음 측정했는데…문제 없다고? 2016.07.07]
 ** 2014년 4월 국토교통부와 환경부가 공동마련. 아이 뛰는 소리(40dB)보다 높은 층간소음 기준(주간 기준 43dB)
 
-* [LNSC 이종원 대표, 층간소음의 실체는 층간진동. 2018.08.28](https://news.joins.com/article/22922023)
+* https://news.joins.com/article/22922023[LNSC 이종원 대표, 층간소음의 실체는 층간진동. 2018.08.28]
 ** 1기 신도시 바닥두께가 150mm~180mm
-* [](http://www.lnsc.kr/)
-* [의자 끌자 “자제해달라” 경고음… 층간소음 1년새 확 줄어](http://www.donga.com/news/article/all/20151012/74114411/1)
-* [층간소음, ‘진동감지 백색 소음기’가 해결한다](http://jobnjoy.com/portal/joylife/campus_life_view.jsp?nidx=113532&depth1=2&depth2=1&depth3=3)
-
-* https://urlife.tistory.com/749[대한민국에서 아파트의 '층간소음'이 없어지지 못하는 고질적인 이유 2020.06.11]
-
-* https://mnews.sarangbang.com/talk/bbs/129729/129977[아파트 년식에 따른 층간소음 (바닥 두께) 2019.05.23]
-* https://www.dailian.co.kr/news/view/792518[아파트 절반 이상 층간소음 최소 기준 미달…건설업계 ‘술렁’ 2019.05.02]
