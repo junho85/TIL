@@ -1,0 +1,14 @@
+= Spring Boot - Multiple DataSource
+
+== References
+https://springframework.guru/how-to-configure-multiple-data-sources-in-a-spring-boot-application/
+
+http://wonwoo.ml/index.php/post/780
+
+https://gigas-blog.tistory.com/122
+
+https://www.baeldung.com/spring-data-jpa-multiple-databases
+
+https://cpdev.tistory.com/74
+
+https://github.com/beans9/springboot-jpa-multiple-datasource
