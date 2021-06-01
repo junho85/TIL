@@ -1,0 +1,8 @@
+= 키보드특수기호
+
+~ Tilde (틸더)
+
+
+== References
+* https://blog.daum.net/jinos25/17444168[키보드 특수문자의 명칭 1 2010.04.15]
+* https://www.facebook.com/DoppioLover/posts/10225430970749092[2021.05.20]
