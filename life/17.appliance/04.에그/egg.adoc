@@ -1,0 +1,44 @@
+= EGG
+
+https://www.kt.com/
+
+== LTE Egg Talk (IML540)
+https://shop.kt.com/smart/productView.do?prodNo=WL00052155&sntyNo=&pplId=&pplGroupDivCd=&supportType=01&svcEngtMonsTypeCd=04&sbscTypeCd=01
+
+* 파파고 앱으로 13개국 언어번역
+* 홍콩, 마카오, 일본, 중국에서 LTE 로밍
+* 6.1cm 터치 스크린으로 편리한사용
+* 3000mAh 9시간 30분 사용. 마이크로 5핀 USB
+* 하나의 에그로 최대 8대 동시 접속
+* 4G LTE
+* 나노 유심
+* 123g
+
+== Iron egg 아이언에그 (SMR-100K)
+* 한번 충전에 최대 20시간 연속 사용, 대용량 보조 배터리 역할 (4000mAh)
+* 제조사: 에스모바일
+* LTE: LTE Rel9 Cat 4, B3/B8 지원
+* 802.11a/b/g/n, 2.4GHz
+* 리튬이온 4,000mAh
+* 사용 시간: 연속 20시간, 대기 27시간
+* 크기: 89x89x18mm
+* 무게: 본체: 132g, 크래들: 130g
+
+https://shop.kt.com/smart/productView.do?prodNo=WL00049424&sbscTypeCd=01
+
+https://www.youtube.com/watch?v=9jYS1ay8Xxw[아이언맨의 아크 원자로가 내 손안에! KT 아이언 에그 살펴보기 [KT토커 잇섭] 2018.08.02]
+
+
+== Slim egg2
+https://shop.kt.com/smart/productView.do?prodNo=WL00049918&sntyNo=&pplId=&pplGroupDivCd=&supportType=01&svcEngtMonsTypeCd=04&sbscTypeCd=01
+
+* 제조사: 인포마크
+* 4G LTE
+* 나노 유심
+* 2450mAh 최대 16시간. 대기 시간 최대 600시간
+* 무게 78g
+
+== LTE egg+ A (IML450)
+
+== 정리
+* https://junho85.pe.kr/898[KT 에그 요금제 변경. LTE egg+ 11 -> LTE egg+ 22 로 변경. 한달 데이터 11GB -> 22GB 2018.03.26]
