@@ -1,0 +1,18 @@
+:hardbreaks:
+= NAS
+
+== 시놀로지 NAS DS720+
+
+Intel Celeron J4125
+4-core 2.0 (기본) / 2.7 (burst) GHz
+
+2GB DDR4 non-ECC (최대 6GB까지 확장 가능)
+
+
+
+
+
+== 헤놀로지
+
+https://itmir.tistory.com/685[XPEnology Nas (헤놀로지 나스) 구축기 2021.01.01]
+
