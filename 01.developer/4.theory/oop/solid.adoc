@@ -1,0 +1,16 @@
+= SOLID
+
+
+== SRP 단일 책임 원칙(Single responsibility principle)
+
+== OCP 개방 폐쇄 원칙(Open-closed principle)
+
+== LSP 리스코프 치환 원칙(Liskov substitution principle)
+
+== ISP 인터페이스 분리 원칙(Interface segregation principle)
+
+== DIP 의존 역전 원칙(Dependency inversion principle)
+
+
+== References
+* https://www.nextree.co.kr/p6960/[객체지향 개발 5대 원리: SOLID 2021.01.06]
