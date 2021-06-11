@@ -18,6 +18,8 @@ my.cnf 설정 추가
 read_only
 ----
 
+== 정리
+* https://junho85.pe.kr/1914[MySQL - read only 모드 확인 방법. 설정 방법 2021.05.09]
 
 
 == References
