@@ -1,4 +1,7 @@
+:hardbreaks:
 = 시놀로지 NAS DS918+
 
 == References
 * http://www.ppomppu.co.kr/zboard/view.php?id=nas&no=34387&ismobile[시놀로지 DS918+ SHR(=raid 5)의 데이터 쓰기 속도가 너무 빨라서 당황스럽네요. 2019.01.30]
+
+* https://www.youtube.com/watch?v=qy6wH9mV8Xs[시놀로지 DS918+ | 영상 저장 솔루션에 대한 고민 (외장하드 vs NAS) 2018.10.28]

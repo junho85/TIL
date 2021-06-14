@@ -1,0 +1,4 @@
+= 시놀로지 NAS DS1819+
+
+== References
+* https://www.youtube.com/watch?v=FobKQgO_ZvU[시놀로지 DS1819+ | 왜! 굳이! DS1019+를 쓰다 바꾸려는 이유 (10Gbe) 2019.08.25]

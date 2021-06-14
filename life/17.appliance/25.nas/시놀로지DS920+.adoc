@@ -1,0 +1,49 @@
+= 시놀로지 NAS DS920+ (DS = DiskStation)
+
+https://coupa.ng/b0I03i
+2021.06.04 678,160원 (로켓와우회원가)
+2021.06.01 692,000
+
+https://www.ablestor.com/shop/detail?type=default&item=835
+2021.06.02 692,000
+
+M.2 SSD 슬롯 두 개. Synology SSD 캐시 기능
+SSD 캐시를 추가하면 전면 드라이브 베이를 사용하지 않고도 I/O 응답이 최대 20배까지 빨라짐
+
+Synology DX517을 사용해 드라이브를 5개 이상 추가하여 저장소 용량을 확장할 수 있음
+
+Intel Celeron J4125
+4-core 2.0 (기본) / 2.7 (burst) GHz
+
+4GB DDR4 non-ECC (최대 8GB까지 확장 가능)
+
+== 아이언울프 16TB 포함. 4TB 4개
+
+https://smartstore.naver.com/synology/products/5275373975
+2021.06.04 1,328,000원. 스토어찜 2% 할인하면 1,301,440원. 네이버멤버십 19,280원 적립. 충전포인트 결제시 26,560원 적립
+
+== References
+* https://www.bonobono.com/2020/06/10/ds920plus_memory_16gb/[DS920+의 추가 메모리는 어떤걸 사용할까? 2020.06.10]
+
+온보드 메모리 + 별도의 SODIMM 슬롯에 삼성 DDR4-2666 4GB SO-DIMM
+Synology 정품 D4NESO-2666-4G 메모리는 용량에 비해 고가
+삼성제품은 절반도 안되는 금액
+
+해외리뷰에서 Crucial 제품 정상인식된다고
+
+CPU는 Intel Celeron J4125. 이 CPU가 지원할 수 있는 최대 메모리용량은 8GB인데 온보드 메모리 4GB + 별도 SODIMM 슬롯에 장착된 16GB까지 해서 총 20GB 정상 인식
+
+http://www.compuzone.co.kr/product/product_detail.htm?ProductNo=469091&BigDivNo=4&MediumDivNo=1014&DivNo=2037[삼성 DDR4 16GB PC4-21300 노트북용 저전력
+16GB / 2666MHz (PC4-21300) / DDR4-SDRAM / SO-Dimm / 노트북용]
+
+2021.06.02 94,500원
+
+https://coupa.ng/b0LIWE
+
+2021.06.02 91,530원
+
+
+* https://blog.naver.com/dldbdgml99/221999015324[시놀로지 나스 램 업그레이드기 2020.06.13]
+
+시놀로지 정품램 사용. 4GB가 111,000원
+
