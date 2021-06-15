@@ -13,3 +13,5 @@ https://stackoverflow.com/tags/spring-boot
 
 == References
 * https://spring.io/projects/spring-boot[Spring Boot]
+* https://www.youtube.com/watch?v=PT2RtnVeMNo[스프링 프로젝트 시작하기 2016.01.13]
+** 2016년 1월 12일, 우아한형제들 신규시스템개발팀 세미나.
