@@ -6,19 +6,39 @@
 
 Jet 생김
 
+Block Man (돌) -> Acid Man (독) -> Impact Man (드라이버) -> Bounce Man (고무) -> Fuse Man (전기) -> Tundra Man (얼음) -> Torch Man (불) -> Blast Man (폭탄)
+
+강화 아이템 기준
+
+기어는 50회? 사용하면 강화 아이템 구매 가능
+
+와일리 뭔가 꺠고 나면 생기는 거
+
+최종 보스 클리어 후 마지막 두개
+
 
 
 == Block Man 돌
-약점:
+약점: 폭탄
 
 == Acid Man
 
 중간보스
-약점: 전기?
+약점: 돌 (파워)
 
 보스
 약점: 돌 무기. 독 방어막 깨뜨림
 무기: Acid Barrier
+
+
+== Impact Man
+
+중간보스: 돌 (파워)
+
+약점: 독
+
+무기: Pile Driver
+
 
 == Blast Man. 폭탄
 약점: 불
@@ -29,7 +49,7 @@ Jet 생김
 * 약점: 불? 앞에서 막 갈기니 그나마 편하게 클리어 하긴 함.
 
 보스:
-약점:
+약점: 고무
 무기: Scramble Thunder
 
 == Bounce Man
@@ -39,19 +59,14 @@ Jet 생김
 약점: 불?
 
 보스:
-약점:
+약점: 드라이버
 무기: Bounce Ball
 
 == Torch Man 불
-약점:
-
-== Impact Man
-약점:
-
-무기: Pile Driver
+약점: 얼음 폭풍
 
 == Tundra Man 얼음
-약점:
+약점: 전기
 
 
 == References
