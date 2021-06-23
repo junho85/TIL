@@ -1,0 +1,10 @@
+= 11장 웹 애플리케이션 제작
+
+https://github.com/holyeye/jpabook
+
+ch11-jpa-shop
+
+
+== IntelliJ 설정 방법
+
+image::image-2021-06-23-00-27-55-567.png[]
