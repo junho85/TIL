@@ -22,6 +22,21 @@ Intel Celeron J4125
 https://smartstore.naver.com/synology/products/5275373975
 2021.06.04 1,328,000원. 스토어찜 2% 할인하면 1,301,440원. 네이버멤버십 19,280원 적립. 충전포인트 결제시 26,560원 적립
 
+== 아이언울프 HDD
+=== 씨게이트 IronWolf SATA3 HDD 4TB ST4000VN008
+https://coupa.ng/b2nS2a[씨게이트 IronWolf SATA3 HDD 4TB ST4000VN008]
+
+2021.06.24 165,000원
+
+== 업그레이드
+
+=== 삼성전자 노트북용 DDR4 16GB PC4-21300
+https://coupa.ng/b0LIWE[삼성전자 노트북용 DDR4 16GB PC4-21300]
+
+2021.06.24 87,530원
+2021.06.02 91,530원
+
+
 == References
 * https://www.bonobono.com/2020/06/10/ds920plus_memory_16gb/[DS920+의 추가 메모리는 어떤걸 사용할까? 2020.06.10]
 
@@ -37,10 +52,6 @@ http://www.compuzone.co.kr/product/product_detail.htm?ProductNo=469091&BigDivNo=
 16GB / 2666MHz (PC4-21300) / DDR4-SDRAM / SO-Dimm / 노트북용]
 
 2021.06.02 94,500원
-
-https://coupa.ng/b0LIWE
-
-2021.06.02 91,530원
 
 
 * https://blog.naver.com/dldbdgml99/221999015324[시놀로지 나스 램 업그레이드기 2020.06.13]
