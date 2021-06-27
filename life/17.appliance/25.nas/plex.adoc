@@ -1,0 +1,17 @@
+= 시놀로지 PLEX 세팅
+
+* 패키지 센터에서 PLEX 설치
+* Plex Media Server 실행
+* https://www.plex.tv/ko/media-server-downloads/ Plex Media Server 이거 맥이나 윈도우에 깔면 쓸모 있나?
+
+== 제어판 -> 사용자
+* 제어판 -> 사용자
+* plex -> 권한탭
+** 01.Data에 접근 권한 주려면 "읽기/쓰기"권한 부여
+** 권한 안주면 Plex 설정 시 01.Data 디렉터리 선택은 할 수 있으나 안에 있는 영상을 찾지 못함
+
+== Plex 설정
+
+
+== References
+* https://coolenjoy.net/bbs/37/228571[PLEX 세팅 1편 - NAS PLEX 서버 세팅하기, 설정하기 2020.11.27]
