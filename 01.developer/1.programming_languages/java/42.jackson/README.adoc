@@ -1,5 +1,10 @@
 = jackson
 
+== Jackson Annotations
+https://github.com/FasterXML/jackson-annotations/wiki/Jackson-Annotations
+
+
+
 == MismatchedInputException
 
 https://jinseongsoft.tistory.com/232
