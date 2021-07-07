@@ -1,4 +1,4 @@
-= 26. 지옥의 문
+= 24. 지옥의 문
 
 * 임무 목표:
 * 자금 보상:
@@ -18,3 +18,6 @@
 
 == References
 * https://www.youtube.com/watch?v=2CBGF68lVzU[[마이콜] 스타크래프트2 자유의 날개 - 지옥의 문 아주어려움 공략 2013.10.12]
+* https://blog.naver.com/kdu5660/220399782223[]
+* https://www.youtube.com/watch?v=1Foicu190Dk[스타2 자유의 날개 캠페인 아주어려움 공략 #24 [지옥의 문] 2012.10.14]
+** 노인박
