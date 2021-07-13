@@ -15,3 +15,46 @@ spring.freemarker.suffix=.ftl
 
 == References
 * http://zetcode.com/springboot/freemarker/[Spring Boot FreeMarker tutorial]
+
+* https://knight76.tistory.com/entry/java-listmap%EA%B3%BC-freemark-%EC%97%B0%EB%8F%99[내가 자주 실수하는 Java - Freemarker 용법 2014.08.12]
+
+null 체크는 ??
+----
+<#if userList??>
+<#list userList as id >
+    ${id}
+</#list>
+</#if>
+----
+
+if 문에서 =은 하나만 (이건 요즘은 아닌 듯?)
+2. conditional statement(if 문)에서는 '='은 두번 쓰지 않는다. 하나의 = 만을 쓴다.
+----
+<#if category = "home">
+<#elseif category = "content">
+</#if>
+----
+
+Map<String, String> (O)
+Map<String, Object> (X)
+
+List<Map<String, Object>> userList
+
+----
+<#if userList??>
+  <#list userList as user>
+    ${user.content}
+    ${user.link}
+  </#list>
+</#if>
+----
+
+역순
+----
+<#if userList??>
+  <#list userList?reverse as user>
+    ${user.content}
+    ${user.link}
+  </#list>
+</#if>
+----
