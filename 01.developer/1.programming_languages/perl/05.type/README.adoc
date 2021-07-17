@@ -1,0 +1,10 @@
+= perl - data type
+
+== Reference Types
+
+* [] array reference
+* {} hash reference
+
+== References
+* https://www.perltutorial.org/perl-reference-types-and-autovification/[Perl Reference Types and Autovification]
+* https://www.perltutorial.org/perl-variables/[Perl Variables]
