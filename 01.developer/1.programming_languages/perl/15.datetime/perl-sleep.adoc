@@ -4,6 +4,7 @@ perl에서 기본 제공되는 함수중 sleep은 초단위로 잠깐 동안 동
 
 예제를 봅시다.
 
+[source,perl]
 ----
 #!/usr/bin/perl
 use strict;
@@ -47,12 +48,14 @@ sleep(1) 대신 sleep(0.5)를 주면 어떻게 될까요?
 
 Time::HiRes 모듈을 사용해야 합니다.
 
+[source,perl]
 ----
 use Time::HiRes;
 
 Time::HiRes::sleep(0.5);
 ----
 
+[source,perl]
 ----
 #!/usr/bin/perl
 use strict;
