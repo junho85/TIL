@@ -1,0 +1,11 @@
+= perl - installation - windows
+
+== winget
+
+===
+https://winget.run/pkg/StrawberryPerl/StrawberryPerl
+
+----
+winget install -e --id StrawberryPerl.StrawberryPerl
+----
+
