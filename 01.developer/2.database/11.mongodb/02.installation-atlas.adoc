@@ -1,0 +1,19 @@
+= mongodb installation - atlas
+
+https://www.mongodb.com/cloud/atlas
+
+== connect
+
+=== shell - mongosh
+
+----
+$ brew install mongosh
+----
+
+----
+$ mongosh "mongodb+srv://mycluster.bgltw.mongodb.net/myFirstDatabase" --username junho85
+----
+
+
+== 정리
+* https://junho85.pe.kr/1979[MongoDB 무료로 사용하기 - MongoDB Atlas 2021.07.09]

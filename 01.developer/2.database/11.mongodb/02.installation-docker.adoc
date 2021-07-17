@@ -1,7 +1,5 @@
-= mongodb installation
+= mongodb installation - docker
 
-
-== docker
 
 [source]
 ----
