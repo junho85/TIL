@@ -1,0 +1,4 @@
+= JVM - Java Virtual Machine
+
+== References
+https://java.ihoney.pe.kr/79[JRE와 JDK의 차이, JRE 2009.09.06]
