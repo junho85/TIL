@@ -1,0 +1,30 @@
+= 공랭식. 팬 (FAN)
+
+== RMC GT300
+
+https://www.youtube.com/watch?v=zRPbKOJkKQU[노트북 쿨러 끝판왕 바람을 강제로 밀어넣는 새로운 방식 (RMC GT300 노트북 쿨러) 2020.08.13]
+
+
+
+
+== ZM-NS1000
+
+180mm 쿨링팬
+
+
+== ZM-NS2000
+200mm 쿨링팬
+
+4단계 높이 조절
+
+377x283x52mm (WxDxH)
+
+1.1kg
+
+소음 20dBA
+
+17 Laptop 까지 지원
+
+RPM 470rpm~610rpm += 10%
+
+USB 허브포트 3개

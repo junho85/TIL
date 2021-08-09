@@ -1,0 +1,19 @@
+= 쿨러
+
+
+== 펠티어
+반도체 방식
+
+온도차가 심해져서 물이 생긴다는 단점
+
+장기적으로는 이 방식을 개선한게 대세가 되지 않을까
+
+
+
+https://www.youtube.com/watch?v=T856fQPvEUE[M1 macbook air 대박 쿨러 발견 2021.04.16]
+
+=== WASP Wing 2 pro (와스프 윙2 프로) 스마트폰 반도체 냉각쿨러
+
+https://www.joytron.co.kr/product_view.php3?kind=&skind=&f_num=1290[WASP Wing 2 pro (와스프 윙2 프로) 스마트폰 반도체 냉각쿨러]
+
+
