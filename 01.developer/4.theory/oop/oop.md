@@ -1,17 +1,5 @@
 # oop
 
-## SOLID
-
-### SRP 단일 책임 원칙(Single responsibility principle)
-
-### OCP 개방 폐쇄 원칙(Open-closed principle)
-
-### LSP 리스코프 치환 원칙(Liskov substitution principle)
-
-### ISP 인터페이스 분리 원칙(Interface segregation principle)
-
-### DIP 의존 역전 원칙(Dependency inversion principle)
-
 
 ## references
 

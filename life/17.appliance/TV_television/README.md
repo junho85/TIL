@@ -32,20 +32,3 @@
   * 평가 댓글에 사운드가 조금 답답하다는 의견 있음
 * http://mitem.gmarket.co.kr/Item?goodscode=1103234494
 
-## 카레나 49인치. KARENA. 카레나 49인치 TV F49T4E
-* 2018.07.25 당근마켓 15만원
-* [카레나 삼성정품페널 UHD TV 123Cm F49T4E / 무료 방문설치](https://www.coupang.com/vp/products/114334242?itemId=343022474&vendorItemId=4985754400&q=F49T4E&itemsCount=36&searchId=a344987f12d34036836b2f80ed04130f&rank=3&isAddedCart=)
-  * 49인치(123cm) / UHD 3840x2160P
-  * 16:9, 178도 시야각
-  * 명암비 DCR 5,000,000:1
-  * 컴포지트 / 컴포넌트 / RF / 라인출력 / PC오디오 입력 / HDMI X 4EA / USB / 이어폰출력 / OPTICAL
-    * HDMI 2?
-  * 소비전력 99W / 대기전력 0.5W
-  * 에너지효율등급 4등급
-  * 크기 1109.9 x 646.3 x 96.5 (53.8)(mm) / 1109.9 x 699.2 x 239.3(mm)
-  * 1073.78 x 604 (mm)
-  * 무게 12 kg
-  * 배사홀 200 x 200 (mm)
-  * 제조 중국
-  * 제조사 Jiangsu Shinco Technology Co.,LTD.
-  * 삼성 프리미엄 패널

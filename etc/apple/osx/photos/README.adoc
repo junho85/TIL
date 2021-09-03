@@ -1,0 +1,5 @@
+= Photos
+
+== References
+* https://tariat.tistory.com/455[맥 포토 라이브러리 외장하드로 옮기기 2018.11.11]
+* https://support.apple.com/ko-kr/HT201517[사진 보관함을 옮겨 Mac에서 공간 확보하기]

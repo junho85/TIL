@@ -26,16 +26,16 @@ Flux.fromIterable - Iterable을 Flux로 변환
 
 [source,java]
 ----
-        for (List<String> basket : baskets) {
-            HashMap<String, Integer> temp = new HashMap<>();
-            for (String fruit : basket) {
-                Integer integer = temp.putIfAbsent(fruit, 1);
-                if (integer != null) {
-                    temp.put(fruit, integer + 1);
-                }
-            }
-            System.out.println(temp);
+for (List<String> basket : baskets) {
+    HashMap<String, Integer> temp = new HashMap<>();
+    for (String fruit : basket) {
+        Integer integer = temp.putIfAbsent(fruit, 1);
+        if (integer != null) {
+            temp.put(fruit, integer + 1);
         }
+    }
+    System.out.println(temp);
+}
 ----
 
 간단...

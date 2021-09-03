@@ -2,30 +2,44 @@
 
 https://app.codility.com/programmers/
 
-== Task1 - binary gap - Easy
-https://app.codility.com/c/run/trainingPZXWWF-EW3/
+
+== Arrays
+
+https://app.codility.com/programmers/lessons/2-arrays/
+
+
+== CyclicRotation
+
+https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/
+
+N개의 정수로 구성된 배열 A.
+
+
+== Demo
+https://app.codility.com/demo/take-sample-test/
+
+A = [1, 3, 6, 4, 1, 2]
 
 [source,python]
 ----
-def solution(N):
-    return max([len(x) for x in format(N, 'b').strip('0').split('1')])
+def solution(A):
+    # 정렬한 다음 하나씩 순서대로 찾는다
+    result = 1
+    A = sorted(set(A))
+    for a in A:
+        if a <= 0:
+            continue
+        else:
+            if a == result:
+                result += 1
+            else:
+                return result
+    return result
+
+assert (solution([1, 3, 6, 4, 1, 2]) == 5)
+assert (solution([1, 2, 3]) == 4)
+assert (solution([-1, -3]) == 1)
 ----
 
+1보다 작은 숫자 위치를 binary search로 찾으면 좀 더 빠르게 할 수 있을 듯
 
-[source,java]
-----
-public class BinaryGap {
-    public static void main(String[] args) {
-        BinaryGap b = new BinaryGap();
-        System.out.println(b.solution(32));
-    }
-
-    public int solution(int N) {
-        return Arrays.stream(Integer.toBinaryString(N).replaceAll("0*$", "")
-                .split("1"))
-                .map(String::length)
-                .max(Integer::compare)
-                .orElse(0);
-    }
-}
-----

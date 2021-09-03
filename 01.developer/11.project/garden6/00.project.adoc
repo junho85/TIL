@@ -30,7 +30,7 @@ config.ini
 * https://www.gabia.com/
 * A 레코드 추가. garden6
 
-== 구글 애널리틱스
+== 구글 애널리틱스. Google Analytics
 * Admin 페이지 가서 Create Property로 추가
 * 참고: https://www.monsterinsights.com/how-to-add-a-property-in-google-analytics/#:~:text=Step%201%3A%20Create%20a%20New%20Property%20in%20Google%20Analytics&text=Now%20click%20on%20Admin%20in,reporting%20time%20zone%2C%20and%20currency.
 [] google_analytics.html

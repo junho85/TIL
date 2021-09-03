@@ -2,6 +2,8 @@
 
 https://developer.apple.com/videos/play/wwdc2020/10661/[What’s new with in-app purchase]
 
+originTid
+tid
 
 
 == 인앱 정기결제
