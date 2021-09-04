@@ -1,0 +1,5 @@
+= 시놀로지 메일서버
+
+== References
+* https://gumu.kr/blog/165/mailplus1/[시놀로지 NAS, 메일서버 구현하기 1탄(Mail plus 설치, 설정) 2019.07.03]
+* https://gumu.kr/blog/185/mailplus2/[시놀로지 NAS, 메일서버 구현하기 2탄(도메인DNS, SPF, DKIM, DMARC 설정) 2019.07.10]

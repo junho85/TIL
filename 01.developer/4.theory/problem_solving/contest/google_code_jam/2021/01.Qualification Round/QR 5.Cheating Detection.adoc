@@ -1,0 +1,4 @@
+= QR 5.Cheating Detection (11pts, 20pts)
+
+https://codingcompetitions.withgoogle.com/codejam/round/000000000043580a/00000000006d1155
+

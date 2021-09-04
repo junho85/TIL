@@ -1,0 +1,12 @@
+= QR 3.Reversort Engineering (7pts, 11pts)
+
+https://codingcompetitions.withgoogle.com/codejam/round/000000000043580a/00000000006d12d7
+
+== Problem
+
+== Input
+
+== Output
+
+== Limits
+

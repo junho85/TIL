@@ -1,0 +1,12 @@
+= 시놀로지 Photo Station
+
+== 내부 접근
+
+== 외부 접근
+* 포트포워딩?
+
+== References
+
+https://www.lesstif.com/life/synology-nas-photo-station-76709991.html[synology nas photo station 외부 접속 가능하게 설정]
+
+https://kb.synology.com/en-me/DSM/tutorial/How_do_I_assign_network_ports_for_my_Photo_Station[How do I assign network ports for Photo Station?]
