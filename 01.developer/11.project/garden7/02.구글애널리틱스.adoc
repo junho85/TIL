@@ -1,0 +1,8 @@
+:hardbreaks:
+= 구글 애널리틱스. Google Analytics
+
+* Admin 페이지 가서 Create Property로 추가
+* property name: garden7
+* Advanced 설정에서 Create a Universal Analytics property
+
+tracking code에 내용 복붙해서 google_analytics.html에 설정

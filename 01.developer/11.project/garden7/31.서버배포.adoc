@@ -1,0 +1,25 @@
+:hardbreaks:
+
+= 서버배포
+
+== 도메인
+* https://www.gabia.com/
+* A 레코드 추가. garden7
+
+== mongodb
+docker로 띄우는 mongodb.
+----
+docker start mymongo
+----
+참고로 기존 시즌 db도 같이 보관되어 있다.
+
+== 배포
+----
+cd /home/junho85/web/
+git clone git@github.com:junho85/garden7.git
+cd garden7
+python3.7 -m virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+----
+
