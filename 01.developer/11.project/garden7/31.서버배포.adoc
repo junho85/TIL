@@ -13,6 +13,16 @@ docker start mymongo
 ----
 참고로 기존 시즌 db도 같이 보관되어 있다.
 
+중복 데이터 방지를 위해 index를 생성해 준다.
+----
+use garden7
+
+//db.slack_messages.remove({})
+
+db.createCollection("slack_messages")
+db.slack_messages.createIndex({ts:1}, {unique: true})
+----
+
 == 배포
 ----
 cd /home/junho85/web/
@@ -21,5 +31,54 @@ cd garden7
 python3.7 -m virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
+----
+
+
+== httpd 설정
+
+
+[source]
+----
+sudo vi /etc/apache2/sites-enabled/000-default.conf
+----
+
+----
+# garden7
+<VirtualHost *:80>
+    ServerName garden7.junho85.pe.kr
+
+    WSGIDaemonProcess garden7.junho85.pe.kr python-home=/home/junho85/web/garden7/venv python-path=/home/junho85/web/garden7/
+    WSGIProcessGroup garden7.junho85.pe.kr
+
+    WSGIScriptAlias / /home/junho85/web/garden7/garden7/wsgi.py
+
+    ErrorLog "/var/log/apache2/garden7-error_log"
+    CustomLog "/var/log/apache2/garden7-access_log" common
+
+    <Directory /home/junho85/web/garden7/garden7>
+    <Files wsgi.py>
+        Require all granted
+    </Files>
+    </Directory>
+</VirtualHost>
+----
+
+----
+sudo service apache2 stop
+sudo service apache2 start
+----
+* /var/log/apache2
+
+
+* config.
+** SLACK_API_TOKEN
+** CHANNEL_ID
+* users.yaml
+** https://api.slack.com/methods/users.list/test
+
+== crontab
+
+----
+0 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,23 * * * PYTHONPATH=/home/junho85/web/garden7 /home/junho85/web/garden7/venv/bin/python /home/junho85/web/garden7/attendance/cli_collect.py
 ----
 
