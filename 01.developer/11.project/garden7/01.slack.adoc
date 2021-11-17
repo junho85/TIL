@@ -32,3 +32,42 @@ authorization:read
 config.ini 설정
 * SLACK_API_TOKEN = 생성한 토큰
 * CHANNEL_ID = apps/뒤에 있는 값
+
+== github bot
+https://slack.github.com/
+
+=== slack message 예제
+
+----
+{
+	'bot_id': 'B02MC36L1PU',
+	'type': 'message',
+	'text': '',
+	'user': 'U02LXDBJZRV',
+	'ts': '1637159014.020800',
+	'team': 'T02M3GHM1L6',
+	'bot_profile': {
+		'id': 'B02MC36L1PU',
+		'deleted': False,
+		'name': 'GitHub',
+		'updated': 1636984097,
+		'app_id': 'A01BP7R4KNY',
+		'icons': {
+			'image_36': 'https://avatars.slack-edge.com/2020-11-25/1527503386626_319578f21381f9641cd8_36.png',
+			'image_48': 'https://avatars.slack-edge.com/2020-11-25/1527503386626_319578f21381f9641cd8_48.png',
+			'image_72': 'https://avatars.slack-edge.com/2020-11-25/1527503386626_319578f21381f9641cd8_72.png'
+		},
+		'team_id': 'T02M3GHM1L6'
+	},
+	'attachments': [{
+		'fallback': '[junho85/TIL] 1 new commit pushed  to _master_ by junho85',
+		'text': '`<https://github.com/junho85/TIL/commit/a706a7a012ae4cd568fb0b225c826bb0fc1ef725|a706a7a0>` - 정원사들 시즌7 설치 문서 정리 중\n',
+		'pretext': '<https://github.com/junho85/TIL/compare/5ae9faa91fc4...a706a7a012ae|1 new commit> pushed  to `<https://github.com/junho85/TIL/tree/master|master>` by <https://github.com/junho85|junho85>',
+		'footer': '<https://github.com/junho85/TIL|junho85/TIL>',
+		'id': 1,
+		'footer_icon': 'https://slack.github.com/static/img/favicon-neutral.png',
+		'color': '24292f',
+		'mrkdwn_in': ['text']
+	}]
+}
+----
