@@ -74,3 +74,37 @@ attachments에 commit 관련 메시지들이 있다.
 }
 ----
 
+2번 커밋하고 한번에 push 한다고 attachments가 늘어나지는 않는다.
+----
+{
+	'bot_id': 'B02MC36L1PU',
+	'type': 'message',
+	'text': '',
+	'user': 'U02LXDBJZRV',
+	'ts': '1637160031.021000',
+	'team': 'T02M3GHM1L6',
+	'bot_profile': {
+		'id': 'B02MC36L1PU',
+		'deleted': False,
+		'name': 'GitHub',
+		'updated': 1636984097,
+		'app_id': 'A01BP7R4KNY',
+		'icons': {
+			'image_36': 'https://avatars.slack-edge.com/2020-11-25/1527503386626_319578f21381f9641cd8_36.png',
+			'image_48': 'https://avatars.slack-edge.com/2020-11-25/1527503386626_319578f21381f9641cd8_48.png',
+			'image_72': 'https://avatars.slack-edge.com/2020-11-25/1527503386626_319578f21381f9641cd8_72.png'
+		},
+		'team_id': 'T02M3GHM1L6'
+	},
+	'attachments': [{
+		'fallback': '[junho85/TIL] 2 new commits pushed  to _master_ by junho85',
+		'text': '`<https://github.com/junho85/TIL/commit/3aaffecd618398735491ad60558294b0dad64ce3|3aaffecd>` - slack message 예제\n`<https://github.com/junho85/TIL/commit/8f5e8ddb89f991b993741e4ce4f4a79983bb7b0a|8f5e8ddb>` - slack message 예제 - 2번 커밋 하고 push 테스트용 커밋\n',
+		'pretext': '<https://github.com/junho85/TIL/compare/a706a7a012ae...8f5e8ddb89f9|2 new commits> pushed  to `<https://github.com/junho85/TIL/tree/master|master>` by <https://github.com/junho85|junho85>',
+		'footer': '<https://github.com/junho85/TIL|junho85/TIL>',
+		'id': 1,
+		'footer_icon': 'https://slack.github.com/static/img/favicon-neutral.png',
+		'color': '24292f',
+		'mrkdwn_in': ['text']
+	}]
+}
+----
