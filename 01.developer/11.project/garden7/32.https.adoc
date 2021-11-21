@@ -1,0 +1,51 @@
+= https
+
+Let's Encrypt
+
+https://letsencrypt.org/
+
+== Getting Started
+https://letsencrypt.org/getting-started/
+
+----
+$ sudo apt-get install letsencrypt
+----
+
+== Certbot
+
+https://certbot.eff.org/
+
+환경에 따른 설치 방법 페이지를 제공합니다.
+
+apache, ubuntu 18 을 사용한다고 하면 다음 주소로 연결됩니다.
+
+https://certbot.eff.org/instructions?ws=apache&os=ubuntu-18
+
+snapd를 사용하기에 snapd를 먼저 설치합니다.
+
+----
+sudo yum install snapd
+----
+
+snapd를 최신버전으로 업데이트합니다.
+----
+sudo snap install core; sudo snap refresh core
+----
+
+기존에 설치된 certbot을 제거합니다.
+
+----
+sudo apt-get remove certbot
+----
+
+snapd를 이용해서 certbot을 설치합니다.
+----
+sudo snap install --classic certbot
+----
+
+certbot 커맨드를 어디서나 사용할 수 있도록 /usr/bin에 링크를 만들어 줍니다.
+----
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+----
+
+작성중...
