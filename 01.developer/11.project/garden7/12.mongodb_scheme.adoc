@@ -1,0 +1,23 @@
+:hardbreaks:
+= mongodb scheme
+
+* database: garden7
+* collection: slack_messages
+
+== scheme
+slack message + 가공한 몇가지 데이터로 구성되어 있습니다.
+
+* _id: 자동생성
+* attachments
+** fallback
+** text
+** ...
+* author_name: github user(or org)로 출석 유저의 기준. attachments[0].fallback 내용을 파싱해서 by <user>의 user를 author_name으로 저장한다.
+* bot_id: 사용하지 않음
+* bot_profile: 사용하지 않음
+* team: 사용하지 않음
+* text: 사용하지 않음
+* ts: timestamp. index
+* ts_for_db: 날짜 range 로 검색을 편리하게 하기위해 ts 는 ts_for_db 라는 timestamp type 으로 변경해서 넣습니다.
+* type: 사용하지 않음
+* user: 사용하지 않음

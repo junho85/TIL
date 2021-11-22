@@ -1,0 +1,21 @@
+:hardbreaks:
+= manual insert 수동 등록
+
+출석이 누락된 경우 수동 등록을 합니다.
+
+----
+PYTHONPATH=/home/junho85/web/garden7 /home/junho85/web/garden7/venv/bin/python /home/junho85/web/garden7/attendance/manual_insert.py
+----
+
+TODO api나 admin으로 만들어야 겠음.
+
+== mongodb mapping
+
+* attachments[0]
+** fallback:
+** text
+* author_name: commit.user
+* ts: commit.ts
+* ts_for_db: commit.ts_datetime
+* type: 'message'
+* user: user

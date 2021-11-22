@@ -1,0 +1,6 @@
+:hardbreaks:
+
+= 개선검토
+
+* author_name을 attachments[0].fallback의 메시지의 by <user>를 사용하는데 실수로 user를 잘못 사용하는 경우가 생길까? url에 있는 user(or org)를 사용하는게 좋을까?
+* 현재 ts가 index인데 ts_for_db를 index로 거는 것이 더 효과적일 듯?

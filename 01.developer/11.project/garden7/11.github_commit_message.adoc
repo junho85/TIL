@@ -1,0 +1,48 @@
+:hardbreaks:
+= github commit message
+
+== commit url과 api url
+* commit url: https://github.com/{user}/{repo}/commit/{sha}
+* commit api url: https://api.github.com/repos/{user}/{repo}/commits/{sha}
+
+== 주요 정보
+* commit.author.date 커밋 일시
+* commit.message 커밋 메시지
+
+
+== structure
+* sha
+* node_id
+* commit
+** author
+*** name
+*** email
+*** date
+** committer
+*** name
+*** email
+*** date
+** message
+** tree
+*** sha
+*** url
+** url
+** comment_count
+** verification
+*** verified
+*** reason
+*** signature
+*** payload
+* url
+* html_url
+* comments_url
+* author
+** login
+** id
+** node_id
+** avatar_url
+** gravatar_id
+** url
+** html_url
+** followers_url
+...
