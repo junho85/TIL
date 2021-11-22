@@ -1,0 +1,69 @@
+:hardbreaks:
+= httpd 설정
+
+[source]
+----
+sudo vi /etc/apache2/sites-enabled/000-default.conf
+----
+설정을 수정해 주어도 되고 /etc/apache2/sites-available/garden7.junho85.pe.kr.conf 설정을 만들고 a2ensite garden7.junho85.pe.kr로 활성화 시켜줄 수도 있습니다.
+
+----
+# garden7
+<VirtualHost *:80>
+    ServerName garden7.junho85.pe.kr
+
+    WSGIDaemonProcess garden7 python-home=/home/junho85/web/garden7/venv python-path=/home/junho85/web/garden7/
+    WSGIProcessGroup garden7
+
+    WSGIScriptAlias / /home/junho85/web/garden7/garden7/wsgi.py
+
+    ErrorLog "/var/log/apache2/garden7-error_log"
+    CustomLog "/var/log/apache2/garden7-access_log" common
+
+    <Directory /home/junho85/web/garden7/garden7>
+    <Files wsgi.py>
+        Require all granted
+    </Files>
+    </Directory>
+
+#    RewriteEngine on
+#    RewriteCond %{SERVER_NAME} =garden7.junho85.pe.kr
+#    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+</VirtualHost>
+----
+
+https를 사용하는 경우 /etc/apache2/sites-available/garden7.junho85.pe.kr-le-ssl.conf 설정을 만들고 a2ensite garden7.junho85.pe.kr-le-ssl로 활성화 시켜줍니다.
+
+인증서는 certbot명령어로 let's encrypt인증서를 받아서 사용합니다.
+
+----
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+    ServerName garden7.junho85.pe.kr
+
+    WSGIDaemonProcess garden7-ssl python-home=/home/junho85/web/garden7/venv python-path=/home/junho85/web/garden7/
+    WSGIProcessGroup garden7-ssl
+
+    WSGIScriptAlias / /home/junho85/web/garden7/garden7/wsgi.py
+
+    ErrorLog "/var/log/apache2/garden7-error_log"
+    CustomLog "/var/log/apache2/garden7-access_log" common
+
+    <Directory /home/junho85/web/garden7/garden7>
+        <Files wsgi.py>
+            Require all granted
+        </Files>
+    </Directory>
+
+    SSLCertificateFile /etc/letsencrypt/live/garden7.junho85.pe.kr/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/garden7.junho85.pe.kr/privkey.pem
+    Include /etc/letsencrypt/options-ssl-apache.conf
+</VirtualHost>
+</IfModule>
+----
+
+----
+sudo service apache2 stop
+sudo service apache2 start
+----
+* /var/log/apache2

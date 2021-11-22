@@ -1,0 +1,77 @@
+= https
+
+Let's Encrypt
+
+https://letsencrypt.org/
+
+== Getting Started
+https://letsencrypt.org/getting-started/
+
+----
+$ sudo apt-get install letsencrypt
+----
+
+== Certbot
+
+https://certbot.eff.org/
+
+환경에 따른 설치 방법 페이지를 제공합니다.
+
+apache, ubuntu 18 을 사용한다고 하면 다음 주소로 연결됩니다.
+
+https://certbot.eff.org/instructions?ws=apache&os=ubuntu-18
+
+snapd를 사용하기에 snapd를 먼저 설치합니다.
+
+----
+sudo yum install snapd
+----
+
+snapd를 최신버전으로 업데이트합니다.
+----
+sudo snap install core; sudo snap refresh core
+----
+
+기존에 설치된 certbot을 제거합니다.
+
+----
+sudo apt-get remove certbot
+----
+
+snapd를 이용해서 certbot을 설치합니다.
+----
+sudo snap install --classic certbot
+----
+
+certbot 커맨드를 어디서나 사용할 수 있도록 /usr/bin에 링크를 만들어 줍니다.
+----
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+----
+
+== certbot 커맨드로 인증서 받고 apache 설정 변경
+
+인증서를 받고 아파치 설정을 바꿔주는 명령어 입니다.
+----
+sudo certbot --apache
+----
+
+인증서만 받고 아파치 설정은 직접 고치려면 아래 커맨드를 이용하면 됩니다.
+----
+sudo certbot certonly --apache
+----
+
+== 아파치 설정 변경 중 오류가 발생한다면
+
+WSGI설정이 있는 경우 해당 설정을 그대로 복사해서 ssl 설정을 만들다 보니 이름이 겹쳐서 설정 생성이 실패하고 롤백됩니다.
+
+일단 WSGI설정을 주석처리하고 수행하면 됩니다.
+
+기본 설정파일은 http로 접근 시 https로 리다이렉트 시키는 설정을 하기 때문에 http도 사용할 경우 http설정도 바꿔줍니다.
+
+
+== https(443포트) 방화벽 열기
+리눅스에 방화벽이 켜져있고 https(443포트)가 닫혀있다면 해당 포트 방화벽 설정을 열어주어야 합니다.
+
+----
+sudo ufw allow https
+----

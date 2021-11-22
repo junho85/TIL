@@ -34,47 +34,36 @@ pip install -r requirements.txt
 ----
 
 
-== httpd 설정
+== users.yaml
 
-
-[source]
+유저 리스트 등록
 ----
-sudo vi /etc/apache2/sites-enabled/000-default.conf
-----
-
-----
-# garden7
-<VirtualHost *:80>
-    ServerName garden7.junho85.pe.kr
-
-    WSGIDaemonProcess garden7.junho85.pe.kr python-home=/home/junho85/web/garden7/venv python-path=/home/junho85/web/garden7/
-    WSGIProcessGroup garden7.junho85.pe.kr
-
-    WSGIScriptAlias / /home/junho85/web/garden7/garden7/wsgi.py
-
-    ErrorLog "/var/log/apache2/garden7-error_log"
-    CustomLog "/var/log/apache2/garden7-access_log" common
-
-    <Directory /home/junho85/web/garden7/garden7>
-    <Files wsgi.py>
-        Require all granted
-    </Files>
-    </Directory>
-</VirtualHost>
+vi /home/junho85/web/garden7/attendance/users.yaml
 ----
 
-----
-sudo service apache2 stop
-sudo service apache2 start
-----
-* /var/log/apache2
-
-
-* config.
-** SLACK_API_TOKEN
-** CHANNEL_ID
-* users.yaml
+* 유저리스트 확인 API
 ** https://api.slack.com/methods/users.list/test
+* 자기소개 내용으로 github랑 slack 유저리스트 확인
+** test_slack_tools.test_get_users
+
+
+== config.ini
+
+----
+vi /home/junho85/web/garden7/attendance/config.ini
+----
+
+DEFAULT
+* SLACK_API_TOKEN: slack api token. xoxb로 시작하는 토큰을 사용한다. b는 bot이다.
+* CHANNEL_ID: commit 채널의 ID이다.
+* START_DATE: 시작일
+* GARDENING_DAYS: 정원사들 몇일 동안 하는지 이다. 보통 100일이다.
+
+MONGO
+* DATABASE: 시즌7이면 garden7로 하면 된다.
+* HOST: 같은 서버내에 DB가 있다면 localhost이다.
+* PORT: 27017이 기본포트이다.
+
 
 == crontab
 
