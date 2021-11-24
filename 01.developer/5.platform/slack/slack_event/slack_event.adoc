@@ -1,0 +1,12 @@
+:hardbreaks:
+
+= slack events API
+
+https://api.slack.com/apis/connections/events-api
+
+
+이벤트를 받으려면 Event Subscriptions에 가서 Enable Events를 하고 Request URL을 기입한다.
+
+예)
+https://api.slack.com/apps/A02M9AZB5FF/event-subscriptions?
+
