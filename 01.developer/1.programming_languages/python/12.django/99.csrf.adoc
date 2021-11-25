@@ -1,0 +1,25 @@
+:hardbreaks:
+
+= CSRF (Cross Site Request Forgery)
+
+사용자가 이미 a-bank.com에 인증되어 있다고 가정하자.
+
+a-bank.com의 송금 form을 사용자에게 실행시켜서 돈을 송금하도록 만든다.
+----
+<form action="https://a-bank.com/transfer/" id="transfer_form">
+  <input type="hidden" name="to" value="hacker">
+  <input type="hidden" name="money" value="10000000">
+</form>
+<script>
+  document.getElementByid("transfer_form").submit();
+</script>
+----
+
+== 방어
+* Referer 검증: 허용하지 않은 도메인에서의 요청을 차단한다. 단, XSS 취약점이 있는 사이트라면 방어하기 어렵다.
+* CSRF 토큰 검증: 사용자의 세션에 CSRF 토큰을 생성해서 POST 요청시 CSRF 토큰을 전송하도록 하여 인증하는 방식이다. 단, XSS 취약점이 있다면 토큰값을 탈취하여 사용할 수 있다.
+* Double Submit Cookie 검증: ...
+
+== References
+* https://it-eldorado.tistory.com/10?category=749665[[Web\] XSS와 CSRF (Cross Site Scripting and Cross Site Request Forgery) 2020.01.10]
+* https://it-eldorado.tistory.com/141[[Django\] CSRF 방지 메커니즘 (feat. CsrfViewMiddleware) 2021.05.04]
