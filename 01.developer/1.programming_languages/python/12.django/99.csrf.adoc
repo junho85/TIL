@@ -20,6 +20,24 @@ a-bank.com의 송금 form을 사용자에게 실행시켜서 돈을 송금하도
 * CSRF 토큰 검증: 사용자의 세션에 CSRF 토큰을 생성해서 POST 요청시 CSRF 토큰을 전송하도록 하여 인증하는 방식이다. 단, XSS 취약점이 있다면 토큰값을 탈취하여 사용할 수 있다.
 * Double Submit Cookie 검증: ...
 
+== Django CSRF
+CSRF middleware와 template tag는 손쉽게 CSRF 공격에 대해 보호하는 기능을 제공한다.
+
+CSRF 공격을 방어하려면 GET요청은 사이드이펙트가 없도록 해야 한다. POST, PUT, DELETE와 같은 안전하지 않은 요청에 대해 보호해준다.
+
+settings.py에 기본적으로 설정되어 있다.
+----
+MIDDLEWARE = [
+    ...
+    'django.middleware.csrf.CsrfViewMiddleware',
+    ....
+----
+지우면 끌 수 있다. 특정 view에만 적용하려면 @csrf_protect를 사용할 수 있다.
+
+CSRF View Middleware가 활성화 되어 있으면 post api테스트가 불편하다.
+
+
 == References
 * https://it-eldorado.tistory.com/10?category=749665[[Web\] XSS와 CSRF (Cross Site Scripting and Cross Site Request Forgery) 2020.01.10]
 * https://it-eldorado.tistory.com/141[[Django\] CSRF 방지 메커니즘 (feat. CsrfViewMiddleware) 2021.05.04]
+* https://docs.djangoproject.com/en/3.2/ref/csrf/[Cross Site Request Forgery protection]
