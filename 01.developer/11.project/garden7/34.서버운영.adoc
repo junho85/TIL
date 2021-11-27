@@ -1,0 +1,43 @@
+= 서버운영
+
+== mongo
+
+mongo가 죽었을 때 시작시키기
+----
+docker start mymongo
+----
+
+
+----
+docker stop mymongo
+----
+
+docker container 상태 확인하기
+----
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                        NAMES
+d879df4ef7de        mongo               "docker-entrypoint.s…"   2 years ago         Up 2 minutes        127.0.0.1:27017->27017/tcp   mymongo
+----
+
+docker container ls도 같은 결과가 나온다.
+----
+$ docker container ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                        NAMES
+d879df4ef7de        mongo               "docker-entrypoint.s…"   2 years ago         Up 2 minutes        127.0.0.1:27017->27017/tcp   mymongo
+----
+
+== docker
+docker stop mymongo로 mymongo가 안내려 갈 때 docker 재시작
+
+----
+sudo service docker restart
+----
+
+docker 프로세스 확인
+----
+$ ps auxww | grep docker
+root     22965  0.2  5.0 1052260 24880 ?       Ssl  21:40   0:00 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+root     23124  0.1  0.6 554660  3208 ?        Sl   21:41   0:00 /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 27017 -container-ip 172.17.0.2 -container-port 27017
+root     23134  0.0  0.2 109104  1440 ?        Sl   21:41   0:00 containerd-shim -namespace moby -workdir /var/lib/containerd/io.containerd.runtime.v1.linux/moby/d879df4ef7de7ca2e612222cf60ff5e078a289cba9fc5190bb1974f1db875c96 -address /run/containerd/containerd.sock -containerd-binary /usr/bin/containerd -runtime-root /var/run/docker/runtime-runc
+junho85  23972  0.0  0.2  15720  1000 pts/0    S+   21:44   0:00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --exclude-dir=.idea --exclude-dir=.tox docker
+----
