@@ -1,0 +1,45 @@
+:hardbreaks:
+
+= urls
+
+URL을 설계하기위해 URLconf (URL configuration)라는 python 모듈을 생성합니다. URL path expressions들을 Python 함수들에 매핑합니다.
+
+== Django가 요청을 처리하는 과정
+
+1. Django는 사용할 root URLconf 모듈을 결정합니다. ROOT_URLCONF를 사용하지만 HttpRequest 객체에 (middleware에 의해 지정된)urlconf가 있으면 해당값을 ROOT_URLCONF설정으로 대체합니다.
+2. Django는 파이썬 모듈을 로드하고 urlpatterns들을 찾습니다. django.urls.path(), django.urls.re_path() 인스턴스들의 시퀀스여야 합니다.
+3. Django는 각 URL 패턴을 순서대로 실행하고 요청된 URL과 일치하는 첫 번째 패턴에서 멈추고 path_info에 매칭합니다.
+4. URL 패턴에 일치하면 Django는 주어진 view를 import하고 부릅니다. 보통 Python함수이고 class-based view이기도 합니다. view는 다음의 인자들을 받아서 넘겨줍니다.
+* HttpRequest 인수턴스
+* URL 패턴에 명명된 그룹이 없으면 정규식의 일치 항목이 위치 인수로 제공됩니다.
+* 키워드 인수는 django.urls.path() 또는 django.urls.re_path()에 대한 선택적 kwargs 인수에 지정된 인수로 재정의된 제공된 path 표현식과 일치하는 명명된 부분으로 구성됩니다.
+5. URL 패턴이 일치하지 않거나 프로세스에서 예외가 발생하면 Django는 적절한 오류 처리 view를 호출합니다. 아래에 있는 TODO Error handling를 참조하세요.
+
+== 정원사들7 출석부 기준으로 분석해보기
+settings.py
+----
+ROOT_URLCONF = 'garden7.urls'
+----
+garden7/urls.py
+
+[source,python]
+----
+from django.contrib import admin
+from django.urls import path, include
+from django.views.generic import RedirectView
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('attendance/', include('attendance.urls')),
+    path('common/', include('common.urls')),
+    path('tools/', include('tools.urls')),
+    path('', RedirectView.as_view(url="/attendance/")),
+]
+----
+urlpatterns 리스트를 정의합니다. 리스트의 각 값들을 path 함수를 이용해 정의합니다. 첫번째 'admin' 패턴은 https://garden7.junho85.pe.kr/admin 경로로 접근할 경우 admin.stie.urls 함수로 연결한다는 의미입니다.
+'attendance'는 https://garden7.junho85.pe.kr/attendance 로 접근하는 경우이고 attendance/urls.py ... TODO 작성중
+
+
+== References
+* https://docs.djangoproject.com/en/3.2/topics/http/urls/[URL dispatcher]
+* https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#url-internationalization[Internationalization: in URL patterns]
