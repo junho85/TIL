@@ -11,6 +11,7 @@ Scope
 * channels:history
 * channels:read
 * users:read
+* chat:write
 
 추가 하고 Install to Workspace
 

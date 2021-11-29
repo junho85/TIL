@@ -1,0 +1,32 @@
+:hardbreaks:
+= mongodb 모니터링
+
+https://github.com/junho85/garden7/issues/3
+
+== 개요
+mongodb가 죽으면 출석정보 수집에 차질이 생김. 출석정보 수집 중 오류가 나면 slack 채널로 에러 메시지를 던지도록 한다.
+
+== slack
+slack 권한에 chat:write 추가. 봇이 메시지를 쏠 수 있도록 하는 권한
+
+== 코드
+garden.py에 send_error_message함수 추가
+[source,python]
+----
+    def send_error_message(self, message):
+        self.slack_client.chat_postMessage(
+            channel=self.config_tools.get_monitor_channel_id(),
+            text=message
+        )
+----
+
+cli_collect.py
+[source,python]
+----
+try:
+    garden.collect_slack_messages(oldest, latest)
+except Exception as err:
+    garden.send_error_message("[모니터링] 출석부 수집 에러발생!\n" + str(err))
+    raise err
+----
+garden.collect_slack_messages를 try except로 감싸고 err내용을 발송하도록 처리한다.
