@@ -1,0 +1,44 @@
+:hardbreaks:
+= git checkout, switch, restore
+
+checkout 명령어는 git branch로 만든 branch들을 탐색한다.
+
+git 2.23부터 checkout을 대신할 switch, restore가 도입되었다.
+--help에도 checkout은 안나오고 switch, restore가 나온다.
+
+https://git-scm.com/docs/git-checkout[git-checkout] - Switch branches or restore working tree files
+https://git-scm.com/docs/git-switch[git-switch] - Switch branches
+https://git-scm.com/docs/git-restore[git-restore] - Restore working tree files
+
+== switch
+----
+git switch develop
+----
+
+(구) checkout 방식
+----
+git checkout <existing-branch>
+----
+
+브랜치 만들면서 변경. -c, --create
+----
+git switch -c <new-branch>
+----
+
+(구) checkout 방식
+----
+git checkout -b <new-branch>
+----
+
+----
+git switch -c <new-branch> [<start-point>]
+----
+
+== restore
+----
+git restore README.md
+----
+
+== References
+* https://blog.outsider.ne.kr/1505[새 버전에 맞게 git checkout 대신 switch/restore 사용하기 2020.10.21]
+
