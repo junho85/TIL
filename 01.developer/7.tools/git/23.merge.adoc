@@ -1,0 +1,23 @@
+= git merge
+
+----
+$ git merge
+----
+
+== fast-forward merge
+master에서 feature브랜치를 따서 작업하다가 master를 다시 feature브랜치 작업한 것을 합치는 것인데 단순히 master를 feature로 이동만 해도 되는거라 빨리감기라고 함
+
+== non fast-forward merge
+단순히 master를 feature로 이동하는 것이 아니고 master에 feature작업 한 것을 합치는 것이라 feature브랜치가 그대로 남음
+
+----
+$ git merge --no-ff <branch>
+----
+
+== 3-way merge
+feature merge 전에 master에 변경 사항이 생겼을 때 merge 하는 것. 같은 부분을 동시에 수정하면 conflict가 발생하고 개발자가 해결해야 한다.
+
+== References
+* https://git-scm.com/docs/git-merge[git-merge]
+* https://www.atlassian.com/git/tutorials/using-branches/git-merge[Git Merge]
+* https://backlog.com/git-tutorial/kr/stepup/stepup1_4.html[브랜치 통합하기]
