@@ -1,0 +1,6 @@
+:hardbreaks:
+= GitHub flow
+
+
+== References
+* https://docs.github.com/en/get-started/quickstart/github-flow[GitHub flow]

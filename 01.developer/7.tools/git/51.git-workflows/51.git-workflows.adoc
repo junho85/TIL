@@ -1,0 +1,11 @@
+:hardbreaks:
+= Git workflows
+
+* Centralized workflow
+* Feature branch workflow
+* Gitflow workflow
+* Forking workflow
+
+
+== References
+* https://www.atlassian.com/git/tutorials/comparing-workflows[Comparing Workflows]
