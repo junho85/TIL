@@ -42,7 +42,16 @@ urlpatterns = [
 * /articles/2003 은 아무 패턴에도 일치하지 않습니다. 왜냐하면 각 패턴은 "/"로 끝나는 URL 패턴을 사용하기 때문입니다.
 * /articles/2003/03/building-a-django-site/ 는 마지막 패턴과 일치합니다. Django는 views.article_detail(request(request, year=2003, month=3, slug="building-a-django-site")함수를 호출합니다.
 
+== Path converters
+다음의 path converter들이 기본적으로 사용가능하다.
+* str - 비어있지 않은 모든 문자와 일치하나 path 구분자인 '/'는 제외한다. 표현식에 컨버터가 없는 경우 기본이다.
+* int - 0 또는 양수
+* slug - 모든 slug 문자이다. ASCII 문자 또는 숫자, 그리고 '-', '_'이다. 예를 들어 'building-your-1st-django-site'
+* uuid - UUID 형식이다. 여러 URL이 동일한 페이지에 매핑되는 것을 방지하려면 '-'를 포함하고 문자는 소문자여야 한다. 예를 들어 075194d3-6885-417e-a8a8-6c931e272f00. UUID 인스턴스를 반환한다.
+* path - path 구분자인 '/'를 포함한 빈값이 아닌 모든 문자. 이를 통해 str에서와 같이 URL 경로의 세그먼트가 아닌 완전한 URL 경로와 일치시킬 수 있다.
 
+== Registering custom path converters
+... TODO
 
 == 정원사들7 출석부 기준으로 분석해보기
 settings.py
