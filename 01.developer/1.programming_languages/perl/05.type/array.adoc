@@ -1,0 +1,43 @@
+:hardbreaks:
+= perl - array
+
+== check type is array or not
+
+ref 사용방식
+[source,perl]
+----
+my $not_array = {};
+my $array = [];
+
+if (ref $not_array eq 'ARRAY') {
+    print "array\n";
+} else {
+    print "not array\n";
+}
+
+if (ref $array eq 'ARRAY') {
+    print "array\n";
+} else {
+    print "not array\n";
+}
+----
+
+UNIVERSAL::isa 사용 방식
+[source,perl]
+----
+if (UNIVERSAL::isa($not_array, 'ARRAY')) {
+    print "array\n";
+} else {
+    print "not array\n";
+}
+
+if (UNIVERSAL::isa($array, 'ARRAY')) {
+    print "array\n";
+} else {
+    print "not array\n";
+}
+----
+
+
+== References
+* https://stackoverflow.com/questions/5226787/can-perl-detect-arrays/5226815[Can Perl detect arrays?]
