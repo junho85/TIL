@@ -1,0 +1,30 @@
+:hardbreaks:
+= git submodule
+
+== 서브모듈 업데이트
+----
+git submodule update --remote
+----
+
+== 턱정 서브모듈만 업데이트
+----
+git submodule update --remote <submodule>
+----
+
+== 서브모듈 안에 서브모듈까지 업데이트
+----
+git submodule update --remote --recursive
+----
+
+== 서브모듈들에 동일한 명령어 실행하기
+----
+git submodule foreach [명령어]
+----
+
+서브모듈들에 git pull 실행하기
+----
+git submodule foreach git pull
+----
+
+== References
+* https://leveloper.tistory.com/176[]
