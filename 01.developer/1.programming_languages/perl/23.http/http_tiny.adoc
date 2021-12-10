@@ -40,8 +40,6 @@ print $response->{content};
 
 === POST form
 
-
-
 [source,perl]
 ----
 my %headers = (
@@ -50,6 +48,25 @@ my %headers = (
 
 my $response = $http->post_form($url, { headers => \%headers });
 ----
+
+form data
+[source,perl]
+----
+my %headers = (
+    "Authorization" => "Bearer abcdefg",
+);
+
+my %data = (
+    type  => "name",
+    value => "hong gil dong"
+);
+
+my $response = $http->post_form($url, \%data, {
+    headers => \%headers
+});
+----
+
+type=name&value=hong...
 
 == header 추가
 
