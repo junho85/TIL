@@ -1,12 +1,18 @@
 = gradle wrapper version up
 
+== 7.x
+
+dependencyInsight 등 추가 됨
+
+compile -> implementation 으로 변경해야됨
 
 [source]
 ----
-gradle wrapper --gradle-version 4.8.1
+./gradlew wrapper --gradle-version=7.2 --distribution-type=bin
 ----
 
 
+== 6.x
 
 [source]
 ----
@@ -26,6 +32,12 @@ gradle/wrapper/gradle-wrapper.properties 파일의 distributionUrl이 바뀝니�
 distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-all.zip
 ----
 
+[source]
+----
+gradle wrapper --gradle-version 4.8.1
+----
+
+
 == 버전업 필요한 경우
 * Java 버전이 올라가는 경우
 * 나머지 다른 이유들도 Java 버전이 올라가는 것 영향일듯
@@ -35,4 +47,4 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-all.zip
 
 == References
 * https://gradle.org/install/#with-the-gradle-wrapper[Upgrade with the Gradle Wrapper]
-* https://blog.leocat.kr/notes/2017/10/19/gradle-wrapper-version-up[[Gradle] gradle wrapper 버전 업]
+* https://blog.leocat.kr/notes/2017/10/19/gradle-wrapper-version-up[[Gradle\] gradle wrapper 버전 업]
