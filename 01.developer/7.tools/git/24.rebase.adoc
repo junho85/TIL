@@ -1,18 +1,22 @@
 = git rebase
 
-
+----
+git rebase <base branch> # 현재 브랜치를 base branch로 리베이스
+----
 
 로컬 브랜치에서 작업할 때 히스토리를 정리하기 위해 rebase 를 사용한다.
 
 
 
 == references
-* http://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0
+* http://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0[3.6 Git 브랜치 - Rebase 하기
+]
+* https://git-scm.com/book/en/v2/Git-Branching-Rebasing
 ====
 일반적인 해답을 굳이 드리자면 로컬 브랜치에서 작업할 때는 히스토리를 정리하기 위해서 Rebase 할 수도 있지만, 리모트 등 어딘가에 Push로 내보낸 커밋에 대해서는 절대 Rebase 하지 말아야 한다.
 ====
 
-* http://dogfeet.github.io/articles/2012/git-merge-rebase.html
+* http://dogfeet.github.io/articles/2012/git-merge-rebase.html[Git: Rebase는 언제 어떻게 해야 할까?]
 * https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history
 * http://jeffkreeftmeijer.com/2010/the-magical-and-not-harmful-rebase/
 * https://help.github.com/articles/about-git-rebase/
@@ -23,3 +27,5 @@
 * Combine multiple commits into one
 * Delete or revert commits that are no longer necessary
 ----
+
+* https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase[git rebase]
