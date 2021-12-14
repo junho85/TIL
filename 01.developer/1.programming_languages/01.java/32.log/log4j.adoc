@@ -1,0 +1,17 @@
+= log4j
+
+https://logging.apache.org/log4j/1.2/
+
+2015년 8월 5일 개발이 중단되었고 log4j2를 사용하도록 안내하고 있다.
+
+== 보안이슈
+https://www.cvedetails.com/cve/CVE-2019-17571/
+
+보안 이슈가 있으나 더 이상 수정하지 않는다.
+
+== Java 버전 호환 이슈
+
+https://blogs.apache.org/logging/entry/moving_on_to_log4j_2
+
+Java 9 에서 제대로 동작하지 않는 문제가 있다.
+

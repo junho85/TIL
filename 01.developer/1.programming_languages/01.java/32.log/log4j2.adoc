@@ -1,0 +1,7 @@
+= log4j2
+
+== 보안이슈
+https://www.cvedetails.com/cve/CVE-2021-44228
+
+IT업계에 비상이 걸린 대형 보안이슈
+
