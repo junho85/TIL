@@ -1,0 +1,13 @@
+:hardbreaks:
+= tuya 전동커튼
+
+
+== wifi
+
+=== References
+https://www.youtube.com/watch?v=6nL7cGy0d78[알리직구 전동커튼 설치하기(TUYA SMART, 빅스비, 스마트싱스) 2021.12.15]
+
+== zigbee
+
+=== References
+https://m.blog.naver.com/PostView.naver?blogId=fromzip&logNo=222088045737&proxyReferer=https:%2F%2Fm.clien.net%2Fservice%2Fboard%2Fcm_iot%2F15763697
