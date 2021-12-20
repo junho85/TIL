@@ -1,0 +1,11 @@
+:hardbreaks:
+= spring boot logback configuration
+
+기본적인 설정은 application.properties에서 할 수 있으나 커스터마이즈 하려면 좀 더 설정을 해야한다.
+logback.xml 설정파일을 classpath의 root에 두면 logback이 찾을 수 있다.
+Spring Boot Logback extensions를 사용하려면 logback-spring.xml을 사용한다.
+
+
+
+== References
+* https://docs.spring.io/spring-boot/docs/2.1.8.RELEASE/reference/html/howto-logging.html#howto-configure-logback-for-logging[83.1 Configure Logback for Logging]
