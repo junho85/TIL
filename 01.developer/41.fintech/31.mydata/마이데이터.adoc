@@ -1,0 +1,5 @@
+:hardbreaks:
+= 마이데이터
+
+== References
+* https://developers.mydatakorea.org/mdtb/apg/dgi/bas/FSAG0101[데이터 표준 API 기본규격]
