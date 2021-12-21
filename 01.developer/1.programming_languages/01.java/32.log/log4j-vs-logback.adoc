@@ -1,0 +1,6 @@
+:hardbreaks:
+= log4j vs logback
+
+== References
+=== https://minkwon4.tistory.com/161[[Logging\] slf4j, log4j, logback, log4j2 2020.12.29]
+
