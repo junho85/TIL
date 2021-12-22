@@ -1,0 +1,10 @@
+= springfox swagger release
+
+== 3.0.0
+
+https://github.com/springfox/springfox/releases/tag/3.0.0
+
+* Spring 5, webflux 지원
+* Spring Boot 지원. springfox-boot-starter. (Autoconfiguration 지원)
+* OpenAPI 3.0.3 지원
+

@@ -1,13 +1,10 @@
-= swagger
-
-https://swagger.io/
+= springfox swagger
 
 http://springfox.github.io/springfox/
 
 https://springfox.github.io/springfox/docs/current/
 
-
-API 문서를 쉽게 작성 할 수 있도록 도와주는 유틸
+Springfox suite는 spring 프레임워크를 사용하여 만든 JSON API 문서를 쉽게 작성해주는 유틸성 java 라이브러리이다.
 
 swagger 에서 지원하는 annotation 을 이용
 @ApiOperation
@@ -19,6 +16,8 @@ swagger editor
 
 swagger 스팩 문서로 코드 generate 기능도 제공
 
+== 역사
+Marty Pitt가 만들었다. 이름은 swagger-springmvc였다.
 
 
 == Maven
@@ -119,6 +118,7 @@ compile("io.swagger:swagger-models:1.5.21")
 
 
 == references
-* [Swagger](http://swagger.io/)
-* [Swagger로 API 문서 자동화하기 2016.08.28](https://jojoldu.tistory.com/31)
-* [Spring REST API 문서를 Swagger로 만들자 2017.02.26](https://yookeun.github.io/java/2017/02/26/java-swagger/)
+* http://swagger.io/[Swagger]
+* https://jojoldu.tistory.com/31[Swagger로 API 문서 자동화하기 2016.08.28]
+* https://yookeun.github.io/java/2017/02/26/java-swagger/[Spring REST API 문서를 Swagger로 만들자 2017.02.26]
+* https://swagger.io/
