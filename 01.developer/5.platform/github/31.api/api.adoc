@@ -7,6 +7,12 @@ https://api.github.com 로 요청
 
 https://api.github.com/repos/junho85/TIL
 
+== Users
+link:Users[users.adoc]
+
+== Search
+link:Search[search.adoc]]
+
 == Commits
 
 https://developer.github.com/v3/git/commits/

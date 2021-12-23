@@ -1,0 +1,9 @@
+:hardbreaks:
+= github api - users
+
+https://docs.github.com/en/rest/reference/users[Users]
+
+----
+GET https://api.github.com/users/junho85
+----
+특별히 인증을 하지 않더라도 유저정보를 확인할 수 있습니다.
