@@ -1,0 +1,29 @@
+:hardbreaks:
+= Flask
+
+== Installation
+----
+pip install Flask
+----
+
+== 예제
+----
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello, World!"
+----
+
+== 실행
+----
+$ flask run
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+----
+
+브라우저를 띄워서 http://127.0.0.1:5000/ 에 접속하면 "Hello, World!"문구가 나타난다.
+
+== References
+* https://pypi.org/project/Flask/[Flask]
