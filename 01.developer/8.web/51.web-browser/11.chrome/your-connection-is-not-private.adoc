@@ -1,0 +1,19 @@
+:hardbreaks:
+= Your connection is not private 연결이 비공개로 설정되어 있지 않습니다.
+
+== 접속하는 방법
+주의: 보안상 이슈가 있는 사이트일 수 있으니 믿을 수 있는 사이트에서만 사용합니다.
+
+=== Advanced -> "Proceed to {url} (unsafe)
+이건 눈에 보이기 때문에 비교적 쉬운 방법. 하지만 이게 먹히지 않는 경우가 종종 있음
+
+=== "thisisunsafe" 타이핑
+입력창은 없지만 "thisisunsafe"라고 타이핑 하면 접근됨
+
+=== HSTS 사이트 목록에서 제거
+chrome://net-internals/#hsts 에 접속해서 아래쪽에 있는 "Delete domain security policies"에서 접근할 url을 입력해서 삭제해줌.
+그런데 서브도메인을 사용하는 사이트라면 하나하나 삭제해 줘야됨.
+만약 a.b.example.com이었다면 example.com, b.example.com, a.b.example.com을 모두 삭제해 주어야 함.
+
+=== 정리
+* https://junho85.pe.kr/1997[크롬브라우저 - "Your connection is not private"로 접근안되는 사이트 들어가기 2021.12.27]
