@@ -1,0 +1,4 @@
+:hardbreaks:
+= Spring Boot 1.2.0 released
+
+* https://spring.io/blog/2014/12/11/spring-boot-1-2-0-released[Spring Boot 1.2.0 released]

@@ -1,0 +1,6 @@
+:hardbreaks:
+= Spring Boot 1.3.0 released
+
+* https://spring.io/blog/2015/11/16/spring-boot-1-3-0-released[Spring Boot 1.3.0 released]
+
+Developer Tools
