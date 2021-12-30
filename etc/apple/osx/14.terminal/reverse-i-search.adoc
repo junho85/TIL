@@ -1,0 +1,5 @@
+:hardbreaks:
+= reverse-i-search
+
+== References
+https://codeburst.io/use-reverse-i-search-to-quickly-navigate-through-your-history-917f4d7ffd37[Use reverse-i-search to quickly navigate through your history 2018.04.30]
