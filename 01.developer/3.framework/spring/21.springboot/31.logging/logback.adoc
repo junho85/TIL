@@ -5,7 +5,47 @@
 logback.xml 설정파일을 classpath의 root에 두면 logback이 찾을 수 있다.
 Spring Boot Logback extensions를 사용하려면 logback-spring.xml을 사용한다.
 
+Logback의 자세한 설명은 https://logback.qos.ch/manual/configuration.html 문서를 참고한다.
 
+Spring Boot에 맞춰서 기본 logback설정들을 해 둔 파일들이 있다. org/springframework/book/logging/loback/에 있다.
+
+* defaults.xml - 컨벤션 룰, 패턴 속성들, 공통 로거 설정들
+* console-appender.xml - CONSOLE_LOG_PATTERN을 사용하는 ConsoleAppender 추가
+* file-appender.xml - FILE_LOG_PATTERN을 사용하는 RollingFileAppender를 적절한 설정과 함께 추가
+
+추가로, 레거시 base.xml 파일이 초기 버전의 Spring Boot와의 호환성을 위해 제공된다.
+
+일반적인 커스텀 logback.xml 파일은 다음과 같이 생겼다.
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/default.xml"/>
+	<include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+	</root>
+	<logger name="org.springframework.web" level="DEBUG"/>
+</configuration>
+----
+
+logback 설정 파일은 LoggingSystem이 생성하는 시스템 속성을 사용할수도 있다.
+
+* ${PID}: 현재 프로세스 ID
+* ${LOG_FILE}: logging.file이 Boot의 외부설정으로 세팅되었는지 여부
+* ${LOG_PATH}: logging.path(로그 파일이 있는 디렉터리를 나타냄)가 Boot의 외부 구설정으로 세팅되었는지 여부
+* ${LOG_EXCEPTION_CONVERSION_WORD}: logging.exception-conversion-word가 Boot의 외부설정으로 세팅되었는지 여부
+...
+
+
+== logback-spring.xml 설정
+logback-spring.xml 설정은 언제부터 지원이 된 걸까?
+
+문서에 설명이 있는지 확인
+1.3.1 O https://docs.spring.io/spring-boot/docs/1.3.1.RELEASE/reference/html/howto-logging.html
+-> logback-spring.xml도 있고 spring-logback.xml도 있는데 spring-logback.xml 이 뭐지?
+
+1.2.0.M1 X https://docs.spring.io/spring-boot/docs/1.2.0.M1/reference/html/howto-logging.html
+-> 1.2.0.M1에서만 해도 관련 내용은 없다. 설명만 없는걸까 기능도 없는 걸까?
 
 == References
 * https://docs.spring.io/spring-boot/docs/2.1.8.RELEASE/reference/html/howto-logging.html#howto-configure-logback-for-logging[83.1 Configure Logback for Logging]
