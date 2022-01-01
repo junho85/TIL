@@ -34,7 +34,12 @@ logback 설정 파일은 LoggingSystem이 생성하는 시스템 속성을 사�
 * ${LOG_FILE}: logging.file이 Boot의 외부설정으로 세팅되었는지 여부
 * ${LOG_PATH}: logging.path(로그 파일이 있는 디렉터리를 나타냄)가 Boot의 외부 구설정으로 세팅되었는지 여부
 * ${LOG_EXCEPTION_CONVERSION_WORD}: logging.exception-conversion-word가 Boot의 외부설정으로 세팅되었는지 여부
-...
+
+Spring Boot는 커스텀 Logback 컨버터를 이용해 멋진 ANSI color 터미널 출력을 제공합니다. (단, 로그파일은 지원하지 않음) 예로 default.xml 설정의 CONSOLE_LOG_PATTERN을 보라.
+
+Groovy가 classpath에 있다면 logback.groovy로 Logback을 설정할 수 있다. 이 세팅이 우선 적용된다.
+
+> Spring 확장은 Groovy 설정을 지원하지 않는다. logback-spring.groovy파일은 감지되지 않는다.
 
 
 == logback-spring.xml 설정
