@@ -1,0 +1,12 @@
+:hardbreaks:
+= Random
+
+== Random 클래스 사용시 주의사항
+
+Random을 매번 생성해 주면 비효율적이다. 하나만 만들어 쓰는 것이 좋다. 게다가 JDK에 따라서는 현재 시각을 seed로 이용하는 경우 우연히 같은 seed가 들어가서 같은 값이 나오게 될 수도 있다.
+
+=== References
+* https://rules.sonarsource.com/java/RSPEC-2119["Random" objects should be reused]
+
+== References
+* https://docs.oracle.com/javase/8/docs/api/java/util/Random.html[Class Random]
