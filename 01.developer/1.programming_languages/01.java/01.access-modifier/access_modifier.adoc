@@ -1,0 +1,54 @@
+:hardbreaks:
+= 접근제어자 - Access Modifier
+
+Java언어에서는 4가지 접근제어자를 사용합니다.
+
+* private
+* default (package-private)
+* protected
+* public
+
+접근을 가장 많이 허용하는 것은 public이다. 반대로 가장 제한적인 것은 private이다.
+public > protected > default > private
+
+
+|===
+|Modifier |Class |Package |Subclass |World
+
+|public|Y|Y|Y|Y
+|protected|Y|Y|Y|N
+|no modifier|Y|Y|N|N
+|private|Y|N|N|N
+|===
+
+
+다른 프로그래머가 오용하지 않도록 가장 제한적인 접근제어자를 사용하는 것이 좋다. 어지간하면 private를 쓰는 것이 좋다.
+
+== private
+* 해당클래스 내에서만 접근이 가능하다.
+* 대부분의 변수들은 private 으로 선언되는 편이다.
+
+== default (package-private)
+* 접근제어자를 별도로 설정하지 않은 경우 default 이다. 해당 패키지 내에서만 접근이 가능하다.
+* package-private 라고 불린다.
+
+
+== protected
+* 동일 패키지 내의 클래스 또는 해당 크래스를 상속받은 외부 패키지의 클래스에서 접근이 가능하다.
+
+== public
+* 어떤 클래스에서든 접근이 가능하다.
+
+
+== References
+* https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html[Controlling Access to Members of a Class]
+
+> Tips on Choosing an Access Level:
+If other programmers use your class, you want to ensure that errors from misuse cannot happen. Access levels can help you do this.
+
+> * Use the most restrictive access level that makes sense for a particular member. Use private unless you have a good reason not to.
+> * Avoid public fields except for constants. (Many of the examples in the tutorial use public fields. This may help to illustrate some points concisely, but is not recommended for production code.) Public fields tend to link you to a particular implementation and limit your flexibility in changing your code.
+
+* https://www.javatpoint.com/access-modifiers[Access Modifiers in java]
+* https://www.baeldung.com/java-access-modifiers[Access Modifiers in Java]
+* https://wikidocs.net/232[07-2 접근제어자 (Access Modifier)]
