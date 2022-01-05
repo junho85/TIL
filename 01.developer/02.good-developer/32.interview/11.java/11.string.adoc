@@ -7,8 +7,23 @@
 String연산을 많이 하는 경우 StringBuilder > StringBuffer > String 순으로 속도 차이가 발생.
 메모리 사용은 String은 많이 사용하고 StringBuilder, StringBuffer는 같다고 보면 됨.
 
+== 최적화
+=== 단순 문자열 연결은 컴파일 타임에 처리함
+가독성 등의 이유로 다음과 같이 다음과 같이 여러 문자열을 "+"로 연결한 코드가 있습니다.
+[source,java]
+----
+String lines = "line1\n"
+        + "line2\n"
+        + "line3\n";
+----
+이 코드는 컴파일 후 다음과 같이 최적화 됩니다.
+----
+String lines = "line1\nline2\nline3\n";
+----
+"+" 연산을 컴파일 시 미리 처리해둔다고 보면 되겠습니다.
 
 == References
+* https://gist.github.com/benelog/b81b4434fb8f2220cd0e900be1634753[jdk1.5에서 String 더하기의 컴파일시의 최적화]
 * https://ifuwanna.tistory.com/221[[Java\] String, StringBuffer, StringBuilder 차이 및 장단점 2020.01.28]
 * https://novemberde.github.io/2017/04/15/String_0.html[Java에서 String, StringBuilder, StringBuffer의 차이 2017.04.15]
 ** .hashCode()로 주소 확인. 연산을 할 때 마다 주소가 바뀜.
