@@ -1,0 +1,18 @@
+:hardbreaks:
+= spring boot logging
+
+== 7.4 로깅
+Spring Boot는 내부 모든 로깅에 Commons Logging을 사용하지만 로그 구현을 열어 두었다. 기본적으로 Java Util Logging, Log4J2, Logback을 위한 설정들이 제공된다. 각각 로거들은 콘솔출력을 하도록 선설정 되어 있고 옵셔널 하게 파일 출력도 가능하도록 되어 있다.
+
+기본적으로 "Starters"를 사용한다면 Logback이 사용된다. Java Util Logging, Commons Logging, Log4J 또는 SLF4J를 사용하는 종속 라이브러리 모두 올바르게 작동하도록 적절한 Logback 라우팅도 포함되어 있다.
+
+.Tip
+> Java에 사용가능한 여러 로깅 프레임워크들이 있다. 위에 있는 목록이 혼란스러워 보여도 걱정할 필욘느 없다. 일반적으로 로깅 의존성들을 바꿀 필요가 없고 Spring Boot 기본설정으로도 잘 동작한다.
+
+.Tip
+> application을 servlet 컨테이너나 application 서버에 배포할 때, Java Util Logging API로 로깅되는데 이는 application 로그 안으로 라우트되지 않는다. 이는 컨테이너나 컨테이너에 배포된 다른 애플리케이션에 의한 로깅이 애플리케이션 로그에 표시되는 것을 방지해준다.
+
+
+
+== References
+https://docs.spring.io/spring-boot/docs/2.5.4/reference/htmlsingle/#features.logging[7.4. Logging]
