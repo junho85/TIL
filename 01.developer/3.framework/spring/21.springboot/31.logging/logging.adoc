@@ -12,6 +12,27 @@ Spring Boot는 내부 모든 로깅에 Commons Logging을 사용하지만 로그
 .Tip
 > application을 servlet 컨테이너나 application 서버에 배포할 때, Java Util Logging API로 로깅되는데 이는 application 로그 안으로 라우트되지 않는다. 이는 컨테이너나 컨테이너에 배포된 다른 애플리케이션에 의한 로깅이 애플리케이션 로그에 표시되는 것을 방지해준다.
 
+== 7.4.1 로그 포멧
+Spring Boot에 의한 기본 로그 출력은 다음 예제와 비슷하다.
+----
+2019-03-05 10:57:51.112  INFO 45469 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.52
+2019-03-05 10:57:51.253  INFO 45469 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-05 10:57:51.253  INFO 45469 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1358 ms
+2019-03-05 10:57:51.698  INFO 45469 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-05 10:57:51.702  INFO 45469 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+----
+항목들
+* 날짜와 시간: 밀리초 단위이고 쉽게 정렬가능함
+* 로그레벨: `ERROR`, `WARN`, `INFO`, `DEBUG`, `TRACE`
+* Process ID
+* `---` 구분자. 실제 로그 메시지의 시작
+* 쓰레드명: `[]`괄호로 감싸져 있따. (콘솔출력에서는 잘릴 수 있다)
+* 로거명: 보통 클래스명이다 (종종 축약된다)
+* 로그 메시지
+
+.Note
+> Logback은 `FATAL`레벨이 없다. `ERROR`에 맵핑된다.
+
 
 
 == References
