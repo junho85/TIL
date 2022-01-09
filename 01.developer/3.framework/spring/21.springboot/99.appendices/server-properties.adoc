@@ -1,0 +1,22 @@
+:hardbreaks:
+= Server Properties
+
+(:기본값)
+
+* server.address: ...
+...
+
+== server.error
+* server.error.include-binding-errors(:never): "error"속성이 포함될 때
+* server.error.include-exception(:false): "exceptoin"속성이 포함될 때
+* server.error.include-message(:never): "message"속성이 포함될 떄
+* server.error.include-stacktrace(:never): "trace"속성이 포함될 때
+* server.error.path(:/error): 에러 제어 경로
+* server.error.whitelabel.enabled(:true): 서버 에러 발생시 브라우저에 표시할 기본 에러 페이지를 활성화 할 지 여부
+
+== ...
+* server.forward-headers-strategy: ...
+* server.http2.enabled(:false): HTTP/2 지원을 활성화 할지 여부. 단, 현재 환경이 지원하는 경우
+
+== References
+* https://docs.spring.io/spring-boot/docs/2.5.4/reference/htmlsingle/#application-properties.server[A.11.Server Properties]]

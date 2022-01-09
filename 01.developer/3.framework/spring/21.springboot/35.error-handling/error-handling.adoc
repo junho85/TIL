@@ -1,0 +1,12 @@
+:hardbreaks:
+= Error Handling
+
+기본적으로 스프링부트는 모든 에러를 합리적인 방식으로 처리하는 `/error` 맵핑을 제공한다. 이는 서블릿 컨테이너에 "전역(global)"오류 페이지로 등록된다. 머신 클라이언트를 위해 에러의 상세내역 JSON, HTTP 상태, 예외 메시지 응답을 생성합니다. 브라우저 클라이언트를 위해서는 HTML 포멧과 같은 정보를 렌더링하는 "whitelabel"에러 뷰가 있다. (커스터마이즈 하려면 오류해결뷰를 추가하라)
+
+기본 에러처리방식을 커스터마이즈 하기위한 다양한 `server.error`속성들이 있다. 부록의 "Server Properties"섹션을 보라.
+
+기본 동작을 완전히 바꾸려면 ErrorController을 구현하고 해당 유형의 bean 정의를 등록하거나, 기존 메커니즘을 사용하지만 내용들을 교체하기 위한 ErrorAttributes bean을 추가할 수 있다.
+
+
+== References
+* https://docs.spring.io/spring-boot/docs/2.5.4/reference/htmlsingle/#features.developing-web-applications.spring-mvc.error-handling[Error Handling]
