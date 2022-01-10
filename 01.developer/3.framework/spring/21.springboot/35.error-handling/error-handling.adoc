@@ -7,6 +7,31 @@
 
 기본 동작을 완전히 바꾸려면 ErrorController을 구현하고 해당 유형의 bean 정의를 등록하거나, 기존 메커니즘을 사용하지만 내용들을 교체하기 위한 ErrorAttributes bean을 추가할 수 있다.
 
+.Tip
+> `BasicErrorController`는 `ErrorController`를 사용자 정의하는데 기본클래스로 사용할 수 있다. 이것은 핸들러를 새로운 컨텐츠 유형으로 추가하는데 특히 유용하다. (기본은 특별히 text/html을 처리하고 다른 모든 것에 대한 대체를 제공하는 것이다.) 그렇게 하려면 `BasicErrorController`를 확장하고 생성 속성이 있는 `@RequestMapping`으로 public 메서드를 추가하고, 새 유형의 bean을 생성한다.
+
+다음 예제와 같이 `@ControllerAdvice`가 달린 클래스를 정의해서 특정 컨트롤러 및/또는 예외 유형에 대해 반환하도록 JSON 문서를 사용자 정의할 수도 있다.
+
+[source,java]
+----
+@ControllerAdvice(basePackageClasses = SomeController.class)
+public class MyControllerAdvice extends ResponseEntityExceptionHandler {
+
+    @ResponseBody
+    @ExceptionHandler(MyException.class)
+    public ResponseEntity<?> handleControllerException(HttpServletRequest request, Throwable ex) {
+        HttpStatus status = getStatus(request);
+        return new ResponseEntity<>(new MyErrorBody(status.value(), ex.getMessage()), status);
+    }
+
+    private HttpStatus getStatus(HttpServletRequest request) {
+        Integer code = (Integer) request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
+        HttpStatus status = HttpStatus.resolve(code);
+        return (status != null) ? status : HttpStatus.INTERNAL_SERVER_ERROR;
+    }
+}
+----
+
 
 == References
 * https://docs.spring.io/spring-boot/docs/2.5.4/reference/htmlsingle/#features.developing-web-applications.spring-mvc.error-handling[Error Handling]
