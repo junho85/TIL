@@ -1,0 +1,36 @@
+:hardbreaks:
+= SPF, DKIM, DMARC 세팅
+
+== SPF 세팅
+도메인에 이메일 발송 서버를 등록하는 것. 수신측에서는 발송서버의 IP가 발송자 도메인의 SPF정보에 등록되어 있는지 확인하는 방식. 설정하기도 비교적 쉬운편이고 효과도 좋은편이다.
+----
+$ dig txt junho85.pe.kr +short                (mestore-sandbox-context/default)
+...
+"v=spf1 include:_spf.daum.net ip4:115.71.237.125 ip4:218.155.132.209 ip4:14.47.185.136 ~all"
+----
+
+=== 아마존 SES
+https://docs.aws.amazon.com/ko_kr/ses/latest/DeveloperGuide/send-email-authentication-spf.html
+----
+"v=spf1 include:amazonses.com ~all"
+----
+
+=== 다음스마트워크
+https://cs.daum.net/faq/43/13114.html?faqId=24453
+
+----
+"v=spf1 include:_spf.daum.net ~all"
+----
+
+
+=== NHN Cloud
+https://docs.toast.com/ko/Notification/Email/ko/troubleshooting-guide/
+
+----
+v=spf1 include:_spfblocka.toast.com ~all
+----
+
+
+== References
+* https://www.cisco.com/c/ko_kr/support/docs/security/email-security-appliance/215360-best-practice-for-email-authentication.html[이메일 인증을 위한 모범 사례 - SPF, DKIM 및 DMARC를 구축하는 최적의 방법 2020.11.18]
+* https://meetup.toast.com/posts/248[이메일 보안 강화 기능 소개 - 도메인 보호, DKIM, DMARC 2020.08.05]
