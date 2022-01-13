@@ -1,0 +1,66 @@
+:hardbreaks:
+= Secret
+
+== secret 설정들이 같은지 확인하는 스크립트
+yaml 설정에서 tls.crt, tls.key를 꺼내와서 비교해 보는 스크립트이다.
+
+[source,perl]
+----
+#!/usr/bin/perl
+use strict;
+use warnings FATAL => 'all';
+use YAML;
+use Data::Dumper;
+
+sub get_base_tls {
+    my $context = "dev-tools-context";
+    my $namespace = "jenkins-ag";
+
+    return get_tls($context, $namespace);
+}
+
+sub get_tls {
+    my $context = shift;
+    my $namespace = shift;
+
+    `kubectl config use-context $context`;
+    `kubectl config set-context --current --namespace=$namespace`;
+
+    my $cmd = qq{kubectl get secret onkakao-net -o yaml};
+    my $result = `$cmd`;
+    my $config = Load($result);
+
+    my $tlscrt = $config->{"data"}->{"tls.crt"};
+    my $tlskey = $config->{"data"}->{"tls.key"};
+    return ($tlscrt, $tlskey);
+
+}
+
+my ($base_tlscrt, $base_tlskey) = get_base_tls();
+
+# print $base_tlscrt."\n";
+# print $base_tlskey."\n";
+
+my @tests = (
+    ["dev-tools-context", "default"],
+    ["tools-context", "argocd"],
+    ["develop-context", "default"],
+    ["sandbox-context", "default"],
+    ["cbt-context", "default"],
+    ["prod-context", "default"],
+);
+
+for my $row (@tests) {
+    my $context = $row->[0];
+    my $namespace = $row->[1];
+
+    print "[$context:$namespace]\n";
+    my ($tlscrt, $tlskey) = get_tls($context, $namespace);
+
+    if ($base_tlscrt eq $tlscrt and $base_tlskey eq $tlskey) {
+        print("success\n");
+    } else {
+        print("fail\n");
+    }
+}
+----
