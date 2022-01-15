@@ -1,0 +1,26 @@
+:hardbreaks:
+= 맥북받으면 할 일
+
+== Homebrew 설치
+----
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+----
+
+참고: link:../Homebrew.adoc[Homebrew]
+
+== zsh
+
+== chrome
+
+----
+brew install --cask google-chrome
+----
+
+== visual studio code
+----
+brew install --cask visual-studio-code
+----
+
+
+== References
+* http://dalinaum.github.io/mac/2021/03/15/m1-init.html?fbclid=IwAR2ihC8eJa7zNg91DdOuKOVoOgEthvBFfHDOD_iMFOXMFAYsfAQi_lPZrrk[M1, M1 Pro, M1 Max 맥북에서 처음해야하는 일 - Homebrew부터]
