@@ -10,8 +10,27 @@
 
 == zsh
 
-== chrome
+== mas
+----
+brew install mas
+----
 
+== jetbrains toolbox
+----
+brew install --cask jetbrains-toolbox
+----
+
+== RunCat
+----
+mas install 1429033973
+----
+
+== sublime text
+----
+brew install --cask sublime-text
+----
+
+== chrome
 ----
 brew install --cask google-chrome
 ----

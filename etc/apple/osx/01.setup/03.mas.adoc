@@ -1,0 +1,6 @@
+:hardbreaks:
+= mas
+
+https://github.com/mas-cli/mas
+
+Mac App Store를 커맨드라인으로 사용하는 유틸
