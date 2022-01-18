@@ -1,0 +1,45 @@
+:hardbreaks:
+= 빈 등록 방법
+
+== xml 설정 방식
+resources/application.xml
+
+spring1 사용하던 프로젝트에서도 xml방식을 사용하는 걸 봤으니 아주 초기 부터 지원하던 방식인 듯 하다.
+
+장점:
+xml 설정파일 하나에서 대부분의 설정을 한눈에 확인할 수 있다.
+클래스와 설정을 분리할 수 있다.
+컴파일 하지 않고 설정을 변경할 수 있다.
+
+단점:
+런타임에 오류가 발생하기 때문에 컴파일타임에 오류를 잡기 어렵다.
+IDE가 지원이 없으면 설정 변경 및 확인이 어렵다.
+
+== Annotation 기반 설정
+Spring 2.5부터인가 추가된 방식이다.
+
+`@Component` 이 붙은 클래스들을 찾아서 빈으로 등록해 준다.
+`@Service`, `@Controller`, `@Repository` 등의 애노테이션들의 정의도 열어 보면 `@Component` 를 가지고 있어서 빈으로 등록해 준다.
+
+장점:
+애노테이션이 붙은 것만 봐도 빈에 등록되는 클래스인지 확인하기 좋다.
+xml설정에 비해 컴파일타임에 좀 더 오류를 확인할 수 있다.
+초기 빠른 구현에 용이하다.
+
+단점:
+프레임워크에 종속된다. POJO에 위배된다.
+설정 변경시 컴파일해야 한다.
+
+== Java Config
+장점:
+xml설정에 비해 컴파일타임에 좀 더 오류를 확인할 수 있다.
+클래스와 설정을 분리할 수 있다.
+
+단점:
+설정 변경시 컴파일해야 한다.
+
+
+== References
+* https://wordbe.tistory.com/entry/Spring-IoC-%EB%B9%88-%EB%93%B1%EB%A1%9D-%EB%B0%A9%EB%B2%95-5%EA%B0%80%EC%A7%80[Spring IoC - 빈 등록 방법 5가지 2021.01.10]
+* https://studyoverflow.tistory.com/entry/Configuration-in-java-spring[Spring Application Configuration - 설정방법에 따른 장단점 2014.08.19]
+* http://www.javacodebook.com/2013/07/08/spring-book-chapter-5-application-configuration-simplified/[Spring Book – Chapter 5 – Application Configuration – Simplified 2013.07.08]
