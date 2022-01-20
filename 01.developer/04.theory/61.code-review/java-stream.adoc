@@ -1,0 +1,24 @@
+:hardbreaks:
+= Java Stream API
+
+== 값의 존재 여부 확인시 isPresent()보다 orElseThrow
+
+[source,java]
+----
+public User find(Long userId) {
+  Optional<User> user = userRepository.findById(userId);
+  if (user.isPresent()) {
+    return user.get();
+  }
+  throw new NoSuchElementException("user not found");
+}
+----
+
+위와 같은 코드는 아래와 같이 줄일 수 있다. orElseThrow에서 값이 없는 경우 NoSuchElementException을 던지도록 되어 있다.
+
+[source,java]
+----
+public User find(Long userId) {
+  return userRepository.findById(userId).orElseThrow();
+}
+----
