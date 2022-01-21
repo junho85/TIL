@@ -1,0 +1,12 @@
+:hardbreaks:
+= Code Review - Project
+
+== .gitignore - .idea 등 IDE관련 내용은 제외시킨다
+
+특정 사용자나 IDE에 종속된 설정이 프로젝트에 들어 있으면 함께 작업하는 사람의 IDE버전이 다르거나 설정이 다른경우 충돌이 발생할 수 있으니 제외시키는 것이 좋다.
+
+공통 컨벤션을 맞추기 위해서라면 `.editorconfig` 등을 활용하는 방법이 있다.
+
+=== 참고 - .editorconfig
+* https://editorconfig.org/[EditorConfig]
+* https://nesoy.github.io/articles/2019-11/editorconfig
