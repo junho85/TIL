@@ -1,5 +1,5 @@
 :hardbreaks:
-= Java Stream API
+= Code Review - Java Stream API
 
 == 값의 존재 여부 확인시 isPresent()보다 orElseThrow
 
@@ -22,3 +22,7 @@ public User find(Long userId) {
   return userRepository.findById(userId).orElseThrow();
 }
 ----
+
+== 하나라도 속하는 값이 있는지 확인하려면 anyMatch
+
+filter 후 isPresent로 확인하거나 count를 한다거나 할 수 있지만 그냥 anyMatch를 사용하는 것이 간단하다.
