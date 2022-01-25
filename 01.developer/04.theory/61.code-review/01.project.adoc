@@ -7,6 +7,23 @@
 
 공통 컨벤션을 맞추기 위해서라면 `.editorconfig` 등을 활용하는 방법이 있다.
 
+== gradle - java version 표기
+sourceCompatibility를 설정해서 프로젝트에서 사용하는 java 버전을 표기한다.
+----
+sourceCompatibility = JavaVersion.VERSION_11
+----
+프로젝트를 세팅할 때 이 설정이 없으면 코드를 받는 사람이 수동으로 설정해야 되는 불편함이 있다. 이 설정을 넣어주면 소스코드를 IDE에 불러왔을 떄 java 버전을 설정하는데 도움이 된다.
+
+
+targetCompatibility를 따로 지정하지 않으면 sourceCompatibility를 따르게 된다.
+
+
+https://docs.gradle.org/current/javadoc/org/gradle/api/JavaVersion.html[Enum JavaVersion]
+
+https://stackoverflow.com/questions/16654951/gradle-sourcecompatibility-vs-targetcompatibility[Gradle, "sourceCompatibility" vs "targetCompatibility"?]
+
+> targetCompatibility and sourceCompatibility maps to -target release and -source release in javac. Source is basically the source language level and target is the level of the bytecode that is generated.
+
 === 참고 - .editorconfig
 * https://editorconfig.org/[EditorConfig]
 * https://nesoy.github.io/articles/2019-11/editorconfig
