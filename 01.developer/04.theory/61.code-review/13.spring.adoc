@@ -1,5 +1,5 @@
 :hardbreaks:
-= 스프링 관련 코드 리뷰
+= Code Review - Spring Framework
 
 == @ExceptionHandler는 @Controller나 @ControllerAdvice에서 사용
 
@@ -8,3 +8,9 @@ Service나 다른 컴포넌트에 @ExceptionHandler를 넣는 실수를 하는 �
 @ExceptionHandler는 @Controller나 @ControllerAdvice에서 사용하는 것을 알려준다.
 
 https://docs.spring.io/spring-framework/docs/5.3.9/reference/html/web.html#mvc-ann-exceptionhandler
+
+== lombok
+
+=== @RequiredArgsConstructor
+초기화 되지않은 final 필드, @NonNull이 붙은 필드들로 생성자를 만들어줍니다. 스프링의 생성자 의존성 주입에서 유용하게 사용할 수 있습니다.
+
