@@ -1,0 +1,61 @@
+:hardbreaks:
+= invoke
+
+(프로그램등을)불러오다
+
+간접호출, 우회호출
+
+
+== References
+* https://cartiertk.tistory.com/67[Invoke 함수란 무엇인가? 2018.01.26]
+
+C# UI 개발이야기인듯.
+
+* https://okky.kr/article/260188[원서 단어인데 차이점을 알고 싶습니다. 2014.09.05]
+
+----
+A a = new A();
+Class cls = a.getClass();
+Method method = cls.getMethod("b"), null);
+Object result = method.invoke(a, null);
+----
+객체를 만들어서 그 객체의 클래스정보를 이용해 b 메서드를 꺼내온뒤 간접적으로 실행
+
+Reflection을 이용.
+
+* https://wooooooak.github.io/kotlin/2019/03/21/kotlin_invoke/[코틀린 invoke 함수(람다의 비밀) 2019.03.21]
+
+코틀린 invoke 연산자. 이름 없이 호출될 수 있다.
+
+----
+object MyFunction {
+  operator fun invoke(str: String): String {
+    return str.toUpperCase() // 모두 대문자로 바꿔줌
+  }
+}
+----
+
+----
+MyFunction.invoke("hello") // HELLO
+----
+
+아래와 같이 invoke를 생략해서 호출 가능
+----
+MyFunction("hello") // HELLO
+----
+
+람다는 invoke 함수를 가진 객체
+
+----
+var toUpperCase = { str: String -> str.toUpperCase() }
+----
+
+아래와 같음
+
+----
+var toUpperCase = object : Function1<String, String> {
+  override fun invoke(p1: String): String {
+    return p1.toUpperCase()
+  }
+}
+----
