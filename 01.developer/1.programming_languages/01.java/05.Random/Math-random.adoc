@@ -1,0 +1,22 @@
+= Math.random()
+
+static 메서드로 Math.random()이 있다.
+
+0이상 1미만의 소수점 값을 리턴한다.
+
+코드를 보면 다음과 같다.
+
+----
+public static double random() {
+    return RandomNumberGeneratorHolder.randomNumberGenerator.nextDouble();
+}
+----
+
+RandomNumberGeneratorHolder는 다음과 같이 그냥 Random을 생성해 둔 것이다.
+----
+private static final class RandomNumberGeneratorHolder {
+    static final Random randomNumberGenerator = new Random();
+}
+----
+
+거기서 그냥 nextDouble()로 소수점으로 된 랜덤값을 리턴하는 것 뿐이다.
