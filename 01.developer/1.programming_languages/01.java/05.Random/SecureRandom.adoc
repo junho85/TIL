@@ -1,0 +1,9 @@
+:hardbreaks:
+= SecureRandom
+
+java.util.Random 클래스는 LCG (Linear Congruential Generator) 알고리즘을 이용해서 난수를 생성한다고 한다. 그런데 이 방식이 암호학적으로는 강력하지 않다. 생성된 난수가 좀 더 예측가능하기 때문이다.
+암호학적으로 좀 더 안전하게 하려면 java.security.SecureRandom을 이용한다. 암호학적으로 강력한 난수를 생성하기 위해 CSPRNG (cryptographically strong pseudo-random number generator)을 이용해서 난수를 생성한다.
+
+== References
+* https://www.baeldung.com/java-secure-random[The Java SecureRandom Class]
+* https://gosasac.tistory.com/26[자바 API 7 Random과 SecureRandom의 차이 2020.01.21]
