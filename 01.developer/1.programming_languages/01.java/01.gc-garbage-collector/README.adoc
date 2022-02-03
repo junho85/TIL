@@ -1,0 +1,64 @@
+:hardbreaks:
+= Garbage Collector (GC)
+
+heap 내에서 garbage를 찾아서 메모리를 반환시킴
+
+객체에 더이상 접근하는 것들이 없으면 garbage이다.
+
+GC를 실행하는 쓰레드를 제외하면 모든 작업이 멈춘다. (stop the world)
+
+GC튜닝을 통해 stop the world 시간을 줄인다.
+
+== Serial GC (-XX:+UseSerialGC)
+
+Young 영역은...
+
+Old 영역의 GC는 mark-sweep-compact 알고리즘 사용.
+mark-sweep-compact 알고리즘. Old 영역에 살아 있는 객체를 식별(Mark). 힙의 앞 부분부터 확인하여 살아있는 것만 남김(Sweep). 마지막으로 각 객체들이 연속되게 쌓이도록 힙의 가장 앞 부분부터 채워서 객체가 존재하는 부분과 객체가 없는 부분으로 나눔(Compaction)
+
+메모리가 작고 CPU 코어 개수가 적을 때 적합한 방식
+운영 서버에서는 절대로 사용하면 안 된다. 애플리케이션의 성능이 많이 떨어지게 된다.
+
+== Parallel GC (-XX:+UseParallelGC)
+
+Serial GC와 기본적인 알고리즘은 같음. GC를 처리하는 쓰레드가 여러개이다.
+메모리가 충분하고 코어의 개수가 많을 때 유리.
+Throughput GC라고도 부름.
+
+
+== Parallel Old GC (-XX:+UseParallelOldGC / -XX:+ParallelGCThreads=n)
+JDK 5 update 6부터 제공한 GC
+Parallel GC와 비교하여 Old 영역의 GC 알고리즘만 다름.
+
+== CMS GC (Concurrent Mark Sweep GC)
+
+stop-the-world 시간이 매우 짧음
+Low Latency GC라고도 부름.
+
+단점
+* 다른 GC 방식보다 메모리와 CPU를 더 많이 사용
+* Compaction 단계가 기본적으로 제공되지 않음
+
+
+== G1 GC (Garbage First GC) (-XX:+UseG1GC)
+앞의 Young 영역과 Old 영역에 대해서는 잊는다.
+
+장점
+* 성능
+
+JDK6에서 시험삼아 사용 가능 (early access)
+JDK7에서 정식으로 G1 GC 포함하여 제공함
+
+Java9 부터는 기본 GC
+
+
+
+== Java8 부터 Perm영역이 Metaspace로 바뀜
+
+
+
+== References
+* https://memostack.tistory.com/229[JVM GC 동작 순서와 GC 종류(Serial / Parallel / CMS / G1 GC ) 2021.03.07]
+* https://d2.naver.com/helloworld/1329[Java Garbage Collection 2011.12.22]
+* https://d2.naver.com/helloworld/329631[Java Reference와 GC 2013.04.02]
+* https://huisam.tistory.com/entry/jvmgc[JVM과 Garbage Collection - G1GC vs ZGC 2020.11.02]

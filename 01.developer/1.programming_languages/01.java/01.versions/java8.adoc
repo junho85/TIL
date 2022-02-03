@@ -34,12 +34,12 @@
 * MaxMetaspaceSize 로 제한을 안하면 무제한이 기본값인데 이렇게 되면 OS 나 다른 어플에서 사용하는 메모리 영역까지 부족해져서 다 같이 죽는 사태 발생?
 
 === 참고
-* [Java8 메모리 설정과 GeoServer 2016.07.15](https://tonyne.jeju.onl/2016/07/15/java8-memory-setting-geoserver/)
-* [JDK8 적용 후, 심각한 성능저하가 발생한다면? 2017.11.14](https://brunch.co.kr/@heracul/1)
-* [Java 8: From PermGen to Metaspace](https://dzone.com/articles/the-false-hope-of-managing-effects-with-tagless-fi)
-* [JDK8에선 PermGen이 완전히 사라지고 Metaspace가 이를 대신 함. 2014.08.01](https://starplatina.tistory.com/entry/JDK8%EC%97%90%EC%84%A0-PermGen%EC%9D%B4-%EC%99%84%EC%A0%84%ED%9E%88-%EC%82%AC%EB%9D%BC%EC%A7%80%EA%B3%A0-Metaspace%EA%B0%80-%EC%9D%B4%EB%A5%BC-%EB%8C%80%EC%8B%A0-%ED%95%A8)
-* [JAVA8 Permanent 영역은 어디로 가는가 2015.03.18](https://yckwon2nd.blogspot.com/2015/03/java8-permanent.html)
-* [Where Has the Java PermGen Gone? 2014.07.07](http://www.infoq.com/articles/Java-PERMGEN-Removed)
+* https://tonyne.jeju.onl/2016/07/15/java8-memory-setting-geoserver/[Java8 메모리 설정과 GeoServer 2016.07.15]
+* https://brunch.co.kr/@heracul/1[JDK8 적용 후, 심각한 성능저하가 발생한다면? 2017.11.14]
+* https://dzone.com/articles/the-false-hope-of-managing-effects-with-tagless-fi[Java 8: From PermGen to Metaspace]
+* https://starplatina.tistory.com/entry/JDK8%EC%97%90%EC%84%A0-PermGen%EC%9D%B4-%EC%99%84%EC%A0%84%ED%9E%88-%EC%82%AC%EB%9D%BC%EC%A7%80%EA%B3%A0-Metaspace%EA%B0%80-%EC%9D%B4%EB%A5%BC-%EB%8C%80%EC%8B%A0-%ED%95%A8[JDK8에선 PermGen이 완전히 사라지고 Metaspace가 이를 대신 함. 2014.08.01]
+* https://yckwon2nd.blogspot.com/2015/03/java8-permanent.html[JAVA8 Permanent 영역은 어디로 가는가 2015.03.18]
+* http://www.infoq.com/articles/Java-PERMGEN-Removed[Where Has the Java PermGen Gone? 2014.07.07]
 
 == lambda
 
