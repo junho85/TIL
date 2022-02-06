@@ -1,0 +1,11 @@
+:hardbreaks:
+= AssertJ
+
+== Exception 발생 테스트
+link:exception.adoc[exception.adoc]
+
+
+== References
+* https://assertj.github.io/doc/
+* http://joel-costigliola.github.io/assertj/assertj-core.html
+* https://pjh3749.tistory.com/241[[AssertJ\] JUnit과 같이 쓰기 좋은 AssertJ 필수 부분 정리 2019.05.10]

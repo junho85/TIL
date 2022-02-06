@@ -1,0 +1,24 @@
+:hardbreaks:
+= AssertJ - Exception 발생 테스트
+
+Exception이 발생하지 않는지 확인 하는 테스트 코드
+----
+import static org.assertj.core.api.Assertions.*;
+
+class ExceptionTest {
+    @Test
+    void test() {
+        assertThatCode(() -> {
+            System.out.println("hello world");
+//            throw new RuntimeException();
+        }).doesNotThrowAnyException();
+    }
+}
+----
+
+RuntimeException이 발생하는지 확인하는 테스트 코드
+----
+assertThatExceptionOfType(RuntimeException.class).isThrownBy(() -> {
+    throw new RuntimeException();
+});
+----
