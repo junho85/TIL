@@ -1,0 +1,34 @@
+:hardbreaks:
+= npm (Node Package Manager)
+
+== package-lock.json은 커밋해야 하나?
+package-lock.json은 개발자가 직접 작성하는 것이 아닌 npm 명령에 의해 생성되는 파일이라 커밋을 해야 될지 말지(.gitignore에 추가할지)고민이 될 수 있다.
+
+결론부터 말하자면 package-lock.json은 커밋해야 한다.
+
+파일이 생성되는 시점의 의존성 트리에 대한 정확한 정보를 가지고 있음
+package.json에서 `"react-router": "^6.0.1",` 라고 해 두면 6.0.1이 아닌  6.2.1이 사용될 수 있음
+
+다음은 6.2.1로 세팅된 package-lock.json의 내용.
+[source,json]
+----
+    "react-router": {
+      "version": "6.2.1",
+      "resolved": "https://registry.npmjs.org/react-router/-/react-router-6.2.1.tgz",
+      "integrity": "sha512-2fG0udBtxou9lXtK97eJeET2ki5//UWfQSl1rlJ7quwe6jrktK9FCCc8dQb5QY6jAv3jua8bBQRhhDOM/kVRsg==",
+      "requires": {
+        "history": "^5.2.0"
+      }
+    },
+----
+
+package-lock.json에서 6.2.1로 해 두었기 때문에 다른 사람도 프로젝트를 세팅할 때 6.2.1로 설정됨. 만약 package-lock.json 파일이 없다면 다른 사람이 프로젝트를 불러왔을 때 6.3.1로 세팅이 될 수도 있음.
+
+`^6.0.1` 의 의미는 >= ^6.0.1 <7.0.0 이라는 의미임
+
+
+
+=== References
+* https://hyunjun19.github.io/2018/03/23/package-lock-why-need/[package-lock.json은 왜 필요할까? 2018.03.23]
+파일이 생성되는 시점의 의존성 트리에 대한 정확한 정보를 가지고 있음
+* https://docs.npmjs.com/cli/v6/using-npm/semver[semver]
