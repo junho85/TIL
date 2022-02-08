@@ -4,8 +4,11 @@
 
 dependencyInsight 등 추가 됨
 
+=== migration
 compile -> implementation 으로 변경해야됨
 
+
+=== 7.2
 [source]
 ----
 ./gradlew wrapper --gradle-version=7.2 --distribution-type=bin
