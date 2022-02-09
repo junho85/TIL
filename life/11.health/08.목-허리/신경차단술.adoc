@@ -1,0 +1,19 @@
+:hardbreaks:
+= 신경차단술
+
+== References
+* https://barun-medi.com/?p=15962[주사치료,신경차단술]
+
+압박되어 통증을 일으키는 신경 주변에 스테로이드와 유착박리제를 투여하여 신경의 부종을 감소 시키고 주변부의 염증을 세척해 내는 작용을 함
+
+* https://health.chosun.com/healthyLife/column_view.jsp?idx=9414[국민 통증, 신경주사가 답일까? 관절 주사치료 어디까지 왔나?]
+
+* https://blog.naver.com/mokhuri0542/221624806560[허리신경차단술 신경차단주사 맞아도 계속 아픈 이유 5가지 2019.08.22]
+
+> 스테로이드는 우리 몸의 면역체계를 인위적으로 중단시켜 염증을 제거하는 기전의 약물
+
+TODO
+
+* https://www.youtube.com/watch?v=2hRnmHDd1Us[마취통증의학과 전문의가 설명하는 신경차단주사? 프롤로주사? 2019.06.07]
+
+* http://www.healthdaynews.co.kr/news/articleView.html?idxno=9882[신경차단술의 올바른 이해 김포공항 우리들병원 유연규 진료부장 2019.03.27]
