@@ -1,0 +1,76 @@
+= 백기선 스프링
+
+== Spring Boot 2.3
+[Spring Boot 2 3, Web-starter doesn't bring Validation-starter anymore 2020.05.26](https://www.youtube.com/watch?v=cP8TwMV4LjE)
+
+https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3-Release-Notes
+
+Validation Starter 가 분리됨
+
+Web, WebFlux에서 기본으로 가져 오지 않음.
+spring-boot-starter-validation을 따로 추가해 주어야함
+
+보통 Spring Web만 추가 하면 되었는데 Validation을 추가해 주어야함.
+
+@NotEmpty, @Valid 이런거 기본으로 쓸 수 없음
+
+[source,xml]
+----
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+----
+추가해주면 @NotEmpty, @Valid 사용 할 수 있게 된다.
+
+
+이슈
+https://github.com/spring-projects/spring-boot/issues/19550[Do not include the validation starter in web starters by default #19550]
+
+
+https://www.youtube.com/watch?v=bJfbPWEMj_c[스프링 제대로 공부했는지 5분안에 확인하는 방법 2022.02.09]
+
+----
+public class RepositoryRank {
+  public int getPoint(String repositoryName) throws IOException {
+    GitHub gitHub = GitHub.connect();
+    GHRepository repository = gitHub.getRepository(repositoryName);
+
+    int points = 0;
+    ...
+----
+
+getPoint테스트 만들때 GitHub.connect() 는 어떻게? 테스트 가능한 코드로 만들려면?
+
+Portable Service Abstraction. 추상화를 얻는다.
+
+테스트 편리하게 만들기
+
+인터페이스 정의
+----
+interface GitHubService throws IOException {
+  GitHub connect();
+}
+
+class DefaultGitHubService implements GitHubService {
+  GitHub connect() throws IOException {
+    return GitHub.connect();
+  }
+}
+----
+
+GitHubService주입받을 수 있도록
+
+----
+private GitHubService gitHubService;
+
+public RepositoryRank(GitHubService gitHubService) {
+  this.gitHubService = gitHubService;
+}
+
+public class RepositoryRank {
+  public int getPoint(String repositoryName) throws IOException {
+    GitHub gitHub = gitHubService.connect();
+    GHRepository repository = gitHub.getRepository(repositoryName);
+...
+----
