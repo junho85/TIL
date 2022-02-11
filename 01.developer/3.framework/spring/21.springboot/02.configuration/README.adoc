@@ -1,8 +1,25 @@
 :hardbreaks:
 = 설정
 
+== 외부에서 설정 주입 - Externalized Configuration
+Spring Boot는 설정의 외부화를 지원해서 같은 코드의 어플리케이션을 다른 환경에서 동작하도록 할 수 있다. 외부 설정 방법으로 Java properties 파일, YAML 파일, 환경변수, 커맨드라인 인자들을 이용할 수 있다.
 
-== 외부에서 설정 주입
+속성 값들을 `@Value` 애노테이션을 이용해서 빈에 직접 주입하거나, spring의 `Environment` 추상화를 통해 접근하거나, `@ConfigurationProperties` 를 통해 구조화된 객체에 바인딩할 수 있다.
+
+Spring Boot는 합리적으로 값들을 재정의 하도록 설계된 매우 특정한 `PropertySource` 순서를 사용한다. 속성은 다음 순서로 고려된다. (아래쪽의 항목이 기존의 설정을 덮어씁니다)
+
+1. 기본 속성들 (SpringApplication.setDefaultProperties 에 설정되어 있다)
+2. `@Configuration` 클래스들의 `@PropertySource` 애노테이션. 애플리케이션이 리프레시 될 때 까지는 `Environment`에 추가되지 않는것을 알아두어라.
+3. Config 데이터 (application.properties 와 같은 파일)
+4. `random.*`에만 있는 `RandomValuePropertySource`
+5. OS 환경 변수
+6. Java 시스템 속성들 (`System.getProperties()).
+7. `java:comp/env`에 있는 JNDI 속성들
+8. `ServletContext` 초기 파라미터
+9. `ServletConfig` 초기 파라미터
+10. `SPRING_APPLICATION_JSON`의 속성들 (환경변수의 인라인 JSON 또는 시스템 프로퍼티)
+11. 커맨드라인 인자
+12. 테스트의 `properties` 속성. `@SpringBootTest` ... TODO
 
 === application.properties
 ----
@@ -23,8 +40,28 @@ server.port=${port:8080}
 
 === 커맨드라인 인자
 
+--server.port=9000
+
+==== JSON Application Properties
+
+`spring.application.json` 나 `SPRING_APPLICATION_JSON` 이 `Environment` 에 추가된다.
+
+----
+$ SPRING_APPLICATION_JSON='{"my":{"name":"test"}}' java -jar myapp.jar
+----
+
+----
+$ java -Dspring.application.json='{"my":{"name":"test"}}' -jar myapp.jar
+----
+
+----
+$ java -jar myapp.jar --spring.application.json='{"my":{"name":"test"}}'
+----
+
+
 
 
 === References
+* https://docs.spring.io/spring-boot/docs/2.6.3/reference/htmlsingle/#features.external-config[7.2. Externalized Configuration]
 * https://www.latera.kr/reference/java/2019-09-29-spring-boot-config-externalize/[[Spring Boot\] 외부에서 설정 주입하기 2019.09.29]
 * https://docs.spring.io/spring-boot/docs/1.3.0.RELEASE/reference/html/howto-properties-and-configuration.html[69. Properties & configuration]
