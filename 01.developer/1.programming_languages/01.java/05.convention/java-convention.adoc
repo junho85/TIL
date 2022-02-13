@@ -1,0 +1,104 @@
+:hardbreaks:
+= Java Convention
+
+== 클래스 안에서의 작성 순서
+클린코드 "10장 클래스"의 내용에 표준 자바 관례 (standard java convention)에 따라 다음과 같은 순서로 작성한다는 이야기가 나온다.
+
+1. static public 상수
+2. static private 변수
+3. private instance 변수 (public 변수가 필요한 경우는 거의 없음)
+4. public method
+** private method는 자신을 호출하는 공개 함수 직후
+
+표준 자바 관례 (Standard Java Convention)에 적혀있는 내용은 어떨까?
+
+3.1.3 Class and Interface Declarations[https://www.oracle.com/java/technologies/javase/codeconventions-fileorganization.html#1852]
+
+1. 클래스 주석
+2. `class` 나 `interface` statement
+3. class/interface 구현 주석
+4. Class (static) variables - public, protected, package-private, private 순서
+5. Instance variables - public, protected, package-private, private 순서
+6. Constructors
+7. Methods - scope나 접근성 보다는 기능단위로 그룹핑 한다. 예를 들어 private class method가 두개의 public instance method 사이에 있을 수 있다. 목표는 가독성이다.
+
+https://www.oracle.com/java/technologies/javase/codeconventions-codeexamples.html#182[11.1 Java Source File Example]
+----
+/*
+ * @(#)Blah.java        1.82 99/03/18
+ *
+ * Copyright (c) 1994-1999 Sun Microsystems, Inc.
+ * 901 San Antonio Road, Palo Alto, California, 94303, U.S.A.
+ * All rights reserved.
+ *
+ * This software is the confidential and proprietary information of Sun
+ * Microsystems, Inc. ("Confidential Information").  You shall not
+ * disclose such Confidential Information and shall use it only in
+ * accordance with the terms of the license agreement you entered into
+ * with Sun.
+ */
+
+
+package java.blah;
+
+import java.blah.blahdy.BlahBlah;
+
+/**
+ *
+        Class description goes here.
+ *
+ * @version
+        1.82 18 Mar 1999  * @author
+        Firstname Lastname  */
+public class Blah extends SomeClass {
+
+           /* A class implementation comment can go here. */
+    /**
+        classVar1 documentation comment */
+    public static int classVar1;
+
+    /**
+
+            *
+        classVar2 documentation comment that happens to be      *
+        more than one line long      */
+    private static Object classVar2;
+
+    /**
+        instanceVar1 documentation comment */
+    public Object instanceVar1;
+
+    /**
+        instanceVar2 documentation comment */
+    protected int instanceVar2;
+
+    /**
+        instanceVar3 documentation comment */
+    private Object[] instanceVar3;
+
+    /**
+     * ...
+        constructor Blah documentation comment...      */
+    public Blah() {
+
+              // ...implementation goes here...     }
+
+    /**
+     * ...
+        method doSomething documentation comment...      */
+    public void doSomething() {
+
+               // ...implementation goes here...      }
+
+    /**
+     * ...method doSomethingElse
+        documentation comment...      * @param someParam
+        description      */
+    public void doSomethingElse(Object someParam) {
+
+               // ...implementation goes here...      }
+}
+----
+
+=== 정리
+* https://junho85.pe.kr/1999[Java - 클린코드 10장 클래스에서 언급한 표준 자바 관례 (Standard Java Convention)의 작성 순서 확인 2022.02.13]
