@@ -1,0 +1,44 @@
+= 스마트인재개발원 인쌤TV - 파이썬 기초
+
+== [파이썬 기초]NO 1. 파이썬 개요 및 아나콘다 설치(영상) #주피터노트북 2019.08.30
+* https://www.youtube.com/watch?v=cMB6-AxatPU[[파이썬 기초]NO 1. 파이썬 개요 및 아나콘다 설치(영상) #주피터노트북 2019.08.30]
+
+ppt: https://blog.naver.com/jang0_0yw/221633662216
+
+Anaconda Navigator
+
+localhost:8888
+
+크롬브라우저가 빠르니 크롬브라우저를 기본브라우저로 설정
+
+Jupyter Notebook
+
+3D Objects, Anaconda3, ...
+
+c:/사용자/SEO
+
+python 폴더 생성
+
+
+== [파이썬 기초]NO.2 주피터 노트북 사용법 2019.09.20
+
+* https://www.youtube.com/watch?v=4_-IIfbdR5M[[파이썬 기초]NO.2 주피터 노트북 사용법 2019.09.20]
+
+Anaconda Navigator -> Jupyter Notebook
+
+오른쪽 위 new -> Python3
+
+주피터 사용법
+
+엔터 치면 에디트 모드
+
+ESC누르면 커멘드 모드
+
+ctrl + enter로 실행
+
+shift + enter 실행 후 아래 셀로 이동 (아래 셀이 없으면 추가)
+
+alt + enter 실행 후 무조건 아래셀 추가
+
+a 위에 셀 추가
+b 아래에 셀 추가
