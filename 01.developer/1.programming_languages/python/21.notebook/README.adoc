@@ -8,46 +8,27 @@ pip install notebook
 jupyter notebook
 ----
 
-== anaconda, conda
+== conda
+
+https://conda.io/en/latest/index.html
+
+> Conda is an open source package management system
+
+패키지 관리 시스템
+
+== Miniconda
+https://conda.io/en/latest/miniconda.html
+
+> Miniconda is a free minimal installer for conda.
+
+
+
+
+== anaconda
+https://www.anaconda.com/
+
 
 
 
 == References
 * https://dojang.io/mod/page/view.php?id=2457[46.2 주피터 노트북 사용하기]
-
-* https://www.youtube.com/watch?v=HCIJC0jnMEQ[conda와 pip 차이 뭘까요? 채널 무엇일까요? | 파이썬 패키지 빠른 재설치, conda-pack 1화 2020.11.05]
-
-conda
-
-windows, macOS, Linux 모두 실행 가능한 관리 시스템. 어떤 운영체제에서든 패키지 및 종속을 빠르게 설치
-
-conda vs pip
-
-pip는 파이썬 한정 패키지 관리자
-
-conda는 다른 언어 c, java 등 포함한 패키지 관리자. 가상 환경 생성 포함
-
-가상환경
-
-여러 버전의 환경 만들어서 호환성 문제 없도록
-1. Virtualenv: Python2 버전 때부터 쓰인 가상환경 라이브러리
-2. venv: Python 3.3 버전 이후 부터 기본모듈에 포함됨
-3. conda: Anaconda = pip + venv + 과학 <- 통합된 느낌으로 쓰임
-
-(윈도우 미지원 pyenv: Python Version Manager + 가상환경 기능 플러그인)
-
-conda install
-conda update -name
-conda remote -name
-
-pip
-...
-
-source activate -> conda activate
-source deactivate -> conda deactivate
-
-conda search | pip search
-conda install --channel | pip install --index-url
-
-https://conda-forge.org
-
