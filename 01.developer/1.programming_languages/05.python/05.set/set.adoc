@@ -1,0 +1,48 @@
+:hardbreaks:
+= python set
+
+== 생성
+----
+myset = {1,2,3,4,5}
+----
+
+----
+myset = set()
+----
+
+== type
+----
+type(myset)
+<class 'set'>
+----
+
+== 값이 있는지 확인
+----
+1 in myset
+----
+
+== 길이
+len
+
+== 정렬
+sorted
+
+== 추가
+add
+
+== 여러개 추가
+update([6,7,8])
+
+== 삭제
+remove 는 없는 key 넣으면 에러발생
+
+에러 발생 피하려면 `if 'key' in set` 등으로 미리 확인하던지
+
+discard 를 사용한다.
+
+== 아무거나 하나 꺼내고 삭제
+pop
+
+== 모두 삭제
+clear()
+
