@@ -1,0 +1,20 @@
+:hardbreaks:
+= DataSpell
+
+https://www.jetbrains.com/dataspell/
+
+Jetbrains 에서 만든 툴
+
+The IDE for Professional Data Scientists
+
+== conda 설치
+DataSpell 에서 기본 환경으로 Conda가 선택되어 있다. Virtualenv, System interpreter도 있지만 Conda가 기본이니 Conda가 좋지 않을까.
+
+anaconda 설치
+
+link:anaconda.adoc[anaconda.adoc]
+
+
+== CSV 파일 데이터 추가
+
+csv파일을 tables

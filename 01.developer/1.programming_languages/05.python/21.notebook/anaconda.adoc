@@ -1,0 +1,36 @@
+= anaconda
+
+== installation
+
+=== homebrew
+* https://formulae.brew.sh/cask/anaconda[anaconda]
+----
+brew install --cask anaconda
+
+...
+    Installed package of scikit-learn can be accelerated using scikit-learn-intelex.
+    More details are available here: https://intel.github.io/scikit-learn-intelex
+
+    For example:
+
+        $ conda install scikit-learn-intelex
+        $ python -m sklearnex my_application.py
+----
+
+path 설정 알아서 해 주면 좋겠는데 해주지 않음
+
+~/.zshrc 같은 파일에 다음내용 추가
+----
+export PATH="$PATH:/usr/local/anaconda3/bin"
+----
+
+만약 $PATH를 뒤에 적어주면 anaconda에 있는 kinit 등의 명령어가 우선 되어서 kerberos 등에서 문제가 생길수 있으니 주의
+----
+export PATH="/usr/local/anaconda3/bin:$PATH"
+----
+
+
+== References
+* https://medium.com/ayuth/install-anaconda-on-macos-with-homebrew-c94437d63a37[Install anaconda on macOS with Homebrew 2021.03.22]
+
+
