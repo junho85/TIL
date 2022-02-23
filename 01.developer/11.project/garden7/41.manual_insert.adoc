@@ -3,7 +3,12 @@
 
 출석이 누락된 경우 수동 등록을 합니다.
 
+attendance/manual_insert.py 에 commit url 추가 해서 로컬에서 등록 테스트
+잘 되면 commit & push
+서버에 에서 manual_insert.py 실행
 ----
+cd /home/junho85/web/garden7
+git pull
 PYTHONPATH=/home/junho85/web/garden7 /home/junho85/web/garden7/venv/bin/python /home/junho85/web/garden7/attendance/manual_insert.py
 ----
 
