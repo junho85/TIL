@@ -10,8 +10,8 @@ brew install --cask google-chrome
 
 == Homebrew 가 있으면 대부분의 앱은 쉽게 설치 가능
 * homebrew
-  * brew 설치 하고 대부분 brew 로 설치하면 편하다.
-  * https://brew.sh/
+** brew 설치 하고 대부분 brew 로 설치하면 편하다.
+** https://brew.sh/
 
 [source]
 ----
