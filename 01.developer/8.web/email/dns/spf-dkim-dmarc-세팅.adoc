@@ -30,6 +30,14 @@ https://docs.toast.com/ko/Notification/Email/ko/troubleshooting-guide/
 v=spf1 include:_spfblocka.toast.com ~all
 ----
 
+=== GMAIL
+TODO
+
+== DKIM 세팅
+TODO
+
+== DMARC 세팅
+TODO
 
 == References
 * https://www.cisco.com/c/ko_kr/support/docs/security/email-security-appliance/215360-best-practice-for-email-authentication.html[이메일 인증을 위한 모범 사례 - SPF, DKIM 및 DMARC를 구축하는 최적의 방법 2020.11.18]

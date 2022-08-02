@@ -33,7 +33,11 @@ Spring Boot에 의한 기본 로그 출력은 다음 예제와 비슷하다.
 .Note
 > Logback은 `FATAL`레벨이 없다. `ERROR`에 맵핑된다.
 
+== 7.4.2 콘솔 출력
+...
 
+=== 7.4.3 파일 출력
+...
 
 == References
 https://docs.spring.io/spring-boot/docs/2.5.4/reference/htmlsingle/#features.logging[7.4. Logging]

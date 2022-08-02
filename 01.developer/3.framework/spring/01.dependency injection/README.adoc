@@ -57,8 +57,8 @@ interface B {}
 ----
 
 === Setter based Injection
-
+link:setter-based-injection.adoc[Setter Based Injection]
 
 === Constructor based Injection
-
+link:constructor_based_injection.adoc[Constructor based Injection 생성자 주입]
 

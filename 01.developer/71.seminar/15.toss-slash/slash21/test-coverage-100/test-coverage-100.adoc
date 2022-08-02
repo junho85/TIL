@@ -4,7 +4,7 @@
 
 https://toss.im/slash-21/sessions/1-6
 
-* 발표영상: https://www.youtube.com/watch?v=jdlBu2vFv58p[토스ㅣSLASH 21 - 테스트 커버리지 100% 2021.04.28]
+* 발표영상: https://www.youtube.com/watch?v=jdlBu2vFv58[토스ㅣSLASH 21 - 테스트 커버리지 100% 2021.04.28]
 * 발표자료: https://static.toss.im/slash21/pdf/[%ED%86%A0%EC%8A%A4_SLASH%2021]%20%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%BB%A4%EB%B2%84%EB%A6%AC%EC%A7%80%20100%ED%8D%BC%EC%84%BC%ED%8A%B8_%EC%9D%B4%EC%9D%91%EC%A4%80.pdf
 
 ----

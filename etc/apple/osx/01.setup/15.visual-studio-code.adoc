@@ -1,9 +1,7 @@
 :hardbreaks:
 = OSX Setup - Visual Studio Code
 
-----
-brew install --cask google-chrome
-----
+
 
 ----
 brew install --cask visual-studio-code

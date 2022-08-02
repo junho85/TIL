@@ -1,0 +1,8 @@
+:hardbreaks:
+= python pandas
+
+== df.iterrows() 병렬처리
+
+=== References
+* https://blog.softhints.com/pandas-easy-parallelization-df-iterrows-for-loop/[Pandas Easy Parallelization with df.iterrows() or For Loop 2021.01.27]
+* https://swalloow.github.io/pandas-parallel/[Pandas DataFrame을 병렬처리 하는 방법 2017.02.27]

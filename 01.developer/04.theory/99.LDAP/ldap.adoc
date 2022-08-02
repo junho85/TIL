@@ -1,0 +1,59 @@
+:hardbreaks:
+= LDAP - Lightweight Directory Access Protocol
+
+* DN: Distinguished Name
+* RDN: Relative Distinguished Name
+* DIT: Directory Information Tree
+* LDIF: LDAP Data Interchange Format
+
+
+== X.500 AttributeType
+* CN: commonName
+* L: localityName
+* ST: stateOrProvinceName
+* O: organizationName
+* OU: organizationalUnitName
+* C: countryName
+* STREET: streetAddress
+* DC: domainComponent
+* UID: userid
+
+
+로그인 요청시 Login Request: User, Password, Group
+
+LDAP authentication request
+- User lookup and credential check
+  - User attributes
+
+LDAP authorization request
+- Group record lookup
+  - Group attributes
+
+user, group 정보를 얻으면서 로그인에 성공
+
+== 명령어
+StartTLS
+Bind
+Search & Compare
+Add
+Delete
+Modify
+ModifyDN
+Abandon
+Unbind
+
+== 정리중...
+bindDN?
+root DN?
+manager DN?
+
+userSearch
+- baseDN?
+groupSearch
+
+
+== References
+* https://www.ietf.org/rfc/rfc2253.txt[Lightweight Directory Access Protocol (v3): UTF-8 String Representation of Distinguished Names]
+* https://tools.ietf.org/html/rfc4511[Lightweight Directory Access Protocol (LDAP): The Protocol]
+* https://yongho1037.tistory.com/796[LDAP 개념 잡기 2020.09.04]
+* https://medium.com/happyprogrammer-in-jeju/ldap-%ED%94%84%ED%86%A0%ED%86%A0%EC%BD%9C-%EB%A7%9B%EB%B3%B4%EA%B8%B0-15b53c6a6f26[LDAP 프토토콜 맛보기 2017.04.04]

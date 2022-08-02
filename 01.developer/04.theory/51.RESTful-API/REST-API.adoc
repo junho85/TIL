@@ -57,6 +57,9 @@ Host: restapi.example.com Accept: image/jpg
 e.g.    GET : /users/{userid}/devices (일반적으로 소유 ‘has’의 관계를 표현할 때)
 ----
 
+== 단수형과 복수형
+
+
 
 == References
 * https://restfulapi.net/resource-naming/[REST Resource Naming Guide]
@@ -65,7 +68,8 @@ e.g.    GET : /users/{userid}/devices (일반적으로 소유 ‘has’의 관�
 * https://en.wikipedia.org/wiki/Representational_state_transfer[Representational state transfer]
 * https://spoqa.github.io/2012/02/27/rest-introduction.html[REST 아키텍처를 훌륭하게 적용하기 위한 몇 가지 디자인 팁 2012.02.27]
 * https://en.wikipedia.org/wiki/Roy_Fielding[Roy Fielding]
-* https://bcho.tistory.com/914[REST API 디자인 가이드]
+* https://bcho.tistory.com/914[REST API 디자인 가이드 2014.06.12]
+** 단수(Singular)보다는 복수(Plural)형 명사를 사용한다.
 * http://bcho.tistory.com/953[REST API의 이해와 설계 #1-개념 소개 2014.09.25]
 * http://bcho.tistory.com/954[REST API 이해와 설계 #2 API 설계 가이드 2014.09.25]
 * https://yangbongsoo.gitbook.io/study/undefined-1/rest[REST의 이해와 설계]

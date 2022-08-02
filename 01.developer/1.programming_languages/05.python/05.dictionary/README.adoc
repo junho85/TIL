@@ -1,0 +1,12 @@
+:hardbreaks:
+= python - dictionary
+
+map
+
+== 초기화
+
+=== 빈 dictionary 초기화
+
+----
+mydic = {}
+----

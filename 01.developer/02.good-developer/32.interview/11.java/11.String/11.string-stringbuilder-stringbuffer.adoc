@@ -40,6 +40,9 @@ String test2 = "world";
 (new StringBuilder()).append(test1).append(" ").append(test2).toString();
 ----
 
+=== 주의할점
+for loop
+
 
 == References
 * https://gist.github.com/benelog/b81b4434fb8f2220cd0e900be1634753[jdk1.5에서 String 더하기의 컴파일시의 최적화]

@@ -1,0 +1,13 @@
+:hardbreaks:
+= ifkakao 2020
+
+https://tech.kakao.com/2020/11/24/if-kakao-2020-dev-session/[if (kakao)2020 기술 세션 다시보기 2020.11.24]
+
+https://if.kakao.com/2020/
+
+
+== JUnit5를 시작하며
+https://if.kakao.com/2020/session/108[JUnit5를 시작하며]
+
+== 카카오톡 시스템의 진화 - 테스트 자동화로 자신감 갖기
+https://if.kakao.com/2020/session/122[카카오톡 시스템의 진화 - 테스트 자동화로 자신감 갖기]

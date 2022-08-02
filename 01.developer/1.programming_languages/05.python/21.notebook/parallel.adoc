@@ -1,0 +1,16 @@
+:hardbreaks:
+= Notebook Parallel 병렬처리
+
+== multiprocessing
+
+
+== Ipyparallel
+https://ipyparallel.readthedocs.io/en/latest/
+
+
+
+
+== References
+* https://www.itworld.co.kr/news/153149[]
+* https://velog.io/@prayme/Ipyparallel-%EB%AC%B8%EC%84%9C-%EC%9D%BD%EA%B8%B0[Ipyparallel 문서 읽기 2020.07.27]
+* https://devkyu.tistory.com/920[python multiprocessing 을 Windows jupyter 에서 실행시키기! 2020.04.10]

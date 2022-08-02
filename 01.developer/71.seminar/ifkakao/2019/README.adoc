@@ -1,0 +1,12 @@
+:hardbreaks:
+= ifkakao 2019
+
+https://if.kakao.com/2019
+
+== 서버 성능테스트 Tip - 사례를 통해 얻은 교훈들
+
+https://if.kakao.com/2019/program?sessionId=e4a8f301-b137-4be9-a3ec-4c1c0b4fdbbc[서버 성능테스트 Tip - 사례를 통해 얻은 교훈들]
+
+
+
+

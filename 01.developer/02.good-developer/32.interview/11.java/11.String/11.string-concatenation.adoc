@@ -1,0 +1,27 @@
+= String concatenation - 문자열 연결
+
+== + 연산자
+----
+
+----
+
+== StringBuilder
+
+== StringBuffer
+
+== String.concat
+
+== String.format
+
+== String.join
+
+== StringJoiner
+
+== Arrays.toString
+
+== Collectors.joining
+
+
+
+== References
+* https://www.baeldung.com/java-strings-concatenation[Concatenating Strings In Java]

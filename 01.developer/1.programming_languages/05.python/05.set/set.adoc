@@ -46,3 +46,8 @@ pop
 == 모두 삭제
 clear()
 
+== 교집합, 합집합, 차집합
+
+
+== References
+* https://www.codingfactory.net/10043[Python / 자료형 / 집합(set)]

@@ -19,7 +19,7 @@ Spring Boot는 합리적으로 값들을 재정의 하도록 설계된 매우 �
 9. `ServletConfig` 초기 파라미터
 10. `SPRING_APPLICATION_JSON`의 속성들 (환경변수의 인라인 JSON 또는 시스템 프로퍼티)
 11. 커맨드라인 인자
-12. 테스트의 `properties` 속성. `@SpringBootTest` ... TODO
+12. 테스트의 `properties` 속성. `@SpringBootTest` ...
 
 === application.properties
 ----

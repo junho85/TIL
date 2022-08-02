@@ -1,0 +1,10 @@
+= Deprecated
+
+
+== atom
+atom은 개발 중단됨
+
+[source]
+----
+brew cask install atom
+----

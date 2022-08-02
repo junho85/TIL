@@ -40,7 +40,7 @@ Spring Boot는 커스텀 Logback 컨버터를 이용해 멋진 ANSI color 터미
 Groovy가 classpath에 있다면 logback.groovy로 Logback을 설정할 수 있다. 이 세팅이 우선 적용된다.
 
 > Spring 확장은 Groovy 설정을 지원하지 않는다. logback-spring.groovy파일은 감지되지 않는다.
-
+...
 
 == logback-spring.xml 설정
 logback-spring.xml 설정은 언제부터 지원이 된 걸까?
