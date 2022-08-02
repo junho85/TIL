@@ -1,0 +1,14 @@
+:hardbreaks:
+= OSX 녹화 도중 화면 소리 녹음 - iShowU
+
+Multi-Output Device
+
+Aggregate
+
+
+
+== 화상회의 녹화
+출력되는 소리가 같이 녹음 될 수 있는 부분을 주의한다.
+
+== References
+* https://junho85.pe.kr/1455[OBS - OSX 에서 나오는 소리 송출하기. Audio Output Capture 2019.12.09]
