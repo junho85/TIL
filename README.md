@@ -4,6 +4,10 @@
 * GitBook: https://junho85.gitbooks.io/til/
 * GitBook: https://junho85.gitbook.io/til/
 
+## 2023.01
+* Term: 2023.01.25 ~ 
+* Kotlin, Spring, ETC
+
 ## 2019.10
 * PS with Python
   * leetcode

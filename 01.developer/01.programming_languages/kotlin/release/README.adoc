@@ -1,0 +1,72 @@
+:hardbreaks:
+
+= Kotlin Release
+
+== Kotlin 1.8.0 Released
+
+2023.01.12
+https://blog.jetbrains.com/kotlin/2023/01/kotlin-1-8-0-released/
+
+주요 기능
+* JVM을 위한 새로운 실험적인 기능: 재귀적으로 디렉터리 복사 및 삭제
+* `kotlin-reflect` 성능 개선
+* 새로운 컴파일러 옵션인 `-Xdebug` 가 더 나은 디버깅 환경 제공
+* `kotlin-stdlib-jdk7` 과 `kotlin-stdlib-jdk8` 가 `kotlin-stdlib` 에 합쳐짐
+* Objective-C/Swift 상호 운용성 개선
+* Gradle 7.3 호환
+
+=== Recursive copying or deletion of directories
+https://kotlinlang.org/docs/whatsnew18.html#recursive-copying-or-deletion-of-directories
+
+실험적인 기능이라 사용하려면 `@OptIn(kotlin.io.path.ExperimentalPathApi::class)` 또는 `@kotlin.io.path.ExperimentalPathApi` 를 사용하던지 컴파일러 옵션으로 `-opt-in=kotlin.io.path.ExperimentalPathApi` 옵션 사용.
+
+`java.nio.file.Path` 에 `copyToRecursively()`, `deleteRecursively()` 두 가지 확장 함수를 추가함.
+
+* 디렉터리와 내용을 다른 곳으로 재귀적으로 복사
+* 디렉터리와 내용을 삭제
+
+백업 프로세스에 유용할 것
+
+=== Improved kotlin-reflect performance
+
+https://kotlinlang.org/docs/whatsnew18.html#java-optionals-extension-functions
+
+`kotlin-reflect` 가 JVM 1.8와 컴파일 된다는 점을 이용해서 내부 캐시 메커니즘을 Java의 ClassValue로 마이그레이션했음. 이전에는 KClass만 캐시했지만 이제는 KType 및 KDeclarationContainer도 캐시함. 이러한 변경으로 인해 typeOf()를 호출할 때 성능이 크게 향상됨.
+
+=== A new compiler option for disabling optimizations
+
+https://kotlinlang.org/docs/whatsnew18.html#a-new-compiler-option-for-disabling-optimizations
+
+Kotlin 1.8.0에서 `-Xdebug` 컴파일러 옵션을 추가했는데, 더 나은 디버깅 환경을 위해 최적화를 비활성화 함. 이제 coroutines를 위한 "was optimized out"가 비활성화됨. 앞으로 더 많은 최적화 옵션을 더 추가한 후 이 옵션도 비활성화 할 것임.
+
+"was optimized out"기능은 일시 중단 기능을 사용할 때 변수를 최적화함. 그러나 변수가 최적화 되면 값을 볼 수 없어서 코드를 디버깅 하기 어려움.
+
+프로덕션에는 이 옵션을 사용하면 안됨. -Xdebug 옵션으로 이 기능을 비활성화하면 메모리 누수가 발생할 수 있음.
+
+=== Updated JVM compilation target
+
+https://kotlinlang.org/docs/whatsnew18.html#updated-jvm-compilation-target
+
+Kotlin 1.8.0에서는 `kotlin-stdlib`, `kotlin-reflect`, and `kotlin-script-*`와 같은 표준라이브러리들이 JVM target 1.8로 컴파일 됨. 이전에는 표준 라이브러리들이 JVM target 1.6으로 컴파일 되었음.
+
+Kotlin 1.8.0은 더이상 JVM target 1.6, 1.7을 지원하지 않음. 그 결과 `kotlin-stdlib-jdk7` 와 kotlin-stdlib-jdk8` 을 build 스크립트에 별도로 선언해 줄 필요가 없음. `kotlin-stdlib` 에 합쳐졌기 때문.
+
+info. `kotlin-stdlib-jdk7` 와 `kotlin-stdlib-jdk8` 를 build script 의존성에 명시적으로 선언했었다면 `kotlin-stdlib` 로 바꿔주어야 함.
+
+=== Improved Objective-C/Swift interoperability
+
+https://kotlinlang.org/docs/whatsnew18.html#improved-objective-c-swift-interoperability
+
+Kotlin을 Objective-C 및 Swift와 더 잘 상호 운용할 수 있도록 3가지 새로운 주석이 추가되었음.
+
+`@ObjCName`
+
+`@HiddenFromObjC`
+
+`@ShouldRefineInSwift`
+
+=== Gradle
+
+https://kotlinlang.org/docs/whatsnew18.html#gradle
+
+Kotlin 1.8.0 은 Gradle 7.2, 7.3을 완전 지원함. Gradle을 최신 버전으로 올려서 사용할 수 있음.
