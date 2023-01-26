@@ -1,0 +1,25 @@
+:hardbreaks:
+
+= Gradle upgrade
+
+== Gradle 4.x to 5.0
+
+https://docs.gradle.org/current/userguide/upgrading_version_4.html
+
+1. 최신 4.10.x가 아니면 일단 최신 4.10.x으로 먼저 올린다. 아래 섹션 https://docs.gradle.org/current/userguide/upgrading_version_4.html#changes_4.10[Upgrading from 4.9 and earlier] 을 참고. 최신 4.10.x 에서는 5.0으로 가기 전 유용한 경고와 deprecations 정보들을 알려줌. Gradle 업그레이드와 Kotlin DSL 적용을 동시에 하는 것은 피하는 것이 좋다.
+
+2. `gradle help --scan`을 실행해서 생성된 deprecations 을 본다. 경고가 없으면 deprections 탭이 나타나지 않음.
+
+3. 플러그인들 업데이트
+Gradle 신버전에서 플러그인이 깨질 수 있음. 제거되었거나 변경된 내부 API를 이용하고 있을 수 있기 때문. 생략
+최소한 2.x 버전의 Shadow 플러그인을 사용해야 됨.
+
+4. `gradle wrapper --gradle-version 5.0` 명령을 실행해서 5.0으로 올린다.
+
+5. Java 8 이상으로 이동한다. Gradle 4.x 는 Java 7, Gradle 5 는 Java 8 이 필요하다
+
+6. https://docs.gradle.org/current/userguide/upgrading_version_4.html#changes_5.0[Upgrading from 4.10 and earlier] 섹션을 읽고 필요한 사항을 변경한다
+
+7. 문제 해결 가이드를 사용하여 프로젝트를 실행하고 오류를 디버깅한다.
+
+
