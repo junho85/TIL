@@ -2,13 +2,25 @@
 
 = Gradle upgrade
 
+== Gradle 5.x to 6.0
+
+https://docs.gradle.org/current/userguide/upgrading_version_5.html
+
+1. `gradle help --scan` 을 실행하고 deprecations view를 본다. build에 적용할 deprecation 경고들을 볼 수 있다. `gradle help --warning-mode=all` 명령어로 대체할 수 있다. deprecations를 콘솔로 볼 수 있다. 자세한 정보는 나오지 않을 수도 있다.
+
+2. 플러그인을 업데이트한다. 제거되거나 변경된 내부 API를 사용하는 일부 플러그인들이 깨질 수 있다. 이전 단계에서 잠재된 문제들을 알아낼수도 있다. 플러그인들이 deprecated 된 API를 사용하는 부분들을 사용하는 경우 deprecation 경고를 알려준다.
+
+3. `gradle wrapper --gradle-version 6.0` 을 실행해서 프로젝트를 6.0으로 업데이트 한다.
+
+4. 프로젝트를 실행해 보고 에러를 디버그해본다. link:https://docs.gradle.org/current/userguide/troubleshooting.html#troubleshooting[Troubleshooting Guide] 를 참고한다.
+
 == Gradle 4.x to 5.0
 
 https://docs.gradle.org/current/userguide/upgrading_version_4.html
 
 1. 최신 4.10.x가 아니면 일단 최신 4.10.x으로 먼저 올린다. 아래 섹션 https://docs.gradle.org/current/userguide/upgrading_version_4.html#changes_4.10[Upgrading from 4.9 and earlier] 을 참고. 최신 4.10.x 에서는 5.0으로 가기 전 유용한 경고와 deprecations 정보들을 알려줌. Gradle 업그레이드와 Kotlin DSL 적용을 동시에 하는 것은 피하는 것이 좋다.
 
-2. `gradle help --scan`을 실행해서 생성된 deprecations 을 본다. 경고가 없으면 deprections 탭이 나타나지 않음.
+2. `gradle help --scan`을 실행해서 생성된 deprecations 을 본다. 경고가 없으면 deprecations 탭이 나타나지 않음.
 
 3. 플러그인들 업데이트
 Gradle 신버전에서 플러그인이 깨질 수 있음. 제거되었거나 변경된 내부 API를 이용하고 있을 수 있기 때문. 생략
