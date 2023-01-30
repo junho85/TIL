@@ -1,0 +1,11 @@
+:hardbreaks:
+
+= 프로젝트 세팅
+
+garden7 프로젝트를 복제해서 사용
+
+replace
+
+* 시즌7 -> 시즌8
+* garden7 -> garden8
+

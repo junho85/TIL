@@ -1,0 +1,13 @@
+:hardbreaks:
+
+= github bot
+
+https://slack.github.com/
+
+에서 github bot을 slack과 연동하고 github bot을 #commit 채널에 초대한다.
+
+#commit 방에서
+```
+/invite @garden8
+```
+으로 봇 초대

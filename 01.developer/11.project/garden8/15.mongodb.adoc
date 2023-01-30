@@ -1,0 +1,35 @@
+:hardbreaks:
+= mongodb
+
+```shell
+docker run --name mymongo -p 127.0.0.1:27017:27017 -d mongo
+```
+
+
+```
+mongosh
+```
+
+
+```
+test> use garden8
+switched to db garden8
+garden8> db.createCollection("slack_messages")
+{ ok: 1 }
+garden8> db.slack_messages.createIndex({ts:1}, {unique: true})
+ts_1
+garden8>
+
+garden8> show dbs
+admin    40.00 KiB
+config   12.00 KiB
+garden8  12.00 KiB
+local    40.00 KiB
+```
+
+
+```
+> show collections
+slack_messages
+```
+
