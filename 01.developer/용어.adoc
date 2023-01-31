@@ -1,0 +1,26 @@
+:hardbreaks:
+
+= 용어
+
+== 시끄러운 이웃(noisy neighbors)
+
+PM장비 마다 여러 VM이 동작하고 있을 텐데 특정 VM에서 자원을 많이 사용해서 다른 VM들에 영향을 줄 수 있다.
+
+.모니터링:
+* PM장비에서 돌고 있는 VM들을 모니터링 해서 어떤 VM이 어떤 자원을 많이 사용하고 있는지 모니터링
+
+.해결방안:
+* 특정 VM이 자원을 독점하지 못하도록 제한 걸기
+* VM을 적절하게 분배한다
+** VM을 다른 PM으로 옮긴다.
+
+내가 운영하는 VM 서버가 느려져서 확인하다 보면 같은 PM에 속한 다른 사람이 운영하는 VM에서 자원을 많이 사용하고 있어서 느려지는 경우가 있다. 자원을 많이 사용하는 VM이 이사 나가면 좋겠지만 이사 계획이 없다면 내가 이사 나가는 수 밖에는 없다.
+
+
+참고
+
+https://knight76.tistory.com/entry/Bad-neighborsNoisy-neighbors[Bad neighbors/Noisy neighbors 2017.11.15]
+
+> 클라우드 환경에서는 특정 물리 장비(pm)에서 동작하는 여러 vm 중 특정 vm이 자원을 많이 사용함으로서 다른 vm이 자원을 사용하지 못하는 현상을 bad neighbor 또는 noisy neighbor라고 한다.
+
+
