@@ -1,0 +1,43 @@
+:hardbreaks:
+= python 버전업
+
+이슈: https://github.com/junho85/garden8/issues/2
+
+
+기존에 사용하는 python 3.7
+
+서버에서 확인
+```shell
+$ python3.7 -V
+Python 3.7.5
+```
+
+M1 맥북에서는 brew로 python 3.7 설치가 안됨
+```
+brew isntall python@3.7
+...
+Warning: python@3.7 has been deprecated because it is deprecated upstream!
+python@3.7: The x86_64 architecture is required for this software.
+Error: python@3.7: An unsatisfied requirement failed this build.
+```
+
+
+python 3.8 설치
+```
+brew isntall python@3.8
+```
+
+```
+python3.8 -m pip install pip
+python3.8 -m pip install virtualenv
+```
+
+```
+python3.8 -m virtualenv venv
+source venv/bin/activate
+```
+
+```
+pip install -r requirements.txt
+```
+

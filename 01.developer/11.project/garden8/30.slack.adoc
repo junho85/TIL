@@ -1,0 +1,126 @@
+:hardbreaks:
+
+= slack
+
+== 앱 생성
+https://api.slack.com/apps
+
+Create New App
+
+From scratch
+
+App Name: garden8
+Pick a workspace to develop your app in: The Gardners Season 8
+
+garden8 앱 생성완료
+
+https://api.slack.com/apps/A04M10E6N69
+
+OAuth & Permissions에 가서
+
+Scope
+* channels:history
+* channels:read
+* users:read
+* chat:write
+
+추가 하고 Install to Workspace
+
+봇토큰이 필요한데 xoxb로 시작함. 복사해서 config.ini 의 SLACK_API_TOKEN 에 붙여넣기
+
+
+== App-Level Tokens 생성? 필요한가?
+
+Basic Information -> App-Level Tokens에서 Generate Token and Scopes
+
+Token Name: attendance
+권한 scope추가.
+connections:write
+authorization:read
+
+토큰이 생성된다. xapp-... 어쩌고
+
+== config.ini 설정
+
+DEFAULT
+
+* SLACK_API_TOKEN = 앱 생성 했을 때 나왔던 xoxb-... 어쩌고 봇토큰
+* CHANNEL_ID = C04LZKF6VEC (#commit 채널 정보 아래쪽에 채널 ID찾기)
+
+MONITOR
+
+* CHANNEL_ID = C04LPE092H5
+
+
+== slack message 예제
+
+ts: timestamp
+attachments에 commit 관련 메시지들이 있다.
+----
+{
+	'bot_id': 'B02MC36L1PU',
+	'type': 'message',
+	'text': '',
+	'user': 'U02LXDBJZRV',
+	'ts': '1637159014.020800',
+	'team': 'T02M3GHM1L6',
+	'bot_profile': {
+		'id': 'B02MC36L1PU',
+		'deleted': False,
+		'name': 'GitHub',
+		'updated': 1636984097,
+		'app_id': 'A01BP7R4KNY',
+		'icons': {
+			'image_36': 'https://avatars.slack-edge.com/2020-11-25/1527503386626_319578f21381f9641cd8_36.png',
+			'image_48': 'https://avatars.slack-edge.com/2020-11-25/1527503386626_319578f21381f9641cd8_48.png',
+			'image_72': 'https://avatars.slack-edge.com/2020-11-25/1527503386626_319578f21381f9641cd8_72.png'
+		},
+		'team_id': 'T02M3GHM1L6'
+	},
+	'attachments': [{
+		'fallback': '[junho85/TIL] 1 new commit pushed  to _master_ by junho85',
+		'text': '`<https://github.com/junho85/TIL/commit/a706a7a012ae4cd568fb0b225c826bb0fc1ef725|a706a7a0>` - 정원사들 시즌7 설치 문서 정리 중\n',
+		'pretext': '<https://github.com/junho85/TIL/compare/5ae9faa91fc4...a706a7a012ae|1 new commit> pushed  to `<https://github.com/junho85/TIL/tree/master|master>` by <https://github.com/junho85|junho85>',
+		'footer': '<https://github.com/junho85/TIL|junho85/TIL>',
+		'id': 1,
+		'footer_icon': 'https://slack.github.com/static/img/favicon-neutral.png',
+		'color': '24292f',
+		'mrkdwn_in': ['text']
+	}]
+}
+----
+
+2번 커밋하고 한번에 push 한다고 attachments가 늘어나지는 않는다.
+----
+{
+	'bot_id': 'B02MC36L1PU',
+	'type': 'message',
+	'text': '',
+	'user': 'U02LXDBJZRV',
+	'ts': '1637160031.021000',
+	'team': 'T02M3GHM1L6',
+	'bot_profile': {
+		'id': 'B02MC36L1PU',
+		'deleted': False,
+		'name': 'GitHub',
+		'updated': 1636984097,
+		'app_id': 'A01BP7R4KNY',
+		'icons': {
+			'image_36': 'https://avatars.slack-edge.com/2020-11-25/1527503386626_319578f21381f9641cd8_36.png',
+			'image_48': 'https://avatars.slack-edge.com/2020-11-25/1527503386626_319578f21381f9641cd8_48.png',
+			'image_72': 'https://avatars.slack-edge.com/2020-11-25/1527503386626_319578f21381f9641cd8_72.png'
+		},
+		'team_id': 'T02M3GHM1L6'
+	},
+	'attachments': [{
+		'fallback': '[junho85/TIL] 2 new commits pushed  to _master_ by junho85',
+		'text': '`<https://github.com/junho85/TIL/commit/3aaffecd618398735491ad60558294b0dad64ce3|3aaffecd>` - slack message 예제\n`<https://github.com/junho85/TIL/commit/8f5e8ddb89f991b993741e4ce4f4a79983bb7b0a|8f5e8ddb>` - slack message 예제 - 2번 커밋 하고 push 테스트용 커밋\n',
+		'pretext': '<https://github.com/junho85/TIL/compare/a706a7a012ae...8f5e8ddb89f9|2 new commits> pushed  to `<https://github.com/junho85/TIL/tree/master|master>` by <https://github.com/junho85|junho85>',
+		'footer': '<https://github.com/junho85/TIL|junho85/TIL>',
+		'id': 1,
+		'footer_icon': 'https://slack.github.com/static/img/favicon-neutral.png',
+		'color': '24292f',
+		'mrkdwn_in': ['text']
+	}]
+}
+----
