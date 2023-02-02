@@ -1,0 +1,19 @@
+:hardbreaks:
+= string to timestamp
+
+표준 포멧
+[source,sql]
+----
+SELECT UNIX_TIMESTAMP('2011-12-21 14:20:00');
+----
+
+커스텀 포멧
+[source,sql]
+----
+SELECT UNIX_TIMESTAMP(
+    STR_TO_DATE('2011-12-21 02:20pm', '%Y-%m-%d %h:%i%p')
+);
+----
+
+== 참고
+https://stackoverflow.com/questions/8587177/string-to-timestamp-in-mysql[String to timestamp in MySQL]
