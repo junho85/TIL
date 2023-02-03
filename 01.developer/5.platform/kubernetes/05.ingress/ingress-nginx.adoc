@@ -1,0 +1,28 @@
+:hardbreaks:
+= NGINX Ingress Controller
+
+== ingress-nginx에 snippet을 이용한 기능 추가
+
+k8s ingress yaml 설정에 `nginx.org/server-snippets: |` 를 이용해서 nginx 설정을 직접 입력해서 사용할 수 있다.
+
+참고: https://docs.nginx.com/nginx-ingress-controller/configuration/ingress-resources/advanced-configuration-with-snippets/
+
+[source,yaml]
+----
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cafe-ingress-with-snippets
+  annotations:
+    nginx.org/server-snippets: |
+      location / {
+          return 302 /coffee;
+      }
+    nginx.org/location-snippets: |
+            add_header my-test-header test-value;
+spec:
+...
+----
+
+snippets는 기본적으로 비활성화 되어 있고, 사용하려면 `enable-snippets` 를 커맨드라인에 추가시켜준다.
+
