@@ -1,0 +1,40 @@
+:hardbreaks:
+
+= users.yaml
+
+정원사들에 참여한 유저들의 github, slack name을 설정하는 설정파일입니다.
+
+== 설정 방법
+
+참가자들에게 자기소개채널에 들어와서 자기소개를 올리라고 합니다. 자기소개글에는 github url이 있어야 합니다.
+
+자기소개글에 있는 github 주소의 github name과 글 작성자 slack 유저 정보를 이용해서 추출합니다.
+
+test_slack_tools.py
+test_get_users 테스트를 돌린다.
+
+자기소개채널에서 github 주소가 있는 글을 추출해서
+[source,yaml]
+----
+{githubId}:
+  slack: slackName
+----
+와 같은 구조의 데이터를 뽑아 준다.
+
+이 데이터를 복사해서
+
+attendance/users.yaml 파일에 세팅한다.
+
+== test_slack_tools.test_get_users 설명
+
+`{github_name: slack_id}` dictionary 생성
+자기소개 채널에 있는 소개글들을 불러와서 github 주소의 github name을 추출하고 slack id를 조합해서 dictionary를 생성
+
+slack에 들어온 유저들의 `{slack_id: slack_name}` dictionary 생성
+users_list API를 이용해서 조회한 결과에서 slack_id, slack_name을 추출해서 dictionary를 생성
+
+`{github_name: slack_id}` 와 `{slack_id: slack_name}` 정보를 조합해서 `{github_name: {"slack_name": slack_name}}` dictionary 생성
+
+github_name_slack dictionary를 users.yaml 구조에 맞춰 출력
+
+
