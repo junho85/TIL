@@ -1,0 +1,11 @@
+:hardbreaks:
+= slackclient to slack_sdk
+
+https://slack.dev/python-slack-sdk/v3-migration/index.html#from-slackclient-2-x[Migration Guide]
+
+* `slackclient` to `slack_sdk` 로 변경
+* `slack_sdk.*` 를 import한다. `slack.*` 도 사용할 수 있으나 deprecation warning이 뜬다.
+* `slack_sdk` 는 다른 디펜던시들을 필요로 하지 않는다. `aiohttp` 가 자동으로 resolve되지 않는다는 말이다.
+* `WebClient` 는 더이상 `run_async` 와 `aiohttp` 관련 옵션이 없다. 만약 관련 옵션이 필요한 경우 LegacyWebClient(slackclient v2 호환 가능) 또는 AsyncWebClient를 사용한다.
+
+
