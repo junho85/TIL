@@ -1,0 +1,31 @@
+:hardbreaks:
+= reset
+
+git commit 한 것을 취소하고 싶을 때가 있다.
+
+커밋 이전으로 되돌리기
+
+[source,shell]
+----
+git reset HEAD~1
+----
+
+~1 과 ^ 는 같은데 ^는 윈도우에서 사용하지 못한다.
+
+혹시 이미 push 했다면 revert를 이용해야 한다.
+
+[source,shell]
+----
+git revert HEAD
+----
+
+
+
+[source,shell]
+----
+git reset --soft HEAD^
+----
+
+== References
+* https://stackoverflow.com/questions/4850717/how-to-cancel-a-local-git-commit
+* https://stackoverflow.com/questions/1611215/remove-a-git-commit-which-has-not-been-pushed
