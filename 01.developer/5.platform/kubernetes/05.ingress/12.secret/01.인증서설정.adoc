@@ -1,0 +1,37 @@
+:hardbreaks:
+= Ingress SSL 인증서 설정
+
+인증서를 secret으로 등록
+[source,shell]
+----
+kubectl create secret tls ${secret_name} --key ${tls_key_file_name} --cert ${tls_crt_file_name}
+----
+
+인증서 등록 확인
+
+[source,shell]
+----
+kubectl describe secret ${secrect_name}
+----
+
+secret을 ingress에 연결
+
+ingress.yaml 파일 수정. spec에 tls 섹션 추가
+
+[source,shell]
+----
+...
+spec:
+  tls:
+  - hosts:
+    - ${domain}
+    secretName: ${secret_name}
+  rules:
+...
+----
+
+적용
+```shell
+kubectl apply -f ingress.yaml
+```
+

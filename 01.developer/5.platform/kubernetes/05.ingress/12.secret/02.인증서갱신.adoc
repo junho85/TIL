@@ -1,0 +1,30 @@
+:hardbreaks:
+= Ingress SSL 인증서 갱신
+
+시크릿 확인
+
+[source,shell]
+----
+kubectl get secret
+----
+
+기존 인증서의 시크릿 백업
+
+[source,shell]
+----
+kubectl get secret ${secret_name} -o yaml > ${backup_name}.yaml
+----
+
+신규 인증서 적용
+
+[source,shell]
+----
+kubectl create secret tls ${secret_name} --key=${tls_key_file_name} --cert=${tls_cert_file_name} -n ${namespace} --dry-run=client -o yaml | kubectl apply -f-
+----
+
+기존 인증서로 롤백
+
+[source,shell]
+----
+cat ${backup_name}.yaml | kubectl apply -f-
+----
