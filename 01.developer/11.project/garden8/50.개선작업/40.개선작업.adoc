@@ -1,0 +1,18 @@
+:hardbreaks:
+
+= 개선과제
+
+== [x] python slack client 변경
+
+https://github.com/junho85/garden8/issues/1
+
+
+== slack 메시지 구독
+
+https://github.com/junho85/garden8/issues/3
+
+== ?
+python-markdown-slack ?
+
+https://pypi.org/project/python-markdown-slack/
+

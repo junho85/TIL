@@ -1,0 +1,38 @@
+:hardbreaks:
+
+= garden8
+
+정원사들 시즌8 출석부
+
+
+== 작업
+
+=== 1차 - 오픈
+* slack github bot
+* project 세팅
+* mongodb 세팅
+
+* python version up
+* django
+* slack api
+** config.ini
+
+* users.yaml
+* 서버세팅
+** docker 설치
+**
+* 도메인 세팅
+
+=== 2차 - 버전업
+
+모듈, python 등
+
+
+=== 3차 - 배포구조 개선
+
+
+=== 4차 - 구독 방식 적용
+
+
+=== 5차 - 운영툴
+

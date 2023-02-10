@@ -1,0 +1,60 @@
+:hardbreaks:
+= Dockerize
+
+이슈: https://github.com/junho85/garden8/issues/4
+
+일단 도커허브에 private 으로 만들어서 사용한다.
+https://hub.docker.com/
+
+private 으로 생성하는 이유는 slack key 정보 등이 들어가기 때문이다.
+
+이 부분은 run 할 때 설정을 넘길 수 있도록 하던지, 개인 docker registry를 구축해서 사용해야겠다.
+
+설정파일을 config volume을 생성해서 거기것을 참조하도록 하는게 좋을거 같다.
+
+공개 이미지로 만들면 도커허브에서도 public 으로 이미지 올리면 된다.
+
+Dockerfile을 생성한다. chatgpt 보고 Dockerize 하는 방법 알려 달랬더니 잘 알려 준다. 조금만 고쳐쓰니 완성.
+
+[source,dockerfile]
+----
+# Use an official Python runtime as the base image
+FROM python:3.8
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the requirements.txt file to the container
+COPY requirements.txt ./
+
+# Install the application dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the application code to the container
+COPY . .
+
+# Specify the command to run when the container starts
+CMD [ "python", "./manage.py", "runserver", "0.0.0.0:8000" ]
+----
+
+pycharm에서 이미지 빌드와 실행을 동시에 할 수도 있고
+
+https://www.jetbrains.com/help/pycharm/docker.html#build-image
+
+이미 생성한 이미지로 실행할 수도 있었다.
+
+https://www.jetbrains.com/help/pycharm/docker.html#run_image
+
+실행이 잘 안되어서 커맨드로 했었기도 한데
+
+[source,shell]
+----
+$ docker run --rm -it --name garden8 -p 127.0.0.1:8000:8000 garden8-20230210:latest
+----
+
+pycharm을 껐다 켜니까 잘 된다.
+
+
+
+== 참고
+https://www.docker.com/blog/how-to-dockerize-your-python-applications/[How to “Dockerize” Your Python Applications]
