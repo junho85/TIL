@@ -1,0 +1,25 @@
+:hardbreaks:
+= docker-compose.yaml 설정
+
+mongodb 와 함께 사용하기 위한 docker compose 설정 (진행중)
+
+[source,yaml]
+----
+version: '3'
+services:
+  db:
+    image: mongo
+    volumes:
+      - mongodata:/data/db
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+volumes:
+  mongodata:
+----
