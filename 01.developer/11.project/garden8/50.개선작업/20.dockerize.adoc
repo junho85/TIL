@@ -37,6 +37,12 @@ COPY . .
 CMD [ "python", "./manage.py", "runserver", "0.0.0.0:8000" ]
 ----
 
+이미지를 빌드하는 명령어는 다음과 같다.
+[source,shell]
+----
+$ docker build . -f Dockerfile --tag garden8:20230212_1
+----
+
 pycharm에서 이미지 빌드와 실행을 동시에 할 수도 있고
 
 https://www.jetbrains.com/help/pycharm/docker.html#build-image
@@ -49,12 +55,28 @@ https://www.jetbrains.com/help/pycharm/docker.html#run_image
 
 [source,shell]
 ----
-$ docker run --rm -it --name garden8 -p 127.0.0.1:8000:8000 garden8-20230210:latest
+$ docker run --rm -it --name garden8 -p 127.0.0.1:8000:8000 garden8:20230212_1
 ----
 
 pycharm을 껐다 켜니까 잘 된다.
 
+== config 파일 분리
+설정 파일을 분리하기 위해 기존 attendance에 있던 config.ini, users.yaml 파일을 attendance/config 로 옮김
+이제 attendance/config 는 -v 옵션을 이용해서 마운트 해서 사용하도록 함
 
+[source,shell]
+----
+$ docker run --rm -it -v config/attendance:attendance/config --name garden8 -p 127.0.0.1:8000:8000 garden8:20230212_1
+----
+
+설정 파일은 기본적으로 `/config/attendance` 경로를 사용하도록 하고 환경변수로 `GARDEN_CONFIG_DIR` 을 설정한 경우 해당 설정을 따르도록 한다.
+
+만약 PyCharm에서 기본 환경 변수 값을 설정하려면 Run > Edit Configurations... > Edit configuration templates... 에 가서 `;GARDEN_CONFIG_DIR=./config/attendance` 설정을 추가해 주면 다른 run 을 생성할 때 마다 기본환경변수로 세팅되게 된다.
+
+다른 이야기지만 Working directory도 template에 설정해 두면 좋다. 예를 들어 cli_collect.py 같은 파일을 실행시킬 때 working directory가 attendance 로 되면 garden 등의 파일을 불러오기 불편하기에 프로젝트 디렉터리를 working 디렉터리로 지정해 두는 것이 좋다.
+
+== 설정파일 volumes 설정
+TODO
 
 == 참고
 https://www.docker.com/blog/how-to-dockerize-your-python-applications/[How to “Dockerize” Your Python Applications]

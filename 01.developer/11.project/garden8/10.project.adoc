@@ -9,3 +9,19 @@ replace
 * 시즌7 -> 시즌8
 * garden7 -> garden8
 
+== PyCharm 세팅
+
+=== 기본 run 설정
+
+기본 run 설정은 templates > Python 에서 설정한다.
+
+Run > Edit Configurations... > Edit configuration templates... > Python
+
+.기본 환경 변수 설정
+Environment Variables 를 설정한다.
+
+`;GARDEN_CONFIG_DIR=./config/attendance` 설정을 추가해 주면 다른 run 을 생성할 때 마다 기본환경변수로 세팅되게 된다.
+
+.Working 디렉터리 설정
+Working directory를 프로젝트 기본 경로로 설정한다.
+예를 들어 attendance/cli_collect.py 같은 파일을 직접 실행시킬 때 working directory가 기본적으로 attendance가 되기 때문에 garden 등의 파일을 불러오지 못한다. 프로젝트 디렉터리를 working directory로 지정해 두는 것이 좋다.
