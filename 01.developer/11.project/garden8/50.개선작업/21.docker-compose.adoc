@@ -3,6 +3,9 @@
 
 mongodb 와 함께 사용하기 위한 docker compose 설정 (진행중)
 
+github: https://github.com/junho85/docker-garden8 (설정 파일이 들어가기 때문에 private)
+
+
 [source,yaml]
 ----
 version: '3'
@@ -10,16 +13,22 @@ services:
   db:
     image: mongo
     volumes:
-      - mongodata:/data/db
+      - ./db:/data/db
+    ports:
+      - "27017:27017"
   web:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    image: garden8:20230213_1
     volumes:
-      - .:/app
+      - ./config/attendance:/config/attendance
     ports:
       - "8000:8000"
     depends_on:
       - db
-volumes:
-  mongodata:
+----
+
+
+[source,shell]
+----
+docker compose up -d
+docker compose stop
 ----
