@@ -39,7 +39,106 @@ sudo docker run hello-world
 ----
 
 == Docker 이미지 실행
-TODO
+
+[source,shell]
+----
+docker compose up -d
+----
+
+
+== nginx 설치
+
+[source,shell]
+----
+apt-get install nginx
+----
+
+== ubuntu 방화벽 열기
+
+[source,shell]
+----
+sudo ufw allow 80
+sudo ufw allow https
+----
+
+== 인증서 certbot
+
+https://certbot.eff.org/
+
+[source,shell]
+----
+sudo snap install core; sudo snap refresh core
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+sudo certbot --nginx
+----
+
+/etc/nginx/sites-available/default 에 다음과 같은 설정이 추가된다.
+
+[source]
+----
+server {
+...
+    server_name garden8.junho85.pe.kr; # managed by Certbot
+...
+    listen [::]:443 ssl ipv6only=on; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/garden8.junho85.pe.kr/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/garden8.junho85.pe.kr/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    if ($host = garden8.junho85.pe.kr) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+        listen 80 ;
+        listen [::]:80 ;
+    server_name garden8.junho85.pe.kr;
+    return 404; # managed by Certbot
+}
+----
+
+== nginx django 연결
+
+/etc/nginx/nginx.conf
+
+proxy_pass 설정
+
+[source]
+----
+server {
+    root /var/www/html;
+
+    # Add index.php to the list if you are using PHP
+    index index.html index.htm index.nginx-debian.html;
+    server_name garden8.junho85.pe.kr; # managed by Certbot
+
+    location / {
+        proxy_pass              http://localhost:8000;
+        proxy_set_header        Host $host;
+    }
+----
+
+
+[source,shell]
+----
+sudo systemctl reload nginx
+----
 
 == Domain 연결
-TODO
+gabia에서 연결
+
+
+== mongodb mongo shell
+https://www.mongodb.com/docs/mongodb-shell/install/
+
+참고해서 설치
+
+== TODO
+
+[] mongodb 설치했는데 출석부 조회 실패 이유?
+[] 출석부 갱신
