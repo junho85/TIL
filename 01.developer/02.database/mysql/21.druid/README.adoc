@@ -1,0 +1,23 @@
+:hardbreaks:
+= Apache Druid
+
+실시간 OLAP(On-Line Analysis Processing)를 위한 Database.
+
+비즈니스 활동에 대한 평가, 예측
+
+timeseries DB, Data warehouse, Search system을 결합
+
+Fact table을 미리 집계하여 Druid OLAP 큐브 생성
+
+Druid의 구성
+* timestamp: 시간. 모든 query는 time을 기반으로 실행
+* Dimension: 이벤트의 문자열 속성 (필터 조건 및 groupBy 집계 조건)
+* Metric: 집계와 계산에 사용되는 컬럼, 숫자형 데이터 허용
+
+OLAP Cube
+
+== Druid Console
+
+?
+
+
