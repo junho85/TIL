@@ -138,7 +138,50 @@ https://www.mongodb.com/docs/mongodb-shell/install/
 
 참고해서 설치
 
-== TODO
+== Docker networking
 
-[] mongodb 설치했는데 출석부 조회 실패 이유?
-[] 출석부 갱신
+web container에서 db container로 통신을 해야한다.
+
+https://docs.docker.com/compose/networking/
+
+host.docker.internal:27017 접근하려 했지만 방화벽 때문에 막힘. 80
+
+=== links
+
+아래 처럼 services.web.links 설정에 "db:mongodb.docker"를 추가.
+
+[source,shell]
+----
+version: '3'
+services:
+  db:
+    image: mongo
+    volumes:
+      - ./db:/data/db
+    ports:
+      - "27017:27017"
+  web:
+    image: junho85/garden8:20230213_1
+    volumes:
+      - ./config/attendance:/config/attendance
+    ports:
+      - "8000:8000"
+    links:
+      - "db:mongodb.docker"
+    depends_on:
+      - db
+----
+
+db서비스를 mongodb.docker 도메인으로 설정한다는 의미
+
+config.ini 설정의 HOST를 mongodb.docker로 설정한다.
+
+[source,shell]
+----
+...
+[MONGO]
+DATABASE = garden8
+HOST = mongodb.docker
+PORT = 27017
+...
+----
