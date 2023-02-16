@@ -1,17 +1,18 @@
 :hardbreaks:
 = mongodb
 
-```shell
+[source,shell]
+----
 docker run --name mymongo -p 127.0.0.1:27017:27017 -d mongo
-```
+----
 
-
-```
+[source,shell]
+----
 mongosh
-```
+----
 
-
-```
+[source,shell]
+----
 test> use garden8
 switched to db garden8
 garden8> db.createCollection("slack_messages")
@@ -25,11 +26,25 @@ admin    40.00 KiB
 config   12.00 KiB
 garden8  12.00 KiB
 local    40.00 KiB
-```
+----
 
-
-```
+[source,shell]
+----
 > show collections
 slack_messages
-```
+----
 
+== 초기화 요약
+
+[source,shell]
+----
+use garden8
+db.createCollection("slack_messages")
+db.slack_messages.createIndex({ts:1}, {unique: true})
+show collections
+----
+
+데이터 모두 지우기
+----
+db.slack_messages.deleteMany({})
+----
