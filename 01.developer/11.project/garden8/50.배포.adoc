@@ -1,0 +1,38 @@
+:hardbreaks:
+= 배포
+
+== 이미지 build & push
+[source,shell]
+----
+$ source docker-build-push.sh 20230217_1
+----
+
+docker-build-push.sh 스크립트
+
+[source,shell]
+----
+TAG=$1
+echo $TAG
+
+docker build . -f Dockerfile --tag garden8:$TAG
+docker tag garden8:$TAG junho85/garden8:$TAG
+docker push junho85/garden8:$TAG
+docker buildx build --platform linux/amd64,linux/arm64 -t junho85/garden8:$TAG --push .
+----
+
+build - 도커 이미지 빌드
+tag - registry 용 tag 생성
+push - registry 에 push
+buildx - linux/amd64 용으로 크로스 빌드 후 push
+
+== 배포
+
+서버에 들어가서
+
+[source,shell]
+----
+git pull
+docker compose up web --force-recreate --build -d
+docker image prune -f
+----
+
