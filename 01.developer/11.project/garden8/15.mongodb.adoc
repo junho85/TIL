@@ -48,3 +48,18 @@ show collections
 ----
 db.slack_messages.deleteMany({})
 ----
+
+인덱스 확인
+----
+db.slack_messages.getIndexes()
+----
+
+
+== pymongo timezone
+
+https://pymongo.readthedocs.io/en/stable/examples/datetimes.html
+
+pymongo에 의해 리턴된 datetime.datetime 은 MongoDB에 저장된 것 처럼 UTC이다.
+CodeCOptions에서 tz_aware option을 설정하면 datetime.datetime 객체는 timezone설정함으로써 객체들이 timezone을 알게 되고 UTC 시간대를 반영하는 tzinfo 속성을 갖게 된다.
+
+
