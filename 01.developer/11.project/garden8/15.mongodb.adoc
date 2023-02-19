@@ -63,3 +63,45 @@ pymongo에 의해 리턴된 datetime.datetime 은 MongoDB에 저장된 것 처�
 CodeCOptions에서 tz_aware option을 설정하면 datetime.datetime 객체는 timezone설정함으로써 객체들이 timezone을 알게 되고 UTC 시간대를 반영하는 tzinfo 속성을 갖게 된다.
 
 
+
+== Docker 방화벽 이슈
+
+
+ufw 정책이 docker 컨테이너에 적용이 안될때. 2019.12.10
+https://lasel.kr/archives/536
+
+[source,shell]
+----
+sudo vi /etc/docker/daemon.json
+----
+
+[source,json]
+----
+{ "iptables": false }
+----
+
+docker 재시작
+----
+sudo systemctl restart docker
+----
+
+테스트
+
+[source,shell]
+----
+nc -vz garden8.junho85.pe.kr 27017
+----
+
+
+== 해킹
+
+----
+db.READ__ME_TO_RECOVER_YOUR_DATA.drop()
+----
+
+== 참고
+
+https://news.ycombinator.com/item?id=27613719
+
+https://www.mongodb.com/community/forums/t/database-deleted-auto/99623
+
