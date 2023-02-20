@@ -1,0 +1,18 @@
+:hardbreaks:
+= airflow
+
+https://airflow.apache.org/
+
+> Airflow is a platform created by the community to programmatically author, schedule and monitor workflows.
+
+Airflow는 워크플로우를 프로그래밍 방식으로 작성, 예약 및 모니터링하기 위해 커뮤네티에서 만든 플랫폼
+
+
+== History
+
+2014년 10월 Airbnb에서 시작된 오픈소스 프로젝트
+2015년 6월 오픈소스로 공개
+2016년 3월 Apache Software Foundation 인큐베이팅
+2019년 1월 8일 Apache Top-Level Projection 발표
+
+https://news.apache.org/foundation/entry/the-apache-software-foundation-announces44[THE APACHE SOFTWARE FOUNDATION ANNOUNCES APACHE® AIRFLOW™ AS A TOP-LEVEL PROJECT 2019.01.08]
