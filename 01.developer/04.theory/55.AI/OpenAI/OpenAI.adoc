@@ -1,0 +1,37 @@
+= OpenAI
+
+== GPT-3
+https://github.com/openai/gpt-3
+
+
+https://gigglehd.com/gg/lifetech/7817405[[번역\] OpenAI의 GPT-3은 비트코인 이후로 가장 대단한 것일지도 모릅니다 2020.07.20]
+
+
+
+ChatGPT 백만 유저 - 5일만
+
+두번째 AI 빅 웨이브
+
+1차 웨이브
+DeepMind의 AlphaGo
+
+2차 웨이브: OpenAI의 ChatGPT
+
+ChatGPT
+사람처럼 대화를 주고 받을 수 있음
+
+대화 내용을 기억하고 맥락에 맞게 답변
+
+
+2023년 1월 23일, Microsoft가 수년간 OpenAI에 $10B(약 12조 3500억원) 규모의 금액을 투자할 계획이라고 발표
+CNBC TECH Microsoft announces new multibillion-dollar investment in ChatGPT-maker OpenAI
+
+OpenAI 서비스를 Azure가 독점 제공하고, ChatGPT를 Microsoft의 기존 서비스에 융합해 새로운 기능을 선보일 계획
+
+Google의 반응
+* 현지시간으로 2022년 12월 21일 ChatGPT에 대응하기 위해 CEO 순다르 피차이가 코드 레드 (Code Red) 발령
+
+How ChatGPT Suddenly Became Google's Code Red. Prompting Return Of Page And Brin - Forbes
+
+2019년도에 경영에서 뒤로 물러났던 창업자들 (래리 페이지, 세르게이 브린) 까지 현업에 복귀하여 대응책 마련을 위한 일련의 비상 대책 회의를 가짐
+

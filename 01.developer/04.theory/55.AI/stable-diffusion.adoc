@@ -1,0 +1,29 @@
+:hardbreaks:
+= Stable Diffusion
+
+https://huggingface.co/spaces/stabilityai/stable-diffusion
+
+huggingface는 "The AI community building the future." 라고 한다.
+
+Stable Diffusion 2.1 Demo를 사용해 볼 수 있다. (2023.02.22 기준)
+
+
+
+
+
+git clone git@github.com:AUTOMATIC1111/stable-diffusion-webui.git
+
+기본적으로 윈도우컴퓨터에서 설치하는 방법이 설명되어 있음.
+
+Apple Silicon용 설명이 있지만
+https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon
+
+
+== 참고
+
+Stable Diffusion을 Windows에 설치해 사용하기 2022.12.15
+https://cantips.com/3754
+
+AI 창작 시대! 지금 당장 배워야할 Stable Diffusion Web UI 최신 설치 및 사용법 완벽 가이드 2022.11.13
+https://www.youtube.com/watch?v=emObTucGMOA
+

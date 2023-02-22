@@ -1,0 +1,5 @@
+:hardbreaks:
+= KoGPT (Korean Generative Pre-trained Transformer)
+
+https://github.com/kakaobrain/kogpt
+
