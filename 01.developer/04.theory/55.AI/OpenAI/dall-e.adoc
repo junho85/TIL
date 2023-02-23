@@ -1,0 +1,14 @@
+:hardbreaks:
+= Dall E 2
+
+https://openai.com/dall-e-2/
+
+유료로 API 통해서 사용할 수 있음
+
+
+== 참고
+
+Dall E 2 는 openai 이라는 이름에 맞지 않게 유료 API만 제공
+
+다른 회사 https://stability.ai/ 에서 Stable Diffusion 모델을 무료료 공개. 누구나 가져다가 쓸 수 있도록 공개함
+

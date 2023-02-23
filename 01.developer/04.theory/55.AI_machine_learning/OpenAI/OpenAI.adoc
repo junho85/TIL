@@ -1,7 +1,0 @@
-= OpenAI
-
-== GPT-3
-https://github.com/openai/gpt-3
-
-
-https://gigglehd.com/gg/lifetech/7817405[[번역\] OpenAI의 GPT-3은 비트코인 이후로 가장 대단한 것일지도 모릅니다 2020.07.20]

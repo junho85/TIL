@@ -1,0 +1,84 @@
+:hardbreaks:
+= Stable Diffusion
+
+stability.ai 에서 공개한 모델
+2022년 8월 22일에 공개
+https://stability.ai/blog/stable-diffusion-public-release
+
+== 모델 다운 받기
+
+https://huggingface.co 딥러닝 모델을 공유 하는 사이트
+
+https://huggingface.co/spaces/stabilityai/stable-diffusion 여기에 공개 되어 있음
+
+huggingface는 "The AI community building the future." 라고 한다.
+
+Stable Diffusion 2.1 Demo를 사용해 볼 수 있다. (2023.02.22 기준)
+
+
+== stable diffusion webui
+코딩할 필요 없이
+
+git clone git@github.com:AUTOMATIC1111/stable-diffusion-webui.git
+
+기본적으로 윈도우컴퓨터에서 설치하는 방법이 설명되어 있음.
+
+Apple Silicon용 설명이 있지만
+https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon
+
+
+== diffusionbee-stable-diffusion-ui
+https://github.com/divamgupta/diffusionbee-stable-diffusion-ui
+
+애플실리콘 맥에서 stable diffusion을 로컬로 실행하기 쉬운 방법
+
+인스톨러로 쉽게 설치 가능
+
+설치하고 실행하면 모델을 다운로드 받음
+
+
+
+
+== 기능
+
+=== txt2img
+prompt 입력을 잘 해야 됨.
+
+TODO 가이드 문서
+TODO lexica.art
+
+=== img2img
+낙서와 설명으로 그림 그리기
+
+
+
+=== inpaint - 교체
+
+=== outpint - 없던 그림 생성
+
+
+
+
+== 참고
+
+Stable Diffusion을 Windows에 설치해 사용하기 2022.12.15
+https://cantips.com/3754
+
+Stable Diffusion Public Release
+https://stability.ai/blog/stable-diffusion-public-release
+
+
+DiffusionBee - M1/M2 맥을 위한 Stable Diffusion GUI 앱
+https://news.hada.io/topic?id=7385
+
+
+=== 조코딩 영상
+AI 창작 시대! 지금 당장 배워야할 Stable Diffusion Web UI 최신 설치 및 사용법 완벽 가이드 2022.11.13
+https://www.youtube.com/watch?v=emObTucGMOA
+
+
+
+전세계가 경악중인 최신 AI 사용법 왕초보 실전 가이드 (ft. Stable Diffusion) 2022.09.23
+https://www.youtube.com/watch?v=vVdNmnEb--E
+1시간 58분 라이브 방송 영상
+
