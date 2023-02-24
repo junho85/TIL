@@ -1,0 +1,17 @@
+:hardbreaks:
+
+= MySQL - Surrogate Key, Artificial Key (인공키, 인조키)
+
+Surrogate Key이고 Artificial Key라고도 불린다. surrogate는 1.대용물2.대리인3.대리 이라는 뜻을 가진다.
+
+한글로는 인공키라고도 부르고 인조키라고도 부른다.
+
+보통 auto increment 값으로 설정한다.
+
+테이블에 자연 기본 키가 없는 경우 테이블의 행을 고유하게 식별하기 위해 인위적으로 기본 키를 만들게 되는데 이를 인공키라고 한다.
+
+== 참고
+
+https://multifrontgarden.tistory.com/180[기본키는 무엇으로 할까 - 자연키, 인조키 2017.06.25]
+
+https://www.geeksforgeeks.org/surrogate-key-in-dbms/[Surrogate Key in DBMS]
