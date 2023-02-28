@@ -1,0 +1,57 @@
+:hardbreaks:
+= Midjourney (미드저니)
+
+https://www.midjourney.com/
+
+Quick Start
+https://docs.midjourney.com/docs/quick-start
+
+Discord에서 이미지를 생성할 수 있습니다. 미드저니 웹에서도 확인할 수 있습니다.
+
+
+== 이슈
+미국 콜로라도 주립 박랍회 미술대회 디지털아트 부문에서 제이슨 M. 앨런이 미드저니로 만든 이미지로 우승을 차지하면서 유명해짐
+
+미술대회 우승까지 한 'AI 그림'…단순 표절일 뿐 vs 새로운 예술 도구 2022.09.10
+https://www.khan.co.kr/economy/economy-general/article/202209100800001
+
+
+
+== 프롬프트
+
+https://docs.midjourney.com/docs/prompts
+
+
+/imagine 명령어 뒤에 생성할 이미지에 대한 설명을 텍스트로 입력합니다.
+----
+/imagine text prompt
+/imagine description of what to imagine
+----
+
+
+이미지 파일을 프롬프트에서 사용하려면 이미지 URL을 넣어주고 뒤에 텍스트 프롬프트를 입력합니다.
+----
+/imagine image prompts text prompt
+/imagine http://imageURL1.png http://imageURL1.jpg description of what to imagine --parameter 1 -- parameter 2
+----
+
+
+== 가격
+https://docs.midjourney.com/docs/plans
+
+
+== 참고
+미드저니 사용법 | 이미지 프롬프트 | 리믹스 모드 | 멀티 프롬프트 | 멀티 이미지 혼합
+https://www.youtube.com/watch?v=5atHZWjaF10
+
+discord 에 이미지 업로드
+
+업로드한 url 복사
+
+/엔터 치면 /imagine 자동 입력됨. url 붙여 넣음
+
+korean actress, 40 years old woman, standing in street, illustrative anime style, hyper detailed light watercolor art by Makoto Shinkai, epic composition, Dynamic pose, curvaceous, sharp focus, perfect shading, bright lighting, rim lighting, super details, cinematic lighting, full body, ultra wide Shot --ar 1:2
+
+korean actress, 35 years old woman --사진만화
+
+
