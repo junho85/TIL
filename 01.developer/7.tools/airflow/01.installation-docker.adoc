@@ -1,5 +1,5 @@
 :hardbreaks:
-= airflow
+= installation on docker
 
 == Docker
 https://airflow.apache.org/docs/apache-airflow/2.2.4/start/docker.html
@@ -16,6 +16,9 @@ Digest: sha256:fac2ae50be3f4e0901582e5c0ef00d06b1f599315a2077ab5b8ea7e304ddbee4
 Status: Downloaded newer image for debian:buster-slim
 7.7G
 ----
+7.7G이니 충분해 보인다.
+
+
 
 docker-compose.yaml 파일 받기
 
