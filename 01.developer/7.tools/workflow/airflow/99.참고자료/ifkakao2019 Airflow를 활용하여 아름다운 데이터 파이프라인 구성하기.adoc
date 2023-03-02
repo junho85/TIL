@@ -1,0 +1,60 @@
+:hardbreaks:
+= if(kakao)dev2019 Airflow를 활용하여 아름다운 데이터 파이프라인 구성하기
+
+https://elseif.kakao.com/2019/program?sessionId=de3ff829-ac4c-4090-9ea1-046df55429a0
+
+01. 카카오페이지의 데이터 분석 문제
+MSA
+서로 다른 DB간에 JOIN이 필요한 경우에는?
+어려워진 데이터 분석
+Data Lake (Data Warehouse)
+Lake를 구축하는데 Airflow 사용
+
+02. Workflow management system
+Workflow Platform
+2014년 Airbnb에서 개발
+2015년 오픈 소스로 공개
+2018년 말, incubating -> Top-Level
+GCP: Cloud Composer
+
+Workflow?
+1. 작업
+2. 작업 간 의존성
+3. 워크플로우
+DAG(Directed Acyclic Graph)
+
+Workflow Platform에서는 DAG 작업 의존 관계에 따라 순차 실행. 모든 작업은 ASAP으로 종료
+
+중간에 작업이 실패하면
+연관성 없는 작업은 계속 실행
+실패한 작업을 재실행
+성공하면 후속작업 이어서 실행
+
+어떤 Workflow System을 선택할까?
+250개나 됨. 상황에 맞는거 선택. 카카오페이지에서 Airflow선택한 이유.
+
+Ooozie vs Airflow
+DAG 표현 방식 차이가 결정적 이유
+많은 Contributors, 빠른 주기의 릴리즈
+직관적인 User Interface
+사전 정의된 Task가 아주 풍부
+뛰어난 확장성
+
+
+03. Apache Airflow 시연
+dag 폴더에 python 파일 생성
+
+[source,python]
+----
+from airflow import DAG # required
+from datetime import *
+
+dag = DAG(
+    'helloworld',
+
+----
+
+TODO...
+
+04. Airflow Architecture
+05. 카카오페이지의 Airflow 활용

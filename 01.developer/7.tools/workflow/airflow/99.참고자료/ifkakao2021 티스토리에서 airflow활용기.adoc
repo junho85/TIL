@@ -1,8 +1,6 @@
 :hardbreaks:
+= if(kakao)2021 티스토리에서 airflow활용기
 
-= airflow 관련 발표자료
-
-== if(kakao)2021 티스토리에서 airflow활용기
 https://elseif.kakao.com/2021/session/55
 
 발표자: mark.44, justin.sg
@@ -12,7 +10,7 @@ Airflow 소개
 Airflow 구성 요소
 티스토리 Airflow 살펴보기
 
-=== Airflow 도입 이유
+== Airflow 도입 이유
 통계 서비스 미흡
 구글 애널리틱스 의존적
 통계 생성, 수정의 어려움
@@ -27,7 +25,7 @@ ETC - Ruby Script
 
 Airflow 도입
 
-=== Airflow 소개
+== Airflow 소개
 Python 코드로 workflow를 작성하여 스케줄링, 모니터링을 담당하는 플랫폼
 workflow란? 작업 절차를 통한 정보의 이동을 의미, 통상 '작업 흐름'
 
@@ -38,7 +36,7 @@ v1 공개 (2019)
 최신버전 v2.1.2
 
 
-=== Airflow 구성 요소
+== Airflow 구성 요소
 * Worker: Task를 실행하는 주체
 * Scheduler: DAG, Task 모니터링, Task 실행 요청
 * Meta DB: Airflow 메타데이터 저장
@@ -90,9 +88,9 @@ MysqlOperator - DML, DDL 실행가능
 
 SlackOperator
 
-=== 티스토리 Airflow 살펴보기
+== 티스토리 Airflow 살펴보기
 티스토리 Airflow 구성
-* Airflow: v2.1.2
+* Airflow: v2.1.2 (기존에 1.10버전 업그레이드 진행)
 * Meta DB: Mysql
 * Docker
 * DKOS: ...
@@ -105,17 +103,22 @@ DAG이 실행되면 Scheduler가 새로운 Worker Pod를 생성하고 실행. �
 Docker file
 Apache/airflow 베이스 이미지 기반으로 추가적인 Package 설치
 
+Airflow extra packages
+https://airflow.apache.org/docs/apache-airflow/2.1.2/extra-packages-ref.html?highlight=package
+
 Airflow.cfg
 Core, Logging, Kubernetes, Webserver 설정
 
 https://airflow.apache.org/docs/apache-airflow/2.1.2/configurations-ref.html
+
 
 게시글 키워드 통계
 Mysql - MysqlHook
 Mongo - MongoHook
 Python - PythonOperator
 
-키워드 통계 DAG 구성
+
+=== 키워드 통계 DAG 구성
 DAG을 먼저 선언해 봅니다
 
 [source,python]
@@ -141,7 +144,7 @@ dag = DAG(
 )
 ----
 
-게시글 키워드 조회
+=== 게시글 키워드 조회
 MysqlHook을 이용해서 게시글 키워드를 조회하는 함수를 생성
 
 [source,python]
@@ -176,7 +179,11 @@ def select_keyword_trend():
   return total_counter
 ----
 
-키워드 필터링
+게시글 조회 -> 키워드 추출 -> 키워드 Counter 생성
+
+
+
+=== 키워드 필터링
 Transform_data 함수를 생성 스팸처리와 키워드 50위만 추출
 
 [source,python]
@@ -199,63 +206,137 @@ def transform_data(**kwargs):
   return filtered_list
 ----
 
-== if(kakao)dev2019 Airflow를 활용하여 아름다운 데이터 파이프라인 구성하기
+Spam 키워드 제외 -> Rank 50 추출
 
-https://elseif.kakao.com/2019/program?sessionId=de3ff829-ac4c-4090-9ea1-046df55429a0
-
-01. 카카오페이지의 데이터 분석 문제
-MSA
-서로 다른 DB간에 JOIN이 필요한 경우에는?
-어려워진 데이터 분석
-Data Lake (Data Warehouse)
-Lake를 구축하는데 Airflow 사용
-
-02. Workflow management system
-Workflow Platform
-2014년 Airbnb에서 개발
-2015년 오픈 소스로 공개
-2018년 말, incubating -> Top-Level
-GCP: Cloud Composer
-
-Workflow?
-1. 작업
-2. 작업 간 의존성
-3. 워크플로우
-DAG(Directed Acyclic Graph)
-
-Workflow Platform에서는 DAG 작업 의존 관계에 따라 순차 실행. 모든 작업은 ASAP으로 종료
-
-중간에 작업이 실패하면
-연관성 없는 작업은 계속 실행
-실패한 작업을 재실행
-성공하면 후속작업 이어서 실행
-
-어떤 Workflow System을 선택할까?
-250개나 됨. 상황에 맞는거 선택. 카카오페이지에서 Airflow선택한 이유.
-
-Ooozie vs Airflow
-DAG 표현 방식 차이가 결정적 이유
-많은 Contributors, 빠른 주기의 릴리즈
-직관적인 User Interface
-사전 정의된 Task가 아주 풍부
-뛰어난 확장성
-
-
-03. Apache Airflow 시연
-dag 폴더에 python 파일 생성
+=== 키워드 MongoDB 저장
+MongoHook을 이용하여 insert_many() 함수를 호출하여 저장
 
 [source,python]
 ----
-from airflow import DAG # required
-from datetime import *
+from airflow.prividers.mongo.hooks.mongo import MongoHoook
+...
 
-dag = DAG(
-    'helloworld',
+# mongo db 입력
+def insert_keyword_trend(**kwargs):
+  ti = kwargs['ti']
+  result_dic = ti.xcom_pull(task_ids='transform_data')
+  if not bool(result_dic):
+    logging.info('result_dic is Empty')
+    return
 
+  MongoHook(conn_id=mongodb_config['conn_id']).insert_many(
+    mongo_collection=mongodb_config['collection'],
+    docs=result_dic
+  )
 ----
 
-TODO...
+=== Task 생성 및 관계 선언
+PythonOperator를 이용하여 Task를 구성합니다
 
-04. Airflow Architecture
-05. 카카오페이지의 Airflow 활용
+[source,python]
+----
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from datetime import datetime
+import pendulum
+...
 
+# DAG 선언
+dag = DAG(
+  dag_id='tistory_keyword_daily_trend_dag',
+  default_args=default_args,
+  start_date=datetime(2021, 1, 1, tzinfo=local_tz),
+  schedule_internal='0 1 * * *',
+  catchup=False,
+  tags=['stat', 'tistory']
+)
+...
+t1 = PythonOperator(task_id="select_keyword_trend",
+                    python_callable=select_keyword_trend,
+                    dag=dag)
+t2 = PythonOperator(task_id="transform_data",
+                    python_callable=transform_data,
+                    dag=dag)
+t3 = PythonOperator(task_id="insert_keyword_trend",
+                    python_callable=insert_keyword_Trend,
+                    dag=dag)
+
+t1 >> t2 >> t3 # 조회 > 필터링 > 입력
+----
+
+=== 키워드 통계
+전체 코드 일부
+...
+
+=== 실행 결과
+완료된 DAG은 Webserver에서 확인 가능
+
+
+
+== 개발시 발생한 문제들
+1. Task 통신간 Xcom 이슈
+(1406, "Data too long for column 'value' at row 1")
+
+
+
+=== Xcom 살펴보기
+Task간 통신에 이용하는 목적이지만 대용량에 부적합, 민감한 정보..
+
+* Task간에 통신 목록
+* 대용량 파일 전송 X
+* MetaDB에 저장되므로 민감한 정보도 저장 X
+* 간단한 메시지 전달
+* 작은 용량의 Dictionary 전달
+
+=== 어떻게 처리하면 좋을까
+* 하나의 Task에서 필터링 (초간단)
+* Task에서 조회한 데이터를 DB or CSV로 저장
+* Python pandas DataFrame 활용
+* MySqlToGoogleCloudStorageOperator
+
+=== 결론적으로
+Xcom을 잘 알고 쓸것
+Task를 Airflow에 맞게 설계할 것
+
+2. Backfill, Catchup 사용하기
+과거의 Task를 차례대로 실행하는 유용한 기능
+
+* Backfill
+과거 Task를 순차적으로 모두 실행
+'start_date'를 지정하면 시작일부터 실행
+* Catchup
+Backfill이 필요없다면 설정
+테스트 코드나 과거 데이터가 필요 없을때
+
+3. Upgrade
+혹시라도 V2.1로 Upgrade 하신다면
+
+* Airflow.cfg 설정 변경점 확인
+SECTION 일부가 변경
+AIRFLOW__CORE,
+AIRFLOW__LOGGING
+
+* MetaDB table 변경점 확인 (커맨드로 실행 가능)
+airflow db init
+airflow db upgrade
+
+* Provider package 변경점 확인
+[.line-through]#from airflow.hooks.mysql_hook import MySqlHook#
+from airflow.prividers.mysql.hooks.mysql import MySqlHook
+
+== 마치며
+하나의 Workflow 시스템 구축
+기획, 운영 요청에 빠른 피드백
+Python Airflow 개발 시간 단축
+WEB UI를 통한 모니터링, 수동 실행
+Slack을 통한 모니터링
+Python, Kubernetes, Airflow 학습
+
+- airflow: https://airflow.apache.org/docs/
+- github airflow: https://github.com/apache/airflow
+- KAKAO WIKI, GITHUB
+- ifkakao 2019: https://if.kakao.com/2019/program?sessionId=de3ff829-ac4c-4090-9ea1-046df55429a0
+- 데이터야놀자2020: Airflow로 똑똑한 배치관리하기: https://www.youtube.com/watch?v=OB1euuIATkE
+- 버킷플레이스 블로그: https://www.bucketplace.co.kr/post/2021-04-13-버킷플레이스-airflow-도입기/
+- LINE Engineering: https://engineering.linecorp.com/ko/blog/data-engineering-with-airflow-k8s-1/
+- SOCAR Tech Blog: https://tech.socarcorp.kr/data/2021/06/01/data-engineering-with-airflow.html

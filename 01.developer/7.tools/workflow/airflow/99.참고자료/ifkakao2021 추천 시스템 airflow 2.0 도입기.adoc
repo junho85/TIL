@@ -1,0 +1,11 @@
+:hardbreaks:
+= 추천 시스템 airflow 2.0 도입기
+
+https://elseif.kakao.com/2021/session/29
+
+추천시스템 내 workflow 개선을 위해 airflow를 도입했던 이유와, 쿠버네티스에서 airflow를 안정적으로 운영하기 위해 했던 고민들, 그리고 2.0으로의 버전업 경험과 추천시스템 내에서 이를 어떻게 활용하고 있는지 공유합니다.
+
+TODO
+
+== 참고
+https://airflowsummit.org/sessions/2021/deep-dive-in-to-the-airflow-scheduler/

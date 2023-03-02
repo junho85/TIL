@@ -1,0 +1,67 @@
+:hardbreaks:
+= airflow
+
+https://airflow.apache.org/
+
+> Airflow is a platform created by the community to programmatically author, schedule and monitor workflows.
+
+Airflow는 워크플로우를 프로그래밍 방식으로 작성, 예약 및 모니터링하기 위해 커뮤니티에서 만든 플랫폼
+
+github: https://github.com/apache/airflow
+
+
+== Airflow의 장점
+
+* Python을 이용한 워크플로 정의. 유연함. 다른 워크플로 관리자들은 YAML, JSON, XML 등을 사용하는 경우가 많음.
+* 백필(Backfilling) 기능 제공. 태스크가 며칠 동안 실패된 경우나 새롭게 만든 플로를 과거부터 순차적으로 실행
+* 오픈소스
+
+== Airflow가 적합하지 않은 경우
+* 스트리밍(실시간데이터 처리)에 적합하지 않음
+* Python을 모르는 경우
+
+== Airflow 3가지 주요 구성 요소
+* Airflow 스케줄러 - DAG를 분석하고 현재 시점에서 DAG의 스케줄이 지난 경우 Airflow 워커에 DAG의 태스크를 예약
+* Airflow 워커 - 예약된 태스크를 선택하고 실행
+* Airflow 웹 서버 - 스케줄러에서 분석한 DAG를 시각화하고 DAG 실행과 결과를 확인할 수 있는 주요 인터페이스 제공
+
+
+
+== History
+
+2014년 10월 Airbnb에서 시작된 오픈소스 프로젝트
+2015년 6월 오픈소스로 공개
+2016년 3월 Apache Software Foundation 인큐베이팅
+2019년 1월 8일 Apache Top-Level Projection 발표
+
+https://news.apache.org/foundation/entry/the-apache-software-foundation-announces44[THE APACHE SOFTWARE FOUNDATION ANNOUNCES APACHE® AIRFLOW™ AS A TOP-LEVEL PROJECT 2019.01.08]
+
+== 이런저런 정리
+crontab, jenkins 처럼 스케줄링을 목적으로 활용하기 좋음
+
+
+
+== DAG (Directed Acyclic Graph) 방향성 비순환 그래프
+
+그래프는 화살표 방향성의 끝점(directed edge)을 포함하되 반복이나 순환을 허용하지 않음 (비순환 acyclic)
+
+반복이나 순환하게 되면 그래프가 동작하지 않음
+
+== 백필(Backfilling)
+
+하나의 플로(Airflow에서는 DAG)를 특정 옵션(기간) 기준으로 다시 실행할 수 있는 기능
+
+태스크가 며칠 동안 실패하거나 새롭게 만든 플로를 과거의 특정 시점부터 순차적으로 실행
+
+
+
+== 참고
+
+Apache Airflow 기반의 데이터 파이프라인
+에어플로 중심의 워크플로 구축에서 커스텀 컴포넌트 개발및 배포, 관리까지
+바스 하렌슬락, 율리안 더라위터르 지음 | 김정민 옮김
+제이펍
+
+https://github.com/K9Ns/data-pipelines-with-apache-airflow
+https://www.manning.com/books/data-pipelines-with-apache-airflow
+

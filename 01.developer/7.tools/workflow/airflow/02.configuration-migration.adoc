@@ -1,0 +1,9 @@
+:hardbreaks:
+= airflow configuration migration
+
+airflow 설정 옮기기
+
+== variables
+export 해서 나온 json 파일을 import 하면 됨
+
+== connections
