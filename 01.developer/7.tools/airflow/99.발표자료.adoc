@@ -2,6 +2,203 @@
 
 = airflow 관련 발표자료
 
+== if(kakao)2021 티스토리에서 airflow활용기
+https://elseif.kakao.com/2021/session/55
+
+발표자: mark.44, justin.sg
+
+Airflow 도입 이유
+Airflow 소개
+Airflow 구성 요소
+티스토리 Airflow 살펴보기
+
+=== Airflow 도입 이유
+통계 서비스 미흡
+구글 애널리틱스 의존적
+통계 생성, 수정의 어려움
+운영, 기획, 개발 요청에 대한 개발 속도
+모놀리식 구조, java, JPA
+workflow 구성의 다채로움
+
+티스토리 시스템
+유입 연관 데이터 - HADOOP, Druid, Oozie
+블로그 연관 데이터 - MySQL, MongoDB, ArangoDB, Spring Batch
+ETC - Ruby Script
+
+Airflow 도입
+
+=== Airflow 소개
+Python 코드로 workflow를 작성하여 스케줄링, 모니터링을 담당하는 플랫폼
+workflow란? 작업 절차를 통한 정보의 이동을 의미, 통상 '작업 흐름'
+
+Workflow Platform
+AIRBNB 개발 (2014)
+오픈 소스로 공개 (2015)
+v1 공개 (2019)
+최신버전 v2.1.2
+
+
+=== Airflow 구성 요소
+* Worker: Task를 실행하는 주체
+* Scheduler: DAG, Task 모니터링, Task 실행 요청
+* Meta DB: Airflow 메타데이터 저장
+* Webserver: airflow Web UI 서버
+* DAG: Python으로 작성된 워크플로우
+
+Webserver UI
+
+Webserver - home - DAGs, 모니터링, Schedule, CODE, LOG
+
+DAG > graph view - Task 관계 확인 가능
+
+DAG > code - DAG 코드 조회 가능
+
+DAG > log - DAG에 포함된 Task 로그 조회
+
+Webserver - connections - Admin > Connections 메뉴 저장가능, connId로 호출가능
+
+Webserver - Xcom - Task간 통신에 사용, 'cross-communications'
+
+누가, 어떻게 사용할까?
+
+카카오 - 카카오 페이지 데이터분석, 블로그 개발파트 통계, SSP 데이터 집계/분석, 보고서용 job, 광고플랫폼개발파트
+사외 - Line Engineering, 버킷플레이스 데이터 플랫폼, 야놀자 배치관리, MWAA (Amazon Managed Workflows for Apache Airflow)
+데이터 플랫폼에서 주된 사용
+
+DAG
+Airflow DAG - DAG은 Task간 종속성과 관계를 구성하여 실행 방법을 정의
+
+DAG == Python Code
+그저 개발자가 Python으로 작성한 코드. Dag, Task 선언하면 끝
+
+Operator == Task
+Airflow에서 제공하는 다양한 Operator를 사용하여 Task를 생성
+
+BashOperator: bash command를 실행
+PythonOperator: python 함수를 실행
+MysqlOperator: mysql 수행
+EmailOperator: email 발송
+HiveOperator
+HttpOperator
+SlackOperator
+DummyOperator
+BranchOperator
+...
+
+MysqlOperator - DML, DDL 실행가능
+결과를 리턴하지 않음. 결과를 받으려면 MysqlHook사용
+
+SlackOperator
+
+=== 티스토리 Airflow 살펴보기
+티스토리 Airflow 구성
+* Airflow: v2.1.2
+* Meta DB: Mysql
+* Docker
+* DKOS: ...
+* Git-Sync sidecar 패턴 - DAG 코드를 주기적으로 동기화
+* Executor Type: KubernetesOperator를 이용하여 airflow worker 실행
+
+Kubernetes 동작화면
+DAG이 실행되면 Scheduler가 새로운 Worker Pod를 생성하고 실행. 완료된 Worker Pod는 삭제됨
+
+Docker file
+Apache/airflow 베이스 이미지 기반으로 추가적인 Package 설치
+
+Airflow.cfg
+Core, Logging, Kubernetes, Webserver 설정
+
+https://airflow.apache.org/docs/apache-airflow/2.1.2/configurations-ref.html
+
+게시글 키워드 통계
+Mysql - MysqlHook
+Mongo - MongoHook
+Python - PythonOperator
+
+키워드 통계 DAG 구성
+DAG을 먼저 선언해 봅니다
+
+[source,python]
+----
+from airflow import DAG
+from datetime import datetime
+import pendulum
+
+# 로컬 타임존 생성
+local_tz = pendulum.timezone("Asia/Seoul")
+
+default_args = {
+  'owner': 'airflow',
+}
+
+# DAG 선언
+dag = DAG(
+  dag_id='tistory_keyword_daily_trend_dag',
+  default_args=default_args,
+  start_date=datetime(2021, 1, 1, tzinfo=local_tz),
+  schedule_interval='0 1 * * *',
+  tags=['stat', 'tistory']
+)
+----
+
+게시글 키워드 조회
+MysqlHook을 이용해서 게시글 키워드를 조회하는 함수를 생성
+
+[source,python]
+----
+from airflow.prividers.mysql.hooks.mysql import MySqlHook
+from collections import Counter
+...
+# 게시글 키워드 조회
+def select_keyword_trend():
+  counter_list = []
+  for conn_id in mysql_conns:
+    hook = MySqlHook(mysql_conn_id=conn_id)
+    result_df = hook.get_pandas_df(sql="""
+      SELECT summary
+      FROM tistory_post
+      WHERE published BETWEEN UNIX_TIMESTAMP(CONCAT(%s, '000000'))
+                      AND UNIX_TIMESTAMP(CONCAT(%s, '235959'))
+      AND type = 0
+      AND restrictedLocked IS NULL
+    """, parameters=[yesterday, yesterday])
+
+    result_json = result_df.to_json(orient='records')
+    result_dic = json.loads(result_json)
+
+    # 키워드 추출 및 count 생성
+    for entry in result_dic:
+      keyword = extract_keyword(entry['summary'])
+      count = Counter(keyword)
+      counter_list.append(count)
+
+  total_counter = (sum(counter_list, Counter()))
+  return total_counter
+----
+
+키워드 필터링
+Transform_data 함수를 생성 스팸처리와 키워드 50위만 추출
+
+[source,python]
+----
+from collections import Counter
+...
+
+# 키워드 데이터 필터링
+def transform_data(**kwargs):
+  ti = kwargs['ti']
+  total_counter = ti.xcom_pull(task_ids='select_keyword_trend')
+
+  filtered_counter = filter_spam(total_counter) # spam 키워드 제외
+  most_counter = filtered_counter.most_common(n=50) # 50개의 데이터 추출
+  filtered_list = []
+
+  for k, v in most_counter:
+    filtered_list.append({'date': yesterday, 'keyword': k, 'count': v})
+
+  return filtered_list
+----
+
 == if(kakao)dev2019 Airflow를 활용하여 아름다운 데이터 파이프라인 구성하기
 
 https://elseif.kakao.com/2019/program?sessionId=de3ff829-ac4c-4090-9ea1-046df55429a0

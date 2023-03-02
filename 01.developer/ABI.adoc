@@ -1,0 +1,49 @@
+:hardbreaks:
+= ABI (Application Binary Interface)
+
+ABI는 컴파일된 프로그래밍 언어(C, C++ 등)에서 소프트웨어 구성 요소가 서로 상호 작용하는 이진 레벨에서의 규칙과 지침을 정의하는 것입니다. ABI는 함수 인수 전달 방법, 메모리 관리 방법, 예외 처리 방법과 같은 세부 정보를 정의합니다. 공통 ABI를 준수함으로써, 서로 다른 개발자 또는 다른 컴파일러를 사용하여 별도로 컴파일된 소프트웨어 구성 요소가 원활하게 작동할 수 있습니다.
+
+
+
+== 참고
+Application binary interface
+https://en.wikipedia.org/wiki/Application_binary_interface
+
+
+ABI란? 2022.03.16
+https://velog.io/@ellyheetov/ABI%EB%9E%80
+
+ABI란 두개의 바이너리 프로그램 모듈 사이의 인터페이스를 말한다.
+
+기계 수준, 이진값 수준에서 인터페이스를 뜻함. 이진은 Binary로 0과 1을 뜻하는데 컴퓨터에서 가장 low-level을 나타냄. ABI는 이렇게 바이너리 수준에서의 인터페이스를 뜻함.
+
+맥 환경에서 Window 응용 프로그램을 돌릴 수 없는 것은 ABI가 호환되지 않기 때문
+
+ABI가 다루는 것들
+* CPU instructions (registers, stack organization, memory access type) CPU명령어
+* calling convention(함수 호출, argument 전달, 값 리턴)
+* OS에 대한 시스템 호출
+* Data Layout
+* Type Metadata
+* Mangling
+* Runtime
+* Standard Library
+
+What is an application binary interface (ABI)?
+https://stackoverflow.com/questions/2171177/what-is-an-application-binary-interface-abi
+
+API와 ABI
+https://koseungbin.gitbook.io/wiki/books/undefined-2/undefined/api-abi
+
+ABI는 특정 아키텍처 간에서 동작하는 소프트웨어 간의 바이너리 인터페이스를 정의. 바이너리의 호환성을 보장하여 오브젝트 코드를 다시 컴파일하는 수고없이 같은 ABI를 지원하는 시스템이라면 동일한 기능을 수행하도록 보장
+
+리눅스를 포함한 운영체제는 각각의 요구사항에 부합하는 고유의 ABI를 정의하려는 경향이 있다. ABI는 아키텍처와 밀접한 관계가 있으며, ABI 대부분은 특정 레지스터나 어셈블리 명령어 같은 하드웨어에 국한된 개념을 다루고 있다. 따라서, 리눅스에서는 아키텍처마다 다른 고유의 ABI를 가지고 있다.
+
+라이브러리, 프레임워크, API, ABI 뜻 비교 정리 2018.02.06
+https://eine.tistory.com/entry/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-API-ABI-%EB%9C%BB-%EB%B9%84%EA%B5%90-%EC%A0%95%EB%A6%AC
+
+바이너리 수준에서의 호환
+바이너리 수준에서 호환이 된다고 하면 바이너리로 이루어진 기계어들과 관련이 있다고도 볼 수 있겠다.
+이 기계어들은 결국 물리적인 프로세서, 즉 CPU에서 실행을 하고, CPU들이 실행하는 기계어 명령어 셋들을 ISA(Instruction Set Architectuer)라고도 부른다. 이 ABI는 실질적으로 ISA와 밀접한 관린이 있다고 볼 수 있다.
+
+안드로이드 스튜디오 에뮬레이터를 생성할 때 고르는 화면에 CPU/ABI가 있다.
