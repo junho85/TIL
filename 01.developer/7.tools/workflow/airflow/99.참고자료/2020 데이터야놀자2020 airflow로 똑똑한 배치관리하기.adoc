@@ -1,0 +1,82 @@
+:hardbreaks:
+= [데이터야놀자2020] Airflow로 똑똑한 배치관리하기 - 김은실님
+
+[데이터야놀자2020] Airflow로 똑똑한 배치관리하기 - 김은실님
+https://www.youtube.com/watch?v=OB1euuIATkE
+
+실적지표 자동화
+
+== Bigquery - 예약된 쿼리
+
+설정한 시간에 쿼리 수행
+* 총 18개의 예약된 쿼리설정
+* "자동화" 목적 달성
+* 실패시 메일 발송
+
+잘못된 경우 수동처리
+
+== Airflow란?
+* Airbnb에서 개발한 워크플로우 관리 도구
+* 스케쥴링
+* Python
+* DAG 구성
+
+== Airflow 구조
+* Webserver
+* Scheduler
+* Worker
+* ...
+
+== 파이프라인 구성하기
+DAG이란?
+...
+
+DAG in Airflow
+* DAG 파일 = 워크플로우
+* Python 스크립트
+* Operator로 Task 정의
+
+== 파이프라인 구성하기
+DAG 등록
+* dags_folder에 저장
+
+파일을 저장하면 DAG 등록
+
+== DAG - Task 순서 구성
+c1 >> [t1, t2]
+t2 >> t3
+[t1, t3] >> stop_op
+
+== 어떻게 구성할 것인가
+docker, docker compose, google compute engine, ...
+
+== GCP Cloud Composer
+
+== Airflow 운영
+
+...
+
+Alert
+
+== Before vs After
+Before
+Flow 구성시 시간기준으로 배치
+* A 테이블 작업 -> B 테이블 작업
+** A 테이블 작업 종료 예상 시점을 B 테이블 작성 시작 설정
+
+After
+* Web에서! 실패한 단계만! 재수행 요청 클릭!
+* 1/16로 줄어든 "혁신적인" 복구 시간
+
+* 재수행 설정 가능
+
+== Airflow를 도입하면
+* Web을 통해 직관적으로 Workflow 모니터링 및 관리 가능!
+* 기본적인 기능만으로도 충분히 ...
+
+== Airflow를 도입하며
+* 예약된 쿼리 운영의 불편한 점 모두 해결!
+* 유용한 기능들과 많은 레퍼런스!
+* 무궁무진한 확장 가능성!
+* 데이터 분석가와의 협업!
+
