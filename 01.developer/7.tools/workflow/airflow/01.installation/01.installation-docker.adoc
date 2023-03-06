@@ -1,0 +1,55 @@
+:hardbreaks:
+= installation on docker
+
+docker compose를 이용해서
+
+https://airflow.apache.org/docs/apache-airflow/2.2.4/start/docker.html
+
+메모리 충분한지 확인. 최소 4GB 이상 필요.
+
+[source,shell]
+----
+$ docker run --rm "debian:buster-slim" bash -c 'numfmt --to iec $(echo $(($(getconf _PHYS_PAGES) * $(getconf PAGE_SIZE))))'
+Unable to find image 'debian:buster-slim' locally
+buster-slim: Pulling from library/debian
+ebcd4e3db076: Pull complete
+Digest: sha256:fac2ae50be3f4e0901582e5c0ef00d06b1f599315a2077ab5b8ea7e304ddbee4
+Status: Downloaded newer image for debian:buster-slim
+7.7G
+----
+7.7G이니 충분해 보인다.
+
+
+
+docker-compose.yaml 파일 받기
+
+[source,shell]
+----
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.2.4/docker-compose.yaml'
+----
+
+* airflow-scheduler - 스케줄러는 모든 태스크와 DAG들을 모니터링 하고, 디펜던시들이 완료되면(?) 태스크 인스턴스들을 트리거 합니다.
+* airflow-webserver - 웹서버 http://localhost:8080
+* airflow-worker - 워커는 스케줄러에 의해 주어진 태스크들을 실행함
+* airflow-init - 서비스 초기화
+* flower - 모니터링. http://localhost:5555 로 접근
+* postgres - database
+* redis - 메시지들을 스케줄러에서 워커로 전달하는 브로커
+
+가 정의되어 있음.
+
+로컬에서 airflow 사용할 때 DAG에서 로컬에 띄운 서버에 연결을 하고자 할 수 있다. 그러려면 docker-compose.yaml 에 설정을 추가해야 한다. 예를 들어 리눅스에서는 `services: airflow-worker` 에 `extra_hosts: - "host.docker.internal:host-gateway"` 를 추가한다. 그리고 localhost대신 host.docker.internal을 사용한다. 이 구성은 플랫폼 마다 다르다. 자세한 내용은 https://docs.docker.com/desktop/networking/#use-cases-and-workarounds 문서를 본다.
+
+이러한 모든 서비스를 통해 https://airflow.apache.org/docs/apache-airflow/2.2.4/executor/celery.html[CeleryExecutor]로 Airflow를 실행되도록 합니다. 자세한 내용은 https://airflow.apache.org/docs/apache-airflow/2.2.4/concepts/overview.html[Architecture Overview]를 참조하세요.
+
+컨테이너의 일부 디렉터리는 마운트되어 있으므로 컴퓨터와 컨테이너 간에 콘텐츠가 동기화됩니다.
+
+* ./dags - 여기에 DAG 파일을 넣을 수 있습니다.
+* ./logs - 작업 실행 및 스케줄러의 로그를 포함합니다.
+* ./plugins - 사용자 정의 플러그인을 여기에 저장할 수 있습니다.
+
+이 파일은 최신 Airflow 이미지(https://hub.docker.com/r/apache/airflow[apache/airflow])를 사용합니다. 새 Python 라이브러리 또는 시스템 라이브러리를 설치해야 하는 경우 https://airflow.apache.org/docs/docker-stack/index.html[이미지를 빌드]할 수 있습니다.
+
+== 사용자 정의 이미지 사용하기
+
+...

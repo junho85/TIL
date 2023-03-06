@@ -1,0 +1,17 @@
+:hardbreaks:
+= Airflow Installation
+
+
+https://airflow.apache.org/docs/apache-airflow/2.2.4/start/docker.html
+
+
+== Local
+
+문서: https://airflow.apache.org/docs/apache-airflow/2.2.4/start/local.html
+
+python 3 환경에서 설치해야 합니다.
+
+
+
+== Docker
+link:01.installation-docker.adoc[]
