@@ -1,0 +1,25 @@
+:hardbreaks:
+= NS
+
+Nameserver record
+
+도메인 네임 서비스를 제공하는 DNS 서버입니다.
+
+A레코드를 찾을 때 NS레코드를 이용해서 DNS 서버를 찾고, 해당 DNS 서버에서 A레코드를 검색합니다.
+
+junho85.pe.kr는 가비아에서 관리하고 있는 것을 볼 수 있습니다.
+
+[source,shell]
+----
+$ dig ns junho85.pe.kr +short
+ns.gabia.net.
+ns1.gabia.co.kr.
+ns.gabia.co.kr.
+----
+
+https://www.rfc-editor.org/rfc/rfc1035#section-4
+binary protocol이라 text로 질의하기는 어렵습니다.
+
+53번 포트를 이용합니다.
+
+nameserver를 구축하려면 bind, named 같은것들을 설치해야됩니다.

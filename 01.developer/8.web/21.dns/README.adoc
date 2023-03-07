@@ -1,0 +1,17 @@
+:hardbreaks:
+= DNS
+
+DNS 와 관련된 정보를 정리합니다.
+
+== 레코드 형식
+A, AAAA, CNAME, MX, TXT 등 다양한 레코드가 있음
+
+사라진 레코드도 있음
+
+== 참고
+
+DNS 네임 서버를 직접 구축해보자! (feat. BIND9) 2021.09.06
+https://tech.ktcloud.com/66
+
+List of DNS record types
+https://en.wikipedia.org/wiki/List_of_DNS_record_types
