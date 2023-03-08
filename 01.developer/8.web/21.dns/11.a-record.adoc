@@ -1,0 +1,20 @@
+:hardbreaks:
+= A Record
+
+== A
+도메인에 연결된 IP정보이다. IPv4이고 IPv6는 AAAA 레코드이다.
+
+[source,shell]
+----
+$ dig a daum.net +short
+10.19.73.97
+----
+
+== AAAA
+IPv6 의 IP를 저장하고 있다.
+
+[source,shell]
+----
+$ dig AAAA google.com +short
+2404:6800:4004:821::200e
+----
