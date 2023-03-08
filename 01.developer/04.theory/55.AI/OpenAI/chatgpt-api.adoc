@@ -1,0 +1,40 @@
+:hardbreaks:
+= ChatGPT API
+
+https://openai.com/blog/introducing-chatgpt-and-whisper-apis
+
+https://openai.com/pricing
+
+
+https://github.com/openai/openai-quickstart-python.git
+
+
+== 참고
+Chat completions
+https://platform.openai.com/docs/guides/chat
+
+ChatGPT API 101 — A Beginner’s Guide 2023.03.05
+https://pub.towardsai.net/chatgpt-api-101-a-beginners-guide-95e6d41c716f
+
+ChatGPT API Python 사용법 (feat.DALL-E, Karlo) 2023.03.04
+https://wooiljeong.github.io/python/chatgpt-api/
+
+OpenAI사 ChatGPT API (gpt-3.5-turbo) 전격 공개- 10배 저렴한 가격, 더욱 학습된 모델 2023.03.02
+https://blog.naver.com/mynameistk/223032100322
+gpt-3.5-turbo의 비용은 1K 토큰당 $0.002로 Davinci가 1K 토큰당 $0.02 대비 10배 저렴
+1K 토큰은 대략 영단어 750개
+
+
+
+ChatGPT API가 사용 가능합니다. 이제 어플리케이션에서 API를 사용할 수 있게되었습니다! 2023.03.02
+https://webisfree.com/2023-03-02/ChatGPT-API%EA%B0%80-%EC%82%AC%EC%9A%A9-%EA%B0%80%EB%8A%A5%ED%95%A9%EB%8B%88%EB%8B%A4-%EC%9D%B4%EC%A0%9C-%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%EC%97%90%EC%84%9C-API%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%A0-%EC%88%98-%EC%9E%88%EA%B2%8C%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4
+
+
+OPENAI API(ChatGPT)를 활용한 블로그 생성 자동화 2023.01.29
+https://teddylee777.github.io/python/chatgpt-blog-automation/
+
+Models
+https://platform.openai.com/docs/models/gpt-3-5
+
+OpenAI API 모델 7가지는 알고 갑시다 2023.03.04
+https://iotnbigdata.tistory.com/609
