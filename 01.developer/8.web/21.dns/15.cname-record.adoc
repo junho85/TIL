@@ -1,0 +1,21 @@
+:hardbreaks:
+= CNAME
+
+[source,shell]
+----
+$ dig cname junho85.pe.kr +short
+host.tistory.io.
+----
+
+== 장점
+IP주소가 바뀔때 유연하게 처리할 수 있음.
+
+junho85.pe.kr 은 티스토리 블로그를 사용하고 있다. 만약 A레코드로 티스토리 서버의 IP를 설정했다면 티스토리에서 IP를 바꾸면 개인도메인으로 연결한 사용자들은 모두 IP를 변경해야 된다.
+
+하지만 CNAME으로 설정했기 때문에 티스토리에서 IP가 바뀌더라도 티스토리에서 host.tistory.io. 도메인의 IP만 바꿔주면 모든 사용자들에 자동으로 적용된다.
+
+== 단점
+아무래도 DNS 요청이 한 번 더 많아진다는 단점이 있다.
+junho85.pe.kr -> host.tistory.io 두번 호출해야 IP를 알아낼 수 있기때문이다.
+
+
