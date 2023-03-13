@@ -1,0 +1,101 @@
+:hardbreaks:
+= SRV
+
+Service Location record
+
+서비스의 위치 (호스트네임과 포트번호) 저장
+마인크래프트, mongodb 등에서 활용
+
+== SRV 레코드 형식
+[source]
+----
+_service._proto.name. ttl IN SRV priority weight port target.
+----
+
+* service: 서비스 이름
+* proto: 프로토콜. 보통 TCP, UDP
+* name: domain name. "."으로 끝남
+* ttl: time to live
+* IN: 표준 DNS 클래스 필드 (항상 IN)
+* SRV: 레코드 유형 (항상 SRV)
+* priority: 대상 호스트의 우선순위, 값이 낮을수록 더 선호됨
+* weight: 동일한 우선순위를 가진 레코드에 대한 상대적 가중치. 값이 클수록 선택될 확률이 높음
+* port: 서비스를 찾을 TCP 또는 UDP 포트
+* target: 서비스를 제공하는 머신의 정식 호스트 이름. "."으로 끝남
+
+
+== RFC
+
+A DNS RR for specifying the location of services (DNS SRV)
+https://tools.ietf.org/html/rfc2782
+
+Internet Assigned Numbers Authority (IANA) Procedures for the Management
+of the Service Name and Transport Protocol Port Number Registry
+https://www.rfc-editor.org/rfc/rfc6335
+
+DNS AttrLeaf Changes:
+Fixing Specifications That Use Underscored Node Names
+https://www.rfc-editor.org/rfc/rfc8553
+
+
+== 활용사례 - mongodb
+mongodb에서는 replica set을 여러개 구성하는 경우에 활용하고 있음.
+
+MongoDB 3.6: Here to SRV you with easier replica set connections 2022.09.24
+https://www.mongodb.com/developer/products/mongodb/srv-connection-strings/
+
+
+== 활용사례 - 마인크래프트
+마인크래프트 게임에서는 마인크래프트 게임서버 정보를 설정하는데 사용함. 예를 들어 도메인앞에  _minecraft._tcp 를 붙여서 조회해 보면 마인크래프트 게임서버 접속 정보를 알려줌.
+
+https://minecraft.fandom.com/wiki/Java_Edition_1.3.1
+
+* Added SRV Record Lookup support
+** Different subdomains of one domain can handle different servers via different port numbers.
+** Service name should be "minecraft"; i.e. "_minecraft._tcp.example.com".
+
+[source,shell]
+----
+$ dig srv _minecraft._tcp.madesv.kr +short
+0 0 10397 secure.mcv.kr.
+----
+* service: _minecraft: 서비스가 minecraft
+* protocol: _tcp: protocol이 TCP
+* priority: 0 (뭘까?)
+* weight: 0 (뭘까? priority, weight 순서 확인 필요)
+* port: 포트. 여기서는 10397
+* target: 마인크래프트 hostname. 여기서는 secure.mcv.kr.
+
+How to Add a SRV Record to Your Minecraft Server
+https://www.noip.com/support/knowledgebase/how-to-add-a-srv-record-to-your-minecraft-server-remove-the-port-on-the-end-of-the-url/
+
+The SRV record
+https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server#The_SRV_record
+
+TODO MCSV 레코드라는게 있다던데 뭘까?
+공식은 아닌가? 무료 마인크래프트 호스팅 서비스 도메인이 mcsv.kr ? 그런데 2023.03.07 접속이 안되는 것으로 보아 접었나?
+https://namu.wiki/w/Minehub
+
+https://minehub.kr/cloud 이건 뭐지?
+
+
+
+== 참고
+
+[DNS] SRV Record 2017.01.28
+https://blog.leocat.kr/notes/2017/01/28/dns-srv-record
+
+service: 서비스 이름
+proto: protocol (TCP, UDP 등)
+name: 도메인 이름
+TTL: DNS에서 살아 있을 기간 Time to Live
+class: DNS class로 항상 IN
+priority: 우선순위. 작은 숫자가 더 높은 우선순위
+weight: 동일한 우선순위를 가졌을 때 비교할 가중치
+port: 서비스 port
+target: 서비스에 할당한 hostname
+
+https://en.wikipedia.org/wiki/SRV_record
+
+
+https://en.wikipedia.org/wiki/List_of_DNS_record_types#A
