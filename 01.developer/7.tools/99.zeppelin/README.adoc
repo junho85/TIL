@@ -1,0 +1,40 @@
+:hardbreaks:
+= Zeppelin
+
+
+== Credential Injection
+
+
+=== Credential 설정
+Credential 설정으로 들어간다.
+
+Entity, Username, Password 를 입력한다.
+
+예를 들어
+Entity: DB_CREDENTIAL_ENTITY
+Username: hello
+Password: world
+
+라고 입력했다고 가정하면 사용하는 곳에서는
+
+[source,python]
+----
+username = "{DB_CREDENTIAL_ENTITY.user}"
+password = "{DB_CREDENTIAL_ENTITY.password}"
+----
+처럼 사용하면 된다.
+
+=== interpreter 설정
+interpreter에 injectCredentials 설정을 추가한다. type은 Checkbox로 하고 체크하면 된다.
+
+
+=== 참고
+Interpreter in Apache Zeppelin
+https://zeppelin.apache.org/docs/latest/usage/interpreter/overview.html#credential-injection
+
+How to use credential injection on Apache Zeppelin with python interpreter
+https://stackoverflow.com/questions/67066543/how-to-use-credential-injection-on-apache-zeppelin-with-python-interpreter
+
+
+== pycharm 에서 사용하는 방법
+TODO
