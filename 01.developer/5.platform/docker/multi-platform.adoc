@@ -1,0 +1,112 @@
+:hardbreaks:
+= Multi-platform images
+
+buildx 를 사용하면 멀티플랫폼 이미지를 빌드할 수 있습니다.
+
+e.g.
+[source,shell]
+----
+$ docker buildx build --platform linux/amd64,linux/arm64 -t junho85/garden8:20230212_2 --push .
+----
+
+buildx 의 명령어들
+
+[source,shell]
+----
+$ docker buildx
+
+Usage:  docker buildx [OPTIONS] COMMAND
+
+Extended build capabilities with BuildKit
+
+Options:
+      --builder string   Override the configured builder instance
+
+Management Commands:
+  imagetools  Commands to work on images in registry
+
+Commands:
+  bake        Build from a file
+  build       Start a build
+  create      Create a new builder instance
+  du          Disk usage
+  inspect     Inspect current builder instance
+  ls          List builder instances
+  prune       Remove build cache
+  rm          Remove a builder instance
+  stop        Stop builder instance
+  use         Set the current builder instance
+  version     Show buildx version information
+
+Run 'docker buildx COMMAND --help' for more information on a command.
+----
+
+buildx ls 를 하면 builder 인스턴스들의 정보를 알 수 있습니다.
+[source,shell]
+----
+$ docker buildx ls
+NAME/NODE       DRIVER/ENDPOINT             STATUS  BUILDKIT PLATFORMS
+mybuilder *     docker-container
+  mybuilder0    unix:///var/run/docker.sock running v0.10.3  linux/arm64, linux/amd64, linux/amd64/v2, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/mips64le, linux/mips64, linux/arm/v7, linux/arm/v6
+default         docker
+  default       default                     running 20.10.23 linux/arm64, linux/amd64, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/arm/v7, linux/arm/v6
+desktop-linux   docker
+  desktop-linux desktop-linux               running 20.10.23 linux/arm64, linux/amd64, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/arm/v7, linux/arm/v6
+----
+
+
+
+[source,shell]
+----
+$ docker buildx build --help
+
+Usage:  docker buildx build [OPTIONS] PATH | URL | -
+
+Start a build
+
+Aliases:
+  docker buildx build, docker buildx b
+
+Options:
+      --add-host strings              Add a custom host-to-IP mapping (format: "host:ip")
+      --allow strings                 Allow extra privileged entitlement (e.g., "network.host", "security.insecure")
+      --attest stringArray            Attestation parameters (format: "type=sbom,generator=image")
+      --build-arg stringArray         Set build-time variables
+      --build-context stringArray     Additional build contexts (e.g., name=path)
+      --builder string                Override the configured builder instance
+      --cache-from stringArray        External cache sources (e.g., "user/app:cache", "type=local,src=path/to/dir")
+      --cache-to stringArray          Cache export destinations (e.g., "user/app:cache", "type=local,dest=path/to/dir")
+      --cgroup-parent string          Optional parent cgroup for the container
+  -f, --file string                   Name of the Dockerfile (default: "PATH/Dockerfile")
+      --iidfile string                Write the image ID to the file
+      --label stringArray             Set metadata for an image
+      --load                          Shorthand for "--output=type=docker"
+      --metadata-file string          Write build result metadata to the file
+      --network string                Set the networking mode for the "RUN" instructions during build (default "default")
+      --no-cache                      Do not use cache when building the image
+      --no-cache-filter stringArray   Do not cache specified stages
+  -o, --output stringArray            Output destination (format: "type=local,dest=path")
+      --platform stringArray          Set target platform for build
+      --progress string               Set type of progress output ("auto", "plain", "tty"). Use plain to show container output (default "auto")
+      --provenance string             Shortand for "--attest=type=provenance"
+      --pull                          Always attempt to pull all referenced images
+      --push                          Shorthand for "--output=type=registry"
+  -q, --quiet                         Suppress the build output and print image ID on success
+      --sbom string                   Shorthand for "--attest=type=sbom"
+      --secret stringArray            Secret to expose to the build (format: "id=mysecret[,src=/local/secret]")
+      --shm-size bytes                Size of "/dev/shm"
+      --ssh stringArray               SSH agent socket or keys to expose to the build (format: "default|<id>[=<socket>|<key>[,<key>]]")
+  -t, --tag stringArray               Name and optionally a tag (format: "name:tag")
+      --target string                 Set the target build stage to build
+      --ulimit ulimit                 Ulimit options (default [])
+----
+
+
+
+
+== 참고
+Multi-platform images
+https://docs.docker.com/build/building/multi-platform/
+
+[Docker] Buildx로 cross-platform 이미지 빌드하기 2022.02.21
+https://velog.io/@koo8624/Docker-Buildx%EB%A1%9C-cross-platform-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%B9%8C%EB%93%9C%ED%95%98%EA%B8%B0
