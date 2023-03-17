@@ -1,0 +1,26 @@
+:hardbreaks:
+= TXT
+
+Text record
+
+도메인과 관련된 추가 정보를 설정합니다. SPF(Sender Policy Framework), DKIM(Domain Keys Identified Mail) 등을 설정합니다.
+
+[source,shell]
+----
+$ dig txt daum.net +short
+"v=spf1 include:_spf.daum.net ~all"
+"google-site-verification=CQHqDeJv5QbFRN_ViQvKJa3jeMDrCiw2iEPs1XcdAmk"
+"google-site-verification=0w8tAk4ZN8tACAfxeAkgBQy3MfsZiFD3gt5zCeouVNQ"
+----
+
+spf외에도 도메인의 주인인지 여부를 확인하기 위한 인증 정보를 담기도 합니다.
+
+dkim 정보는 {selector}._domainkey.{domain} 의 txt 레코드에서 확인할 수 있습니다. selector는 수신받은 메일 헤더의 header.s 정보에서 확인할 수 있습니다.
+
+[source,shell]
+----
+$ dig txt 1442393800.kakaocorp._domainkey.kakaocorp.com +short
+"v=DKIM1; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDT2utqR8SPxR5QOeOtiMTRQ85RM4bTyZ3VY8ZSsSr0PIe+6/DZYcMEDfUc2/uGrDPddvhePyCK5Hf2lAyHt8hELn7qwnXmtFvtrIrmIe0261NZy+g9kjJtdhHEXw+4wUxmjDzJf9buBu7z4qEoDL2A1mjtKpqrTqDjejFwqu9dpwIDAQAB"
+----
+
+
