@@ -1,0 +1,23 @@
+:hardbreaks:
+= docker compose django, db start
+
+[source,shell]
+----
+docker compose up -d
+----
+
+== 집계
+
+기본 yesterday ~ tomorrow
+https://garden8.junho85.pe.kr/attendance/collect
+
+[source,shell]
+----
+curl https://garden8.junho85.pe.kr/attendance/collect
+curl "https://garden8.junho85.pe.kr/attendance/collect/?start=2023-03-15&end=2023-03-19"
+
+----
+
+날짜 지정
+https://garden8.junho85.pe.kr/attendance/collect/?start=2023-03-15&end=2023-03-19
+

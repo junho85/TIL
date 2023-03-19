@@ -1,0 +1,14 @@
+:hardbreaks:
+= nginx
+
+nginx은 자동으로 구동됨
+
+== 설정
+
+/etc/nginx/nginx.conf
+
+== reload
+[source,shell]
+----
+sudo systemctl reload nginx
+----
