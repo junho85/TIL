@@ -1,0 +1,57 @@
+:hardbreaks:
+= mongodb 계정, 권한
+
+
+== 계정 생성
+
+[source]
+----
+use admin
+db.createUser({
+    user:'root',
+    pwd:'****',
+    roles: [
+        {
+            "role" : "userAdminAnyDatabase",
+            "db" : "admin"
+        },
+        {
+            "role" : "dbAdminAnyDatabase",
+            "db" : "admin"
+        },
+        {
+            "role" : "readWriteAnyDatabase",
+            "db" : "admin"
+        }
+    ]
+})
+----
+
+== 계정 삭제
+
+----
+db.dropUser('root')
+----
+
+
+== 확인
+[source]
+----
+db.auth('root', '****')
+----
+
+
+[source]
+----
+db.getUsers()
+
+or
+
+show users
+----
+
+
+== 참고
+
+Manage Users and Roles
+https://www.mongodb.com/docs/manual/tutorial/manage-users-and-roles/
