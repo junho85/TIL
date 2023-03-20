@@ -1,0 +1,9 @@
+:hardbreaks:
+= firewall
+
+외부에서 docker db 에 접속 되는지 확인
+
+[source,shell]
+----
+nc -vz garden8.junho85.pe.kr 27017
+----

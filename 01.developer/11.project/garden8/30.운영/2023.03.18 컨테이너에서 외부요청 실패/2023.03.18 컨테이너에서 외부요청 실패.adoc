@@ -1,0 +1,215 @@
+:hardbreaks:
+= 2023.03.18
+
+vultr에서 운영하던 서버가 재시작 되어서 다시 올렸는데 출석부 집계가 안됨
+docker 컨테이너 안에서 외부로 요청이 안됨
+
+----
+docker compose logs -f -t web
+----
+
+[source,shell]
+----
+docker-garden8-web-1  | 2023-03-18T13:21:42.264653747Z Internal Server Error: /attendance/collect/
+docker-garden8-web-1  | 2023-03-18T13:21:42.264772925Z Traceback (most recent call last):
+docker-garden8-web-1  | 2023-03-18T13:21:42.264806907Z   File "/usr/local/lib/python3.8/urllib/request.py", line 1354, in do_open
+docker-garden8-web-1  | 2023-03-18T13:21:42.264810671Z     h.request(req.get_method(), req.selector, req.data, headers,
+docker-garden8-web-1  | 2023-03-18T13:21:42.264813351Z   File "/usr/local/lib/python3.8/http/client.py", line 1256, in request
+docker-garden8-web-1  | 2023-03-18T13:21:42.264815939Z     self._send_request(method, url, body, headers, encode_chunked)
+docker-garden8-web-1  | 2023-03-18T13:21:42.264828175Z   File "/usr/local/lib/python3.8/http/client.py", line 1302, in _send_request
+docker-garden8-web-1  | 2023-03-18T13:21:42.264831260Z     self.endheaders(body, encode_chunked=encode_chunked)
+docker-garden8-web-1  | 2023-03-18T13:21:42.264833757Z   File "/usr/local/lib/python3.8/http/client.py", line 1251, in endheaders
+docker-garden8-web-1  | 2023-03-18T13:21:42.264836251Z     self._send_output(message_body, encode_chunked=encode_chunked)
+docker-garden8-web-1  | 2023-03-18T13:21:42.264838807Z   File "/usr/local/lib/python3.8/http/client.py", line 1011, in _send_output
+docker-garden8-web-1  | 2023-03-18T13:21:42.264841663Z     self.send(msg)
+docker-garden8-web-1  | 2023-03-18T13:21:42.264845065Z   File "/usr/local/lib/python3.8/http/client.py", line 951, in send
+docker-garden8-web-1  | 2023-03-18T13:21:42.264848781Z     self.connect()
+docker-garden8-web-1  | 2023-03-18T13:21:42.264851833Z   File "/usr/local/lib/python3.8/http/client.py", line 1418, in connect
+docker-garden8-web-1  | 2023-03-18T13:21:42.264855653Z     super().connect()
+docker-garden8-web-1  | 2023-03-18T13:21:42.264858965Z   File "/usr/local/lib/python3.8/http/client.py", line 922, in connect
+docker-garden8-web-1  | 2023-03-18T13:21:42.264862197Z     self.sock = self._create_connection(
+docker-garden8-web-1  | 2023-03-18T13:21:42.264877634Z   File "/usr/local/lib/python3.8/socket.py", line 808, in create_connection
+docker-garden8-web-1  | 2023-03-18T13:21:42.264881339Z     raise err
+docker-garden8-web-1  | 2023-03-18T13:21:42.264884725Z   File "/usr/local/lib/python3.8/socket.py", line 796, in create_connection
+docker-garden8-web-1  | 2023-03-18T13:21:42.264888519Z     sock.connect(sa)
+docker-garden8-web-1  | 2023-03-18T13:21:42.264891757Z socket.timeout: timed out
+docker-garden8-web-1  | 2023-03-18T13:21:42.264895303Z
+docker-garden8-web-1  | 2023-03-18T13:21:42.264898431Z During handling of the above exception, another exception occurred:
+docker-garden8-web-1  | 2023-03-18T13:21:42.264901981Z
+docker-garden8-web-1  | 2023-03-18T13:21:42.264905548Z Traceback (most recent call last):
+docker-garden8-web-1  | 2023-03-18T13:21:42.264964347Z   File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 56, in inner
+docker-garden8-web-1  | 2023-03-18T13:21:42.264968859Z     response = get_response(request)
+docker-garden8-web-1  | 2023-03-18T13:21:42.264973155Z   File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+docker-garden8-web-1  | 2023-03-18T13:21:42.264976643Z     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+docker-garden8-web-1  | 2023-03-18T13:21:42.264979987Z   File "/app/attendance/views.py", line 79, in collect
+docker-garden8-web-1  | 2023-03-18T13:21:42.264983345Z     result = garden.collect_slack_messages(oldest, latest)
+docker-garden8-web-1  | 2023-03-18T13:21:42.264986783Z   File "/app/attendance/garden.py", line 119, in collect_slack_messages
+docker-garden8-web-1  | 2023-03-18T13:21:42.264990481Z     response = self.slack_client.conversations_history(
+docker-garden8-web-1  | 2023-03-18T13:21:42.265000529Z   File "/usr/local/lib/python3.8/site-packages/slack_sdk/web/client.py", line 2380, in conversations_history
+docker-garden8-web-1  | 2023-03-18T13:21:42.265012751Z     return self.api_call("conversations.history", http_verb="GET", params=kwargs)
+docker-garden8-web-1  | 2023-03-18T13:21:42.265017926Z   File "/usr/local/lib/python3.8/site-packages/slack_sdk/web/base_client.py", line 156, in api_call
+docker-garden8-web-1  | 2023-03-18T13:21:42.265030451Z     return self._sync_send(api_url=api_url, req_args=req_args)
+docker-garden8-web-1  | 2023-03-18T13:21:42.265032965Z   File "/usr/local/lib/python3.8/site-packages/slack_sdk/web/base_client.py", line 187, in _sync_send
+docker-garden8-web-1  | 2023-03-18T13:21:42.265035632Z     return self._urllib_api_call(
+docker-garden8-web-1  | 2023-03-18T13:21:42.265038013Z   File "/usr/local/lib/python3.8/site-packages/slack_sdk/web/base_client.py", line 294, in _urllib_api_call
+docker-garden8-web-1  | 2023-03-18T13:21:42.265040499Z     response = self._perform_urllib_http_request(url=url, args=request_args)
+docker-garden8-web-1  | 2023-03-18T13:21:42.265042899Z   File "/usr/local/lib/python3.8/site-packages/slack_sdk/web/base_client.py", line 495, in _perform_urllib_http_request
+docker-garden8-web-1  | 2023-03-18T13:21:42.265045501Z     raise err
+docker-garden8-web-1  | 2023-03-18T13:21:42.265047773Z   File "/usr/local/lib/python3.8/site-packages/slack_sdk/web/base_client.py", line 397, in _perform_urllib_http_request
+docker-garden8-web-1  | 2023-03-18T13:21:42.265050215Z     resp = self._perform_urllib_http_request_internal(url, req)
+docker-garden8-web-1  | 2023-03-18T13:21:42.265052588Z   File "/usr/local/lib/python3.8/site-packages/slack_sdk/web/base_client.py", line 526, in _perform_urllib_http_request_internal
+docker-garden8-web-1  | 2023-03-18T13:21:42.265055247Z     resp = urlopen(req, context=self.ssl, timeout=self.timeout)  # skipcq: BAN-B310
+docker-garden8-web-1  | 2023-03-18T13:21:42.265057765Z   File "/usr/local/lib/python3.8/urllib/request.py", line 222, in urlopen
+docker-garden8-web-1  | 2023-03-18T13:21:42.265060361Z     return opener.open(url, data, timeout)
+docker-garden8-web-1  | 2023-03-18T13:21:42.265062784Z   File "/usr/local/lib/python3.8/urllib/request.py", line 525, in open
+docker-garden8-web-1  | 2023-03-18T13:21:42.265065231Z     response = self._open(req, data)
+docker-garden8-web-1  | 2023-03-18T13:21:42.265067533Z   File "/usr/local/lib/python3.8/urllib/request.py", line 542, in _open
+docker-garden8-web-1  | 2023-03-18T13:21:42.265069951Z     result = self._call_chain(self.handle_open, protocol, protocol +
+docker-garden8-web-1  | 2023-03-18T13:21:42.265072307Z   File "/usr/local/lib/python3.8/urllib/request.py", line 502, in _call_chain
+docker-garden8-web-1  | 2023-03-18T13:21:42.265074901Z     result = func(*args)
+docker-garden8-web-1  | 2023-03-18T13:21:42.265077275Z   File "/usr/local/lib/python3.8/urllib/request.py", line 1397, in https_open
+docker-garden8-web-1  | 2023-03-18T13:21:42.265079809Z     return self.do_open(http.client.HTTPSConnection, req,
+docker-garden8-web-1  | 2023-03-18T13:21:42.265082251Z   File "/usr/local/lib/python3.8/urllib/request.py", line 1357, in do_open
+docker-garden8-web-1  | 2023-03-18T13:21:42.265084657Z     raise URLError(err)
+docker-garden8-web-1  | 2023-03-18T13:21:42.265086950Z urllib.error.URLError: <urlopen error timed out>
+----
+
+
+docker 내부에서 외부로 요청이 안나감. nginx에서 docker로 요청을 잘 들어감
+[source,shell]
+----
+root@f35be78218f9:/app# curl 121.53.105.193
+----
+
+방화벽 설정에 문제가 생긴걸까?
+
+[source,shell]
+----
+root@vultr:~/docker-garden8# ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW       Anywhere
+443                        ALLOW       Anywhere
+22/tcp (v6)                ALLOW       Anywhere (v6)
+443 (v6)                   ALLOW       Anywhere (v6)
+----
+
+임시로 nginx 띄우고
+----
+docker run --rm -it --name temp_nginx nginx
+----
+
+----
+docker exec -it temp_nginx bash
+----
+
+
+----
+curl daum.net
+----
+
+했지만 안됨
+
+
+ufw 로그 보니 ufw block 되고 있음
+----
+root@vultr:~# tail -f /var/log/ufw.log
+...
+Mar 18 14:11:52 vultr kernel: [60666.199548] [UFW BLOCK] IN=docker0 OUT=enp1s0 MAC=02:42:f1:23:01:4d:02:42:ac:11:00:02:08:00 SRC=172.17.0.2 DST=108.61.10.10 LEN=54 TOS=0x00 PREC=0x00 TTL=63 ID=44017 DF PROTO=UDP SPT=47682 DPT=53 LEN=34
+Mar 18 14:11:52 vultr kernel: [60666.199568] [UFW BLOCK] IN=docker0 OUT=enp1s0 MAC=02:42:f1:23:01:4d:02:42:ac:11:00:02:08:00 SRC=172.17.0.2 DST=108.61.10.10 LEN=54 TOS=0x00 PREC=0x00 TTL=63 ID=44018 DF PROTO=UDP SPT=47682 DPT=53 LEN=34
+----
+
+
+
+https://d-life93.tistory.com/431
+
+보고 routed를 allow로 했지만 도움 안됨
+
+----
+root@vultr:~# ufw status verbose
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), deny (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW IN    Anywhere
+443                        ALLOW IN    Anywhere
+22/tcp (v6)                ALLOW IN    Anywhere (v6)
+443 (v6)                   ALLOW IN    Anywhere (v6)
+----
+
+
+----
+root@vultr:~# ufw default allow routed
+uDefault routed policy changed to 'allow'
+(be sure to update your rules accordingly)
+root@vultr:~# ufw reload
+Firewall reloaded
+----
+
+
+
+----
+root@vultr:~# ufw status verbose
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), allow (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW IN    Anywhere
+443                        ALLOW IN    Anywhere
+22/tcp (v6)                ALLOW IN    Anywhere (v6)
+443 (v6)                   ALLOW IN    Anywhere (v6)
+----
+
+routed가 allow되었지만 별 도움은 안됨
+
+
+/etc/ufw/after.rules 에 있는 docker 관련 설정 주석 처리
+----
+31 # BEGIN UFW AND DOCKER
+ 32 #*filter
+ 33 #:ufw-user-forward - [0:0]
+ 34 #:ufw-docker-logging-deny - [0:0]
+ 35 #:DOCKER-USER - [0:0]
+ 36 #-A DOCKER-USER -j ufw-user-forward
+ 37
+ 38 #-A DOCKER-USER -j RETURN -s 10.0.0.0/8
+ 39 #-A DOCKER-USER -j RETURN -s 172.16.0.0/12
+ 40 #-A DOCKER-USER -j RETURN -s 192.168.0.0/16
+ 41
+ 42 #-A DOCKER-USER -p udp -m udp --sport 53 --dport 1024:65535 -j RETURN
+ 43
+ 44 #-A DOCKER-USER -j ufw-docker-logging-deny -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -d 192.168.0.0/16
+ 45 #-A DOCKER-USER -j ufw-docker-logging-deny -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -d 10.0.0.0/8
+ 46 #-A DOCKER-USER -j ufw-docker-logging-deny -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -d 172.16.0.0/12
+ 47 #-A DOCKER-USER -j ufw-docker-logging-deny -p udp -m udp --dport 0:32767 -d 192.168.0.0/16
+ 48 #-A DOCKER-USER -j ufw-docker-logging-deny -p udp -m udp --dport 0:32767 -d 10.0.0.0/8
+ 49 #-A DOCKER-USER -j ufw-docker-logging-deny -p udp -m udp --dport 0:32767 -d 172.16.0.0/12
+ 50
+ 51 #-A DOCKER-USER -j RETURN
+ 52
+ 53 #-A ufw-docker-logging-deny -m limit --limit 3/min --limit-burst 10 -j LOG --log-prefix "[UFW DOCKER BLOCK] "
+ 54 #-A ufw-docker-logging-deny -j DROP
+ 55
+ 56 #COMMIT
+ 57 # END UFW AND DOCKER
+----
+
+
+ufw reload
+
+
+ufw.log에는 docker 관련 로그가 남는거 같지는 않은데 여전히 안됨
+
+
+docker 재시작
+
+systemctl restart docker
+
