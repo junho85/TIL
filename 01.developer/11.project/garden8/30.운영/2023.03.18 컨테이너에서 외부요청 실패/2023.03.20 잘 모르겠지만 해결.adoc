@@ -1,0 +1,35 @@
+:hardbreaks:
+= 2023.03.20
+
+어찌 되었건 살렸다. 정확한 이유는 모르겠다.
+
+혹시 모르니 mongodb 에 계정을 생성했다.
+
+그리고
+
+----
+vi /etc/docker/daemon.json
+----
+
+아래 설정을 지웠다
+[source,json]
+----
+{ "iptables": false }
+----
+
+docker 재시작
+----
+sudo systemctl restart docker
+----
+
+왜인지 된다.
+
+
+방화벽이 열릴까봐 mongodb에 계정을 만든건데 외부에서 접근이 되지는 않는다...
+
+[source,shell]
+----
+nc -vz garden8.junho85.pe.kr 27017
+----
+
+모르겠다. 이상하다.

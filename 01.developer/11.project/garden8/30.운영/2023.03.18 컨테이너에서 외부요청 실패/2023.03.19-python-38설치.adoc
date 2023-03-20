@@ -1,0 +1,135 @@
+:hardbreaks:
+= 2023.03.19 (일) Python 3.8 설치
+
+일단 docker말고 garden8 코드 받아와서 예전 처럼 collect를 직접 부르는 방식으로 해볼까 함. 그런데 python 설치해서 발목 잡힘;
+
+python3.8 설치
+python 3.10 이 기본 설치 되어 있는데 requirements.txt 설치 하려니 오류 발생하여 기존에 garden8에서 사용중인 3.8을 설치
+/root/program/Python-3.8.16 경로에 소스코드 다운받아서 설치
+----
+cd
+mkdir program
+cd program
+wget https://www.python.org/ftp/python/3.8.16/Python-3.8.16.tar.xz
+tar xvf Python-3.8.16.tar.xz
+cd Python-3.8.16
+./configure
+make
+make install
+----
+기존 시스템 파이썬은 /usr/bin/python3 인데 이번에 설치한 python은 /usr/local/bin/python3 에 설치됨. /usr/local/bin 경로가 우선으로 검색됨.
+안정적으로 사용하려면 /root/program/ 경로에 설치했어야 했나 싶긴 한데 어쩔수 없음; 나중에 정리 하던지;;
+
+----
+pip3 install virtualenv
+오류
+python3 -m pip install virtualenv
+오류
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError("Can't connect to HTTPS URL because the SSL module is not available.")': /simple/virtualenv/
+----
+
+여전한 SSL 이슈...
+
+== OpenSSL 1.0.2
+어느단계였는지 기억은 안나지만 OpenSSL 1.0.2 또는 1.1이 필요하다고 나온다.
+
+----
+Python requires an OpenSSL 1.0.2 or 1.1 compatible libssl with X509_VERIFY_PARAM_set1_host().
+LibreSSL 2.6.4 and earlier do not provide the necessary APIs, https://github.com/libressl-portable/portable/issues/381
+----
+
+참고: https://jameskiefer.com/posts/installing-python-3.7-on-debian-8/[Installing Python 3.7 on Debian 8]
+
+3.7 문서지만 도움이 될까 싶어서 확인해봄
+
+OpenSSL 1.0.2o 설치
+----
+cd /root/program
+curl https://www.openssl.org/source/openssl-1.0.2o.tar.gz | tar xz
+cd openssl-1.0.2o
+./config shared --prefix=/root/program/
+make
+make install
+----
+
+
+== 하지만 실패했다...
+
+이런저런 기록을 남겨 두긴 했지만 실패다.
+
+----
+cd /root/program/Python-3.8.16
+./configure --with-openssl=/root/program/openssl-1.0.2o --enable-optimizations
+make
+make install
+----
+
+----
+cd /root/program/Python-3.8.16
+vi Modules/Setup
+----
+
+----
+205 # Socket module helper for socket(2)
+206 #_socket socketmodule.c
+207
+208 # Socket module helper for SSL support; you must comment out the other
+209 # socket line above, and possibly edit the SSL variable:
+210 #SSL=/usr/local/ssl
+211 #_ssl _ssl.c \
+212 #   -DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl \
+213 #   -L$(SSL)/lib -lssl -lcrypto
+----
+
+적당히 주석 풀고
+210에 ssl을 openssl 로 변경? (일단 안하고 해보자)
+
+----
+205 # Socket module helper for socket(2)
+206 _socket socketmodule.c
+207
+208 # Socket module helper for SSL support; you must comment out the other
+209 # socket line above, and possibly edit the SSL variable:
+210 SSL=/usr/local/openssl
+211 _ssl _ssl.c \
+212     -DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl \
+213     -L$(SSL)/lib -lssl -lcrypto
+----
+
+----
+# ./configure --enable-optimizations --with-openssl=/usr/local/ssl
+./configure --with-openssl=/root/program/openssl-1.0.2o --enable-optimizations
+make
+make install
+----
+
+
+----
+cd /root
+git clone git@github.com:junho85/garden8.git
+cd garden8
+python3 -m virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+----
+
+----
+0 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,23 * * * PYTHONPATH=/root/garden8 /root/garden8/venv/bin/python /root/garden8/attendance/cli_collect.py
+----
+
+
+== 참고
+
+[python | 오류 해결] Could not fetch URL; There was a problem confirming the ssl certificate; after connection broken by 'SSLError [SSL: CERTIFICATE_VERIFY_FAILED] 해결하기 2020.03.09
+https://funfunit.tistory.com/170
+
+
+pip package install SSL 인증서 Error 해결 (error: [SSL: CERTIFICATE_VERIFY_FAILED]) 2020.08.12
+https://melonicedlatte.com/2020/08/12/082300.html
+
+
+2021.05.13
+https://rk1993.tistory.com/entry/PythonCould-not-fetch-URL-httpspypiorgsimpledash-There-was-a-problem-confirming-the-ssl-certificate-HTTPSConnectionPoolhostpypiorg-port443-Max-retries-exceeded-with-url-simpledash-Caused-by-SSLErrorSSLCertVerificationError1-SSL-CERTIFICATEVERIFYFAILED-cer
+
+[Python 3.8] 파이썬 pip3 ssl error (WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError("Can't connect to HTTPS URL because the SSL module is not available.")': /simple/pip3/) 2020.07.16
+https://nirsa.tistory.com/271
