@@ -1,0 +1,57 @@
+:hardbreaks:
+= ControlNet
+
+이미지를 생성할 때 자세를 지정해 줄 수 있습니다.
+
+== 온라인에서 테스트
+https://huggingface.co/spaces/RamAnanth1/ControlNet
+
+기능이 제한적이지만 간단히 사용해 볼 수 있음
+
+== WebUI
+
+로컬에서 해보려면 WebUI에서 extention을 설치해서 사용해 볼 수 있음
+
+=== sd-webui-controlnet - WebUI extension for ControlNet
+sd-webui-controlnet
+https://github.com/Mikubill/sd-webui-controlnet
+WebUI extension for ControlNet
+
+
+=== Model
+https://huggingface.co/lllyasviel/ControlNet/tree/main/models
+
+5.7GB가 8개
+
+용량이 너무 커서 부담되면 다음을 이용
+
+https://huggingface.co/webui/ControlNet-modules-safetensors/tree/main
+
+여기는 각각 700MB대
+
+
+
+
+
+== 참고
+[Stable Diffusion] 포즈 생성용 졸라맨을 맘대로 그리는 확장 설치와 사용법 2023.02.19
+https://www.youtube.com/watch?v=zqlr_PGTn7Q
+
+Extensions > Available > Load from
+OpenPose Editor
+
+Installed 가서 Apply and restart UI
+
+초기 화면에 OpenPose Editor 메뉴가 생김
+
+Send to ControlNet 으로 보냄
+
+OpenPose Editor에서 Reset하면 자세 사라짐. Add해서 초기 자세
+
+Detect from image하면 이미지에서 자세를 만들어줌
+
+
+
+ControlNet 모델 - 이미지의 특성(자세, 깊이...)을 유지하면서 새로운 이미지 생성 2023.02.17
+https://www.youtube.com/watch?v=VjAElfAehNw
+
