@@ -7,29 +7,36 @@ https://airflow.apache.org/
 
 Airflow는 워크플로우를 프로그래밍 방식으로 작성, 예약 및 모니터링하기 위해 커뮤니티에서 만든 플랫폼
 
+Airbnb에서 개발함
+
 github: https://github.com/apache/airflow
 
 
 == Airflow의 장점
-
-* Python을 이용한 워크플로 정의. 유연함. 다른 워크플로 관리자들은 YAML, JSON, XML 등을 사용하는 경우가 많음.
+* Python을 이용한 유연한 워크플로 정의.
+** 파이썬 언어를 이용해서 커스텀 파이프라인 구현 가능.
+** 다양한 데이터베이스, 클라우드 서비스 등을 사용할 수 있는 애드온들이 많음
+** 다른 워크플로 관리자들은 YAML, JSON, XML 등을 사용하는 경우가 많은데 자유도가 떨어짐
+* 점진적(incremental)처리. 전체 파이프라인을 재실행 하지 않고 실패한 부분부터 처리 가능.
 * 백필(Backfilling) 기능 제공. 태스크가 며칠 동안 실패된 경우나 새롭게 만든 플로를 과거부터 순차적으로 실행
 * 오픈소스
+* 웹 인터페이스를 통해 파이프라인 실행 결과를 모니터링하고 오류를 디버깅 하기 좋음
 
 == Airflow가 적합하지 않은 경우
-* 스트리밍(실시간데이터 처리)에 적합하지 않음
-* Python을 모르는 경우
+* 스트리밍(실시간데이터 처리)에 적합하지 않음. 반복적이거나 배치 태스크(batch-oriented task)에 적합
+* Python을 모르는 경우 어려울 수 있음. 파이프라인 규모가 커지면 복잡해질 수 있음.
+* 실행되는 동안 구조 변화가 빈번한 경우
 
 == Airflow 구성 요소
-Scheduler, Worker, Webserver, Metadata DB, DAGs, Airflow.cfg 등
+Scheduler, Worker, Webserver, Metadata DB, DAGs, Airflow.cfg 등 다양한 구성요소가 있음
 
-주요 구성요소인 Scheduler, Worker, Webserver
+주요 구성요소는 Scheduler, Worker, Webserver
 
 * Airflow Scheduler (스케줄러)
 ** DAG를 분석하고 현재 시점에서 DAG의 스케줄이 지난 경우 Airflow 워커에 DAG의 태스크를 예약
 ** 모든 작업(Task)들과 DAG를 모니터링
 * Airflow Worker (워커) - 예약된 태스크를 선택하고 실행
-* Airflow Webserver (웹 서버) - 스케줄러에서 분석한 DAG를 시각화하고 DAG 실행과 결과를 확인할 수 있는 주요 인터페이스 제공
+* Airflow Webserver (웹 서버) - 스케줄러에서 분석한 DAG를 시각화하고 DAG 실행과 결과를 확인할 수 있는 주요 인터페이스 제공. 파이프라인 태스크 예약하고 모니터링.
 
 Metadata DB
 DAGs
@@ -48,6 +55,8 @@ https://news.apache.org/foundation/entry/the-apache-software-foundation-announce
 
 == 이런저런 정리
 crontab, jenkins 처럼 스케줄링을 목적으로 활용하기 좋음
+
+SLA
 
 
 
@@ -77,3 +86,11 @@ https://www.manning.com/books/data-pipelines-with-apache-airflow
 
 (워크플로우관리도구) Airflow 튜토리얼 #1 - Overview 2021.07.20
 https://tech.ktcloud.com/72
+
+
+
+How To Set SLA in Apache Airflow 2022.07.24
+https://senthilnayagan.com/orchestration/2022/airflow-setting-sla
+
+Airflow — Service Level Agreement (SLA) 2019.10.22
+https://blog.clairvoyantsoft.com/airflow-service-level-agreement-sla-2f3c91cd84cc

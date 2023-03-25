@@ -1,0 +1,31 @@
+:hardbreaks:
+= airflow context
+
+== task instance
+task 함수에서 `**context` 를 인자로 설정해서 거기서 "task_instance"를 가져와서 사용할 수 있습니다.
+
+old style
+
+[source,python]
+----
+def _get_movie(**context):
+    ....
+    context["task_instance"]
+----
+
+`context["task_instance"]` 대신 `context["ti"]` 사용가능. ti는 task_instance의 축약형
+
+
+new style
+
+[source,python]
+----
+context = get_current_context()
+ti = context["ti"]
+----
+
+get을 사용할 수도 있습니다.
+[source,python]
+----
+get_current_context().get('ti')
+----
