@@ -1,0 +1,65 @@
+:hardbreaks:
+= MySQL 사용자 추가, 권한 부여
+
+
+== 사용자 추가
+
+localhost에서만 사용할 유저
+
+[source]
+----
+$ create user '사용자'@'localhost' identified by '비밀번호';
+----
+
+만약 remote로 사용하고 싶다면 IP를 넣어 주면 해당 IP에서 접속 가능
+% 를 넣으면 모든 IP에서 접속 가능
+
+
+== DB 권한 부여
+
+[source]
+----
+$ grant all privileges on *.* to '사용자'@'localhost';
+$ grant all privileges on {DB명}.* to '사용자'@'localhost';
+----
+
+
+----
+priv_level: {
+    *
+  | *.*
+  | db_name.*
+  | db_name.tbl_name
+  | tbl_name
+  | db_name.routine_name
+}
+----
+참고: https://dev.mysql.com/doc/refman/8.0/en/grant.html
+
+
+== 사용자 삭제
+
+[source]
+----
+$ drop user '사용자'@'localhost';
+----
+
+
+== 적용이 안되는거 같으면 flush privileges
+
+권한 설정 등이 안되는 거 같으면 flush privileges 해줘야 될 수 있음.
+
+[source]
+----
+flush privileges
+----
+
+될 때가 있고 안될 때가 있는데 왜 그렇지? 버전차이?
+
+== References
+
+
+https://dev.mysql.com/doc/refman/8.0/en/grant.html
+
+Mysql 사용자 추가, 제거 및 권한 부여 2017.05.07
+https://cjh5414.github.io/mysql-create-user/
