@@ -1,0 +1,12 @@
+:hardbreaks:
+= Airflow Database
+
+Airflow를 설치 할 때 추천하는 Database는 PosgreSQL입니다. MySQL은 추천하지 않습니다.
+
+== MySQL을 추천하지 않는 이유
+
+가장 큰 이유를 꼽자면 MySQL의 max key length가 3072로 제한되어 있기 때문에 발생하는 오류들 때문입니다.
+
+airflow가 버전업을 하면서 자연스럽게 database schema도 점점 복잡해졌는데 index에서 사용하는 id나 key 등의 컬럼들이 varchar(250) 등으로 된 경우가 많다 보니 이런 컬럼들의 조합으로 index나 fk를 생성할 때 size 초과 오류가 발생하게 됩니다.
+
+
