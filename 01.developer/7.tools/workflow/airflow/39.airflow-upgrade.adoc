@@ -1,0 +1,42 @@
+:hardbreaks:
+= Airflow Upgrade
+
+== Upgrading Airflow to a newer version
+https://airflow.apache.org/docs/apache-airflow/stable/installation/upgrading.html
+
+`airflow db upgrade` 을 통해 스키마 변경 사항을 적용. 마이그레이션을 수행하지 않더라도 안전하게 실행할 수 있으니 걱정 노노.
+
+=== 업그레이드 준비 - DB 백업
+마이그레이션 전에 메타데이터 DB를 백업하는 것을 권장함.
+
+== Upgrading from 1.10 to 2
+https://airflow.apache.org/docs/apache-airflow/stable/howto/upgrading-from-1-10/index.html
+
+major 버전이 올라갔기 때문에 이런저런 주의사항들이 있음
+
+airflow 1.10은 python2를 지원하지만 airflow 2는 python 3.6+
+airflow 2.1.2 부터는 python 3.9를 지원
+airflow 2.3.0 부터는 python 3.6 지원이 빠짐. python 3.7, 3.8, 3.9, 3.10 에서 테스트 됨
+
+
+== 2.0 부터 사라진 것들
+=== PythonOperator의 provide_context는 사용되지 않습니다.
+
+[source,python]
+----
+PythonOperator(
+  task_id="...",
+  python_callable=_...
+  ...
+  provide_context=True,
+  dag=dag,
+)
+----
+
+Airflow 1에서 PythonOperator의 인수인 provide_context=True로 설정하면 모든 태스크 콘텍스트 변수를 호출할 수 있음.
+Airflow 2에서는 PythonOperator가 콜러블 인수 이름으로부터 콘텍스트 변수가 호출 가능한지 판단.
+
+
+== 참고
+Airflow 2 버전으로 Migration 한 후기 2021.08.15
+https://tansfil.tistory.com/68
