@@ -1,3 +1,4 @@
-= github - contributions
+:hardbreaks:
+= GitHub - contributions
 
 https://github.com/users/junho85/contributions
