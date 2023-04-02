@@ -1,0 +1,12 @@
+:hardbreaks:
+= FrontEnd 분리
+
+[source]
+----
+npx create-react-app .
+npm start
+----
+
+
+----
+----

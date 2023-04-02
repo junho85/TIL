@@ -1,0 +1,14 @@
+:hardbreaks:
+= Canada IT Companies
+
+
+== Amazon
+link:../../../../01.developer/33.it_companies/25.Amazon/canada.adoc[Amazone Canada]
+
+
+== Jane
+
+https://jane.app/hiring
+
+github: https://github.com/janeapp
+

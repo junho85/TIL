@@ -1,15 +1,6 @@
 :hardbreaks:
-= Airflow Upgrade
+= Airflow Upgrade 1.10 to 2.0
 
-== Upgrading Airflow to a newer version
-https://airflow.apache.org/docs/apache-airflow/stable/installation/upgrading.html
-
-`airflow db upgrade` 을 통해 스키마 변경 사항을 적용. 마이그레이션을 수행하지 않더라도 안전하게 실행할 수 있으니 걱정 노노.
-
-=== 업그레이드 준비 - DB 백업
-마이그레이션 전에 메타데이터 DB를 백업하는 것을 권장함.
-
-== Upgrading from 1.10 to 2
 https://airflow.apache.org/docs/apache-airflow/stable/howto/upgrading-from-1-10/index.html
 
 major 버전이 올라갔기 때문에 이런저런 주의사항들이 있음
@@ -37,6 +28,23 @@ Airflow 1에서 PythonOperator의 인수인 provide_context=True로 설정하면
 Airflow 2에서는 PythonOperator가 콜러블 인수 이름으로부터 콘텍스트 변수가 호출 가능한지 판단.
 
 
+
+Raises a warning for provide_context instead of killing the task (#11597) 2020.10.17
+https://github.com/apache/airflow/commit/00dd7586fb6b41bff2b89b9008742c7b34cd4fdd#diff-a7623df88fd1f27ac789b97e70c0f81ae49677e4c25a7a66da7d231b12b62fc5R89
+
+[AIRFLOW-5390] Remove provide context (#5990) 2019.09.10
+https://github.com/apache/airflow/commit/dd175fa8db222dad763ad35cedf85a750b52d4fb
+
+
+1.10.12 PythonOperator 문서
+https://airflow.apache.org/docs/apache-airflow/1.10.12/howto/operator/python.html
+----
+When you set the provide_context argument to True, Airflow passes in an additional set of keyword arguments: one for each of the Jinja template variables and a templates_dict argument.
+
+The templates_dict argument is templated, so each value in the dictionary is evaluated as a Jinja template.
+----
+
+
 == 참고
-Airflow 2 버전으로 Migration 한 후기 2021.08.15
-https://tansfil.tistory.com/68
+https://dsstream.com/differences-between-airflow-1-10-x-and-2-0/
+
