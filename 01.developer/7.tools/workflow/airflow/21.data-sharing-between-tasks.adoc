@@ -1,0 +1,89 @@
+:hardbreaks:
+
+= Airflow 태스크 간 데이터 공유. XCom 등
+
+== XCom (cross-communication) - 태스크 간 작은 데이터 공유
+Airflow XCom에 대해 정리합니다. XCom은 cross-communication의 약자로 태스크 간에 작은 데이터를 공유하는데 사용합니다. 태스크 간에 메시지를 교환하여 특정 상태를 공유합니다.
+작은 값이나 결괏값을 저장하는데 사용합니다.
+
+xcom의 데이터는 xcom 테이블에 저장됩니다.
+
+xcom_push로 xcom에 저장할 수 있습니다.
+
+[source,python]
+----
+get_current_context().get('ti').xcom_push(key="model_id", value="test_model_id")
+----
+
+xcom_pull로 xcom에서 데이터를 꺼내 옵니다.
+
+[source,python]
+----
+model_id = get_current_context().get('ti').xcom_pull(task_ids="get_movie", key="model_id")
+----
+
+=== XCom 자동 게시 기능이 있는 Operator
+BashOperator에는 xcom_push 옵션이 있으며, true로 설정하면 bash 명령의 stdout 마지막 행을 XCom에 저장합니다.
+
+PythonOperator에는 return 값을 XCom에 저장합니다.
+
+[source,python]
+----
+def _train_model(**context):
+  model_id = str(uuid.uuid4())
+  return model_id
+----
+key는 자동으로 "return_value"로 지정됩니다. return 값이 value 컬럼에 저장됩니다.
+
+=== 템플릿을 통한 XCom 값 참조
+템플릿을 통해 XCom 값을 참조할 수 있습니다.
+
+[source,python]
+----
+def _deploy_model(templates_dict, **context):
+  model_id = templates_dict["model_id"]
+
+  deploy_model=PythonOperator(
+    task_id="deploy_model",
+    python_callable=_deploy_mode,
+    templates_dict={
+      "model_id": "{{task_instance.xcom_pull(task_ids='train_model', key='model_id')}}"
+  },
+)
+----
+
+=== 크기 제한
+XCom 값의 크기가 제한되는데 DB마다 다릅니다.
+
+* SQLite - BLOB 유형으로 저장되며 제한은 2GB
+* PostgreSQL - BYTEA 유형으로 저장되며 제한은 1GB
+* MySQL - BLOG 유형으로 저장되며 제한은 64KB
+
+
+=== Taskflow API - @task 데커레이터
+xcom_push, xcom_pull 없이 return 하고 인자로 받을 수 있음
+
+[source,python]
+----
+...
+from airflow.decorators import task
+...
+
+with DAG(...) as dag:
+  ...
+  @task
+  def train_model():
+    model_id=str(uuid.uuid4())
+    return model_id
+----
+
+[source,python]
+----
+@task
+def deploy_model(model_id: str):
+  print(f"Deploying model {model_id}")
+----
+
+
+== 커스텀 XCom 백엔드
+Azure Blob, Amazon S3, Google GCS 같은 크라우드 서비스를 위한 커스텀 백엔드 구현
