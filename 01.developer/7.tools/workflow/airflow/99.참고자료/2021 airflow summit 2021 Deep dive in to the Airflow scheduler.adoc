@@ -1,0 +1,214 @@
+:hardbreaks:
+= Deep dive in to the Airflow scheduler
+
+Ash Berlin-Taylor,
+PMC member @ Apache Airflow
+Director of Airflow Engineering @ astronomer.io
+
+https://airflowsummit.org/sessions/2021/deep-dive-in-to-the-airflow-scheduler/
+
+Deep dive in to the Airflow scheduler
+https://www.youtube.com/watch?v=DYC4-xElccE
+
+https://airflowsummit.org/slides/2021/d2-Scheduler.pdf
+
+
+== Scheduler: The load-bearing infinite loop of Apache Airflow
+
+== Responsibilities of the scheduler
+
+Start tasks on schedule
+Check dependencies between tasks
+Manage retries
+Ensure task is actually still running
+Deal with DST transitions
+Be highly-available
+SLAs
+Trigger success/failure callbacks
+Cope with changing DAG structure
+Enforce concurrency limits
+Emit metrics
+Support trigger rules (one success, any failed etc.) including custom ones
+Respect differing start_dates for tasks
+
+
+== Scheduler components
+* SchedulerJob <- State Machine for tasks and dag runs
+* Executor <- Handles actual task execution
+* DagFileProcessor <- Parses DAGs into serialized_dags table
+
+== "The" Scheduler
+airflow.jobs.scheduler_job
+
+== Never load DAG code in to a long-running process
+
+
+== Scheduling decisions are only make upon serialized DAG representation
+
+_do_scheduling() -> processor_agent.heartbeat() -> heartbeat() -> timed_events.run() -> 처음으로
+
+== SchedulerJob._do_scheduling()
+
+[source,python]
+----
+self._create_dagruns_for_dags()
+
+self._start_queued_dagruns()
+
+dag_runs = self._get_next_dagruns_to_examine(State.RUNNING)
+for dag_run in dag_runs:
+  self._schedule_dag_run(dag_run)
+
+num_queued_tis = self._critical_section_execute_task_instances()
+----
+
+1.
+For each DAG* needing a DagRun to be created
+(next_dagrun_create_after < NOW()):
+- Create the dag run from the serialized representation
+- Update next DagRun info columns on DAG table
+(next_dagrun, next_dagrun_create_after)
+
+2.
+For each DAG in 'queued' state:
+- Check number of already running DagRuns against dag.max_active_runs
+- If below limit set state to 'running'
+
+3.
+Get next n"oldest" DagRuns in 'running' state'
+
+4.
+Check DagRun timeouts
+Check if DAG structure (tasks) has changed
+Compute which TaskInstances can now be 'scheduled' (via the currently-misnamed DagRun.update_state method)
+Pass pending callbacks to DagFileProcessorManager
+
+5.
+Check concurrency limits, and send as many tasks as possible to the executor
+
+== Before enqueueing a TaskInstance
+
+Checks that must pass:
+- Enough open pool slots available for task (can be >1 slot per task)
+- Per DAG max_active_tasks limit
+- Per (DAG, Task) task_concurrency limit
+- Executor slots available (parallelism)
+
+Everything else (task state, upstream etc) is checked before TaskInstance is put in to "scheduled" state
+
+== Executor
+
+Send TaskInstance to runner to actually execute
+
+== Executor interface
+
+(Interface/responsibilities between Scheduler and Executor needs clarification)
+
+Tasks report their own status directly back to DB
+
+Executor responsible for watching when tasks don't do this
+
+State kept in memory
+
+
+== DAG parsing
+
+airflow.dag_processing
+Sole place where user DAG code is loaded
+
+Previously split across
+airflow.job.scheduler_job and airflow.utils.dag_processing
+
+== DagFileProcessorManager
+Subprocess of main airflow scheduler command
+Infinite loop.
+Maintains a pool of subprocess that:
+- Parse a DAG file in to serialized_dag table
+- Execute any pending DAG level callbacks
+Periodically checks for new DAG files being added
+
+== DagFileProcessorManager._run_parsing_loop
+
+_collect_results_from_processor -> start_new_processes -> Periodically: send heartbeat -> Periodically: _refresh_dag_dir -> 처음으로
+
+start_new_processes -> Parsing process -> _collect_results_from_processor
+
+Parsing process
+"parse" dag file -> write DAGs to DB tables
+
+
+Callback result from Scheduler -> "parse" dag file
+
+== High Availability
+
+Use the existing metadata DB for synchronisation
+
+Scheduler 1, Scheduler 2에서 동시에
+`SELECT * FROM task_instance LIMIT 2`
+하면
+
+TaskInstance 1,2,3,4 가 있을 때 동시에 1,2 사용
+
+
+FOR UPDATE 를 붙이면 뒤의 실행한 스케쥴러가 기다림
+`SELECT * FROM task_instance LIMIT 2 FOR UPDATE`
+
+SKIP LOCKED 를 붙이면 다음거로 넘어감
+`SELECT * FROM task_instance LIMIT 2 FOR UPDATE SKIP LOCKED`
+
+== SchedulerJob._do_scheduling()
+
+[source,python]
+----
+self._create_dagruns_for_dags()
+
+self._start_queued_dagruns()
+
+dag_runs = self._get_next_dagruns_to_examine(State.RUNNING)
+for dag_run in dag_runs:
+  self._schedule_dag_run(dag_run)
+
+num_queued_tis = self._critical_section_execute_task_instances()
+----
+
+== SchedulerJob._do_scheduling()
+
+[source,python]
+----
+with prohibit_commit(session) as guard:
+  self._create_dagruns_for_dags(guard)
+
+  self._start_queued_dagruns(session)
+  guard.commit()
+  dag_runs = self._get_next_dagruns_to_examine(State.RUNNING, session)
+  for dag_run in dag_runs:
+    self._schedule_dag_run(dag_run)
+  guard.commit()
+  num_queued_tis = self._critical_section_execute_task_instances()
+----
+
+_critical_section_execute_task_instances
+
+`SELECT * FROM pool FOR UPDATE NOWAIT;`
+
+If we can't lock any rows, abort rather than wait
+
+== Adopting tasks
+Periodically detect dead schedulers
+"Adopt" tasks from dead executors
+Means a scheduler/executor can go away (or partition) at any point
+Active-active model.
+
+== Other responsibilities
+Detecting dead schedulers
+"Adopting" tasks from dead schedulers
+Detecting zombie tasks
+Managing SLAs
+
+== 참고
+SLA stands for service-level agreement.
+
+How To Set SLA in Apache Airflow
+https://senthilnayagan.com/orchestration/2022/airflow-setting-sla
+
+
