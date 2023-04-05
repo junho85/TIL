@@ -1,0 +1,17 @@
+:hardbreaks:
+= MySQL 현재 설정 확인 방법
+
+== 현재 Database
+----
+SELECT DATABASE();
+----
+
+=== 참고
+https://codippa.com/how-to-know-the-current-selected-database-in-mysql/
+
+
+== 현재 Hostname
+----
+SELECT @@hostname;
+----
+
