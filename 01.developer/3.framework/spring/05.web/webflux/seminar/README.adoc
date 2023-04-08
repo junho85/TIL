@@ -10,3 +10,19 @@ https://forward.nhn.com/session/26
 
 정리: https://junho85.pe.kr/1777
 
+=== log() 제거
+blocking I/O를 일으킴. 성능저하
+
+log() 제거 및 RollingFilAppender로 변경
+
+
+=== map()과 flatMap()의 차이점
+
+* map() - Transform the items emitted by this Mono by applying a synchronous function to it.
+* flatMap() - Transform the items emitted by this Mono asynchronously, returning the value emitted by another Mono (possibly changing the value type).
+
+너무 많은 map() 메서드 조합
+* map() 연산마다 객체를 생성한다.
+
+map을 많이 조합하면 gc문제가 생김
+
