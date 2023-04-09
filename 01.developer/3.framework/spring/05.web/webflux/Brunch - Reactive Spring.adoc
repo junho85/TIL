@@ -59,11 +59,12 @@ https://www.reactivemanifesto.org/ko[리액티브 선언문]
 필자는 작년에 "스프링 리캡 데이"라는 세미나에서 스프링 웹 플럭스에 대해서 강연을 들었음.
 
 
-
-* [Project Reactor 3. 리액티브 스트림 2019.02.06](https://brunch.co.kr/@springboot/153)
-
 == 2. Async VS Non-Blocking
 https://brunch.co.kr/@springboot/158[Reactor 2.Async & Non-Blocking]
+
+----
+시간이 지나서 다시 읽어보니 적절한 예제가 아닌 것 같다고 함.
+----
 
 바리스타가 커피를 만드는 과정으로 설명
 
@@ -75,7 +76,44 @@ https://brunch.co.kr/@springboot/158[Reactor 2.Async & Non-Blocking]
 == 3. Reactive Streams
 https://brunch.co.kr/@springboot/153[Project Reactor 3. 리액티브 스트림]
 
-2013년 Netflix, Pivotal, Typesafe의 개발자들이 발의해서 처음 만들어졌음. 리액티브 프로그래밍을 위한 명세(specification)이다.
+2013년 Netflix, Pivotal, Typesafe의 개발자들이 발의해서 처음 만들어졌음. 리액티브 프로그래밍을 위한 명세(specification)이다. 비즈니스 시스템 개발자는 "Reactive Streams"에 정의 된 인터페이스를 구현하면 "리액티브 프로그래밍"을 구현할 수 있다.
+
+이 글에서는 Reactive Streams를 직접 구현하여 구현체를 만든다.
+
+=== 3.1 Reactive Streams Interface
+"Reactive Streams" 인터페이스
+* Processor
+* Publisher
+* Subscriber
+* Subscription
+
+https://mvnrepository.com/artifact/org.reactivestreams/reactive-streams
+
+글에서는 1.0.2가 최신이었는데 2023.04.08 기준 1.0.4가 최신이다. 1.0.4는 2022.05.26에 배포되었다.
+
+https://github.com/reactive-streams/reactive-streams-jvm/tree/master/api/src/main/java/org/reactivestreams
+----
+public interface Processor<T, R> extends Subscriber<T>, Publisher<R> {}
+
+public interface Publisher<T> {
+    public void subscribe(Subscriber<? super T> s);
+}
+
+public interface Subscriber<T> {
+    public void onSubscribe(Subscription s);
+    public void onNext(T t);
+    public void onError(Throwable t);
+    public void onComplete();
+}
+
+public interface Subscription {
+    public void request(long n);
+    public void cancel();
+}
+----
+
+...
+
 
 === Publisher
 * subscribe
