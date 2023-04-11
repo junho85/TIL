@@ -1,0 +1,8 @@
+:hardbreaks:
+= Slack reply
+
+chat.postMessage 를 사용해서 메시지를 전송할 때 "thread_ts" 파라미터를 사용하면 슬랙에서는 thread로 생성된다.
+
+== References
+슬랙Slack - API로 thread 생성 및 reploy 달기, chat.postMessage 2021.03.11
+https://blog.naver.com/jogilsang/222272481593
