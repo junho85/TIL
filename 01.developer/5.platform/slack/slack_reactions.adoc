@@ -1,0 +1,15 @@
+:hardbreaks:
+= Slack Reactions
+
+API: https://api.slack.com/methods/reactions.add
+
+필요한 권한
+* reactions:write
+
+== Arguments
+* `token` (string) - Authentication token. Requires scope: `reactions:write`
+* `channel` (string) - Channel where the message to add reaction to was posted.
+* `name` (string) - Reaction (emoji) name.
+* `timestamp` (string) - Timestamp of the message to add reaction to.
+
+== References
