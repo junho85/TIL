@@ -1,0 +1,28 @@
+:hardbreaks:
+= Slack Mentions
+
+== Mentioning Users
+https://api.slack.com/reference/surfaces/formatting#mentioning-users
+
+----
+Hey <@U024BE7LH>, thanks for submitting your report.
+----
+
+== app_mention
+https://api.slack.com/events/app_mention
+
+app이나 bot을 멘션할 때 받는 이벤트
+
+----
+{
+    "type": "app_mention",
+    "user": "U061F7AUR",
+    "text": "<@U0LAN0Z89> is it everything a river should be?",
+    "ts": "1515449522.000016",
+    "channel": "C0LAN2Q65",
+    "event_ts": "1515449522000016"
+}
+----
+
+== Reference
+https://blog.gilbok.com/how-to-mention-slack-webhook/[Slack Webhook에서 mention 하기 2021.05.17]

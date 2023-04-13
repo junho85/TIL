@@ -1,9 +1,0 @@
-:hardbreaks:
-= Slack Mentions
-
-== Mentioning Users
-https://api.slack.com/reference/surfaces/formatting#mentioning-users
-
-----
-Hey <@U024BE7LH>, thanks for submitting your report.
-----
