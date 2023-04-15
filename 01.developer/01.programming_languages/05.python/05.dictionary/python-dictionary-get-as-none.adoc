@@ -1,0 +1,38 @@
+:hardbreaks:
+
+= Python dictionary 에서 가져 오려고 하는 값이 없을 때 None을 받는 방법
+
+아래와 같은 구조를 가진 dictionary에서 name 값을 가져오려고 할 때, name이 없을 때 None을 받는 방법을 알아보자.
+----
+{'service': {'name': 'my_service'}}
+----
+
+== get() 함수 사용하기
+get함수를 이용하면 key가 없을 때 None을 반환한다.
+
+----
+name = my_dict.get('service').get('name')
+----
+
+== 만약 service 가 없다면? default 값으로 빈 dictionary를 넘겨주기
+
+그런데 만약 service가 없는 경우는 어떻게 할까?
+
+`my_dict.get('service')` 의 결과는 None이다. 그러면 `None.get('name')` 을 하면 에러가 발생한다.
+
+이럴때 사용할 수 있는 방법이 `default` 값을 넘겨주는 것이다. `default` 값은 key가 없을 때 반환되는 값이다. `default` 값이 없으면 `None`을 반환한다. `default` 값을 `{}`로 넘겨주면 `None` 대신 빈 dictionary를 반환한다. 그러면 `None.get('name')` 에러가 발생하지 않는다.
+
+----
+name = my_dict.get('service', {}).get('name')
+----
+
+== 만약 service 가 None 이라면? default 값으로 빈 dictionary를 넘겨주기
+
+그런데 만약 service가 None인 경우는 어떻게 할까?
+
+----
+{'service': None}
+----
+
+`my_dict.get('service')` 의 결과는 None이다. 그러면 `None.get('name')` 을 하면 에러가 발생한다. 이럴 때는 `my_dict.get('service') or {}` 를 사용하면 된다. `my_dict.get('service')` 가 None이면 `or` 뒤의 `{}`를 반환하고, `my_dict.get('service')` 가 None이 아니면 `my_dict.get('service')` 를 반환한다.
+
