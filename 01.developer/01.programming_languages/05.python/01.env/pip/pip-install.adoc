@@ -1,0 +1,29 @@
+:hardbreaks:
+= pip 로 python 모듈 설치
+
+== shell - pip install {모듈이름}
+
+----
+$ pip install {모듈이름}
+----
+
+e.g.
+
+----
+$ pip install numpy
+----
+
+== python 스크립트를 이용하는 방법
+
+shell 환경에서 pip install 을 이용하는 것이 좋지만 shell 환경을 이용하기 어려운 경우 python 스크립트를 이용하여 모듈을 설치할 수 있습니다.
+
+[source,python]
+----
+import subprocess
+
+# 설치할 모듈 이름
+module_name = "numpy"
+
+# pip 명령을 실행하여 모듈 설치
+subprocess.call(["pip", "install", module_name])
+----
