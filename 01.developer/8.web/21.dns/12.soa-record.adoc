@@ -1,0 +1,118 @@
+:hardbreaks:
+= SOA record (start of authority record)
+
+zone에 대한 필수적인 정보를 가지고 있는 레코드 입니다.
+
+SOA (Start of Authority) 레코드는 DNS (Domain Name System)에서 중요한 레코드 유형 중 하나입니다. SOA 레코드는 특정 존 (zone)의 권한을 관리하는 primary DNS 서버에 대한 정보를 제공합니다.
+
+SOA 레코드는 존의 루트에 위치하며, 해당 존에 대한 정보를 포함하는 모든 DNS 레코드의 권한과 먼저 확인해야 하는 primary DNS 서버의 이름과 이메일 주소를 포함합니다. SOA 레코드는 또한 존의 진행 상황과 데이터베이스의 변경 내용을 확인하는 데 사용되는 일련번호 (serial number)도 포함합니다.
+
+SOA 레코드는 다른 DNS 레코드의 권한을 확인하는 데 중요한 역할을 합니다. 존의 primary DNS 서버가 변경되거나 SOA 레코드의 일련번호가 변경되면, 이는 존의 변경 사항이 있음을 나타냅니다. 이를 통해 존에 대한 변경 사항이 제대로 전파되고, DNS 쿼리에 대한 응답이 올바르게 반환되도록 보장할 수 있습니다.
+
+== 예제로 보는 SOA 레코드
+
+[source,shell]
+----
+$ dig soa junho85.pe.kr +short
+ns.gabia.co.kr. hosting.gabia.com. 2021011901 1800 600 1209600 86400
+
+$ dig soa junho85.pe.kr +multiline
+
+; <<>> DiG 9.10.6 <<>> soa junho85.pe.kr +multiline
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 56939
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;junho85.pe.kr.		IN SOA
+
+;; ANSWER SECTION:
+junho85.pe.kr.		600 IN SOA ns.gabia.co.kr. hosting.gabia.com. (
+				2021011901 ; serial
+				1800       ; refresh (30 minutes)
+				600        ; retry (10 minutes)
+				1209600    ; expire (2 weeks)
+				86400      ; minimum (1 day)
+				)
+
+;; Query time: 19 msec
+;; SERVER: 192.168.1.1#53(192.168.1.1)
+;; WHEN: Mon Apr 24 23:25:51 KST 2023
+;; MSG SIZE  rcvd: 107
+----
+
+----
+$ nslookup
+> set type=soa
+> junho85.pe.kr
+Server:		192.168.1.1
+Address:	192.168.1.1#53
+
+Non-authoritative answer:
+junho85.pe.kr
+	origin = ns.gabia.co.kr
+	mail addr = hosting.gabia.com
+	serial = 2021011901
+	refresh = 1800
+	retry = 600
+	expire = 1209600
+	minimum = 86400
+
+Authoritative answers can be found from:
+----
+
+=== MNAME: 존의 primary DNS 서버의 이름
+----
+ns.gabia.co.kr.
+----
+
+
+----
+$ dig ns junho85.pe.kr +short
+ns.gabia.co.kr.
+ns1.gabia.co.kr.
+ns.gabia.net.
+----
+
+
+=== RNAME: 존의 primary DNS 서버의 이메일 주소
+----
+hosting.gabia.com.
+----
+첫번째 .을 @로 변경하면 이메일 주소가 됩니다. hosting@gabia.com
+
+primary DNS 서버의 관리자의 이메일 주소. 이메일 주소는 DNS 관리자가 존의 변경 사항을 추적하고, 다른 DNS 관리자와 연락할 때 사용됨
+
+
+=== Serial number: 존의 데이터베이스의 변경 내용을 확인하는 일련번호
+
+변경사항이 있을 때 마다 일련 번호가 업데이트 됨.
+존의 데이터베이스의 변경 내용을 추적하는 데 사용됨.
+
+=== Refresh: 존의 데이터베이스를 다시 읽는 주기
+SOA 변경 사항을 확인하기 전에 서버가 기다려야 하는 시간
+primary DNS 서버가 secondary DNS 서버에서 데이터를 갱신하는 주기를 나타냄. 단위는 초
+
+
+=== Retry: 존의 데이터베이스를 다시 읽는 재시도 주기
+secondary DNS 서버가 primary DNS 서버와 통신할 수 없을 때, 재시도하는 주기를 나타냄. 단위는 초
+
+
+=== Expire: 존의 데이터베이스가 만료되는 시간
+secondary DNS 서버가 primary DNS 서버와 통신할 수 없을 때, secondary DNS 서버에서 데이터를 보유하는 기간을 나타냄. 단위는 초
+
+=== Minimum TTL: 존의 데이터베이스의 TTL
+최소 TTL. DNS 쿼리에 대한 최소 TTL(Time to Live)값을 나타냄. 단위는 초
+이 값은 secondary DNS 서버가 데이터를 캐시하는 시간을 결정하는 데 사용됨.
+
+
+== References
+
+http://www.terms.co.kr/SOArecord.htm[SOA record (start of authority record) ; SOA 레코드]
+
+https://www.ietf.org/rfc/rfc1035.txt[RFC 1035 - DOMAIN NAMES - IMPLEMENTATION AND SPECIFICATION]
+
+https://www.youtube.com/watch?v=qml8J5K8nxI[What si an SOA record? 2022.05.05]
