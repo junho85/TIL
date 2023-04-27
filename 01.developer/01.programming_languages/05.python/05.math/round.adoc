@@ -1,0 +1,58 @@
+:hardbreaks:
+
+= python 반올림 round
+
+python 으로 반올림 하는 방법은 round 함수를 사용하면 된다.
+
+== 반올림 기본
+round 함수는 기본적으로 소수점 첫째자리에서 반올림을 한다.
+
+[source,python]
+----
+print(round(5.1))  # 5
+print(round(5.5))  # 6
+----
+
+기본적으로 int 형으로 반환하게 된다.
+[source,python]
+----
+print(type(round(5.5)))  # <class 'int'>
+----
+
+== 반올림 자리수 지정
+
+round 함수는 소수점 둘째자리에서 반올림을 하려면 round 함수에 두번째 인자로 반올림하고자 하는 자리수를 넣어주면 된다.
+
+[source,python]
+----
+print(round(5.123, 2))  # 5.12
+print(round(5.125, 2))  # 5.12 ???
+print(round(5.126, 2))  # 5.13
+----
+
+그런데 뭔가 이상하다. 5.125가 5.12로 반올림 되었다. 이유는 round 함수는 기본적으로 오사오입 방식을 사용하기 때문이다.
+
+[source,python]
+----
+# 사사오입이 아닌 오사오입
+print(round(0.5))   # 0 ? (1이 아니다)
+print(round(1.5))   # 2
+print(round(2.5))   # 2 ? (3이 아니다)
+print(round(3.5))   # 4
+print(round(4.5))   # 4 ? (5가 아니다)
+print(round(5.5))   # 6
+print(round(6.5))   # 6 ? (7이 아니다)
+print(round(7.5))   # 8
+print(round(8.5))   # 8 ? (9가 아니다)
+print(round(9.5))   # 10
+print(round(10.5))  # 10 ? (11이 아니다)
+----
+
+
+
+
+== References
+
+https://hleecaster.com/python-round/[파이썬에서 사사오입으로 반올림 처리하기 (엑셀 반올림 스타일) 2022.05.30]
+
+https://blog.naver.com/herbdoc95/221574077380[파이썬 round() 반올림 사용 시 주의점 2019.06.30]
