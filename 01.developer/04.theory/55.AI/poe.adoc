@@ -1,0 +1,66 @@
+:hardbreaks:
+= poe
+
+https://poe.com/
+
+다양한 챗봇을 한곳에서 사용할 수 있음.
+
+웹과 앱을 지원함.
+
+2023.02.04 Poe 오픈
+https://quorablog.quora.com/Poe-1
+
+
+== Sage
+
+OpenAI의 gpt-3.5-turbo 엔진 사용
+
+poe 설명
+----
+Good in languages other than English, and also in programming-related tasks. Powered by gpt-3.5-turbo.
+----
+
+== GPT-4
+
+poe 설명
+----
+OpenAI's most powerful model. Stronger than ChatGPT in quantitative questions (math and physics), creative writing, and many other challenging tasks. Availability is currently limited.
+----
+
+
+== Claude-instant
+
+[https://www.anthropic.com/]Anthropic
+
+poe 설명
+----
+Good at creative writing and tends to give longer and more in-depth answers. Compared to the previously available Claude, Claude-instant is faster and significantly better at non-English languages.
+----
+
+== ChatGPT
+OpenAI의 gpt-3.5-turbo 엔진 사용
+
+poe 설명
+----
+Famous worldwide. Powered by gpt-3.5-turbo.
+----
+
+== Dragonfly
+
+OpenAI의 text-davinci-003 엔진 사용
+
+poe 설명
+----
+Gives shorter responses, and excels at following instructions when given examples in the input. Powered by text-davinci-003.
+----
+
+
+== NeevaAI
+
+----
+Ideal for search-like queries.
+----
+
+== References
+
+https://techcrunch.com/2023/02/06/quora-opens-its-new-ai-chatbot-app-poe-to-the-general-public/?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAG67eS1k0CHf_FYb3Vx6Yh3YucQL8pWGLMsqBzTF09IspgpMdHPGhLV_l5GPJk2_A3tZtZBqap6KzDBSNL4StbAaVw0HI1TsFgRagA649CH01p4ZzcxzEfvB1apIS3fgXnhjcf2jR2OHEHezkhfm6O2c3Gb58zcxs03-4wWyGMdN[Quora opens its new AI chatbot app Poe to the general public 2023.02.07]
