@@ -1,0 +1,58 @@
+:hardbreaks:
+= Timezone 이슈
+
+지난번에도 timezone이슈가 있어서 대충 mongodb timezone을 설정해주었는데, 이번에도 timezone이슈가 발생했다.
+
+이번에는 조금 더 자세히 확인해 보자.
+
+== 지난번 상황
+기존에 별다른 timezone 설정이 없었던 상황이고
+
+https://pymongo.readthedocs.io/en/stable/examples/datetimes.html
+
+내용을 참고 하여 처리했었다.
+
+pymongo에 의해 리턴된 datetime.datetime 은 MongoDB에 저장된 것 처럼 UTC이다.
+CodeCOptions에서 tz_aware option을 설정하면 datetime.datetime 객체는 timezone설정함으로써 객체들이 timezone을 알게 되고 UTC 시간대를 반영하는 tzinfo 속성을 갖게 된다.
+
+
+[source,python]
+----
+    def get_collection(self):
+        db = self.get_database()
+
+        return db.get_collection(self.mongo_collection_slack_message).with_options(
+            codec_options=CodecOptions(
+                tz_aware=True,
+                tzinfo=pytz.timezone('Asia/Seoul')
+            )
+        )
+----
+
+지난번에 이렇게 해서 해결 되었던 거 같은데 이번엔 왜 안되는 걸까?
+
+해결 되었다고 생각했지만 해결이 안되었던 걸까?
+
+아니면 다른 요인이 있는 걸까?
+
+== 저장되고 있는 시간 정보에 대한 확인
+
+slack 메시지에서 가져온 ts정보가 있고 ts_for_db를 저장하고 있음.
+
+ts: slack 메시지에서 가져온 ts정보. UTC 시간대로 저장되어 있음.
+ts_for_db: ts를 datetime.datetime 객체로 변환한 것. UTC 시간대로 저장되어 있음.
+----
+message["ts_for_db"] = datetime.fromtimestamp(float(message["ts"]))
+----
+
+2023.04.30 21:02 GMT+9
+https://github.com/junho85/TIL/commit/1d66ee539dd0a826a756c442bab5d8cef71b6849
+
+ts 1682856135.823809 (2023년 April 30일 Sunday PM 12:02:15.823)
+ts_for_db 2023-04-30T12:02:15.823Z
+
+ts나 ts_for_db 모두 UTC로 저장되어 있다.
+
+저장된 데이터는 문제가 없는 것으로 보인다. 그렇다면 어플리케이션에서 timezone을 잘 설정해 주면 될 것 같다.
+
+TODO...
