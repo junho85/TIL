@@ -1,0 +1,69 @@
+:hardbreaks:
+= 2023.05.02 1
+
+ChatGPT
+
+2021년 까지 정보만 안다. closed world라고 표현.
+
+Lack of Knowledge ->
+Knowledge Bottleneck ->
+Hallucination!
+Factual Error!
+Recency Problem!
+
+Think of ChatGPT as a blurry jpeg of all the text on the Web. It retains much of the information on the Web, in the same way that a jpeg retains much of the information of a higher-resolution image, but, if you're looking ...
+
+- Knowledge Base
+-> Ability of LLM
+
+- Knowledge Base
+-> Natural Language Computing Engine
+
+- Training Data as Knowledge
+-> Training Data as ingredients of LLM computing enging
+
+Knowledge Injection
+- In-Context Learning: few-shot demonstration in context
+- Knowledge Injection: information in context
+
+현장에서 바로 학습하는 것. 시험장소에서 책을 보고 공부하는거, 우연히 보이는 컨닝페이퍼 등
+
+Retrieval-Augmented Generation(RAG)
+- Azure Cognitive Search + ChatGPT
+- external knowledge injection
+
+Knowledge-Base Search + LLM
+- Keyword Search(BM25) + Vector Search
+- Extractive QA: LittleBird
+- Generative QA: FiD-BART
+
+OPL Stack
+- OpenAI API
+- Pinecone API
+- LangChain - 인터페이스 도구
+
+...
+
+Text2SQL
+- utterance
+-> DB selection
+-> Table selection
+-> knowledge matching
+-> prompt building
+-> generate SQL
+
+...
+
+ChatGPT plugin
+- /.well-known/ai-plugin.json -> your site
+- OpenAI specification ...
+
+JARIS (HuggingGPT)
+- similar to ChatGPT Plugin
+- broad extensions using Huggingface Hub
+
+
+TaskMatrix.AI
+https://github.com/microsoft/TaskMatrix/tree/main/TaskMatrix.AI
+
+Task Planning Agent
