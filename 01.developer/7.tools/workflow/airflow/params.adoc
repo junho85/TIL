@@ -1,0 +1,25 @@
+:hardbreaks:
+= Airflow - Params
+
+[source,python]
+----
+with DAG(
+        dag_id='some_dag_id',
+        ...
+        params={
+            "limit": 1,
+            "open_limit": 1,
+        }
+) as dag:
+    ...
+----
+
+그냥 "Trigger DAG"하지 말고 "Trigger DAG w/ config"를 하면 params를 설정할 수 있는 화면이 나타남. dag_run_id를 지정해 주면 run_id로 구분하기 좋음. dag_run_id를 지정하지 않으면 airflow가 자동으로 생성해 주는데 날짜/시간 정보가 적당히 들어가게 됨.
+
+[source,shell]
+----
+curl -u username:password -X POST "http://localhost:8080/api/v1/dags/some_dag/dagRuns" -H "Content-Type: application/json" -d '{"conf": {"limit":100, "open_limit":100}, "dag_run_id": "my_dag_run_id"}'
+----
+
+== References
+https://stackoverflow.com/questions/65829103/how-to-set-a-default-dag-trigger-configuration-json
