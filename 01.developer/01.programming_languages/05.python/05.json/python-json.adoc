@@ -1,13 +1,34 @@
 :hardbreaks:
 = Python - JSON
 
-== dictionary to JSON string
+json 모듈을 사용하면 JSON 데이터를 파이썬 객체로 변환하거나 파이썬 객체를 JSON 데이터로 변환할 수 있다.
+
+우선 json 모듈을 import 한다.
 
 [source,python]
 ----
 import json
+----
 
+== JSON to Python
+
+== array to JSON string
+
+[source,python]
+----
+print(json.dumps(['apple', 'banana', 'orange']))
+
+# output
+# ["apple", "banana", "orange"]
+----
+
+== dictionary to JSON string
+
+[source,python]
+----
 print(json.dumps({'name': 'apple', 'address': 'usa'}))
+
+# output
 # {"name": "apple", "address": "usa"}
 ----
 
@@ -17,6 +38,8 @@ print(json.dumps({'name': 'apple', 'address': 'usa'}))
 ----
 # pretty printing - indent
 print(json.dumps({'name': 'apple', 'address': 'usa'}, indent=2))
+
+# output
 # {
 #   "name": "apple",
 #   "address": "usa"
@@ -29,6 +52,8 @@ print(json.dumps({'name': 'apple', 'address': 'usa'}, indent=2))
 ----
 # sort_keys
 print(json.dumps({'name': 'apple', 'address': 'usa'}, sort_keys=True, indent=2))
+
+# output
 # {
 #   "address": "usa",
 #   "name": "apple"
@@ -40,8 +65,9 @@ print(json.dumps({'name': 'apple', 'address': 'usa'}, sort_keys=True, indent=2))
 [source,python]
 ----
 # separators
-# separators
 print(json.dumps({'name': 'apple', 'address': 'usa'}, indent=2, separators=('', '=')))
+
+# output
 # {
 #   "name"="apple"
 #   "address"="usa"
@@ -54,6 +80,8 @@ print(json.dumps({'name': 'apple', 'address': 'usa'}, indent=2, separators=('', 
 ----
 # ensure_ascii
 print(json.dumps({'이름': 'apple', 'address': 'usa'}, indent=2, ensure_ascii=True))
+
+# output
 # {
 #   "\uc774\ub984": "apple",
 #   "address": "usa"
@@ -66,6 +94,8 @@ print(json.dumps({'이름': 'apple', 'address': 'usa'}, indent=2, ensure_ascii=T
 ----
 # allow_nan
 print(json.dumps({'name': 'apple', 'NaN': float('nan'), 'infinity': float('inf')}, indent=2, allow_nan=True))
+
+# output
 # {
 #   "name": "apple",
 #   "NaN": NaN,
@@ -73,6 +103,8 @@ print(json.dumps({'name': 'apple', 'NaN': float('nan'), 'infinity': float('inf')
 # }
 
 # print(json.dumps({'name': 'apple', 'NaN': float('nan'), 'infinity': float('inf')}, indent=2, allow_nan=False))
+
+# output
 # ValueError: Out of range float values are not JSON compliant: nan
 ----
 
