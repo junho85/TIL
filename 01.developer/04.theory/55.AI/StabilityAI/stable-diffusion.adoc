@@ -17,9 +17,15 @@ Stable Diffusion 2.1 Demo를 사용해 볼 수 있다. (2023.02.22 기준)
 
 
 == stable diffusion webui
-코딩할 필요 없이
 
+https://github.com/AUTOMATIC1111/stable-diffusion-webui
+
+코딩할 필요 없이 내 컴퓨터에서 web ui 방식으로 직접 이미지를 생성해 볼 수 있는 도구입니다.
+
+[source,shell]
+----
 git clone git@github.com:AUTOMATIC1111/stable-diffusion-webui.git
+----
 
 기본적으로 윈도우컴퓨터에서 설치하는 방법이 설명되어 있음.
 
