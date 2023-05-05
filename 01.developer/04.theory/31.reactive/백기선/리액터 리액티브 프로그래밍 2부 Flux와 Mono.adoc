@@ -1,3 +1,4 @@
+:hardbreaks:
 = [리액터] 리액티브 프로그래밍 2부 Flux와 Mono
 
 https://www.youtube.com/watch?v=v0BnqWLxYjQ[[리액터] 리액티브 프로그래밍 2부 Flux와 Mono]
