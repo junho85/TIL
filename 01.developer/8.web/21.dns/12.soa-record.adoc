@@ -65,6 +65,13 @@ Authoritative answers can be found from:
 ----
 
 === MNAME: 존의 primary DNS 서버의 이름
+
+RFC 설명
+----
+The <domain-name> of the name server that was the original or primary source of data for this zone.
+----
+
+
 ----
 ns.gabia.co.kr.
 ----
