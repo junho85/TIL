@@ -35,3 +35,51 @@ How ChatGPT Suddenly Became Google's Code Red. Prompting Return Of Page And Brin
 
 2019년도에 경영에서 뒤로 물러났던 창업자들 (래리 페이지, 세르게이 브린) 까지 현업에 복귀하여 대응책 마련을 위한 일련의 비상 대책 회의를 가짐
 
+
+
+== Tokenizer
+https://platform.openai.com/tokenizer
+
+
+== Maximum Token
+
+What is the difference between the GPT-4 models?
+https://help.openai.com/en/articles/7127966-what-is-the-difference-between-the-gpt-4-models
+
+8,000 tokens 인데 확장해서 32,000 token 까지도
+
+How much does GPT-4 cost?
+https://help.openai.com/en/articles/7127956-how-much-does-gpt-4-cost
+
+We are excited to announce GPT-4 has a new pricing model, in which we have reduced the price of the prompt tokens.
+
+For our models with 8k context lengths (e.g. gpt-4 and gpt-4-0314), the price is:
+$0.03/1k prompt tokens
+$0.06/1k sampled tokens
+
+For our models with 32k context lengths (e.g. gpt-4-32k and gpt-4-32k-0314), the price is:
+$0.06/1k prompt tokens
+$0.12/1k sampled tokens
+
+GPT-4 API Pricing
+https://chatgpt4.ai/gpt-4-api-pricing/
+GPT-4 with an 8K context window (about 13 pages of text) will cost $0.03 per 1K prompt tokens, and $0.06 per 1K completion tokens.
+
+GPT-4-32k with a 32K context window (about 52 pages of text) will cost $0.06 per 1K prompt tokens, and $0.12 per 1K completion tokens.
+
+ChatGPT Pricing
+https://chatgpt4.ai/chatgpt-pricing-2023/
+
+gpt-3.5-turbo	$0.002 / 1,000 tokens
+
+
+
+“This model maximum context length is 4096 tokens. However, your messages resulted in 4098 tokens.” CHAT-GPT API 2023.03.05
+https://community.openai.com/t/this-model-maximum-context-length-is-4096-tokens-however-your-messages-resulted-in-4098-tokens-chat-gpt-api/84259
+
+Clarification for max_tokens
+https://community.openai.com/t/clarification-for-max-tokens/19576
+
+
+Controlling the length of Completions
+https://help.openai.com/en/articles/5072518-controlling-the-length-of-completions

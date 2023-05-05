@@ -5,6 +5,10 @@ https://openai.com/dall-e-2/
 
 유료로 API 통해서 사용할 수 있음
 
+== Web
+https://labs.openai.com/
+
+
 
 == 참고
 

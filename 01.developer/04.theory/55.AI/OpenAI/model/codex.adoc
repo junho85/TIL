@@ -1,0 +1,22 @@
+:hardbreaks:
+= OpenAI Model - Codex
+
+OpenAI Codex는 오픈AI가 개발한 인공지능 모델중 하나. 자연어의 구문을 분석하고 코드를 생성.
+
+연구
+
+== History
+
+* 2023년 4월 결정을 되돌림
+https://twitter.com/OfficialLoganK/status/1638336152800206858
+
+* 2023년 3월 Codex 모델 종료. GPT3.5 추천
+https://the-decoder.com/openai-kills-code-model-codex/
+
+
+
+== Reference
+https://learn.microsoft.com/ko-kr/azure/cognitive-services/openai/how-to/work-with-code[Codex 모델 및 Azure OpenAI Service]
+
+https://ko.wikipedia.org/wiki/%EC%98%A4%ED%94%88AI_%EC%BD%94%EB%8D%B1%EC%8A%A4
+
