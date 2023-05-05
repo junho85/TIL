@@ -1,0 +1,16 @@
+:hardbreaks:
+= Svelte
+
+== Input
+https://svelte.dev/examples/text-inputs
+
+
+== Vite
+- 발음: 비잍 (프랑스어)
+
+
+빠른 개발 속도
+- Webpack Dev Server VS Vite Dev
+빠른 빌드
+적은 Bundle Size
+간편한 설정
