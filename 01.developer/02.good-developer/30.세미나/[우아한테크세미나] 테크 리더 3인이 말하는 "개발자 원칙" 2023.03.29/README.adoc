@@ -1,0 +1,10 @@
+:hardbreaks:
+= 세미나
+
+
+[우아한테크세미나] 테크 리더 3인이 말하는 "개발자 원칙" 2023.03.29
+https://www.youtube.com/watch?v=DJCmvzhFVOI
+
+
+
+
