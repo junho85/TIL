@@ -1,31 +1,39 @@
-# openssl 설치
+:hardbreaks:
+= openssl 설치
 
-## source code build & install
-```
+== source code build & install
+
+[source,shell]
+----
 wget https://www.openssl.org/source/openssl-1.1.1d.tar.gz
 tar xvfz openssl-1.1.1d.tar.gz
 cd openssl-1.1.1d
 ./config
 make
 sudo make install
-```
+----
 기본 /usr/local/ssl 에 설치된다.
 
 libssl 못찾는다고 하면 libssl 설치된 경로를 ldconfig 에 추가한다. /usr/local/lib 나 /usr/local/lib64 일 것이다.
-```
-sudo vi /etc/ld.so.conf.d/99local.conf
-```
 
-```
+[source,shell]
+----
+sudo vi /etc/ld.so.conf.d/99local.conf
+----
+
+[source,shell]
+----
 /usr/local/lib
 /usr/local/lib64
-```
+----
 
-```
+[source,shell]
+----
 sudo /sbin/ldconfig
-```
+----
 
 
-## build
-* [OpenSSL 컴파일(compile) & 빌드(build)](https://www.lesstif.com/pages/viewpage.action?pageId=6291508)
+== build
+* https://www.lesstif.com/pages/viewpage.action?pageId=6291508[OpenSSL 컴파일(compile) & 빌드(build)]
+
 
