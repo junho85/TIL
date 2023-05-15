@@ -1,0 +1,13 @@
+:hardbreaks:
+= scheduler
+
+== (임시사용) 배치 - crontab
+
+[source,shell]
+----
+0 * * * * /usr/bin/curl -s -o /dev/null https://garden8.junho85.pe.kr/attendance/collect
+----
+
+== scheduler 적용
+
+적용하지 못함. 다음에 한다면 airflow 같은것을 도입해 보자

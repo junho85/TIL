@@ -1,0 +1,58 @@
+:hardbreaks:
+= hosting - etc
+
+
+== TODO
+
+How to connect to the Docker host from inside a Docker container? 2021.09.04
+https://medium.com/@TimvanBaarsen/how-to-connect-to-the-docker-host-from-inside-a-docker-container-112b4c71bc66
+
+
+
+
+[source,shell]
+----
+docker compose exec web bash
+apt update && apt install -y netcat
+nc -vz host.docker.internal 80
+nc -vz host.docker.internal 443
+nc -vz host.docker.internal 27017
+----
+
+[source,shell]
+----
+docker compose exec web bash
+cat /etc/hosts
+----
+
+
+
+[source,shell]
+----
+nc -vz localhost 80
+nc -vz localhost 8000
+nc -vz localhost 27017
+----
+
+[source,shell]
+----
+#ufw allow from 172.17.0.1
+#ufw allow in on docker0 from 172.17.0.0/16 to 172.17.0.0/16
+#ufw allow out on docker0 from 172.17.0.0/16 to 172.17.0.0/16
+#ufw allow out on docker0
+#ufw allow in on docker0
+ufw allow on docker0
+----
+
+[source,shell]
+----
+# ufw-docker allow docker-garden8-db-1 27017 # 외부로 열림
+----
+
+nc -vz garden8.junho85.pe.kr 27017
+
+host.docker.internal
+
+[] mongodb 설치했는데 출석부 조회 실패 이유?
+[] 출석부 갱신
+
