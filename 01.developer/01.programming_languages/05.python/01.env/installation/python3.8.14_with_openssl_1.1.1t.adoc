@@ -1,0 +1,111 @@
+:hardbreaks:
+= OpenSSL 1.1.1t 설치하고 Python 3.8.14 설치할 때 사용하기
+
+OpenSSL 구버전이 설치 되어 있는 Linux 에서 Python 3.8.14 를 소스코드 빌드해서 설치 하려고 할 때 OpenSSL 을 먼저 설치 하고 Python을 설치 하는 방법에 대해 정리합니다.
+
+OpenSSL 이 1.0.x 버전이
+
+[source,shell]
+----
+wget https://www.openssl.org/source/openssl-1.1.1t.tar.gz
+tar xvfz openssl-1.1.1t.tar.gz
+cd openssl-1.1.1t
+./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib
+
+# 경로를 바꾸고 싶다면 --prefix 옵션을 수정한다.
+#./config --prefix=/program/openssl/openssl-1.1.1t --openssldir=/program/openssl/openssl-1.1.1t shared zlib
+
+make
+make install
+----
+
+python 3.8.14 설치
+
+[source,shell]
+----
+wget https://www.python.org/ftp/python/3.8.14/Python-3.8.14.tgz
+tar xvfz Python-3.8.14.tgz
+----
+
+OpenSSL을 사용할 수 있도록 환경변수 설정
+[source,shell]
+----
+export LD_LIBRARY_PATH=/usr/local/ssl/lib
+export LDFLAGS="-L/usr/local/ssl/lib"
+export CPPFLAGS="-I/usr/local/ssl/include"
+
+# /program/openssl/openssl-1.1.1t 경로를 사용하는 경우
+export LD_LIBRARY_PATH=/program/openssl/openssl-1.1.1t/lib
+export LDFLAGS="-L/program/openssl/openssl-1.1.1t/lib"
+export CPPFLAGS="-I/program/openssl/openssl-1.1.1t/include"
+----
+
+[source,shell]
+----
+cd Python-3.8.14
+
+./configure --with-openssl=/usr/local/ssl
+
+# openssl 경로로 /program/openssl/openssl-1.1.1t 를 사용하는 경우
+./configure --prefix=/program/python/Python-3.8.14 --with-openssl=/program/openssl/openssl-1.1.1t
+
+make
+sudo make install
+----
+
+sudo make install 할 때 sudo 권한이 필요 없는 경로로 설치 하는 경우 sudo는 없어도 된다.
+
+
+== 기타 virtualenv
+
+설치된 python의 bin 디렉터리로 가서 virtualenv 를 설치한다.
+
+[source,shell]
+----
+./python3 -m pip install virtualenv
+----
+
+원하는 경로로 이동 한 다음 python 경로의 python을 실행하면서 `-m venv` 를 사용하고 뒤에는 가상환경을 만들 경로를 지정한다.
+[source,shell]
+----
+/program/python/Python-3.8.14/bin/python3 -m venv python3.8.14-venv
+----
+
+가상환경을 활성화 한다.
+[source,shell]
+----
+source python3.8.14-venv/bin/activate
+----
+
+== openssl 이 제대로 동작하는지 확인
+
+python 을 실행하고 아래와 같이 입력한다.
+
+[source,python]
+----
+import ssl
+ssl.OPENSSL_VERSION
+----
+
+
+=== vault 로 확인하기
+
+hvac 라이브러리를 사용해서 vault 에 접속해서 확인해 본다.
+
+hvac 모듈을 설치한다.
+[source,shell]
+----
+pip install hvac
+----
+
+python 을 실행하고 아래와 같이 입력한다.
+
+[source,python]
+----
+import hvac
+
+----
+
+
+== 정리
+* https://junho85.pe.kr/2157[]
