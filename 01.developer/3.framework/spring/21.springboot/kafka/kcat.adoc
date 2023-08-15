@@ -1,6 +1,31 @@
 :hardbreaks:
 = kcat (kafka cat)
 
+https://github.com/edenhill/kcat
+
+> kcat is a generic non-JVM producer and consumer for Apache Kafka >=0.8, think of it as a netcat for Kafka.
+
+kcat은 Apache Kafka 0.8 버전 이상을 위한 non-JVM producer와 consumer입니다. Kafka를 위한 netcat이라고 생각하면 됩니다.
+
+== 설치
+```
+brew install kcat
+```
+
+== Key 정보 확인
+
+```bash
+kcat -C -K: \
+    -b $KAFKA_BROKER \
+    -t $KAFKA_TOPIC \
+...
+```
+-K 옵션을 이용해서 key 정보를 확인할 수 있습니다.
+
+```
+  -K <delim>         Key delimiter (same format as -D)
+```
+
 == 날짜 정보 확인
 
 ```bash
