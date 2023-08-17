@@ -57,6 +57,8 @@ OO에서 코드와 데이터는 클래스로 묶여서 함께 표현됨. 코드�
 
 그런데 시스템 분석 관점에서 코드와 데이터가 뒤섞인다는 사실은 엔티티가 많은 관계에 관여하는 경향이 있다는 점에서 시스템을 복잡하게 만듬
 
+image::https://yozm.wishket.com/media/news/2164/5.png[]
+
 데이터의 관계들(Data relations):
 * `Library` has `Member`s ->
 * `Member` has `BookLending`s
@@ -75,10 +77,11 @@ OO에서 코드와 데이터는 클래스로 묶여서 함께 표현됨. 코드�
 
 이렇게 봤을 때, 데이터를 주고받는 객체가 메서드를 포함해야 하는지는 개발 상황, 설계 원칙, 그리고 프로젝트의 요구 사항에 따라 달라질 수 있음
 
-POCO
+POCO (Plain Old CLR/C# Object)
 * Value Object
-* DTO
+* DTO (Data Transfer Object)
 
+image::https://yozm.wishket.com/media/news/2164/6.png[]
 
 |===
 | |DTO |Value Object |POCO
@@ -101,4 +104,22 @@ POCO
 
 == DOP(Data Oriented Programming)
 
-TODO
+객체지향 프로그래밍(OOP)의 일부 불명확성을 극복하기 위해, 데이터와 코드(로직)를 처리하는 객체를 분리하는 아이디어가 제시되었음. 이런 접근 방식에서는 코드를 순수 함수(pure function)로 이용할 수 있게 됨. 순수 함수는 동일한 입력에 대해 항상 동일한 출력을 제공하고, 외부 상태에 영향을 주지 않으므로 프로그램의 에측 가능성을 높이는 데 도움이 됨.
+
+이런 시도는 데이터 중심의 설계를 추구하지만, 이전에 다루었던 데이터 지향 설계(DOD: Data-Orieitned Design)처럼 데이터 조회 성능을 중점으로 두지는 않음. DOD는 데이터의 구조와 그 데이터에 접근하는 방법에 초점을 맞춰, 계산 성능을 최적화하는 데 중점을 둠. 반면 이 새로운 접근법은 데이터와 코드를 분리하여 코드의 명확성과 유지 관리성을 높이는데 초점을 둠)
+
+이런 식으로, 객체지향 프로그래밍(OOP)에서의 설계를 이 데이터와 코드의 분리 접근법, 즉 데이터 중심 프로그래밍(DOP: Data-Oriented Prograing)의 설계로 재구성하게 되면 다음과 같은 형태가 될 수 있음.
+
+Only data entities + Only code entities
+
+image::https://yozm.wishket.com/media/news/2164/8.png[]
+
+데이터 중심 프로그래밍은 객체지향 프로그래밍의 아래 네 가지 문제를 해결하려는 목표를 가지고 있음
+
+1. 코드와 데이터가 혼합됨 (Code and data are mixed)
+2. 객체는 가변적임 (Objects are mutable)
+3. 데이터는 객체 내의 멤버로 갇혀 있음 (Data is locked in objects as members)
+4. 코드는 클래스 안의 메서드로 갇혀 있음 (Code is locked into classes as methods)
+
+따라서 데이터 중심 프로그래밍은 데이터를 (불변의) 데이터로 표현하고, 이 데이터에 대한 독립적인 연산을 수행하는 비즈니스 로직을 구현하는 코드를 작성하는 것을 추천함. 이렇게 하면 데이터와 로직이 명확하게 분리되어 프로그램의 구조가 더욱 명료해지고, 유지 보수도 용이해짐.
+
