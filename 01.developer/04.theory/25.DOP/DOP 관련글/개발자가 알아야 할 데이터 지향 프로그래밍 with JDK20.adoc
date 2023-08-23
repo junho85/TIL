@@ -141,3 +141,87 @@ DOP의 핵심은 데이터를 일급 시민으로 취급하는 것. 이는 프�
 
 OOP와 데이터 중심 프로그래밍은 서로 상충하는 것이 아니라, 각기 다른 상황과 요구 사항에 따라 선택할 수 있는 도구임. 따라서 상황에 맞게 이들을 혼합하여 사용하는 것이 가능함.
 
+
+=== Project Amber
+https://openjdk.org/projects/amber/
+
+Project Amber는 Java 및 OpenJDK 개발자의 현재 이니셔티브로 JDK에 대한 작지만 필수적인 변경 사항을 제공하고 개발 프로세스를 더 좋게 만드는 것을 목표호 함. 이 작업은 2017년부터 진행되어 왔고 이미 Java 10 및 11에 일부 변경 사항을 제공했으며, 다른 변경 사항은 Java 12에 포함 및 향후 릴리스에서 더 추가될 예정.
+
+> JDK 20은 오픈JDK 프로젝트 앰버(Amber, 스위치 표현식과 구문을 위한 레코드 패턴 및 패턴 매칭)의 개선된 언어, 오픈JDK 프로젝트 파나마(Panama)의 자바 버추얼 머신(JVM) 및 네이티브 코드(외부 함수 및 메모리 API, 벡터 API) 간 향상된 상호 연결성, 프로젝트 룸(Project Loom) 관련 주요 기능(범위가 지정된 값, 가상 스레드, 구조화된 동시성)을 제공한다. 이를 통해 높은 처리량 및 동시성을 갖춘 애플리케이션들의 작성, 유지 관리 및 모니터링 프로세스를 극적으로 간소화할 예정이다.
+
+DOP에서 필요한 Java20의 기능인 레코드(Record), 봉인된 클래스(Sealed), 패턴 매칭(Pattern Matching)에 관해 간략하게 살펴본다.
+
+== 레코드(Record)
+* Java 14 등장 -> 16 정식 릴리즈
+* https://openjdk.org/jeps/395
+* https://www.baeldung.com/java-record-keyword
+
+목표
+* 값의 단순한 집계를 표현하는 객체 지향 구성
+* 개발자가 행위 확장보다는 immutable data 모델링에 집중할 수 있도록 함
+* equals 와 같은 데이터 엑세서 지원
+
+[source,java]
+----
+public record Person(String name, String address) {
+}
+
+var a = new Person("kim", "addr1");
+System.out.println(a.address());
+System.out.println(a.name());
+----
+
+[source,java]
+----
+public class Person {
+    private final String name;
+    private final String address;
+
+    public Person(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, address);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        } else if (!(obj instanceof Person)) {
+            return false;
+        } else {
+            Person other = (Person) obj;
+            return Objects.equals(name, other.name) && Objects.equals(address, other.address);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Person[name=" + name + ", address=" + address + "]";
+    }
+
+    // standard getters
+}
+----
+
+레코드는 Compact canonical constructor를 지원함.
+
+* 개발자가 매개변수를 필드에 할당하는 지루한 작업 없이 매개변수를 검증하고 정규화하는 데 집중할 수 있도록 도와줌.
+
+For example, herer is a compact cacnonical constructor that validates its implicit formal parameters:
+
+[source,java]
+----
+record Range(int lo, int hi) {
+    Range {
+        if (lo > hi) { // referring here to the implicit formal parameters
+            throw new IllegalArgumentException(String.format("(%d,%d)", lo, hi));
+        }
+    }
+}
+----
+
