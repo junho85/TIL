@@ -212,7 +212,7 @@ public class Person {
 
 * 개발자가 매개변수를 필드에 할당하는 지루한 작업 없이 매개변수를 검증하고 정규화하는 데 집중할 수 있도록 도와줌.
 
-For example, herer is a compact cacnonical constructor that validates its implicit formal parameters:
+For example, here is a compact cacnonical constructor that validates its implicit formal parameters:
 
 [source,java]
 ----
@@ -221,6 +221,47 @@ record Range(int lo, int hi) {
         if (lo > hi) { // referring here to the implicit formal parameters
             throw new IllegalArgumentException(String.format("(%d,%d)", lo, hi));
         }
+    }
+}
+----
+
+== Pattern Matching for instanceof
+
+목표
+* 보다 정교하고 구성 가능한 데이터 쿼리를 표현하기 위해 패턴 일치를 확장함
+
+Motivation
+In JDK 16, JEP 394 extended the instanceof operator to take a type pattern and perform pattern matching. This modest extension allows the familiar instanceof-and-cast idiom to be simplified:
+
+[source,java]
+----
+// Old code
+if (obj instanceof String) {
+    String s = (String) obj;
+     ... use s ...
+}
+
+// New code
+if (obj instanceof String s) {
+     ... use s ...
+}
+----
+
+[source,java]
+----
+public class Duck {
+    private final String name;
+
+    public Duck(String name) {
+        this.name = name;
+    }
+
+    public void fly() {
+        System.out.println(this.name + " I'm flying");
+    }
+
+    public void quack() {
+        System.out.println(this.name + " Quack");
     }
 }
 ----
