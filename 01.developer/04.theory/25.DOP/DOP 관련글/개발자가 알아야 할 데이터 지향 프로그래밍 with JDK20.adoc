@@ -225,6 +225,18 @@ record Range(int lo, int hi) {
 }
 ----
 
+== 패턴 매칭 (Pattern Matching)
+
+패턴 매칭을 통해 객체 간의 메서드를 통한 메시지 전달의 제약에서 벗어날 수 있게 되었음. 이로 인해 데이터 타입을 중심으로 생각하고 이해하는 데 더 효과적이게 되었음. 또한 대수적 자료형(Algebraic Data Type)을 활용할 수 있는 가능성도 열렸음.
+
+* 참고1. https://ko.wikipedia.org/wiki/%EB%8C%80%EC%88%98%EC%A0%81_%EC%9E%90%EB%A3%8C%ED%98%95
+* 참고2. https://medium.com/@lazysoul/%EB%8C%80%EC%88%98%EC%A0%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85%EC%9D%B4-algebraic-data-type-%EC%9D%B4%EB%9E%80-26d9e73d96b6
+
+패턴 매칭은 Java 16에서 instanceof를 통해, 그리고 Java 20에서는 Record Patterns의 형태로 지원이 시작되었음.
+
+* https://openjdk.org/jeps/394 : Pattern Matching for instanceof -> Java 16
+* https://openjdk.org/jeps/432 : Record Patterns (Second Preview) -> Java 20
+
 == Pattern Matching for instanceof
 
 목표
@@ -265,4 +277,10 @@ public class Duck {
     }
 }
 ----
+
+== instanceof 패턴 매칭
+
+* 패턴 매칭을 통해서 더 이상 캐스팅 혹은 강제형 변환 작업을 하지 않아도 됨.
+
+instanceof 패턴 매칭으로 인해 더 이상 equals에서 강제 형 변환 작업이 필요 없게 되었음.
 
