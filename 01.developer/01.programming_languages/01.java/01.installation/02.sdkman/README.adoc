@@ -1,8 +1,15 @@
+:hardbreaks:
 = SDKMAN
-* [SDKMAN](https://sdkman.io/)
+
+* https://sdkman.io/[SDKMAN]
+
+The Software Development Kit Manager의 약자
+
+유닉스 시스템에서 여러 소프트웨어 개발 키트를 손쉽게 관리할 수 있는 믿을 수 있는 동반자. 서로 다른 버전의 SDK가 있고 스트레스 없이 전환할 수 있음. CLI와 API를 제공함. 이전에는 GVM(Groovy Environment Manager)라고 불렸음. apt, pip, RVM, rbenv, 심지어 git과 같은 친숙한 도구엥서 영감을 얻었음. SDK 관리를 간소화할 준비가 되어 있는 유용한 툴킷 친구.
+
 
 == installation
-* [Installation](https://sdkman.io/install)
+* https://sdkman.io/install[Installation]
 
 [source]
 ----
