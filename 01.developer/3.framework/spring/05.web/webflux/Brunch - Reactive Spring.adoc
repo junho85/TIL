@@ -112,7 +112,59 @@ public interface Subscription {
 }
 ----
 
-...
+... 클래스 다이어그램 이미지 생략
+
+"Reactive Streams"는 명세를 정의할 뿐, 실제로 구현체를 만들어서 사용해야 함. 기본적인 흐름을 이해하기 위해서 아래 그림 참고
+
+... 이미지 생략
+
+Subscriber 가 Publisher 에게 subscribe 하면 Publisher 가 데이터 또는 시퀀스를 전달하게 된다. 전달하기 전에 Publisher는 Subscribe에 정의된 onSubscribe()를 호출하고, Subscriber는 request(n)를 호출하여 몇개의 데이터를 보내달라고 요청. 이때 Subscription을 사용하는데, Request(n)를 호출하여 데이터 전송 요청을 하게 되면 Publisher 에서는 0에서 N개의 데이터 또는 시퀀스를 Subscriber에 전달하게 된다. 이 과정에서 에러가 발생하면 onError()를 호출하고, 데이터(시퀀스) 전달이 완료가 되면 onComplete()를 호출함. Subscriber가 Publisher에 Request하느 ㄴ과정을 보통 Back-Pressure라고 표현하는데, Push하는 데이터(시퀀스)의 흐름을 제어할 수 있다. Request(1)을 호출하면 1개만 보내도록 요청할 수 있고, Request(MAX)를 호출하면 최대값에 해당하는 데이터를 요청하게 된다. BackPressure를 번역하면, "역압"이라는 단어로 번역할 수 있는데, 그냥 이 글에서는 BackPressure라고 표현.
+
+... 이미지 생략
+
+=== 3.2 Reactive Streams 구현체
+위에서 설명했듯이, Reactive Streams는 리액티브 프로그래밍을 위해 정의한 스펙(명세,정의)이다. 실제로 리액티브 프로그래밍을 위해서는, "Reactive Streams"를 구현하는 구현체를 만들어야 한다. 필자가 알고 있는 상식으로 가장 많이 사용되는 구현체 라이브러리는 RxJava. 그 외에 필자가 알고 있는 "Reactive Streams"의 구현체는 아래와 같음.
+* RxJava 1.x or RxJava 2.x
+* Project Reactor
+* Vert.x
+* Akka Streams
+* Slick
+
+참고로, "Ractive Streams" 스펙은 서로 호환된다고 한다. (필자가 검증을 하지는 않았음.)
+
+기회가 된다면 RxJava를 공부해보고 싶지만, 이 글에서는 Reactor를 자세히 다룰 예정
+
+=== 3.3 Reactive Streams 샘플 구현
+
+Reactive Streams를 구현하여, 간단한 리액티브 프로그램을 만들어보자.
+
+==== 디펜던시
+
+스프링 부트 2.0.7, Java Gradle 환경에서 개발
+* org.reactivestreams:reactive-streams:1.0.2
+* org.springframework.boot:spring-boot-starter-web
+
+org.springframework.boot:spring-boot-starter-test
+
+==== 클래스 다이어그램
+
+Publisher, Subscriber, Subscription 의 구현체 만들기.
+
+* EddyPublisher
+* EddySubscriber
+* EddySubscription
+
+... 이미지 생략
+
+==== Publisher
+
+Publisher 인터페이스는 다음과 같이 단 하나의 메서드를 정의함
+* subscribe
+
+Publisher 를 구현하는 EddyPublisher 클래스는 subscribe 메서드를 구현해야 함. subscribe메서드는 Subscriber 객체를 매개변수로 받고, 매개변수로 받은 subscriber의 onSubscriber() 메서드를 실행함.
+
+
+
 
 
 === Publisher
