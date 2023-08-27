@@ -284,3 +284,76 @@ public class Duck {
 
 instanceof 패턴 매칭으로 인해 더 이상 equals에서 강제 형 변환 작업이 필요 없게 되었음.
 
+[source,java]
+----
+@Override
+public boolean equals(Object o) { // Casting 필요
+    if (o instanceof Duck) {
+        Duck other = (Duck) o; // Casting 필요
+        return this.name.equals(duck.name);
+    }
+    return false;
+}
+----
+
+[source,java]
+----
+// jdk 16 이상 지원
+public boolean equals(Object o) {
+    if (o instanceof Duck duck) {
+        return this.name.equals(duck.name);
+    }
+    return false;
+}
+----
+
+== Record Patterns(Second Preview)
+* 레코드의 구조 분해 할당이 가능합니다.
+
+아래의 코드 예시를 보면, Person 인스턴스의 a가 Object 타입으로 선언되어 있음에도 불구하고 if문의 조건에서 Person(String x, String y)를 선언한 후, 하위 코드에서 x와 y멤버를 바로 사용할 수 있게 되었음.
+
+[source,java]
+----
+public class Main3 {
+    public static void main(String[] args) {
+        Object a = new Person("kim", "addr1");
+
+        if (a instanceof Person(String x, String y)) {
+            System.out.println(x + " " + y);
+        }
+    }
+}
+----
+
+----
+kim addr1
+----
+
+
+[source,java]
+----
+public class Main3 {
+    public static void main(String[] args) {
+        Object a = new Person("kim", "addr1");
+
+        if (a instanceof Person(String x, String y)) {
+            System.out.println(x + " " + y);
+        }
+        print(a);
+    }
+
+    public static void print(Object a) {
+        switch (a) {
+            case Person(String x, String y) -> System.out.println(x + " " + y);
+            default -> System.out.println(a);
+        }
+    }
+}
+----
+
+----
+kim addr1
+kim addr1
+----
+
+이외, Loops 및 Generic도 지원한다고 함.
