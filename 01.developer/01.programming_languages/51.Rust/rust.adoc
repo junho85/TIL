@@ -1,0 +1,25 @@
+:hardbreaks:
+= Rust
+
+https://www.rust-lang.org/
+
+모두에게 안정적이고 효율적인 소프트웨어를 구축할 수 있도록 힘을 실어주는 언어
+
+== Why Rust?
+
+* Performance: Rust는 빠르고 메모리 효율적임
+* Reliability: Rust는 메모리 안전성을 보장하고 스레드 안전성을 보장함
+* Productivity: Rust는 훌륭한 문서, 유용한 오류 메시지가 포함된 친숙한 컴파일러, 통합 패키지 관리자 및 빌드 도구, 자동 완성 및 유형 검사 기능을 갖춘 스마트 멀티 에디터 지원, 자동 포맷터 등 최고의 툴을 갖추고 있음.
+
+== Installation
+
+https://www.rust-lang.org/tools/install
+
+[source,shell]
+----
+$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+...
+
+$ rustc --version
+rustc 1.69.0 (84c898d65 2023-04-16) (built from a source tarball)
+----
