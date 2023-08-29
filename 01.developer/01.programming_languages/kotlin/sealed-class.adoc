@@ -1,0 +1,84 @@
+:hardbreaks:
+= Kotlin - Sealed Class (봉인된 클래스)
+
+Kotlin에서 sealed class는 상속 계층 구조에서 제한된 집합의 하위 클래스만 허용하는 특별한 종류의 클래스.
+
+sealed class는 클래스와 인스턴스를 만들 수 있다.
+
+sealed class를 직접 상속하는 새로운 하위 클래스를 선언하려면 같은 파일 내에서 선언해야 한다.
+
+== when 식
+sealed class는 주로 when 식과 함께 사용된다. when 식은 모든 하위 클래스에 대한 분기 처리를 강제한다. sealed class를 사용하면 when 식이 모든 경우를 다루는지 컴파일러가 확인할 수 있다. 이로써 코드의 안정성과 완성도를 높일 수 있다.
+
+다음과 같은 코드를 보자
+
+[source,kotlin]
+----
+sealed class Result
+
+class Success(val data: String) : Result()
+class Error(val message: String) : Result()
+class Loading : Result()
+
+fun processResult(result: Result) {
+    when (result) {
+        is Success -> println("Success: ${result.data}")
+        is Error -> println("Error: ${result.message}")
+        is Loading -> println("Loading...")
+    }
+}
+
+val successResult: Result = Success("Data retrieved successfully")
+val errorResult: Result = Error("An Error occurred")
+val loadingResult: Result = Loading()
+
+fun main() {
+    processResult(successResult)
+    processResult(errorResult)
+    processResult(loadingResult)
+}
+----
+
+when 식에서 클래스에 대한 분기를 하나 제거하게 되면 컴파일러는 경고를 띄운다. 이는 sealed class를 사용하면 when 식이 모든 경우를 다루는지 컴파일러가 확인할 수 있기 때문이다.
+
+kotlin 1.6 까지는 when 식에 모든 sealed class를 사용하지 않아도 되지만, kotlin 1.7 부터는 엄격하게 검사한다. when 식이 모든 경우를 다루지 않으면 컴파일러는 다음과 같은 경고를 띄운다.
+
+----
+'when' expression must be exhaustive, add necessary 'is Loading' branch or 'else' branch instead
+----
+
+https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS43LjIxIiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiIsIm5vbmVNYXJrZXJzIjp0cnVlLCJ0aGVtZSI6ImlkZWEiLCJjb2RlIjoic2VhbGVkIGNsYXNzIFJlc3VsdFxuXG5jbGFzcyBTdWNjZXNzKHZhbCBkYXRhOiBTdHJpbmcpIDogUmVzdWx0KClcbmNsYXNzIEVycm9yKHZhbCBtZXNzYWdlOiBTdHJpbmcpIDogUmVzdWx0KClcbmNsYXNzIExvYWRpbmcgOiBSZXN1bHQoKVxuXG5mdW4gcHJvY2Vzc1Jlc3VsdChyZXN1bHQ6IFJlc3VsdCkge1xuICAgIHdoZW4gKHJlc3VsdCkge1xuICAgICAgICBpcyBTdWNjZXNzIC0+IHByaW50bG4oXCJTdWNjZXNzOiAke3Jlc3VsdC5kYXRhfVwiKVxuICAgICAgICBpcyBFcnJvciAtPiBwcmludGxuKFwiRXJyb3I6ICR7cmVzdWx0Lm1lc3NhZ2V9XCIpXG4vLyAgICAgICAgaXMgTG9hZGluZyAtPiBwcmludGxuKFwiTG9hZGluZy4uLlwiKVxuICAgIH1cbn1cblxudmFsIHN1Y2Nlc3NSZXN1bHQ6IFJlc3VsdCA9IFN1Y2Nlc3MoXCJEYXRhIHJldHJpZXZlZCBzdWNjZXNzZnVsbHlcIilcbnZhbCBlcnJvclJlc3VsdDogUmVzdWx0ID0gRXJyb3IoXCJBbiBFcnJvciBvY2N1cnJlZFwiKVxudmFsIGxvYWRpbmdSZXN1bHQ6IFJlc3VsdCA9IExvYWRpbmcoKVxuXG5mdW4gbWFpbigpIHtcbiAgICBwcm9jZXNzUmVzdWx0KHN1Y2Nlc3NSZXN1bHQpXG4gICAgcHJvY2Vzc1Jlc3VsdChlcnJvclJlc3VsdClcbiAgICBwcm9jZXNzUmVzdWx0KGxvYWRpbmdSZXN1bHQpXG59In0=[example]
+
+
+== References
+
+https://cheonjoosung.github.io/blog/ko-sealed[코틀린 sealed class vs enum class | 공통점과 차이점 2022.10.07]
+
+Enum은 Enumeration의 약자로 열거형을 의미하고 연관되거나 관련이 있는 상수들의 집합을 표현할 때 사용
+
+sealed 클래스는 안드로이드와 서버간의 네트워크 통신의 성공/실패를 다루는데 아주 유용하게 사용할 수 있다.
+
+
+https://www.youtube.com/watch?v=OyIRuxjBORY[Sealed classes - Kotlin Vocabulary]
+
+
+https://www.youtube.com/watch?v=kLJRZpRhX1o[Sealed Classes VS. Enum Classes Vs. Sealed Interfaces - When to Use Which?]
+
+HttpError를 구현할 때 sealed class를 사용하면 reason같은 정보를 넘겨주는 방식으로 사용할 수 있다.
+
+enum class는 상수에 좀 더 유리하다.
+
+
+https://kotlinworld.com/165[Kotlin sealed class란 무엇인가? 2021.09.05]
+
+여러 자식 Class들이 하나의 부모 Class를 상속 받았다고 했을 때 컴파일러는 부모 Class를 상속 받은 자식 Class들이 있는지 알지 못한다. 그래서 when문을 사용할 때 else문을 사용하지 않으면 컴파일러는 경고를 띄운다. 하지만 sealed class를 사용하면 컴파일러는 sealed class를 상속 받은 자식 Class들이 있는지 알기 때문에 else문을 사용하지 않아도 된다.
+
+
+https://codechacha.com/ko/kotlin-sealed-classes/[Kotlin - Sealed class 구현 방법 및 예제]
+
+하위 클래스가 될 수 있는 클래스를 제한하여 얻을 수 있는 장점 중 하나는 when 을 사용할 때 else를 사용하지 않는 것
+
+Enum 으로도 얻을 수 있는 이점. 하지만 Enum은 하위 객체를 Singleton처럼 1개만 생성할 수 있고 복수의 객체는 생성할 수 는 없음. 반면 Sealed class는 1개 이상의 객체를 생성할 수 있음.
+
+
+
