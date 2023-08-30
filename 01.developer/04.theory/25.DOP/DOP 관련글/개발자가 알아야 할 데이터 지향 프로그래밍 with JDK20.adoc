@@ -357,3 +357,46 @@ kim addr1
 ----
 
 이외, Loops 및 Generic도 지원한다고 함.
+
+
+== 봉인된 클래스(Sealed)
+* https://openjdk.org/jeps/397 -> java 16 출시
+
+=== 목표
+* 클래스 또는 인터페이스의 작성자가 구현을 담당하는 코드를 제어
+* 수퍼클래스의 사용을 제한하기 위해 액세스 수정자보다 더 선언적인 방법을 제공
+
+Sealed Class는 몇 가지 제약 사항을 두고 있음
+* 상속/구현하는 클래스는 final, non-sealed, sealed 중 하나로 선언되어야 함
+* Permitted Subclass들은 동일한 module에 속해야 하며 이름이 지정되지 않은 module에 선언 시에는 동일한 package 내에 속해야 함
+* Permitted Subclass는 Sealed Class를 직접 확장해야 함
+
+예시)
+
+[source,java]
+----
+public abstract sealed class Car permits Kia, Tata {}
+
+public final class Kia extends Car {}
+public non-sealed class Tata extends Car {}
+----
+
+== DOP 사용 시나리오
+
+=== 개요
+상품을 처리하는 기능이 있음. 상품 검색상품(SearchItem)과 대여상품(RentalItem)으로 구분됨. 이런 경우 아래와 같이 데이터와 비즈니스 코드로 구분할 수 있음.
+
+... 이미지 생략
+
+DATA
+* Item interface
+** SearchItem -> BasicItem -> Price
+** RentalItem -> BasicItem
+*** -> Price
+*** -> ConsultingInfo
+*** -> Discount
+
+Code
+* Main
+** SearchItemBIZ -> ITEM interface
+** RentalItemBIZ -> ITEM interface
