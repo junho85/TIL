@@ -28,3 +28,53 @@ $ sdk install java 11.0.7.hs-adpt
 ----
 sdk install gradle 6.0.1
 ----
+
+
+== default java version 변경
+
+현재 default java version 확인
+[source,shell]
+----
+$ sdk current java
+
+Using java version 11.0.17-tem
+----
+
+default java version 을 17.0.4-tem 으로 변경
+[source,shell]
+----
+$ sdk default java 17.0.4-tem
+----
+
+== 기존에 설치했던 java 버전들을 확인하는 방법
+
+[source,shell]
+----
+$ tree -L 2 ~/.sdkman/candidates/
+/Users/junho85/.sdkman/candidates/
+└── java
+    ├── 11.0.15-tem
+    ├── 11.0.16-tem
+    ├── 11.0.16.1-tem
+    ├── 11.0.17-tem
+    ├── 17.0.4-tem
+    ├── 17.0.8.1-tem
+    ├── 18.0.2-tem
+    ├── 20.0.2-tem
+    ├── 8.0.342-zulu
+    └── current -> 17.0.8.1-tem
+
+11 directories, 0 files
+----
+
+sdk list 에서 installed 를 grep 할 수도 있는데 옛 버전들은 나오지 않음
+
+[source,shell]
+----
+$ sdk list java | grep installed
+ Temurin       |     | 20.0.2       | tem     | installed  | 20.0.2-tem
+               | >>> | 17.0.8.1     | tem     | installed  | 17.0.8.1-tem
+----
+
+기존에 설치 되어 있는 java 버전들을 확인하는 기능에 대한 건의가 있었으나 구현되지는 않았음. 사용자들이 만들어둔 편법들이 있음.
+https://github.com/sdkman/sdkman-cli/issues/466
