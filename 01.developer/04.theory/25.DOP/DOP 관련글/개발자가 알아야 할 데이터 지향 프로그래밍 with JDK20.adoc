@@ -400,3 +400,62 @@ Code
 * Main
 ** SearchItemBIZ -> ITEM interface
 ** RentalItemBIZ -> ITEM interface
+
+== Item 데이터 객체 구현
+Item 데이터 객체를 sealed를 이용하여 합타입으로 구현해 봄
+
+sealed를 사용하면 가능한 데이터 타입의 값의 범위를 제한할 수 있음. 이는 기존 클래스(레코드) 기반의 처리를 대수적 타입에서 '곱 타입'에서 '합 타입'으로 변경하는 데 사용됨
+
+'곱 타입'의 경우, 모든 경우를 처리할 필요는 없지만 '합 타입'의 경우에는 반드시 모든 경우를 다루는 코드를 작성해야 함. 예를 들면 아래 Switch 코드의 경우 Sealed로 선언한 ItemSpec의 모든 구현체를 조건으로 다루어야 함.
+
+[source,java]
+----
+    public static void execute(ItemSpec itemSpec) {
+        switch (itemSpec) {
+            case ItemSpec.Price(var price) -> System.out.println(price + "매출액에 추가되었습니다.");
+            case ItemSpec.BasicItem(var name, var description, var price) -> {
+                System.out.println(name + " " + description + " 처리되었습니다.");
+                System.out.println(price + " 매출 추가되었습니다.");
+            }
+        }
+        if (itemSpec instanceOf BasicItem) {
+            System.out.println(((BasicItem) itemSpec).name());
+        }
+    }
+----
+
+[source,java]
+----
+public sealed interface ItemSpec {
+    record Price(int price) implements ItemSpec {
+        public Price {
+            if (price < 0) {
+                throw new IllegalArgumentException("price cannot be negative");
+            }
+        }
+    }
+
+    record BasicItem(String name, String description, Price price) implements ItemSpec {
+        public BasicItem {
+            if (name == null) {
+                throw new IllegalArgumentException("name cannot be null");
+            }
+            if (description == null) {
+                throw new IllegalArgumentException("description cannot be null");
+            }
+        }
+    }
+
+    record BasicItem2(String name, String description, Price price) implements ItemSpec {
+    }
+}
+----
+
+만약 모든 경우를 처리하지 않는다면, 아래와 같은 메시지와 함께 컴파일이 실패하게 됨. 위에서의 예시 코드에서는 BasicItem2를 처리하지 않아서 아래와 같은 메시지를 컴파일 에러로 마주치게 됨.
+
+java: the switch statement does not cover all possible input values
+
+이에 따라 IDE는 가능한 한 switch의 'default' 조건을 생성하여 처리되지 않은 케이스를 처리하도록 가이드를 제공함
+
+대수적 데이터 타입에 관한 더 자세한 얘기는 아래 블로그에 잘 쓰여있음
+https://medium.com/@lazysoul/%EB%8C%80%EC%88%98%EC%A0%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85%EC%9D%B4-algebraic-data-type-%EC%9D%B4%EB%9E%80-26d9e73d96b6
