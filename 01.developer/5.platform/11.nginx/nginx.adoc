@@ -1,0 +1,39 @@
+:hardbreaks:
+= nginx
+
+== 설정 확인
+
+[source,shell]
+----
+root@vultr:/etc/nginx# nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+----
+
+
+== 설정 적용
+
+nginx reload 이용 방법
+[source,shell]
+----
+nginx -s reload
+----
+
+service 이용 방법
+[source,shell]
+----
+service nginx restart
+----
+
+systemctl 이용 방법
+[source,shell]
+----
+systemctl restart nginx
+----
+
+
+
+== TODO
+virtual host 설정
+certbot 설정
+
