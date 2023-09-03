@@ -1,0 +1,13 @@
+:hardbreaks:
+
+= Service
+
+== Service Type
+* ClusterIP - 디폴트. 클러스터 IP (내부 IP)할당. 클러스터 내에서 이 서비스에 접근 가능. 클러스터 외부에서는 접근 불가능. 외부 IP를 할당 받지 못했기 때문
+* Load Balancer - 외부 IP를 가지고 있는 로그밸런서 할당. 클러스터 외부에서 접근 가능
+* NodePort - nodePort 설정한 포트를 통해 특정 노드로 바로 접근이 가능함.
+* ExternalName - 외부 서비스를 쿠버네티스 내부에서 호출하고자 할 때 사용함.
+
+
+== 참고
+* https://bcho.tistory.com/1262[쿠버네티스 #7 - 서비스 (service) 2018.06.18]
