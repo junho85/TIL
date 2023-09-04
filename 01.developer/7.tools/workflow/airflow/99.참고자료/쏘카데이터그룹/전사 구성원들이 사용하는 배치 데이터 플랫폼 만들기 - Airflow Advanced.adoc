@@ -1,0 +1,17 @@
+:hardbreaks:
+= 전사 구성원들이 사용하는 배치 데이터 플랫폼 만들기 - Airflow Advanced
+
+Airflow 운영 고도화를 위한 고군분투기
+
+https://tech.socarcorp.kr/data/2022/11/09/advanced-airflow-for-databiz.html
+
+Airflow는 Airbnb에서 개발한 워크플로우 관리 오픈소스. 많은 기업에서 데이터 파이프라인을 자동화할 때 사용하는 툴
+
+쏘카에서는 데이터 분석가, 데이터 사이언티스트, AI 엔지니어 등 다양한 사용자들이 Airflow DAG을 통하여 파이프라인을 직접 구출할 수 있음. 대신 다양한 사요자가 Airflow를 불편함 없이 이용하기 위해 관리자가 Airflow의 사용범주와 개발 방식을 잘 정의하는 것이 중요함.
+
+쏘카에서는 데이터 통합 저장소(데이터 레이크, 웨어하우스)로 BigQuery를 사용하고 있음. 기본적으로 외부 데이터 소스(Open API, RDBMS, S3 등)와 BigQuery 원본 데이터 셋을 BigQuery로 가공/적재하는 작업에 Airflow를 사용할 것을 권장하고 있음. 또한 DAG는 Data Lake, Data Mart, Monitoring, Crawling 등 각 용도에 맞게 분류하여 관리되고 있음. (단순 스케줄링을 필요로 하는 작업은 Airflow의 사용을 지양하고 K8s Cronjob이나 Github Action 등을 활용하는 것을 권장하고 있음)
+
+Airflow Github Repository의 Branch 이름이 특정 조건을 만족하면 CI/DI 파이프라인을 거쳐서 개발 클러스터에 Branch 별로 Airflow 서비스가 독립적으로 생성됨
+
+과거 Airflow 사용자는 DAG을 생성/변경하기 위해서 기본적으로 feature Branch를 생성하여 변경 커밋을 원격 Branch에 푸시 하였음. 그러면 Git Sync를 통해 Airflow에 DAG이 동기화되어 테스트가 가능했음.
+
