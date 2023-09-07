@@ -1,0 +1,12 @@
+:hardbreaks:
+= MySQL Docker
+
+https://hub.docker.com/_/mysql
+
+[source,shell]
+----
+docker run --name some-mysql -p 127.0.0.1:33060:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
+----
+
+로컬에서 33060 으로 접근 가능
+
