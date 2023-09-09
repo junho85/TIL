@@ -1,0 +1,72 @@
+:hardbreaks:
+= MySQL JSON
+
+MySQL 5.7.8 부터 JSON Data Type을 지원함.
+
+https://dev.mysql.com/doc/refman/5.7/en/json.html[11.5 The JSON Data Type]
+
+https://dev.mysql.com/doc/refman/5.7/en/json-function-reference.html[12.17.1 JSON Function Reference]
+
+
+
+
+== References
+* https://www.lesstif.com/dbms/mysql-json-data-54952420.html[MySQL에서 JSON Data 사용하기]
+
+MySQL 5.7.8 부터 DBMS 차원에서 JSON 데이터를 지원함.
+
+[source,sql]
+----
+CREATE TABLE employees (
+	id integer  AUTO_INCREMENT primary key,
+	name VARCHAR(200),
+	profile JSON
+);
+----
+
+JSON 데이터 입력
+
+[source,sql]
+----
+insert into employees(name, profile) values('홍길동', '{ "age" : 30, "gender" : "man", "부서": "개발" }');
+insert into employees(name, profile) values('김철수', '{ "age" : 43, "gender" : "man", "부서": "재무" }');
+insert into employees(name, profile) values('박영희', '{ "age" : 37, "gender" : "woman", "부서": "회계" }');
+----
+
+배열로 입력
+[source,sql]
+----
+insert into employees(name, profile) values('김갑수', '[35, "man", "인사"]');
+----
+
+JSON_ 함수 사용
+
+문자열로 JSON을 입력할 경우 실수할 여지가 많으므로 MySQL이 제공하는 JSON 관련 함수를 사용하여 처리하는게 좋음.
+
+JSON_OBJECT
+
+JSON Object 입력을 쉽게 해주는 함수로 JSON_OBJECT 함수의 파라미터로 name1, value1, name2, value2 처럼 key: value 쌍을 맞춰서 호출하며 가독성을 위해 파라미터 쌍마다 개행을 하는 것을 추천함.
+
+[source,sql]
+----
+insert into employees(name, profile) values('신상일', json_object(
+    'age', 28,
+    'gender', 'man',
+    '부서', '연구'
+));
+----
+
+JSON_ARRAY
+
+배열 입력시 유용하며 종업원 정보중에 소지한 자격증을 배열로 입력하는 예제
+
+[source,sql]
+----
+insert into employees(name, profile) values('은연수', json_object(
+    'age', 29,
+    'gender', 'woman',
+    '부서', '개발',
+    '자격증', json_array('CISA', 'PMP', 'CISSP')
+    ));
+----
+
