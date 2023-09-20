@@ -1,0 +1,53 @@
+:hardbreaks:
+
+= slack
+
+== 앱 생성
+https://api.slack.com/apps
+
+Create New App
+
+From scratch
+
+App Name: garden9
+Pick a workspace to develop your app in: The Gardners Season 9
+
+garden9 앱 생성완료
+
+https://api.slack.com/apps/A05MWQ9RPH7
+
+OAuth & Permissions에 가서
+
+Scope
+* channels:history
+* channels:read
+* chat:write
+* users:read
+
+추가 하고 Install to Workspace
+
+봇토큰이 필요한데 xoxb로 시작함. 복사해서 config.ini 의 SLACK_API_TOKEN 에 붙여넣기
+
+
+== App-Level Tokens 생성? 필요한가?
+
+Basic Information -> App-Level Tokens에서 Generate Token and Scopes
+
+Token Name: attendance
+권한 scope추가.
+connections:write
+authorization:read
+
+토큰이 생성된다. xapp-... 어쩌고
+
+== config.ini 설정
+
+DEFAULT
+
+* SLACK_API_TOKEN = 앱 생성 했을 때 나왔던 xoxb-... 어쩌고 봇토큰
+* CHANNEL_ID = C04LZKF6VEC (#commit 채널 정보 아래쪽에 채널 ID찾기)
+
+MONITOR
+
+* CHANNEL_ID = C05T5GEJDR8
+

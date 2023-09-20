@@ -1,0 +1,15 @@
+:hardbreaks:
+
+= garden9
+
+정원사들 시즌9 출석부
+
+== 작업
+
+=== garden8 github repository를 garden9 으로 clone
+github import 기능에서 https://github.com/junho85/garden8 를 import 하니 바로 생성 됨
+결과: https://github.com/junho85/garden9
+
+이제 git clone --bare 를 사용하지 않고 복제를 할 수 있다.
+
+
