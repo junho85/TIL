@@ -1,0 +1,48 @@
+:hardbreaks:
+= mongodb
+
+정원사들 출석부에서서 출석정보는 mongodb 에 저장
+
+slack 메시지를 받아서 mongodb 에 저장
+
+메시지 날짜 정보는 검색을 편리하게 하기 위해 형식을 바꿔서 넣음.
+
+== docker compose 를 이용해서 설치
+
+그냥 docker 를 이용하려면
+
+[source,shell]
+----
+docker run --name mymongo -p 127.0.0.1:27017:27017 -d mongo
+----
+
+참고로 garden4,5 때는 mymongo 라는 이름으로 컨테이너를 만들었었음.
+
+docker compose 를 이용하려면
+
+docker-compose.yml 파일을 만들고 다음과 같이 작성. {password} 부분은 알아서 바꿔서 넣어야 함.
+
+[source,yaml]
+----
+version: '3'
+services:
+  db:
+    image: mongo
+    volumes:
+      - ./db:/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: {password}
+----
+
+그리고 다음과 같이 실행
+
+[source,shell]
+----
+docker-compose up -d
+----
+
+garden8, garden9 는 vultr 호스팅에서 같은 mongodb 를 사용한다. collection 이름은 garden8, garden9 로 각각 다르게 설정.
+
