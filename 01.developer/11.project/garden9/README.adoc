@@ -12,10 +12,6 @@ github import 기능에서 https://github.com/junho85/garden8 를 import 하니 
 
 이제 git clone --bare 를 사용하지 않고 복제를 할 수 있다.
 
-=== 코드 수정 작업
-garden8 에서 garden9 로 수정
-시즌8 에서 시즌9 로 수정
-
 === 설정
 
 

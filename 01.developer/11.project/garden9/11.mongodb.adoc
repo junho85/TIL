@@ -46,3 +46,23 @@ docker-compose up -d
 
 garden8, garden9 는 vultr 호스팅에서 같은 mongodb 를 사용한다. collection 이름은 garden8, garden9 로 각각 다르게 설정.
 
+== create database & create collection
+
+[source,shell]
+----
+use garden9
+db.createCollection("slack_messages")
+db.slack_messages.createIndex({ts:1}, {unique: true})
+show dbs
+----
+
+collection 까지 생성해야 show dbs 했을 때 db 목록에 garden9 가 나옴.
+
+local 및 vultr 호스팅에서 수행
+
+mongo db 접속
+
+[source,shell]
+----
+mongosh -u root -p
+----
