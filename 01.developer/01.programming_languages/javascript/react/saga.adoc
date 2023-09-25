@@ -1,0 +1,158 @@
+:hardbreaks:
+= saga
+
+== References
+* https://velog.io/@devmag/%EC%82%AC%EC%9D%B4%EB%93%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-10.-saga-%EC%AA%BC%EA%B0%9C%EA%B8%B0-reducer-%EC%97%B0%EA%B2%B0-%EC%95%A1%EC%85%98-%EB%B0%8F-%EC%83%81%ED%83%9C-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0[[사이드 프로젝트] #10. saga 쪼개기, reducer 연결, 액션 및 상태 정리하기]
+
+sagas 폴더내에서 index.js 파일에서 redux-saga 코드를 계속 쓰다보면 코드가 매우 길어짐. 하나의 리퀘스트에 세 개로 구분하면(진행중, 성공, 실패) 굉장히 길어질 것이다. 그러므로 reducer처럼 user, post 관련 코드들을 나눠보자.
+
+sagas/user.js
+
+[source,js]
+----
+import { all, fork, takeLatest, call, put, delay } from 'redux-saga/effects';
+import axios from 'axios';
+
+function logInAPI(data) {
+  return axios.post('/api/login', data);
+}
+
+function* logIn(action) {
+    try {
+        // const result = yield call(logInAPI, action.data);
+        yield delay(1000);
+        yield put({
+            type: 'LOG_IN_SUCCESS',
+            // data: result.data,
+        });
+    } catch (err) {
+        yield put({
+            type: 'LOG_IN_FAILURE',
+            data: err.response.data,
+        });
+    }
+}
+
+function logOutAPI() {
+    return axios.post('/api/logout');
+}
+
+function* logOut() {
+    try {
+        // const result = yield call(logOutAPI);
+        yield delay(1000);
+        yield put({
+            type: 'LOG_OUT_SUCCESS',
+            // data: result.data,
+        });
+    } catch (err) {
+        yield put({
+            type: 'LOG_OUT_FAILURE',
+            data: err.response.data,
+        });
+    }
+}
+
+function* watchLogIn() {
+    yield takeLatest('LOG_IN_REQUEST', logIn);
+}
+
+function* watchLogOut() {
+    yield takeLatest('LOG_OUT_REQUEST', logOut);
+}
+
+export default function* userSaga() {
+    yield all([
+        fork(watchLogIn),
+        fork(watchLogOut),
+    ])
+}
+----
+
+...
+
+2. reducer와 연결하기
+saga에서 세 가지 경우(진행중, 성공, 실패)로 나눴으므로 reducer도 그에 맞춰서 세 가지로 나누고 그에 알맞게 state를 변화시켜줘야한다. switch문이 굉장히 길어질것이다.
+
+진행중이 추가되었으므로 initialState에도 추가해주자.
+action creator 쪽 코드에도 변화가 생긴다. 이름과 type을 바꿨다.
+
+reducers/user.js
+
+[source,js]
+----
+export const initialState = {
+    isLoggingIn: false, // 로그인 시도중
+    isLoggedIn: false,
+    isLoggingOut: false, // 로그아웃 시도중
+    me: null,
+    signUpData: {},
+    loginData: {},
+};
+
+// action creators
+export const loginRequestAction = (data) => {
+    return {
+        type: 'LOG_IN_REQUEST',
+        data,
+    }
+};
+
+export const logoutRequestAction = () => {
+    return {
+        type: 'LOG_OUT_REQUEST',
+    }
+};
+
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case 'LOG_IN_REQUEST': {
+            return {
+                ...state,
+                isLoggingIn: true,
+            }
+        }
+        case 'LOG_IN_SUCCESS': {
+            return {
+                ...state,
+                isLoggingIn: false,
+                isLoggedIn: true,
+                me: action.data,
+            }
+        }
+        case 'LOG_IN_FAILURE': {
+            return {
+                ...state,
+                isLoggingIn: false,
+                isLoggedIn: false,
+            }
+        }
+        case 'LOG_OUT_REQUEST': {
+            return {
+                ...state,
+                isLoggingOut: true,
+            }
+        }
+        case 'LOG_OUT_SUCCESS': {
+            return {
+                ...state,
+                isLoggingOut: false,
+                isLoggedIn: false,
+                me: null,
+            }
+        }
+        case 'LOG_OUT_FAILURE': {
+            return {
+                ...state,
+                isLoggingOut: false,
+            }
+        }
+        default: {
+            return state,
+        }
+    }
+};
+
+export default reducer;
+----
+
