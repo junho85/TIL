@@ -1,6 +1,11 @@
 :hardbreaks:
 = saga
 
+https://redux-saga.js.org/docs/introduction/GettingStarted
+
+https://redux-saga.js.org/docs/api/
+
+
 == References
 * https://velog.io/@devmag/%EC%82%AC%EC%9D%B4%EB%93%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-10.-saga-%EC%AA%BC%EA%B0%9C%EA%B8%B0-reducer-%EC%97%B0%EA%B2%B0-%EC%95%A1%EC%85%98-%EB%B0%8F-%EC%83%81%ED%83%9C-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0[[사이드 프로젝트] #10. saga 쪼개기, reducer 연결, 액션 및 상태 정리하기]
 
@@ -156,3 +161,28 @@ const reducer = (state = initialState, action) => {
 export default reducer;
 ----
 
+...
+
+React - 상태관리 Redux-Saga 2022.08.03
+https://ji-musclecode.tistory.com/67
+
+
+Redux의 미들웨어로 많이 사용되는 Redux-Saga
+
+redux-saga는 redux middleware 라이브러리 중 하나로, Action과 Reducer 사이에서 흐름을 제어함.
+Action을 모니터링 하다가 Action이 발생하면 Reducer가 Action을 처리하기 전에 다양한 작업을 할 수 있음
+
+* 기존 요청 취소, 불필요한 중복 요청 방지 가능
+* 비동기 작업을 처리하는데 효과적
+* 특정 Action이 발생했을 때 이에 따라 다른 Action이 Dispatch 되게 하거나, JS 코드를 실행할 수 있음
+
+1. actions, reducers, sagas 폴더를 만들고 파일들을 만들어줌.
+actions/playAction.js
+reducers/index.js
+sagas/PlaySaga.js, rootSaga.js
+
+예제 확인을 위해 API, Components 폴더를 만들고 각각 파일을 만들어줌.
+API/API.js
+Components/index.js, play1.js
+
+...
