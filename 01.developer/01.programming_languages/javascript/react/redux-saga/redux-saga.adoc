@@ -161,6 +161,64 @@ const reducer = (state = initialState, action) => {
 export default reducer;
 ----
 
+3. 컴포넌트 코드 변경
+saga과 reducer에 변화가 생겼으므로 컴포넌트 코드들에도 변경사항이 생김
+
+1. LoginForm 컴포넌트
+LoginForm 컴포넌트의 경우에는 reducer를 import하는 이름과 로그인 진행중인 상태를 알려주는 isLogginIn 을 갖고오게 된다.
+
+[source,js]
+----
+...
+import { useDispatch, useSelector } from 'react-redux';
+import { loginRequestAction } from '../reducers/user';
+...
+const LoginForm = () => {
+    const dispatch = useDispatch();
+    const { isLoggingIn } = useSelector((state) => state.user);
+    ...
+
+        ...
+        <ButtonWrapper style={style}>
+            <Button type="primary" htmlType="submit" loading={isLoggingIn}>로그인</Button>
+            <Link href="/signup"><a><Button>회원가입</Button></a></Link>
+        </ButtonWrapper>
+        ...
+----
+
+2. UserProfile 컴포넌트
+UserProfile 컴포넌트의 경우에는 로그아웃 버튼 관련되어서 코드를 수정해주면 된다.
+또한, 자기자신에 대한 정보를 보여주도록 me 를 useSelector로 갖고와서 사용하도록 한다.
+
+[source,js]
+----
+import { logoutRequestAction } from '../reducers/user';
+
+const UserProfile = () => {
+    const dispatch = useDispatch();
+    const { me, isLoggingOut } = useSelector((state) => state.user);
+    ...
+        <Card.Meta
+            avatar={<Avatar>{me.nickname[0]}</Avatar>}
+            title={me.nickname}
+        />
+        <Button onClick={onLogout} loading={isLoggingOut}>로그아웃</Button>
+        ...
+}
+----
+
+4. 흐름 이해하기
+
+현재 redux-saga까지 추가되어서 코드 길이도 길어지고 과정도 복잡해졌다. 흐름이 어떻게 되는지 파악하는게 중요하다. 로그인을 하는 과정을 보면서 이 흐름에 대해서 알아보자.
+
+1. 아이디, 비밀번호 입력 후 로그인 버튼 클릭
+2. loginRequestAction 실행
+3. reducer에서 switch 문에 있는 'LOG_IN_REQUEST' 부분이 실행된다.
+4. 거의 동시에 redux-saga에서 eventListener 와 비슷한 역할을 하는 watchLogIn 함수가 실행된다. 해당 함수를 통해 login 함수가 실행된다.
+5. 그 다음에 redux-saga에서 통신이 끝나면 `LOG_IN_SUCCESS`를 dispatch하게 된다.
+6. reducer에서 switch 문에 있는 'LOG_IN_SUCCESS' 부분이 실행된다. isLoggedIn이 true가 되고 me에 데이터가 들어가게된다.
+7. isLoggedIn이 true가 되므로 AppLayout에서 컴포넌트가 LoginForm에서 UserProfile로 리렌더링된다.
+
 ...
 
 React - 상태관리 Redux-Saga 2022.08.03
