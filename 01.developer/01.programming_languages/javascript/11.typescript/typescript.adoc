@@ -1,0 +1,35 @@
+:hardbreaks:
+= TypeScript
+
+== export type, export interface
+
+export type과 export interface는 TypeScript에서 타입과 인터페이스를 정의할 때 사용한다.
+
+export type은 타입을 정의할 때 사용하고, export interface는 인터페이스를 정의할 때 사용한다.
+
+export type과 export interface는 둘 다 타입을 정의할 때 사용하므로, 둘 중 하나만 사용하면 된다.
+
+export type과 export interface의 차이점은 다음과 같다.
+
+1. 구문적 차이
+* `export type`: 타입 별칭(type alias)을 내보낼 떄 사용한다. 타입 별칭은 기존 타입의 새로운 이름을 지정하고 재사용 가능한 복합 타입을 생성하는 데 사용된다.
+* `export interface`: 인터페이스를 내보낼 때 사용한다. 인터페이스는 객체의 구조와 형태를 정의하는 데 주로 사용되며, 클래스와 객체의 구조를 설명하고 클래스가 해당 인터페이스를 구현할 수 있도록 한다.
+2. 활용 목적
+* `export type`은 주로 원시 타입, 유니온 타입, 인터섹션 타입 등의 복잡한 타입 정의를 간단하게 이름 붙일 떄 사용된다.
+* `export interface`는 객체나 클래스의 형태를 정의하고 해당 형태를 준수하는 클래스나 객체를 생성하기 위해 사용된다. 인터페이스는 클래스 간 상속과 함께 사용되기도 하며, 클래스가 특정 메서드나 속성을 구현해야 할 때 유용하다.
+
+[source,typescript]
+----
+export type T = {
+  a: string;
+  b: number;
+};
+
+export interface I {
+  a: string;
+  b: number;
+}
+----
+
+단순 타입 설명하려면 export type 하면 되겠고, 상속에 쓰려면 export interface 하면 되겠다.
+
