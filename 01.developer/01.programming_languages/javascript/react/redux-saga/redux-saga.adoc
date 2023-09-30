@@ -219,6 +219,142 @@ const UserProfile = () => {
 6. reducer에서 switch 문에 있는 'LOG_IN_SUCCESS' 부분이 실행된다. isLoggedIn이 true가 되고 me에 데이터가 들어가게된다.
 7. isLoggedIn이 true가 되므로 AppLayout에서 컴포넌트가 LoginForm에서 UserProfile로 리렌더링된다.
 
+5. 액션과 상태 정리하기
+1. 액션명 정리하기
+액션명이 문자열로 되있는 경우 오타에 취약하다는 단점이 있다. 이럴 때는 변수로 빼두는 것을 추천한다.
+변수로 만들어주면 에디터가 오타를 캐치해주므로 관리하기가 좋다. 혹시라도 해당 부분이 너무 길어진다면 action에 관련된 폴더를 따로 만들어서 관리해줘도 된다.
+
+reducer 폴더에 있는 user.js에 필요한 action들을 수정 및 추가해주고 post.js도 수정해주자.
+
+[source,js]
+----
+// reducer/user.js
+...
+export const LOG_IN_REQUEST = 'LOG_IN_REQUEST';
+export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
+export const LOG_IN_FAILURE = 'LOG_IN_FAILURE';
+
+export const LOG_OUT_REQUEST = 'LOG_OUT_REQUEST';
+export const LOG_OUT_SUCCESS = 'LOG_OUT_SUCCESS';
+export const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
+
+export const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
+export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
+export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
+
+export const UNFOLLOW_REQUEST = 'UNFOLLOW_REQUEST';
+export const UNFOLLOW_SUCCESS = 'UNFOLLOW_SUCCESS';
+export const UNFOLLOW_FAILURE = 'UNFOLLOW_FAILURE';
+
+export const FOLLOW_REQUEST = 'FOLLOW_REQUEST';
+export const FOLLOW_SUCCESS = 'FOLLOW_SUCCESS';
+export const FOLLOW_FAILURE = 'FOLLOW_FAILURE';
+
+// action creators
+export const loginRequestAction = (data) => {
+    return {
+        type: LOG_IN_REQUEST,
+        data,
+    }
+};
+
+export const logoutRequestAction = () => {
+    return {
+        type: LOG_OUT_REQUEST,
+    }
+};
+
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case LOG_IN_REQUEST:
+            return {
+                ...state,
+                isLoggingIn: true,
+            };
+        case LOG_IN_SUCCESS:
+            return {
+                ...state,
+                isLoggingIn: false,
+                isLoggedIn: true,
+                me: { ...action.data, nickname: 'mag' },
+            };
+        case LOG_IN_FAILURE:
+            return {
+                ...state,
+                isLoggingIn: false,
+                isLoggedIn: false,
+            };
+        case LOG_OUT_REQUEST:
+            return {
+                ...state,
+                isLoggingOut: true,
+            };
+        case LOG_OUT_SUCCESS:
+            return {
+                ...state,
+                isLoggingOut: false,
+                isLoggedIn: false,
+                me: null,
+            };
+        case LOG_OUT_FAILURE:
+            return {
+                ...state,
+                isLoggingOut: false,
+            };
+        default:
+            return state;
+    }
+};
+
+export default reducer;
+----
+
+[source,js]
+----
+// reducer/post.js
+
+...
+export const ADD_POST_REQUEST = 'ADD_POST_REQUEST';
+export const ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';
+export const ADD_POST_FAILURE = 'ADD_POST_FAILURE';
+
+// action creators
+export const addPost = (data) => ({
+    type: ADD_POST_REQUEST,
+    data,
+});
+
+const dummyPost = {
+    id: 2,
+    content: '더미데이터입니다~',
+    User: {
+        id: 1,
+        nickname: 'magrfs',
+    },
+    Images: [],
+    Comments: [],
+}
+
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case ADD_POST_REQUEST:
+        case ADD_POST_SUCCESS:
+            return {
+                ...state,
+                isAddingPost: false,
+                mainPosts: [dummyPost, ...state.mainPosts],
+                postAdded: true,
+            };
+        case ADD_POST_FAILURE:
+        default:
+            return state;
+    }
+};
+
+export default reducer;
+----
+
+
 ...
 
 React - 상태관리 Redux-Saga 2022.08.03
