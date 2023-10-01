@@ -354,6 +354,111 @@ const reducer = (state = initialState, action) => {
 export default reducer;
 ----
 
+2. 상태명 정리하기
+
+reducer의 user.js에 initialState를 보면 isLoggedIn과 같은 상태들이 점점 늘어나는 것을 볼 수 있다. 유저와 관련되어서 follow 등을 추가하면 더 길어질것이다. 이럴 때, 이름을 어느정도 규칙을 세워서 만들어주면 좋다. 100% 옳다라는 방법은 없지만 본인 및 팀원들이 알기 쉬운 이름으로 짓는게 좋다.
+
+[source,js]
+----
+// reducer/user.js
+
+export const initialState = {
+    logInLoading: false, // 로그인 시도중
+    logInDone: false,
+    logInError: null,
+    logOutLoading: false, // 로그아웃 시도중
+    logOutDone: false,
+    logOutError: null,
+    signUpLoading: false, // 회원가입 시도중
+    signUpDone: false,
+    signUpError: null,
+    me: null,
+    signUpData: {},
+    loginData: {},
+};
+...
+----
+
+initialState를 바꿨다면 이제 reducer도 바꿔줘야한다.
+loading 액션 시 me를 null로 설정해주면 아무런 데이터 없이 로딩을 보여주느냐 아니냐를 설정할 수 있다. 하지만 대부분 loading에서가 아니라 실패했을 시 데이터를 없애버린다.
+
+reducer를 설정하면서 추가로 회원강비에 대한 reducer 코드도 작성해보자. 특별한 경우가 아닌 이상 대부분 복사-붙여넣기 수준이다.
+
+error의 경우에도 action.data -> action.error 로 수정해주자.
+
+[source,js]
+----
+// reducer/user.js
+
+...
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case LOG_IN_REQUEST:
+            return {
+                ...state,
+                logInLoading: true,
+                logInDone: false,
+                logInError: null,
+            };
+        case LOG_IN_SUCCESS:
+            return {
+                ...state,
+                logInLoading: false,
+                logInDone: true,
+                me: dummyUser(action.data),
+            };
+        case LOG_IN_FAILURE:
+            return {
+                ...state,
+                logInLoading: false,
+                logInError: action.error,
+            };
+        case LOG_OUT_REQUEST:
+            return {
+                ...state,
+                logOutLoading: true,
+                logOutDone: false,
+                logOutError: null,
+            };
+        case LOG_OUT_SUCCESS:
+            return {
+                ...state,
+                logOutLoading: true,
+                logOutDone: false,
+                me: null,
+            };
+        case LOG_OUT_FAILURE:
+            return {
+                ...state,
+                logOutLoading: false,
+                logOutError: action.error,
+            };
+        case SIGN_UP_REQUEST:
+            return {
+                ...state,
+                signUpLoading: true,
+                signUpDone: false,
+                signUpError: null,
+            };
+        case SIGN_UP_SUCCESS:
+            return {
+                ...state,
+                signUpLoading: false,
+                signUpDone: true,
+            };
+        case SIGN_UP_FAILURE:
+            return {
+                ...state,
+                signUpLoading: false,
+                signUpError: action.error,
+            };
+        default:
+            return state;
+    }
+};
+----
+
+3. saga에서 액션명 정리하기
 
 ...
 
