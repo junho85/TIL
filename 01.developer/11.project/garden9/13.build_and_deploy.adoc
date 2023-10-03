@@ -1,0 +1,48 @@
+:hardbreaks:
+= 빌드와 배포
+
+== 이미지 build & push
+
+docker 이미지 빌드는 로컬에서 진행한다.
+
+개발하던 코드를 빌드 하지 않고, 빌드 할 때는 코드를 새로 받아와서 빌드한다.
+
+/Users/junho85/project/garden9 에 있는 코드를 빌드한다.
+
+[source,shell]
+----
+$ cd /Users/junho85/project/garden9
+----
+
+빌드 스크립트를 이용해서 빌드하고 이미지 push 까지 진행한다.
+
+[source,shell]
+----
+$ source docker-build-push.sh 20231003_1
+----
+
+== 배포 using docker compose
+
+서버 접속
+
+[source,shell]
+----
+ssh root@garden9.junho85.pe.kr
+----
+
+[source,shell]
+----
+cd /root/docker-garden8
+git pull
+docker compose up web --force-recreate --build -d
+docker compose up web-garden9 --force-recreate --build -d
+docker image prune -f
+----
+
+== 배포 상태 확인
+
+== docker
+
+docker ps
+
+

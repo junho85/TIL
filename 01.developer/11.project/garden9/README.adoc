@@ -4,6 +4,8 @@
 
 정원사들 시즌9 출석부
 
+* 기간 (100일) : 2023.08.13 (월) ~ 2023.11.20 (월)
+
 == 작업
 
 === garden8 github repository를 garden9 으로 clone
