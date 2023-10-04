@@ -1,0 +1,32 @@
+:hardbreaks:
+= Docker Compose 설정
+
+== services
+db, web 구조였다가 시즌9 가 추가 되면서 db, web, web-garden9 3가지
+
+db는 mongodb. 출석부 데이터가 기록된다.
+
+web은 garden8 출석부
+web-garden9는 garden9 출석부
+
+=== web 설정
+=== environment
+environment에 GARDEN_CONFIG_DIR를 설정한다.
+
+.env 파일에 GARDEN_CONFIG_DIR=/config/attendance 로 설정되어 있다.
+
+GARDEN_CONFIG_DIR 설정은 출석부에서 이용되며, 기본값을 ./config/attendance 로 설정되어 있어서 로컬에서 테스트 할 때 프로젝트의 config/attendance 설정을 이용하기 위함이다. 하지만 배포할 때는 docker-compose repository 에 저장해둔 설정파일을 이용하게 된다. 이 설정파일은 volumes 로 설정되어 있다.
+
+
+=== volumes
+docker compose repository 에 설정파일을 두고 해당 파일을 docker 이미지를 띄울 때 volume 로 설정하고, 앞서 environment 에서 설정한 환경변수로 위치를 잡아 주면 출석부 프로젝트에서 이용하게 된다.
+
+시즌8의 설정은 ./config/attendance 디렉터리에있고
+시즌9의 설정은 ./garden9/config/attendance 디렉터리에 있다.
+
+=== ports
+
+내부 포트는 8000 으로 뜬다. 외부에서 접근할 때는 8000, 8001 을 사용해서 구분하도록 한다.
+
+garden8 8000:8000
+garden9 8001:8000
