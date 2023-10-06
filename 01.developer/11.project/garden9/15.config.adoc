@@ -1,0 +1,18 @@
+:hardbreaks:
+= Configs
+
+현재 설정파일은 config/attendance 경로에 있다.
+
+config.ini, users.yaml 두가지 설정이 있다.
+
+== config.ini
+
+=== 기본 설정
+slack api token, 슬랙 채널, 시작일, 진행일수 등의 설정이 있다.
+
+=== mongo db 설정
+HOST 설정은 로컬에서 띄울때는 localhost 로 하면 되고, docker compose 에서 띄울 때는 mongodb.docker 로 설정하면 된다.
+
+docker compose 설정의 links 설정에 의해 db 접속시 mongodb.docker 로 접속하게 된다.
+
+추후 docker network 방식으로 개선하면 좋겠다.
