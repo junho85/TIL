@@ -1,0 +1,38 @@
+:hardbreaks:
+= 출석부 집계 방법
+
+https://api.slack.com/methods/conversations.history
+기본값은 100
+collect 할 때 limit을 1000으로 설정하고 있음
+API 문서에서는 200개 이하로 사용하기를 권장하고 있음
+
+
+== 8월
+http://localhost:8001/attendance/collect/?start=2023-08-13&end=2023-08-31
+370개
+
+
+https://garden9.junho85.pe.kr/attendance/collect/?start=2023-08-13&end=2023-08-31
+370개
+
+== 9월
+http://localhost:8001/attendance/collect/?start=2023-09-01&end=2023-09-30
+351개
+
+https://garden9.junho85.pe.kr/attendance/collect/?start=2023-09-01&end=2023-09-30
+351개
+
+== 10월
+http://localhost:8001/attendance/collect/?start=2023-10-01&end=2023-10-31
+
+https://garden9.junho85.pe.kr/attendance/collect/?start=2023-10-01&end=2023-10-31
+
+
+== cronjob 설정
+
+[source,cronexp]
+----
+0 * * * * /usr/bin/curl -s -o /dev/null https://garden9.junho85.pe.kr/attendance/collect/
+----
+
+
