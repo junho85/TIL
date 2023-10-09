@@ -1,0 +1,22 @@
+:hardbreaks:
+= Python markdown vs markdown2
+
+`markdown`과 `markdown2` 모듈 둘 다 Python에서 Markdown 형식의 텍스트를 HTML로 변환하는 라이브러리. 차이점 비교
+
+== 1. 기능
+`markdown` 모듈은 Python 표준 라이브러리에 포함되어 있음. Markdown을 HTML로 변환하는 데 기본적인 기능을 제공하지만 추가적인 확장이 필요한 경우 사용자 지정 확장을 구현해야 함
+
+`markdown2` 모듈은 `markdown` 모듈보다 더 많은 확장 기능을 포함하고 있음. 예를 들어 `markdown2`는 테이블, 각주(footnotes), 첨부 파일(attachments) 및 몇 가지 다른 Markdown 확장을 지원함. 이로 인해 `markdown2`는 더 많은 Markdown 변환 옵션을 제공함
+
+== 2. 확장성
+`markdown` 모듈은 기본 Markdown 문법을 처리하는 데 중점을 두고 있으며, 확장이 필요한 경우 사용자 지정 확장을 직접 구현해야 함. 이로 인해 더 많은 작업이 필요할 수 있음
+
+`markdown2`는 다양한 확장 기능을 포함하고 있어 사용자 지정 확장을 구현하지 않고도 더 다양한 Markdown 형식을 처리할 수 있음. 이는 더 편리한 사용 경험을 제공함
+
+== 3. 유지 및 업데이트
+`markdown` 모듈은 Python의 표준 라이브러리에 포함되어 있으며, 따라서 Python의 릴리스 사이에는 큰 변경이 없음. 이것은 안정성을 의미하지만 새로운 Markdown 확장이 추가되지 않을 가능성이 있음
+
+`markdown2` 모듈은 더 활발하게 유지되며 업데이트되는 경향이 있음. 따라서 더 최신의 Markdown 확장을 사용하려는 경우에는 `markdown2`를 고려할 수 있음
+
+따라서 선택을 할 때 어떤 Markdown 변환 기능을 필요로 하는지와 얼마나 많은 확장이 필요한지에 따라 `markdown` 또는 `markdown2` 중에서 선택하면 됨. 일반적으로 더 많은 기능과 확장이 필요한 경우 `markdown2`를 사용하는 것이 좋음
+
