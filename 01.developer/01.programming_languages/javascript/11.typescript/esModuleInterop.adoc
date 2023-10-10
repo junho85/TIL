@@ -1,0 +1,34 @@
+:hardbreaks:
+= esModuleInterop
+
+`esModuleInterop`는 TypeScript 컴파일러의 옵션 중 하나로, ES 모듈과 CommonJS 모듈 간의 호환성을 높이는 데 도움을 주는 옵션. 이 옵션을 사용하면 CommonJS 모듈 시스템을 사용하는 패키지를 ES 모듈 형태로 가져올 때 더 간편하게 사용할 수 있게 됨
+
+기본적으로 TypeScript는 ES 모듈과 CommonJS 모듈을 구분하여 다루고 있음. 즉, ES 모듈을 가져올 때 `import` 키워드를 사용하고, CommonJS 모듈을 가져올 때 `require()` 함수를 사용해야 함. 이것은 몇 가지 상황에 불편할 수 있음
+
+`esModuleInterop` 옵션을 활성화하면 CommonJS 모듈을 ES 모듈 형태로 더 간편하게 가져올 수 있게 됨. 예를 들어, `import React from 'react'`와 같이 사용할 수 있어서 `require('react')` 대신 `import`를 사용할 수 있게 됨
+
+옵션을 활성화하면 다음과 같은 이점이 있음
+
+1. CommonJS 모듈을 ES 모듈처럼 사용할 수 있으므로 코드가 더 깔끔해짐
+2. 더 짧고 간결한 `import` 문을 사용할 수 있음
+3. 코드베이스의 호환성을 높여 ES 모듈과 CommonJS 모듈을 함께 사용할 때 발생하는 문제를 줄임
+
+따라서 주로 TypeScript 프로젝트에서는 `esModuleInterop` 옵션을 활성화하여 모듈 시스템 간의 호환성을 개선하는 것이 좋음
+
+== esModuleInterop 옵션 활성화 방법
+
+=== tsconfig.json
+
+[source,json]
+----
+{
+  "compilerOptions": {
+    "esModuleInterop": true
+  }
+}
+----
+
+`import React from 'react'` 형태로 사용할 수 있게 됨
+
+`require('react')` 대신 `import`를 사용할 수 있게 됨
+
