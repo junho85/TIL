@@ -1,6 +1,8 @@
 :hardbreaks:
 = saga
 
+Redux-saga는 react/redux 애플리케이션의 사이드 이펙트, 예를 들면 데이터 fetching이나 브라우저 캐시에 접근하는 순순하지 않은 비동기 동작들을 더 쉽고 보기 좋게 만드는 것을 목적으로 하는 라이브러리
+
 https://redux-saga.js.org/docs/introduction/GettingStarted
 
 https://redux-saga.js.org/docs/api/
@@ -554,6 +556,98 @@ export default function* userSaga() {
 }
 ----
 
+post쪽도 reducer, saga 전부 수정해주자.
+
+[source,js]
+----
+// reducer/post.js
+export const initialState = {
+    mainPosts: [{
+        id: 1,
+        User: {
+            id: 1,
+            nickname: 'magrfs',
+        },
+        content: '첫 번째 게시글입니다.',
+        Images: [{
+            src: '...'
+        }, {
+            src: '...'
+        }, {
+            src: '...'
+        }],
+        Comments: [{
+            User: {
+                nickname: 'hello',
+            },
+            content: '첫 번째 댓글이예요!',
+        }, {
+            User: {
+                nickname: 'huhuhu',
+            },
+            content: '두 번째 댓글이예요!',
+        }
+        ],
+    }],
+    imagePaths: [],
+    addPostLoading: false,
+    addPostDone: false,
+    addPostError: null,
+    addCommentLoading: false,
+    addCommentDone: false,
+    addCommentError: null,
+};
+
+export const ADD_POST_REQUEST = 'ADD_POST_REQUEST';
+export const ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';
+export const ADD_POST_FAILURE = 'ADD_POST_FAILURE';
+
+export const ADD_COMMENT_REQUEST = 'ADD_COMMENT_REQUEST';
+export const ADD_COMMENT_SUCCESS = 'ADD_COMMENT_SUCCESS';
+export const ADD_COMMENT_FAILURE = 'ADD_COMMENT_FAILURE';
+
+// action creators
+export const addPost = (data) => ({
+    type: ADD_POST_REQUEST,
+    data,
+});
+
+export const addComment = (data) => ({
+    type: ADD_COMMENT_REQUEST,
+    data,
+});
+
+const dummyPost = {
+    id: 2,
+    content: '더미데이터입니다~',
+    User: {
+        id: 1,
+        nickname: 'magrfs',
+    },
+    Images: [],
+    Comments: [],
+}
+
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case ADD_POST_REQUEST:
+            return {
+                ...state,
+                addPostLoading: true,
+                addPostDone: false,
+                addPostError: null,
+            };
+        case ADD_POST_SUCCESS:
+            return {
+                ...state,
+                mainPosts: [dummyPost, ...state.mainPosts],
+                addPostLoading: false,
+                addPostDone: true,
+            };
+            ...
+    }
+}
+----
 
 ...
 
@@ -602,4 +696,27 @@ debugger 와 콘솔을 찍으면서 확인
 * yield put을 만나 새로운 액션에 대해 Displatch
 * reducer에 액션에 대한 state 변경이 있으므로 이를 수행함
 * 변경된 state는 mapStateToProps를 통해서 컴포넌트에 전달되고 우리는 최종적으로 4번의 결과 화면이 렌더링 된 것을 확인할 수 있음
+
+
+https://leego.tistory.com/entry/Redux-saga%EB%A5%BC-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90[Redux-saga를 알아보자 2021.09.04]
+
+redux에서는 action을 발생시키면 reducer를 통해 state를 변화시켜 store를 갱신함
+
+Redux-saga는 action과 reducer사이에서 흐름을 제어하는 미들웨어. 이 중간에서 Redux-saga는 action이 발생하면 reducer가 액션을 처리하기 전에 다양한 작업을 할 수 있다.
+
+다양한 작업들의 예시
+* 기존 요청을 취소 처리하거나 불필요한 중복 요청을 방지할 수 있다.
+* 비동기 작업을 처리하는데 효과적
+* 특정 액션이 발생했을 때 다른 액션을 발생시키거나, 리덕스와 관계없는 코드 실행시 사용함
+
+즉, Redux-saga를 이용하면 보다 간편하면서도 깊게 state의 흐름을 제어할 수 있다.
+
+Redux-saga를 도입한 이유
+1. api 호출 로직을 효율적으로 관리할 수 있다.
+오로지 비동기 작업만을 위해 redux-saga를 쓰는것은 크게 효율적이지 않다고 생각
+async/await 라는 훌륭한 기능으로 비동기 동작들을 처리할 수 있는데 굳이 코드량을 늘려가며 redux-saga를 도입한 이유?
+
+redux-saga에서는 비동기 동작에 대한 더 세부적인 컨트롤이 가능. 예를 들면 사용자의 부주의로 동일한 api를 여러번 호출할 경우, 가장 마지막 호출의 response 만 받아오도록 제어할 수 있다.
+
+무엇보다 api 호출 로직을 saga에서 관리하면서, Presentational 컴포넌트와 Container 컴포넌트의 명확한 분리가 가능해짐. 또한 같은 api를 다른 페이지에서 호출시 같은 코드를 두번 적어줘야 했다면, api 호출 로직을 Redux-saga로 관리하면서 selector로 데이터 만을 간편하게 가져올 수 있게 됨.
 
