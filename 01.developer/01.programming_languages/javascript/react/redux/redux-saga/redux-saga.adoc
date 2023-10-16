@@ -1,11 +1,28 @@
 :hardbreaks:
 = saga
 
+Redux Middleware 라이브러 중 하나
+
 Redux-saga는 react/redux 애플리케이션의 사이드 이펙트, 예를 들면 데이터 fetching이나 브라우저 캐시에 접근하는 순순하지 않은 비동기 동작들을 더 쉽고 보기 좋게 만드는 것을 목적으로 하는 라이브러리
+
+비동기 상태 관리와 사이드 이펙트 처리를 위한 것
+
+Saga는 Redux, MobX와 같은 상태 관리 라이브러리와 함게 자주 쓰임. JavaScript의 Redux-Saga 라이브러리에 많이 사용됨. 액션과 상태 변경 사이의 비동기 동작을 관리하는 데 도움을 줌
 
 https://redux-saga.js.org/docs/introduction/GettingStarted
 
 https://redux-saga.js.org/docs/api/
+
+== Saga 특징
+1. Generator Functions: Saga는 주로 제너레이터 함수를 사용하여 작성됨. 제너레이터 함수는 비동기 작업을 동기적으로 다룰 수 있도록 해줌
+2. Side Effects: Saga는 애플리케이션의 사이드 이펙트를 관리하는 데 사용됨. 이것은 API 호출, 브라우징 히스토리 조작, 라우팅, 로깅, 로컬 스토리지 조작 등과 같은 작업을 의미
+3. Middleware: Saga는 미들웨어로 애플리케이션 상태와 디스패치된 액션 사이에서 동작함. Redux 애플리케이션에서는 Redux-Saga와 같은 미들웨어를 사용하여 Saga를 적용할 수 있음
+4. 액션 처리: Saga는 특정 액션이 디스패치되면 실행되도록 설정할 수 있으며, 이를 통해 액션에 대한 비동기 작업을 처리함
+5. 취소와 에러 처리: Saga는 액션을 취소하거나 에러를 처리할 수 있으므로 애플리케이션의 안정성을 향상키기고 예외 상황을 관리할 수 있음
+
+일반적으로 Redux-Saga에서 Saga는 "take", "put", "call", "fork", "cancel" 등의 명령어를 사용하여 비동기 동작을 처리하며, 이러한 명령어를 통해 액션을 감시하고 디스패치하며 비동기 작업을 수행할 수 있음.
+
+Saga는 복잡한 비동기 상황을 처리하고 코드를 더 예측 가능하고 테스트 가능하게 만들어 주는데 도움을 줌.
 
 
 == References
@@ -851,3 +868,51 @@ fork 된 task를 취소시킨다. (e.g. yield cancel(task))
 
 all
 이 함수를 사용해서 제너레이터 함수를 배열의 형태로 넣어주면, 제너레이터 함수들이 병행적으로 동시에 실행되고, 전부 resolve 될때까지 기다린다. (Promise.all 과 비슷하다.)
+
+
+https://velog.io/@jminkyoung/TIL-12-React-redux-saga-%EB%9E%80[React - redux-saga 란? 2021.07.19]
+
+redux-saga란 Redux Middleware 라이브러리 중 하나. redux-thunk도 많이 쓰이긴 하지만 간단한 어플리케이션에서만 쓰이며, 주로 redux-saga를 사용함.
+
+redux-saga란 Action을 모니터링하고 있다가, 특정 Action이 발생하게 되면 이에 따라 특정 작업을 하는 방식으로 사용함.
+이때 특정 작업이란, 특정 JavaScript를 실행하는 것 일수도 있고, 다른 Action을 Dispatch 하는 것일수도 있고, 현재 State를 불러오는 것일수도 있다.
+
+redux-thunk에서는 다룰수 없었지만 redux-saga에서는 처리할 수 있는 작업
+1. 비동기 작업을 할 때 기존 요청을 취소 처리할 수 있다.
+2. 특정 Action이 발생했을 때 이에 따라 다른 Action이 Dispatch 되게 하거나, JavaScript코드를 실행할 수 있다.
+3. API 요청이 실패했을 때 재요청하는 작업이 가능
+
+redux-saga에선 JavaScript의 Generator라는 개념을 사용하기 때문에 해당 개념을 알아야한다.
+
+[source,js]
+----
+function* watchAction() {
+    console.log('Action 모니터링 시작');
+    while (true) {
+        const action = yield;
+        if (action.type === 'CREATE') {
+            console.log('CREATE 액션 감지');
+        }
+        if (action.type === 'DELETE') {
+            console.log('DELETE 액션 감지');
+        }
+    }
+}
+----
+Redux의 Reducer 처럼 Action의 type에 따라서 다른 행동을 하는 코드
+
+[source,js]
+----
+const watch = watchAction();
+watch.next();
+Action 모니터링 시작
+watch.next({type:'CREATE'})
+CREATE 액션 감지
+watch.next({type:'DELETE'})
+DELETE 액션 감지
+watch.next({type:'NONE'})
+Uncaught SyntaxError: Invalid or unexpected token
+----
+
+redux-saga 로그인 예제
+...
