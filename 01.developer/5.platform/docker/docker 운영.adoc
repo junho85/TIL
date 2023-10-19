@@ -1,0 +1,55 @@
+:hardbreaks:
+= Docker 운영
+
+== 용량 부족
+
+=== 미사용 이미지 제거
+
+no space left on device.
+
+[source,bash]
+----
+$ docker run -u $(id -u) -p 8080:8080 --rm --name zeppelin apache/zeppelin:0.10.0
+Unable to find image 'apache/zeppelin:0.10.0' locally
+0.10.0: Pulling from apache/zeppelin
+16ec32c2132b: Already exists
+aafd5bdc2bb7: Already exists
+0bb58b150809: Already exists
+68d71ea3a296: Extracting [==========================================>        ]  569.9MB/665.9MB
+9c7277321f0c: Downloading [==================================================>]  2.816GB/2.816GB
+6be3e4488900: Download complete
+622d30c2f649: Download complete
+d10a38bf471f: Download complete
+4006c4346d45: Download complete
+4f4fb700ef54: Download complete
+docker: write /var/lib/docker/tmp/GetImageBlob790506368: no space left on device.
+See 'docker run --help'.
+----
+
+
+[source,bash]
+----
+$ docker system df
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          100       1         35.6GB    34.93GB (98%)
+Containers      1         0         0B        0B
+Local Volumes   63        1         17.62GB   17.62GB (100%)
+Build Cache     224       0         0B        0B
+----
+
+미사용 이미지 정리
+
+[source,bash]
+----
+docker image prune
+----
+docker image prune 명령어를 사용하여 사용하지 않는 이미지를 정리할 수 있습니다. 이 명령어는 기본적으로 dangling 이미지(사용 중이 아닌 이미지)를 제거합니다.
+
+위 케이스에서는 이 방법으로는 정리가 되지 않았습니다. 아래 방법으로 정리하였습니다.
+
+[source,bash]
+----
+docker image prune -a
+----
+docker image prune -a 명령어를 사용하면 모든 사용하지 않는 이미지를 제거합니다.
+
