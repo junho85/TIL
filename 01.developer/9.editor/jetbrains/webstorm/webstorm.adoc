@@ -1,0 +1,15 @@
+:hardbreaks:
+= WebStorm
+
+== JavaScript import brace에 공백 넣기 설정 방법
+
+[source,editorconfig]
+----
+root = true
+
+[*]
+ij_javascript_spaces_within_imports = true
+ij_typescript_spaces_within_imports = true
+----
+
+정리: https://junho85.pe.kr/2192[WebStorm - JavaScript import brace에 공백 넣기 설정 방법 2023.09.26]
