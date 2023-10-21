@@ -1,0 +1,59 @@
+:hardbreaks:
+= MySQL 모니터링
+
+== 최대 커넥션 설정 확인 max_connections
+
+[source,sql]
+----
+show variables like 'max_connections';
+----
+
+== 현재 커넥션 수 확인
+
+[source,sql]
+----
+show status like 'Threads_connected';
+----
+
+== 현재 사용중인 커넥션 확인
+
+[source,sql]
+----
+show processlist;
+----
+
+== 커넥션 수 증가
+
+[source,sql]
+----
+set global max_connections = 10000;
+----
+
+보통 기본 3000 으로 되어 있음.
+더 많이 늘리게 되면 더 많은 메모리가 필요함.
+
+my.cnf 에서 설정 가능. (설정 후 재시작 필요)
+
+[source]
+----
+[mysqld]
+max_connections = 10000
+----
+
+재시작
+service mysqld restart
+
+== Max_used_connections
+Max_used_connections 는 서버가 시작된 이후에 가장 많이 사용된 커넥션 수를 나타냄.
+
+[source,sql]
+----
+show status like 'Max_used_connections';
+----
+
+
+
+== References
+https://serverwizard.tistory.com/287[현재 운영하고 있는 DB(MySQL) 커넥션 수 확인하기 2022.06.03]
+
+https://zetawiki.com/wiki/MySQL_max_connections_%EC%84%A4%EC%A0%95[MySQL max_connections 설정 - Zetawiki]
