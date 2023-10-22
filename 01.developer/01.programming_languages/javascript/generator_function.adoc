@@ -90,3 +90,62 @@ for (let value of generator) {
 
 참고로 generator 를 for-of문으로 돌리면 1,2 까지만 출력된다. 이유는 for-of 이터레이션이 done: true 일 때 마지막 value 를 무시하기 때문이다. 그러므로 for-of를 사용했을 때 모든 값이 출력되길 원한다면 yield로 값을 반환해야한다.
 
+Generator를 통한 데이터 전달
+
+이터레이터의 next() 와 다르게 제너레이터 객체의 next() 는 인수를 전달할 수도 있다. next() 를 호출할 때 인수로 값을 지정하면 yield 키워드가 있는 대입문에 값이 할당된다.
+
+[source,js]
+----
+function* generator() {
+    console.log("start");
+    const x = yield 1;
+    console.log("x="+x);
+    const y = yield (x + 1);
+    console.log("y="+y);
+    const z = yield (y + 2);
+    console.log("z="+z);
+}
+
+const gen = generator();
+
+console.log(gen.next());
+// start
+// {value: 1, done: false}
+
+console.log(gen.next(10));
+// x=10
+// {value: 11, done: false}
+
+console.log(gen.next(20));
+// y=20
+// {value: 22, done: false}
+
+console.log(gen.next(30));
+// z=30
+// {value: undefined, done: true}
+----
+
+이터레이터의 next 메서드는 이터러블의 데이터를 꺼내 온다. 이애 반해 제너레이터의 next 메서드에 인수를 전달하면 제너레이터 객체에 데이터를 밀어 넣는다.
+
+gen.next() 를 처음 호출하면 첫번째 yield 르 ㄹ만나 멈춘다. 동시에 yield 뒤의 값을 value로 가져온다. 그래서 console 에 찍히는 이터레이터 객체는 `{value: 1, done: false}` 이다.
+
+두번째로 호출하며 인수로 10을 전달해주었다(console.log(gen.next(10))). 전달한 인수는 첫번째 yield 에 할당된다. (x의 값이 10이된다.) 실행은 두번째 yield 를 만나서 멈춘다. 동시에 두번째 yield 뒤의 (x+1)을 value로 가져온다.
+
+Generato와 무한 반복
+
+보통의 코드에서 while(true) 는 무한 루프에 빠질 위험이 있으므로 사용을 피한다. 하지만 Generator 안에서는 yield로 각 단계의 반복을 제어할 수 있기 때문에, while(true) 를 활용하여 무한으로 사용 가능한 로직을 만들 수 있다.
+
+[source,js]
+----
+function* getId() {
+    let i = 0;
+    while (true) {
+        yield ++i;
+    }
+}
+const id = getId();
+
+console.log(id.next().value); // 1
+console.log(id.next().value); // 2
+console.log(id.next().value); // 3
+----
