@@ -70,3 +70,50 @@ insert into employees(name, profile) values('은연수', json_object(
     ));
 ----
 
+JSON_QUOTE
+
+문자열에 특수 문자가 있ㅇㄹ 경우 처리함. 다음은 'n 을 입력하는 예제.
+
+[source,sql]
+----
+SELECT JSON_QUOTE('Scott\'n tiger'), JSON_QUOTE('"null');
+----
+
+가져오기
+JSON 을 잘 처리하려면 JsonPath 기반 지식이 필요함.
+
+주의 사항
+JSON에 있는 데이터는 한글 데이터를 추출해서 비교할 경우 key를 '로 전체를 묶고 한글 컬럼명을 " 로 감싸줌
+
+아래는 부서가 개발인 직원 정보를 출력하는 예제
+
+[source,sql]
+----
+SELECT id,name,json_extract(profile, '$."부서"')
+  FROM employees WHERE json_extract(profile, '$."부서"') = '개발';
+----
+
+이중 따옴표(double Quote) 없애기
+아래 쿼리를 실행하면 결과가 0이 나오며 이유는 json_extract 가 결과에 ""를 붙이기 때문임
+
+[source,sql]
+----
+SELECT id,name,json_extract(profile, '$."부서"')
+  FROM employees WHERE json_extract(profile, '$."부서"') like '개%';
+----
+
+즉 아래와 같은 구문을 평가하므로 결과가 0이 나오게 됨
+
+[source,sql]
+----
+select '"개발"' like '개%';
+----
+
+이를 해결하려면 MySQL의 "unquotes the extracted result" 연산자인 ->>를 사용해서 Quote 제거
+
+[source,sql]
+----
+SELECT id,name,profile ->> '%."부서"', json_extract(profile, '$."부서"')
+  FROM employees WHERE profile ->> '$."부서"' like '개%';
+----
+
