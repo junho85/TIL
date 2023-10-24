@@ -1,3 +1,4 @@
+:hardbreaks:
 = mongodb installation - atlas
 
 https://www.mongodb.com/cloud/atlas

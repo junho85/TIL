@@ -1,0 +1,23 @@
+:hardbreaks:
+= mongodb - installation
+
+
+== mac os x - brew
+
+[source,bash]
+----
+brew tap mongodb/brew
+brew install mongodb-community@4.2
+----
+2019.10.28 기준 4.2.0 이 설치 된다.
+
+== References
+* https://hub.docker.com/_/mongo[mongo]
+* https://elfinlas.github.io/2019/02/11/docker-on-mongo/[Docker에서 MongoDB 설치하기 2019.02.11]
+* https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/[Install MongoDB Community Edition on macOS]
+
+[source,bash]
+----
+brew tap mongodb/brew
+brew install mongodb-community@4.2
+----
