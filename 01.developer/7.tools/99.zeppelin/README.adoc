@@ -1,6 +1,36 @@
 :hardbreaks:
 = Zeppelin
 
+https://github.com/apache/zeppelin
+
+
+== Docker로 Zeppelin 세팅
+
+https://hub.docker.com/r/apache/zeppelin
+
+https://zeppelin.apache.org/docs/0.10.1/quickstart/install.html
+
+
+[source,bash]
+----
+docker run -u $(id -u) -p 8080:8080 --rm --name zeppelin apache/zeppelin:0.10.1
+----
+
+logs, notebook 디렉터리를 볼륨으로 연결하기
+[source,bash]
+----
+docker run -u $(id -u) -p 8080:8080 --rm -v $PWD/logs:/logs -v $PWD/notebook:/notebook \
+           -e ZEPPELIN_LOG_DIR='/logs' -e ZEPPELIN_NOTEBOOK_DIR='/notebook' \
+           --name zeppelin apache/zeppelin:0.10.1
+----
+
+Spark, Flink 연결하기
+[source,bash]
+----
+docker run -u $(id -u) -p 8080:8080 --rm -v /mnt/disk1/notebook:/notebook \
+-v /usr/lib/spark-current:/opt/spark -v /mnt/disk1/flink-1.12.2:/opt/flink -e FLINK_HOME=/opt/flink  \
+-e SPARK_HOME=/opt/spark  -e ZEPPELIN_NOTEBOOK_DIR='/notebook' --name zeppelin apache/zeppelin:0.10.1
+----
 
 == Credential Injection
 
