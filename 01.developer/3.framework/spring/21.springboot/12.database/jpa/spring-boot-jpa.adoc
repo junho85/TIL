@@ -1,6 +1,0 @@
-= Spring Boot JPA
-
-https://spring.io/guides/gs/accessing-data-jpa/[Accessing Data with JPA]
-
-
-
