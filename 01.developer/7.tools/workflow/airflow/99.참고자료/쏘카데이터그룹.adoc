@@ -21,6 +21,18 @@ https://tech.socarcorp.kr/data/2021/06/01/data-engineering-with-airflow.html
 
 기존 Rundeck은 위와 같은 요구사항을 충족시키기엔 부족했기에, 새로운 도구를 도입하기로 결정했음. 결과적으로 당시 데이터 파이프라인 플랫픔오르 많이 쓰이는 Apache Airflow를 사용해보기로 결정했음
 
+태동기 - Google Cloud Composer
 
+데이터 그룹이 생긴 태동기에는 데이터 엔지니어가 없었음. 데이터 분석가들이 직접 데이터 파이프라인을 만들어야 했음
+기술적인 이슈보다 당장 분석에 필요한 파이프라인을 만드는 것이 가장 높은 우선순위였음. 따라서 직접 구축 및 관리가 필요 없는 Google Cloud의 Cloud Composer를 사용하게 되었음
 
+Cloud Composer는 Google Cloud에서 제공하는 Managed Airflow 서비스. 참고로 AWS에도 Managed Airflow(MWAA)가 존재하지만, 그 당시엔 구글 클라우드의 Cloud Composer가 유일했음. 또한 쏘카에선 데이터 웨어하우스를 구글 클라우드의 BigQuery로 사용했기 때문에 같은 구글 클라우드 서비스가 꽤 괜찮은 이점을 줄 거라 생각했음.
 
+Cloud Composer는 정말 간단하게 사용할 수 있음. Airflow의 DAG 파일을 Cloud Storag에 업로드해서 사용함. Cloud Storag에 Airflow DAG 파일을 업로드하면 Cloud Composer에서 해당 파일을 읽어 작업을 실행함. 사용자 입장에서 Airflow 구성 요소에 대해 크게 신경 쓸 필요가 없이 DAG 파일만 잘 만들면 됨.
+
+그러나 Composer는 종종 알 수 없는 에러를 발생시켰음. 당시 Airflow의 버전은 1.10.3로 오픈소스 자체에도 버그가 존재했음. 오류가 생겼을 때 로그를 직접 제대로 볼 수 없는 것이 1.10.3 버전의 가장 큰 문제였음.
+Composer의 안정성 문제와 로그와 관련된 이슈로 Composer를 계속 사용해야 하는가에 대한 고민이 시작되었음.
+
+초창기 - Google Computer Engine + Docker Compose
+
+데이터 그룹이 생긴 몇 달 뒤 데이터 엔지니어분들이 데이터 그룹에 합류하게 되었고, 자체 데이터 엔지니어링 팀이 탄생했음. 이제 데이터 엔지니어링팀에서 데이터 파이프라인 구축과 인프라 운영을 담당하게 되었고, 이전보다 좀 더 체계적인 데이터 분석 환경을 구축해볼 수 있게 되었음. 이제 Cloud Composer를 벗어나 데이터 엔지니어링 팀에서 Airflow를 직접 구축하고 운영하기로 하였음.
