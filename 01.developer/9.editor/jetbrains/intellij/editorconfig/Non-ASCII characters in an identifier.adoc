@@ -1,0 +1,10 @@
+:hardbreaks:
+= IntelliJ 한글 코드에 Non-ASCII characters in an identifier
+
+
+
+== References
+https://bcp0109.tistory.com/335[IntelliJ 에서 한글 사용 시 Non-ASCII characters in an identifier 없애는 법 2021.09.29]
+
+IntelliJ IDEA > Preferences > Editor > Inspections
+Non-ASCII characters 체크 해제
