@@ -1,0 +1,14 @@
+:hardbreaks:
+= 미디어위키 업그레이드
+
+
+
+== 1.21.1 to 1.31.1
+
+
+
+== References
+
+https://airtravelinfo.kr/homepage_tip/1296964[미디어위키 업그레이드 방법 2018.11.18]
+
+1. 백업 - 만일의 경우를 대비, 기존 미디어위키 폴더 및 DB 백업

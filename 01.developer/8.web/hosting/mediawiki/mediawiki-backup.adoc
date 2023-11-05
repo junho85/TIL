@@ -1,0 +1,8 @@
+:hardbreaks:
+= Mediawiki Backup
+
+
+
+== References
+* https://www.mediawiki.org/wiki/Manual:Backing_up_a_wiki/ko[매뉴얼: 위키를 백업하는 법]
+* https://www.mediawiki.org/wiki/Manual:Backing_up_a_wiki[Manual: Backing up a wiki]

@@ -1,0 +1,36 @@
+:hardbreaks:
+= Mediawiki - Google AdSense 연동
+
+== 사이드 - extensions 방식
+
+GoogleAdSense extension 받아서 extensions 폴더에 복사
+
+LocalSettings.php 수정
+
+
+
+== 하단부 - hooks - SkinAfterContent
+
+LocalSettings.php 수정
+
+[source,php]
+----
+$wgHooks['SkinAfterContent'][] = ...
+----
+
+
+== 상단부 - hooks - SiteNoticeAfter
+
+LocalSettings.php 수정
+
+[source,php]
+----
+$wgHooks['SiteNoticeAfter'][] = ...
+----
+
+== References
+https://airtravelinfo.kr/homepage_tip/1227760[미디어위키 애드센스 적용 방법 2017.09.01]
+
+http://gamedic.org/index.php/%EB%AF%B8%EB%94%94%EC%96%B4%EC%9C%84%ED%82%A4%EC%97%90%EC%84%9C_%EA%B5%AC%EA%B8%80_%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4_%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0[미디어위키에서 구글 애드센스 연동하기]
+
+
