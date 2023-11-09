@@ -1,0 +1,25 @@
+:hardbreaks:
+= visual studio code - vscode
+
+== Shortcuts
+
+=== Column (Box) Selection
+
+커서 위치에서 박스 형태로 선택하기
+맥 단축키 (키보드 + 마우스 조합): Shift + Option + 마우스 드래그
+
+맥 단축키: cmd + opt + shift + arrow
+
+Selection > Column Selection Mode 활성화 후 키보드로 사용 가능
+블럭 지정 후 Opt + Shift + i
+
+(참고로 intellij 는 cmd + shift + 8 로 토글)
+
+Toggle Column Selection
+https://marketplace.visualstudio.com/items?itemName=erikphansen.vscode-toggle-column-selection
+
+
+==== References
+
+https://stackoverflow.com/questions/43502589/vscode-column-selection-with-keyboard
+
