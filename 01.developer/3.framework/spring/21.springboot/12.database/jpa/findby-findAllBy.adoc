@@ -1,0 +1,21 @@
+:hardbreaks:
+= findBy와 findAllBy는 같다
+
+https://revf.tistory.com/270[[사소한 TIP] Spring Data JPA에서 FindBy 와 FindAllBy 차이점 2023.02.17]
+https://careerly.co.kr/comments/77726
+
+
+findBy와 findAllBy는 동일한 동작을 함
+
+
+https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.query-creation
+
+> Parsing query method names is divided into subject and predicate. The first part (find…By, exists…By) defines the subject of the query, the second part forms the predicate. The introducing clause (subject) can contain further expressions. Any text between find (or other introducing keywords) and By is considered to be descriptive unless using one of the result-limiting keywords such as a Distinct to set a distinct flag on the query to be created or Top/First to limit query results.
+
+https://stackoverflow.com/questions/37253571/spring-data-jpa-difference-between-findby-findallby[Spring Data JPA difference between findBy / findAllBy]
+
+https://www.baeldung.com/spring-data-jpa-find-by-vs-find-all-by[Difference Between findBy and findAllBy in Spring Data JPA]
+
+
+
+== References

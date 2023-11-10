@@ -3,23 +3,9 @@
 
 https://spring.io/guides/gs/accessing-data-jpa/[Accessing Data with JPA]
 
-== findBy와 findAllBy는 같다
+cascascade는 영속성 전이 설정
+CascadeType.ALL 은 부모 엔터티가 영속성 상태 변화를 할 때 (예: 저장, 업데이트, 삭제 등), 자식 엔터티도 같은 변화를 따르도록 하는 것을 나타냄. 이는 부모 엔터티에 대한 변경이 자식 엔터티에도 반영되도록 하는 것을 의미함
 
-https://revf.tistory.com/270[[사소한 TIP] Spring Data JPA에서 FindBy 와 FindAllBy 차이점 2023.02.17]
-https://careerly.co.kr/comments/77726
-
-
-findBy와 findAllBy는 동일한 동작을 함
-
-
-https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.query-creation
-
-> Parsing query method names is divided into subject and predicate. The first part (find…By, exists…By) defines the subject of the query, the second part forms the predicate. The introducing clause (subject) can contain further expressions. Any text between find (or other introducing keywords) and By is considered to be descriptive unless using one of the result-limiting keywords such as a Distinct to set a distinct flag on the query to be created or Top/First to limit query results.
-
-https://stackoverflow.com/questions/37253571/spring-data-jpa-difference-between-findby-findallby[Spring Data JPA difference between findBy / findAllBy]
-
-https://www.baeldung.com/spring-data-jpa-find-by-vs-find-all-by[Difference Between findBy and findAllBy in Spring Data JPA]
-
-
-
-== References
+데이터를 가져오는 방식
+FetchType.LAZY
+지연 로딩. 이 설정은 연결된 테이블의 엔티티들을 죽시 로드하지 않고, 실제로 해당 필드에 접근할 때 로드되록 지연시킴.
