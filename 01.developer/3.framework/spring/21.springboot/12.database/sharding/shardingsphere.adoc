@@ -1,0 +1,11 @@
+:hardbreaks:
+= Sharding Sphere
+
+Apache Sharding Sphere.
+
+ShardingSphere는 Sharding-JDBC, Sharding-Proxy, Sharding-Sidecard(todo)라는 3개의 독립적인 제품을 포함한 분산 데이터베이스 미들웨어 솔루션 세트로 이루어진 오픈 소스 생태계. 이들은 데이터 샤딩, 분산 트랜잭션 및 데이터베이스 오케스트레이션과 같은 기능을 제공하며 Java 동형성, 이종 언어 및 클라우드 네이티브와 같은 다양한 상황에 적용될 수 있음. 분산 시스템에서 데이터베이스의 계산 및 저장 용량을 합리적으로 활용하기 위해 ShardingSphere는 자체를 완전히 새로운 유형의 데이터베이스가 아닌 미들웨어로 정의함. 많은 기업의 중추로서 관계형 데이터베이스는 여전히 상당한 시장 점유율을 차지하고 있음. 따라서 현재 단계에서는 전면적인 전환보다는 그 증가에 중점을 둘 것임.
+
+
+
+== References
+https://shardingsphere.apache.org/document/4.1.0/en/manual/sharding-jdbc/configuration/config-spring-boot/
