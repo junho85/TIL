@@ -1,11 +1,60 @@
 :hardbreaks:
 = Sharding Sphere
 
-Apache Sharding Sphere.
+Apache ShardingSphere.
 
-ShardingSphere는 Sharding-JDBC, Sharding-Proxy, Sharding-Sidecard(todo)라는 3개의 독립적인 제품을 포함한 분산 데이터베이스 미들웨어 솔루션 세트로 이루어진 오픈 소스 생태계. 이들은 데이터 샤딩, 분산 트랜잭션 및 데이터베이스 오케스트레이션과 같은 기능을 제공하며 Java 동형성, 이종 언어 및 클라우드 네이티브와 같은 다양한 상황에 적용될 수 있음. 분산 시스템에서 데이터베이스의 계산 및 저장 용량을 합리적으로 활용하기 위해 ShardingSphere는 자체를 완전히 새로운 유형의 데이터베이스가 아닌 미들웨어로 정의함. 많은 기업의 중추로서 관계형 데이터베이스는 여전히 상당한 시장 점유율을 차지하고 있음. 따라서 현재 단계에서는 전면적인 전환보다는 그 증가에 중점을 둘 것임.
+https://shardingsphere.apache.org
+
+
+ShardingSphere는 Sharding-JDBC, Sharding-Proxy, Sharding-Sidecar(todo)라는 3개의 독립적인 제품을 포함한 분산 데이터베이스 미들웨어 솔루션 세트로 이루어진 오픈 소스 생태계. 이들은 데이터 샤딩, 분산 트랜잭션 및 데이터베이스 오케스트레이션과 같은 기능을 제공하며 Java 동형성, 이종 언어 및 클라우드 네이티브와 같은 다양한 상황에 적용될 수 있음. 분산 시스템에서 데이터베이스의 계산 및 저장 용량을 합리적으로 활용하기 위해 ShardingSphere는 자체를 완전히 새로운 유형의 데이터베이스가 아닌 미들웨어로 정의함. 많은 기업의 중추로서 관계형 데이터베이스는 여전히 상당한 시장 점유율을 차지하고 있음. 따라서 현재 단계에서는 전면적인 전환보다는 그 증가에 중점을 둘 것임.
 
 
 
 == References
 https://shardingsphere.apache.org/document/4.1.0/en/manual/sharding-jdbc/configuration/config-spring-boot/
+
+
+https://techblog.yogiyo.co.kr/%EC%A3%BC%EB%AC%B8%EC%84%9C%EB%B9%84%EC%8A%A4-shardingsphere-proxy-%EB%8F%84%EC%9E%85%EA%B8%B0-46d83084586b[주문서비스 ShardingSphere-Proxy 도입기 2023.01.12]
+
+customer_id % 1024 로 샤딩
+
+customer_id 기반의 모듈러 연산을 통해 4개의 shard cluster로 write 부하를 분산처리
+
+기술 부채
+
+통합조회 요구사항을 반영하기 위해 한대의 DB(Integration DB)로 레플리케이션 해서 데이터를 모아 조회하도록 함. 샤드들의 처리량이 늘어나면 Integration DB에 병목이 생김. Sharding 장점 중 하나인 수평적 DB 확장을 사용할 수 없는 구조가 됨
+
+새로운 요구사항 - 사장님향 기능
+
+ShardingSphere-Proxy 도입 과정
+
+기존의 기술 부채를 해결하고 새로운 요구사항을 반영하기 위해 Apache ShardingSphere를 도입하기로 의사결정했음.
+
+Apache ShardingSphere 프로젝트에 대해 간단하게 설명하자면 데이터베이스를 분산 데이터베이스 생태계로 구축하는 것을 목표로 하는 프로젝트로 이름에서 알 수 있듯이 RDB를 Sharding 하여 분산 데이터베이스 환경으로 운영할 수 있도록 하는 솔루션
+
+Apache ShardingSphere 도입을 생각하게 된 가장 큰 이유는 손 안 대고 코 풀기가 가능했기 때문. Apache ShardingSphere 프로젝트에서 제공하는 데이터베이스 프록시 서버인 ShardingSphere-Proxy를 도입해서 Integration DB를 사용하던 쿼리들만 데이터베이스 프록시 서버로 옮기기만 하면 되기 때문임
+
+로컬 환경에서 간단하게 튜토리얼을 따라 하면서 요기요 주문 서비스에 도입할 수 있는지 확인 후 스테이징 서버에서 일정 기간 검증하고 로드테스트에서 성능상 유의미한지 확인후에 프로덕션에 도입하는 방식으로 진행했음
+
+로컬 환경 세팅
+
+mysqld 설정으로 각 테이블의 pk 증가폭을 1024을 공통으로 두고 offset을 다르게 두어 테이블이 shard에 나눠져있어도 고유한 pk를 가질 수 있도록 세팅
+
+0번 Shard의 설정
+[source]
+----
+[mysqld]
+server_id=20
+auto_increment_increment=1024
+auto_increment_offset=1
+----
+
+1번 Shard의 설정
+[source]
+----
+[mysqld]
+server_id=21
+auto_increment_increment=1024
+auto_increment_offset=2
+----
+
