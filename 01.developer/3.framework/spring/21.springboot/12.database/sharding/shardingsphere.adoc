@@ -164,3 +164,52 @@ integration_db_wrapper = IntegrationDatabaseWrapper()
 with connections[settings.INTEGRATION_DB_READ_ONLY_NAME].execute_wrapper(integration_db_wrapper):
     do_queries()
 ----
+
+스테이징에서 테스트했을 때 2가지 문제가 발생했음
+
+1. DB 스키마 변경이 있을때 쿼리가 안되는 문제
+2. 기존과 결과가 달라지는 쿼리가 있음
+
+좀 더 디테일하게 오픈소스 코드를 확인해 보고 문서를 확인해 본 결과 DB 스키마 변경이 있는 경우 datetime order_by 같이 데이터 가공이 필요한 필드의 경우에는 아래의 커맨드로 변경된 테이블 정보를 ShardingSphere-Proxy 서버에도 반영시켜 주어야 했음
+
+스키마 변경이 있는 경우에 자동으로 커맨드를 수행할 수 있도록 배포 프로세스를 변경해면서 해결되었음
+
+[source]
+----
+REFRESH TABLE METADATA;
+----
+
+기존과 결과가 달라지는 쿼리는 기존 쿼리가 상당히 복잡한 subquery를 가지고 있었고 ShardingSphere 프로젝트에서 특정 subquery에 대한 지원이 안되기 때문에 발생하는 경우였음. 이 경우 subquery를 제거하고 쿼리를 튜닝하여 해결할 수 있었음.
+
+로드테스트
+로컬과 스테이징 환경에서 기능상 대체가 가능하다는 것은 확인했으나 프로덕션에 도입했을 때 성능을 테스트하고 확인하는 것도 필요했음. 이를 검증하기 위해 사내 인프라팀과 자동화 팀에 요청해서 프로덕션과 동일한 환경에서 성능 테스트를 진행했음.
+
+성능 테스트는 기존 Integration DB와, ShardingSphere-Proxy 구조의 한계점을 비교하는 방식으로 이루어졌음. 테스트 툴은 locust를 사용했음.
+
+
+|===
+| |Integration DB |ShardingSphere-Proxy
+
+|RPS
+|4971
+|4971
+
+|FE CPU
+|58%
+|58%
+
+|Shard Master CPU
+|18%
+|23%
+
+|Shard Slave CPU
+|63%
+|63%
+
+|Integration DB and Proxy CPU
+|75%
+|42%
+
+|===
+
+
