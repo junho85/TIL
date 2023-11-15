@@ -190,26 +190,29 @@ REFRESH TABLE METADATA;
 |===
 | |Integration DB |ShardingSphere-Proxy
 
-|RPS
-|4971
-|4971
+|RPS|4971|4971
+|FE CPU|58%|58%
+|Shard Master CPU|18%|23%
+|Shard Slave CPU|63%|63%
+|Integration DB and Proxy CPU|75%|42%
+|===
 
-|FE CPU
-|58%
-|58%
+테스트 결과 동일한 유저풀에서 두 구조의 결과가 다르게 나왔음. 먼저 Integration DB의 경우 Replication 을 처리하기 위한 리소스도 필요하기 때문에 주문 생성 부하가 증가하게 되면 그 영향으로 병목이 발생함. 이는 Integration DB and Proxy CPU 지표에서 부하율이 75% 까지 올라가는 걸로 확인할 수 있음. 이 말은 곧 앞으로 확장성에 문제가 있다는 이야기.
 
-|Shard Master CPU
-|18%
-|23%
-
-|Shard Slave CPU
-|63%
-|63%
-
-|Integration DB and Proxy CPU
-|75%
-|42%
+ShardingSphere-Proxy 구조는 쿼리 분산을 Master로 보내기 때문에 Shard Master에 부하가 전반적으로 증가한 양상을 보임. 프로덕션 환경에서는 Shard Slave에 분산해서 처리하기 때문에, 이론상 DB 확장성에 제약이 없다는 것 또한 확인할 수 있음
 
 |===
+| | Integration DB | ShardingSphere-Proxy
+| 사장님향 주문통계 API 1 3.5k rpm | 545ms(2.06s) | 268ms (891ms)
+| 사장님향 주문조회 API 2 13.9k rpm | 8.6ms (12.3ms) | 15.2ms (23.7ms)
+|===
+
+테스트한 API들의 응답속도 양상도 구조에 따라 많이 달라지는 것을 확인할 수 있었음. 위 표에서 무거운 쿼리가 발생하는 사장님향 주문 통계 API는 분산처리를 하는 ShardingSphere-Proxy에서 일관되게 좋은 성능을 보여주는 것을 확인할 수 있음. 그러나 빠른 처리가 가능한 사장님향 주문 조회 API의 경우 네트워크 홉 오버헤드가 없는 Integeration DB가 일관되게 좋은 성능을 보임.
+
+성능 테스트에서 최대 부하 측면에서 Integration DB 최대 Throughput이 한계가 있다는 것을 확인했고 ShardingSphere-Proxy의 경우 Integration DB 대비 대략 1.5배의 처리량을 가지게 되고 때문에 Shar의 개수와 상관없이 수평적으로 확장이 가능하다고 판단되었음. 따라서 기존 Integration DB를 제거하고 ShardingSphere-Proxy를 도입하는 방향으로 의사결정
+
+마무리
+요기요에서 주문서비스는 DB 쓰기 연산이 가장 많은 서비스 중 하나. DB의 수평적 확장을 위해 선제적으로 Sharding을 해서 운영하고 있지만 통합조회에 대한 요구사항을 충족시키기 위해 구축한 환경이 Sharding의 장점을 못 살리는 구조인 걸 확인했음. 고민 끝에 오픈 소스인 Apache ShardingSphere를 도입해서 Sharding의 장점을 다시 살리며 분산처리가 가능해졌고, 최대 4배까지 성능 향상도 기대할 수 있는 구조로 의사결정
+
 
 
