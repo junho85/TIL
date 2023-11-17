@@ -1,0 +1,35 @@
+:hardbreaks:
+= Mermaid
+
+https://github.com/mermaid-js/mermaid
+https://github.com/mermaid-js/mermaid-cli
+
+== Jetbrains tools plugin e.g. IntelliJ Idea
+https://plugins.jetbrains.com/plugin/20146-mermaid/reviews
+
+== Test
+
+2023.11.16 IntelliJ
+
+[mermaid]
+....
+sequenceDiagram
+    autonumber
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>S: Login (Username, Password)
+    S->>DB: Select User Info
+    note over DB: Password is not stored in database
+    DB-->>S: Salt & Hash
+    S-->>C: 200 OK & JWT
+    note over C, S: Subsequent requests include JWT
+....
+
+
+== Asciidoc
+
+https://docs.asciidoctor.org/diagram-extension/latest/diagram_types/mermaid/[Mermaid]
+
+
+
