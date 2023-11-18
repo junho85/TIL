@@ -1,0 +1,34 @@
+:hardbreaks:
+= ditaa - DIagrams Through Ascii Art
+
+https://ditaa.sourceforge.net/
+
+
+
+
+[ditaa]
+....
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |   diagram   |       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ |        | --+ Asciidoctor +--> |               |
+ |  Text  |   +-------------+    |   Beautiful   |
+ |Document|   |   !magic!   |    |    Output     |
+ |     {d}|   |             |    |               |
+ +---+----+   +-------------+    \---------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+....
+
+결과물
+image::ditaa.png[]
+
+== References
+
+https://plantuml.com/ko/ditaa
