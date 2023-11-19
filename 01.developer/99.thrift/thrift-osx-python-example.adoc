@@ -1,0 +1,85 @@
+:hardbreaks:
+= Thrift - OSX - Python - Example
+
+== install thrift
+
+[source,sh]
+----
+brew install thrift
+----
+
+thrift 명령어를 사용할 수 있게 된다.
+
+== thrift 파일 작성
+
+example.thrift
+[source,thrift]
+----
+namespace py Example
+
+struct Message {
+  1: required string body
+}
+
+service MessageService {
+  Message sendMessage(1: Message message)
+}
+----
+
+== server
+
+[source,python]
+----
+from Example import MessageService
+from Example.ttypes import Message
+
+from thrift.transport import TSocket
+from thrift.transport import TTransport
+from thrift.protocol import TBinaryProtocol
+from thrift.server import TServer
+
+class MessageHandler:
+    def sendMessage(self, message):
+        print(f"Received message: {message.body}")
+        return Message(body=f"Server received: {message.body}")
+
+if __name__ == "__main__":
+    handler = MessageHandler()
+    processor = MessageService.Processor(handler)
+    transport = TSocket.TServerSocket(port=9090)
+    tfactory = TTransport.TBufferedTransportFactory()
+    pfactory = TBinaryProtocol.TBinaryProtocolFactory()
+
+    server = TServer.TSimpleServer(processor, transport, tfactory, pfactory)
+    print("Starting the server...")
+    server.serve()
+----
+
+== client
+
+[source,python]
+----
+from Example import MessageService
+from Example.ttypes import Message
+from thrift import Thrift
+from thrift.transport import TSocket
+from thrift.transport import TTransport
+from thrift.protocol import TBinaryProtocol
+
+try:
+    transport = TSocket.TSocket('localhost', 9090)
+    transport = TTransport.TBufferedTransport(transport)
+    protocol = TBinaryProtocol.TBinaryProtocol(transport)
+    client = MessageService.Client(protocol)
+
+    transport.open()
+
+    message = Message(body="Hello, Thrift!")
+    response = client.sendMessage(message)
+    print(f"Received response: {response.body}")
+
+    transport.close()
+
+except Thrift.TException as ex:
+    print(f"Thrift exception: {ex}")
+----
