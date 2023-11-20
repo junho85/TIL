@@ -83,3 +83,7 @@ try:
 except Thrift.TException as ex:
     print(f"Thrift exception: {ex}")
 ----
+
+
+== References
+* https://thrift-tutorial.readthedocs.io/en/latest/usage-example.html[]

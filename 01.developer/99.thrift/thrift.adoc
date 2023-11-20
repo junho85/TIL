@@ -5,3 +5,45 @@ https://thrift.apache.org/
 
 The Apache Thrift software framework, for scalable cross-language services development, combines a software stack with a code generation engine to build services that work efficiently and seamlessly between C++, Java, Python, PHP, Ruby, Erlang, Perl, Haskell, C#, Cocoa, JavaScript, Node.js, Smalltalk, OCaml and Delphi and other languages.
 
+Facebook 에서 2007년에 오픈소스화 하였다.
+
+
+== References
+
+
+https://engineering.fb.com/2014/02/20/open-source/under-the-hood-building-and-open-sourcing-fbthrift/[Under the Hood: Building and open-sourcing fbthrift 2014.02.20]
+
+
+https://www.slideshare.net/BhuvanaLaksminarayan/facebook-thrift[Facebook thrift 2015.10.02]
+
+* Thrift is an interface definition language and binary communication protocol
+* It is used as a remote procedure call (RPC) framework and was developed at Facebook for "scalable cross-language services development".
+* It combines a software stack with a code generation engine to build services that work efficiently on C#, C++, Java, Perl, PHP, Python, Ruby and Smalltalk.
+* it is now an open source project in the Apache Software Foundation, now hosted on Apache.
+
+
+Thrift Design Features
+* The primary idea behind Thrift is that it consists of a language neutral stack which is implemented across various programming languages and an associated code generation engine which transforms a simple interface and data definition language into client and server remote procedure call libraries
+* Thrift is designed to be as simple as possible for the developers who can define all the necessary data structures and interfaces for a complex service in a single short file.
+* This file is called a sThrift Interface Definition Logic File or Thrift IDL File
+* The developers identified some important features while evaluating the technical challenges of cross language interactions in a networked environment.
+
+
+Types
+* Transport: Each language must have a common interface to bidirectional raw data transport. Consider a scenario where there are 2 servers in which, one is deployed in Java and the other one is deployed in Python. So a typical service written in Java should be able to send the raw data from that service to a common interface which will be understood by the other server which is running on Python and vice-versa. The Transport Layer should be able to transport the raw data file across the two ends. The specifics about how this transport is implemented shouldn't matter to the service developer. The same application code should be able to run against TCP Stream Sockets, raw data in memory or files on disk.
+
+* Protocol: In order to transport the raw data, they have to be encoded into a particular format like binary, XML etc. Therefore, the Transport Layer uses some particular protocol to encode or decode the data. Again the application developer will not be bothered about this. He is only worried whether the data can be read or written in some deterministic manner.
+
+Advantages of Thrift:
+
+* Thrift generated both the server and client interfaces for a given service, and in a consistent manner. Client calls will be more consistent
+* Related to above: Thrift's RPC-like behavior means that you get type safety
+* Thrift supports various protocols, nto just HTTP. If you are dealing with large volumes of service calls, or have bandwidth requirements, the client/server can transparently switch to more efficient transports
+* Thrift is a mature piece of software; well tested and used.
+
+Disadvantages:
+* Thrift is poorly documented.
+* It is more work to get started on the client side, when the clients are directly building the calling code. It's less work for the service owner if they are building libraries for clients Yet another dependency.
+
+
+https://jyami.tistory.com/159[Thrift 뽀개기 2023.02.23]
