@@ -1,0 +1,9 @@
+:hardbreaks:
+= MySQL Bit vs TinyInt vs Bool
+
+== TinyInt
+
+
+== Bit
+
+
