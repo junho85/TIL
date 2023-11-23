@@ -1,0 +1,16 @@
+:hardbreaks:
+= Kafka Header
+
+0.11 이후로 Header 기능을 지원한다.
+
+http header 처럼 payload에 넣기에는 애매한 데이터를 넣을 때 사용할 수 있다. e.g. 인증 정보 등
+
+== Kafka Header 확인 방법
+
+kcat -J 로 보면 헤더가 나온다.
+
+
+
+== References
+* https://akageun.github.io/2022/01/11/kafka-exp-header.html[Header 사용하기]
+
