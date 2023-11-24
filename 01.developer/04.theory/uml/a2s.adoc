@@ -1,0 +1,46 @@
+:hardbreaks:
+
+= ASCIICToSVG
+
+https://docs.asciidoctor.org/diagram-extension/latest/diagram_types/a2s/
+
+https://github.com/asciitosvg/asciitosvg
+
+
+[a2s, format="svg"]
+....
+.-------------------------.
+|                         |
+| .---.-. .-----. .-----. |
+| | .-. | +-->  | |  <--| |
+| | '-' | |  <--| +-->  | |
+| '---'-' '-----' '-----' |
+|  ascii     2      svg   |
+|                         |
+'-------------------------'
+....
+
+== installation
+install the Go runtime
+[source,shell]
+----
+brew install go
+
+----
+
+[source,shell]
+----
+go install github.com/asciitosvg/asciitosvg@latest
+----
+
+[source,shell]
+----
+$ go install github.com/asciitosvg/asciitosvg@latest
+go: downloading github.com/asciitosvg/asciitosvg v0.0.0-20201110140354-ca82a5ce41e2
+package github.com/asciitosvg/asciitosvg is not a main package
+----
+
+2023.11.24 메모
+----
+2020.11.10 이 마지막 커밋이라 그런지 현재 go 패키지 설치 방식과 뭔가 달라진 부분이 생긴 것이 아닌가 싶다.
+----
