@@ -1,0 +1,20 @@
+:hardbreaks:
+= Trailing Comma
+
+Kotlin > Basics > Coding conventions 에 Trailing commas 항목이 있음.
+https://kotlinlang.org/docs/coding-conventions.html#trailing-commas
+
+장점과 사용예를 소개하고 있다.
+
+
+== editorconfig 설정
+
+[source,editorconfig]
+----
+...
+ij_kotlin_allow_trailing_comma = true
+ij_kotlin_allow_trailing_comma_on_call_site = true
+----
+
+== References
+https://medium.com/@sanketmeghani/kotlin-1-4-trailing-commas-53c690eced32[Kotlin 1.4 - Trailing Commas]
