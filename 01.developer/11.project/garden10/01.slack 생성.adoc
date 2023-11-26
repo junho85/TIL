@@ -1,0 +1,29 @@
+:hardbreaks:
+
+= slack 생성
+
+slack 을 생성 한다.
+
+https://slack.com/
+
+새 워크스페이스 개설
+
+팀 이름: The Gardeners Season 10
+
+== slack channel 생성
+
+채널 생성시 "The Gardeners Season 10에 참여하는 모든 사람을 자동으로 추가" 옵션을 활성화 한다.
+
+* #자기소개 C066WRM6Z0B
+- 자기소개 올릴 채널. 연동을 위해 github url 을 올리도록 안내한다.
+* #commit C066ZCF17K6
+- github bot 과 연동할 채널. 커밋 메시지가 올라온다. 정원사 봇도 연동하여 메시지를 주기적우로 퍼가서 출석부 데이터로 활용한다.
+
+== 기타 채널 생성
+
+* #모니터링 C066GD9D2G7
+- 에러 모니터링용 방. 에러가 발생하면 여기로 메시지가 올라온다.
+
+
+
+
