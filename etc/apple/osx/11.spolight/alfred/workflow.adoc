@@ -1,14 +1,28 @@
+:hardbreaks:
+
 = Alfred - Workflow
 
 https://www.alfredapp.com/workflows/
 
 == jetbrains - idea(interllij), pstorm, ...
+
+
 https://github.com/bchatard/alfred-jetbrains
 
 ----
 $ npm install -g @bchatard/alfred-jetbrains
 ----
 
+=== 2023.09.27
+얼마전 부터 idea 커맨드가 안먹혀서 대신 jb 커맨드를 사용하고 있음. (jb 커맨드가 오히려 좋긴 함)
+
+alfred 창에 다음과 같은 오류가 나타남
+[source]
+----
+Please check if preferences 'IdeaIC' exists in [~/Library/Application Support/Google, ~/Library/Application Support/JetBrains, ~/Library/Preferences]
+----
+
+./bin/alfred_jetbrains_cli all
 
 == chrome bookmarks
 
