@@ -1,0 +1,35 @@
+:hardbreaks:
+= IOS push image
+
+== References
+https://jkim68888.tistory.com/13[Swift IOS에서 이미지가 있는 푸시알림 구현하기 - APNs, FCM, Notification Service Extension 2023.04.11]
+
+푸시알림에 이미지 넣기
+
+Notification Service Extension 설치
+
+[source,swift]
+----
+class NotificationService: UNNotificationServiceExtension {
+  // 원격 푸시 알림 수신하는 곳
+  override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
+    self.contentHandler = contentHandler
+    bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
+
+    if let bestAttemptContent = bestAttemptContent {
+      // 수신한 데이터는 userInfo에 담겨있다.
+      // 키값을 활용하여 이미지 데이터를 꺼내온다.
+      let apsData = request.content.userInfo["aps"] as! [String: Any]
+      let imageData = request.content.userInfo["fcm_options"] as! [String: Any]
+
+      // 받은 이미지 데이터는 string 형태로 이미지가 있는 주소 값
+      guard let urlImageString = imageData["image"] as! String else {
+        contentHandler(bestAttemptContent)
+        return
+      }
+      if let imageUrl = ...
+    }
+  ...
+
+}
+----
