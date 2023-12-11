@@ -1,0 +1,6 @@
+:hardbreaks:
+= customizing authentication in Django
+
+https://docs.djangoproject.com/en/5.0/topics/auth/customizing/
+
+https://docs.djangoproject.com/en/4.2/topics/auth/customizing/

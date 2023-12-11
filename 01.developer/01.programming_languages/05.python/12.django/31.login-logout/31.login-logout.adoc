@@ -1,0 +1,40 @@
+:hardbreaks:
+= django - login/logout
+
+장고는 로그인, 로그아웃을 쉽게 구현할 수 있도록 django.contrib.auth 앱을 제공. 장고 프로젝트 생성시 settings.py에 자동으로 추가된다.
+
+== 앱 생성
+공통으로 사용되는 기능인 로그인/로그아웃은 별도 앱의 기능으로 분리하는게 좋음
+
+보통 commons, users 앱 같은 것을 만들어서 거기서 구현한다.
+
+
+
+== settings.py 에 앱 등록
+settings.py의 INSTALLED_APPS에
+
+[source]
+----
+'django.contrib.auth',
+...
+'common',
+----
+앱이 기본적으로 추가되어 있습니다. 이 앱은 로그인/로그아웃 기능을 손쉽게 구현할 수 있도록 해줍니다.
+
+
+
+== References
+* https://docs.djangoproject.com/en/3.2/ref/contrib/auth/[django.contrib.auth]
+
+* https://wikidocs.net/71259[3-05 로그인·로그아웃 구현하기]
+
+* https://velog.io/@printver_2world/django-20.-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%A1%9C%EA%B7%B8%EC%95%84%EC%9B%83-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0[django | 20. 로그인, 로그아웃 구현하기]
+
+users 앱을 만들어 구현
+
+[source,shell]
+----
+django-admin startapp users
+----
+
+settings.py 에 앱 등록
