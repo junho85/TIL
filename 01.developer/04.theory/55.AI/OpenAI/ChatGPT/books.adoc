@@ -1,0 +1,8 @@
+:hardbreaks:
+= ChatGPT 관련 도서
+
+
+== 진짜 챗GPT 활용법
+
+* 도서 홈페이지: https://wikibook.co.kr/chatgpt-recipes/
+
