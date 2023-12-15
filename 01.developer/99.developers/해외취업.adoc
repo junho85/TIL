@@ -1,0 +1,6 @@
+:hardbreaks:
+= 해외취업
+
+== 볼 영상
+
+https://www.youtube.com/watch?v=Bsu8b5_Ozu8[미국 실리콘밸리 AI 스타트업의 일하는 방식 공유 2022.05.26]
