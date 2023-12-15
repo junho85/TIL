@@ -19,9 +19,31 @@ $ cd /Users/junho85/project/garden9
 [source,shell]
 ----
 $ source docker-build-push.sh 20231003_1
+$ source docker-build-push.sh 20231212_1
 ----
 
+업로드된 이미지 확인
+https://hub.docker.com/repository/docker/junho85/garden9/general
+
+
+=== 오류 발생시 docker buildx create
+
+멀티플랫폼 빌드 환경에 문제가 생기면 새로 세팅한다.
+
+[source,shell]
+----
+docker buildx rm
+docker buildx create --platform linux/amd64,linux/arm64 --use
+----
+
+
+=== 용량 부족 오류 발생시
+
+docker desktop resources 설정에서 virtual disk limit 을 높여본다.
+
 == 배포 using docker compose
+
+docker-compose.yaml 파일에서 junho85/garden9:20231212_1 처럼 새로 빌드한 이미지로 설정해서 커밋한다.
 
 서버 접속
 
@@ -32,7 +54,7 @@ ssh root@garden9.junho85.pe.kr
 
 [source,shell]
 ----
-cd /root/docker-garden8
+cd /root/docker-garden
 git pull
 docker compose up web --force-recreate --build -d
 docker compose up web-garden9 --force-recreate --build -d
