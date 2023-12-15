@@ -1,0 +1,39 @@
+:hardbreaks:
+= manual insert 수동 등록
+
+출석이 누락된 경우 수동 등록을 합니다.
+
+== manual_insert.py
+commit_url 을 입력 받으면
+
+"/" 로 split 해서 user, repo, sha 를 구한다.
+
+github api 를 통해서 commit 정보를 가져온다.
+
+https://api.github.com/repos/{user}/{repo}/commits/{sha}
+
+
+
+== manual insert api 작성
+[x] 기존 attendance/manual_insert.py 를 참고해서 API 작성
+
+e.g.
+http://127.0.0.1:8000/attendance/manual_insert/?commit_url=https://github.com/kangju2000/kangju2000/commit/be5a6bdfb2b0389ed02e18b0108156bfca2bf6fd
+
+== 로그인 한 상태에서만 사용가능하도록 하기
+[] 로그인 한 상태에서만 사용가능하도록 한다.
+
+
+
+TODO api나 admin으로 만들어야 겠음.
+
+== mongodb mapping
+
+* attachments[0]
+** fallback:
+** text
+* author_name: commit.user
+* ts: commit.ts
+* ts_for_db: commit.ts_datetime
+* type: 'message'
+* user: user
