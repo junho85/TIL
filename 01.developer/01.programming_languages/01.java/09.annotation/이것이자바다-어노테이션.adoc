@@ -35,7 +35,7 @@ public void toString() { ... }
 ----
 
 .어노테이션의 엘리먼트(element) 멤버
-* 어노테이션을 코드에 적용할 떄 외부의 값을 입력받을 수 있도록 하는 역할
+* 어노테이션을 코드에 적용할 때 외부의 값을 입력받을 수 있도록 하는 역할
 * 엘리먼트 선언
 ----
 public @interface AnnotationName {
@@ -71,7 +71,7 @@ public @interface AnnotationName {
 }
 ----
 
-* 어노테이션을 적용할 떄 엘리먼트명을 생략가능
+* 어노테이션을 적용할 때 엘리먼트명을 생략가능
 ----
 @AnnotationName("값");
 ----
@@ -86,7 +86,7 @@ public class MainServlet { ... }
 public class MainServlet { ... }
 ----
 
-* 두 개 이상의 속성을 기술할 떄에는 value=값 형태로 기술
+* 두 개 이상의 속성을 기술할 때에는 value=값 형태로 기술
 ----
 @AnnotationName(value="값", elementName=3);
 ----
