@@ -76,7 +76,7 @@ REST의 승리
 
 CMIS (2008)
 * CMS를 윟나 표준
-* EMC, IBM, Microsoft등이 함꼐 작업
+* EMC, IBM, Microsoft등이 함께 작업
 * REST 바인딩 지원
 
 Roy T. ...

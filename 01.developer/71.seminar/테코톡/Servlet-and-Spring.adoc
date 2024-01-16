@@ -52,7 +52,7 @@ Spring Web MVC에서는 Servlet을 어떻게 사용할까?
 Dispatcher Servlet
 
 Servlet Container - DispatcherServelet
-모든 요청이 들어왔을 떄, Dispatcher Servlet
+모든 요청이 들어왔을 때, Dispatcher Servlet
 
 요청에 따라 적절한 Controller를 찾는다.
 -> 찾는 방법은 Spring Framework
