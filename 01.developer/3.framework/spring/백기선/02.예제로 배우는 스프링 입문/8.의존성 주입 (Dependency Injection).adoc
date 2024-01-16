@@ -64,7 +64,7 @@ field injection, setter injection, 생성자 injection
 == 과제
 * OwnerController에 PetRepository 주입하기
 
-field injection 할 떄는 final 쓰면 안됨.
+field injection 할 때는 final 쓰면 안됨.
 [source,java]
 ----
 @Autowired

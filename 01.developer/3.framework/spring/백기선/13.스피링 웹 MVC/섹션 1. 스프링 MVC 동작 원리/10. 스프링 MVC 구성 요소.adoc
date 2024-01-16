@@ -57,7 +57,7 @@ ViewResolver
 
 FlashMapManager
 * FlashMap 인스턴스를 가져오고 저장하는 인터페이스
-* FlashMap은 주로 리다이렉션을 사용할 떄 요청 매개변수를 사용하지 않고 데이터를 전달하고 정리할 때 사용한다.
+* FlashMap은 주로 리다이렉션을 사용할 때 요청 매개변수를 사용하지 않고 데이터를 전달하고 정리할 때 사용한다.
 * redirect:/events/id=123
 * redirect:/events # 매개변수 사용하지 않고도 데이터 전달
 

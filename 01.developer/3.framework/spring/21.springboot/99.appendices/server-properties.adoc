@@ -9,7 +9,7 @@
 == server.error
 * server.error.include-binding-errors(:never): "error"속성이 포함될 때
 * server.error.include-exception(:false): "exceptoin"속성이 포함될 때
-* server.error.include-message(:never): "message"속성이 포함될 떄
+* server.error.include-message(:never): "message"속성이 포함될 때
 * server.error.include-stacktrace(:never): "trace"속성이 포함될 때
 * server.error.path(:/error): 에러 제어 경로
 * server.error.whitelabel.enabled(:true): 서버 에러 발생시 브라우저에 표시할 기본 에러 페이지를 활성화 할 지 여부

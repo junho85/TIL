@@ -44,7 +44,7 @@ public class EventPropertyEditor extends PropertyEditorSupport {
 
 PropertyEditor는 빈으로 등록하면 안됨.
 
-쓰레드세이프 하지 않기 떄문.
+쓰레드세이프 하지 않기 때문.
 
 한 쓰레드내에서만 유효한 스콥으로 하면 그나마 괜찮긴 하지만 빈으로 등록 안하는걸 추천함.
 
