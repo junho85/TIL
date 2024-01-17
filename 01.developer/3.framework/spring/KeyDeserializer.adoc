@@ -1,0 +1,16 @@
+:hardbreaks:
+= KeyDeserializer
+
+json 에서 key는 string으로만 표현되기 때문에, key를 Long으로 변환해야 하는 경우가 있다.
+
+[source,kotlin]
+----
+@JsonDeserialize(keyUsing = StringToLongDeserializer::class)
+val memberMap: Map<Long, Member> = emptyMap(),
+
+class StringToLongDeserializer : KeyDeserializer() {
+    override fun deserializeKey(key: String?, ctxt: DeserializationContext?): Long {
+        return key?.toLongOrNull() ?: throw IllegalArgumentException("Could not convert to Long")
+    }
+}
+----
