@@ -1,0 +1,7 @@
+:hardbreaks:
+= Chrome Extensions Manifest V2 -> V3 Migration
+
+
+== References
+
+* https://developers.whale.naver.com/tutorials/mv3-migration/[매니페스트 버전3로 변경하기]
