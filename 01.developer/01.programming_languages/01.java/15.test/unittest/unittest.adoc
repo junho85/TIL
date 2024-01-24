@@ -1,0 +1,63 @@
+:hardbreaks:
+= unit test
+
+== private 함수 테스트
+private method 는 public method 에서 사용하는 메서드들이기 때문에 private method 를 사용하는 public method 를 통해 간접적으로 테스트 하는 것이 일반적이다.
+그럼에도 불구하고 private method 를 바로 테스트를 하는게 좋겠다고 판단이 된다면 몇가지 방법을 생각해 볼 수 있다.
+
+=== package private method 로 바꾸기
+메서드 앞에 아무 것도 넣지 않으면 default (package private) 가 된다.이 경우 같은 패키지 내에서는 함수 호출이 가능하다.무난하게 사용 가능한 방법이다.
+다만, 우연히 테스트 외에 패키지가 같은 경우가 생긴다면 불필요 하게 노출 범위가 넓어 질 수 있다는 문제점이 있다.
+고의적으로 패키지 명을 같게 만들어서 package private method 를 호출하게 될지도 모른다.
+
+=== protected method 로 바꾸기
+
+
+=== Reflection 과 PrivateAccessor, PrivilegedAccessor
+Reflection 으로 직접 접근하는 방법이 있다.별로 좋아 보이지는 않는다.
+
+junit addon 으로 있는 private accessor http://junit-addons.sourceforge.net/junitx/util/PrivateAccessor.html
+
+PrivilegedAccessor https://sourceforge.net/projects/privaccessor/
+
+
+
+* 참고: https://blog.benelog.net/2685835.html[private 메소드를 어떻게 테스트해야 할까요? 2010.09.27]
+
+
+== 학습 테스트 Learning Test
+
+라이브러리에 대해 테스트를 작성해야 되는 경우 학습 테스트를 작성한다.
+
+=== References
+
+
+https://velog.io/@jakeseo_me/%ED%86%A0%EB%B9%84%EC%9D%98-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%A0%95%EB%A6%AC-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-2.5-%ED%95%99%EC%8A%B5-%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EC%8A%A4%ED%94%84%EB%A7%81[토비의 스프링 정리 프로젝트 #2.5 학습 테스트로 배우는 스프링 2021.07.16]
+
+학습 테스트의 장점
+* 다양한 조건에 따른 기능을 손쉽게 확인해볼 수 있다.
+* 학습 테스트 코드를 개발 중에 참고할 수 있다.
+* 프레임워크나 제품을 업그레이드할 때 호환성 검증을 도와준다.
+* 테스트 작성에 좋은 훈련이 된다.
+* 새로운 기술을 공부하는 과정이 즐거워진다. (레퍼런스만 보는 것보다 재밌다.)
+
+
+
+https://hyunminh.github.io/learning-test/[학습테스트로 프레임워크, 라이브러리, API를 학습해보자]
+
+> 자신이 만들지 않은 프레임워크나 라이브러리 등에 대해 작성하는 테스트
+
+* 기능을 손쉽게 확인해보기
+* 개발 중 만들어놓은 학습 테스트 코드 참고
+* 프레임워크나 라이브러리의 버전이 바뀔 떄, 그에 대한 검증 가능
+* 새로운 기술을 배우는 것이 즐거워짐
+
+https://dsmoon.tistory.com/entry/%EC%99%B8%EB%B6%80-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%82%AC%EC%9A%A9%EB%B2%95[외부 라이브러리 사용법 2012.10.30]
+
+> 외부 라이브러리를 사용하기 전에 간단한 테스트 케이스를 작성하면서 사용법을 익히는 것을 학습 테스트라고 한다. (학습테스트라는 이름은 Rober Martin과 Object Mentor를 공동 설립한 Jim Netwirk가 붙였다고 한다.)
+
+
+https://velog.io/@gentledot/clean-code-boundary-and-test[클린코드 (7) - 경계와 테스트 2021.06.21]
+
+
+https://medium.com/microsoftazure/learning-tests-and-how-they-help-cover-every-line-of-code-da41c74043b[Learning Tests and How They Help Cover Every Line of Code 2019.10.19]
