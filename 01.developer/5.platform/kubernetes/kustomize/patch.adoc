@@ -1,0 +1,67 @@
+:hardbreaks:
+= Kustomize Patch
+
+
+== patches
+
+패치(오버레이라고도 함)는 리소스에 필드를 추가하거나 재정의함. 패치는 패치 사용자 지정 필드를 사용하여 제공됨.
+
+패치 필드에는 지정된 순서대로 적용할 패치 목록이 포함되어 있음
+
+각 패치는
+* 전략적 병합 패치 또는 JSON6902 패치일 수 있음
+* 파일 또는 인라인 문자열일 수 있음
+* 단일 리소스 또는 여러 리소스를 대상으로 함
+
+패치 대상은 그룹, 버전, 종류, 이름, 네임스페이스, 레이블선택자 및 주석선택자별로 리소스를 선택함. 지정된 모든 필드와 일치하는 모든 리소스에 패치가 적용됨(정규표현식)
+
+https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/patches/
+
+Patch using Inline Strategic Merge
+
+[source,yaml]
+----
+patches:
+  - patch: |-
+      apiVersion: apps/v1
+----
+
+
+Patch using Path Strategic Merge
+
+[source,yaml]
+----
+resources:
+  - deployment.yaml
+patches:
+  - path: add-label.patch.yaml
+  - path: fix-version.patch.yaml
+    target:
+      labelSelector: "app.kubernetes.io/name=nginx"
+----
+
+add-label.patch.yaml, fix-version.patch.yaml 파일에 작성한 내용으로 patch 한다.
+
+
+== patchStrategicMerge
+
+https://kubectl.docs.kubernetes.io/references/kustomize/glossary/#patchstrategicmerge
+
+
+== (deprecated) patchesStrategicMerge
+
+https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/patchesstrategicmerge/
+
+v5.0.0 에서 deprecated 되었음
+
+patches 에서 strategic merge 할 수 있다.
+
+
+== References
+https://velog.io/@salgu1998/Kubernetes-Kustomize%EB%A1%9C-Deployment-%ED%99%98%EA%B2%BD%EB%B3%84-%EA%B0%9C%EB%B3%84-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0-patchesStrategicMerge[Kubernetes 쿠버네티스 - Kustomize로 Deployment 환경별 개별 설정하기 (patchesStrategicMerge) 2023.08.06
+
+dry run
+[source,bash]
+----
+kubectl kustomize ./
+----
