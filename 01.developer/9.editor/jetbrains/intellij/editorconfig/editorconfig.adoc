@@ -1,0 +1,33 @@
+:hardbreaks:
+= editor config
+
+https://editorconfig.org/
+
+
+.editorconfig
+[source]
+----
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+insert_final_newline = true
+tab_width = 4
+ktlint_disabled_rules = no-wildcard-imports
+ij_kotlin_allow_trailing_comma = true
+ij_kotlin_allow_trailing_comma_on_call_site = true
+
+[*.{yml,yaml}]
+indent_size = 2
+----
+
+insert_final_newline = true 는 ktlint 0.34.0 버전부터 디폴트가 되었기 때문에 생략이 가능하다.
+
+== References
+* https://jojoldu.tistory.com/673[IntelliJ (Kotlin) 매 파일마다 newline 자동으로 추가하기 (feat. EditorConfig) 2022.06.04]
+
+Ensure every saved file ends with a line break 설정을 활성화 할 수도 있지만 EditorConfig 설정을 사용할 수 있다.
