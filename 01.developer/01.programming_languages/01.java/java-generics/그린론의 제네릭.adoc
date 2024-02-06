@@ -1,0 +1,279 @@
+:hardbreaks:
+= 그린론의 제네릭
+
+https://www.youtube.com/watch?v=w5AKXDBW1gQ[그린론의 제네릭 2022.05.20]
+
+== 목차
+1. 제네릭이란
+  1.1 변성
+2. 제네릿 타입과 메서드
+3. 와일드 카드
+4. 제네릭 타입 소거
+
+== 제네릭이란 무엇일까요?
+컴파일 타임에 타입을 체크함으로써 코드의 안전성을 높여주는 기능
+
+`List<T>` T를 타입 매개변수라 부름
+`List<String> stringList = new ArrayList<String>();`
+String 을 매개변수화된 타입이라 부름
+
+== 제네릭은 왜 사용할까요?
+
+1) 컴파일 타임에 강력한 타입 검사
+
+
+제네릭 미사용
+
+[source,java]
+----
+List stringList = new ArrayList<>();
+stringList.add("woowacourse");
+stringList.add(1); // 숫자를 넣으면? 컴파일에서는 오류가 안나지만
+String result = (String> stringList.get(0) + (String) stringList.get(1); // 캐스팅시 Runtime Error
+----
+
+제네릭 사용
+[source,java]
+----
+List<String> stringList = new ArrayList<>();
+stringList.add("woowacourse");
+stringList.add(1); // 컴파일 에러
+----
+
+2) 캐스팅(타입 변환) 제거
+
+[source,java]
+----
+List stringList = new ArrayList<>();
+stringList.add("woowacourse");
+String result = (String) stringList.get(0);
+----
+
+제네릭 사용
+[source,java]
+----
+List<String> stringList = new ArrayList<>();
+stringList.add("woowacourse");
+String result = stringList.get(0); // 캐스팅이 필요하지 않음
+----
+
+
+== List<Object> stringList = new ArrayList<Integer>(); 가능할까? 안됨
+
+Integer는 Objec의 하위타입이니 될 거 같기도 하지만 안됨
+배열과 제네릭 타입을 비교해보자
+
+
+== 배열 vs 제네릭 타입
+
+=== 배열 - 공변
+[source,java]
+----
+Object[] objectArray = new Integer[1];
+----
+하위 타입 성립
+
+=== 제네릭 타입 - 무공변
+[source,java]
+----
+List<Object> objectList = new ArrayList<Integer>(); // Compile error
+----
+둘은 아무런 관계가 없음. 컴파일 오류를 내게 됨
+
+== 변성(variance)
+
+=== 무공변(Invariance) - <T>
+타입 B가 타입 A의 하위 타입일 떄 Category<B>가 Category<A>의 하위 타입이 아닌 경우. 즉, 아무런 관계가 없다.
+
+Category는 임의의 클래스라 보면 됨
+
+
+
+=== 공변(Covariance) - <? extends T>
+타입 B가 타입 의 하위 타입일 때, Category<B>가 Category<A>의 하위 타입인 경우
+
+앞에서 살펴본 배열이 해당됨
+
+=== 반공변(Contravariance) - <? super T>
+타입 B가 타입 A의 하위 타입일 떄, Category<B>가 Category<A>의 상위 타입인 경우.
+
+
+== 제네릭 타입(Generic Types)
+타입을 파라미터로 가지는 클래스와 인터페이스
+Class<T>, interface<T>
+
+
+비제네릭
+[source,java]
+----
+class Category {
+  private Object object;
+  public void set(Object object) {
+    this.object = object;
+  }
+  public Object get() {
+    return object;
+  }
+----
+
+제네릭
+[source,java]
+----
+class Category<T> {
+  private T t;
+  public void set(T t) {
+    this.t = t;
+  }
+  public T get() {
+    return t;
+  }
+}
+----
+
+== 제네릭 메서드 (Generic Methods)
+
+[source,java]
+----
+class NoodleCategory<T> {
+  private T t;
+
+  public void set(T t) {
+    this.t = t;
+  }
+
+  public T get() {
+    return t;
+  }
+
+  public <T> void printClassName(T t) {
+    System.out.println("클래스 필드에 정의된 타입 = " + this.t.getClass().getName()); // 패키지명.Noodle
+    System.out.println("제네릭 메서드에 정의된 타입 = " + t.getClass().getName()); // 패키지명.Pasta
+  }
+}
+
+NoodleCategory<Noodle> noodleCategory = new NoodleCategory<>();
+noodleCategory.set(new Noodle());
+noodleCategory.printClassName(new Pasta());
+----
+
+== 제네릭 타입 제한의 필요성
+
+[source,java]
+----
+class NoodleCategory<T> {
+  private T t;
+
+  public void set(T t) {
+    this.t = t;
+  }
+
+  public T get() {
+    return t;
+  }
+----
+
+[source,java]
+----
+NoodleCategory<Noodle> noodleCategory = new NoodleCategory<>(); // OK
+NoodleCategory<Coke> cokeNoodleCategory = new NoodleCategory<>(); // ???
+----
+
+extends 를 사용하여 제한
+[source,java]
+----
+class NoodleCategory<T extends Noodle> {
+  private T t;
+
+  public void set(T t) {
+    this.t = t;
+  }
+
+  public T get() {
+    return t;
+  }
+----
+
+[source,java]
+----
+NoodleCategory<Noodle> noodleCategory = new NoodleCategory<>(); // OK
+NoodleCategory<Ramen> cokeNoodleCategory = new NoodleCategory<>(); // OK!
+NoodleCategory<Coke> cokeNoodleCategory = new NoodleCategory<>(); // Compile Error!
+----
+
+
+== 제한된 제네릭 타입
+
+[source,java]
+----
+class NoodleCategory<T extends Noodle> {
+  private T t;
+  public void set(T t) {
+    this.t = t;
+  }
+  public T get() {
+    return t;
+  }
+}
+
+NoodleCategory<Noodle> noodleCategory = new NoodleCategory<>();
+...
+
+----
+
+== 와일드 카드
+
+1) <?> Unbounded Wildcards. 모든 타입 가능
+2) <? extends Noodle> Upper Bounded Wildcards. Noodl과 Noodle의 하위 타입
+상한 경계
+3) <? super Noodle> Lower Bounded Wildcards. Noodle과 Noodle의 상위 타입
+하한 경계
+
+
+== 와일드 카드 - 제한
+
+[source,java]
+----
+class Category<T> {
+  private T t;
+  public void set(T t) {
+    this.t = t;
+  }
+  public T get() {
+    return t;
+  }
+}
+
+class CategoryHelper {
+  //public void popNoodle(Category<? extends Noodle> category) {
+    Noodle noodle = category.get(); // 꺼내는 건 OK
+    //category.set(new Noodle()); // 넣는 건 불가능
+  }
+
+  //public void pushNoodle(Category<? super Noodle> noodleCategory, Noodle noodle) {
+    noodleCategory.set(noodle); // 저장은 OK!
+    //Noodle noodle = noodleCategory.get(); // 꺼내는 건 불가능
+  }
+----
+
+== 와일드 카드 상한/하한 제한? 언제 무엇을 사용해야 할까?
+
+PECS (effective java 설명)
+producer - extends, consumer - super
+
+== 와일드 카드 producer - extends
+
+생성할 떄는 extends 를 사용하는 것이 적절
+
+== 와일드 카드 consumer - super
+
+소비를 하는 곳에서는 super 가 적절
+
+== 제네릭 타입 소거
+
+제네릭은 Java5 에서 등장
+
+1) 타입 매개변수의 경계가 없는 경우에는 Objec로, 경계가 있는 경우에는 경계 타입으로 타입 파라미터를 변경
+
+2) 타입 안정성을 유지하기 위해. 필요한 경우 타입 변환 추가
+
+3) 제네릭 타입을 상속받은 클래스...
