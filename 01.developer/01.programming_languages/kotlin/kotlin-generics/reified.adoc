@@ -124,7 +124,7 @@ fun <T> doSomething(someValue: T)
 fun <T> doSomething(someValue: T, Class<T> type) {
   // T의 타입을 파라미터를 통해 알기에 OK
   println("Doing something with value: @someValue")
-  // T::class 가 어떤 clas인지 몰라서 Error
+  // T::class 가 어떤 class인지 몰라서 Error
   println("Doing something with type: ${T::class.simpleName}")
 }
 ----
@@ -142,7 +142,7 @@ https://codechacha.com/ko/kotlin-reified-keyword/[Kotlin - Reifie를 사용하�
 
 Reified 키워드는 Generic로 inline function에서 사용되며, Runtime에 타입 정보를 알고 싶을 떄 사용함
 
-Generics는 아래와 같이 T와 같은 문자로 타입을 표현함. 여기서 T는 어떤 타입이든 될 ㅅ ㅜ있음
+Generics는 아래와 같이 T와 같은 문자로 타입을 표현함. 여기서 T는 어떤 타입이든 될 수 있음
 
 [source,kotlin]
 ----

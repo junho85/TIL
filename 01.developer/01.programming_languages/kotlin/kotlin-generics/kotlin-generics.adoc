@@ -1,0 +1,215 @@
+:hardbreaks:
+= Kotlin Generics
+
+https://kotlinlang.org/docs/generics.html[Generics: in, out, where)]
+
+== 공변성 (covariance)
+
+
+
+== References
+* https://readystory.tistory.com/201[한 방에 정리하는 코틀린 제네릭(kotlin generic) - in, out, where, reified 2021.07.20]
+
+코틀린 제네릭 특징
+* 타입 불변성
+
+`Array<T>` 는 가변(mutable) 이지만 `List<T>`는 불편(immutable)
+
+<out T> 으로 공변성(covariance) 사용
+
+
+https://youtu.be/fhunk_9LOOQ?si=fZ8BFO7xSZAH4wXz[Kotlin 강좌 #19 - 제너릭]
+
+class A -> class B
+
+fun castingExam(var a: A)
+
+캐스팅 연산을 거치면...
+
+고정적인 자료형 대신 실제 자료형으로 대체되는 타입 패머리터를 받아 사용하는
+
+[source,kotlin]
+----
+fun <T> genericFunc(param: T): T
+class GenericClass<T> (var pref: T>
+----
+
+[source,kotlin]
+----
+fun <Int> genericFunc(param: T): T
+class GenericClass<Int> (var pref: T>
+----
+
+[source,kotlin]
+----
+fun <Int> genericFunc(param: Int): Int
+class GenericClass<Int> (var pref: Int>
+----
+
+캐스팅 연산 없이 자료형을 사용할 수 있음
+
+T - Type
+
+여러개의 제너릭을 사용할 경우
+T,U,V
+
+특정한 수퍼 클래스를 ...
+
+<T: SuperClass>
+
+fun <T> genericFunc(var param...)
+
+
+[source,kotlin]
+----
+fun main() {
+  UsingGeneric(A()).doShouting()
+  UsingGeneric(B()).doShouting()
+  UsingGeneric(C()).doShouting()
+
+  doShouting(B())
+}
+
+fun <T: A> doShouting(t: T) {
+  t.shout()
+}
+
+open class A {
+  open fun shout() {
+    println("A가 소리칩니다.")
+  }
+}
+
+class B : A() {
+  override fun shout() {
+    println("B가 소리칩니다.")
+  }
+}
+
+class C : A() {
+  override fun shout() {
+    println("C가 소리칩니다.")
+  }
+}
+
+class UsingGeneric(<T: A> (val t: T) {
+  fun doShouting() {
+    t.shout()
+  }
+}
+
+----
+
+https://www.youtube.com/watch?v=Z4FZzWsyCe0[10분 테코톡 우기의 Generics 2023.06.06]
+
+하나의 데이터가 특정 타입에만 종속되지 않고 여러 데이터 타입을 가질 수 있는 것
+데이터 타입을 일반화(generalize)
+
+Array<T>
+
+Array
+base type(기저 타입)
+기초가 되는 타입
+
+T
+type parameter
+변수로 지정한 데이터 타입
+
+
+변성
+
+List<String>, List<Any>
+
+Base type이 같고 type argument가 다른 경우 어떤 관계가 있는지
+
+타입 불변성
+기본적으로 제네릭 타입을 사용하는 Class, Interface는 해당 타입의 자식 또는 부모를 대입할 수 없다!
+Generic...
+
+
+open class Animal
+class Lion : Animal()
+class Dolphin : Animal()
+
+val lions: List<Lion> = arrayOf(Lion(), Lion())
+...
+
+
+[source,kotlin]
+----
+fun myAnimals(animals: Array<Animal>) {
+  animals[0] = Dolphin()
+  // lions[0] = Dolphin() !?
+}
+----
+
+[source,kotlin]
+----
+fun main() {
+  val lions: Array<Lion> = arrayOf(Lion(), Lion())
+  myAnimals(lions)
+}
+----
+
+공변성
+A가 B의 하위 자료형이면
+Class<A>는 Class<B>의 하위 자료형이다.
+
+Lion이 Animal의 하위 자료형이면
+Class<Lion>는 Class<Animal>의 하위 자료형이다.
+
+[source,kotlin]
+----
+val lions: List<Lion> = listOf(Lion(), Lion())
+...
+----
+
+
+out 키워드가 공변성을 가질 수 있게 해준다.
+(자기 자신과 자식 객체를 허용하게 해준다)
+
+Array 에서 하려면 out 을 사용해야 한다.
+[source,kotlin]
+----
+fun myAnimals(animals: Array<out Animal>) {
+}
+
+----
+
+[source,kotlin]
+----
+fun copyAnimals(from: Array<Animal>, to: Array<Animal>) {
+  from.forEachIndexed { index, animal ->
+    to[index] = animal
+  }
+}
+...
+
+----
+
+out 키워드 사용하면 write 할 수 없다.
+
+반공변성
+
+A가 B의 하위 자료형이면
+Class<B>는 Class<A>의 하위 자료형이다.
+
+[source,kotlin]
+----
+fun copyAnimals(from: Array<out Animal>, to: Array<Animal>) {
+  from.forEachIndexed { index, animal ->
+    to[index] = animal
+  }
+}
+----
+
+in 키워드를 사용해야 한다.
+
+in 키워드를 사용하면 read가 안된다.
+
+
+정리
+* 타입 불변성 -> 타입 인자의 상속 관계에 상관없이 무조건 자기 자신과 같은 타입만 가능
+* 공변성(out) -> write가 불가능
+* 반공변성(in) -> read가 불가능
+
