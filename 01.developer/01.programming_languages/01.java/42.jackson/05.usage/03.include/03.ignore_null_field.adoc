@@ -11,7 +11,9 @@ mapper.setSerializationInclusion(Include.NON_NULL);
 mapper.getSerializationConfig().setSerializationInclusion(Inclusion.NON_NULL);
 ----
 
-== @JsonInclude(JsonInclude.Include.NON_NULL)
+== @JsonInclude(JsonInclude.Include.NON_NULL) null 이 아닌 것만 json 포함. null 은 제외
+
+null 이면 json 생성시 제외한다.
 
 클래스의 모든 필드에 적용
 [source,java]
