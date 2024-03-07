@@ -1,0 +1,23 @@
+:hardbreaks:
+= Detekt with IntelliJ
+
+
+== IntelliJ plugin
+https://plugins.jetbrains.com/plugin/10761-detekt
+
+=== 2024.02.08 error
+2024.02.08 기준 2.3.0 이 2023.12.20 에 나온 최신 버전
+
+IntelliJ IDEA 2023.3.3 (Ultimate Edition) 에서 오류가 발생하는 케이스가 있음
+
+kotlin-study 프로젝트 열면 다음과 같은 에러가 발생함
+
+----
+com.intellij.psi.PsiInvalidElementAccessException: Element: class com.intellij.psi.impl.compiled.ClsJavaCodeReferenceElementImpl #JAVA  because: File language:Language: JAVA != Provider base language:Language: kotlin
+invalidated at: no info; com.intellij.psi.impl.source.ClassReferencePointer$1@41530be1; augmenters=[com.intellij.psi.impl.source.JShellPsiAugmentProvider@5791400e, com.intellij.psi.impl.RecordAugmentProvider@1c16c56a, de.plushnikov.intellij.plugin.provider.LombokAugmentProvider@5481aa73]
+...
+----
+
+IntelliJ 전체를 껐다가 켜니까 정상화 되었음
+build.gradle.kts 파일도 조금 수정하고 reload 했는데 관련이 있을지는 모르겠음
+
