@@ -1,11 +1,55 @@
 :hardbreaks:
 = CNAME
 
+CNAME은 Canonical Name의 약자로, DNS (Domain Name System)에서 사용되는 레코드 유형 중 하나. CNAME 레코드는 한 도메인의 별칭(alias)이 다른 도메인의 정규 이름(canonical name)이라는 것을 나타냄.
+
+간단히 말하자면, CNAME 레코드를 사용하여 한 도메인의 DNS 조회를 다른 도메인으로 리디렉션할 수 있음. 이것은 특히 도메인 이름을 업데이트하거나 변경해야 할 때 유용함. 예를 들어, "www.example.com"이라는 도메인이 있을 때, "www" 서브도메인을 "example.com"도메인으로 리디렉션하고자 할 때 CNAME 레코드를 사용할 수 있음.
+
+CNAME 레코드의 구조는 다음과 같음.
+
+----
+<도메인> IN CNAME <타겟 도메인>
+----
+
+여기서:
+* `<도메인>`은 별칭(alias) 도메인을 나타냄.
+* `IN`은 레코드의 유형을 나타냄.
+* `CNAME`은 Canonical Name 레코드임을 나타냄
+* `<타겟 도메인>`은 별칭 도메인의 정규 이름(canonical name). 이 도메인으로 조회가 다시 리디렉션됨.
+
+== CNAME 레코드 예
+
+----
+www IN CNAME example.com
+----
+
+이 예제에서 "www" 서브도메인은 "example.com" 도메인으로 리디렉션됨.
+
+CNAME 레코드를 사용하는 것은 DNS 구성을 관리하는 데 편리하고 유연성을 제공함. 그러나 CNAME 리디렉션은 추가적인 DNS 조회를 발생시키므로 속도와 성능 측면에서 고려해야 함. 또한, CNAME 리디렉션을 사용하는 경우, 기존 도메인의 TTL(Time to Live) 설정에 따라 클라이언트 측에서 DNS 캐시를 적절하게 업데이트해야 할 수 있음.
+
+
+== junho85.pe.kr 티스토리 블로그 CNAME 설정 예
 [source,shell]
 ----
 $ dig cname junho85.pe.kr +short
 host.tistory.io.
 ----
+
+----
+$ dig cname junho85.pe.kr
+...
+junho85.pe.kr.		600	IN	CNAME	host.tistory.io.
+...
+----
+
+이 경우, "junho85.pe.kr" 도메인의 CNAME 레코드는 "host.tistory.io"로 설정되어 있음. 이것은 "junho85.pe.kr" 도메인의 DNS 조회를 "host.tistory.io" 도메인으로 리디렉션한다는 것을 의미함.
+
+즉, 누군가 "junho85.pe.kr" 도메인에 연결을 시도하면, DNS 서버는 CNAME 레코드를 검색하고 "host.tistory.io"로 리디렉션됨. 따라서 실제로 "junho85.pe.kr" 도메인에 접속하는 것은 "host.tistory.io" 도메인에 접속하는 것과 동일함.
+
+이것은 웹 호스팅이나 블로그 플랫폼 등을 변경하고자 할 때 유용함. 예를 들어, "junho85.pe.kr" 도메인이 이전에는 다른 호스팅 서비스에서 호스팅되었지만, 이제는 "host.tistory.io"에서 호스팅되고자 할 때 CNAME 레코드를 사용하여 이전 도메인을 새로운 호스트로 리디렉션할 수 있음.
+
+따라서 이러한 설정은 웹 사이트나 블로그의 호스팅을 쉽게 변경하거나 관리할 수 있도록 도와줌.
+
 
 == 장점
 IP주소가 바뀔때 유연하게 처리할 수 있음.
@@ -16,6 +60,6 @@ junho85.pe.kr 은 티스토리 블로그를 사용하고 있다. 만약 A레코�
 
 == 단점
 아무래도 DNS 요청이 한 번 더 많아진다는 단점이 있다.
-junho85.pe.kr -> host.tistory.io 두번 호출해야 IP를 알아낼 수 있기때문이다.
+junho85.pe.kr -> host.tistory.io 두번 호출해야 IP를 알아낼 수 있기 때문이다.
 
 
