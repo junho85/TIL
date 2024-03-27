@@ -1,0 +1,61 @@
+:hardbreaks:
+= kotlin lint - ktlint
+
+
+== Unexpected blank line(s) in value parameter list (standard:no-blank-line-in-list)
+
+https://pinterest.github.io/ktlint/1.0.0/rules/standard/#no-blank-lines-in-list
+
+[source]
+----
+data class FooBar(
+
+)
+----
+
+value parameter list 에 공백을 허용하지 않는다.
+
+개인적으로는 중간중간 공백을 넣어주는게 가독성이 좋다고 생각하기 때문에 disable 시킨다.
+파라미터가 많아 지는 경우 관련 있는 것끼리 그룹핑 시켜주기도 하기 떄문.
+그룹핑 하다가 클래스에 묶어 준다던지 개선하는 것이 좋을 것 같긴 하다.
+
+설정 끄기
+ktlint_disabled_rules = no-blank-line-in-list
+
+
+== A multiline expression should start on a new line (standard:multiline-expression-wrapping)
+
+https://pinterest.github.io/ktlint/1.0.0/rules/standard/#multiline-expression-wrapping
+
+아래 처럼 쓰면
+[source,kotlin]
+----
+val foo = foo(...
+
+----
+
+아래처럼 포멧팅 된다.
+[source,kotlin]
+----
+val foo =
+    foo(...
+----
+
+개인적으로는 선호하지 않기 때문에 disable 시킨다.
+
+
+설정 끄기
+
+[source]
+----
+ktlint_disabled_rules = multiline-expression-wrapping
+----
+
+
+== References
+* https://korean-otter.tistory.com/210[intellij에서 ktlint를 사용해 Kotlin 컨벤션 준수하기 2023.02.07]
+
+ktlintApplyToIdea - kotlin 스타일(규칙) 파일을 생성새 idea(intellij)에 적용시킴
+
+ktlintCheck - idea에 적용도니 컨벤션이 준수되었는지 확인하는 역할
+
