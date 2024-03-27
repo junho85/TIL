@@ -1,5 +1,5 @@
 :hardbreaks:
-= 설정
+= Spring Boot, 설정
 
 == 외부에서 설정 주입 - Externalized Configuration
 Spring Boot는 설정의 외부화를 지원해서 같은 코드의 어플리케이션을 다른 환경에서 동작하도록 할 수 있다. 외부 설정 방법으로 Java properties 파일, YAML 파일, 환경변수, 커맨드라인 인자들을 이용할 수 있다.
@@ -20,6 +20,19 @@ Spring Boot는 합리적으로 값들을 재정의 하도록 설계된 매우 �
 10. `SPRING_APPLICATION_JSON`의 속성들 (환경변수의 인라인 JSON 또는 시스템 프로퍼티)
 11. 커맨드라인 인자
 12. 테스트의 `properties` 속성. `@SpringBootTest` ...
+
+
+=== 자주 사용 하는 것들
+우선 순위가 높은 것 부터 (우선 순위 높은 것에 설정이 있으면 낮은 순위의 설정은 무시된다.)
+
+1. JVM 옵션: 실행명령어에서 -D... 어쩌구 설정하는 것
+
+2. 환경변수: 미리 환경 변수를 설정할 수도 있고, 실행 명령어 앞에 입력해줄 수도 있음
+environment.getProperty("SPRING_PROFILES_ACTIVE") 처럼 읽어 올 수 있음
+@Value 를 이용해서 읽어 올 수도 있음
+3. application-{profile}.yml: profile에 따라 설정을 다르게 할 수 있음
+4. application.yml: profile이 없을 때 기본적으로 사용할 설정
+
 
 === application.properties
 ----
@@ -65,3 +78,12 @@ $ java -jar myapp.jar --spring.application.json='{"my":{"name":"test"}}'
 * https://docs.spring.io/spring-boot/docs/2.6.3/reference/htmlsingle/#features.external-config[7.2. Externalized Configuration]
 * https://www.latera.kr/reference/java/2019-09-29-spring-boot-config-externalize/[[Spring Boot\] 외부에서 설정 주입하기 2019.09.29]
 * https://docs.spring.io/spring-boot/docs/1.3.0.RELEASE/reference/html/howto-properties-and-configuration.html[69. Properties & configuration]
+* https://jsonobject.tistory.com/543[Spring Boot, 환경 변수 적용 우선순위 정리]
+** JVM 옵션
+** 운영체제 환경 변수
+** application-{profile}.yml
+
+* https://www.techiedelight.com/ko/read-environment-variable-kotlin/[Kotlin에서 환경 변수 읽기 2022.01.07]
+val env: MutableMap<String, String> = System.getenv()
+val os = System.getenv("OS")
+
