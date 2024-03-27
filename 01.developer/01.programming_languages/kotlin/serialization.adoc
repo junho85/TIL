@@ -1,0 +1,68 @@
+:hardbreaks:
+= Kotlin - 직렬화, 역직렬화
+
+#kotlin #Serialization #Serializable
+
+== Serializable 인터페이스 이용 방법
+
+[source,kotlin]
+----
+import java.io.*
+
+data class Person(val name: String, val age: Int) : Serializable
+
+fun serialize(person: Person): ByteArray {
+    val byteArrayOutputStream = ByteArrayOutputStream()
+    val objectOutputStream = ObjectOutputStream(byteArrayOutputStream)
+    objectOutputStream.writeObject(person)
+    return byteArrayOutputStream.toByteArray()
+}
+
+fun deserialize(byteArray: ByteArray): Person {
+    val byteArrayInputStream = ByteArrayInputStream(byteArray)
+    val objectInputStream = ObjectInputStream(byteArrayInputStream)
+    return objectInputStream.readObject() as Person
+}
+
+fun main() {
+    // 객체 생성
+    val person = Person("John Doe", 30)
+
+    // 객체를 직렬화
+    val serializedData = serialize(person)
+    println("Serialized: ${serializedData.joinToString()}")
+
+    // 직렬화된 데이터를 역직렬화
+    val deserializedPerson = deserialize(serializedData)
+    println("Deserialized: $deserializedPerson")
+}
+----
+
+result
+----
+Serialized: -84, -19, 0, 5, 115, 114, 0, 20, 107, 114, 46, 112, 101, 46, 106, 117, 110, 104, 111, 56, 53, 46, 80, 101, 114, 115, 111, 110, -15, 73, 12, 1, 52, 62, 111, 42, 2, 0, 2, 73, 0, 3, 97, 103, 101, 76, 0, 4, 110, 97, 109, 101, 116, 0, 18, 76, 106, 97, 118, 97, 47, 108, 97, 110, 103, 47, 83, 116, 114, 105, 110, 103, 59, 120, 112, 0, 0, 0, 30, 116, 0, 8, 74, 111, 104, 110, 32, 68, 111, 101
+Deserialized: Person(name=John Doe, age=30)
+----
+
+== kotlinx.serialization.Serializable
+
+https://github.com/Kotlin/kotlinx.serialization
+
+[source,kotlin]
+----
+dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
+}
+----
+
+spring boot 에서는 jackson 을 기본 json 직렬화 라이브러리로 사용하고 있지만 kotlinx.serialization 으로 바꿀 수 있다.
+
+== References
+
+https://velog.io/@thd0427/Kotlin-%EC%A7%81%EB%A0%AC%ED%99%94-%EB%B0%8F-%EC%97%AD%EC%A7%81%EB%A0%AC%ED%99%94[Kotlin 직렬화 및 역직렬화 2022.09.20]
+
+Serializable 인터페이스
+@Transient 직렬화 대상에서 제외할 property
+SerialVersionUID
+
+https://multifrontgarden.tistory.com/285[kotlin 의 json 라이브러리 kotlinx.serialization 2021.07.17]
