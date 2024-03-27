@@ -1,0 +1,19 @@
+:hardbreaks:
+= Spring Bean Scopes - Singletone
+
+Spring 에서 Bean 은 기본적으로 Singleton scope 로 생성된다.
+
+Singleton scope 는 Bean 이 하나만 생성되고, 이 Bean 을 모든 Bean 요청에 대해 공유한다.
+
+일반적으로 대부분 사용하는 Bean 이 이에 해당한다.
+
+[source,java]
+----
+@Service
+public class MyService {
+    // ...
+}
+----
+
+== References
+link:../../../../../01.developer/3.framework/spring/백기선/11.스프링%20프레임워크%20핵심%20기술/07.IoC%20컨테이너%205부:%20빈의%20스코프.adoc[백기선 - 07.IoC 컨테이너 5부: 빈의 스코프]

@@ -1,0 +1,45 @@
+:hardbreaks:
+= Spring Bean Scopes. Singleton, Prototype, Request, Session, Global Session
+
+Spring Bean 의 Scope 는 Bean 이 생성되고, 존재하는 범위를 의미한다. Spring 에서는 다음과 같은 Scope 들을 제공한다.
+
+== Singleton (기본값)
+
+link:1.singleton.adoc[Singletone]
+
+== Prototype
+
+link:2.prototype.adoc[Prototype]
+
+== Request
+Request scope 는 HTTP 요청마다 새로운 Bean 이 생성된다.
+
+[source,java]
+----
+@Controller
+@Scope("request")
+public class MyRequestBean {
+    // ...
+}
+----
+
+== Session
+Session scope 는 HTTP Session 마다 새로운 Bean 이 생성된다.
+사용자의 세션과 관련된 데이터를 유지하기 위해 사용된다.
+
+[source,java]
+----
+@Controller
+@Scope("session")
+public class MySessionBean {
+    // ...
+}
+----
+
+== Global Session
+
+
+
+== References
+* https://www.baeldung.com/spring-bean-scopes[Quick Guide to Spring Bean Scopes]
+

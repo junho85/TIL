@@ -1,0 +1,43 @@
+:hardbreaks:
+= Bean Scope - Prototype
+
+Prototype scope 는 Bean 이 요청될 때마다 새로 생성된다. 즉, Bean 의 요청마다 새로운 인스턴스가 생성된다.
+
+주로 상태를 가지는 Bean 에 사용된다.
+
+[source,java]
+----
+@Component
+@Scope("prototype")
+public class MyPrototypeBean {
+    // ...
+}
+----
+
+`@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)` 으로도 설정할 수 있다.
+`@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)` 으로도 설정할 수 있다.
+
+
+
+
+xml 설정
+
+[source,xml]
+----
+<bean id="exampleBean" class="com.example.ExampleBean" scope="prototype"/>
+----
+
+== 단점
+singleton 과 달리 매번 새로운 객체를 반환한다는 특징
+
+* 메모리 소비가 높을 수 있다
+* 빈 간의 상태를 공유하기 어려움
+* 라이프사이클 관리의 어려움. 
+
+== References
+* https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html#beans-factory-scopes-prototype[Tye Prototype Scope]
+
+* https://catsbi.oopy.io/b2de2693-fd8c-46e3-908a-188b3dd961f3[프로토타입 스코프 - 싱글톤 빈과 함께 사용시 문제점]
+
+* https://www.baeldung.com/spring-inject-prototype-bean-into-singletonp[Injecting Prototype Beans into a Singleton Instance in Spring]
+
