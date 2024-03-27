@@ -1,9 +1,34 @@
 :hardbreaks:
 = MySQL Bit vs TinyInt vs Bool
 
-== TinyInt
+MySQL 에서 Boolean 값을 저장할 때 BIT, TINYINT, BOOL 을 사용할 수 있다.
+
+주로 사용하는 타입은 TINYINT 이다.
 
 
-== Bit
+
+== TINYINT
+
+https://dev.mysql.com/doc/refman/8.0/en/other-vendor-data-types.html
+
+BOOL, BOOLEAN 을 사용하면 TINYINT 를 사용하게 된다.
+
+== BOOL, BOOLEAN -> TINYINT
 
 
+
+== BIT
+
+
+
+
+== References
+* https://www.careerride.com/MySQL-BOOL-TINYINT-BIT.aspx[MySQL - Explain the difference between BOOL, TINYINT and BIT.
+]
+
+* https://unluckyjung.github.io/db/2023/06/18/tinyint-vs-bit/[TINYINT 와 BIT 차이 그리고 BOOLEAN 2023.06.18]
+
+* https://www.bennadel.com/blog/3845-why-i-use-tinyint-columns-instead-of-bit-columns-for-boolean-data-in-a-mysql-application.htm[Why I Use TINYINT Columns Instead Of BIT Columns For Boolean Data In A MySQL Application 2020.06.13]
+
+
+* https://www.bennadel.com/blog/3188-casting-bit-fields-to-booleans-using-the-node-js-mysql-driver.htm[Casting Bit Fields To Booleans Using The Node.js MySQL Driver 2016.11.21]
