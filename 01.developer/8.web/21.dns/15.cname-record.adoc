@@ -63,3 +63,16 @@ junho85.pe.kr 은 티스토리 블로그를 사용하고 있다. 만약 A레코�
 junho85.pe.kr -> host.tistory.io 두번 호출해야 IP를 알아낼 수 있기 때문이다.
 
 
+== 참고
+
+https://notice.tistory.com/1784[개인 도메인(2차 블로그 주소) 사용을 위한 DNS 설정하기 2008.08.21]
+
+목적지 도메인: host.tistory.io 또는 blog.tistory.com 중 1개 선택
+
+* CNAME 레코드를 등록하면 이후 티스토리 서버 IP가 변경되어도 추가 변경을 하지 않으셔도 됩니다.
+* 목적지 도메인 등의 명칭은 DNS 서비스별로 다를 수 있습니다.
+* 목적지 도메인은 둘 중 하나만 입력하시면 됩니다.
+
+https://notice.tistory.com/2358[(중요) CNAME 사용 불가 2차 도메인 블로그 대상 DNS 2차 변경 요청 (~12/11) 2016.11.30]
+
+
