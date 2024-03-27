@@ -1,3 +1,4 @@
+:hardbreaks:
 = 7. 빈 (Bean)
 
 https://www.youtube.com/watch?v=qaIQfl0ob84

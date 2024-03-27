@@ -1,3 +1,4 @@
+:hardbreaks:
 = 7. IoC 컨테이너 5부: 빈의 스코프
 
 .스코프
@@ -23,10 +24,10 @@
 
 image::07.proxy-pattern.png[]
 
-== 싱글톤
+== Singleton 싱글톤
 대부분 싱글톤 사용
 
-== 프로토타입
+== Prototype 프로토타입
 매번 새로운 인스턴스
 
 

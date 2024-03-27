@@ -1,3 +1,4 @@
+:hardbreaks:
 = 8.의존성 주입 (Dependency Injection)
 
 https://www.youtube.com/watch?v=IVzYerodIyg[예제로 배우는 스프링 입문 8. 의존성 주입 (Dependency Injection)]
