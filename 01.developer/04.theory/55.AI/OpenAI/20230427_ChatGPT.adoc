@@ -5,12 +5,12 @@
 
 ChatGPT란?
 
-* 221130, by OpenAI: GPT3, Codex, DALLE
+* 221130, by OpenAI: GPT3, Codex, DALL-E
 ...
 
 * ChatGPT는 GPT-3.5(1,750억개)를 사용
 * RLHF를 통해 GPT3를 대화에 최적화
-* 2021년 4분기까지읟 ㅔ이터를 학습
+* 2021년 4분기까지의 데이터를 학습
 * ChatGPT + Bing (검색엔진)
 
 GPT-3 출시 2020.06.11
@@ -30,18 +30,17 @@ https://www.bloter.net/news/articleView.html?idxno=600174
 * 100만명 x 20$ = 250억/월
 * 하루 하드웨어 추론 비용: 9억, 270억/월
 
-ChatGTP 사용법 1) 질의응답
-사용자의 질문에 답하는 방식
-이전 채팅 내용 기억
+ChatGPT 사용법 1) 질의응답 사용자의 질문에 답하는 방식 이전 채팅 내용 기억
 
-ChatGTP 사용법 2) 번역
+ChatGPT 사용법 2) 번역
 
-ChatGTP 사용법 3) 요약
+ChatGPT 사용법 3) 요약
 
-Prompt: summarize this text: It was a dark and stormy night when the body was found. The small town of Millfield was in shock as the news spread that one of their own, local businessman, had been murdered in cold blood. ...
+Prompt: summarize this text: It was a dark and stormy night when the body was found.
+The small town of Millfield was in shock as the news spread that one of their own, local businessman, had been murdered in cold blood.
+...
 
-
-ChatGTP 사용법 4) ...
+ChatGPT 사용법 4) ...
 
 Open Domain Question Answering
 Prompt: when did Apollo 11 land on the moon
