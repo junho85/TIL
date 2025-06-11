@@ -1,4 +1,12 @@
+:hardbreaks:
 = Spring - Dependency Injection 의존관계 주입
+
+생성자 주입, 수정자 주입, 필드 주입을 할 수 있다.
+
+생성자 주입을 사용하는 것을 권장한다.
+
+한 때 수정자 주입을 많이 사용했던 적이 있지만 여러 단점들이 많기 때문에 생성자 주입을 사용하는 것이 권장되고 있다.
+
 
 
 == Dependency Injection
@@ -18,47 +26,18 @@ A클래스 내부의 B클래스를 C클래스로 바꾸려면 A클래스를 수�
 
 결합을 느슨하게 해보자. A클래스를 수정하지 않으려면?
 
-=== Setter Based Injection 수정자 주입
-[source,java]
-----
-class A {
-  private B b;
-
-  public void setB(B b) {
-    this.b = b;
-  }
-}
-
-interface B {}
-----
-setB를 만들어서 b를 지정 할 수 있도록 한다.
-
-B는 인터페이스로 만들어서 구현체를 바꿔 끼울 수 있도록 한다.
-
-그런데 B를 주입하지 않아도 A는 생성이 된다. B가 없어서 문제가 될 수 있다.
-
-
 === Constructor based Injection 생성자 주입
-link:constructor_based_injection.adoc[Constructor based Injection 생성자 주입]
+link:1.constructor_based_injection.adoc[Constructor based Injection 생성자 주입]
 
-== 스프링에서의 DI
-수정자 주입, 생성자 주입 뿐 아니라 필드 주입을 할 수 있다.
 
-=== Field Injection 필드 주입
+=== Setter based Injection 수정자 주입
+link:5.setter-based-injection.adoc[Setter Based Injection]
 
-[source,java]
-----
-class A {
-  @Autowired
-  private B b;
-}
+=== Field Injection 필드 주입 (비추천)
 
-interface B {}
-----
+@Autowired, @Inject, @Resource 등을 사용하여 필드에 주입할 수 있다.
 
-=== Setter based Injection
-link:setter-based-injection.adoc[Setter Based Injection]
+link:9.field_injection.adoc[Field Injection 필드 주입]
 
-=== Constructor based Injection
-link:constructor_based_injection.adoc[Constructor based Injection 생성자 주입]
+
 

@@ -1,0 +1,20 @@
+:hardbreaks:
+= Setter Based Injection
+
+[source,java]
+----
+class A {
+  private B b;
+
+  public void setB(B b) {
+    this.b = b;
+  }
+}
+
+interface B {}
+----
+setB를 만들어서 b를 지정 할 수 있도록 한다.
+
+B는 인터페이스로 만들어서 구현체를 바꿔 끼울 수 있도록 한다.
+
+그런데 B를 주입하지 않아도 A는 생성이 된다. B가 없어서 문제가 될 수 있다.

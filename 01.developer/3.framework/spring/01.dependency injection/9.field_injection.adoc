@@ -1,0 +1,61 @@
+:hardbreaks:
+= Field Injection (Not recommended)
+
+@Autowired, @Inject, @Resource 등을 사용하여 필드에 주입할 수 있다.
+
+[source,java]
+----
+class A {
+  @Autowired
+  private B b;
+}
+
+interface B {}
+----
+
+== @Resource, @Autowired, @Inject
+
+=== @Resource
+Java에서 지원하는 어노테이션. 특정 프레임워크에 종속적이지 않음
+
+멤버변수, setter 메서드에서 사용 가능
+
+=== @Autowired
+Spring에서 지원하는 어노테이션
+
+멤버변수, setter 메서드, 생성자, 일반 메서드에서 사용 가능
+
+=== @Inject
+Java에서 지원하는 어노테이션. 특정 프레임워크에 종속적이지 않음
+
+@Autowire와 동일하게 작동하지만 찾는 순서가 다름
+
+javax 라이브러리 의존성 추가해야됨
+
+멤버변수, setter 메서드, 생성자, 일반 메서드에서 사용 가능
+
+
+== @Qualifier
+
+동일한 타입의 빈이 여러개일 때, 어떤 빈을 주입할지 선택할 수 있다.
+
+사용하지 않으면 Spring에서 NoUniqueBeanDefinitionException 발생시킨다.
+
+
+== References
+* https://www.baeldung.com/java-spring-field-injection-cons[Why Is Field Injection Not Recommended?]
+
+* https://madplay.github.io/post/why-constructor-injection-is-better-than-field-injection[생성자 주입을 @Autowired를 사용하는 필드 주입보다 권장하는 하는 이유]
+
+생성자 주입의 장점
+* 순환 참조 방지
+* 테스트 코드 작성 편리
+* 나쁜 냄새를 없앤다
+** 인자가 많아지는 것이 명시적으로 드러난다
+* immutable 하다
+** final 키워드를 사용하여 변경 불가능하게 만들 수 있다
+
+* https://velog.io/@sungmo738/Resource-Autowired-Inject-%EC%B0%A8%EC%9D%B4[@Resource, @Autowired, @Inject 차이 2020.11.01]
+
+
+* https://www.baeldung.com/spring-annotations-resource-inject-autowire[Wiring in Spring: @Autowired, @Resource and @Inject]
