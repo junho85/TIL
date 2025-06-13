@@ -55,3 +55,74 @@ If you wish to set tracking information for this branch you can do so with:
 ----
 git branch --set-upstream-to=origin/main main
 ----
+
+== slack 메시지 markdown 처리
+
+[source,mongodb]
+----
+
+db.slack_messages.find({}, {attachments: 1}).pretty()
+
+[{
+"id": new NumberInt("1"),
+"footer_icon": "https://slack.github.com/static/img/favicon-neutral.png", "color": "24292f",
+"fallback": "[junho85/TIL] 1 new commit pushed to _master_ by junho85",
+"text": "`<https://github.com/junho85/TIL/commit/95059aeea7a4e08251691dada63d93e7bf1dfc86|95059aee>` - JPA - delete", "pretext": "<https://github.com/junho85/TIL/compare/013ad86614e1...95059aeea7a4|1 new commit> pushed to `<https://github.com/junho85/TIL/tree/master|master>` by <https://github.com/junho85|junho85>",
+"footer": "<https://github.com/junho85/TIL|junho85/TIL>",
+"mrkdwn_in": ["text"]}]
+----
+
+[source,mongodb]
+----
+db.slack_messages.find({}, {"attachments.text": 1}).pretty()
+...
+[{"text": "`<https://github.com/junho85/TIL/commit/95059aeea7a4e08251691dada63d93e7bf1dfc86|95059aee>` - JPA - delete"}]
+...
+----
+
+
+개인별 출석부 내역 API
+http://127.0.0.1:8000/attendance/api/users/junho85/
+
+[source,js]
+----
+...
+  {
+    "date": "2023-09-23",
+    "commits": [
+      {
+        "ts": "2023-09-23T08:19:21.347+09:00",
+        "message": "<p><code>&lt;https://github.com/junho85/TIL/commit/95059aeea7a4e08251691dada63d93e7bf1dfc86|95059aee&gt;</code> - JPA - delete</p>\n<ul></ul>"
+      },
+      {
+        "ts": "2023-09-23T22:39:24.267+09:00",
+        "message": "<p><code>&lt;https://github.com/junho85/TIL/commit/6f9e3db19e0fa4f064138338c670599f8d15cd74|6f9e3db1&gt;</code> - 정원사들 프로젝트 세팅</p>\n<ul></ul>"
+      }
+    ]
+  },
+...
+----
+
+markdown 의 PythonMarkdownSlack() extensions 를 이용해서 처리하고 있긴 하다.
+[source,python]
+----
+    for (date, commits) in attendances.items():
+        for commit in commits:
+            commit["message"] = markdown.markdown(commit["message"], extensions=[PythonMarkdownSlack()])
+            # commit["message"] = "<br>".join(commit["message"].split("\n"))
+        output.append({"date": date, "commits": commits})
+----
+
+AttendanceService.get_commits_with_ts_by_user 에서는 monogodb 에 저장된 slack 메시지를 그대로 리턴함
+
+AttendanceService.find_attendances_by_user 의 역할은...
+
+views.py 의 user_api 에서 호출함. 여기서 PythonMarkdownSlack 처리해주고 있음.
+
+PythonMarkdownSlack 처리 하고 나면
+
+... 이런 메시지가
+
+... 이렇게 바뀌는데
+
+부족함...

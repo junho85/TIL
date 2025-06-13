@@ -1,0 +1,24 @@
+:hardbreaks:
+= 개선작업
+
+
+
+== docker-garden8 repository 디렉터리 구조 정리
+
+기존 garden8 을 기본으로 하다 보니 시즌8 설정파일이 config/attendance 경로에 있다.
+garden9는 garden9/config/attendance 경로에 있어서 디렉터리에 통일성이 없다.
+garden8 도 garden8/config/attendance 경로로 변경하는 것이 좋겠다.
+
+== docker network 설정
+
+현재 docker compose 설정에서 links를 사용하고 있다. docker network 방식으로 변경하는 것이 좋겠다.
+
+== collect 로직 개선
+날짜별로 하지 말고 처음 부터 진행하되 마지막 offset 을 기록하는 방식으로 개선하면 좋겠음
+
+== 전체 커밋 목록 보는 툴
+
+
+== 출석부 통합
+매번 새로 세팅 하지 말고 하나의 사이트에서 여러 시즌의 출석부를 운영할 수 있도록 개선
+
